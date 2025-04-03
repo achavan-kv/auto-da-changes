@@ -821,6 +821,60 @@ namespace STL.WS
                                     }
 
                                     finalPaymentDetails.Add(finalPaymentDetail);
+
+                                    //#1 New code for AutoDA | SP | 29/11/2024
+                                    if (finalPaymentDetail.IsDeposit)
+                                    {
+                                        bool isAutoDA = false;
+                                        using (SqlTransaction trans1 = conn.BeginTransaction(IsolationLevel.ReadUncommitted))
+                                        {
+                                            try
+                                            {
+                                                SqlParameter[] xparams = {
+                                                new SqlParameter("@acctno",  finalPaymentDetail.AcctNo),
+                                                new SqlParameter("@IsAutoDA", SqlDbType.Bit)
+                                                {
+                                                    Direction = ParameterDirection.Output
+                                                }
+                                            };
+
+                                                SqlCommand command = conn.CreateCommand();
+                                                command.Transaction = trans1;
+                                                command.CommandText = "dbo.CheckAccountForAutoDA";
+                                                command.CommandType = CommandType.StoredProcedure;
+                                                command.Parameters.AddRange(xparams);
+                                                command.ExecuteNonQuery();
+
+                                                if (xparams[1].Value != null && xparams[1].Value != DBNull.Value)
+                                                {
+                                                    isAutoDA = (bool)xparams[1].Value;
+                                                }
+                                            }
+                                            catch (Exception)
+                                            {
+                                                throw;
+                                            }
+                                        }
+
+                                        if (isAutoDA)
+                                        {
+                                            using (SqlTransaction trans1 = conn.BeginTransaction(IsolationLevel.ReadUncommitted))
+                                            {
+                                                try
+                                                {
+                                                    BAgreement agreement = new BAgreement();
+                                                    agreement.User = Credential.UserId;
+                                                    agreement.ClearProposal(conn, trans1, finalPaymentDetail.AcctNo, "AUTO");
+                                                    trans1.Commit();
+                                                }
+                                                catch (SqlException ex)
+                                                {
+                                                    throw;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    //#1 End
                                 }
 
                                 using (var transPaymentDetail = conn.BeginTransaction(IsolationLevel.ReadUncommitted))
