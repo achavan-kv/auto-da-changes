@@ -1,0 +1,43 @@
+﻿<section class="buffer top" ng-show="GetAshleyEnable && canView" >
+    <ng-form name="ashleySetupForm" class="form-horizontal cost-form" novalidate>
+        <a name="AshleySetup"></a>
+        <div class="section">
+            Ashley Product
+        </div>
+
+        <table class="table table-bordered table-striped aligned pb-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Ashley Product</th>
+                    <th>Special Product</th>
+                    <th>Auto Purchase Order</th>
+                    <th>Online Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-btn" ng-hide="readonly">
+                        <span class="glyphicons glyph-btn floppy_disk" title="Save Ashley setup" ng-show="canEdit" ng-click="add({'id':productId,'model':ashleySetupObj},ashleySetupForm)">&nbsp;</span>
+                        <!--<span class="glyphicons glyph-btn undo" title="Clear Ashley setup" ng-click="">&nbsp;</span>-->
+                    </td>
+                    <td class="ashleyProduct">
+                        <input type="checkbox" name="chkIsAshley" ng-model="isAshley" ng-disabled="!canEdit" ng-change="CheckAttributesIsAshley(isAshley)"/>
+                    </td>
+
+                    <td class="specialProduct">
+                        <input type="checkbox" name="chkIsSpecial" ng-model="isSpecial" ng-disabled="!canEdit"  ng-change="CheckAttributesIsSpecial(isSpecial)"/>
+                        
+                    </td>
+                    <td class="autoPO">
+                        <input type="checkbox" name="chkIsAutoPO" ng-model="isAutoPo" ng-disabled="!canEdit" ng-change="CheckAttributesIsAutoPo(isAutoPo)"/>
+                    </td>
+                    <td class="onlineAvailable">
+                        <input type="checkbox" name="chkIsOnline" ng-model="isOnline" ng-disabled="!canEdit"  />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </ng-form>
+</section>

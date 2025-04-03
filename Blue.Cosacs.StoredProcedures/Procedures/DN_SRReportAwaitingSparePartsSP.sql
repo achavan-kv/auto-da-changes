@@ -1,0 +1,76 @@
+/****** Object:  StoredProcedure [dbo].[DN_SRReportAwaitingSparePartsSP]    Script Date: 10/23/2006 14:03:39 ******/
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID('[dbo].[DN_SRReportAwaitingSparePartsSP]') AND OBJECTPROPERTY(id,'IsProcedure') = 1)
+DROP PROCEDURE [dbo].[DN_SRReportAwaitingSparePartsSP]
+GO
+
+set ANSI_NULLS ON
+set QUOTED_IDENTIFIER ON
+go
+
+-- =============================================
+-- Author:		Peter Chong
+-- Create date: 22-10-2006
+-- Description:	Awaiting spare parts service report
+-- Modified by: J.Hemans
+-- Modified date: 03/01/2008
+-- Modified Description: Code change required so that date comparisons work for @MinDateLogged = @MaxDateLogged UAT 340
+-- =============================================
+CREATE PROCEDURE [DN_SRReportAwaitingSparePartsSP]
+-- =============================================
+-- Author:		Peter Chong
+-- Create date: 22-Oct-2006
+-- Title:	DN_SRReportAwaitingSparePartsSP
+--
+--	This procedure will retieve the details for Awaitng spare parts.
+-- 
+-- Change Control
+-----------------
+-- 07/01/11 jec CR1030 - return Status and date change
+-- 21/01/11 jec Restrict rows returned 
+-- 01/07/11 ip  CR1254 -RI - #3992 - Return CourtsCode/IUPC   
+-- =============================================
+	-- Add the parameters for the function here 
+	@MinDateLogged datetime = null,
+	@MaxDateLogged datetime = null,
+	@MinSRNo	   int  = null,
+	@MaxSRNo	   int  = null,
+	@ViewTop	   BIT,			-- true = 500
+	@Return		   int output	
+AS
+BEGIN
+	SET NOCOUNT ON;
+	declare @top INT
+	if @ViewTop=1 set @top=500 else set @top = 9999
+	
+	SELECT top (@top) SR.ServiceRequestNo
+		, convert(varchar(4), SR.ServiceBranchNo) + convert(varchar(16), SR.ServiceRequestNo) [ServiceRequestNoStr]
+		, SR.Status
+		, DateLogged
+		, convert(varchar(16), SA.TechnicianID) + ': ' + T.FirstName + ' ' + T.LastName [TechnicianId]
+		, SA.DateAllocated
+		, SA.PartsDate
+		, SA.RepairDate
+		--, SR.ProductCode
+		, isnull(SI.IUPC, SR.ProductCode) as ProductCode		--IP - 01/07/11 - CR1254 - RI  - #3992
+		, isnull(SI.itemno,'') as CourtsCode					--IP - 01/07/11 - CR1254 - RI  - #3992
+		, SR.Description
+		, SR.DateChange
+	FROM SR_ServiceRequest SR INNER JOIN
+	SR_Allocation SA ON SR.ServiceRequestNo = SA.ServiceRequestNo LEFT OUTER JOIN
+	SR_Resolution SRE ON SR.ServiceRequestNo = SRE.ServiceRequestNo INNER JOIN
+	SR_Technician T ON T.TechnicianID = SA.TechnicianID 
+	LEFT OUTER JOIN StockInfo SI ON SI.ID = SR.ItemID			--IP - 01/07/11 - CR1254 - RI  - #3992
+	WHERE
+	(@MinDateLogged IS NULL OR CONVERT(DATETIME,CONVERT(VARCHAR,SR.DateLogged,103),103) >= @MinDateLogged) AND
+	(@MaxDateLogged IS NULL OR CONVERT(DATETIME,CONVERT(VARCHAR,SR.DateLogged,103),103) <= @MaxDateLogged) AND
+	(@MinSRNo IS NULL OR SR.ServiceRequestNo >= @MinSRNo) AND
+	(@MaxSRNo IS NULL OR SR.ServiceRequestNo <= @MaxSRNo) AND
+	ISNULL(SRE.DateClosed, '1900-01-01') = '1900-01-01' AND
+	SA.PartsDate > GETDATE()
+	
+SET @return = @@error
+END
+
+GO
+
+-- End End End End End End End End End End End End End End End End End End End End End End End End End End

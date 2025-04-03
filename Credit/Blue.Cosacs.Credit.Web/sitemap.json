@@ -1,0 +1,53 @@
+﻿[
+  {
+    "label": "Credit",
+    "nodes": [
+      {
+        "label": "New Proposal",
+        "url": "#/Credit/proposals/new/edit",
+        "permission": 2701
+      },
+      {
+        "label": "Proposal Search",
+        "url": "#/Credit/proposals",
+        "permission": 2702
+      },
+      {
+        "label": "Customize Mandatory Fields",
+        "url": "#/Credit/customizeMandatoryFields",
+        "permission": 2704
+      },
+      {
+        "label": "Scoring Band Matrix Setup",
+        "url": "#/Credit/scoringBandMatrixSetup",
+        "permission": 2707
+      },
+      {
+        "label": "Configure Scoring Rules",
+        "url": "#/Credit/configureScoring",
+        "permission": 2703
+      },
+      {
+        "label": "Terms Type Setup",
+        "url": "#/Credit/termsType/new/edit",
+        "permission": 2709
+      },
+      {
+        "label": "Customer Search",
+        "url": "#/Credit/customerSearch",
+        "permission": 2708
+        },
+        {
+        "label": "Terms Type Search",
+        "url": "#/Credit/termsTypeSearch",
+        "permission": 2710
+      },
+      {
+        "label": "Terms Type Simulator",
+        "url": "#/Credit/termsTypeSimulator",
+        "permission": 2712
+      }
+    ]
+  }
+]
+

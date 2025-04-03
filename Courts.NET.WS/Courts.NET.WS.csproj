@@ -1,0 +1,1601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEC75FFC-246D-46CC-ABA7-7D7649AA3741}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cosacs.Web</RootNamespace>
+    <AssemblyName>Cosacs.Web</AssemblyName>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <JSLintSkip>\Static\js\|\Stylesheets\|\HelpFiles\</JSLintSkip>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Artemis">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Artemis.dll</HintPath>
+    </Reference>
+    <Reference Include="Artemis.Runtime">
+      <HintPath>..\..\lib\Artemis\Artemis.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK, Version=1.5.35.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AWSSDK.1.5.35.0\lib\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Admin">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Admin.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Caching">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Config">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Elmah">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Licensing.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Blue\Licensing\Blue.Licensing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Transactions">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Transactions.Mvc">
+      <HintPath>..\..\..\..\cosacs\CosacsWeb\bin\Blue.Transactions.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net40\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib, Version=2.0.36.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Artemis.0.1.218\lib\net40\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2141.24679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Artemis.0.1.218\lib\net40\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.1.608.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.1.608\lib\net40\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Blue.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\EventStore\Blue.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Events.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\EventStore\Blue.Events.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.EventStore.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\EventStore\Blue.EventStore.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack, Version=2.0.9.28948, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\ServiceStack-v2.09-custom\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.4164.25765, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\ServiceStack-v2.09-custom\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="xVal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f8fbed92c68c4006, processorArchitecture=MSIL">
+      <HintPath>..\packages\Artemis.0.1.218\lib\net40\xVal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Bootstrapper.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Controllers\CashLoanController.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Common\LargeJsonResult.cs" />
+    <Compile Include="Controllers\DBOInfoController.cs" />
+    <Compile Include="Controllers\CashierController.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Controllers\ContractsController.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Controllers\Fact2000FileImportsSetupController.cs" />
+    <Compile Include="Controllers\HierarchyController.cs" />
+    <Compile Include="Controllers\HttpHubSubscriberController.cs" />
+    <Compile Include="Controllers\PickListController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\SalesManagementController.cs" />
+    <Compile Include="Controllers\CodeMaintenanceController.cs" />
+    <Compile Include="Controllers\SalesSubscriberController.cs" />
+    <Compile Include="CountryCode.aspx.cs">
+      <DependentUpon>CountryCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Customers.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Exception.aspx.cs">
+      <DependentUpon>Exception.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Exception.aspx.designer.cs">
+      <DependentUpon>Exception.aspx</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Helpers\StylesheetResult.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Cache.asmx.cs">
+      <DependentUpon>Cache.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WCreditManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WStaticDataManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WSystemConfig.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CachedItems.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashAndGo.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommonAssemblyInfo.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Controllers\StoreCardController.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Helpers\HtmlExtensions.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WAccountManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WClientLogging.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCollectionsManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCustomerManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WEODManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WInstallation.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WLogin.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WPaymentManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WPrinting.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WServiceManager.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WServiceManager2.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WSetData.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WStock.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WStoreCard.asmx.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WUpdater.asmx.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Time.aspx.cs">
+      <DependentUpon>Time.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WAccountNos.aspx.cs">
+      <DependentUpon>WAccountNos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WActionSheet.aspx.cs">
+      <DependentUpon>WActionSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WAgreement.aspx.cs">
+      <DependentUpon>WAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCashierTotals.aspx.cs">
+      <DependentUpon>WCashierTotals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCashierTotalsSummary.aspx.cs">
+      <DependentUpon>WCashierTotalsSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCashLoan.aspx.cs">
+      <DependentUpon>WCashLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCollectionNote.aspx.cs">
+      <DependentUpon>WCollectionNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCommissionPayment.aspx.cs">
+      <DependentUpon>WCommissionPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WCommissionTransactions.aspx.cs">
+      <DependentUpon>WCommissionTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WContractNos.aspx.cs">
+      <DependentUpon>WContractNos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WDeliveryNote.aspx.cs">
+      <DependentUpon>WDeliveryNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WDeliveryNote2.aspx.cs">
+      <DependentUpon>WDeliveryNote2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WDeliverySchedule.aspx.cs">
+      <DependentUpon>WDeliverySchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WFaultyProductNote.aspx.cs">
+      <DependentUpon>WFaultyProductNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WFoodLoss.aspx.cs">
+      <DependentUpon>WFoodLoss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WInstallationBookingPrint.aspx.cs">
+      <DependentUpon>WInstallationBookingPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WJournalEnquiry.aspx.cs">
+      <DependentUpon>WJournalEnquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WOneForOneReplacementNote.aspx.cs">
+      <DependentUpon>WOneForOneReplacementNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WPaidAndTakenTaxInvoice.aspx.cs">
+      <DependentUpon>WPaidAndTakenTaxInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WPickList.aspx.cs">
+      <DependentUpon>WPickList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WPrizeVoucher.aspx.cs">
+      <DependentUpon>WPrizeVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WRebateForecast.aspx.cs">
+      <DependentUpon>WRebateForecast.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WRebateForecast2.aspx.cs">
+      <DependentUpon>WRebateForecast2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WRFSummary.aspx.cs">
+      <DependentUpon>WRFSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WRFTerms.aspx.cs">
+      <DependentUpon>WRFTerms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WScheduleOfArrangementPayments.aspx.cs">
+      <DependentUpon>WScheduleOfArrangementPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WScheduleOfPayments.aspx.cs">
+      <DependentUpon>WScheduleOfPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WStatementOfAccount.aspx.cs">
+      <DependentUpon>WStatementOfAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WTaxInvoice.aspx.cs">
+      <DependentUpon>WTaxInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WWarrantyContract.aspx.cs">
+      <DependentUpon>WWarrantyContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ActionSheet.xslt" />
+    <Content Include="Agreement.xslt" />
+    <Content Include="Agreement_B.xslt" />
+    <Content Include="allSections.JPG" />
+    <Content Include="AntiguaAgreement.xslt" />
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="CashAndGo.asmx" />
+    <Content Include="CashierChequeTotals.xslt" />
+    <Content Include="CashierTotalsByBranch.xslt" />
+    <Content Include="CashierTotalsByEmployee.xslt" />
+    <Content Include="CollectionNote.xslt" />
+    <Content Include="Cache.asmx" />
+    <Content Include="CountryCode.aspx" />
+    <Content Include="CourtsMalaysiaLogo.jpg" />
+    <Content Include="CreditScan2.xslt" />
+    <Content Include="DeliveryNote.xslt" />
+    <Content Include="Exception.aspx" />
+    <Content Include="FaultyProductNote.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="grey.jpg" />
+    <Content Include="HelpFiles\1 The Delivery Process.htm" />
+    <Content Include="HelpFiles\1 Warranty Repossessions.htm" />
+    <Content Include="HelpFiles\10 Delivery Scheduling.htm" />
+    <Content Include="HelpFiles\11 Transport Pick Lists.htm" />
+    <Content Include="HelpFiles\12 Changes to a schedule.htm" />
+    <Content Include="HelpFiles\13 Notifying Deliveries.htm" />
+    <Content Include="HelpFiles\14 Collections Process.htm" />
+    <Content Include="HelpFiles\14.1Goods Return.htm" />
+    <Content Include="HelpFiles\15 Redelivery after Repossession.htm" />
+    <Content Include="HelpFiles\16 Reprint Delivery Note.htm" />
+    <Content Include="HelpFiles\17 Cancelling Accounts.htm" />
+    <Content Include="HelpFiles\18 Cancel Collection Note.htm" />
+    <Content Include="HelpFiles\2 Identical Replacement.htm" />
+    <Content Include="HelpFiles\2 Transport Maintenance.htm" />
+    <Content Include="HelpFiles\3 Exchanges.htm" />
+    <Content Include="HelpFiles\3 New Sales Order.htm" />
+    <Content Include="HelpFiles\4 Cancellations.htm" />
+    <Content Include="HelpFiles\4 Delivery Area Maintenance.htm" />
+    <Content Include="HelpFiles\5 Delivery Authorisation.htm" />
+    <Content Include="HelpFiles\5 Instant Replacement.htm" />
+    <Content Include="HelpFiles\5.1 Instant Replacement.htm" />
+    <Content Include="HelpFiles\6 Orders for delivery scheduling.htm" />
+    <Content Include="HelpFiles\6 Warranty Renewals.htm" />
+    <Content Include="HelpFiles\6. 1 Orders for delivery &amp; Collection 2.htm" />
+    <Content Include="HelpFiles\7 Order Pick Lists.htm" />
+    <Content Include="HelpFiles\7 Warranty on credit.htm" />
+    <Content Include="HelpFiles\8 Amend Pick Lists.htm" />
+    <Content Include="HelpFiles\8 Warranty reports.htm" />
+    <Content Include="HelpFiles\9 Immediate Delivery.htm" />
+    <Content Include="HelpFiles\Alias.xml" />
+    <Content Include="HelpFiles\Allocation.htm" />
+    <Content Include="HelpFiles\BatchPrint.htm" />
+    <Content Include="HelpFiles\BER.htm" />
+    <Content Include="HelpFiles\Cashier_Deposits_Screen.htm" />
+    <Content Include="HelpFiles\Cashier_Totals_Screen.htm" />
+    <Content Include="HelpFiles\Charge To.htm" />
+    <Content Include="HelpFiles\ClaimsSubmissions.htm" />
+    <Content Include="HelpFiles\CodeMaintenance.htm" />
+    <Content Include="HelpFiles\Concepts.xml" />
+    <Content Include="HelpFiles\CONTENT\Commissions\Commissioncalculations.htm" />
+    <Content Include="HelpFiles\CONTENT\Commissions\CommissionCP.htm" />
+    <Content Include="HelpFiles\CONTENT\Commissions\CommissionEnquiry.htm" />
+    <Content Include="HelpFiles\CONTENT\Commissions\CommissionNSO.htm" />
+    <Content Include="HelpFiles\CONTENT\Commissions\CommissionReports.htm" />
+    <Content Include="HelpFiles\CONTENT\Commissions\CommissionsSetUp.htm" />
+    <Content Include="HelpFiles\CONTENT\Commissions\Spiffsetup.htm" />
+    <Content Include="HelpFiles\CONTENT\Glossary.htm" />
+    <Content Include="HelpFiles\CONTENT\Glossary.xml" />
+    <Content Include="HelpFiles\CONTENT\Resources\Images\print layout.bmp" />
+    <Content Include="HelpFiles\CONTENT\Resources\Stylesheets\CoSACS Help.css" />
+    <Content Include="HelpFiles\CONTENT\Service\Allocation.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\BatchPrint.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\BER.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\Charge To.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\ClaimsSubmissions.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\CustomerInteraction.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\OutstandingSR.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\Resolution.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\Service Payment.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\Service Progress Report.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\Service Request Audit.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\Service Request Screen.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\ServiceFailure Report.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\ServiceSearch.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\SoftScripts.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\SRAccountdetails.htm" />
+    <Content Include="HelpFiles\CONTENT\Service\SR_Product Tab.htm" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\DropDownClosed.gif" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\DropDownOpen.gif" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\ExpandingClosed.gif" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\ExpandingOpen.gif" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCap.css" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapBody.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapBodyEnd.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapDefault.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapEffects.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapEffectsMenu.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapFavorites.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapGlossary.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapHighlighter.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapIndex.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapMerging.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapNavigation.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapParser.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapSearch.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapStemmer.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapToc.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapToolbar.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\MadCapUtilities.js" />
+    <Content Include="HelpFiles\CONTENT\SkinSupport\RelatedTopics.gif" />
+    <Content Include="HelpFiles\CONTENT\Start Page.htm" />
+    <Content Include="HelpFiles\CustomerInteraction.htm" />
+    <Content Include="HelpFiles\Data\Alias.xml" />
+    <Content Include="HelpFiles\Data\Concepts.xml" />
+    <Content Include="HelpFiles\Data\Index.xml" />
+    <Content Include="HelpFiles\Data\Search.xml" />
+    <Content Include="HelpFiles\Data\Search_Chunk1.xml" />
+    <Content Include="HelpFiles\Data\Search_Chunk2.xml" />
+    <Content Include="HelpFiles\Data\Search_Chunk3.xml" />
+    <Content Include="HelpFiles\Data\Search_Chunk4.xml" />
+    <Content Include="HelpFiles\Data\Search_Chunk5.xml" />
+    <Content Include="HelpFiles\Data\SkinDefault\Skin.xml" />
+    <Content Include="HelpFiles\Data\SkinDefault\Stylesheet.xml" />
+    <Content Include="HelpFiles\Data\Toc.xml" />
+    <Content Include="HelpFiles\Default.htm" />
+    <Content Include="HelpFiles\Default.js" />
+    <Content Include="HelpFiles\Default.xml" />
+    <Content Include="HelpFiles\Default_CSH.htm" />
+    <Content Include="HelpFiles\Default_Left.htm" />
+    <Content Include="HelpFiles\DeliveryCM.htm" />
+    <Content Include="HelpFiles\Delivery_Authorisation_Screen.htm" />
+    <Content Include="HelpFiles\Index.xml" />
+    <Content Include="HelpFiles\newsalesorderscreen.htm" />
+    <Content Include="HelpFiles\ordersfordeliverycollectionscreen.htm" />
+    <Content Include="HelpFiles\OutstandingSR.htm" />
+    <Content Include="HelpFiles\payment.htm" />
+    <Content Include="HelpFiles\Resolution.htm" />
+    <Content Include="HelpFiles\Search.xml" />
+    <Content Include="HelpFiles\Search_Chunk1.xml" />
+    <Content Include="HelpFiles\Search_Chunk2.xml" />
+    <Content Include="HelpFiles\Search_Chunk3.xml" />
+    <Content Include="HelpFiles\Search_Chunk4.xml" />
+    <Content Include="HelpFiles\Search_Chunk5.xml" />
+    <Content Include="HelpFiles\Search_Chunk6.xml" />
+    <Content Include="HelpFiles\Search_Chunk7.xml" />
+    <Content Include="HelpFiles\Service Payment.htm" />
+    <Content Include="HelpFiles\Service Progress Report.htm" />
+    <Content Include="HelpFiles\Service Request Audit.htm" />
+    <Content Include="HelpFiles\Service Request Screen.htm" />
+    <Content Include="HelpFiles\ServiceFailure Report.htm" />
+    <Content Include="HelpFiles\ServiceFailureReport.htm" />
+    <Content Include="HelpFiles\ServiceProgressReport.htm" />
+    <Content Include="HelpFiles\ServiceRequestAudit.htm" />
+    <Content Include="HelpFiles\ServiceRequestScreen.htm" />
+    <Content Include="HelpFiles\ServiceSearch.htm" />
+    <Content Include="HelpFiles\Skin.xml" />
+    <Content Include="HelpFiles\Skin\Blank.htm" />
+    <Content Include="HelpFiles\Skin\BrowseSequences.htm" />
+    <Content Include="HelpFiles\Skin\Favorites.htm" />
+    <Content Include="HelpFiles\Skin\Images\AccordionIconsBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\AddSearchToFavorites.gif" />
+    <Content Include="HelpFiles\Skin\Images\AddSearchToFavorites_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\AddSearchToFavorites_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\AddTopicToFavorites.gif" />
+    <Content Include="HelpFiles\Skin\Images\AddTopicToFavorites_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\AddTopicToFavorites_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\ArrowDown.gif" />
+    <Content Include="HelpFiles\Skin\Images\ArrowUp.gif" />
+    <Content Include="HelpFiles\Skin\Images\Back.gif" />
+    <Content Include="HelpFiles\Skin\Images\Back_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Back_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\Book.gif" />
+    <Content Include="HelpFiles\Skin\Images\BookOpen.gif" />
+    <Content Include="HelpFiles\Skin\Images\BrowsesequencesAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\BrowsesequencesAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Skin\Images\BrowsesequencesIcon.gif" />
+    <Content Include="HelpFiles\Skin\Images\Collapse.gif" />
+    <Content Include="HelpFiles\Skin\Images\Collapse_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Collapse_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\Delete.gif" />
+    <Content Include="HelpFiles\Skin\Images\Delete_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Delete_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\Expand.gif" />
+    <Content Include="HelpFiles\Skin\Images\ExpandingClosed.gif" />
+    <Content Include="HelpFiles\Skin\Images\ExpandingOpen.gif" />
+    <Content Include="HelpFiles\Skin\Images\Expand_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Expand_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\FavoritesAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\FavoritesAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Skin\Images\FavoritesBlank.gif" />
+    <Content Include="HelpFiles\Skin\Images\FavoritesIcon.gif" />
+    <Content Include="HelpFiles\Skin\Images\FavoritesSearch.gif" />
+    <Content Include="HelpFiles\Skin\Images\FavoritesTopic.gif" />
+    <Content Include="HelpFiles\Skin\Images\Forward.gif" />
+    <Content Include="HelpFiles\Skin\Images\Forward_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Forward_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\GlossaryAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\GlossaryAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Skin\Images\GlossaryIcon.gif" />
+    <Content Include="HelpFiles\Skin\Images\HelpControl.gif" />
+    <Content Include="HelpFiles\Skin\Images\HideNavigation.gif" />
+    <Content Include="HelpFiles\Skin\Images\HideNavigation_checked.gif" />
+    <Content Include="HelpFiles\Skin\Images\HideNavigation_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\HideNavigation_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\Highlight.gif" />
+    <Content Include="HelpFiles\Skin\Images\Highlight_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Highlight_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\Home.gif" />
+    <Content Include="HelpFiles\Skin\Images\Home_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Home_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\IndexAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\IndexAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Skin\Images\IndexIcon.gif" />
+    <Content Include="HelpFiles\Skin\Images\Loading.gif" />
+    <Content Include="HelpFiles\Skin\Images\Logo.gif" />
+    <Content Include="HelpFiles\Skin\Images\LogoIcon.gif" />
+    <Content Include="HelpFiles\Skin\Images\NavigationBottomGradient.jpg" />
+    <Content Include="HelpFiles\Skin\Images\NavigationBottomGradient_selected.jpg" />
+    <Content Include="HelpFiles\Skin\Images\NavigationTopGradient.jpg" />
+    <Content Include="HelpFiles\Skin\Images\NewItemIndicator.bmp" />
+    <Content Include="HelpFiles\Skin\Images\Print.gif" />
+    <Content Include="HelpFiles\Skin\Images\Print_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Print_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\QuickSearch.gif" />
+    <Content Include="HelpFiles\Skin\Images\QuickSearch_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\QuickSearch_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\Refresh.gif" />
+    <Content Include="HelpFiles\Skin\Images\Refresh_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Refresh_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\SearchAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\SearchAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Skin\Images\SearchGradient.jpg" />
+    <Content Include="HelpFiles\Skin\Images\SearchGradient_over.jpg" />
+    <Content Include="HelpFiles\Skin\Images\SearchGradient_selected.jpg" />
+    <Content Include="HelpFiles\Skin\Images\SearchIcon.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectBrowsesequences.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectBrowsesequences_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectBrowsesequences_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectFavorites.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectFavorites_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectFavorites_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectGlossary.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectGlossary_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectGlossary_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectIndex.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectIndex_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectIndex_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectSearch.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectSearch_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectSearch_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectToc.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectToc_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\SelectToc_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\Separator.gif" />
+    <Content Include="HelpFiles\Skin\Images\Stop.gif" />
+    <Content Include="HelpFiles\Skin\Images\Stop_over.gif" />
+    <Content Include="HelpFiles\Skin\Images\Stop_selected.gif" />
+    <Content Include="HelpFiles\Skin\Images\TocAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\TocAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Skin\Images\TocIcon.gif" />
+    <Content Include="HelpFiles\Skin\Images\ToolbarBackground.jpg" />
+    <Content Include="HelpFiles\Skin\Images\Topic.gif" />
+    <Content Include="HelpFiles\Skin\Index.htm" />
+    <Content Include="HelpFiles\Skin\Navigation.htm" />
+    <Content Include="HelpFiles\Skin\Search.htm" />
+    <Content Include="HelpFiles\Skin\Toc.htm" />
+    <Content Include="HelpFiles\Skin\Toolbar.htm" />
+    <Content Include="HelpFiles\SoftScripts.htm" />
+    <Content Include="HelpFiles\SRAccountdetails.htm" />
+    <Content Include="HelpFiles\SR_Product Tab.htm" />
+    <Content Include="HelpFiles\StatusCode.htm" />
+    <Content Include="HelpFiles\Stylesheet.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Country Parameters\DeliveryCM.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Country Parameters\WarrantyCM.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\1 The Delivery Process.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\10 Delivery Scheduling.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\11 Transport Pick Lists.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\12 Changes to a schedule.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\13 Notifying Deliveries.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\14 Collections Process.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\14.1Goods Return.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\15 Redelivery after Repossession.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\16 Reprint Delivery Note.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\17 Cancelling Accounts.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\18 Cancel Collection Note.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\2 Transport Maintenance.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\3 New Sales Order.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\4 Delivery Area Maintenance.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\5 Delivery Authorisation.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\6 Orders for delivery scheduling.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\6. 1 Orders for delivery &amp; Collection 2.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\7 Order Pick Lists.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\8 Amend Pick Lists.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Deliveries\9 Immediate Delivery.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Glossary.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Glossary.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\02000001.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\03000001.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\03000002.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\03000003.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\03000004.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\03000005.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\030000051.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\030000052.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Images\030000053.png" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Resources\Stylesheets\CoSACS Help.css" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\DropDownClosed.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\DropDownOpen.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCap.css" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapBody.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapBodyEnd.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapDefault.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapEffects.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapEffectsMenu.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapFavorites.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapGlossary.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapHighlighter.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapIndex.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapMerging.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapNavigation.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapParser.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapSearch.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapStemmer.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapToc.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapToolbar.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\SkinSupport\MadCapUtilities.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\1 Warranty Repossessions.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\2 Identical Replacement.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\3 Exchanges.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\4 Cancellations.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\5 Instant Replacement.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\5.1 Instant Replacement.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\6 Warranty Renewals.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\7 Warranty on credit.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Content\Warranties\8 Warranty reports.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Alias.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Concepts.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Index.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search_Chunk1.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search_Chunk2.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search_Chunk3.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search_Chunk4.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search_Chunk5.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search_Chunk6.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Search_Chunk7.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\SkinDefault\Skin.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\SkinDefault\Stylesheet.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Data\Toc.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Default.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Default.js" />
+    <Content Include="HelpFiles\Subsystems\Default\Default.xml" />
+    <Content Include="HelpFiles\Subsystems\Default\Default_CSH.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Default_Left.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Blank.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\BrowseSequences.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Favorites.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\AccordionIconsBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\AddSearchToFavorites.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\AddSearchToFavorites_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\AddSearchToFavorites_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\AddTopicToFavorites.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\AddTopicToFavorites_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\AddTopicToFavorites_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\ArrowDown.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\ArrowUp.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Back.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Back_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Back_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Book.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\BookOpen.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\BrowsesequencesAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\BrowsesequencesAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\BrowsesequencesIcon.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Collapse.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Collapse_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Collapse_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Delete.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Delete_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Delete_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Expand.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\ExpandingClosed.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\ExpandingOpen.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Expand_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Expand_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\FavoritesAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\FavoritesAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\FavoritesBlank.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\FavoritesIcon.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\FavoritesSearch.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\FavoritesTopic.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Forward.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Forward_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Forward_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\GlossaryAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\GlossaryAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\GlossaryIcon.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\HelpControl.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\HideNavigation.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\HideNavigation_checked.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\HideNavigation_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\HideNavigation_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Highlight.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Highlight_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Highlight_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Home.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Home_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Home_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\IndexAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\IndexAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\IndexIcon.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Loading.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Logo.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\LogoIcon.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\NavigationBottomGradient.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\NavigationBottomGradient_selected.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\NavigationTopGradient.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\NewItemIndicator.bmp" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Print.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Print_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Print_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\QuickSearch.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\QuickSearch_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\QuickSearch_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Refresh.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Refresh_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Refresh_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SearchAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SearchAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SearchGradient.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SearchGradient_over.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SearchGradient_selected.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SearchIcon.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectBrowsesequences.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectBrowsesequences_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectBrowsesequences_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectFavorites.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectFavorites_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectFavorites_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectGlossary.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectGlossary_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectGlossary_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectIndex.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectIndex_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectIndex_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectSearch.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectSearch_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectSearch_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectToc.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectToc_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\SelectToc_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Separator.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Stop.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Stop_over.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Stop_selected.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\TocAccordionBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\TocAccordionBackground_over.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\TocIcon.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\ToolbarBackground.jpg" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Images\Topic.gif" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Index.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Navigation.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Search.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Toc.htm" />
+    <Content Include="HelpFiles\Subsystems\Default\Skin\Toolbar.htm" />
+    <Content Include="HelpFiles\Toc.xml" />
+    <Content Include="HelpFiles\TransferTransaction.htm" />
+    <Content Include="HelpFiles\UpdateDateDue.htm" />
+    <Content Include="HelpFiles\WarrantyCM.htm" />
+    <Content Include="Icons\Cash_icon.gif" />
+    <Content Include="Icons\HP_icon.GIF" />
+    <Content Include="Icons\ReadyFinance_icon.gif" />
+    <Content Include="Icons\StoreCard_icon.gif" />
+    <Content Include="LuckyDollar.jpg" />
+    <Content Include="OneForOneReplacementNote.xslt" />
+    <Content Include="OPOS\disk1\data1.cab" />
+    <Content Include="OPOS\disk1\RELNOTE.TXT" />
+    <Content Include="OPOS\disk1\setup.bmp" />
+    <Content Include="OPOS\disk1\Setup.exe" />
+    <Content Include="OPOS\disk1\_ISDel.exe" />
+    <Content Include="OPOS\disk1\_Setup.dll" />
+    <Content Include="OPOS\disk1\_sys1.cab" />
+    <Content Include="OPOS\disk1\_user1.cab" />
+    <Content Include="OPOS\disk2\data2.cab" />
+    <Content Include="OPOS\disk3\data3.cab" />
+    <Content Include="OPOS\disk4\data4.cab" />
+    <Content Include="OPOS\disk5\data5.cab" />
+    <Content Include="OPOS\disk6\data6.cab" />
+    <Content Include="purpleLogo.jpg" />
+    <Content Include="RFSummary.xslt" />
+    <Content Include="RFTerms.xslt" />
+    <Content Include="ServiceContract.jpg" />
+    <Content Include="smallLDLogo.jpg" />
+    <Content Include="smallLogo.jpg" />
+    <Content Include="SSLogo.jpg" />
+    <Content Include="StampDuty.jpg" />
+    <None Include="Static\css\base\960-fluid.less" />
+    <None Include="Static\css\base\buttons.less" />
+    <None Include="Static\css\base\icons.less" />
+    <None Include="Static\css\base\____notifications.less" />
+    <None Include="Static\css\base\functions.less" />
+    <None Include="Static\css\base\fonts-min.less" />
+    <None Include="Static\css\base\layout.less" />
+    <None Include="Static\css\base\nav.less" />
+    <None Include="Static\css\base\reset.less" />
+    <None Include="Static\css\base\____search.less" />
+    <None Include="Static\css\base\text.less" />
+    <Content Include="Static\css\%28unused%29\bootstrap.css" />
+    <Content Include="Static\css\chosen-sprite.png" />
+    <None Include="Static\css\chosen.less" />
+    <Content Include="Static\css\default.css">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>default.less</DependentUpon>
+    </Content>
+    <Content Include="Static\css\images\ui-icons_217bc0_256x240.png" />
+    <None Include="Static\css\printing.less">
+      <Generator>DotLessCustomTool</Generator>
+      <LastGenOutput>printing.css</LastGenOutput>
+    </None>
+    <Content Include="Static\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Static\css\printing.css">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>printing.less</DependentUpon>
+    </Content>
+    <Content Include="Static\css\SCPrintStyleSheet.css" />
+    <Content Include="Static\images\ajax_squares.gif" />
+    <Content Include="Static\images\Cosacs.png" />
+    <Content Include="Static\images\custom_b.png" />
+    <Content Include="Static\images\custom_bl.png" />
+    <Content Include="Static\images\custom_br.png" />
+    <Content Include="Static\images\custom_l.png" />
+    <Content Include="Static\images\custom_r.png" />
+    <Content Include="Static\images\custom_t.png" />
+    <Content Include="Static\images\custom_tl.png" />
+    <Content Include="Static\images\custom_tr.png" />
+    <Content Include="Static\images\datepicker_b.png" />
+    <Content Include="Static\images\datepicker_bl.png" />
+    <Content Include="Static\images\datepicker_br.png" />
+    <Content Include="Static\images\datepicker_l.png" />
+    <Content Include="Static\images\datepicker_r.png" />
+    <Content Include="Static\images\datepicker_t.png" />
+    <Content Include="Static\images\datepicker_tl.png" />
+    <Content Include="Static\images\datepicker_tr.png" />
+    <Content Include="Static\images\logo.png" />
+    <Content Include="Static\js\%28unused%29\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Static\js\%28unused%29\jquery-1.4.4.js" />
+    <Content Include="Static\js\%28unused%29\jquery-1.4.4.min.js" />
+    <Content Include="Static\js\%28unused%29\jquery-1.6.1.min.js" />
+    <Content Include="Static\js\%28unused%29\jquery-ui-1.8.13.custom.min.js" />
+    <Content Include="Static\js\%28unused%29\jquery-ui.js" />
+    <Content Include="Static\js\%28unused%29\jquery-ui.min.js" />
+    <Content Include="Static\js\%28unused%29\jquery.tablesorter.min.js" />
+    <Content Include="Static\js\backbone.js" />
+    <Content Include="Static\js\BarCodeScanner.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BarCodeScanner.coffee</DependentUpon>
+    </Content>
+    <Content Include="Static\js\chosen.jquery.js" />
+    <Content Include="Static\js\jquery.tmpl.js" />
+    <Content Include="Static\js\%28unused%29\jquery.unobtrusive-ajax.js" />
+    <Content Include="Static\js\%28unused%29\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Static\js\jquery.validate-vsdoc.js" />
+    <Content Include="Static\js\jquery.validate.js" />
+    <Content Include="Static\js\%28unused%29\jquery.validate.min.js" />
+    <Content Include="Static\js\jquery.validate.unobtrusive.js" />
+    <Content Include="Static\js\%28unused%29\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Static\js\%28unused%29\MicrosoftAjax.debug.js" />
+    <Content Include="Static\js\%28unused%29\MicrosoftAjax.js" />
+    <Content Include="Static\js\%28unused%29\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Static\js\%28unused%29\MicrosoftMvcAjax.js" />
+    <Content Include="Static\js\%28unused%29\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Static\js\%28unused%29\MicrosoftMvcValidation.js" />
+    <Content Include="Static\js\json2.js" />
+    <Content Include="Static\js\main.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>main.coffee</DependentUpon>
+    </Content>
+    <Content Include="Static\js\OpenAjaxManagedHub-core.js" />
+    <Content Include="Static\js\require-jquery.js" />
+    <Content Include="Static\js\ScanRedirect.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScanRedirect.coffee</DependentUpon>
+    </Content>
+    <Content Include="Static\js\StateMachine.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StateMachine.coffee</DependentUpon>
+    </Content>
+    <Content Include="Static\js\test.data.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.data.coffee</DependentUpon>
+    </Content>
+    <Content Include="Static\js\tsorter.js" />
+    <Content Include="Static\js\underscore.js" />
+    <Content Include="StKittsAgreement.xslt" />
+    <Content Include="styles.css" />
+    <Content Include="Stylesheets\AccountNos.xslt" />
+    <Content Include="Stylesheets\ActionSheet.xslt" />
+    <Content Include="Stylesheets\Agreement.xslt" />
+    <Content Include="Stylesheets\Agreement_Ashley.xslt" />
+    <Content Include="Stylesheets\Ashley.png" />
+    <Content Include="Stylesheets\A\Agreement.xslt" />
+    <Content Include="Stylesheets\A\Agreement_LD.xslt" />
+    <Content Include="Stylesheets\A\CashLoan.xslt" />
+    <Content Include="Stylesheets\A\smallLDLogo_RFTerms.png" />
+    <Content Include="Stylesheets\A\LuckyDollarLogo.png" />
+    <Content Include="Stylesheets\A\RFSummary_LD.xslt" />
+    <Content Include="Stylesheets\A\RFTerms_LD.xslt" />
+    <Content Include="Stylesheets\A\smallLDLogo_RFSummary.png" />
+    <Content Include="Stylesheets\BatchPrinting.xslt" />
+    <Content Include="Stylesheets\B\Agreement.xslt" />
+    <Content Include="Stylesheets\B\agreement5110.xslt" />
+    <Content Include="Stylesheets\B\Agreement_old.xslt" />
+    <Content Include="Stylesheets\B\CashLoan.xslt" />
+    <Content Include="Stylesheets\B\DeliveryNote.xslt" />
+    <Content Include="Stylesheets\B\purpleLogo.jpg" />
+    <Content Include="Stylesheets\CashierChequeTotals.xslt" />
+    <Content Include="Stylesheets\CashierTotalsByBranch.xslt" />
+    <Content Include="Stylesheets\CashierTotalsByEmployee.xslt" />
+    <Content Include="Stylesheets\CashierTotalsSummary.xslt" />
+    <Content Include="Stylesheets\CashLoan.xslt" />
+    <Content Include="Stylesheets\CommissionPayment.xslt" />
+    <Content Include="Stylesheets\CommissionPaymentReprint.xslt" />
+    <Content Include="Stylesheets\CommissionTransactions.xslt" />
+    <Content Include="Stylesheets\ContractNos.xslt" />
+    <Content Include="Stylesheets\J\smallLDLogo_RFTerms.png" />
+    <Content Include="Stylesheets\J\smallLDLogo_RFSummary.png" />
+    <Content Include="Stylesheets\RFSummary_Ashley.xslt" />
+    <Content Include="Stylesheets\RFTerms_Ashley.xslt" />
+    <Content Include="Stylesheets\TaxInvoice_XQ.xslt" />
+    <Content Include="Stylesheets\T\smallLDLogo_RFTerms.png" />
+    <Content Include="Stylesheets\T\RFTerms_LD.xslt" />
+    <Content Include="Stylesheets\CreditScan.xslt" />
+    <Content Include="Stylesheets\CreditScan2.xslt" />
+    <Content Include="Stylesheets\C\Agreement.xslt" />
+    <Content Include="Stylesheets\C\ScheduleOfPayments.xslt" />
+    <Content Include="Stylesheets\C\TaxInvoice.xslt" />
+    <Content Include="Stylesheets\DeliveryNote.xslt" />
+    <Content Include="Stylesheets\DeliverySchedule.xslt" />
+    <Content Include="Stylesheets\D\CashLoan.xslt" />
+    <Content Include="Stylesheets\FaultyProductNote.xslt" />
+    <Content Include="Stylesheets\FoodLoss.xslt" />
+    <Content Include="Stylesheets\G\Agreement.xslt" />
+    <Content Include="Stylesheets\G\CashLoan.xslt" />
+    <Content Include="Stylesheets\G\StoreCardAgrStyle.css" />
+    <Content Include="Stylesheets\G\WarrantyContractPrinted.xslt" />
+    <Content Include="Stylesheets\InstallationBooking.xslt" />
+    <Content Include="Stylesheets\JournalEnquiry.xslt" />
+    <Content Include="Stylesheets\J\agreement.xml" />
+    <Content Include="Stylesheets\J\Agreement.xslt" />
+    <Content Include="Stylesheets\J\Agreement_LD.xslt" />
+    <Content Include="Stylesheets\J\CashLoan.xslt" />
+    <Content Include="Stylesheets\J\Copy of AgreementBarb.xslt" />
+    <Content Include="Stylesheets\J\RFTerms_LD.xslt" />
+    <Content Include="Stylesheets\J\DeliveryNote.xslt" />
+    <Content Include="Stylesheets\J\LuckyDollarBig.jpg" />
+    <Content Include="Stylesheets\J\LuckyDollarLogo.png" />
+    <Content Include="Stylesheets\J\RFSummary_LD.xslt" />
+    <Content Include="Stylesheets\J\RFTerms.xslt" />
+    <Content Include="Stylesheets\J\smallLDLogo.jpg" />
+    <Content Include="Stylesheets\J\StampDuty.jpg" />
+    <Content Include="Stylesheets\J\styles.css" />
+    <Content Include="Stylesheets\J\WarrantyContract.xslt" />
+    <Content Include="Stylesheets\J\WarrantyContractPrinted_LD.xslt" />
+    <Content Include="Stylesheets\K\Agreement.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Stylesheets\K\CashLoan.xslt" />
+    <Content Include="Stylesheets\K\smallLogo.jpg" />
+    <Content Include="Stylesheets\logo.png" />
+    <Content Include="Stylesheets\L\Agreement.xslt" />
+    <Content Include="Stylesheets\L\Agreement_withFormat.xslt" />
+    <Content Include="Stylesheets\L\CashLoan.xslt" />
+    <Content Include="Stylesheets\L\smallLogo.jpg" />
+    <Content Include="Stylesheets\M\BatchPrinting.xslt" />
+    <Content Include="Stylesheets\M\DeliveryNote.xslt" />
+    <Content Include="Stylesheets\M\FoodLoss.xslt" />
+    <Content Include="Stylesheets\M\ScheduleOfPayments.xslt" />
+    <Content Include="Stylesheets\M\TaxInvoice.xslt" />
+    <Content Include="Stylesheets\M\WarrantyContract.xslt" />
+    <Content Include="Stylesheets\M\WarrantyContractPrinted.xslt" />
+    <Content Include="Stylesheets\N\Agreement.xslt" />
+    <Content Include="Stylesheets\N\CashLoan.xslt" />
+    <Content Include="Stylesheets\OneForOneReplacementNote.xslt" />
+    <Content Include="Stylesheets\PickList.xslt" />
+    <Content Include="Stylesheets\PrizeVoucher.xsl" />
+    <Content Include="Stylesheets\ProofofPurchase.xslt" />
+    <Content Include="Stylesheets\P\Agreement.xslt" />
+    <Content Include="Stylesheets\P\TaxInvoice.xslt" />
+    <Content Include="Stylesheets\RebateReport.xslt" />
+    <Content Include="Stylesheets\RebateReport2.xslt" />
+    <Content Include="Stylesheets\RFSummary.xslt" />
+    <Content Include="Stylesheets\RFTerms.xslt" />
+    <Content Include="Stylesheets\ScheduleOfArrangementPayments.xslt" />
+    <Content Include="Stylesheets\ScheduleOfPayments.xslt" />
+    <Content Include="Stylesheets\StatementOfAccount.xslt" />
+    <Content Include="Stylesheets\StoreCardStatement.xslt" />
+    <Content Include="Stylesheets\StoreCardStatement2.xslt" />
+    <Content Include="Stylesheets\styles.css" />
+    <Content Include="Stylesheets\TaxInvoice.xslt" />
+    <Content Include="Stylesheets\TransportPickList.xslt" />
+    <Content Include="Stylesheets\T\Agreement.xslt" />
+    <Content Include="Stylesheets\T\Agreement_LD.xslt" />
+    <Content Include="Stylesheets\T\CashLoan.xslt" />
+    <Content Include="Stylesheets\T\LuckyDollarBig.jpg" />
+    <Content Include="Stylesheets\T\LuckyDollarLogo.png" />
+    <Content Include="Stylesheets\T\RFSummary_LD.xslt" />
+    <Content Include="Stylesheets\T\smallLDLogo_RFSummary.png" />
+    <Content Include="Stylesheets\T\StampDuty.jpg" />
+    <Content Include="Stylesheets\T\WarrantyContractPrinted_LD.xslt" />
+    <Content Include="Stylesheets\V\Agreement.xslt" />
+    <Content Include="Stylesheets\WarrantyContract.xslt" />
+    <Content Include="Stylesheets\WarrantyContractPrinted.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Stylesheets\Agreement_Radioshack.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Stylesheets\WarrantyContract_Ashley.xslt" />
+    <Content Include="Stylesheets\Y\Agreement.xslt" />
+    <Content Include="Stylesheets\Y\DeliveryNote.xslt" />
+    <Content Include="Stylesheets\Y\RFSummary.xslt" />
+    <Content Include="Stylesheets\Y\RFTerms.xslt" />
+    <Content Include="Stylesheets\Y\TaxInvoice.xslt" />
+    <Content Include="Stylesheets\Y\WarrantyContractPrinted.xslt" />
+    <Content Include="Stylesheets\Z\Agreement.xslt" />
+    <Content Include="Stylesheets\Z\Agreement_LD.xslt" />
+    <Content Include="Stylesheets\Z\Agreement_old.xslt" />
+    <Content Include="Stylesheets\Z\CashLoan.xslt" />
+    <Content Include="Stylesheets\Z\smallLogo_TG_RFTerms.png" />
+    <Content Include="Stylesheets\Z\RFTerms_LD.xslt" />
+    <Content Include="Stylesheets\Z\RFSummary.xslt" />
+    <Content Include="Stylesheets\Z\RFSummary_LD.xslt" />
+    <Content Include="Stylesheets\Z\RFTerms.xslt" />
+    <Content Include="Stylesheets\Z\smallLogo.jpg" />
+    <Content Include="Stylesheets\Z\smallLogo_TG_RFSummary.png" />
+    <Content Include="Stylesheets\Z\TaxInvoice.xslt" />
+    <Content Include="Stylesheets\Z\TropigasBig.jpg" />
+    <Content Include="Stylesheets\Z\TropigasLogo.png" />
+    <Content Include="Stylesheets\Z\WarrantyContractPrinted.xslt" />
+    <Content Include="Stylesheets\Z\WarrantyContractPrinted_LD.xslt" />
+    <Content Include="Stylesheets\Z\WarrantyContractPrinted_LD_richardsversion.xslt" />
+    <Content Include="Stylesheets\Z\WarrantyContractPrinted_tropigas.xslt" />
+    <Content Include="Supashield logo BW final.jpg" />
+    <Content Include="supaShield.jpg" />
+    <Content Include="TaxInvoice.xslt" />
+    <Content Include="test.htm" />
+    <Content Include="ThaiAgreement.xslt" />
+    <Content Include="ThaiTaxInvoice.xslt" />
+    <Content Include="Time.aspx" />
+    <Content Include="Tropigas.JPG" />
+    <Content Include="UpdateVersion.xml" />
+    <Content Include="WAccountManager.asmx" />
+    <Content Include="WAccountNos.aspx" />
+    <Content Include="WActionSheet.aspx" />
+    <Content Include="WAgreement.aspx" />
+    <Content Include="WarrantyContract.xslt" />
+    <Content Include="WCashierTotals.aspx" />
+    <Content Include="WCashierTotalsSummary.aspx" />
+    <Content Include="WCashLoan.aspx" />
+    <Content Include="WClientLogging.asmx" />
+    <Content Include="WCollectionNote.aspx" />
+    <Content Include="WCollectionsManager.asmx" />
+    <Content Include="WCommissionPayment.aspx" />
+    <Content Include="WCommissionTransactions.aspx" />
+    <Content Include="WContractNos.aspx" />
+    <Content Include="WCreditManager.asmx" />
+    <Content Include="WCustomerManager.asmx" />
+    <Content Include="WDeliveryNote.aspx" />
+    <Content Include="WDeliveryNote2.aspx" />
+    <Content Include="WDeliverySchedule.aspx" />
+    <Content Include="WEODManager.asmx" />
+    <Content Include="WFaultyProductNote.aspx" />
+    <Content Include="WFoodLoss.aspx" />
+    <Content Include="WInstallation.asmx" />
+    <Content Include="WInstallationBookingPrint.aspx" />
+    <Content Include="WJournalEnquiry.aspx" />
+    <Content Include="WLogin.asmx" />
+    <Content Include="WOneForOneReplacementNote.aspx" />
+    <Content Include="WPaidAndTakenTaxInvoice.aspx" />
+    <Content Include="WPaymentManager.asmx" />
+    <Content Include="WPickList.aspx" />
+    <Content Include="WPrinting.asmx" />
+    <Content Include="WPrizeVoucher.aspx" />
+    <Content Include="WRebateForecast.aspx" />
+    <Content Include="WRebateForecast2.aspx" />
+    <Content Include="WRFSummary.aspx" />
+    <Content Include="WRFTerms.aspx" />
+    <Content Include="WScheduleOfArrangementPayments.aspx" />
+    <Content Include="WScheduleOfPayments.aspx" />
+    <Content Include="WServiceManager.asmx" />
+    <Content Include="WSetData.asmx" />
+    <Content Include="WStatementOfAccount.aspx" />
+    <Content Include="WStaticDataManager.asmx" />
+    <Content Include="WStock.asmx" />
+    <Content Include="WStoreCard.asmx" />
+    <Content Include="WSystemConfig.asmx" />
+    <Content Include="WTaxInvoice.aspx" />
+    <Content Include="WWarrantyContract.aspx" />
+    <Content Include="Views\StoreCard\BatchStatement.cshtml" />
+    <Content Include="Views\Contracts\PrintContracts.cshtml" />
+    <Content Include="Views\Contracts\ReadyAssistTrinidad.cshtml" />
+    <Content Include="Views\CashLoan\PrintElectronicBankTransferSheet.cshtml" />
+    <Content Include="Views\PrintElectronicBankTransferSheet.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Photos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Print.cshtml" />
+    <Content Include="Views\StoreCard\StoreCardAgreement.cshtml" />
+    <Content Include="Views\StoreCard\Calculator.cshtml" />
+    <Content Include="Views\StoreCard\NewCardAgreement.cshtml" />
+    <Content Include="Views\StoreCard\Statement.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Web.config" />
+    <Content Include="HelpFiles\catapult.log.zip" />
+    <None Include="Courts.NET.WS.vsdisco" />
+    <None Include="HelpFiles\Default.mcwebhelp" />
+    <None Include="HelpFiles\Manual.mchelp" />
+    <None Include="HelpFiles\Subsystems\Default\Default.mcwebhelp" />
+    <Content Include="HelpFiles\Web.config" />
+    <None Include="OPOS\disk1\DATA.TAG" />
+    <None Include="OPOS\disk1\data1.hdr" />
+    <None Include="OPOS\disk1\install.ini" />
+    <None Include="OPOS\disk1\Installer.pdf" />
+    <None Include="OPOS\disk1\lang.dat" />
+    <None Include="OPOS\disk1\layout.bin" />
+    <None Include="OPOS\disk1\OposData.reg" />
+    <None Include="OPOS\disk1\OPOSREG.reg" />
+    <None Include="OPOS\disk1\os.dat" />
+    <None Include="OPOS\disk1\SETUP.INI" />
+    <None Include="OPOS\disk1\setup.ins" />
+    <None Include="OPOS\disk1\setup.lid" />
+    <None Include="OPOS\disk1\_inst32i.ex_" />
+    <None Include="OPOS\disk1\_sys1.hdr" />
+    <None Include="OPOS\disk1\_user1.hdr" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Schemas\default.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\default.xsx">
+      <DependentUpon>default.xsd</DependentUpon>
+    </None>
+    <None Include="Schemas\defaultresp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\defaultresp.xsx">
+      <DependentUpon>defaultresp.xsd</DependentUpon>
+    </None>
+    <None Include="Schemas\enquiry.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\enquiry.xsx">
+      <DependentUpon>enquiry.xsd</DependentUpon>
+    </None>
+    <None Include="Schemas\enquiryresp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\enquiryresp.xsx">
+      <DependentUpon>enquiryresp.xsd</DependentUpon>
+    </None>
+    <None Include="Schemas\historical.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\historical.xsx">
+      <DependentUpon>historical.xsd</DependentUpon>
+    </None>
+    <None Include="Schemas\historicalresp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\historicalresp.xsx">
+      <DependentUpon>historicalresp.xsd</DependentUpon>
+    </None>
+    <None Include="Schemas\monitor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\monitor.xsx">
+      <DependentUpon>monitor.xsd</DependentUpon>
+    </None>
+    <None Include="Schemas\monitorresp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\monitorresp.xsx">
+      <DependentUpon>monitorresp.xsd</DependentUpon>
+    </None>
+    <None Include="Static\css\default.less">
+      <Generator>DotLessCustomTool</Generator>
+      <LastGenOutput>default.css</LastGenOutput>
+    </None>
+    <Content Include="Static\Web.config" />
+    <None Include="Static\js\BarCodeScanner.coffee">
+      <Generator>CoffeeScriptGenerator</Generator>
+      <LastGenOutput>BarCodeScanner.js</LastGenOutput>
+    </None>
+    <None Include="Static\js\main.coffee">
+      <Generator>CoffeeScriptGenerator</Generator>
+      <LastGenOutput>main.js</LastGenOutput>
+    </None>
+    <None Include="Static\js\ScanRedirect.coffee">
+      <Generator>CoffeeScriptGenerator</Generator>
+      <LastGenOutput>ScanRedirect.js</LastGenOutput>
+    </None>
+    <None Include="Static\js\StateMachine.coffee">
+      <Generator>CoffeeScriptGenerator</Generator>
+      <LastGenOutput>StateMachine.js</LastGenOutput>
+    </None>
+    <None Include="Static\js\test.data.coffee">
+      <Generator>CoffeeScriptGenerator</Generator>
+      <LastGenOutput>test.data.js</LastGenOutput>
+    </None>
+    <None Include="Stylesheets\Agreement2.xslt.exclude" />
+    <None Include="Stylesheets\Agreement3.xslt.exclude" />
+    <None Include="Stylesheets\F\Agreement.xslt.exclude" />
+    <None Include="Stylesheets\F\DeliveryNote.xslt.exclude" />
+    <None Include="Stylesheets\F\TaxInvoice.xslt.exclude" />
+    <None Include="Stylesheets\H\Agreement.xslt.exclude" />
+    <None Include="Stylesheets\H\RFSummary.xslt.exclude" />
+    <None Include="Stylesheets\H\RFTerms.xslt.exclude" />
+    <None Include="Stylesheets\H\TaxInvoice.xslt.exclude" />
+    <None Include="Stylesheets\H\WarrantyContract.xslt.exclude" />
+    <None Include="Stylesheets\I\ActionSheet.xslt.exclude" />
+    <None Include="Stylesheets\I\RFTerms.xslt.exclude" />
+    <None Include="Stylesheets\S\Agreement.xslt.exclude" />
+    <None Include="Stylesheets\S\RFSummary.xslt.exclude" />
+    <None Include="Stylesheets\S\RFTerms.xslt.exclude" />
+    <None Include="Stylesheets\S\smallLogo.jpg.exclude" />
+    <None Include="Stylesheets\S\TaxInvoice.xslt.exclude" />
+    <None Include="Stylesheets\S\WarrantyContractPrinted.xslt.exclude" />
+    <Content Include="Stylesheets\Web.config" />
+    <None Include="Stylesheets\Z\WarrantyContractPrinted.xslt courts" />
+    <None Include="Stylesheets\Z\WarrantyContractPrinted.xslt tropigas" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Head.cshtml" />
+    <Content Include="Views\Cashier\DailyReconciliation.cshtml" />
+    <Content Include="WUpdater.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blue.Cosacs.Domain\Blue.Cosacs.Shared.csproj">
+      <Project>{9DE3832F-D9B2-4FED-8F2F-FE4109DBA642}</Project>
+      <Name>Blue.Cosacs.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blue.Cosacs.Financial\Blue.Cosacs.Financial.csproj">
+      <Project>{5C79C0A7-FB94-4787-9C0A-D38F236E0644}</Project>
+      <Name>Blue.Cosacs.Financial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blue.Cosacs.Messages\Blue.Cosacs.Messages.csproj">
+      <Project>{B56E7B9B-D3D5-4388-904B-1C5FA2923CEE}</Project>
+      <Name>Blue.Cosacs.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blue.Cosacs\Blue.Cosacs.csproj">
+      <Project>{1ac4029d-c85e-40c6-adaf-519ee389cd61}</Project>
+      <Name>Blue.Cosacs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Courts.NET.Batch\Courts.NET.Batch.csproj">
+      <Project>{CE36C123-ED3B-4DB9-A8D4-87D6B4C596CC}</Project>
+      <Name>Courts.NET.Batch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Courts.NET.Common\Courts.NET.Common.csproj">
+      <Project>{7D986B94-4B29-46BA-A814-55111484BAC7}</Project>
+      <Name>Courts.NET.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Courts.NET.DAL\Courts.NET.DAL.csproj">
+      <Project>{8D8B1620-94F6-453C-8F7C-C9011142FB83}</Project>
+      <Name>Courts.NET.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="..\StyleCop.targets" />
+  <!--Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" /-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18773</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Courts.NET.WS</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

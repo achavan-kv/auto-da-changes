@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSample", "SimpleSample.csproj", "{53F0BD97-A1FA-431B-98EA-39C4E0038416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppUpdater", "..\..\..\AppUpdater\AppUpdater.csproj", "{0B88ED59-656E-4982-B402-A3448A81D84B}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{53F0BD97-A1FA-431B-98EA-39C4E0038416}.Debug.ActiveCfg = Debug|.NET
+		{53F0BD97-A1FA-431B-98EA-39C4E0038416}.Debug.Build.0 = Debug|.NET
+		{53F0BD97-A1FA-431B-98EA-39C4E0038416}.Release.ActiveCfg = Release|.NET
+		{53F0BD97-A1FA-431B-98EA-39C4E0038416}.Release.Build.0 = Release|.NET
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Debug.ActiveCfg = Debug|.NET
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Debug.Build.0 = Debug|.NET
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Release.ActiveCfg = Release|.NET
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

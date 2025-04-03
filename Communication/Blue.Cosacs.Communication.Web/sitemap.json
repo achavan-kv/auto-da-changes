@@ -1,0 +1,17 @@
+﻿[	
+    {
+        "label": "Configuration",
+        "nodes": [
+			{
+                "label": "Email Templates",
+                "url": "#/Communication/EmailTemplate",
+                "permission": 2802
+            },
+            {
+                "label": "Export Sms",
+                "url": "#/Communication/ExportSms",
+                "permission": 2805
+            }
+        ]
+    }
+]

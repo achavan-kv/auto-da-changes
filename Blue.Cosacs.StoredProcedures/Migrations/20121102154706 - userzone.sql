@@ -1,0 +1,12 @@
+CREATE TABLE Service.ZoneUser
+(
+	Id INT IDENTITY(1,1), 
+	UserId INT NOT NULL,
+	Zone varchar(20) NOT NULL
+)
+GO
+
+
+ALTER TABLE Service.ZoneUser
+ADD CONSTRAINT PK_ZoneUser PRIMARY KEY (Id)
+GO

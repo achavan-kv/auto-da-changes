@@ -1,0 +1,1 @@
+sp_rename 'Warranty.WarrantyPotentialSale.isItemReturned', 'IsItemReturned', 'column';

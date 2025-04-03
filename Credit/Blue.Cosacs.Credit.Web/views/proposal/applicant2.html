@@ -1,0 +1,67 @@
+﻿<div class="container credit" ng-controller="proposalApplicant2Controller">
+    <h1><span ng-bind="title">Proposal - Applicant 2</span></h1>
+
+    <div class="row">&nbsp;</div>
+    <div>
+        <div class="col-lg-2">
+            <div ng-include="'/credit/views/proposal/templates/nav.html'"></div>
+        </div>
+        <div class="col-lg-7 form-horizontal">
+            <div class="row">&nbsp;
+                <div class="form-group" ng-show="proposal.Applicant2.CustomerId">
+                       <span class="pull-right" style="margin-right: 100px;">
+                           <a name=CustomerId ng-href="#/Credit/customers/{{proposal.Applicant2.CustomerId}}" target="_blank">Linked to Customer</a>
+                           <span class="glyphicons remove_2" title="Unlink" ng-click="unLink()"
+                                 ng-hide="pageState == 'view'"> </span>
+                       </span>
+                </div>
+            </div>
+            <form name="Applicant2Form" autocomplete="off" novalidate>
+                <div ng-repeat="section in scheme.sections | orderBy:'fieldOrder'">
+                    <div class="section">{{section.sectionName}}</div>
+                    <div ng-repeat="field in section.fields">
+                        <div class="col-lg-6">
+                            <div class="form-group"
+                                 ng-class="{'has-error':  field.required && !proposal.Applicant2[field.id]}">
+                                <label class="control-label col-lg-4" ng-show="field.visible">{{field.label}}</label>
+
+                                <div class="col-lg-8"
+                                     ng-if="(field.type == 'date' || field.type == 'text') && field.visible">
+                                    <input type="{{field.type}}"
+                                           class="form-control"
+                                           ng-model="proposal.Applicant2[field.id]"
+                                           name="{{field.id}}"
+                                           ng-required="field.required"
+                                           id="{{field.id}}"
+                                           maxlength="{{field.length}}"
+                                           ng-readonly="field.readonly || pageState != 'edit'"
+                                           ng-show="field.visible"
+                                           ng-class="{ 'search' : isSearchField(field.id),
+                                                       'linked' : isUnchangedLinkedApp2(field.id, proposal.Applicant2[field.id]) && proposal.Applicant2.CustomerId}">
+                                </div>
+                                <div class="col-lg-8" ng-if="field.type == 'list' && field.visible"
+                                     ng-class="{'has-error': field.required && !proposal.Applicant2[field.id]}">
+                                    <list scope="field.values"
+                                          placeholder="{{field.label}}"
+                                          ng-model="proposal.Applicant2[field.id]"
+                                          ng-required="field.required"
+                                          ng-disabled="pageState != 'edit'"
+                                          ng-show="field.visible"
+                                          ng-readonly="field.readonly"
+                                          ng-class="{'linked' : isUnchangedLinkedApp2(field.id, proposal.Applicant2[field.id]) && proposal.Applicant2.CustomerId}"></list>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row" style="margin-bottom: 400px;">&nbsp;</div>
+            <button class="btn btn-primary pull-left" ng-click="go('back')">< Previous</button>
+            <button class="btn btn-primary pull-right" ng-click="go('next')">Next ></button>
+        </div>
+        <div ng-include="'/credit/views/proposal/templates/CustomerSearch.html'"></div>
+    </div>
+
+
+</div>
+

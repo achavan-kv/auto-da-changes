@@ -1,0 +1,56 @@
+﻿<ServiceCharges xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd">
+  <ServiceCharge>
+    <Account>SONY</Account>
+    <Value>22</Value>
+    <Cost>20</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>Supplier</ChargeType>
+    <Label>Parts Cosacs</Label>
+  <IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account>SONY</Account>
+    <Value>0</Value>
+    <Cost>0</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>Supplier</ChargeType>
+    <Label>Parts Other</Label>
+  <IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account>SONY</Account>
+    <Value>28</Value>
+    <Cost>28</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>Supplier</ChargeType>
+    <Label>Labour and Additional</Label>
+  <IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>0</Value>
+    <Cost>0</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>FYW</ChargeType>
+    <Label>Parts Cosacs</Label>
+  <IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>0</Value>
+    <Cost>0</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>FYW</ChargeType>
+    <Label>Parts Other</Label>
+  <IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>222</Value>
+    <Cost>222</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>Customer</ChargeType>
+    <Label>Labour and Additional</Label>
+  <IsExternal>false</IsExternal>
+  </ServiceCharge>
+</ServiceCharges>

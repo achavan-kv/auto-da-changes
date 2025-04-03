@@ -1,0 +1,305 @@
+﻿<div class="non-stocks col-lg-12" ng-controller="nonStockController" ng-cloak>
+    <h1>Non-Stock Details</h1>
+    <form name="nonStocksForm" class="form-horizontal row">
+        <div class="row" ng-cloak>
+            <div class="left-group col-lg-5">
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.SKU.$invalid}">
+                    <label class="col-lg-4 control-label" for="SKU">SKU</label>
+                    <div class="col-lg-7">
+                        <input type="text" maxlength="8" required
+                               class="form-control" id="SKU" name="SKU"
+                               ng-model="formData.SKU" ng-disabled="!formData.canEditSKU" />
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': !formData.type}">
+                    <label class="col-lg-4 control-label" for="type">Type</label>
+                    <div class="col-lg-7">
+                        <list placeholder="Type" required
+                              id="type" name="type"
+                              ng-model="formData.type" scope="NonStockTypes"
+                              ng-disabled="formData.hasProductLink"></list>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-4 control-label" for="VendorUPC">Vendor UPC</label>
+                    <div class="col-lg-7">
+                        <input type="text"
+                               class="form-control" id="VendorUPC" name="VendorUPC"
+                               ng-model="formData.VendorUPC" ng-disabled="!formData.canEditVendorUPC" />
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.ShortDescription.$invalid}">
+                    <label class="col-lg-4 control-label" for="ShortDescription">Short Description</label>
+                    <div class="col-lg-7">
+                        <input type="text" maxlength="25" required
+                               class="form-control" id="ShortDescription" name="ShortDescription"
+                               ng-model="formData.shortDescription" ng-disabled="locked()" />
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.LongDescription.$invalid}">
+                    <label class="col-lg-4 control-label" for="LongDescription">Long Description</label>
+                    <div class="col-lg-7">
+                        <input type="text" maxlength="40" required
+                               class="form-control" id="LongDescription" name="LongDescription"
+                               ng-model="formData.longDescription" ng-disabled="locked()" />
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.Length.$invalid}" ng-hide="hideLength(formData.type)">
+                    <label class="col-lg-4 control-label" for="Length">Length In Months</label>
+                    <div class="col-lg-7">
+                        <input type="number" ng-required="!hideLength(formData.type)"
+                               class="form-control" id="Length" name="Length"
+                               ng-model="formData.length" ng-disabled="locked()" />
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.RefundType.$invalid}" ng-hide="formData.type != 'annual'">
+                    <label class="col-lg-4 control-label" for="RefundType" >Refund Type</label>
+                    <div class="col-lg-7">
+                        <list placeholder="Refund Type" ng-required="formData.type == 'annual'"
+                              id="RefundType" name="RefundType"
+                              ng-model="formData.refundType" scope="RefundTypes"></list>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.CoverageValue.$invalid}" ng-hide="formData.type != 'rassist'">
+                    <label class="col-lg-4 control-label" for="CoverageValue">Coverage Value</label>
+                    <div class="col-lg-7">
+                        <input type="number" step="0.01" ng-required="formData.type == 'rassist'"
+                               class="form-control" id="CoverageValue" name="CoverageValue"
+                               ng-model="formData.coverageValue" ng-disabled="locked()" />
+                    </div>
+                </div>
+
+                <!--div class="form-group" ng-hide="formData.type != 'annual'" ng-class="{'has-error': nonStocksForm.RefundTypes.$invalid}">
+                    <label class="col-lg-4 control-label" for="RefundTypes">Refund Type</label>
+                    <div class="col-lg-8">
+                        <div class="radio">
+                            <label for="Full">
+                                <input id="Full" name="RefundTypes" type="radio" ng-model="formData.isFullRefund" value="true">
+                                Full Refund
+                            </label>
+                            <br>
+                            <label for="ProRata">
+                                <input id="ProRata" name="RefundTypes" type="radio" ng-model="formData.isProRata">
+                                Pro Rata<br>
+                            </label>
+                        </div>
+                    </div>
+                </div-->
+
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.DiscountRecurringPeriod.$invalid}" ng-hide="formData.type!='discount'">
+                    <label class="col-lg-4 control-label" for="DiscountRecurringPeriod">Period before new purchase (months)</label>
+                    <div class="col-lg-7">
+                        <input type="number" min="0" max="100" style="width: 60%"
+                               class="form-control" id="DiscountRecurringPeriod" name="DiscountRecurringPeriod"
+                               ng-model="formData.discountRecurringPeriod" />
+                    </div>
+                </div>
+                <div class="form-group" ng-hide="formData.type!='discount'">
+                    <label class="col-lg-4 control-label" for="isStaffDiscount">Staff Discount</label>
+                    <div class="col-lg-7">
+                        <input type="checkbox"
+                               class="ckbox-form-control" id="IsStaffDiscount" name="IsStaffDiscount"
+                               ng-model="formData.isStaffDiscount" placeholder="Staff Discount"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-4 control-label" for="IsActive">Is Active</label>
+                    <div class="col-lg-7">
+                        <input type="checkbox"
+                               class="ckbox-form-control" id="IsActive" name="IsActive"
+                               ng-model="formData.isActive" placeholder="Is Active"/>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': nonStocksForm.TaxRate.$invalid}" ng-hide="formData.type =='discount'">
+                    <label class="col-lg-4 control-label" for="TaxRate">Tax Rate (optional) Default ({{CountryTaxRate * 100}} %)</label>
+                    <div class="col-lg-7">
+                        <input class="form-control" type="number" step=".01" max="100" min="0" style="width: 60%"
+                               class="form-control" id="TaxRate" name="TaxRate"
+                               ng-model="formData.taxRate" ng-disabled="locked()" />
+                    </div>
+                </div>
+           </div>
+           <div class="right-group col-lg-4">
+               <div class="row" ng-hide="formData.errorLoadingHierarchy">
+                   <div class="hierarchyLevel row" ng-repeat="level in formData.levels">
+                       <div class="form-group" ng-class="{'has-error': nonStocksForm.hierarchyLevel_{{$index}}.$invalid}">
+                           <label class="col-lg-4 control-label" for="hierarchyLevel_{{$index}}">{{level.name}}</label>
+                           <div class="col-lg-7">
+                               <list placeholder="{{level.name}}" required
+                                     id="hierarchyLevel_{{$index}}" name="hierarchyLevel_{{$index}}"
+                                     ng-model="level.val" scope="level.dataScope" ng-disabled="locked()"></list>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="row" ng-show="formData.errorLoadingHierarchy">
+                   <div class="col-lg-2"></div>
+                   <div class="col-lg-10">
+                       <h4 style="color: #ff0000;">Error loading categories!</h4>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <br/>
+       <div>
+           <button class="btn btn-primary" ng-click="saveDetails()" ng-disabled="nonStocksForm.$invalid">Save</button>
+           <button class="btn" ng-click="saveDetails(true)" ng-disabled="nonStocksForm.$invalid">Save and Continue</button>
+       </div>
+   </form>
+
+   <p>&nbsp;</p>
+
+   <section class="nonStock-price-container col-lg-6" ng-show="formData.Id && formData.type != 'discount'">
+       <header class="section">Prices</header>
+       <article ng-show="formData.Id">
+           <a class="refLink" href="{{getNonStockPriceLink()}}">Edit Prices</a>
+       </article>
+       <article class="nonStock-prices">
+           <table class="table table-bordered table-striped">
+               <thead>
+               <tr>
+                   <th class="col-lg-3 text-center">
+                       Fascia
+                   </th>
+                   <th class="col-lg-3 text-center">
+                       Branch
+                   </th>
+                   <th class="col-lg-2 text-center">
+                       Cost
+                   </th>
+                   <th class="col-lg-2 text-center">
+                       Retail
+                   </th>
+                   <th class="col-lg-2 text-center">
+                       Tax Inclusive
+                   </th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr ng-repeat="locationPrice in prices">
+                   <td class="location-type col-lg-3">
+                       {{locationPrice.Fascia || 'All'}}
+                   </td>
+                   <td class="location col-lg-3">
+                       {{locationPrice.BranchName || 'All'}}
+                   </td>
+                   <td class="price col-lg-2 text-right">
+                       {{locationPrice.CostPrice | currency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                   </td>
+                   <td class="price col-lg-2 text-right">
+                       {{locationPrice.RetailPrice | currency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                   </td>
+                   <td class="price col-lg-2 text-right">
+                       {{locationPrice.TaxInclusivePrice | currency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                   </td>
+               </tr>
+               </tbody>
+           </table>
+       </article>
+   </section>
+
+    <section class="nonStock-price-container col-lg-6" ng-show="formData.Id && formData.type == 'discount'">
+        <header class="section">Prices</header>
+        <article ng-show="formData.Id">
+            <a class="refLink" href="{{getNonStockPriceLink()}}">Edit Prices</a>
+        </article>
+        <article class="nonStock-prices">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th class="col-lg-3 text-center">
+                        Fascia
+                    </th>
+                    <th class="col-lg-3 text-center">
+                        Branch
+                    </th>
+                    <th class="title date">
+                        Effective Date
+                    </th>
+                    <th class="title date">
+                        End Date
+                    </th>
+                    <th class="col-lg-2 text-center">
+                        Discount Value
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="locationPrice in prices">
+                    <td class="location-type col-lg-3">
+                        {{locationPrice.Fascia || 'All'}}
+                    </td>
+                    <td class="location col-lg-3">
+                        {{locationPrice.BranchName || 'All'}}
+                    </td>
+                    <td class="date">
+                        {{locationPrice.EffectiveDate | date:"dd MMM yyyy"}}
+                    </td>
+                    <td class="date">
+                        {{locationPrice.EndDate | date:"dd MMM yyyy"}}
+                    </td>
+                    <td class="price col-lg-2 text-right">
+                        {{locationPrice.DiscountValue | currency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+    </section>
+
+
+    <section class="nonStock-promotions col-lg-6" ng-show="formData.Id">
+       <header class="section">Promotions</header>
+       <article class="existing">
+           <table class="table table-bordered table-striped">
+               <thead>
+               <tr>
+                   <th class="title filters">
+                       Filters
+                   </th>
+                   <th class="title date">
+                       Start Date
+                   </th>
+                   <th class="title date">
+                       End Date
+                   </th>
+                   <th class="title price">
+                       Promotion Price
+                   </th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr class="promotion" data-id="{{promo.Id}}" ng-repeat="promo in promotions">
+                   <td class="filters">
+                       <div class="filter" ng-repeat="filter in promo.LevelFilters">
+                           <span class="level-name">{{filter.LevelName}}:</span> <span class="tag-name">{{filter.TagName}}</span>
+                       </div>
+                       <div class="filter" ng-repeat="filter in promo.Filters">
+                           <span class="level-name">{{filter.name}}:</span>
+                           <span class="tag-name" ng-show="filter.name != 'Warranty'">{{filter.value}}</span>
+                           <a class="tag-name" ng-show="filter.name == 'Warranty'" ng-href="{{filter.nonStockUrl}}">{{filter.value}}</a>
+                       </div>
+                       <div ng-show="!promo.LevelFilters.length && !promo.Filters.length">
+                           All Stores</div>
+                   </td>
+                   <td class="date">
+                       {{promo.startDate | date:"dd MMM yyyy"}}
+                   </td>
+                   <td class="date">
+                       {{promo.endDate | date:"dd MMM yyyy"}}
+                   </td>
+                   <td class="price text-right" ng-show="promo.IsPercentage">
+                       {{promo.PromotionAmount}} % OFF
+                   </td>
+                   <td class="price text-right" ng-hide="promo.IsPercentage">
+                       {{promo.PromotionAmount | currency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                   </td>
+               </tr>
+               </tbody>
+           </table>
+       </article>
+   </section>
+</div>

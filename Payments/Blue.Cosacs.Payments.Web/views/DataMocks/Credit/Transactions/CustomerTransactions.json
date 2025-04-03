@@ -1,0 +1,41 @@
+{
+    "CustomerId": 1,
+    "Transactions": [
+        {
+            "AgreementNumber": 1,
+            "Type": "Fee",
+            "Date": "2015-06-07T15:10:30",
+            "User": "System",
+            "Amount": 20,
+            "Currency": "US Dollars",
+            "PaymentType": "Cash"
+        },
+        {
+            "AgreementNumber": 1,
+            "Type": "Admin",
+            "Date": "2015-06-08T17:30:00",
+            "User": "Admin",
+            "Amount": 30,
+            "Currency": "US Dollars",
+            "PaymentType": "Cheque"
+        },
+        {
+            "AgreementNumber": 1,
+            "Type": "Fee",
+            "Date": "2015-06-09T12:40:05",
+            "User": "System",
+            "Amount": 50,
+            "Currency": "Jamaican Dollars",
+            "PaymentType": "Cash"
+        },
+        {
+            "AgreementNumber": 2,
+            "Type": "Admin",
+            "Date": "2015-06-03T14:00:00",
+            "User": "SysAdmin",
+            "Amount": 12.5,
+            "Currency": "Jamaican Dollars",
+            "PaymentType": "Cash"
+        }
+    ]
+}

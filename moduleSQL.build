@@ -1,0 +1,9 @@
+<project name="Cosacs.module.sql" default="default" xmlns="http://nant.sf.net/release/0.92/nant.xsd">
+    <loadtasks assembly="..\bin\\nantcontrib-0.85\bin\NAnt.Contrib.Tasks.dll"/>
+    <loadtasks assembly="..\bin\\blue-nant\Blue.NAnt.dll"/>
+    <property name="nant.settings.currentframework" value="net-4.0" />
+        
+    <target name="default">
+        <echo message="Running module migrations on ${environment::get-variable('connstring')}" />
+    </target>   
+</project>

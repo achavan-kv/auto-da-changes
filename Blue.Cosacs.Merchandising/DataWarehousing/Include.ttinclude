@@ -1,0 +1,269 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Configuration" #>
+<#@ assembly name="System.Data"#>
+<#@ assembly name="System.Configuration" #>
+<#@ assembly name="Microsoft.AnalysisServices.AdomdClient" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Microsoft.AnalysisServices.AdomdClient" #>
+<#@ import namespace="System.Configuration"#>
+<#@ output extension=".cs" #>
+<#+
+	internal class CubeInfo
+    {
+        public string Name { get; set; }
+		public string CleanName { get; set; }
+        public List<DimensionInfo> Dimensions { get; set; }
+        public List<MeasureInfo> Measures { get; set; }
+
+        public CubeInfo(string name)
+        {
+            this.Name = name;
+			this.CleanName = PercolatorGen.Clean(name);
+            this.Dimensions = new List<DimensionInfo>();
+            this.Measures = new List<MeasureInfo>();
+        }
+    }
+
+    internal class DimensionInfo
+    {
+        public string Name { get; set; }
+		public string CleanName { get; set; }
+        public string Cube { get; set; }
+        public List<AttributeInfo> Attributes { get; set; }
+        public List<HierarchyInfo> Hierarchies { get; set; }
+
+        public DimensionInfo(string name, string cubeName)
+        {
+            this.Name = name;
+			this.CleanName = PercolatorGen.Clean(name);
+            this.Cube = cubeName;
+            this.Attributes = new List<AttributeInfo>();
+            this.Hierarchies = new List<HierarchyInfo>();
+        }
+    }
+
+    public class AttributeInfo
+    {
+        public string Name { get; set; }
+		public string CleanName { get; set; }
+        public string Cube { get; set; }
+        public string Dimension { get; set; }
+
+        public AttributeInfo(string name, string dimension, string cube)
+        {
+            this.Name = name;
+			this.CleanName = PercolatorGen.Clean(name);
+            this.Cube = cube;
+            this.Dimension = dimension;
+        }
+    }
+
+    internal class HierarchyInfo
+    {
+        public string Name { get; set; }
+		public string CleanName { get; set; }
+        public string Dimension { get; set; }
+        public string Cube { get; set; }
+        public List<System.Tuple<string, byte>> Levels { get; set; }
+
+        public HierarchyInfo(string name, string dimension, string cube)
+        {
+            this.Name = name;
+			this.CleanName = PercolatorGen.Clean(name.Split('.')[1]);
+			this.Dimension = dimension;
+			this.Cube = cube;
+            this.Levels = new List<Tuple<string, byte>>();
+        }
+    }
+
+    internal class MeasureInfo
+    {
+        public string Name { get; set; }
+		public string CleanName { get; set; }
+        public string Cube { get; set; }
+
+        public MeasureInfo(string name, string cubeName)
+        {
+            this.Name = name;
+			this.CleanName = PercolatorGen.Clean(name);
+            this.Cube = cubeName;
+        }
+    }
+
+    public static class PercolatorGen
+    {
+        public static string DatabaseName = string.Empty;
+        public static string ConnectionString { get; set; }
+		public static string ConfigFileName { get; set; }
+        public static string DBName { get; set; }
+        public static string Namespace { get; set; }
+
+		public static bool OnlyVisible_Dimensions { get; set; }
+		public static bool OnlyVisible_Hierarchies { get; set; }
+		public static bool OnlyVisible_Attributes { get; set; }
+		public static bool OnlyVisible_Measures { get; set; }
+
+		internal static List<DimensionInfo> DimensionList { get; private set; }
+
+        const string _FOR_CUBES = @"SELECT [CATALOG_NAME] AS [DATABASE],
+									   CUBE_CAPTION AS [CUBE],
+									   BASE_CUBE_NAME
+								FROM $system.MDSchema_Cubes
+								WHERE CUBE_SOURCE=1";
+
+        const string _FOR_DIMENSIONS = @"SELECT [CUBE_NAME] as [CUBE],
+											DIMENSION_CAPTION AS [DIMENSION]
+									 FROM $system.MDSchema_Dimensions
+									 WHERE DIMENSION_CAPTION <> 'Measures'";
+
+        const string _FOR_USERHIERARCHIES = @"SELECT [CUBE_NAME] as [CUBE],
+										  	[DIMENSION_UNIQUE_NAME] AS [DIMENSION],
+										     [HIERARCHY_UNIQUE_NAME] AS [HIERARCHY],
+										     LEVEL_CAPTION AS [LEVEL],
+										     [LEVEL_NAME],
+										     [LEVEL_NUMBER] AS [LEVEL NUMBER]
+										  FROM $system.MDSchema_levels
+										  WHERE LEVEL_NAME <> '(All)'
+										  AND level_origin=1";
+
+        const string _FOR_ATTRIBUTES = @"SELECT [CUBE_NAME] as [CUBE],
+                                     [DIMENSION_UNIQUE_NAME] AS [DIMENSION], 
+									 HIERARCHY_CAPTION AS [ATTRIBUTE]
+									 FROM $system.MDSchema_hierarchies
+									 WHERE (HIERARCHY_ORIGIN=2 OR HIERARCHY_ORIGIN=6)";
+
+        const string _FOR_MEASURES = @"SELECT [CUBE_NAME] as [CUBE],
+										  [MEASURE_CAPTION] AS [MEASURE]
+								   FROM $SYSTEM.MDSCHEMA_MEASURES";
+
+        static string clean(string str)
+        {
+            if (str == null)
+                return null;
+            return str.Replace("[", "").Replace("]", "");
+        }
+
+		public static string Clean(string str)
+		{
+			if (str == null)
+				return null;
+			return str.Replace(" ", "").Replace("[", "").Replace("]", "").Replace("-", "").Replace(".", "_");
+		}
+
+        internal static IEnumerable<CubeInfo> GetThemCubes()
+        {
+            List<CubeInfo> cubes = new List<CubeInfo>();
+            List<DimensionInfo> dims = new List<DimensionInfo>();
+            List<AttributeInfo> atts = new List<AttributeInfo>();
+            List<HierarchyInfo> hiers = new List<HierarchyInfo>();
+            List<MeasureInfo> measures = new List<MeasureInfo>();
+			DimensionList = new List<DimensionInfo>();
+
+            using (AdomdConnection connection = new AdomdConnection(PercolatorGen.ConnectionString))
+            using (AdomdCommand command = new AdomdCommand(PercolatorGen._FOR_CUBES, connection))
+            {
+                connection.Open();
+                using (AdomdDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+						DatabaseName = reader["DATABASE"] as string;
+                        if (string.IsNullOrEmpty(PercolatorGen.DBName) || string.IsNullOrWhiteSpace(PercolatorGen.DBName))
+                            PercolatorGen.DBName = clean(reader["DATABASE"] as string);
+                        cubes.Add(new CubeInfo(reader["CUBE"] as string));
+                    }
+                }
+
+                command.CommandText = PercolatorGen.OnlyVisible_Dimensions ? 
+					string.Format("{0} AND DIMENSION_IS_VISIBLE", PercolatorGen._FOR_DIMENSIONS) : PercolatorGen._FOR_DIMENSIONS;
+                using (AdomdDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                        dims.Add(new DimensionInfo(reader["DIMENSION"] as string, clean(reader["CUBE"] as string)));
+                }
+
+                command.CommandText = PercolatorGen.OnlyVisible_Attributes ?
+					string.Format("{0} AND HIERARCHY_IS_VISIBLE", PercolatorGen._FOR_ATTRIBUTES) : PercolatorGen._FOR_ATTRIBUTES;
+                using (AdomdDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+					{
+						var name = reader["ATTRIBUTE"] as string;
+						if(name.Contains("."))
+							name = name.Split('.')[1];
+                        atts.Add(new AttributeInfo(clean(name), clean(reader["DIMENSION"] as string), clean(reader["CUBE"] as string)));
+					}
+                }
+
+
+                command.CommandText = PercolatorGen.OnlyVisible_Hierarchies ? 
+				string.Format("{0} AND LEVEL_IS_VISIBLE", PercolatorGen._FOR_USERHIERARCHIES) : PercolatorGen._FOR_USERHIERARCHIES;
+                using (AdomdDataReader reader = command.ExecuteReader())
+                {
+                    string lastName = null;
+                    string lastDim = null;
+                    string lastCube = null;
+                    while (reader.Read())
+                    {
+                        string name = reader["HIERARCHY"] as string;
+                        string dimName = clean(reader["DIMENSION"] as string);
+                        string cubeName = clean(reader["CUBE"] as string);
+						string levelName = clean(reader["LEVEL"] as string);
+						byte levelNumber = Convert.ToByte(reader["LEVEL NUMBER"]);
+                        if (!cubeName.StartsWith("$"))
+                        {
+                            if (name != lastName || (cubeName != lastCube || lastDim != dimName))
+                            {
+                                HierarchyInfo hInfo = new HierarchyInfo(name, dimName, cubeName);
+                                hInfo.Levels.Add(new Tuple<string, byte>(levelName, levelNumber));
+                                hiers.Add(hInfo);
+                                lastName = name;
+                                lastCube = cubeName;
+                                lastDim = dimName;
+                            }
+
+                            else
+                            {
+                                var h = hiers.FirstOrDefault(x => x.Name == name && x.Dimension == dimName && x.Cube == cubeName);
+                                if (h != null)
+                                    h.Levels.Add(new Tuple<string, byte>(clean(reader["LEVEL"] as string), Convert.ToByte(reader["LEVEL NUMBER"])));
+                            }
+                        }
+                    }
+                }
+
+                command.CommandText = PercolatorGen.OnlyVisible_Measures ?
+					string.Format("{0} WHERE MEASURE_IS_VISIBLE", PercolatorGen._FOR_MEASURES) : PercolatorGen._FOR_MEASURES;
+                using (AdomdDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                        measures.Add(new MeasureInfo(clean(reader["MEASURE"] as string), clean(reader["CUBE"] as string)));
+                }
+
+                foreach (CubeInfo cube in cubes)
+                {
+                    foreach (DimensionInfo dim in dims.Where(x => x.Cube == cube.Name))
+                    {
+                        foreach (AttributeInfo att in atts.Where(x => x.Dimension == dim.Name & x.Cube == cube.Name))
+                            dim.Attributes.Add(att);
+
+                        foreach (HierarchyInfo hrchy in hiers.Where(x => x.Dimension == dim.Name && x.Cube == cube.Name))
+                            dim.Hierarchies.Add(hrchy);
+
+                        cube.Dimensions.Add(dim);
+						if(!DimensionList.Select(x => x.Name).Contains(dim.Name))
+							DimensionList.Add(dim);
+                    }
+
+                    foreach (MeasureInfo measure in measures.Where(x => x.Cube == cube.Name))
+                        cube.Measures.Add(measure);
+
+                    yield return cube;
+                }
+            }
+        }
+    }#>

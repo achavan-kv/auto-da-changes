@@ -1,0 +1,2 @@
+alter table merchandising.goodsreceipt
+add OriginalPrint datetime null

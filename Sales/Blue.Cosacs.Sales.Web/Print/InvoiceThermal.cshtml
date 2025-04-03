@@ -1,0 +1,57 @@
+﻿@using System.Configuration
+@using System.Runtime.InteropServices.ComTypes
+@using Blue.Cosacs.Sales.Models
+
+@functions {
+    private string ESC = "\u001b";
+    private string GS = "\u001d";
+
+    string Clear
+    {
+        get { return ESC + "@"; }
+    }
+     string Bold(bool isOn)
+    {
+        var flag = isOn ?"1":"0";
+        return ESC + "E" + flag;
+    }
+
+    string SetFont(int param)
+    {
+        return ESC + "M" + param;
+    }
+
+    string SetAlign(int param)
+    {
+        return ESC + "a" + param;
+    }
+
+    string ExecuteEsc(string param, int arg)
+    {
+        return ESC + param + arg;
+    }
+
+    static string Line(int length, char shape = '.')
+    {
+        return "".PadLeft(length, shape);
+    }
+
+
+}
+
+@foreach (OrderExtendedDto order in @Model)
+{
+
+<text>
+    @SetFont(1)
+    @ExecuteEsc("a", 1)
+    @Bold(true) @order.CountryName @Bold(false)
+    @Bold(true) @order.BranchName @Bold(false)
+    @Line(40, '_')
+    @order.BranchAddress1
+    @order.BranchAddress2
+    @order.BranchAddress3
+    @order.CompanyTaxNumber
+    @Line(40)
+</text>
+}

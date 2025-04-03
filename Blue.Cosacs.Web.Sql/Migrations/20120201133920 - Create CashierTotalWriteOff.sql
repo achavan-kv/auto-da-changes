@@ -1,0 +1,11 @@
+CREATE TABLE CashierTotalWriteOff
+(
+	RunNo INT NOT NULL,
+	WriteOffDate DATETIME NOT NULL,
+)
+
+ALTER TABLE CashierTotalWriteOff ADD CONSTRAINT
+PK_CWODate PRIMARY KEY CLUSTERED 
+(
+WriteOffDate
+)

@@ -1,0 +1,10 @@
+-- transaction: true
+-- Change the previous line to false to disable running this whole migration in one transaction.
+-- Removing that first line will default to 'true'.
+-- 
+-- Put your SQL code here
+
+INSERT INTO [Admin].[Permission]
+(Id,Name,CategoryId,[Description])
+values
+(2054, 'Weekly Trading Report', 20, 'Allows access to View/Export the Weekly Trading Report')

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd"
+    xmlns:mstns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="BalckListEmailsMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ArrayOfMails" nillable="true" type="ArrayStringKeyValuePair"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="StringKeyValuePair">
+        <xs:sequence>
+            <xs:element name="Email"  minOccurs="1" maxOccurs="1" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value ="128"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Reason" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value ="128"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ArrayStringKeyValuePair">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="StringKeyValuePair" nillable="true" type="StringKeyValuePair"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,240 @@
+﻿@section Head
+{
+    <style type="text/css">
+       
+
+       .fill .fixedwidth{ text-align: left; }  
+    </style>
+}
+
+@model Blue.Cosacs.SCAgreement
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "StoreCard Agreement";
+}
+
+<div class="logo">
+    <img src="@Url.Content("~/static/images/logo.png")" alt="Logo" />
+</div>
+<div class="clear">
+</div>
+<div id="header">
+    <h2 class="centre" style="width: 100%">
+        Courts Store Card Agreement
+    </h2>
+</div>
+
+<table class="fill">
+<tr>
+        <td class="fixedwidth">
+            Name:
+        </td>
+        <td>
+            @String.Format("{0} {1} {2}", Model.Customer.title, Model.Customer.firstname, Model.Customer.name)
+        </td>
+        
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Date of Birth:
+        </td>
+        <td>@Model.Customer.dateborn.ToShortDateString()
+        </td>
+        
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Marital Status:
+        </td>
+        <td>@Model.MartialStatus
+        </td>
+        
+    </tr>
+</table>
+@*<div class="labelname" >
+    <div>
+        Name:
+    </div>
+    <div>
+        Date of Birth:
+    </div>
+    <div>
+        Marital Status:
+    </div>
+</div>
+<div class="labeldata">
+    <div>
+        @String.Format("{0} {1} {2}", Model.Customer.title, Model.Customer.firstname, Model.Customer.name)</div>
+    <div>
+        @Model.Customer.dateborn.ToShortDateString()</div>
+    <div>
+        @Model.MartialStatus
+    </div>
+</div>*@
+<h3 class="centre">
+    Current Customer Details</h3>
+<table class="fill">
+    <tr>
+        <td class="fixedwidth">
+            Home Address
+        </td>
+        <td>
+            <div>@Model.CustAddress.cusaddr1</div>
+            <div>@Model.CustAddress.cusaddr2</div>
+            <div>
+                @Model.CustAddress.cusaddr3</div>
+            <div>@Model.CustAddress.cuspocode</div>
+        </td>
+        <td class="fixedwidth">
+            Employer Information
+        </td>
+        <td>
+            <div>@Model.Proposal.EmpName</div>
+            <div>@Model.Proposal.EmpDept</div>
+            <div>@Model.Proposal.EmpAddr1</div>
+            <div>@Model.Proposal.EmpAddr2</div>
+            <div>@Model.Proposal.EmpCity</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Home Telephone
+        </td>
+        <td>
+            @(Model.HomeTel != null ? String.Format("({0}) {1}", Model.HomeTel.DialCode, Model.HomeTel.telno) : String.Empty)
+        </td>
+        <td class="fixedwidth">
+            Work Telephone
+        </td>
+        <td>
+            @(Model.WorkTel != null ? String.Format("({0}) {1}", Model.WorkTel.DialCode, Model.WorkTel.telno) : String.Empty)
+        </td>
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Residential Status
+        </td>
+        <td>@Model.ResStatus
+        </td>
+        <td class="fixedwidth">
+            Time in Employment
+        </td>
+        <td>@Model.Proposal.yrscuremplmt years.
+        </td>
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Time at Current Address
+        </td>
+        <td>@((DateTime.Now.Subtract(Model.CustAddress.datein).Days / 365))
+            years.
+        </td>
+        <td class="fixedwidth">
+            Occupation
+        </td>
+        <td>@Model.OccupationDesc
+        </td>
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Mobile Telephone
+        </td>
+        <td>
+            @(Model.Mobile != null ? String.Format("({0}) {1}", Model.Mobile.DialCode, Model.Mobile.telno) : String.Empty)
+        </td>
+        <td class="fixedwidth">
+            Monthly Income
+        </td>
+        <td>@(Model.Proposal.mthlyincome.HasValue ? @Model.Proposal.mthlyincome.Value.ToString(@Model.DecimalPlace) : "0")
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" class="intableheading">
+            <h3 class="centre">
+                Store Card Information</h3>
+        </td>
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Account Number
+        </td>
+        <td>@String.Format("{0:###-####-####-#}", Convert.ToInt64(Model.PaymentDetails[0].Acctno))
+        </td>
+        <td class="fixedwidth">
+            Date Activated
+        </td>
+        <td>@(Model.DateActive != new DateTime(0) ? Model.DateActive.ToShortDateString() : "Not Active")
+        </td>
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            StoreCard Limit
+        </td>
+        <td>@Model.Customer.StoreCardLimit.Value.ToString(Model.DecimalPlace)
+        </td>
+        <td class="fixedwidth">
+            Available Spend
+        </td>
+        <td>@(Model.Customer.StoreCardAvailable.HasValue ? Model.Customer.StoreCardAvailable.Value.ToString(Model.DecimalPlace) : "0")
+        </td>
+    </tr>
+    <tr>
+        <td class="fixedwidth">
+            Interest Rate
+        </td>
+       @* <td>@Model.InterestRate.Value.ToString("F" + Model.DecimalPlace.Substring(1, 1))%*@
+        <td>@Model.InterestRate.Value.ToString()%
+        </td>
+        <td class="fixedwidth">
+            Account Status
+        </td>
+        <td>@Model.AccountStatus
+        </td>
+    </tr>
+</table>
+<div class="clear">
+</div>
+<table class="sign">
+    <tr>
+        <td>
+            Signature of Cardholder
+            <pre />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Witness to Cardholder Signature
+            <pre />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Signature of Authorised User
+            <pre />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Witness Name
+            <pre />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Witness address
+            <pre />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Date
+            <pre />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            For and on behalf of Unicomer @Model.CountryName t.a. Courts
+             <pre />
+        </td>
+    </tr>
+</table>

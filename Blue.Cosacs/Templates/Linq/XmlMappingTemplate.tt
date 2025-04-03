@@ -1,0 +1,59 @@
+﻿<#@ import namespace="System.Linq" #>
+<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+<#+
+public class LinqXmlMappingTemplate : Template
+{
+	public Database Database;
+	public ModelTable[] Tables;
+	public ModelView[] Views;
+	
+    public override string TransformText()
+    {		
+#>
+<?xml version="1.0" encoding="utf-8" ?>
+<Database Name="Cosacs" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+	<!-- Tables -->
+	<#+ foreach (var table in Tables) { #>
+    <Table Name="dbo.<#= table.name #>" Member="Blue.Cosacs.Shared.<#= table.name #>">
+        <Type Name="Blue.Cosacs.Shared.<#= table.name #>">
+			<#+ var smo = Database.Tables[table.name, "dbo"];
+				if (smo == null)
+				    throw new ApplicationException("Table " + table.name + " not found in the database.");
+			
+				Column identity = null;
+				foreach (Column c in smo.Columns)
+					if (c.Identity)
+						identity = c;
+			
+				// <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+				foreach (Column c in smo.Columns) {  
+					var isPk = identity != null ? c == identity : c.InPrimaryKey;
+			#>
+			<Column Name="[<#= c.Name #>]" Member="<#= LinqTableTemplate.ColName(c) #>" 
+					<#= c.Identity ? "DbType=\"Int NOT NULL IDENTITY\" IsDbGenerated=\"true\" CanBeNull=\"false\"" : "" #>
+					<#= c.Computed ? "IsDbGenerated=\"true\" AutoSync=\"Always\" UpdateCheck=\"Never\"" : "" #> 
+					<#= isPk ? "IsPrimaryKey=\"true\"" : "" #> 
+					<#= c.Name == "$RowVersion" && c.DataType.Name == "timestamp" ? "IsDbGenerated=\"true\" IsVersion=\"true\" AutoSync=\"Always\"" : "" #>/>
+			<#+ } #>
+        </Type>
+    </Table>
+	<#+ } #>
+	<!-- Views -->
+	<#+ foreach (var view in Views) { #>
+    <Table Name="dbo.<#= view.name #>" Member="Blue.Cosacs.Shared.<#= view.name #>">
+        <Type Name="Blue.Cosacs.Shared.<#= view.name #>">
+			<#+ var smo = Database.Views[view.name, "dbo"];
+			    if (smo == null)
+				    throw new ApplicationException("View " + view.name + " not found in the database.");
+				foreach (Column c in smo.Columns) {  #>
+			<Column Name="[<#= c.Name #>]" Member="<#= LinqTableTemplate.ColName(c) #>" />
+			<#+ } #>
+        </Type>
+    </Table>
+	<#+ } #>
+</Database>
+<#+
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

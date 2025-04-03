@@ -1,0 +1,82 @@
+[	
+    {
+        "label": "Sales Management",
+        "nodes": [
+			{
+                "label": "CSR Call Log",
+                "url": "#/SalesManagement/calllog",
+                "permission": 2400
+            },
+            {
+                "label": "Configure Follow Up Calls",
+                "url": "#/SalesManagement/followupcalls",
+                "permission": 2401
+            },
+			{
+				"label": "Branch Manager - Reallocate Calls",
+                "url": "#/SalesManagement/branchmanagercall",
+                "permission": 2402
+			},
+            {
+                "label": "CSR Unavailable",
+                "url": "#/SalesManagement/CsrUnavailable",
+                "permission": 2403
+            },
+			{
+                "label": "Quick Details Capture",
+                "url": "#/SalesManagement/quickDetailsCapture",
+                "permission": 2404
+            },
+			{
+				"label" : "CSR Targets",
+				"url": "#/SalesManagement/CSRTargets",
+				"permission" : 2405
+			},
+			{
+				"label" : "Customer Search",
+				"nodes" : [
+					{
+						"label": "My Customers",
+						"url": "#/SalesManagement/CSRCustomerSearch",
+						"permission": 2406	
+					},
+					{
+						"label": "Branch Customers",
+						"url": "#/SalesManagement/CustomerSearch/ScheduleCalls",
+						"permission": 2407
+					},
+					{
+						"label": "Reallocate Customers",
+						"url": "#/SalesManagement/CustomerSearch/ReallocateCustomers",
+						"permission": 2408	
+					}
+				]
+			},
+			{
+                "label": "Call Icon",
+                "url": "#/SalesManagement/CallIcon",
+                "permission": 2409
+            },
+			{
+                "label": "CSR Dashboard",
+                "url": "#/SalesManagement/CsrDashboard",
+                "permission": 2410
+            },
+			{
+                "label": "Branch Manager Dashboard",
+                "url": "#/SalesManagement/BranchManagerDashboard",
+                "permission": 2411
+            },
+			{
+                "label": "Branch Manager - Unallocated Calls",
+                "url": "#/SalesManagement/BranchManagerUnallocatedCalls",
+                "permission": 2412
+            },
+            {
+                "label": "Additional Customers Interaction",
+                "url": "#/SalesManagement/AdditionalCustomersInteraction",
+                "permission": 2420
+            }
+        ]
+    }
+]

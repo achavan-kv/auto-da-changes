@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Sales" namespace="Blue.Cosacs.Sales" label="Sales">
+    <Connection server="." database="cosacs" />
+    <Queries>
+        <DataSet name="WarrantyContractDetails"/>
+    </Queries>
+    <Tables>
+        <Table name="Order" />
+        <Table name="OrderCustomer" />
+        <Table name="OrderItem" />
+        <Table name="OrderPayment" />
+        <Table name="OrderReturn" />
+        <Table name="OrderReturnCustomer" />
+        <Table name="OrderReturnItem" />
+        <Table name="OrderReturnPayment" />
+        <Table name="ItemType" />
+        <Table name="DiscountLimit" />
+
+        <Table name="LinkedContractNames"/>
+        <Table name="LinkedContracts"/>
+    </Tables>
+    <Views>
+        <View name="LinkedContractsSetupView"/>
+    </Views>
+    <Settings>
+        <Setting id="ReturnReason" name="Return/Exchange Reason" category="Returns" type="list">
+            <Description>List of possible return/exchange reasons on POS.</Description>
+            <Default>
+                Mistaken Purchase
+                Defective Product
+                Wrong Product
+                For Fun (Change of Mind)
+            </Default>
+        </Setting>
+      <Setting id="TaxRate" name="Tax Rate" category="Parameters" type="decimal">
+        <Description>Current Tax Rate - Please contact support if you wish to update. Any change here should be made after end of day and will be applicable for accounts open from the next day.</Description>
+        <Default>17.5</Default>
+      </Setting>
+      <Setting id="TaxType" name="Stock Tax Type" category="Parameters" type="string">
+        <Description>Stock includes tax or not.(I or E).</Description>
+        <Default>E</Default>
+      </Setting>
+        <Setting id="WarrantyCancelDays" name="Warranty Cancel Days" category="Parameters" type="int">
+            <Description>This is the period of time in days from delivery that a warranty can be cancelled in isolation to a product.</Description>
+            <Default>30</Default>
+        </Setting>        
+        <Setting id="WarrantyHoCopy" name="Number of Warranty Contract HO copies" category="Parameters" type="int">
+            <Description>Number of head office copies of the warranty contract.</Description>
+            <Default>0</Default>
+        </Setting>        
+        <Setting id="WarrantyCreditCopy" name="Number of Warranty Contract Credit copies" category="Parameters" type="int">
+            <Description>Number of credit copies of the warranty contract.</Description>
+            <Default>1</Default>
+        </Setting>        
+        <Setting id="WarrantyCustCopy" name="Number of Warranty Contract copies" category="Parameters" type="int">
+            <Description>Number of copies of the warranty.</Description>
+            <Default>1</Default>
+        </Setting>       
+        <Setting id="CountryName" name="Country Name" category="Parameters" type="string">
+            <Description>This is the country name.</Description>
+            <Default>CountryName</Default>
+        </Setting>        
+        <Setting id="CurrencySymbolForPrint" name="Curreny Symbol for print" category="Parameters" type="string">
+            <Description>The currency symbol that will be printed on Agreement and Invoice documents.</Description>
+            <Default>$</Default>
+        </Setting>        
+        <Setting id="DecimalPlaces" name="Decimal Places for .Net" category="Parameters" type="string">
+            <Description>Indicates the number of decimal places to be used in .NET. If Prefixed by a  'C' then the currency symbol for the country will also show.  If prefixed by an 'F' then the currency symbol for the country will not be displayed.  If prefixed by an 'N' then the currency symbol for the country will not be displayed and, thousand separators are inserted between each group of three digits. Example: In Jamaica C2 would result in J$5000.45, F2 would result in 5000.45, N2 would result in 5,000.45.</Description>
+            <Default>C2</Default>
+        </Setting>
+        <Setting id="IsDutyFreeSaleAllowed" name="Is Duty Free Sale Allowed" category="Parameters" type="bit">
+            <Description>Determines whether the country can perform duty free sales or not</Description>
+            <Default>True</Default>
+        </Setting>
+        <Setting id="MinFreeMonthIRW" name="Min Free Months on Replacements (%)" category="Parameters" type="int">
+            <Description>The minimum number of months (as a percentage of the original item?s free/manufacturer warranty length) that a replacement item on an IR replacement can receive</Description>
+            <Default>50</Default>
+        </Setting>
+        <Setting id="DelayNewIRW" name="Delay New IRW (True / False)" category="Parameters" type="bit">
+            <Description>If True, when an IRW replacement item receives complimentary free/manufacturer warranty months, then the start date of any purchased IRW on the replacement item is delayed until the end of the free months</Description>
+            <Default>False</Default>
+        </Setting>
+        <Setting id="CompanyTaxNumber" name="Company Tax Number" category="Parameters" type="text">
+            <Description>The company tax number.</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="TaxName" name="Tax Name" category="Parameters" type="string">
+            <Description>Indicates type of tax i.e. VAT or GST.</Description>
+            <Default>VAT</Default>
+        </Setting>
+        <Setting id="ThermalPrinterName" name="Thermal Printer Name" category="Parameters" type="string">
+            <Description>The Name of the thermal printer for direct receipt printing.</Description>
+            <Default>EPSON TM-T88V Receipt</Default>
+        </Setting>        
+    </Settings>
+</Model>
+
+

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/">
+      <s:element name="GetStockInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IUPC" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="repoItem" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeWarranties" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStockInfoResult" type="tns:ArrayOfStockInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStockInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StockInfo" nillable="true" type="tns:StockInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StockInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="itemno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdescr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdescr2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="category" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Supplier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prodstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="suppliercode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="warrantable" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="warrantyrenewalflag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="leadtime" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="assemblyrequired" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="taxrate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IUPC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Class" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColourName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColourCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyBoxes" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="WarrantyLength" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="VendorWarranty" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Brand" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorStyle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorLongStyle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorEAN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RepossessedItem" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemPOSDescr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SparePart" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineAvailable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineDateAdded" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineDateRemoved" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineDConly" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="WarrantyType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetStockLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStockLocationResult" type="tns:ArrayOfShort" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="short" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateOnlineProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="products">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOnlineProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStockInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStockInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStockInfoAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStockLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockLocation" />
+  </wsdl:message>
+  <wsdl:message name="GetStockLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStockLocationAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnlineProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOnlineProducts" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnlineProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOnlineProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnlineProductsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WStockSoap">
+    <wsdl:operation name="GetStockInfo">
+      <wsdl:input message="tns:GetStockInfoSoapIn" />
+      <wsdl:output message="tns:GetStockInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockLocation">
+      <wsdl:input message="tns:GetStockLocationSoapIn" />
+      <wsdl:output message="tns:GetStockLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnlineProducts">
+      <wsdl:input message="tns:UpdateOnlineProductsSoapIn" />
+      <wsdl:output message="tns:UpdateOnlineProductsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WStockSoap" type="tns:WStockSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStockInfo">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/GetStockInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStockInfoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockLocation">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/GetStockLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStockLocationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnlineProducts">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/UpdateOnlineProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOnlineProductsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WStockSoap12" type="tns:WStockSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStockInfo">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/GetStockInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStockInfoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockLocation">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/GetStockLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStockLocationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnlineProducts">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/stock/2011/04/UpdateOnlineProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateOnlineProductsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WStock">
+    <wsdl:port name="WStockSoap" binding="tns:WStockSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WStock.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WStockSoap12" binding="tns:WStockSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WStock.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

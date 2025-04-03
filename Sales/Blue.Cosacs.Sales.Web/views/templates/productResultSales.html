@@ -1,0 +1,38 @@
+<div class="search-product result search-result col-lg-3 col-md-3 no-margin grid-item"
+     data-id="{{result.id}}" data-itemno="{{result.productItemNo}}" ng-repeat="result in displayResults">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <span class="item-description">{{result.productItemNo}} {{result.description}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <h4 class="compact">
+                <span class="glyphicons cart_in" title="Add to cart"></span>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 promoAmount red-text" ng-if="result.promoData">
+            <b ng-if="cart.salesType <= '2'">{{result.promoData.cashPrice | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+            <b ng-if="cart.salesType <= '2'">/</b>
+            <b ng-if="cart.salesType <= '2'">{{result.promoData.cashPriceTaxInclusive | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+
+            <b ng-if="cart.salesType > '2'">{{result.promoData.regularPrice | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+            <b ng-if="cart.salesType > '2'">/</b>
+            <b ng-if="cart.salesType > '2'">{{result.promoData.regularPriceTaxInclusive | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 amount" ng-class="{'strikeThrough' : result.promoData}">
+            <b ng-if="cart.salesType <= '2'">{{result.priceData.cashPrice | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+            <b ng-if="cart.salesType <= '2'">/</b>
+            <b ng-if="cart.salesType <= '2'">{{result.priceData.cashPriceTaxInclusive | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+
+            <b ng-if="cart.salesType > '2'">{{result.priceData.regularPrice | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+            <b ng-if="cart.salesType > '2'">/</b>
+            <b ng-if="cart.salesType > '2'">{{result.priceData.regularPriceTaxInclusive | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</b>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "name": "Blue.Cosacs.Web",
+  "version": "0.0.0",
+  "authors": [
+    ""
+  ],
+  "appPath": "/",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.3.x",
+    "bootstrap": "~3.2.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.x"
+  }
+}

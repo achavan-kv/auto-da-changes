@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Sales Commissions">
+    <head><title>Commissions in the New Sales Order Screen</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapBody.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapUtilities.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapHighlighter.js"> <![CDATA[ ]]></script>
+    </head>
+    <body>
+        <h1>Commissions in the New Sales Order Screen</h1>
+        <h2 class="CH2">Extra spiff for display items
+	</h2>
+        <p class="MyStyle">There will be a right click option on an undelivered product (stock) line called Add additional SPIFF.  When choosing this the user will be presented with a value to enter and a user name and password for authorisation
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;font-size: 10pt;" value="1">The system will allow authorisation based on the user right “New Sales Order – add extra spiff”
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="2">The system will record the user name who authorised, the amount of spiff, account number, item number and stock location in the SalesCommissionExtraSpiffs table. The system will prevent more than one SPIFF being added against an item. </li>
+            <li style="font-family: Arial;font-size: 10pt;" value="3"> When the item is delivered the extra commission will be delivered in the commission process 
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="4">The extra spiff record could be removed by right clicking on the SPIFF line and choosing remove spiff – this will only be possible until the item is delivered. Clicking on a SPIFF line will not populate the Product information line. This must not be printed on the agreement.
+</li>
+        </ul>
+        <h2 class="CH2">Spiff Selection
+</h2>
+        <p class="MyStyle">Depending on the country parameter, SPIFF Reselection , the Spiff Selection pop-up will behave as follows:</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;font-size: 10pt;" value="1">Spiff Reselection set to PS – A pop up screen will be displayed listing items in the same category as the entered item, that have a higher SPIFF value and that product is in stock.  The entered item must have a SPIFF against it. 
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="2">SPIFF Reselection set to PA - A popup screen will be displayed listing items in the same category as the entered item, that have SPIFFs’ against them, even if the entered items does not have a SPIFF against it.
+
+</li>
+        </ul>
+        <p class="MyStyle">This functionality will appear before the item is clicked on and entered into the product grid and so will appear before any warranties are added or the out of stock pop up and associated items.  If associated item selected has a SPIFF the SPIFF popup may need to be invoked again.</p>
+        <p class="MyStyle">If a SPIFF’d item has linked items in stock (available stock)  then a Gold dollar sign will appear. If this is clicked the multiple SPIFF items will be displayed, together with the item description, SPIFF value, and SPIFF percentage. 
+</p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

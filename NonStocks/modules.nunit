@@ -1,0 +1,7 @@
+<NUnitProject>
+  <Settings activeconfig="Release" />
+  <Config name="Debug" binpathtype="Auto" />
+  <Config name="Release" configfile="Cosacs.nunit.config" binpathtype="Auto" runtimeFramework="any">
+    <assembly path="Blue.Cosacs.NonStocks.Test\bin\Release\Blue.Cosacs.NonStocks.Test.dll" />
+  </Config>
+</NUnitProject>

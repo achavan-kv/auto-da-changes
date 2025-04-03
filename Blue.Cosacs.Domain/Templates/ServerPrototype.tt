@@ -1,0 +1,31 @@
+﻿<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+<#+
+public class ServerPrototype : Template
+{
+	public ServicesNamespace Ns;
+	public ServicesNamespaceService Service;
+
+    public override string TransformText()
+    {
+#>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Blue.Cosacs.Shared.Services.<#= Ns.name #>;
+
+namespace Blue.Cosacs.Services.<#= Ns.name #>
+{
+	partial class Server 
+    {
+        public <#= Service.name #>Response Call(<#= Service.name #>Request request)
+        {
+            // TODO write your stuff here
+            throw new NotImplementedException();
+        }
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

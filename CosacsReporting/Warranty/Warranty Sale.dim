@@ -1,0 +1,364 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="bc9c3c56-1958-4161-9da0-b05abeacef21" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Warranty Sale</ID>
+  <Name>Warranty Sale</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2250" scrolltop="-8651" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12091" y="21299" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="WarrantySale" left="-165" top="-8096" logicalid="8" controlid="1" masterid="0" hint1="0" hint2="0" width="3440" height="6587" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000700d0000bb190000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Warranty_OLAPview_WarrantySales" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Customer" left="4667" top="1656" logicalid="9" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="8042" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b00006a1f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_OLAPview_Customer" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Product" left="4695" top="-6292" logicalid="10" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b00009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Olapview_Product" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Warranty" left="-1958" top="1005" logicalid="11" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Warranty_OLAPview_Warranty" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1805" top="-1809" logicalid="12" controlid="5" masterid="0" hint1="0" hint2="0" width="3162" height="10636" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_WarrantySales-OLAPview_Customer]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="34" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4667" y="8427" />
+              <point x="2105" y="8427" />
+              <point x="2105" y="-1509" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="2975" top="-7853" logicalid="13" controlid="6" masterid="0" hint1="0" hint2="0" width="2020" height="2858" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_WarrantySales-Olapview_Product]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="12" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4695" y="-5395" />
+              <point x="4015" y="-5395" />
+              <point x="4015" y="-7553" />
+              <point x="3275" y="-7553" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-857" top="-3277" logicalid="14" controlid="7" masterid="0" hint1="0" hint2="0" width="1612" height="4782" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_WarrantySales-OLAPview_Warranty]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="-458" y="1005" />
+              <point x="-458" y="-2977" />
+              <point x="455" y="-2977" />
+              <point x="455" y="-1509" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2250</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-8651</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-1958</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-8096</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="597a70bd-0749-4d43-8ba3-42c8fe552a7d">
+    <DataSourceViewID>CosacsReporting</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="4af07ea0-507e-4fd6-a24c-9052d6613349">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="47dc9973-f1a5-4791-bc39-95112c711d23">
+      <ID>Warranty Sale Id</ID>
+      <Name>Warranty Sale Id</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>602299</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="833759c6-46d1-4ab9-a05e-51928aaf4dc3">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d9f1cf2a-c4a9-42d6-89ec-3a325af7a07c">
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            <ColumnID>WarrantySaleId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="f5af81e0-dc61-4e14-8859-e4dff010e14d">
+          <AttributeID>Product Id</AttributeID>
+          <Name>Product Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bdcd6b3a-eafa-4326-8133-c08647e1be43">
+          <AttributeID>Price</AttributeID>
+          <Name>Price</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f602db97-25f0-42d0-83b2-676a016fe7ec">
+          <AttributeID>Customer Id</AttributeID>
+          <Name>Customer Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f037384e-f5c4-4d82-b81b-ca6c8aaca051">
+          <AttributeID>Number</AttributeID>
+          <Name>Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0e1a798e-8e70-4207-8340-90b7572c8d63">
+          <AttributeID>Sold On</AttributeID>
+          <Name>Warranty Sale Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a503f3dc-9cf8-41ad-becb-fdae89cbf018">
+          <AttributeID>Warranty Id 1</AttributeID>
+          <Name>Warranty Id 1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6d33dab7-9cff-446c-8e38-307a0acee79d">
+          <AttributeID>Is Cancelled Or Repossessed</AttributeID>
+          <Name>Is Cancelled Or Repossessed</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2143f714-0a8f-4f6c-9894-2063b5d9b204">
+          <AttributeID>Cancelled Price</AttributeID>
+          <Name>Cancelled Price</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ce63a3da-8544-4b25-80fb-296629e81d99">
+      <ID>Product Id</ID>
+      <Name>Product</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5f160ac2-f6ec-4001-a511-8f4bad4314c8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41f3fba7-4fb2-43cb-b391-03b24a2f2dcf">
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            <ColumnID>ProductId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3f335d81-5602-4701-bfa3-1523681fe532">
+        <DataType>WChar</DataType>
+        <DataSize>18</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="bad4f99a-365b-4322-857f-bf5242f93a7a">
+          <TableID>dbo_Olapview_Product</TableID>
+          <ColumnID>Product</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1520181a-9530-4e0a-acc6-374864efaed7">
+      <ID>Price</ID>
+      <Name>Price</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b6e0841c-017c-4edc-8e4e-ad133a890f4e">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4f93f548-e6a1-44f9-8c62-ed7a3f5eac51">
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            <ColumnID>Price</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="81b57e32-66c4-4db5-921c-a8cd5804846c">
+      <ID>Customer Id</ID>
+      <Name>Customer</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ee8d7613-dcbf-4549-9460-dfa635c86248">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ddeccbfa-d034-43c8-908a-e3272d75e8e7">
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            <ColumnID>CustomerId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="419f31e9-e725-4dbb-91fc-beedc008cb00">
+        <DataType>WChar</DataType>
+        <DataSize>117</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fa7179e3-bc0c-444d-a9cf-e01cb0df0b27">
+          <TableID>dbo_OLAPview_Customer</TableID>
+          <ColumnID>FullName</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="86780cb6-d3e3-4bc0-8e69-4c0c9ef39fec">
+      <ID>Number</ID>
+      <Name>Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9b21bb6d-6978-4d63-867f-961bf8fe94e8">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d62f59aa-9420-48a7-9e97-ca90528e5d39">
+            <TableID>Warranty_OLAPview_Warranty</TableID>
+            <ColumnID>Number</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="466675cb-247c-4cc4-96d7-cc9c45f5ad02">
+      <ID>Sold On</ID>
+      <Name>Warranty Sale Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f10e0c22-b8f9-4efc-bf2e-ad09446db327">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="295c5469-8065-4c58-b2c7-987d51c5feaa">
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            <ColumnID>SoldOn</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c6f7f99e-6d5c-403d-b5b9-27a5ff4c69b1">
+      <ID>Warranty Id 1</ID>
+      <Name>Warranty Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cbacce64-9c26-44aa-a951-75e52c55ea73">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b1c0292b-55d8-4340-8418-1e1f4a7320ce">
+            <TableID>Warranty_OLAPview_Warranty</TableID>
+            <ColumnID>WarrantyId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c2b3908f-ba1d-4e24-8027-78e3bd993494">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2c0852f6-0a1c-4441-a28f-f36da89d5e6b">
+          <TableID>Warranty_OLAPview_Warranty</TableID>
+          <ColumnID>Number</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8e5edfb5-9aab-45f8-84ff-4bae1c40963e">
+      <ID>Is Cancelled Or Repossessed</ID>
+      <Name>Is Cancelled Or Repossessed</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="41eaad40-2cce-43d5-9308-00c273a10cdc">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="42e1783b-bbd8-418b-9270-4f08ec3b917f">
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            <ColumnID>IsCancelledOrRepossessed</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1dc0a0f6-1e2d-4a9a-a250-33100d395b37">
+      <ID>Cancelled Price</ID>
+      <Name>Cancelled Price</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4cd63f33-4e09-4fe9-ac1d-47e83cafd06d">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e657cfbf-3d3b-4c7f-9157-8cad2a66c089">
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            <ColumnID>CancelledPrice</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

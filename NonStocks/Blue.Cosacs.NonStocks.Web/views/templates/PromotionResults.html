@@ -1,0 +1,91 @@
+<table class="data table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th class="title filters">Filters</th>
+            <th class="title date">Start Date</th>
+            <th class="title date">End Date</th>
+            <th class="title price">Promotion Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <tr class="promotion" ng-repeat="promo in promotions">
+        <td><span class="glyphicons glyph-btn bin" title="Delete" ng-click="deletePromotion(promo)"></span></td>
+        <td class="filters">
+            <table class="filterstable">
+                <tr class="filter" ng-repeat="filter in promo.Filters">
+                    <td class="level-name">{{filter.name}}:</td>
+                    <td ng-show="filter.name != 'NonStock'" class="tag-name">{{filter.value}}</td>
+                    <td ng-show="filter.name == 'NonStock'">
+                        <a class="refLink" href="{{filter.nonStockUrl}}">{{filter.value}}</a></td>
+                </tr>
+            </table>
+        </td>
+        <td class="date">{{promo.startDate | date:"dd MMM yyyy"}}</td>
+        <td class="date">{{promo.endDate | date:"dd MMM yyyy"}}</td>
+        <td class="price" ng-show="promo.IsPercentage">{{promo.PromotionAmount}} % OFF</td>
+        <td class="price"
+            ng-hide="promo.IsPercentage">{{promo.PromotionAmount | currency : culture.CurrencySymbol : culture.DecimalPlaces}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr class="promotion-new new" ng-hide="creatingNewPromotion">
+        <td>
+            <a class="glyphicons glyph-btn plus" title="New" ng-click="showNewRow($event)"></a>
+        </td>
+        <td colspan="4"></td>
+    </tr>
+    <tr class="promotion-new create" ng-show="creatingNewPromotion">
+        <td>
+            <a class="glyphicons glyph-btn floppy_disk click" ng-show="canSave(newPromotion)"
+               title="Save" ng-click="createNewPromotion()"></a>
+            <a class="glyphicons glyph-btn floppy_disk disabled" ng-hide="canSave(newPromotion)" title="Save"></a>
+            <a class="glyphicons glyph-btn undo" title="Cancel" ng-click="cancelNewPromotion()"></a>
+        </td>
+        <td class="filters">
+            <section class="filters nonstock">
+                <div class="field">
+                    <div>Non Stock</div>
+                    <div ng-class="{'has-error': !newPromotion.NonStock}">
+                        <list ng-model="newPromotion.NonStock.Id" scope="allProductsScope" placeholder="Non Stock"></list>
+                    </div>
+                </div>
+            </section>
+            <section class="filters static">
+                <div class="field">
+                    <div>Fascia</div>
+                    <list ng-model="newPromotion.Fascia" scope="MasterData.fascia" placeholder="Fascia"></list>
+                </div>
+                <div class="field">
+                    <div>Branch</div>
+                    <list ng-model="newPromotion.BranchNumber" scope="MasterData.branches" placeholder="Branch"></list>
+                </div>
+            </section>
+        </td>
+        <td class="date">
+            <div class="field date" ng-class="{'has-error': !newPromotion.startDate}">
+                <input required type="date" ng-model="newPromotion.startDate" ng-change="startDateChanged()"
+                       id="promotionStartDate" placeholder="Start Date" class="date form-control"/>
+            </div>
+        </td>
+        <td class="date">
+            <div class="field date" ng-class="{'has-error': !newPromotion.endDate}">
+                <input required type="date" ng-model="newPromotion.endDate" ng-change="endDateChanged()"
+                       id="promotionEndDate" placeholder="End Date" class="date form-control" />
+            </div>
+        </td>
+        <td class="price">
+            <div class="field" ng-model="newPromotion.Action" ng-class="{'has-error': !newPromotion.Action}">
+                <list ng-model="newPromotion.Action" scope="MasterData.PromotionActions" placeholder="Promotion Type"></list>
+            </div>
+            <br />
+            <div class="field price retail" ng-class="{'has-error': !newPromotion.PromotionAmount}">
+                <input required ng-model="newPromotion.PromotionAmount" ng-change="newLocationPromotionRetailPriceChanged()" type="number" step="0.01"
+                       placeholder="{{(newPromotion.Action == '%') && '% Discount' || 'Set Price'}}"
+                       ng-class="{true:'percentage', false:'currency'}[newPromotion.Action == '%']" class="form-control" />
+            </div>
+        </td>
+    </tr>
+    </tfoot>
+</table>

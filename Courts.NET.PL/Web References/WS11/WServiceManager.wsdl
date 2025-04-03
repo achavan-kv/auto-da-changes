@@ -1,0 +1,2623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:element name="GetServiceRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceTypeSearch" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acctNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="invoiceNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceRequestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isPaidAndTakenAcct" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="SaveServiceRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceRequestSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveServiceRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveServiceRequestResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSRCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="custID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="arrears" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="directions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telHome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telWork" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telMobile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSRCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSRCustomerResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePriceIndexMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="priceIndexMatrix">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePriceIndexMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SavePriceIndexMatrixResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTechMainPermissions">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckTechMainPermissionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckTechMainPermissionsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceAllocationPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceAllocationPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceAllocationPaymentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChargeToDeposit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceBranchNo" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChargeToDepositResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChargeToDepositResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="depositAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="depositPaid" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicianDiary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicianDiaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechnicianDiaryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTechnicianSlots">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="calls" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTechnicianSlotsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTechnicianSlotsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPartsDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPartsDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPartsDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookServiceRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotNo" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="multiSlot" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookingType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsAM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="allocatedBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reassignCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reassignedBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookServiceRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BookServiceRequestResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="notFound" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="alreadyBooked" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="curSlotDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="curBookingType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FreeServiceRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotNo" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FreeServiceRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FreeServiceRequestResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWarrantyLength">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prodCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stockLocn" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWarrantyLengthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWarrantyLengthResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicians">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dateAvailable" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechniciansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechniciansResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechniciansByZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dateAvailable" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechniciansByZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechniciansByZoneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateServiceRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceBranchNo" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="invoiceNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stockLocn" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="purchaseDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="unitPrice" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="printLocn" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="itemId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateServiceRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateServiceRequestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadPriceIndexMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="screenDisplay" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadPriceIndexMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadPriceIndexMatrixResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteOffSRChargeAcct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="chargeToAcct" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="outstBal" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="transType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteOffSRChargeAcctResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelSRChargeAcct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="chargeToAcct" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transValue" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelSRChargeAcctResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SRBatchPrintUpdatePrinted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="srPrinted" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchno" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SRBatchPrintUpdatePrintedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteTechnician">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTechnicianResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateTechnician">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateTechnicianResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnician">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicianResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechnicianResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTechnician">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="technicianDataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTechnicianResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicianList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTechnicianListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechnicianListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechniciansForPaymentSceen">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTechniciansForPaymentSceenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechniciansForPaymentSceenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicianPayments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicianPaymentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTechnicianPaymentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTechnicianPaymentSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="technicianSummaryData" type="tns:ArrayOfDecimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDecimal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="decimal" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTechnicianPaymentSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="technicianSummaryData" type="tns:ArrayOfDecimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDetailsForAllTechnicians">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="csvZones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoursFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoursTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="callsPerDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDetailsForAllTechniciansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveDetailsForAllTechniciansResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="noTechniciansExceedingCallsPerDay" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="technicianWithHighestNoSlots" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTechnicianPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateClosed" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalCost" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTechnicianPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveTechnicianPaymentResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceNo" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="showCourts" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="showNonCourts" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="showInternal" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="showCashGo" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="seachLimit" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="exactMatch" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceSearchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSerialNoDup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modelno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSerialNoDupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckSerialNoDupResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFoodLoss">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFoodLossResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFoodLossResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFoodLoss">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="foodLossDataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFoodLossResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerInteraction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerInteractionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerInteractionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="custFullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCutomerInteraction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerInteractionDataSet">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCutomerInteractionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveCutomerInteractionResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutstandingServiceReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reportType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="minLogged" />
+            <s:element minOccurs="0" maxOccurs="1" name="maxLogged" />
+            <s:element minOccurs="0" maxOccurs="1" name="minServiceNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="maxServiceNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="technicianId" />
+            <s:element minOccurs="0" maxOccurs="1" name="notUpdatedSince" />
+            <s:element minOccurs="1" maxOccurs="1" name="daysOutstanding" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceStatus" />
+            <s:element minOccurs="0" maxOccurs="1" name="viewTop" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="directions" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="homePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="workPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Changes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="defaultChargeTo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="customerChargeTo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aigChargeTo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="supplierChargeTo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="internalChargeTo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="delivererChargeTo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOutstandingServiceReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutstandingServiceReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBatchPrintReports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technichianID" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="minSR" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxSR" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="printLocation" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reprintOnly" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="showAll" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBatchPrintReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBatchPrintReportsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceProgressReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="minLogged" />
+            <s:element minOccurs="0" maxOccurs="1" name="maxLogged" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="productGroup" />
+            <s:element minOccurs="1" maxOccurs="1" name="outstanding" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="allocated" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="completed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="fault" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceBranch" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceProgressReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceProgressReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceFailureReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="minLogged" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxLogged" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="fault" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="product" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quarters" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceFailureReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceFailureReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClaimsSubmissionReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="minLogged" />
+            <s:element minOccurs="0" maxOccurs="1" name="maxLogged" />
+            <s:element minOccurs="0" maxOccurs="1" name="minServiceNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="maxServiceNo" />
+            <s:element minOccurs="0" maxOccurs="1" name="fault" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClaimsSubmissionReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClaimsSubmissionReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDepositFromSR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDepositFromSRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveDepositFromSRResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceRequestSummaryForAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceRequestSummaryForAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceRequestSummaryForAccountResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChargeToAuthorisationLoad">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChargeToAuthorisationLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChargeToAuthorisationLoadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateChargeToAuthorisation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="changedValues" type="tns:Changes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateChargeToAuthorisationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceRequestAudit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceRequestNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceRequestAuditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceRequestAuditResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoiceNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cusDetails" type="tns:CustomerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoiceNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInvoiceNumberResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServiceRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveServiceRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveServiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="SaveServiceRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveServiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveServiceRequestAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSRCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSRCustomer" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSRCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSRCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSRCustomerAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SavePriceIndexMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePriceIndexMatrix" />
+  </wsdl:message>
+  <wsdl:message name="SavePriceIndexMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePriceIndexMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePriceIndexMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckTechMainPermissionsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTechMainPermissions" />
+  </wsdl:message>
+  <wsdl:message name="CheckTechMainPermissionsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTechMainPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTechMainPermissionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceAllocationPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceAllocationPayment" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceAllocationPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceAllocationPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceAllocationPaymentAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetChargeToDepositSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChargeToDeposit" />
+  </wsdl:message>
+  <wsdl:message name="GetChargeToDepositSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChargeToDepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChargeToDepositAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianDiarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechnicianDiary" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianDiarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechnicianDiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianDiaryAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckTechnicianSlotsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTechnicianSlots" />
+  </wsdl:message>
+  <wsdl:message name="CheckTechnicianSlotsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTechnicianSlotsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTechnicianSlotsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckPartsDateSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPartsDate" />
+  </wsdl:message>
+  <wsdl:message name="CheckPartsDateSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPartsDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPartsDateAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="BookServiceRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:BookServiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="BookServiceRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:BookServiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookServiceRequestAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="FreeServiceRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:FreeServiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="FreeServiceRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:FreeServiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="FreeServiceRequestAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetWarrantyLengthSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWarrantyLength" />
+  </wsdl:message>
+  <wsdl:message name="GetWarrantyLengthSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWarrantyLengthResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWarrantyLengthAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechnicians" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechniciansResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansByZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechniciansByZone" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansByZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechniciansByZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansByZoneAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CreateServiceRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateServiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateServiceRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateServiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateServiceRequestAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadPriceIndexMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadPriceIndexMatrix" />
+  </wsdl:message>
+  <wsdl:message name="LoadPriceIndexMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadPriceIndexMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadPriceIndexMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="WriteOffSRChargeAcctSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteOffSRChargeAcct" />
+  </wsdl:message>
+  <wsdl:message name="WriteOffSRChargeAcctSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteOffSRChargeAcctResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteOffSRChargeAcctAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CancelSRChargeAcctSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelSRChargeAcct" />
+  </wsdl:message>
+  <wsdl:message name="CancelSRChargeAcctSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelSRChargeAcctResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelSRChargeAcctAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SRBatchPrintUpdatePrintedSoapIn">
+    <wsdl:part name="parameters" element="tns:SRBatchPrintUpdatePrinted" />
+  </wsdl:message>
+  <wsdl:message name="SRBatchPrintUpdatePrintedSoapOut">
+    <wsdl:part name="parameters" element="tns:SRBatchPrintUpdatePrintedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SRBatchPrintUpdatePrintedAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTechnicianSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTechnician" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTechnicianSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTechnicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTechnicianAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ActivateTechnicianSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateTechnician" />
+  </wsdl:message>
+  <wsdl:message name="ActivateTechnicianSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateTechnicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateTechnicianAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechnician" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechnicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveTechnicianSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTechnician" />
+  </wsdl:message>
+  <wsdl:message name="SaveTechnicianSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTechnicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTechnicianAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechnicianList" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechnicianListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianListAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansForPaymentSceenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechniciansForPaymentSceen" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansForPaymentSceenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechniciansForPaymentSceenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechniciansForPaymentSceenAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianPaymentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechnicianPayments" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianPaymentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechnicianPaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianPaymentsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianPaymentSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTechnicianPaymentSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianPaymentSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTechnicianPaymentSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTechnicianPaymentSummaryAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveDetailsForAllTechniciansSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDetailsForAllTechnicians" />
+  </wsdl:message>
+  <wsdl:message name="SaveDetailsForAllTechniciansSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDetailsForAllTechniciansResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDetailsForAllTechniciansAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveTechnicianPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTechnicianPayment" />
+  </wsdl:message>
+  <wsdl:message name="SaveTechnicianPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTechnicianPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTechnicianPaymentAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceSearch" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSearchAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckSerialNoDupSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSerialNoDup" />
+  </wsdl:message>
+  <wsdl:message name="CheckSerialNoDupSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSerialNoDupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSerialNoDupAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetFoodLossSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFoodLoss" />
+  </wsdl:message>
+  <wsdl:message name="GetFoodLossSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFoodLossResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFoodLossAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveFoodLossSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFoodLoss" />
+  </wsdl:message>
+  <wsdl:message name="SaveFoodLossSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFoodLossResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFoodLossAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInteractionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerInteraction" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInteractionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerInteractionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerInteractionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveCutomerInteractionSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCutomerInteraction" />
+  </wsdl:message>
+  <wsdl:message name="SaveCutomerInteractionSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCutomerInteractionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveCutomerInteractionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetOutstandingServiceReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutstandingServiceReport" />
+  </wsdl:message>
+  <wsdl:message name="GetOutstandingServiceReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutstandingServiceReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutstandingServiceReportAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetBatchPrintReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBatchPrintReports" />
+  </wsdl:message>
+  <wsdl:message name="GetBatchPrintReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBatchPrintReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBatchPrintReportsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceProgressReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceProgressReport" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceProgressReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceProgressReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceProgressReportAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceFailureReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceFailureReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceFailureReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceFailureReportAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimsSubmissionReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClaimsSubmissionReport" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimsSubmissionReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClaimsSubmissionReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimsSubmissionReportAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="RemoveDepositFromSRSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveDepositFromSR" />
+  </wsdl:message>
+  <wsdl:message name="RemoveDepositFromSRSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveDepositFromSRResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveDepositFromSRAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestSummaryForAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestSummaryForAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestSummaryForAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestSummaryForAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestSummaryForAccountAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ChargeToAuthorisationLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:ChargeToAuthorisationLoad" />
+  </wsdl:message>
+  <wsdl:message name="ChargeToAuthorisationLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:ChargeToAuthorisationLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChargeToAuthorisationLoadAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChargeToAuthorisationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateChargeToAuthorisation" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChargeToAuthorisationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateChargeToAuthorisationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChargeToAuthorisationAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestAuditSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestAudit" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestAuditSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestAuditResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceRequestAuditAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoiceNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoiceNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoiceNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoiceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoiceNumberAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WServiceManagerSoap">
+    <wsdl:operation name="GetServiceRequest">
+      <wsdl:input message="tns:GetServiceRequestSoapIn" />
+      <wsdl:output message="tns:GetServiceRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveServiceRequest">
+      <wsdl:input message="tns:SaveServiceRequestSoapIn" />
+      <wsdl:output message="tns:SaveServiceRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSRCustomer">
+      <wsdl:input message="tns:UpdateSRCustomerSoapIn" />
+      <wsdl:output message="tns:UpdateSRCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePriceIndexMatrix">
+      <wsdl:input message="tns:SavePriceIndexMatrixSoapIn" />
+      <wsdl:output message="tns:SavePriceIndexMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTechMainPermissions">
+      <wsdl:input message="tns:CheckTechMainPermissionsSoapIn" />
+      <wsdl:output message="tns:CheckTechMainPermissionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAllocationPayment">
+      <wsdl:input message="tns:GetServiceAllocationPaymentSoapIn" />
+      <wsdl:output message="tns:GetServiceAllocationPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChargeToDeposit">
+      <wsdl:input message="tns:GetChargeToDepositSoapIn" />
+      <wsdl:output message="tns:GetChargeToDepositSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianDiary">
+      <wsdl:input message="tns:GetTechnicianDiarySoapIn" />
+      <wsdl:output message="tns:GetTechnicianDiarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTechnicianSlots">
+      <wsdl:input message="tns:CheckTechnicianSlotsSoapIn" />
+      <wsdl:output message="tns:CheckTechnicianSlotsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPartsDate">
+      <wsdl:input message="tns:CheckPartsDateSoapIn" />
+      <wsdl:output message="tns:CheckPartsDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookServiceRequest">
+      <wsdl:input message="tns:BookServiceRequestSoapIn" />
+      <wsdl:output message="tns:BookServiceRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FreeServiceRequest">
+      <wsdl:input message="tns:FreeServiceRequestSoapIn" />
+      <wsdl:output message="tns:FreeServiceRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWarrantyLength">
+      <wsdl:input message="tns:GetWarrantyLengthSoapIn" />
+      <wsdl:output message="tns:GetWarrantyLengthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicians">
+      <wsdl:input message="tns:GetTechniciansSoapIn" />
+      <wsdl:output message="tns:GetTechniciansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechniciansByZone">
+      <wsdl:input message="tns:GetTechniciansByZoneSoapIn" />
+      <wsdl:output message="tns:GetTechniciansByZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateServiceRequest">
+      <wsdl:input message="tns:CreateServiceRequestSoapIn" />
+      <wsdl:output message="tns:CreateServiceRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPriceIndexMatrix">
+      <wsdl:input message="tns:LoadPriceIndexMatrixSoapIn" />
+      <wsdl:output message="tns:LoadPriceIndexMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteOffSRChargeAcct">
+      <wsdl:input message="tns:WriteOffSRChargeAcctSoapIn" />
+      <wsdl:output message="tns:WriteOffSRChargeAcctSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelSRChargeAcct">
+      <wsdl:input message="tns:CancelSRChargeAcctSoapIn" />
+      <wsdl:output message="tns:CancelSRChargeAcctSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SRBatchPrintUpdatePrinted">
+      <wsdl:input message="tns:SRBatchPrintUpdatePrintedSoapIn" />
+      <wsdl:output message="tns:SRBatchPrintUpdatePrintedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTechnician">
+      <wsdl:input message="tns:DeleteTechnicianSoapIn" />
+      <wsdl:output message="tns:DeleteTechnicianSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateTechnician">
+      <wsdl:input message="tns:ActivateTechnicianSoapIn" />
+      <wsdl:output message="tns:ActivateTechnicianSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnician">
+      <wsdl:input message="tns:GetTechnicianSoapIn" />
+      <wsdl:output message="tns:GetTechnicianSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTechnician">
+      <wsdl:input message="tns:SaveTechnicianSoapIn" />
+      <wsdl:output message="tns:SaveTechnicianSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianList">
+      <wsdl:input message="tns:GetTechnicianListSoapIn" />
+      <wsdl:output message="tns:GetTechnicianListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechniciansForPaymentSceen">
+      <wsdl:input message="tns:GetTechniciansForPaymentSceenSoapIn" />
+      <wsdl:output message="tns:GetTechniciansForPaymentSceenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianPayments">
+      <wsdl:input message="tns:GetTechnicianPaymentsSoapIn" />
+      <wsdl:output message="tns:GetTechnicianPaymentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianPaymentSummary">
+      <wsdl:input message="tns:GetTechnicianPaymentSummarySoapIn" />
+      <wsdl:output message="tns:GetTechnicianPaymentSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDetailsForAllTechnicians">
+      <wsdl:input message="tns:SaveDetailsForAllTechniciansSoapIn" />
+      <wsdl:output message="tns:SaveDetailsForAllTechniciansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTechnicianPayment">
+      <wsdl:input message="tns:SaveTechnicianPaymentSoapIn" />
+      <wsdl:output message="tns:SaveTechnicianPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceSearch">
+      <wsdl:input message="tns:ServiceSearchSoapIn" />
+      <wsdl:output message="tns:ServiceSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSerialNoDup">
+      <wsdl:input message="tns:CheckSerialNoDupSoapIn" />
+      <wsdl:output message="tns:CheckSerialNoDupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFoodLoss">
+      <wsdl:input message="tns:GetFoodLossSoapIn" />
+      <wsdl:output message="tns:GetFoodLossSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFoodLoss">
+      <wsdl:input message="tns:SaveFoodLossSoapIn" />
+      <wsdl:output message="tns:SaveFoodLossSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInteraction">
+      <wsdl:input message="tns:GetCustomerInteractionSoapIn" />
+      <wsdl:output message="tns:GetCustomerInteractionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCutomerInteraction">
+      <wsdl:input message="tns:SaveCutomerInteractionSoapIn" />
+      <wsdl:output message="tns:SaveCutomerInteractionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutstandingServiceReport">
+      <wsdl:input message="tns:GetOutstandingServiceReportSoapIn" />
+      <wsdl:output message="tns:GetOutstandingServiceReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBatchPrintReports">
+      <wsdl:input message="tns:GetBatchPrintReportsSoapIn" />
+      <wsdl:output message="tns:GetBatchPrintReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceProgressReport">
+      <wsdl:input message="tns:GetServiceProgressReportSoapIn" />
+      <wsdl:output message="tns:GetServiceProgressReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceFailureReport">
+      <wsdl:input message="tns:GetServiceFailureReportSoapIn" />
+      <wsdl:output message="tns:GetServiceFailureReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimsSubmissionReport">
+      <wsdl:input message="tns:GetClaimsSubmissionReportSoapIn" />
+      <wsdl:output message="tns:GetClaimsSubmissionReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDepositFromSR">
+      <wsdl:input message="tns:RemoveDepositFromSRSoapIn" />
+      <wsdl:output message="tns:RemoveDepositFromSRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestSummaryForAccount">
+      <wsdl:input message="tns:GetServiceRequestSummaryForAccountSoapIn" />
+      <wsdl:output message="tns:GetServiceRequestSummaryForAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargeToAuthorisationLoad">
+      <wsdl:input message="tns:ChargeToAuthorisationLoadSoapIn" />
+      <wsdl:output message="tns:ChargeToAuthorisationLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChargeToAuthorisation">
+      <wsdl:input message="tns:UpdateChargeToAuthorisationSoapIn" />
+      <wsdl:output message="tns:UpdateChargeToAuthorisationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestAudit">
+      <wsdl:input message="tns:GetServiceRequestAuditSoapIn" />
+      <wsdl:output message="tns:GetServiceRequestAuditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceNumber">
+      <wsdl:input message="tns:GetInvoiceNumberSoapIn" />
+      <wsdl:output message="tns:GetInvoiceNumberSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WServiceManagerSoap" type="tns:WServiceManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceRequest">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetServiceRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveServiceRequest">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveServiceRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSRCustomer">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UpdateSRCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateSRCustomerAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePriceIndexMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SavePriceIndexMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SavePriceIndexMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTechMainPermissions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckTechMainPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckTechMainPermissionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAllocationPayment">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetServiceAllocationPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetServiceAllocationPaymentAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChargeToDeposit">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetChargeToDeposit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetChargeToDepositAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianDiary">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechnicianDiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechnicianDiaryAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTechnicianSlots">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckTechnicianSlots" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckTechnicianSlotsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPartsDate">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckPartsDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckPartsDateAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookServiceRequest">
+      <soap:operation soapAction="http://strategicthought.com/webservices/BookServiceRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BookServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FreeServiceRequest">
+      <soap:operation soapAction="http://strategicthought.com/webservices/FreeServiceRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FreeServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWarrantyLength">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetWarrantyLength" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWarrantyLengthAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicians">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechnicians" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechniciansAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechniciansByZone">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechniciansByZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechniciansByZoneAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateServiceRequest">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CreateServiceRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPriceIndexMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadPriceIndexMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadPriceIndexMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteOffSRChargeAcct">
+      <soap:operation soapAction="http://strategicthought.com/webservices/WriteOffSRChargeAcct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:WriteOffSRChargeAcctAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSRChargeAcct">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CancelSRChargeAcct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CancelSRChargeAcctAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRBatchPrintUpdatePrinted">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SRBatchPrintUpdatePrinted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SRBatchPrintUpdatePrintedAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTechnician">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DeleteTechnician" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateTechnician">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ActivateTechnician" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ActivateTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnician">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechnician" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTechnician">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveTechnician" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianList">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechnicianList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechnicianListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechniciansForPaymentSceen">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechniciansForPaymentSceen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechniciansForPaymentSceenAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianPayments">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechnicianPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechnicianPaymentsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianPaymentSummary">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTechnicianPaymentSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTechnicianPaymentSummaryAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDetailsForAllTechnicians">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveDetailsForAllTechnicians" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveDetailsForAllTechniciansAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTechnicianPayment">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveTechnicianPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveTechnicianPaymentAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceSearch">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ServiceSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ServiceSearchAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSerialNoDup">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckSerialNoDup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckSerialNoDupAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFoodLoss">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetFoodLoss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFoodLossAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFoodLoss">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveFoodLoss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveFoodLossAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInteraction">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetCustomerInteraction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCustomerInteractionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCutomerInteraction">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveCutomerInteraction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveCutomerInteractionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutstandingServiceReport">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetOutstandingServiceReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOutstandingServiceReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBatchPrintReports">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetBatchPrintReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBatchPrintReportsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceProgressReport">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetServiceProgressReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetServiceProgressReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceFailureReport">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetServiceFailureReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetServiceFailureReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimsSubmissionReport">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetClaimsSubmissionReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetClaimsSubmissionReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDepositFromSR">
+      <soap:operation soapAction="http://strategicthought.com/webservices/RemoveDepositFromSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveDepositFromSRAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestSummaryForAccount">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetServiceRequestSummaryForAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetServiceRequestSummaryForAccountAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargeToAuthorisationLoad">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ChargeToAuthorisationLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChargeToAuthorisationLoadAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChargeToAuthorisation">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UpdateChargeToAuthorisation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateChargeToAuthorisationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestAudit">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetServiceRequestAudit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetServiceRequestAuditAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceNumber">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetInvoiceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInvoiceNumberAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WServiceManagerSoap12" type="tns:WServiceManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceRequest">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetServiceRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveServiceRequest">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveServiceRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSRCustomer">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UpdateSRCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateSRCustomerAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePriceIndexMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SavePriceIndexMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SavePriceIndexMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTechMainPermissions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckTechMainPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckTechMainPermissionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAllocationPayment">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetServiceAllocationPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetServiceAllocationPaymentAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChargeToDeposit">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetChargeToDeposit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetChargeToDepositAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianDiary">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechnicianDiary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechnicianDiaryAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTechnicianSlots">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckTechnicianSlots" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckTechnicianSlotsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPartsDate">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckPartsDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckPartsDateAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookServiceRequest">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/BookServiceRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BookServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FreeServiceRequest">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/FreeServiceRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FreeServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWarrantyLength">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetWarrantyLength" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWarrantyLengthAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicians">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechnicians" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechniciansAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechniciansByZone">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechniciansByZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechniciansByZoneAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateServiceRequest">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CreateServiceRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateServiceRequestAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPriceIndexMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadPriceIndexMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadPriceIndexMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteOffSRChargeAcct">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/WriteOffSRChargeAcct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:WriteOffSRChargeAcctAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSRChargeAcct">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CancelSRChargeAcct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CancelSRChargeAcctAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRBatchPrintUpdatePrinted">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SRBatchPrintUpdatePrinted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SRBatchPrintUpdatePrintedAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTechnician">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DeleteTechnician" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateTechnician">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ActivateTechnician" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ActivateTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnician">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechnician" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTechnician">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveTechnician" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianList">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechnicianList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechnicianListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechniciansForPaymentSceen">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechniciansForPaymentSceen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechniciansForPaymentSceenAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianPayments">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechnicianPayments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechnicianPaymentsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechnicianPaymentSummary">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTechnicianPaymentSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTechnicianPaymentSummaryAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDetailsForAllTechnicians">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveDetailsForAllTechnicians" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveDetailsForAllTechniciansAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTechnicianPayment">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveTechnicianPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveTechnicianPaymentAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceSearch">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ServiceSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ServiceSearchAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSerialNoDup">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckSerialNoDup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckSerialNoDupAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFoodLoss">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetFoodLoss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFoodLossAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFoodLoss">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveFoodLoss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveFoodLossAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerInteraction">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetCustomerInteraction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCustomerInteractionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCutomerInteraction">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveCutomerInteraction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveCutomerInteractionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutstandingServiceReport">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetOutstandingServiceReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOutstandingServiceReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBatchPrintReports">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetBatchPrintReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBatchPrintReportsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceProgressReport">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetServiceProgressReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetServiceProgressReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceFailureReport">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetServiceFailureReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetServiceFailureReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimsSubmissionReport">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetClaimsSubmissionReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetClaimsSubmissionReportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDepositFromSR">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/RemoveDepositFromSR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveDepositFromSRAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestSummaryForAccount">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetServiceRequestSummaryForAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetServiceRequestSummaryForAccountAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargeToAuthorisationLoad">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ChargeToAuthorisationLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChargeToAuthorisationLoadAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChargeToAuthorisation">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UpdateChargeToAuthorisation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateChargeToAuthorisationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestAudit">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetServiceRequestAudit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetServiceRequestAuditAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceNumber">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetInvoiceNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInvoiceNumberAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WServiceManager">
+    <wsdl:port name="WServiceManagerSoap" binding="tns:WServiceManagerSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WServiceManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WServiceManagerSoap12" binding="tns:WServiceManagerSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WServiceManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

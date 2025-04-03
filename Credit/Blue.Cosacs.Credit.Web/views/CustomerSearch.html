@@ -1,0 +1,19 @@
+<div class="container credit" ng-controller="customerSearchController">
+    <h1><span ng-bind="title"></span></h1>
+
+    <div class="FacetSearchContainer">
+        <div class="facetsearch-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <facetsearch data-results=""
+                                 data-results-template="/Credit/views/templates/CustomerSearchTemplate.html"
+                                 data-search-url="Credit/api/CustomerSearch"
+                                 data-history-url=""
+                                 data-field-labels='{ "HomeBranchName" : "Branch", "Tags": "Tags", "StaffMember": "Staff" }'
+                                 data-half-fields='["StaffMember"]'>
+                    </facetsearch>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

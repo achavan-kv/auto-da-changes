@@ -1,0 +1,47 @@
+delete from Merchandising.StockAllocationProduct
+delete from Merchandising.StockAllocation
+
+alter table Merchandising.StockAllocationProduct
+add WarehouseLocationId int not null
+
+alter table Merchandising.StockAllocationProduct
+add constraint FK_Merchandising_StockAllocationProduct_WarehouseLocation foreign key (WarehouseLocationId) references Merchandising.Location(Id)
+
+alter table Merchandising.StockAllocation
+drop constraint [FK_StockAllocation_WarehouseLocationId]
+
+alter table Merchandising.StockAllocationProduct
+drop constraint [FK_Merchandising_StockAllocationProduct_StockAllocation]
+
+alter table Merchandising.StockAllocationProduct
+drop column StockAllocationId
+
+drop table Merchandising.StockAllocation
+
+
+delete from Merchandising.StockRequisitionProduct
+delete from Merchandising.StockRequisition
+
+alter table Merchandising.StockRequisitionProduct
+add WarehouseLocationId int not null
+   ,ReceivingLocationId int not null
+
+alter table Merchandising.StockRequisitionProduct
+add constraint FK_Merchandising_StockRequisitionProduct_WarehouseLocation foreign key (WarehouseLocationId) references Merchandising.Location(Id)
+
+alter table Merchandising.StockRequisitionProduct
+add constraint FK_Merchandising_StockRequisitionProduct_ReceivingLocation foreign key (ReceivingLocationId) references Merchandising.Location(Id)
+
+alter table Merchandising.StockRequisition
+drop constraint [FK_StockRequisition_ReceivingLocationId]
+
+alter table Merchandising.StockRequisition
+drop constraint [FK_StockRequisition_WarehouseLocationId]
+
+alter table Merchandising.StockRequisitionProduct
+drop constraint [FK_Merchandising_StockRequisitionProduct_StockRequisition]
+
+alter table Merchandising.StockRequisitionProduct
+drop column StockRequisitionId
+
+drop table Merchandising.StockRequisition

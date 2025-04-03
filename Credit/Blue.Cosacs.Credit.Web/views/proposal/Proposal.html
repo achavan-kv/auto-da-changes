@@ -1,0 +1,151 @@
+﻿<div class="container credit" ng-controller="proposalController">
+    <h1 ng-bind="title"></h1>
+
+    <div class="row">&nbsp;</div>
+    <div class="col-lg-2">
+        <div ng-include="'/credit/views/proposal/templates/nav.html'"></div>
+    </div>
+
+    <div class="col-lg-7 form-horizontal">
+        <div class="row">
+            <form name="basicDetailsForm" autocomplete = "off" novalidate>
+                <div ng-repeat="field in basicDetailsScheme.fields | orderBy:'fieldOrder'">
+                    <div ng-if="$index == 2" class="row" style="margin-bottom: 30px;">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group"
+                             ng-class="{'has-error': basicDetailsForm[field.id].$invalid }">
+                            <label class="control-label col-lg-4" ng-show="field.visible">{{field.label}}</label>
+
+                            <div class="col-lg-8"
+                                 ng-if="(field.type == 'date' || field.type == 'text' || field.type == 'email') && field.visible">
+                                <input type="{{field.type}}"
+                                       class="form-control"
+                                       ng-model="proposal.Applicant1[field.id]"
+                                       name="{{field.id}}"
+                                       ng-required="field.required"
+                                       id="{{field.id}}"
+                                       maxlength="{{field.length}}"
+                                       ng-pattern="field.validation"
+                                       ng-readonly="pageState != 'edit' || field.readonly"
+                                       ng-class="{ 'search' : isSearchField(field.id),
+                                                       'linked' : isUnchangedLinkedBasic(field.id, proposal.Applicant1[field.id]) && proposal.Applicant1.CustomerId}">
+                                        <span class="field-validation-error"
+                                              ng-show="basicDetailsForm[field.id].$error.email && pageState == 'edit'">Not valid email!</span>
+                            </div>
+                            <div class="col-lg-8" ng-if="field.type == 'list' && field.visible"
+                                 ng-class="{'has-error': field.required && !proposal.Applicant1[field.id]}">
+                                <list id="{{field.id}}"
+                                      name="{{field.id}}"
+                                      scope="field.values"
+                                      placeholder="{{field.label}}"
+                                      ng-model="proposal.Applicant1[field.id]"
+                                      ng-required="field.required"
+                                      ng-readonly="field.readonly"
+                                      ng-show="field.visible"
+                                      ng-disabled="pageState != 'edit'"
+                                      ng-class="{'linked' : isUnchangedLinkedBasic(field.id, proposal.Applicant1[field.id]) && proposal.Applicant1.CustomerId}"></list>
+                            </div>
+                            <div class="link" style="padding-top: 7px;" ng-if="field.type == 'link' && proposal.Applicant1.CustomerId" >
+                                <div class="col-lg-4"></div>
+                                <a ng-href="#/Credit/customers/{{proposal.Applicant1.CustomerId}}" target="_blank">Linked to Customer</a>
+                                    <span class="glyphicons remove_2" title="bin"
+                                          ng-click="unLink()" ng-hide="pageState == 'view'"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6" ng-hide="pageState == 'view'">
+            <form name="addressForm" autocomplete = "off" novalidate>
+                <div class="section">{{scheme.sections[1].sectionName}}</div>
+                <div ng-repeat="field in addressScheme.fields | orderBy:'FieldOrder'">
+                    <div ng-if="$index == 0">
+                        <div class="form-group"
+                             ng-class="{'has-error': addressForm[field.id].$invalid}">
+                            <label class="control-label col-lg-4" ng-show="field.visible">{{field.label}}</label>
+
+                            <div class="col-lg-6">
+                                <list scope="field.values"
+                                      ng-model="newAddress[field.id]"
+                                      name="{{field.id}}"
+                                      ng-show="field.visible"
+                                      ng-required="field.required"
+                                      ng-readonly="field.readonly"
+                                      placeholder="{{field.label}}"
+                                      ng-disabled="pageState != 'edit'"></list>
+                            </div>
+                            <button class="btn btn-default"
+                                    ng-click="addAddress(field.values)"
+                                    ng-disabled="addressForm.$invalid">Add
+                            </button>
+                        </div>
+                    </div>
+                    <div ng-if="$index != 0">
+                        <div class="form-group"
+                             ng-class="{'has-error': addressForm[field.id].$invalid}">
+                            <label class="control-label col-lg-4" ng-show="field.visible">{{field.label}}</label>
+
+                            <div class="col-lg-8" ng-if="(field.type == 'date' || field.type == 'text') && field.visible">
+                                <input type="{{field.type}}"
+                                       class="form-control"
+                                       ng-model="newAddress[field.id]"
+                                       name="{{field.id}}"
+                                       ng-required=field.required
+                                       id="{{field.id}}"
+                                       maxlength="{{field.length}}"
+                                       ng-show="field.visible"
+                                       ng-pattern="field.validation"
+                                       ng-readonly="field.readonly || pageState != 'edit'"
+                                       ng-class="{ 'linked' : isUnchangedLinkedAddress(field.id, newAddress[field.id]) && proposal.Applicant1.CustomerId}">
+                            </div>
+                            <div class="col-lg-8" ng-if="field.type == 'list' && field.visible"
+                                 ng-class="{'has-error': field.required && !newAddress[field.id]}">
+                                <list scope="field.values"
+                                      placeholder="{{field.label}}"
+                                      ng-model="newAddress[field.id]"
+                                      name="{{field.id}}"
+                                      ng-required="field.required"
+                                      ng-readonly="field.readonly"
+                                      ng-disabled="pageState != 'edit'"
+                                      ng-show="field.visible"
+                                      ng-class="{'linked' : isUnchangedLinkedBasic(field.id, proposal.Applicant1[field.id]) && proposal.Applicant1.CustomerId}"></list>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <div class="section">Address Book &nbsp;<span class="glyphicons address_book" title="Addresses"></span></div>
+            <div class="row" form-control ng-class="{'has-error': proposal.addresses.length === 0}">&nbsp;
+                <span ng-hide="proposal.Addresses.length > 0">No addresses have been added.</span>
+                <div style="color: red;" ng-hide="proposal.Addresses.length === 0 || addressTypesRequired.length === 0">
+                   <span  ng-repeat="addressType in addressTypesRequired">{{addressType}}</span> required.
+                </div>
+            </div>
+
+            <div ng-repeat="address in proposal.Addresses | orderBy: 'AddressType'">
+                <address>
+                    <strong>{{address.AddressType}}</strong> <span ng-hide="pageState != 'edit'" class="glyphicons bin" title="Delete"
+                                                                   ng-click="removeAddress($index)"></span>
+                    <br>
+                    {{address.Line1}}, {{address.Line2}}<br>
+                    {{address.City}} {{address.PostCode}}<br>
+                    <span class="glyphicons truck" title="Delivery Area"></span> {{address.DeliveryArea}}
+                </address>
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <button class="btn btn-primary pull-right"
+                ng-click="go()">
+            Next >
+        </button>
+    </div>
+    <div ng-include="'/credit/views/proposal/templates/CustomerSearch.html'"></div>
+    <div class="row">&nbsp;</div>
+
+
+</div>
+

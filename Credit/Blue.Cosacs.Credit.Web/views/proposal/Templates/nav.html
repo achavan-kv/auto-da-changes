@@ -1,0 +1,131 @@
+<div id="navBar" ng-controller="navController">
+    <ul class="nav nav-stacked condensed">
+        <li>
+            <span>Basic Details</span>
+            <ul>
+                <li id="NavBasicDetailsApp1" ng-class="{'navSelected': screen('BasicDetailsApp1')}"
+                    ng-click="go('BasicDetailsApp1')">
+                    <span class="glyphicons crown" title="Main Holder"></span><span> {{applicant1Name()}}</span>
+                    <ul>
+                        <li>
+                            <span>Details</span> <span ng-show="completed('BasicDetailsApp1Details')"
+                                                       class="glyphicons ok_2 pull-right"></span>
+                        </li>
+                        <li>
+                            <span>Address</span><span ng-show="completed('BasicDetailsApp1Address')"
+                                                      class="glyphicons ok_2 pull-right"></span>
+                        </li>
+                    </ul>
+                </li>
+                <li id="NavBasicDetailsApp2" ng-show="hasApplicant2()"
+                    ng-class="{'navSelected': screen('BasicDetailsApp2')}"
+                    ng-click="go('BasicDetailsApp2')">
+                    <span>{{applicant2Name()}}</span>
+                    <ul>
+                        <li>
+                            <span>Details</span> <span ng-show="completed('BasicDetailsApp2')"
+                                                       class="glyphicons ok_2 pull-right"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span>Sanction Stage 1</span>
+            <ul>
+                <li id="NavSanction1Applicant1" ng-class="{'navSelected': screen('Sanction1Applicant1')}"
+                    ng-click="go('Sanction1Applicant1')">
+                    <div ng-show="hasApplicant2()">
+                        <span class="glyphicons crown" title="Main Holder"></span><span> {{applicant1Name()}}</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <span>Personal</span><span ng-show="completed('Sanction1Applicant1Personal')"
+                                                       class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li>
+                            <span>Residential</span><span ng-show="completed('Sanction1Applicant1Residential')"
+                                                          class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li>
+                            <span>Employment</span><span ng-show="completed('Sanction1Applicant1Employment')"
+                                                         class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li>
+                            <span>Financial</span><span ng-show="completed('Sanction1Applicant1Financial')"
+                                                        class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                    </ul>
+                </li>
+                <li id="Sanction1Applicant2" ng-show="hasApplicant2()"
+                    ng-class="{'navSelected': screen('Sanction1Applicant2')}"
+                    ng-click="go('Sanction1Applicant2')">
+                    <span>{{applicant2Name()}}</span>
+                    <ul>
+                        <li ng-show="showSanction1Section('Personal')">
+                            <span>Personal</span><span ng-show="completed('Sanction1Applicant2Personal')"
+                                                       class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li ng-show="showSanction1Section('Residential')">
+                            <span>Residential</span><span ng-show="completed('Sanction1Applicant2Residential')"
+                                                          class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li ng-show="showSanction1Section('Current Employment')">
+                            <span>Employment</span><span ng-show="completed('Sanction1Applicant2Employment')"
+                                                         class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li ng-show="showSanction1Section('Financial')">
+                            <span>Financial</span><span ng-show="completed('Sanction1Applicant2Financial')"
+                                                        class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li id="NavScore" class="headingSelect" ng-click="go('Score')" ng-class="{'disabled': !canScore() }">
+            <span>Score</span><span ng-show="completed('Scored')"
+                                    class="glyphicons ok_2 pull-right"> </span></li>
+        <li ng-class="{'disabled': !canScore() || !completed('Scored')}">
+            <span>Sanction Stage 2</span>
+            <ul>
+                <li id="NavSanction2Applicant1" ng-class="{'navSelected': screen('Sanction2Applicant1')}"
+                    ng-click="go('Sanction2Applicant1')">
+                    <div ng-show="hasApplicant2()">
+                        <span class="glyphicons crown" title="Main Holder"></span><span> {{applicant1Name()}}</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <span>Previous Address</span><span ng-show="completed('Sanction2Applicant1Previous')"
+                                                               class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li>
+                            <span>Landlord Details</span><span ng-show="completed('Sanction2Applicant1Landlord')"
+                                                               class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li>
+                            <span>Employer Details</span><span ng-show="completed('Sanction2Applicant1Employer')"
+                                                               class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                        <li>
+                            <span>References</span><span ng-show="completed('Sanction2Applicant1References')"
+                                                         class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                    </ul>
+                </li>
+                <li id="NavSanction2Applicant2" ng-show="hasApplicant2()"
+                    ng-class="{'navSelected': screen('Sanction2Applicant2')}"
+                    ng-click="go('Sanction2Applicant2')">
+                    <span>{{applicant2Name()}}</span>
+                    <ul>
+                        <li>
+                            <span>References</span><span ng-show="completed('Sanction2Applicant2References')"
+                                                         class="glyphicons ok_2 pull-right"> </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li id="NavDocumentConfirmation" class="headingSelect" ng-class="{'disabled': !canDC() }"
+            ng-click="go('DocumentConfirmation')"><span>Document Confirmation</span></li>
+    </ul>
+</div>

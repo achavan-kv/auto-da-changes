@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Stock" namespace="Blue.Cosacs.Stock" label="Stock">
+    <Connection server="." database="cosacs" />
+    <Queries>
+    </Queries>
+    <Tables>
+    </Tables>
+    <Views>
+        <View name="StockItemView"/>
+        <View name="StockProductCountView"/>
+        <View name="ProductLinkValidateView"/>
+        <View name="StockItemViewRelations"/>
+        <View name="Branch"/>
+        <View name="InstallationItemsView"/>
+        <View name="KitParentPricesView"/>
+        <View name="StockItemWarrantyView"/>
+        <View name="StockItemWarrantyPricesNotSetComboView"/>
+        <View name="StockItemWarrantyPricesSetView"/>
+        <View name="StockItemWarrantyPricesComboView"/>
+    </Views>
+    <Settings>
+    </Settings>
+</Model>

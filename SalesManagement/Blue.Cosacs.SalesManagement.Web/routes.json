@@ -1,0 +1,56 @@
+[
+    {
+        "url": "calllog",
+        "template": "views/calllog.html"
+    },
+    {
+        "url": "followupcalls",
+        "template": "views/FollowUpCalls.html"
+    },
+	{
+		"url": "branchmanagercall",
+		"template": "views/BranchManagerCall.html"
+	},
+    {
+        "url": "CsrUnavailable",
+        "template": "views/CsrUnavailable.html"
+    },
+	{
+        "url": "quickDetailsCapture",
+        "template": "views/QuickDetailsCapture.html"
+    },
+	{
+		"url" : "CSRTargets",
+		"template" : "views/CSRTargets.html"
+	},
+	{
+        "url": "CustomerSearch/:action",
+        "template": "views/CustomerSearch.html",
+        "reloadOnSearch": false
+    },
+	{
+        "url": "CSRCustomerSearch",
+        "template": "views/CSRCustomerSearch.html",
+        "reloadOnSearch": false
+    },
+	{
+        "url": "CallIcon",
+        "template": "views/CallIcon.html"
+    },
+	{
+		"url" : "CsrDashboard",
+		"template" : "views/CsrDashboard.html"
+	},
+	{
+		"url" : "BranchManagerDashboard",
+		"template" : "views/BranchManagerDashboard.html"
+	},
+	{
+		"url" : "BranchManagerUnallocatedCalls",
+		"template" : "views/BranchManagerUnallocatedCalls.html"
+	},
+    {
+        "url" : "AdditionalCustomersInteraction",
+        "template" : "views/AdditionalCustomersInteraction.html"
+    }
+]

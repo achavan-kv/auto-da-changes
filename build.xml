@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Blue.Cosacs.Web" default="lint" basedir="../">
+
+    <description>Client-side ANT build file example</description>
+
+    <taskdef name="jshint" classname="com.philmander.jshint.JsHintAntTask" 
+        classpath="${basedir}/bin/lint/ant-jshint-0.3.4-deps.jar" />
+
+    <target name="-load.properties"
+        description="Set properties for this build">
+        <!--Source JS dir-->
+        <property name="src.js.dir" value="${basedir}/src/Blue.Cosacs.Web/Static/js"/>
+    </target>
+
+    <target name="runJsHint">
+      <!-- Lint the code -->
+      <jshint dir="${src.js.dir}" fail="false" globals="$: false, define: false, require: false, alert: false" 
+              options="forin=false,plusplus=false,white=false,globalstrict=false,validthis=false,smarttabs=true,browser=true,passfail=false,onevar=false,laxbreak=false,asi=false,maxstatements=false,es5=false,curly=false,rhino=false,proto=false,worker=false,supernew=false,scripturl=false,devel=false,maxlen=false,immed=false,maxparams=false,evil=false,iterator=false,camelcase=false,latedef=false,eqnull=false,eqeqeq=false,dojo=false,predef=false,sub=false,prototypejs=false,debug=false,nonew=false,couch=false,undef=false,multistr=false,noempty=false,wsh=false,mootools=false,node=false,jquery=false,boss=false,shadow=false,funcscope=false,newcap=false,yui=false,strict=false,nomen=false,esnext=false,nonstandard=false,loopfunc=false,bitwise=false,lastsemic=false,maxcomplexity=false,expr=false,quotmark=false,maxerr=5,trailing=false,laxcomma=false,maxdepth=false,noarg=false,unused=false">
+        <include name="**/*.js"/>
+        <exclude name="**/requirejs-config.js"/>
+        <exclude name="**/lib/**"/>
+        <exclude name="**/test/**"/>
+        <exclude name="**/unused/**"/>
+        <report type="jslint-xml" destFile="${basedir}/jshint/results.xml" />
+      </jshint>
+    </target>
+
+    <!--Build-->
+    <target name="lint" 
+        description="Builds project files for production use"
+        depends="
+            -load.properties, 
+            runJsHint">
+    </target>
+</project>
+

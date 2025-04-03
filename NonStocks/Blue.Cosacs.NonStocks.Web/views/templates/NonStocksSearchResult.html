@@ -1,0 +1,320 @@
+<div class="non-stocks-search-result col-lg-12 no-margin" ng-repeat="doc in results.response.docs">
+    <div class="row">
+        <div class="results-heading">
+            <div class="col-lg-4">
+                <span class="resultType">{{doc.NonStockType}}</span>
+                <a class="refLink" href="/#/NonStocks/Details/{{ doc.Id }}">#{{ doc.Id }}</a>
+            </div>
+            <div class="col-lg-1">
+            </div>
+            <div class="col-lg-3">
+                <strong>Vendor UPC</strong>
+                <span>{{ doc.VendorUPC }}</span>
+            </div>
+            <div class="col-lg-2">
+                <strong>SKU</strong>
+                <span>{{ doc.SKU }}</span>
+            </div>
+            <div class="col-lg-2 text-right">
+                <!--<div class="statusLabel" ng-show="doc.HasPromotion" >{{ doc.HasPromotion ? "Promotion" : "" }}</div>-->
+                <div class="statusLabel" >{{ doc.Active }}</div>
+            </div>
+        </div>
+        <div class="panel-body centre-section expandable">
+            <div class="col-lg-5">
+                <div ng-show="doc.NonStockType != 'Discount'">{{DisplayTaxRate(doc.TaxRate)}}% Tax Rate</div>
+                <div class="dscription">
+                    <span class="desc1">{{ doc.Description1 }}</span>
+                    <span class="desc2">{{ doc.Description2 }}</span>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <span class="hierarchyL1">{{ doc.Division }}</span>&nbsp;&gt;&nbsp;
+                <span class="hierarchyL2">{{ doc.Department }}</span>&nbsp;&gt;&nbsp;
+                <span class="hierarchyL3">{{ doc.Class }}</span>
+            </div>
+        </div>
+        <div class="text-center expandable-toggle" ng-click="nonStockEditPrice(doc)">
+            <span class="glyphicons more"></span>
+        </div>
+
+        <article class="nonStock-prices" ng-show="doc.editPrices">
+            <table class="table table-bordered table-striped" ng-show="doc.NonStockType != 'Discount'">
+                <thead>
+                    <th class="col-1"></th>
+                    <th class="location-type">Fascia</th>
+                    <th class="location">Branch</th>
+                    <th class="col-2 price">Cost Price</th>
+                    <th class="col-2 price">Retail Price</th>
+                    <th class="col-2 price">Tax Inclusive Price</th>
+                    <th class="date">Effective Date</th>
+                </thead>
+                <tbody class="location-prices">
+                    <tr class="price-info new" ng-hide="doc.addNewPrice" ng-show="false">
+                        <td class="text-center">
+                            <div class="ui-widget glyphicons plus" ng-click="addNewPrice(doc)"></div>
+                        </td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr class="price-info new" ng-show="doc.addNewPrice">
+                        <td>
+                            <span class="glyph-btn save glyphicons floppy_save"
+                                  title="Save" ng-click="createNewLocationPrice(doc)"></span>
+                            <span class="glyph-btn cancel glyphicons undo"
+                                  title="Cancel" ng-click="cancelNewLocationPrice(doc)"></span>
+                        </td>
+                        <td style="width: 15%">
+                            <div class ="fascia">
+                                <list ng-model="doc.newLocationPrice.Fascia" scope="MasterData.fascia"
+                                      placeholder="Fascia"></list>
+                            </div>
+                        </td>
+                        <td style="width: 20%">
+                            <div class ="branch">
+                                <list ng-model="doc.newLocationPrice.BranchNumber" scope="MasterData.branches"
+                                      placeholder="Branch"></list>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price cost"
+                                 ng-class="{'has-error': !isCostPriceStringValueValid(doc.newLocationPrice.CostPrice) }">
+                                <input type="number" class="form-control" ng-model="doc.newLocationPrice.CostPrice"
+                                       required ng-pattern="/^[0-9\.]+$/" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price retail"
+                                 ng-class="{'has-error': !isRetailPriceStringValueValid(doc.newLocationPrice.RetailPrice) }">
+                                <input type="number" class="form-control" ng-model="doc.newLocationPrice.RetailPrice"
+                                       ng-change="newRetailPriceChanged(doc)" ng-pattern="/^[0-9\.]+$/"
+                                       placeholder="0"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price tax"
+                                 ng-class="{'has-error': !isTaxInclusivePriceStringValueValid(doc.newLocationPrice.TaxInclusivePrice) }">
+                                <input type="number" class="form-control" ng-model="doc.newLocationPrice.TaxInclusivePrice"
+                                       ng-change="newTaxInclusivePriceChanged(doc)" ng-pattern="/^[0-9\.]+$/"
+                                       placeholder="0" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="date" ng-class="{'has-error': !doc.newLocationPrice.effectiveDate}">
+                                <input type="date" class="form-control" required
+                                       ng-model="doc.newLocationPrice.effectiveDate"
+                                       placeholder="Effective Date" class="date" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="price-info existing" ng-repeat="locationPrice in doc.priceData" ng-show="doc.NonStockType != 'Discount'">
+                        <td class="inline-bottons">
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons bin" title="Delete"
+                                  ng-click="deleteLocationPrice(doc, locationPrice)"></span>
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons floppy_save" title="Save"
+                                  ng-click="saveLocationPriceChange(doc.TaxRate, locationPrice)"></span>
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons undo" title="Cancel"
+                                  ng-click="cancelLocationPriceChange(locationPrice)"></span>
+                        </td>
+                        <td class="location-type">
+
+                            <a ng-show="locationPrice.HasPromotion"
+                               ng-href="/#/NonStocks/Promotions?SKU={{doc.SKU}}&ActiveFrom={{locationPrice.EffectiveDate}}" >
+                                <span class="glyphicons circle_info"
+                                      title="There are Promotion(s) related with this price. Click to see more details."></span>
+                            </a>
+
+                            {{locationPrice.Fascia || 'All'}}
+                        </td>
+                        <td class="location">{{locationPrice.BranchName || 'All'}}</td>
+                        <td>
+                            <div class="price"
+                                 ng-class="{'has-error': !isCostPriceStringValueValid(locationPrice.CostPrice) }">
+                                <input type="number" class="form-control" ng-model="locationPrice.CostPrice"
+                                       required ng-pattern="/^[0-9\.]+$/"
+                                       ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price retail"
+                                 ng-class="{'has-error': !isRetailPriceStringValueValid(locationPrice.RetailPrice) }">
+                                <input type="number" class="form-control" ng-model="locationPrice.RetailPrice"
+                                       ng-change="retailPriceChanged(doc.TaxRate, locationPrice)"
+                                       required ng-pattern="/^[0-9\.]+$/"
+                                       ng-disabled="locationPrice.EffectiveDateInThePast" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="price tax"
+                                 ng-class="{'has-error': !isTaxInclusivePriceStringValueValid(locationPrice.TaxInclusivePrice) }">
+                                <input type="number" class="form-control" ng-model="locationPrice.TaxInclusivePrice"
+                                       ng-change="taxInclusivePriceChanged(doc.TaxRate, locationPrice)"
+                                       required ng-pattern="/^[0-9\.]+$/"
+                                       ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="field date" ng-class="{'has-error': !locationPrice.effectiveDate}">
+                                <input type="date" class="form-control" required ng-model="locationPrice.effectiveDate"
+                                       placeholder="Effective Date" class="date"
+                                       ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-bordered table-striped" ng-show="doc.NonStockType == 'Discount'">
+                <thead>
+                <th class="col-1"></th>
+                <th class="location-type">Fascia</th>
+                <th class="location">Branch</th>
+                <th class="col-2 price">Discount Value</th>
+                <th class="date">Effective Date</th>
+                <th class="date">End Date</th>
+                </thead>
+                <tbody class="location-prices">
+                <tr class="price-info new" ng-hide="doc.addNewPrice">
+                    <td class="text-center">
+                        <div class="ui-widget glyphicons plus" ng-click="addNewPrice(doc)"></div>
+                    </td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr class="price-info new" ng-show="doc.addNewPrice">
+                    <td>
+                            <span class="glyph-btn glyphicons floppy_save"
+                                  title="Save" ng-click="createNewLocationPrice(doc)"></span>
+                            <span class="glyph-btn glyphicons undo"
+                                  title="Cancel" ng-click="cancelNewLocationPrice(doc)"></span>
+                    </td>
+                    <td style="width: 15%">
+                        <div class ="fascia">
+                            <list ng-model="doc.newLocationPrice.Fascia" scope="MasterData.fascia"
+                                  placeholder="Fascia"></list>
+                        </div>
+                    </td>
+                    <td style="width: 20%">
+                        <div class ="branch">
+                            <list ng-model="doc.newLocationPrice.BranchNumber" scope="MasterData.branches"
+                                  placeholder="Branch"></list>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="price discountValue"
+                             ng-class="{'has-error': !isDiscountValueStringValueValid(doc.newLocationPrice.DiscountValue) }">
+                            <input type="number" class="form-control" ng-model="doc.newLocationPrice.DiscountValue"
+                                   required ng-pattern="/^[0-9\.]+$/" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="date" ng-class="{'has-error': !doc.newLocationPrice.effectiveDate}">
+                            <input type="date" class="form-control" required
+                                   ng-model="doc.newLocationPrice.effectiveDate"
+                                   placeholder="Effective Date" class="date" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="date" ng-class="{'has-error': !doc.newLocationPrice.endDate}">
+                            <input type="date" class="form-control" required
+                                   ng-model="doc.newLocationPrice.endDate"
+                                   placeholder="End Date" class="date" />
+                        </div>
+                    </td>
+                </tr>
+                <tr class="price-info existing" ng-repeat="locationPrice in doc.priceData" ng-show="doc.NonStockType != 'Discount'">
+                    <td class="inline-bottons">
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons bin" title="Delete"
+                                  ng-click="deleteLocationPrice(doc, locationPrice)"></span>
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons floppy_save" title="Save"
+                                  ng-click="saveLocationPriceChange(doc.TaxRate, locationPrice)"></span>
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons undo" title="Cancel"
+                                  ng-click="cancelLocationPriceChange(locationPrice)"></span>
+                    </td>
+                    <td class="location-type">
+                        {{locationPrice.Fascia || 'All'}}
+                    </td>
+                    <td class="location">{{locationPrice.BranchName || 'All'}}</td>
+                    <td>
+                        <div class="price"
+                             ng-class="{'has-error': !isCostPriceStringValueValid(locationPrice.CostPrice) }">
+                            <input type="number" class="form-control" ng-model="locationPrice.CostPrice"
+                                   required ng-pattern="/^[0-9\.]+$/"
+                                   ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="price retail"
+                             ng-class="{'has-error': !isRetailPriceStringValueValid(locationPrice.RetailPrice) }">
+                            <input type="number" class="form-control" ng-model="locationPrice.RetailPrice"
+                                   ng-change="retailPriceChanged(doc.TaxRate, locationPrice)"
+                                   required ng-pattern="/^[0-9\.]+$/"
+                                   ng-disabled="locationPrice.EffectiveDateInThePast" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="price tax"
+                             ng-class="{'has-error': !isTaxInclusivePriceStringValueValid(locationPrice.TaxInclusivePrice) }">
+                            <input type="number" class="form-control" ng-model="locationPrice.TaxInclusivePrice"
+                                   ng-change="taxInclusivePriceChanged(doc.TaxRate, locationPrice)"
+                                   required ng-pattern="/^[0-9\.]+$/"
+                                   ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field date" ng-class="{'has-error': !locationPrice.effectiveDate}">
+                            <input type="date" class="form-control" required ng-model="locationPrice.effectiveDate"
+                                   placeholder="Effective Date" class="date"
+                                   ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="price-info existing" ng-repeat="locationPrice in doc.priceData" ng-show="doc.NonStockType == 'Discount'">
+                    <td class="inline-bottons">
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons bin" title="Delete"
+                                  ng-click="deleteLocationPrice(doc, locationPrice)"></span>
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons floppy_save" title="Save"
+                                  ng-click="saveLocationPriceChange(doc.TaxRate, locationPrice)"></span>
+                            <span ng-show="!locationPrice.EffectiveDateInThePast"
+                                  class="glyph-btn glyphicons undo" title="Cancel"
+                                  ng-click="cancelLocationPriceChange(locationPrice)"></span>
+                    </td>
+                    <td class="location-type">
+                        {{locationPrice.Fascia || 'All'}}
+                    </td>
+                    <td class="location">{{locationPrice.BranchName || 'All'}}</td>
+                    <td>
+                        <div class="price"
+                             ng-class="{'has-error': !isDiscountValueStringValueValid(locationPrice.DiscountValue) }">
+                            <input type="number" class="form-control" ng-model="locationPrice.DiscountValue"
+                                   required ng-pattern="/^[0-9\.]+$/"
+                                   ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field date" ng-class="{'has-error': !locationPrice.effectiveDate}">
+                            <input type="date" class="form-control" required ng-model="locationPrice.effectiveDate"
+                                   placeholder="Effective Date" class="date"
+                                   ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field date">
+                            <input type="date" class="form-control" required ng-model="locationPrice.endDate"
+                                   placeholder="End Date" class="date"
+                                   ng-disabled="locationPrice.EffectiveDateInThePast"/>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+    </div>
+</div>

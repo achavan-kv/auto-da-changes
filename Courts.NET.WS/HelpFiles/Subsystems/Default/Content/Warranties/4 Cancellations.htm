@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="" MadCap:tocPath="Warranties">
+    <head><title>Cancellations</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapBody.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapUtilities.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapHighlighter.js"> <![CDATA[ ]]></script>
+    </head>
+    <body>
+        <h1 class="Heading1"><a name="4"></a><span class="span_2">4 </span>Warranty Cancellations</h1>
+        <p class="p_15">This section will explain 2 kinds of cancellations. </p>
+        <ol start="1" class="ol_2">
+            <li class="li_12" value="1">When a product is canceled with a warranty attached to it</li>
+            <li class="li_12" value="2">When a warranty is canceled because the customer has decided they actually don’t want the cover.</li>
+        </ol>
+        <h3 class="Heading3"><a name="4.1.1"></a><span class="span_13">4.1.1 </span>Cancellation of a product sale with an attached warranty</h3>
+        <ol>
+            <li value="1">For various reasons items can be canceled and the customers account is credited to the value of that product. This can be done at any stage in the life of an agreement</li>
+            <li value="2">If the product is canceled the warranty must automatically be canceled too. The <a href="../Country Parameters/WarrantyCM.htm#1.1.10">return code</a> used for the warranty cancellation must be according to the warranty tables. Usually a cancellation is done within 30 days in which case we would receive 100% rebate from AIG. However in the case the product is returned after 30 days the warranty rebate back from AIG would be less as the warranty is considered used for those 30 days.</li>
+            <li value="3">The customer would be expected to pay for the expired portion of the warranty. We cannot give them 100% credit for that warranty if the cancellation is done after 30 days. There will be an option to choose whether or not the customer will have to pay for the expired portion or not at the time the return is done in the goods&#160;return screen</li>
+            <li value="4">For cancellations, the warranty is returned at full value, but a CRE / CRF transaction is posted to the account increasing the customer’s outstanding balance by the amount of the expired portion of the warranty.</li>
+            <li value="5">The product is canceled in month 2. According to return code tables we receive 84.4% back from AIG. 15.6% is considered as used. There will be a prompt to allow the sales person to select if the customer should pay for the expired portion of the warranty or not.</li>
+            <p>&#160;</p>
+            <p class="p_15">This prompt will appear at the point that the warranty is being collected. It will say this:</p>
+            <p class="p_15">“Confirm Customer will be paying the used portion of the warranty?”</p>
+            <p>&#160;</p>
+            <p class="BodyText_6">This popup will only appear after month 2 because in month 1 the warranty is not seen as used yet. </p>
+            <p class="BodyText_6">This will prompt default to “yes” as customers should expect to have to lose this.</p>
+            <p class="BodyText">&#160;</p>
+            <p class="p_16">Original Account</p>
+            <p>&#160;</p>
+            <p><span class="span_20">Item A</span><span class="span_24"></span><span class="span_25">$1000</span>
+            </p>
+            <p><span class="span_20">Warranty</span><span class="span_26"></span><span class="span_25">$ 100</span>
+            </p>
+            <p><span class="span_20">Agreement total: </span><span class="span_27">$1100</span>
+            </p>
+            <p>&#160;</p>
+            <p class="p_16">Cancelled items:</p>
+            <p><span class="span_20">Item A</span><span class="span_24"></span><span class="span_25">1000</span>
+            </p>
+            <p><span class="span_20">Warranty</span><span class="span_26"></span><span class="span_25">$ 100 (the correct return code will be attached to this item and we will recover the correct amount from AIG)</span>
+            </p>
+            <p><span class="span_20">CRE / CRF</span><span class="span_28">$15.60 (this must be posted to FACT2000 via the deliveries files)</span>
+            </p>
+            <p>&#160;</p>
+            <p class="p_15">Sales people will be aware of this and should be able to explain this is customers.&#160;</p>
+        </ol>
+        <p>
+            <MadCap:dropDownHead>&#160;</MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p class="p_15">&#160;</p>
+            </MadCap:dropDownBody>
+        </p>
+        <h3 class="Heading3"><a name="4.1.2"></a><span class="span_13">4.1.2 </span>When a warranty is canceled on its own without the product</h3>
+        <p>&#160;</p>
+        <p class="p_15">In the situation where the customer has decided that they do not want the extra warranty cover they are able to cancel this.  </p>
+        <p>&#160;</p>
+        <p class="p_15">This needs to be controlled by a new country parameter called: </p>
+        <p>&#160;</p>
+        <p class="p_15">“Warranty Cancellation Period” – This is the period of time from delivery that a warranty can be cancelled in isolation to a product. This is defaulted to 30 days.  Do not get confused with this parameter and the return codes. </p>
+        <p>&#160;</p>
+        <p class="p_15">This type of warranty cancellation will not be able to be processed after the period specified by the country parameter. If the customer wanted to cancel the warranty after the cancellation period has expired, user authorisation would be required. We cannot stop the cancellation of this warranty as there may be a valid reason for the late cancellation. There would be no other way to remove the warranty from the account if we didn’t have this authorisation.  </p>
+        <p>&#160;</p>
+        <p class="p_15">Once authorized cancellation will proceed as normal.</p>
+        <hr width="100%" size="4" align="center" />
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

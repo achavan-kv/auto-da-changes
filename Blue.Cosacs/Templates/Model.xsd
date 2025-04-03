@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           targetNamespace="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/">
+
+    <xs:element name="Model">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Connection">
+                    <xs:complexType>
+                        <xs:attribute name="server" type="xs:string" />
+                        <xs:attribute name="database" type="xs:string" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Queries" minOccurs="0">
+                    <xs:complexType>
+                        <xs:choice minOccurs="0" maxOccurs="unbounded">
+                          <xs:element name="NonQuery" type="NonQuery" />
+                            <!--<xs:element name="DataTable" type="DataTable" />-->
+                            <xs:element name="Scalar" type="Scalar" />
+                            
+                            <!--<xs:element name="Reader" type="Reader" />-->
+                            <xs:element name="DataSet" type="DataSet" />
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Tables" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Table" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>                        
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Views" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="View" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="name" type="xs:string" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="schema" use="optional" type="xs:NMTOKEN" />
+            <xs:attribute name="namespace" use="optional" type="xs:string" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="NonQuery">
+        <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+    <!--xs:complexType name="DataTable">
+        <xs:attribute name="name" type="xs:string" />
+    </xs:complexType-->
+    <!--<xs:complexType name="Reader">
+        <xs:attribute name="name" type="xs:string" />
+    </xs:complexType-->
+    <xs:complexType name="Scalar">
+        <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+    <xs:complexType name="DataSet">
+        <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+
+</xs:schema>

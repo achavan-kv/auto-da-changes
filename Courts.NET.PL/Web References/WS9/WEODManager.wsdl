@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:element name="GetEODControl">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEODControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEODControlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetInterfaceControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eodInterface" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eodInterface2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="allRuns" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInterfaceControlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eodInterface" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInterfaceErrorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EODControlUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="controls">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EODControlUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EODControlUpdateResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eodInterface" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInterfaceValueResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceFinancial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceFinancialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInterfaceFinancialResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceBreakdown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="interfaceAcctNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceBreakdownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInterfaceBreakdownResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="interfaceAcctNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInterfaceTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInterfaceTransactionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryUpdateControlDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="firstrunno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastrunno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="useLiveDatabase" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryUpdateControlDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummaryUpdateControlDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryControlBrancgFigures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="useLiveDatabase" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryControlBrancgFiguresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummaryControlBrancgFiguresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryControlTotals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="useLiveDatabase" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryControlTotalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummaryControlTotalsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEodOptionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configurationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEodOptionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEodOptionListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEODConfigurationOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="confugurationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="freqType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startTime" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="options">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="configStartDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEODConfigurationOptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveEODConfigurationOptionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEodOptionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configurationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEodOptionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEodOptionStatusResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEODAdHocScripts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEODAdHocScriptsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEODAdHocScriptsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EODStartJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configurationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EODStartJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EODStartJobResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEODConfiguration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configurationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEODConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteEODConfigurationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDiskSpace">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="option" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDiskSpaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckDiskSpaceResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="enoughSpace" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="pathError" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEodOptionListDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configurationName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEodOptionListDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEodOptionListDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="frequency" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReRunStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configurationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReRunStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetReRunStatusResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFACT2000Options">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="effDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="fullProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="excludeZeroStock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processEOD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processEOW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processEOP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processCINT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFACT2000OptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFACT2000OptionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EODSetReRun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="runNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EODSetReRunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckServiceExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckServiceExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckServiceExistsResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckToAddSCStatementsOption">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckToAddSCStatementsOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckToAddSCStatementsOptionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveOption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="configurationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEODControlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEODControl" />
+  </wsdl:message>
+  <wsdl:message name="GetEODControlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEODControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEODControlAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceControlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInterfaceControl" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceControlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInterfaceControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceControlAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInterfaceError" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInterfaceErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceErrorAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="EODControlUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:EODControlUpdate" />
+  </wsdl:message>
+  <wsdl:message name="EODControlUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:EODControlUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EODControlUpdateAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInterfaceValue" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInterfaceValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceValueAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceFinancialSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInterfaceFinancial" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceFinancialSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInterfaceFinancialResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceFinancialAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceBreakdownSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInterfaceBreakdown" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceBreakdownSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInterfaceBreakdownResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceBreakdownAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInterfaceTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInterfaceTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInterfaceTransactionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryUpdateControlDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummaryUpdateControlDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryUpdateControlDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummaryUpdateControlDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryUpdateControlDetailsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryControlBrancgFiguresSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummaryControlBrancgFigures" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryControlBrancgFiguresSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummaryControlBrancgFiguresResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryControlBrancgFiguresAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryControlTotalsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummaryControlTotals" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryControlTotalsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummaryControlTotalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummaryControlTotalsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEodOptionList" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEodOptionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionListAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveEODConfigurationOptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveEODConfigurationOptions" />
+  </wsdl:message>
+  <wsdl:message name="SaveEODConfigurationOptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveEODConfigurationOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveEODConfigurationOptionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEodOptionStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEodOptionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionStatusAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetEODAdHocScriptsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEODAdHocScripts" />
+  </wsdl:message>
+  <wsdl:message name="GetEODAdHocScriptsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEODAdHocScriptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEODAdHocScriptsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="EODStartJobSoapIn">
+    <wsdl:part name="parameters" element="tns:EODStartJob" />
+  </wsdl:message>
+  <wsdl:message name="EODStartJobSoapOut">
+    <wsdl:part name="parameters" element="tns:EODStartJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="EODStartJobAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEODConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEODConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEODConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEODConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEODConfigurationAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckDiskSpaceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDiskSpace" />
+  </wsdl:message>
+  <wsdl:message name="CheckDiskSpaceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDiskSpaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDiskSpaceAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionListDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEodOptionListDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionListDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEodOptionListDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEodOptionListDetailsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SetReRunStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetReRunStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetReRunStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetReRunStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetReRunStatusAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveFACT2000OptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFACT2000Options" />
+  </wsdl:message>
+  <wsdl:message name="SaveFACT2000OptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFACT2000OptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFACT2000OptionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="EODSetReRunSoapIn">
+    <wsdl:part name="parameters" element="tns:EODSetReRun" />
+  </wsdl:message>
+  <wsdl:message name="EODSetReRunSoapOut">
+    <wsdl:part name="parameters" element="tns:EODSetReRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="EODSetReRunAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckServiceExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckServiceExists" />
+  </wsdl:message>
+  <wsdl:message name="CheckServiceExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckServiceExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckServiceExistsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckToAddSCStatementsOptionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckToAddSCStatementsOption" />
+  </wsdl:message>
+  <wsdl:message name="CheckToAddSCStatementsOptionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckToAddSCStatementsOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckToAddSCStatementsOptionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOptionSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveOption" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOptionSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveOptionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WEODManagerSoap">
+    <wsdl:operation name="GetEODControl">
+      <wsdl:input message="tns:GetEODControlSoapIn" />
+      <wsdl:output message="tns:GetEODControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceControl">
+      <wsdl:input message="tns:GetInterfaceControlSoapIn" />
+      <wsdl:output message="tns:GetInterfaceControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceError">
+      <wsdl:input message="tns:GetInterfaceErrorSoapIn" />
+      <wsdl:output message="tns:GetInterfaceErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EODControlUpdate">
+      <wsdl:input message="tns:EODControlUpdateSoapIn" />
+      <wsdl:output message="tns:EODControlUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceValue">
+      <wsdl:input message="tns:GetInterfaceValueSoapIn" />
+      <wsdl:output message="tns:GetInterfaceValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceFinancial">
+      <wsdl:input message="tns:GetInterfaceFinancialSoapIn" />
+      <wsdl:output message="tns:GetInterfaceFinancialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceBreakdown">
+      <wsdl:input message="tns:GetInterfaceBreakdownSoapIn" />
+      <wsdl:output message="tns:GetInterfaceBreakdownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceTransactions">
+      <wsdl:input message="tns:GetInterfaceTransactionsSoapIn" />
+      <wsdl:output message="tns:GetInterfaceTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryUpdateControlDetails">
+      <wsdl:input message="tns:GetSummaryUpdateControlDetailsSoapIn" />
+      <wsdl:output message="tns:GetSummaryUpdateControlDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryControlBrancgFigures">
+      <wsdl:input message="tns:GetSummaryControlBrancgFiguresSoapIn" />
+      <wsdl:output message="tns:GetSummaryControlBrancgFiguresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryControlTotals">
+      <wsdl:input message="tns:GetSummaryControlTotalsSoapIn" />
+      <wsdl:output message="tns:GetSummaryControlTotalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionList">
+      <wsdl:input message="tns:GetEodOptionListSoapIn" />
+      <wsdl:output message="tns:GetEodOptionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEODConfigurationOptions">
+      <wsdl:input message="tns:SaveEODConfigurationOptionsSoapIn" />
+      <wsdl:output message="tns:SaveEODConfigurationOptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionStatus">
+      <wsdl:input message="tns:GetEodOptionStatusSoapIn" />
+      <wsdl:output message="tns:GetEodOptionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEODAdHocScripts">
+      <wsdl:input message="tns:GetEODAdHocScriptsSoapIn" />
+      <wsdl:output message="tns:GetEODAdHocScriptsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EODStartJob">
+      <wsdl:input message="tns:EODStartJobSoapIn" />
+      <wsdl:output message="tns:EODStartJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEODConfiguration">
+      <wsdl:input message="tns:DeleteEODConfigurationSoapIn" />
+      <wsdl:output message="tns:DeleteEODConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDiskSpace">
+      <wsdl:input message="tns:CheckDiskSpaceSoapIn" />
+      <wsdl:output message="tns:CheckDiskSpaceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionListDetails">
+      <wsdl:input message="tns:GetEodOptionListDetailsSoapIn" />
+      <wsdl:output message="tns:GetEodOptionListDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReRunStatus">
+      <wsdl:input message="tns:SetReRunStatusSoapIn" />
+      <wsdl:output message="tns:SetReRunStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFACT2000Options">
+      <wsdl:input message="tns:SaveFACT2000OptionsSoapIn" />
+      <wsdl:output message="tns:SaveFACT2000OptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EODSetReRun">
+      <wsdl:input message="tns:EODSetReRunSoapIn" />
+      <wsdl:output message="tns:EODSetReRunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceExists">
+      <wsdl:input message="tns:CheckServiceExistsSoapIn" />
+      <wsdl:output message="tns:CheckServiceExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckToAddSCStatementsOption">
+      <wsdl:input message="tns:CheckToAddSCStatementsOptionSoapIn" />
+      <wsdl:output message="tns:CheckToAddSCStatementsOptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOption">
+      <wsdl:input message="tns:RemoveOptionSoapIn" />
+      <wsdl:output message="tns:RemoveOptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WEODManagerSoap" type="tns:WEODManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEODControl">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEODControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEODControlAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceControl">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetInterfaceControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInterfaceControlAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceError">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetInterfaceError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInterfaceErrorAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EODControlUpdate">
+      <soap:operation soapAction="http://strategicthought.com/webservices/EODControlUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EODControlUpdateAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceValue">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetInterfaceValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInterfaceValueAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceFinancial">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetInterfaceFinancial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInterfaceFinancialAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceBreakdown">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetInterfaceBreakdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInterfaceBreakdownAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceTransactions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetInterfaceTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInterfaceTransactionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryUpdateControlDetails">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSummaryUpdateControlDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSummaryUpdateControlDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryControlBrancgFigures">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSummaryControlBrancgFigures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSummaryControlBrancgFiguresAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryControlTotals">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSummaryControlTotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSummaryControlTotalsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionList">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEodOptionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEodOptionListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEODConfigurationOptions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveEODConfigurationOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveEODConfigurationOptionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionStatus">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEodOptionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEodOptionStatusAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEODAdHocScripts">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEODAdHocScripts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEODAdHocScriptsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EODStartJob">
+      <soap:operation soapAction="http://strategicthought.com/webservices/EODStartJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EODStartJobAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEODConfiguration">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DeleteEODConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteEODConfigurationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDiskSpace">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckDiskSpace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckDiskSpaceAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionListDetails">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEodOptionListDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEodOptionListDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReRunStatus">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SetReRunStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetReRunStatusAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFACT2000Options">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveFACT2000Options" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveFACT2000OptionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EODSetReRun">
+      <soap:operation soapAction="http://strategicthought.com/webservices/EODSetReRun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EODSetReRunAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceExists">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckServiceExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckServiceExistsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckToAddSCStatementsOption">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckToAddSCStatementsOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckToAddSCStatementsOptionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOption">
+      <soap:operation soapAction="http://strategicthought.com/webservices/RemoveOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveOptionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WEODManagerSoap12" type="tns:WEODManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEODControl">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEODControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEODControlAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceControl">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetInterfaceControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInterfaceControlAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceError">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetInterfaceError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInterfaceErrorAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EODControlUpdate">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/EODControlUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EODControlUpdateAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceValue">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetInterfaceValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInterfaceValueAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceFinancial">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetInterfaceFinancial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInterfaceFinancialAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceBreakdown">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetInterfaceBreakdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInterfaceBreakdownAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInterfaceTransactions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetInterfaceTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInterfaceTransactionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryUpdateControlDetails">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSummaryUpdateControlDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSummaryUpdateControlDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryControlBrancgFigures">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSummaryControlBrancgFigures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSummaryControlBrancgFiguresAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummaryControlTotals">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSummaryControlTotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSummaryControlTotalsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionList">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEodOptionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEodOptionListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEODConfigurationOptions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveEODConfigurationOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveEODConfigurationOptionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionStatus">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEodOptionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEodOptionStatusAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEODAdHocScripts">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEODAdHocScripts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEODAdHocScriptsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EODStartJob">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/EODStartJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EODStartJobAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEODConfiguration">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DeleteEODConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteEODConfigurationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDiskSpace">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckDiskSpace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckDiskSpaceAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEodOptionListDetails">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEodOptionListDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEodOptionListDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReRunStatus">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SetReRunStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetReRunStatusAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFACT2000Options">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveFACT2000Options" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveFACT2000OptionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EODSetReRun">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/EODSetReRun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EODSetReRunAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceExists">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckServiceExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckServiceExistsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckToAddSCStatementsOption">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckToAddSCStatementsOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckToAddSCStatementsOptionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOption">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/RemoveOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveOptionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WEODManager">
+    <wsdl:port name="WEODManagerSoap" binding="tns:WEODManagerSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WEODManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WEODManagerSoap12" binding="tns:WEODManagerSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WEODManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

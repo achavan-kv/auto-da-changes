@@ -1,0 +1,124 @@
+﻿<div class="container">
+    <h1>Branch Manager - Reallocate Calls</h1>
+    <div ng-controller="branchManagerController" ng-cloak>
+        <div id="filterBranchManagerList">
+            <div class="section">Search</div>
+            <div class="row">
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label class="col col-lg-4 control-label" for="callType">Call Type</label>
+                        <div class="col col-lg-5">
+                            <list ng-model="callTypeId" scope="callTypes" placeholder="Call Type"></list>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label class="col col-lg-4 control-label" for="csr">CSR</label>
+                        <div class="col col-lg-6">
+                            <list ng-model="csrId" scope="csrList" placeholder="CSR"></list>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search row">&nbsp;</div>
+            <div class="row">
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label for="scheduledDateFrom" class="col col-lg-4 control-label">Scheduled Date From</label>
+                        <div class="col col-lg-5">
+                            <input name="scheduledDateFrom" type="date" ng-model="scheduledDateFrom" class="date form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label class="col col-lg-4 control-label" for="scheduledDateTo">Scheduled Date To</label>
+                        <div class="col col-lg-6">
+                            <input name="scheduledDateTo" type="date" ng-model="scheduledDateTo" class=" date form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search row">&nbsp;</div>
+            <div class="row">
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label class="col col-lg-4 control-label" for="customerName">Customer Name</label>
+                        <div class="col col-lg-5">
+                            <input type="text" id="txtCustomerName" placeholder="Customer Name" class="date form-control" ng-model="customerName" name="customerName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label class="col col-lg-4 control-label" for="reasonForCalling">Reason for calling</label>
+                        <div class="col col-lg-6">
+                            <input type="text" id="txtReasonForCalling" placeholder="Reason for calling" class="date form-control" ng-model="reasonForCalling" name="reasonForCalling" maxlength="32" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search row">&nbsp;</div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <button type="reset" class="btn btn-default" id="btnClear" ng-click="clearFilter()" title="Clear Search">Clear</button>
+                    <button type="submit" class="btn btn-primary" id="btnSearch" ng-click="search()" ng-model="isSearchClicked">Search</button>
+                </div>
+            </div>
+            <div class="search row">&nbsp;</div>
+            <div class="section">Reallocate Calls</div>
+            <div class="search row">&nbsp;</div>
+            <div class="form-group">
+                <div class="col col-lg-6">
+                    <label class="col col-lg-4 control-label" for="csr">New CSR</label>
+                    <list class="col col-lg-8" ng-model="newCsrId" scope="newCsrList" placeholder="New CSR"></list>
+                </div>
+                <div class="col col-lg-6">
+                    <button type="submit" class="btn btn-primary" ng-click="allocateCallsToCSR()" ng-class="enableAllocateCalls() && newCsrId ? 'click' : 'disabled'">Allocate Calls</button>
+                </div>
+            </div>
+            <div class="search row">&nbsp;</div>
+            <div ng-show="emptyResults == 2">
+                <section id="branchManagerList">
+                    <label>Total : {{noOfCallsDisplayed}} out of {{noOfCalls}} </label>
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" ng-model="selectAll" ng-click="selectAllCalls()" />
+                                    All  </th>
+                                <th>Customer Name
+                                </th>
+                                <th>Reason for calling
+                                </th>
+                                <th>Call Hour
+                                </th>
+                                <th>CSR
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="item in getGroupedDates">
+                            <tr>
+                                <td id="dateRow" colspan="5" ng-class="getDateRowClass(item.Date)"><b>{{item.FormatedDate}}</b></td>
+                            </tr>
+                            <tr ng-repeat="value in getBranchManagerCallDetailsByDate(item.Date)" class="pointer">
+                                <td>
+                                    <input type="checkbox" ng-model="value.Selected" /></td>
+                                <td>{{value.CustomerFirstName}} {{value.CustomerLastName}}</td>
+                                <td><span class="{{value.icon}}">{{value.ReasonForCalling}}</span></td>
+                                <td>{{value.Hour}}</td>
+                                <td>
+                                    <user ng-model="value.SalesPersonId" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div ng-show="emptyResults == 1">
+                There are no values matching your search filter.
+            </div>
+        </div>
+    </div>
+</div>

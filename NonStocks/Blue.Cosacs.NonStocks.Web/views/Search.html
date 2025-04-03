@@ -1,0 +1,19 @@
+﻿<div class="container " ng-controller="searchController">
+    <h1>Search Non-Stocks</h1>
+    <div class="FacetSearchContainer">
+        <div class="facetsearch-container row">
+            <div class="col-lg-12">
+                <facetsearch data-results=""
+                             data-results-template="/NonStocks/views/templates/NonStocksSearchResult.html"
+                             data-search-url="NonStocks/Api/Indexing/Search"
+                             data-history-url=""
+                             data-field-labels='{ "NonStockType": "Type", "Active": "Status",
+                             "Division": "Division", "Department": "Department", "Class": "Class" }'>
+                </facetsearch>
+            </div>
+        </div>
+    </div>
+    <div class="NonStocksContainer">
+
+    </div>
+</div>

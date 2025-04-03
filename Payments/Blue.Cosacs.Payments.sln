@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Payments", "Blue.Cosacs.Payments\Blue.Cosacs.Payments.csproj", "{8EEF7A43-9297-42AB-992D-29638EE2E845}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Payments.Api", "Blue.Cosacs.Payments.Api\Blue.Cosacs.Payments.Api.csproj", "{C551CF6A-EA87-426A-8BA0-1170656B85FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Payments.Web", "Blue.Cosacs.Payments.Web\Blue.Cosacs.Payments.Web.csproj", "{D1229E4F-DC74-45FB-AF03-E15F911DAF79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Payments.Test", "Blue.Cosacs.Payments.Test\Blue.Cosacs.Payments.Test.csproj", "{58A192A9-208A-4FC6-AB30-57A6EEC097B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EEF7A43-9297-42AB-992D-29638EE2E845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEF7A43-9297-42AB-992D-29638EE2E845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEF7A43-9297-42AB-992D-29638EE2E845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEF7A43-9297-42AB-992D-29638EE2E845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C551CF6A-EA87-426A-8BA0-1170656B85FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C551CF6A-EA87-426A-8BA0-1170656B85FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C551CF6A-EA87-426A-8BA0-1170656B85FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C551CF6A-EA87-426A-8BA0-1170656B85FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1229E4F-DC74-45FB-AF03-E15F911DAF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1229E4F-DC74-45FB-AF03-E15F911DAF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1229E4F-DC74-45FB-AF03-E15F911DAF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1229E4F-DC74-45FB-AF03-E15F911DAF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A192A9-208A-4FC6-AB30-57A6EEC097B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A192A9-208A-4FC6-AB30-57A6EEC097B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A192A9-208A-4FC6-AB30-57A6EEC097B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A192A9-208A-4FC6-AB30-57A6EEC097B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

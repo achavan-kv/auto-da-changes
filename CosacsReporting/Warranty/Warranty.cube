@@ -1,0 +1,925 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4217c6de-c44f-40cd-94bd-cb2d5bdf28e3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Warranty</ID>
+  <Name>Warranty</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="28" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="1076" scrolltop="-1384" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="20294" y="17621" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Warranty" left="11969" top="15138" logicalid="14" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Warranty_OLAPview_Warranty" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="WarrantySale" left="10874" top="5105" logicalid="15" controlid="2" masterid="0" hint1="0" hint2="0" width="4895" height="5661" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800001f1300001d160000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Warranty_OLAPview_WarrantySales" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="11921" top="10466" logicalid="16" controlid="3" masterid="0" hint1="0" hint2="0" width="1948" height="5172" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_WarrantySales-OLAPview_Warranty]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="13469" y="15138" />
+              <point x="13469" y="13005" />
+              <point x="12221" y="13005" />
+              <point x="12221" y="10766" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="ServiceRequest" left="18696" top="-961" logicalid="17" controlid="4" masterid="0" hint1="0" hint2="0" width="4524" height="10265" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000ac11000019280000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Service_OLAPview_ServiceRequest" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="RequestType" left="25363" top="3441" logicalid="18" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Service_OLAPview_RequestType" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="22920" top="3321" logicalid="19" controlid="6" masterid="0" hint1="0" hint2="0" width="2743" height="909" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_ServiceRequest-OLAPview_RequestType]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="10" destattachpoint="31" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="25363" y="3830" />
+              <point x="24292" y="3830" />
+              <point x="24292" y="3621" />
+              <point x="23220" y="3621" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Product" left="17576" top="11656" logicalid="20" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b00009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Olapview_Product" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="18677" top="9004" logicalid="21" controlid="8" masterid="0" hint1="0" hint2="0" width="931" height="3152" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_ServiceRequest-Olapview_Product]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="4" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="19076" y="11656" />
+              <point x="19076" y="9951" />
+              <point x="19308" y="9951" />
+              <point x="19308" y="9304" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="15469" top="9835" logicalid="22" controlid="9" masterid="0" hint1="0" hint2="0" width="2407" height="5868" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_WarrantySales-Olapview_Product]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="2" sourceattachpoint="22" destattachpoint="35" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="17576" y="15303" />
+              <point x="16712" y="15303" />
+              <point x="16712" y="10135" />
+              <point x="15769" y="10135" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="15469" top="5521" logicalid="23" controlid="10" masterid="0" hint1="0" hint2="0" width="3527" height="1164" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_ServiceRequest-OLAPview_WarrantySales]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="21" destattachpoint="38" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="15769" y="6285" />
+              <point x="17245" y="6285" />
+              <point x="17245" y="5821" />
+              <point x="18696" y="5821" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Time" left="21446" top="11116" logicalid="24" controlid="11" masterid="0" hint1="0" hint2="0" width="5821" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000bd16000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Time" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="15469" top="9835" logicalid="25" controlid="12" masterid="0" hint1="0" hint2="0" width="6277" height="1981" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_WarrantySales-Time]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="11" destid="2" sourceattachpoint="22" destattachpoint="35" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="21446" y="11416" />
+              <point x="18621" y="11416" />
+              <point x="18621" y="10135" />
+              <point x="15769" y="10135" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="21207" top="9004" logicalid="26" controlid="13" masterid="0" hint1="0" hint2="0" width="799" height="2612" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_ServiceRequest-Time]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="11" destid="4" sourceattachpoint="0" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="21606" y="11116" />
+              <point x="21606" y="10210" />
+              <point x="21508" y="10210" />
+              <point x="21508" y="9304" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>1076</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1384</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>10874</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-961</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="9a38af42-5ad0-4068-8ffe-d988c3e0597e">
+      <ID>Warranty</ID>
+      <Name>Warranty</Name>
+      <DimensionID>Warranty</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="e064cb36-7f08-4518-9b8d-a0325c963ad7">
+          <AttributeID>Warranty Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7b244aff-a344-4047-b109-3a04581b9ef1">
+          <AttributeID>Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1ab686af-576b-4b37-9f03-6b28bee7043f">
+          <AttributeID>Description</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="42dfc007-8bab-4def-ba8b-80307871e4d7">
+          <AttributeID>Length</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1b384cca-0ab2-434c-b55f-6bd2ec8bcda1">
+          <AttributeID>Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="65092b51-5681-4683-9e99-2a07901f8a5f">
+          <AttributeID>Warranty Price</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="5e12fb1c-bef1-49e4-8c52-b41166c9141d">
+      <ID>Warranty Sale</ID>
+      <Name>Warranty Sale</Name>
+      <DimensionID>Warranty Sale</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="76b39138-4561-40e9-b53a-30f379e5a6ff">
+          <AttributeID>Warranty Sale Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="268e7199-76ad-4415-9e33-70d057a511c0">
+          <AttributeID>Product Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4435b0e1-4af8-4922-ab97-fc7b7014b6a1">
+          <AttributeID>Price</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a2c75a84-b725-4408-81b6-adf0cd268d65">
+          <AttributeID>Customer Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="37df73e6-3efb-49ed-8a64-e52af938f906">
+          <AttributeID>Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9f0f34f6-35bf-4cac-9074-4a6ea1ab25a4">
+          <AttributeID>Sold On</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ce20bed2-7dc4-43b1-b468-aa7ca65f6540">
+          <AttributeID>Warranty Id 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f8a3b5fb-28df-457b-b386-b1c84afd8a0d">
+          <AttributeID>Is Cancelled Or Repossessed</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bd6bc75d-5955-444b-87ef-3d8bd9ef8f97">
+          <AttributeID>Cancelled Price</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7cef85b2-376e-4521-a58e-f16375494c30">
+      <ID>Service Request</ID>
+      <Name>Service Request</Name>
+      <DimensionID>Service Request</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4bd06457-e101-4f0d-916a-c6aefa3db7c8">
+          <AttributeID>Servicerequest</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7b3deaeb-ad2d-47c7-9125-534721a7585f">
+          <AttributeID>State</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3d85cfee-9c0b-4e2d-a698-8bbcb2389d33">
+          <AttributeID>Datelogged</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="10a1a054-315f-4169-aa31-54ba817a9441">
+          <AttributeID>Outstandingtype</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="ff81b24f-766a-4760-853e-c73bd69cc28a">
+          <AttributeID>Daysoutstanding</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a3025d3d-c16e-4658-8815-1154475b58b4">
+          <AttributeID>Dateallocated</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e42d7be0-1f66-4bdd-bf69-4775d03c132c">
+          <AttributeID>Daystoallocate</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7b15d6f3-437e-4d42-93aa-7f62d6f2dcbc">
+          <AttributeID>Warrantytype</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e94b3358-d6e0-4090-83a7-83ae0dadf6aa">
+          <AttributeID>Resolution</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a625c573-600e-472e-bc63-6ecaf4d4e570">
+          <AttributeID>Resolution Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="aa897204-03bc-4ac7-9bef-54acff60d7da">
+          <AttributeID>Name 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="90092db9-0b31-4afc-a0fb-3f173f9a12c8">
+          <AttributeID>Total Cost</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9860c244-66d4-4d34-9f2e-b69e3485e32a">
+          <AttributeID>Customer Account</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cdcb84c4-da5f-408e-b5e6-b37e70d1ba52">
+          <AttributeID>Warranty Contract Number</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5222523b-70a9-4c57-b61e-0ac6a545e0fa">
+          <AttributeID>Warranty Sale ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d6639f6d-324b-4a1b-9550-3928ea94f3ef">
+          <AttributeID>Created On Day</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="d1e645e5-d1c9-453e-a50b-96866d8ec40d">
+      <ID>Product</ID>
+      <Name>Product</Name>
+      <DimensionID>Product</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="69af68d4-b595-4d3a-8928-b2e9ce582aba">
+          <AttributeID>Productid</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d4aca6b7-386b-416e-950b-135a1bce4ecc">
+          <AttributeID>Description</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ee0b6cc0-ee90-40c2-9b69-a4aa68eb3014">
+          <AttributeID>Itemtype</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2e78d45b-0aac-40d5-9efe-b5500cf99e01">
+          <AttributeID>Supplier</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cf125750-e315-4fbd-a33c-4076ae733241">
+          <AttributeID>Tax Rate</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2979f741-9f07-4508-956a-f6423c97970d">
+          <AttributeID>Category Code</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="65322c42-08ff-449c-9e50-67e8d12795dd">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="5da11212-c887-489e-aaad-3e23846190e8">
+          <HierarchyID>Hierarchy 1 1</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="7950cf66-498e-40f5-9c0e-ae633899ff96">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="674810ec-c09a-4ff6-9251-82df8975939f">
+      <ID>Warranty Sale - Product</ID>
+      <Name>Warranty Sale - Product</Name>
+      <DimensionID>Product</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4508af75-b6c9-4262-8564-f0713b126a15">
+          <AttributeID>Productid</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="19ed3e2f-8fe8-4900-8cf3-49dcfa732b8a">
+          <AttributeID>Description</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cd98753e-4b2d-4de5-95af-436a63bb2831">
+          <AttributeID>Itemtype</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ed859fd3-af06-4508-807a-3f561ab6260f">
+          <AttributeID>Supplier</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="859411c6-a0f6-4b89-b78e-f23bd2cf6cbf">
+          <AttributeID>Tax Rate</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="40eeac7f-d11b-41cd-89e4-0ccfe74853fa">
+          <AttributeID>Category Code</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="706aece1-c471-4d37-b0d7-75311355cd69">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="4299c801-12cb-4c2e-b8e3-43dada83ea41">
+          <HierarchyID>Hierarchy 1 1</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="43405410-2a33-4c9a-b4ab-72b2b594e4d5">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="ba04d99b-f7d3-41a5-a18c-94af7b8d1feb">
+      <ID>Time</ID>
+      <Name>Time</Name>
+      <DimensionID>Time</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0291ab1b-021f-4915-97b1-b48b80bf1802">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bc8ea51c-f991-4a7b-9267-257c8a020295">
+          <AttributeID>Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="151d2ba9-b65a-4006-8dc0-3af91e406978">
+          <AttributeID>Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="c28171b1-ece3-466c-9a1f-95f79b8b5f47">
+          <AttributeID>Quarter</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="34b92f5b-a4ca-45da-ab89-35b39743edc7">
+          <AttributeID>Trimester</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="6d5e3e7e-736f-4230-9c1f-13af066dd54d">
+          <AttributeID>Month</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="559974b7-247d-4580-8e40-7d70e35e77cd">
+          <AttributeID>Week</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="a726e0cd-e3a0-439f-a3a2-3a9595c3fafd">
+          <AttributeID>Day Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="8ad058c6-fc5e-420d-827f-baa0e6670983">
+          <AttributeID>Day Of Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="2a06c281-0c18-4bbb-8aab-d7ed8c0ff71e">
+          <AttributeID>Day Of Trimester</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="2540e03f-58c8-4eaa-af30-c38a856e0093">
+          <AttributeID>Day Of Quarter</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="9f1fe557-8ebe-494b-b9f4-6e80c9d04ed0">
+          <AttributeID>Day Of Month</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="54c131eb-77ef-42b2-9341-853d875dbfcf">
+          <AttributeID>Day Of Week</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="0b0a2845-1ec1-437e-af22-ea972d84c6fc">
+          <AttributeID>Week Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="e286c96a-ba13-4c41-8cb8-8f3a6d577f42">
+          <AttributeID>Month Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="47f92103-eff3-4540-bb3e-86cb89d8e27e">
+          <AttributeID>Month Of Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="8fce552c-d119-44e9-8242-8cb4e07ad783">
+          <AttributeID>Month Of Trimester</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="41aa638f-bfcf-46f8-8d7b-0be526eea732">
+          <AttributeID>Month Of Quarter</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="9b971a03-c8a9-4073-b3df-16824ccba49e">
+          <AttributeID>Quarter Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="cb33d96e-3bd2-4572-bafb-95f3fb74a753">
+          <AttributeID>Quarter Of Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="4ec78c50-02e0-4c2f-80c0-e68815234cd8">
+          <AttributeID>Trimester Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="7c836069-3380-43ec-a6d3-e5467df2b983">
+          <AttributeID>Half Year Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="2980121d-d188-47d4-94a0-4e9128c2794c">
+          <AttributeID>Fiscal Year</AttributeID>
+          <AggregationUsage>Full</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="d6a5b979-b56f-466f-aec6-9a2da8821b29">
+          <AttributeID>Fiscal Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="a3921d5f-e88c-4404-bac4-56d93e3fe025">
+          <AttributeID>Fiscal Quarter</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="2115d43c-a68b-4f57-9d6f-40ae1eba2c95">
+          <AttributeID>Fiscal Trimester</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="f53bb510-675a-41d0-8594-b5f37bee2918">
+          <AttributeID>Fiscal Month</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="c6a9ed72-00fb-41e7-92ee-a4069050248a">
+          <AttributeID>Fiscal Week</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="5f366b05-a16d-4fe5-af47-1b860dc110b8">
+          <AttributeID>Fiscal Day</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="a25451db-a0fa-4f61-b18e-3951d98baaaf">
+          <AttributeID>Fiscal Day Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="a840f5fa-800d-4da3-95c3-2b2687b7264e">
+          <AttributeID>Fiscal Day Of Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="f41fad10-4c2a-4d35-82c8-a30ac31deb7d">
+          <AttributeID>Fiscal Day Of Trimester</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="9c653134-027f-476b-b93b-ed57c109e71e">
+          <AttributeID>Fiscal Day Of Quarter</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="67b2c9e9-79f3-4be7-8024-f6eebc04fbb8">
+          <AttributeID>Fiscal Day Of Month</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="378aaade-77a3-4b69-885b-9808d8f43618">
+          <AttributeID>Fiscal Day Of Week</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="d0c741a8-a6c4-45dc-a007-076980df4b38">
+          <AttributeID>Fiscal Week Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="0a9fb4de-1ea0-4d55-8ede-57c38779dbd2">
+          <AttributeID>Fiscal Month Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="907ecae3-2356-4455-822f-067f9d550959">
+          <AttributeID>Fiscal Month Of Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="c1352066-d37f-441e-9b1b-e4d85e2bf674">
+          <AttributeID>Fiscal Month Of Trimester</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="3829ce5d-7f7b-4f02-8be2-d2a5277be05e">
+          <AttributeID>Fiscal Month Of Quarter</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="7fb937ea-441c-4e3f-9f3a-c9026072cc0a">
+          <AttributeID>Fiscal Trimester Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="2489700b-0d4a-417d-8608-637a68a5b60c">
+          <AttributeID>Fiscal Quarter Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="18682c0e-04ee-42b7-a6b9-f4b7262ed59a">
+          <AttributeID>Fiscal Quarter Of Half Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+        <Attribute dwd:design-time-name="ce446352-78b8-4079-9ca4-b784eb5937c0">
+          <AttributeID>Fiscal Half Year Of Year</AttributeID>
+          <AggregationUsage>None</AggregationUsage>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="ba774792-4a2e-42de-bbed-73eb496a5502">
+          <HierarchyID>Year -  Half Year -  Quarter -  Month -  Date</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="980bb8a7-8790-48e4-a400-3eb1ee3fd039">
+          <HierarchyID>Year -  Trimester -  Month -  Date</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="c478e942-da60-4d45-bbb5-da5f01f867c7">
+          <HierarchyID>Year -  Week -  Date</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="31ebca68-887f-45e3-b2a2-06d5a9da1ec7">
+          <HierarchyID>Fiscal Year -  Fiscal Half Year -  Fiscal Quarter -  Fiscal Month -  Fiscal Day</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="edf52379-0f89-4c76-abd0-4a62e3812c02">
+          <HierarchyID>Fiscal Year -  Fiscal Trimester -  Fiscal Month -  Fiscal Day</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="5587f33e-aa58-4219-9693-8dd2ad47c6be">
+          <HierarchyID>Fiscal Year -  Fiscal Week -  Fiscal Day</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="acddb4d7-ea5a-4366-bc78-078855dabfd8">
+      <ID>Warranty Sale</ID>
+      <Name>Warranty Sale</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="2a55be57-9823-4dfa-b748-8cbca4e95a56">
+          <ID>Price</ID>
+          <Name>Warranty Sale Price</Name>
+          <Source dwd:design-time-name="1531749a-ade5-4596-8449-65bd14f325c4">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ad3bd0c4-4e83-4941-823b-b8ea6337ea91">
+              <TableID>Warranty_OLAPview_WarrantySales</TableID>
+              <ColumnID>Price</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b4b9b6ef-04d4-4328-8f68-2142e266c5e3">
+          <ID>Warranty Sale Count</ID>
+          <Name>Warranty Sale Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="aefef67c-517f-4631-9a96-eefd9223187b">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="97e73f24-177e-407c-8e1e-dc6beb469ff8">
+              <TableID>Warranty_OLAPview_WarrantySales</TableID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b2916037-cb2b-4ae3-b7de-00081de2a29e">
+          <ID>Is Cancelled Or Repossessed</ID>
+          <Name>Warranty Sale Cancelled</Name>
+          <Source dwd:design-time-name="dc6e8a5a-a696-4248-8988-1b3b59a1dc85">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f079566b-9f67-4c09-8b85-7bc005836eff">
+              <TableID>Warranty_OLAPview_WarrantySales</TableID>
+              <ColumnID>IsCancelledOrRepossessed</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>602299</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a8d522ce-985f-478e-aac9-1438f6ad13fc">
+          <CubeDimensionID>Warranty</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bfde4cd0-a044-4057-a6c4-3ae4e9565108">
+              <AttributeID>Warranty Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f3e24bc1-2aee-462a-a0ec-71adae799ac0">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="06c28239-770b-4c4d-94f0-c8d49e840136">
+                    <TableID>Warranty_OLAPview_WarrantySales</TableID>
+                    <ColumnID>WarrantyId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ec0ca98d-5381-4034-9025-56322b881ad2">
+          <CubeDimensionID>Product</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="89bc1830-b072-49cb-838f-9f73a4a7ee5a">
+              <AttributeID>Productid</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d81a9857-a083-43d4-b9f0-2a2e2205fd5e">
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4e6c7dc1-3489-4f42-b5c7-b9ed2488812a">
+                    <TableID>Warranty_OLAPview_WarrantySales</TableID>
+                    <ColumnID>ProductId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="50396acd-3c15-4cae-a528-b990bff89ddd">
+          <CubeDimensionID>Warranty Sale</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="777bafab-e8f6-4a30-bafe-e6ae3a294cde">
+              <AttributeID>Warranty Sale Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a0399da2-cade-4be5-9760-e801341e2c98">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d27bd95b-605a-48ec-9806-e8bf2ac588d5">
+                    <TableID>Warranty_OLAPview_WarrantySales</TableID>
+                    <ColumnID>WarrantySaleId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="78ae9201-4f94-4a40-a0ae-e49539bbbdf9">
+          <CubeDimensionID>Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="91e80d21-1aba-483b-9903-0f26227c983c">
+              <AttributeID>Date</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="30ef0617-b9d5-42f8-9197-78c441bdb104">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2cd6b4a2-d8e3-480d-b7d5-fd636108aa8d">
+                    <TableID>Warranty_OLAPview_WarrantySales</TableID>
+                    <ColumnID>SoldOn</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="371e3d87-8585-4ace-8900-b8284d7ad176">
+      <ID>Service Request</ID>
+      <Name>Service Request</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="5e028d90-0b02-4eb6-b5b3-848be6864b5c">
+          <ID>Total Cost</ID>
+          <Name>Total Cost</Name>
+          <Source dwd:design-time-name="94b42bf0-a6ba-409c-8730-65b367196e25">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c1c4d182-3754-41de-a9ab-88a7c30a85db">
+              <TableID>Service_OLAPview_ServiceRequest</TableID>
+              <ColumnID>TotalCost</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="67d2881a-b6a5-4eab-aea5-965f017ef33a">
+          <ID>Service Request Count</ID>
+          <Name>Service Request Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="85736833-51c0-4362-89c7-6213e8226349">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="8502776e-9075-45f6-9abc-fbd20009849a">
+              <TableID>Service_OLAPview_ServiceRequest</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>71684</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="07325ddb-da32-4902-b1a4-4f3beac6453e">
+          <CubeDimensionID>Product</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="cd8ba4a0-b149-4db6-8dd1-68ff9188d6ed">
+              <AttributeID>Productid</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="edcd95b4-610d-4aed-afaa-98988b3ff3a7">
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3a4721eb-859d-4f9b-9140-35dbee107e52">
+                    <TableID>Service_OLAPview_ServiceRequest</TableID>
+                    <ColumnID>Productid</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="cb018ec7-dad2-4c5c-a2ee-d463e2fb7527">
+          <CubeDimensionID>Warranty Sale</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c2ca6e60-5d10-4afa-8a75-4020673a0a81">
+              <AttributeID>Warranty Sale Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="58f9ba4b-45f2-4fb9-87c9-fe94720ab9ce">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="955e3505-0eda-4a40-87be-3d2eb7c90af8">
+                    <TableID>Service_OLAPview_ServiceRequest</TableID>
+                    <ColumnID>WarrantySaleID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="50f07b33-a0ee-46e7-8c3f-8cceeba2ccf4">
+          <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="10f359e6-46d4-4952-ad37-49b420ddc2b1">
+              <AttributeID>Productid</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Warranty Sale</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Product Id</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="30aebcc6-0168-47b3-9e50-64be778a0a52">
+          <CubeDimensionID>Service Request</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="693285b4-3daa-4719-9b51-3b0ee057a5ee">
+              <AttributeID>Servicerequest</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="404fa174-30d3-4f8b-b22e-08f179d24f1f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5467e07d-868d-435a-abf4-fa273e0f8015">
+                    <TableID>Service_OLAPview_ServiceRequest</TableID>
+                    <ColumnID>Servicerequest</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="e25fea40-afa8-49ad-abc6-9ba442fa44a0">
+          <CubeDimensionID>Warranty</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9d59b27a-8885-4215-b0f7-ce483f55c0d5">
+              <AttributeID>Warranty Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Warranty Sale</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Warranty Id 1</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5ce26180-160b-4ccc-b0ba-12a9aa42ac09">
+          <CubeDimensionID>Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ac3c1c0b-2ea9-493f-b872-9f5ccc434734">
+              <AttributeID>Date</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="321e2bd6-6ed9-4dec-94d0-fcde8bfd73cb">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7f0c903b-dc28-4c77-bf5c-2768a69e8cfe">
+                    <TableID>Service_OLAPview_ServiceRequest</TableID>
+                    <ColumnID>CreatedOnDay</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="a289f14a-c65c-4bf2-a240-cd8e317180ea">
+    <DataSourceViewID>CosacsReporting</DataSourceViewID>
+  </Source>
+</Cube>

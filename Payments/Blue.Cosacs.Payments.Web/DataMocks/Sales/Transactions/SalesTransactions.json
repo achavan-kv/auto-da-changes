@@ -1,0 +1,51 @@
+{
+    "CustomerId": 1,
+    "Agreements": [
+        {
+            "AgreementNumber": 1,
+            "Transactions": [
+                {
+                    "Type": "Delivery",
+                    "Amount": 500
+                },
+                {
+                    "Type": "Delivery",
+                    "Amount": 200
+                },
+                {
+                    "Type": "Collection",
+                    "Amount": -150
+                },
+                {
+                    "Type": "Rebate",
+                    "Amount": -20
+                }
+            ]
+        },
+        {
+            "AgreementNumber": 2,
+            "Transactions": [
+                {
+                    "Type": "Delivery",
+                    "Amount": 842.12
+                },
+                {
+                    "Type": "Collection",
+                    "Amount": -458
+                },
+                {
+                    "Type": "Collection",
+                    "Amount": 12
+                },
+                {
+                    "Type": "Repossession",
+                    "Amount": -12
+                },
+                {
+                    "Type": "Re-delivery",
+                    "Amount": 12
+                }
+            ]
+        }
+    ]
+}

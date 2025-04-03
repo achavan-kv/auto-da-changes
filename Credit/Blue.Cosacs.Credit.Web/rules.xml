@@ -1,0 +1,2126 @@
+<Rules ScoreType='A' Country="K" DeclineScore="136" ReferScore="0" xmlns="" BureauMinimum="0" BureauMaximum="0"
+       Region="" NewImport="True" FileName="C:\Documents and Settings\SU\Desktop\St Kitts Rules 20041124.xml">
+    <Rule Type="S" Result="4" State="" RuleName="Age: 18y - 20y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="18" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="21" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="11" State="" RuleName="Age: 21y - 32y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="21" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="33" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="21" State="" RuleName="Age: 33y - 37y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="33" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="38" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="28" State="" RuleName="Age: 38y - 42y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="38" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="43" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="33" State="" RuleName="Age: 43y - 54y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="43" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="55" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="35" State="" RuleName="Age: 55y+" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="55" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="18" State="" RuleName="Marital Status: Married" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="M" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="0" State="" RuleName="Marital Status: Not Married" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="C" Type="option"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                <CO Operator="="/>
+                <O2 Operand="D" Type="option"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                    <CO Operator="="/>
+                    <O2 Operand="P" Type="option"/>
+                </Clause>
+                <LO Operator="OR"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                        <CO Operator="="/>
+                        <O2 Operand="S" Type="option"/>
+                    </Clause>
+                    <LO Operator="OR"/>
+                    <Clause Type="C" State="">
+                        <Clause Type="S" State="">
+                            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                            <CO Operator="="/>
+                            <O2 Operand="W" Type="option"/>
+                        </Clause>
+                        <LO Operator="OR"/>
+                        <Clause Type="S" State="">
+                            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                            <CO Operator="="/>
+                            <O2 Operand="X" Type="option"/>
+                        </Clause>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="5" State="" RuleName="Marital Status: Other" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+            <CO Operator="!="/>
+            <O2 Operand="C" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                <CO Operator="!="/>
+                <O2 Operand="D" Type="option"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                    <CO Operator="!="/>
+                    <O2 Operand="M" Type="option"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                        <CO Operator="!="/>
+                        <O2 Operand="P" Type="option"/>
+                    </Clause>
+                    <LO Operator="AND"/>
+                    <Clause Type="C" State="">
+                        <Clause Type="S" State="">
+                            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                            <CO Operator="!="/>
+                            <O2 Operand="S" Type="option"/>
+                        </Clause>
+                        <LO Operator="AND"/>
+                        <Clause Type="C" State="">
+                            <Clause Type="S" State="">
+                                <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                                <CO Operator="!="/>
+                                <O2 Operand="W" Type="option"/>
+                            </Clause>
+                            <LO Operator="AND"/>
+                            <Clause Type="S" State="">
+                                <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                                <CO Operator="!="/>
+                                <O2 Operand="X" Type="option"/>
+                            </Clause>
+                        </Clause>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="5" State="" RuleName="Residential Status: Renting, Hostel, Sharing" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="R" Type="option"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                <CO Operator="="/>
+                <O2 Operand="H" Type="option"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="S" State="">
+                <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                <CO Operator="="/>
+                <O2 Operand="S" Type="option"/>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="20" State="" RuleName="Residential Status: Other" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="O" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="19" State="" RuleName="Residential Status: Owner" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="F" Type="option"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="P" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="4" State="" RuleName="Residential Status: With Family, With Friends" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="L" Type="option"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="V" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="12" State="" RuleName="Residential Status: Other" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="!="/>
+            <O2 Operand="F" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                <CO Operator="!="/>
+                <O2 Operand="H" Type="option"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                    <CO Operator="!="/>
+                    <O2 Operand="L" Type="option"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                        <CO Operator="!="/>
+                        <O2 Operand="O" Type="option"/>
+                    </Clause>
+                    <LO Operator="AND"/>
+                    <Clause Type="C" State="">
+                        <Clause Type="S" State="">
+                            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                            <CO Operator="!="/>
+                            <O2 Operand="P" Type="option"/>
+                        </Clause>
+                        <LO Operator="AND"/>
+                        <Clause Type="C" State="">
+                            <Clause Type="S" State="">
+                                <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                                <CO Operator="!="/>
+                                <O2 Operand="R" Type="option"/>
+                            </Clause>
+                            <LO Operator="AND"/>
+                            <Clause Type="C" State="">
+                                <Clause Type="S" State="">
+                                    <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                                    <CO Operator="!="/>
+                                    <O2 Operand="S" Type="option"/>
+                                </Clause>
+                                <LO Operator="AND"/>
+                                <Clause Type="S" State="">
+                                    <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                                    <CO Operator="!="/>
+                                    <O2 Operand="V" Type="option"/>
+                                </Clause>
+                            </Clause>
+                        </Clause>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="6" State="" RuleName="Time at Current Address: &lt;6m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="6" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="14" State="" RuleName="Time at Current Address: 6m - 3y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="6" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="48" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="25" State="" RuleName="Time at Current Address: 4m - 34y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="48" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="420" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="26" State="" RuleName="Time at Current Address: 35y" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="420" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="33" State="" RuleName="Number of Dependants: 0" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="0" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="29" State="" RuleName="Number of Dependants: 1 - 2" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="1" Type="numeric"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="2" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="19" State="" RuleName="Number of Dependants: 3" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="3" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="17" State="" RuleName="Number of Dependants: 4+" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="4" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="2" State="" RuleName="Title: Mr, Dr" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Title" Type="option" TableName="Title"/>
+            <CO Operator="="/>
+            <O2 Operand="DR" Type="option"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Title" Type="option" TableName="Title"/>
+            <CO Operator="="/>
+            <O2 Operand="MR" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="31" State="" RuleName="Title: Mrs" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Title" Type="option" TableName="Title"/>
+            <CO Operator="="/>
+            <O2 Operand="MRS" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="24" State="" RuleName="Title: Ms" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Title" Type="option" TableName="Title"/>
+            <CO Operator="="/>
+            <O2 Operand="MS" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="26" State="" RuleName="Title: Miss" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Title" Type="option" TableName="Title"/>
+            <CO Operator="="/>
+            <O2 Operand="MISS" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="15" State="" RuleName="Title: Other" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Title" Type="option" TableName="Title"/>
+            <CO Operator="!="/>
+            <O2 Operand="DR" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Title" Type="option" TableName="Title"/>
+                <CO Operator="!="/>
+                <O2 Operand="MR" Type="option"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Title" Type="option" TableName="Title"/>
+                    <CO Operator="!="/>
+                    <O2 Operand="MRS" Type="option"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Title" Type="option" TableName="Title"/>
+                        <CO Operator="!="/>
+                        <O2 Operand="MS" Type="option"/>
+                    </Clause>
+                    <LO Operator="AND"/>
+                    <Clause Type="S" State="">
+                        <O1 Operand="Title" Type="option" TableName="Title"/>
+                        <CO Operator="!="/>
+                        <O2 Operand="MISS" Type="option"/>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="0" State="" RuleName="Time in Current Employment: &lt;2y" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="24" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="12" State="" RuleName="Time in Current Employment: 2y - 4y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="24" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="60" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="17" State="" RuleName="Time in Current Employment: 5y - 8y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="60" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="108" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="22" State="" RuleName="Time in Current Employment: 9y - 13y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="108" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="168" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="31" State="" RuleName="Time in Current Employment: 14y+" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="168" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="27" State="" RuleName="Frequency of Pay: Monthly" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+            <CO Operator="="/>
+            <O2 Operand="M" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="6" State="" RuleName="Frequency of Pay: Weekly" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+            <CO Operator="="/>
+            <O2 Operand="W" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="17" State="" RuleName="Frequency of Pay: Fortnightly" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+            <CO Operator="="/>
+            <O2 Operand="F" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="16" State="" RuleName="Frequency of Pay: Other" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+            <CO Operator="!="/>
+            <O2 Operand="F" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+                <CO Operator="!="/>
+                <O2 Operand="M" Type="option"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="S" State="">
+                <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+                <CO Operator="!="/>
+                <O2 Operand="W" Type="option"/>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="2" State="" RuleName="Time at Bank: No Bank" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="1" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="5" State="" RuleName="Time at Bank: 1m - 2y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="1" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="36" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="12" State="" RuleName="Time at Bank: 3y - 8y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="36" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="108" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="15" State="" RuleName="Time at Bank: 9y - 14y11m" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="108" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="180" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="30" State="" RuleName="Time at Bank: 15y+" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="180" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="8" State="" RuleName="Product Code: Vision" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="1" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="7" State="" RuleName="Product Code: Audio, Business" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="2" Type="numeric"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="4" Type="numeric"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="S" State="">
+                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="15" Type="numeric"/>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="9" State="" RuleName="Product Code: Major Whites" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="3" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="23" State="" RuleName="Product Code: Small Appliances" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="5" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="0" State="" RuleName="Product Code: Lounge" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="50" Type="numeric"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="85" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="23" State="" RuleName="Product Code: Dining, Bedroom, Bedding" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="60" Type="numeric"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="70" Type="numeric"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="S" State="">
+                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="75" Type="numeric"/>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="35" State="" RuleName="Product Code: Occasional, Miscellaneous" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="80" Type="numeric"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="81" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="15" State="" RuleName="Product Code: Other" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="!="/>
+            <O2 Operand="1" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                <CO Operator="!="/>
+                <O2 Operand="2" Type="numeric"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                    <CO Operator="!="/>
+                    <O2 Operand="4" Type="numeric"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                        <CO Operator="!="/>
+                        <O2 Operand="15" Type="numeric"/>
+                    </Clause>
+                    <LO Operator="AND"/>
+                    <Clause Type="C" State="">
+                        <Clause Type="S" State="">
+                            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                            <CO Operator="!="/>
+                            <O2 Operand="3" Type="numeric"/>
+                        </Clause>
+                        <LO Operator="AND"/>
+                        <Clause Type="C" State="">
+                            <Clause Type="S" State="">
+                                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                <CO Operator="!="/>
+                                <O2 Operand="5" Type="numeric"/>
+                            </Clause>
+                            <LO Operator="AND"/>
+                            <Clause Type="C" State="">
+                                <Clause Type="S" State="">
+                                    <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                    <CO Operator="!="/>
+                                    <O2 Operand="50" Type="numeric"/>
+                                </Clause>
+                                <LO Operator="AND"/>
+                                <Clause Type="C" State="">
+                                    <Clause Type="S" State="">
+                                        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                        <CO Operator="!="/>
+                                        <O2 Operand="85" Type="numeric"/>
+                                    </Clause>
+                                    <LO Operator="AND"/>
+                                    <Clause Type="C" State="">
+                                        <Clause Type="S" State="">
+                                            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                            <CO Operator="!="/>
+                                            <O2 Operand="60" Type="numeric"/>
+                                        </Clause>
+                                        <LO Operator="AND"/>
+                                        <Clause Type="C" State="">
+                                            <Clause Type="S" State="">
+                                                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                                <CO Operator="!="/>
+                                                <O2 Operand="70" Type="numeric"/>
+                                            </Clause>
+                                            <LO Operator="AND"/>
+                                            <Clause Type="C" State="">
+                                                <Clause Type="S" State="">
+                                                    <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                                    <CO Operator="!="/>
+                                                    <O2 Operand="75" Type="numeric"/>
+                                                </Clause>
+                                                <LO Operator="AND"/>
+                                                <Clause Type="C" State="">
+                                                    <Clause Type="S" State="">
+                                                        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                                        <CO Operator="!="/>
+                                                        <O2 Operand="80" Type="numeric"/>
+                                                    </Clause>
+                                                    <LO Operator="AND"/>
+                                                    <Clause Type="S" State="">
+                                                        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                                        <CO Operator="!="/>
+                                                        <O2 Operand="81" Type="numeric"/>
+                                                    </Clause>
+                                                </Clause>
+                                            </Clause>
+                                        </Clause>
+                                    </Clause>
+                                </Clause>
+                            </Clause>
+                        </Clause>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="31" State="" RuleName="Worst Status of Current Account: New Customer" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="N" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="44" State="" RuleName="Worst Status of Current Account: No Current" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="0" Type="free"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="!="/>
+            <O2 Operand="0" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="42" State="" RuleName="Worst Status of Current Account: SC1 - SC2" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="1" Type="free"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="2" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="23" State="" RuleName="Worst Status of Current Account: SC3" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="3" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="-5" State="" RuleName="Worst Status of Current Account: SC4" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="4" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="-23" State="" RuleName="Worst Status of Current Account: SC5+" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="5" Type="free"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="6" Type="free"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+                    <CO Operator="="/>
+                    <O2 Operand="7" Type="free"/>
+                </Clause>
+                <LO Operator="OR"/>
+                <Clause Type="S" State="">
+                    <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+                    <CO Operator="="/>
+                    <O2 Operand="8" Type="free"/>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="37" State="" RuleName="Worst Status of Current Account: Staff" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="9" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="10" State="" RuleName="Worst Status of Settled Account: New Customer" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="N" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="10" State="" RuleName="Worst Status of Settled Account: No Settled" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="0" Type="free"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="!="/>
+            <O2 Operand="0" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="39" State="" RuleName="Worst Status of Settled Account: SC1 - SC2" ApplyRF="True"
+          ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="1" Type="free"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="2" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="31" State="" RuleName="Worst Status of Settled Account: SC3" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="3" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="-15" State="" RuleName="Worst Status of Settled Account: SC4" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="4" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="-34" State="" RuleName="Worst Status of Settled Account: SC5+" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="5" Type="free"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="6" Type="free"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+                    <CO Operator="="/>
+                    <O2 Operand="7" Type="free"/>
+                </Clause>
+                <LO Operator="OR"/>
+                <Clause Type="S" State="">
+                    <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+                    <CO Operator="="/>
+                    <O2 Operand="8" Type="free"/>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Rule>
+    <Rule Type="S" Result="18" State="" RuleName="Worst Status of Settled Account: Staff" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="9" Type="free"/>
+        </Clause>
+    </Rule>
+    <Rule Type="R" Result="AT" State="" RuleName="Sales Value: &gt;=$5000" ApplyRF="False" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Total val of items purchased (ex. Service charge)" Type="float" TableName=""/>
+            <CO Operator="&gt;="/>
+            <O2 Operand="5000" Type="float"/>
+        </Clause>
+    </Rule>
+    <Rule Type="R" Result="RS" State="" RuleName="Time at Current Address: &lt;1y" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="12" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="R" Result="AG" State="" RuleName="Age: &lt;18y" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+          ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Age" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="18" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="R" Result="NA" State="" RuleName="Nationality: &lt;&gt; St Kittian" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Nationality" Type="option" TableName="Nationality"/>
+            <CO Operator="!="/>
+            <O2 Operand="K" Type="option"/>
+        </Clause>
+    </Rule>
+    <Rule Type="R" Result="EM" State="" RuleName="Time in Current Employment: &lt;1y" ApplyRF="True" ApplyHP="True"
+          ReferDeclined="False" ReferAccepted="">
+        <Clause Type="S" State="">
+            <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="12" Type="numeric"/>
+        </Clause>
+    </Rule>
+    <Rule Type="R" Result="IN" State="" RuleName="Instalment/Income Ratio: &gt;30%" ApplyRF="False" ApplyHP="True"
+          ReferAccepted="" ReferDeclined="False" RuleRejects="False">
+        <Clause Type="S" State="">
+            <O1 Operand="Instalment/Income ratio" Type="float" TableName=""/>
+            <CO Operator="&gt;"/>
+            <O2 Operand="30" Type="float"/>
+        </Clause>
+    </Rule>
+    <Rule Type="R" Result="IN" State="" RuleName="Income: &lt;$500" ApplyRF="True" ApplyHP="False" ReferDeclined="False"
+          ReferAccepted="" RuleRejects="False">
+        <Clause Type="S" State="">
+            <O1 Operand="Income" Type="float" TableName=""/>
+            <CO Operator="&lt;"/>
+            <O2 Operand="500" Type="float"/>
+        </Clause>
+    </Rule>
+</Rules><?xml version="1.0" encoding="UTF-8"?>
+<Rules ScoreType="A" Country="K" DeclineScore="136" ReferScore="0" BureauMinimum="0" BureauMaximum="0" Region=""
+       NewImport="True" FileName="C:\Documents and Settings\SU\Desktop\St Kitts Rules 20041124.xml">
+<Rule Type="S" Result="4" State="" RuleName="Age: 18y - 20y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="18" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="21" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="11" State="" RuleName="Age: 21y - 32y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="21" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="33" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="21" State="" RuleName="Age: 33y - 37y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="33" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="38" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="28" State="" RuleName="Age: 38y - 42y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="38" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="43" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="33" State="" RuleName="Age: 43y - 54y11m" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="43" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="55" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="35" State="" RuleName="Age: 55y+" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="55" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="18" State="" RuleName="Marital Status: Married" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="M" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="0" State="" RuleName="Marital Status: Not Married" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="C" Type="option"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="D" Type="option"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                <CO Operator="="/>
+                <O2 Operand="P" Type="option"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                    <CO Operator="="/>
+                    <O2 Operand="S" Type="option"/>
+                </Clause>
+                <LO Operator="OR"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                        <CO Operator="="/>
+                        <O2 Operand="W" Type="option"/>
+                    </Clause>
+                    <LO Operator="OR"/>
+                    <Clause Type="S" State="">
+                        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                        <CO Operator="="/>
+                        <O2 Operand="X" Type="option"/>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="5" State="" RuleName="Marital Status: Other" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+        <CO Operator="!="/>
+        <O2 Operand="C" Type="option"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+            <CO Operator="!="/>
+            <O2 Operand="D" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                <CO Operator="!="/>
+                <O2 Operand="M" Type="option"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                    <CO Operator="!="/>
+                    <O2 Operand="P" Type="option"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                        <CO Operator="!="/>
+                        <O2 Operand="S" Type="option"/>
+                    </Clause>
+                    <LO Operator="AND"/>
+                    <Clause Type="C" State="">
+                        <Clause Type="S" State="">
+                            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                            <CO Operator="!="/>
+                            <O2 Operand="W" Type="option"/>
+                        </Clause>
+                        <LO Operator="AND"/>
+                        <Clause Type="S" State="">
+                            <O1 Operand="Marital Status" Type="option" TableName="MaritalStatus"/>
+                            <CO Operator="!="/>
+                            <O2 Operand="X" Type="option"/>
+                        </Clause>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="5" State="" RuleName="Residential Status: Renting, Hostel, Sharing" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="R" Type="option"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="H" Type="option"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="="/>
+            <O2 Operand="S" Type="option"/>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="20" State="" RuleName="Residential Status: Other" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="O" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="19" State="" RuleName="Residential Status: Owner" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="F" Type="option"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="P" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="4" State="" RuleName="Residential Status: With Family, With Friends" ApplyRF="True"
+      ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="L" Type="option"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+        <CO Operator="="/>
+        <O2 Operand="V" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="12" State="" RuleName="Residential Status: Other" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+        <CO Operator="!="/>
+        <O2 Operand="F" Type="option"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+            <CO Operator="!="/>
+            <O2 Operand="H" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                <CO Operator="!="/>
+                <O2 Operand="L" Type="option"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                    <CO Operator="!="/>
+                    <O2 Operand="O" Type="option"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                        <CO Operator="!="/>
+                        <O2 Operand="P" Type="option"/>
+                    </Clause>
+                    <LO Operator="AND"/>
+                    <Clause Type="C" State="">
+                        <Clause Type="S" State="">
+                            <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                            <CO Operator="!="/>
+                            <O2 Operand="R" Type="option"/>
+                        </Clause>
+                        <LO Operator="AND"/>
+                        <Clause Type="C" State="">
+                            <Clause Type="S" State="">
+                                <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                                <CO Operator="!="/>
+                                <O2 Operand="S" Type="option"/>
+                            </Clause>
+                            <LO Operator="AND"/>
+                            <Clause Type="S" State="">
+                                <O1 Operand="Residential Status" Type="option" TableName="ResidentialStatus"/>
+                                <CO Operator="!="/>
+                                <O2 Operand="V" Type="option"/>
+                            </Clause>
+                        </Clause>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="6" State="" RuleName="Time at Current Address: &lt;6m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="6" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="14" State="" RuleName="Time at Current Address: 6m - 3y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="6" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="48" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="25" State="" RuleName="Time at Current Address: 4m - 34y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="48" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="420" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="26" State="" RuleName="Time at Current Address: 35y" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="420" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="33" State="" RuleName="Number of Dependants: 0" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="0" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="29" State="" RuleName="Number of Dependants: 1 - 2" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="1" Type="numeric"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="2" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="19" State="" RuleName="Number of Dependants: 3" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="3" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="17" State="" RuleName="Number of Dependants: 4+" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="No of Dependants" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="4" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="2" State="" RuleName="Title: Mr, Dr" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Title" Type="option" TableName="Title"/>
+        <CO Operator="="/>
+        <O2 Operand="DR" Type="option"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Title" Type="option" TableName="Title"/>
+        <CO Operator="="/>
+        <O2 Operand="MR" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="31" State="" RuleName="Title: Mrs" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Title" Type="option" TableName="Title"/>
+        <CO Operator="="/>
+        <O2 Operand="MRS" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="24" State="" RuleName="Title: Ms" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Title" Type="option" TableName="Title"/>
+        <CO Operator="="/>
+        <O2 Operand="MS" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="26" State="" RuleName="Title: Miss" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Title" Type="option" TableName="Title"/>
+        <CO Operator="="/>
+        <O2 Operand="MISS" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="15" State="" RuleName="Title: Other" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Title" Type="option" TableName="Title"/>
+        <CO Operator="!="/>
+        <O2 Operand="DR" Type="option"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Title" Type="option" TableName="Title"/>
+            <CO Operator="!="/>
+            <O2 Operand="MR" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Title" Type="option" TableName="Title"/>
+                <CO Operator="!="/>
+                <O2 Operand="MRS" Type="option"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Title" Type="option" TableName="Title"/>
+                    <CO Operator="!="/>
+                    <O2 Operand="MS" Type="option"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="S" State="">
+                    <O1 Operand="Title" Type="option" TableName="Title"/>
+                    <CO Operator="!="/>
+                    <O2 Operand="MISS" Type="option"/>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="0" State="" RuleName="Time in Current Employment: &lt;2y" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="24" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="12" State="" RuleName="Time in Current Employment: 2y - 4y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="24" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="60" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="17" State="" RuleName="Time in Current Employment: 5y - 8y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="60" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="108" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="22" State="" RuleName="Time in Current Employment: 9y - 13y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="108" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="168" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="31" State="" RuleName="Time in Current Employment: 14y+" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="168" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="27" State="" RuleName="Frequency of Pay: Monthly" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+        <CO Operator="="/>
+        <O2 Operand="M" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="6" State="" RuleName="Frequency of Pay: Weekly" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+        <CO Operator="="/>
+        <O2 Operand="W" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="17" State="" RuleName="Frequency of Pay: Fortnightly" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+        <CO Operator="="/>
+        <O2 Operand="F" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="16" State="" RuleName="Frequency of Pay: Other" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+        <CO Operator="!="/>
+        <O2 Operand="F" Type="option"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+            <CO Operator="!="/>
+            <O2 Operand="M" Type="option"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Frequency of Pay" Type="option" TableName="PayFrequency"/>
+            <CO Operator="!="/>
+            <O2 Operand="W" Type="option"/>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="2" State="" RuleName="Time at Bank: No Bank" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="1" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="5" State="" RuleName="Time at Bank: 1m - 2y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="1" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="36" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="12" State="" RuleName="Time at Bank: 3y - 8y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="36" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="108" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="15" State="" RuleName="Time at Bank: 9y - 14y11m" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="108" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="180" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="30" State="" RuleName="Time at Bank: 15y+" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current bank (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="180" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="8" State="" RuleName="Product Code: Vision" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="1" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="7" State="" RuleName="Product Code: Audio, Business" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="2" Type="numeric"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="4" Type="numeric"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="15" Type="numeric"/>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="9" State="" RuleName="Product Code: Major Whites" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="3" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="23" State="" RuleName="Product Code: Small Appliances" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="5" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="0" State="" RuleName="Product Code: Lounge" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="50" Type="numeric"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="85" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="23" State="" RuleName="Product Code: Dining, Bedroom, Bedding" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="60" Type="numeric"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="70" Type="numeric"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="75" Type="numeric"/>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="35" State="" RuleName="Product Code: Occasional, Miscellaneous" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="80" Type="numeric"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="81" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="15" State="" RuleName="Product Code: Other" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+        <CO Operator="!="/>
+        <O2 Operand="1" Type="numeric"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+            <CO Operator="!="/>
+            <O2 Operand="2" Type="numeric"/>
+        </Clause>
+        <LO Operator="AND"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                <CO Operator="!="/>
+                <O2 Operand="4" Type="numeric"/>
+            </Clause>
+            <LO Operator="AND"/>
+            <Clause Type="C" State="">
+                <Clause Type="S" State="">
+                    <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                    <CO Operator="!="/>
+                    <O2 Operand="15" Type="numeric"/>
+                </Clause>
+                <LO Operator="AND"/>
+                <Clause Type="C" State="">
+                    <Clause Type="S" State="">
+                        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                        <CO Operator="!="/>
+                        <O2 Operand="3" Type="numeric"/>
+                    </Clause>
+                    <LO Operator="AND"/>
+                    <Clause Type="C" State="">
+                        <Clause Type="S" State="">
+                            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                            <CO Operator="!="/>
+                            <O2 Operand="5" Type="numeric"/>
+                        </Clause>
+                        <LO Operator="AND"/>
+                        <Clause Type="C" State="">
+                            <Clause Type="S" State="">
+                                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                <CO Operator="!="/>
+                                <O2 Operand="50" Type="numeric"/>
+                            </Clause>
+                            <LO Operator="AND"/>
+                            <Clause Type="C" State="">
+                                <Clause Type="S" State="">
+                                    <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                    <CO Operator="!="/>
+                                    <O2 Operand="85" Type="numeric"/>
+                                </Clause>
+                                <LO Operator="AND"/>
+                                <Clause Type="C" State="">
+                                    <Clause Type="S" State="">
+                                        <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                        <CO Operator="!="/>
+                                        <O2 Operand="60" Type="numeric"/>
+                                    </Clause>
+                                    <LO Operator="AND"/>
+                                    <Clause Type="C" State="">
+                                        <Clause Type="S" State="">
+                                            <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                            <CO Operator="!="/>
+                                            <O2 Operand="70" Type="numeric"/>
+                                        </Clause>
+                                        <LO Operator="AND"/>
+                                        <Clause Type="C" State="">
+                                            <Clause Type="S" State="">
+                                                <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                                <CO Operator="!="/>
+                                                <O2 Operand="75" Type="numeric"/>
+                                            </Clause>
+                                            <LO Operator="AND"/>
+                                            <Clause Type="C" State="">
+                                                <Clause Type="S" State="">
+                                                    <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                                    <CO Operator="!="/>
+                                                    <O2 Operand="80" Type="numeric"/>
+                                                </Clause>
+                                                <LO Operator="AND"/>
+                                                <Clause Type="S" State="">
+                                                    <O1 Operand="Product Category" Type="numeric" TableName=""/>
+                                                    <CO Operator="!="/>
+                                                    <O2 Operand="81" Type="numeric"/>
+                                                </Clause>
+                                            </Clause>
+                                        </Clause>
+                                    </Clause>
+                                </Clause>
+                            </Clause>
+                        </Clause>
+                    </Clause>
+                </Clause>
+            </Clause>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="31" State="" RuleName="Worst Status of Current Account: New Customer" ApplyRF="True"
+      ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="N" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="44" State="" RuleName="Worst Status of Current Account: No Current" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="0" Type="free"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="!="/>
+        <O2 Operand="0" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="42" State="" RuleName="Worst Status of Current Account: SC1 - SC2" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="1" Type="free"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="2" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="23" State="" RuleName="Worst Status of Current Account: SC3" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="3" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="-5" State="" RuleName="Worst Status of Current Account: SC4" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="4" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="-23" State="" RuleName="Worst Status of Current Account: SC5+" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="5" Type="free"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="6" Type="free"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="7" Type="free"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="S" State="">
+                <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="8" Type="free"/>
+            </Clause>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="37" State="" RuleName="Worst Status of Current Account: Staff" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="9" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="10" State="" RuleName="Worst Status of Settled Account: New Customer" ApplyRF="True"
+      ApplyHP="True" ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="N" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="10" State="" RuleName="Worst Status of Settled Account: No Settled" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="0" Type="free"/>
+    </Clause>
+    <LO Operator="AND"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Current Ever" Type="free" TableName=""/>
+        <CO Operator="!="/>
+        <O2 Operand="0" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="39" State="" RuleName="Worst Status of Settled Account: SC1 - SC2" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="1" Type="free"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="2" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="31" State="" RuleName="Worst Status of Settled Account: SC3" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="3" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="-15" State="" RuleName="Worst Status of Settled Account: SC4" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="4" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="-34" State="" RuleName="Worst Status of Settled Account: SC5+" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="5" Type="free"/>
+    </Clause>
+    <LO Operator="OR"/>
+    <Clause Type="C" State="">
+        <Clause Type="S" State="">
+            <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+            <CO Operator="="/>
+            <O2 Operand="6" Type="free"/>
+        </Clause>
+        <LO Operator="OR"/>
+        <Clause Type="C" State="">
+            <Clause Type="S" State="">
+                <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="7" Type="free"/>
+            </Clause>
+            <LO Operator="OR"/>
+            <Clause Type="S" State="">
+                <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+                <CO Operator="="/>
+                <O2 Operand="8" Type="free"/>
+            </Clause>
+        </Clause>
+    </Clause>
+</Rule>
+<Rule Type="S" Result="18" State="" RuleName="Worst Status of Settled Account: Staff" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Worst Settled Ever" Type="free" TableName=""/>
+        <CO Operator="="/>
+        <O2 Operand="9" Type="free"/>
+    </Clause>
+</Rule>
+<Rule Type="R" Result="AT" State="" RuleName="Sales Value: &gt;=$5000" ApplyRF="False" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Total val of items purchased (ex. Service charge)" Type="float" TableName=""/>
+        <CO Operator="&gt;="/>
+        <O2 Operand="5000" Type="float"/>
+    </Clause>
+</Rule>
+<Rule Type="R" Result="RS" State="" RuleName="Time at Current Address: &lt;1y" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time at current address (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="12" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="R" Result="AG" State="" RuleName="Age: &lt;18y" ApplyRF="True" ApplyHP="True" ReferDeclined="False"
+      ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Age" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="18" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="R" Result="NA" State="" RuleName="Nationality: &lt;&gt; St Kittian" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Nationality" Type="option" TableName="Nationality"/>
+        <CO Operator="!="/>
+        <O2 Operand="K" Type="option"/>
+    </Clause>
+</Rule>
+<Rule Type="R" Result="EM" State="" RuleName="Time in Current Employment: &lt;1y" ApplyRF="True" ApplyHP="True"
+      ReferDeclined="False" ReferAccepted="">
+    <Clause Type="S" State="">
+        <O1 Operand="Time in current employment (mm)" Type="numeric" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="12" Type="numeric"/>
+    </Clause>
+</Rule>
+<Rule Type="R" Result="IN" State="" RuleName="Instalment/Income Ratio: &gt;30%" ApplyRF="False" ApplyHP="True"
+      ReferAccepted="" ReferDeclined="False" RuleRejects="False">
+    <Clause Type="S" State="">
+        <O1 Operand="Instalment/Income ratio" Type="float" TableName=""/>
+        <CO Operator="&gt;"/>
+        <O2 Operand="30" Type="float"/>
+    </Clause>
+</Rule>
+<Rule Type="R" Result="IN" State="" RuleName="Income: &lt;$500" ApplyRF="True" ApplyHP="False" ReferDeclined="False"
+      ReferAccepted="" RuleRejects="False">
+    <Clause Type="S" State="">
+        <O1 Operand="Income" Type="float" TableName=""/>
+        <CO Operator="&lt;"/>
+        <O2 Operand="500" Type="float"/>
+    </Clause>
+</Rule>
+</Rules>

@@ -1,0 +1,33 @@
+<div class="col-md-8" ng-controller="paymentSetupController">
+    <h1>Payment Methods Setup</h1>
+    <p>&nbsp;</p>
+    <table class="col-md-8 table table-striped table-bordered table-hover table-responsive">
+        <thead>
+        <tr>
+            <th class=" col-md-4">Payment Method</th>
+            <th class="col-md-2">Active</th>
+            <th class="col-md-3">Is Allowed for Refund</th>
+            <th class="col-md-3">Allow Cash Refund</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="paymentMethod in paymentMethodsData">
+            <td>{{paymentMethod.Description}}</td>
+            <td class="text-center">
+                <input id="{{removeSpaces(paymentMethod.Description)}}" name="Active" type="checkbox"
+                       ng-model="paymentMethod.Active" ng-click="changeStatus(paymentMethod)">
+            </td>
+            <td class="text-center">
+                <input id="IsReturnAllowedChk{{paymentMethod.Id}}" name="Active" type="checkbox"
+                       ng-model="paymentMethod.IsReturnAllowed" ng-click="changeStatus(paymentMethod)">
+            </td>
+            <td class="text-center">
+                <input id="IsCashReturnAllowedChk{{paymentMethod.Id}}" name="Active" type="checkbox"
+                       ng-model="paymentMethod.IsCashReturnAllowed" ng-click="changeStatus(paymentMethod)"
+                       ng-disabled="!paymentMethod.IsReturnAllowed">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+ 

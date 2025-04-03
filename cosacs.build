@@ -1,0 +1,599 @@
+<project name="Blue.Cosacs" default="default" xmlns="http://nant.sf.net/release/0.92/nant.xsd">
+	<property name="modules" value="${environment::get-variable('Modules')}" />
+    <property name="BUILD_DIR" value="..\bin\"/>
+    <property name="NantContrib.dir" value="${BUILD_DIR}\nantcontrib-0.85\" />
+	<property name="ReleaseVersion" value="${environment::get-variable('ReleaseVersion')}"/>
+
+    <property name="current.dir" value="${directory::get-current-directory()}" />
+	<property name="wix.dir" value="${BUILD_DIR}\wix39-binaries\" />
+	
+    <loadtasks assembly="${BUILD_DIR}\blue-nant\Blue.NAnt.dll"/>
+    <loadtasks assembly="${NantContrib.dir}\bin\NAnt.Contrib.Tasks.dll"/>
+
+    <property name="nant.settings.currentframework" value="net-4.0" />
+
+    <include buildfile="web.build" />
+
+    <target name="default" depends="clean artifacts test">
+        <if test="${CCNetRequestSource=='fullTest'}">
+            <call target="full-test" />
+        </if>
+    </target>
+
+    <target name="wixwin" depends="wix-server">
+        <!--delete file="${install-folder}\CosacsClient.msi" failonerror="false"/-->
+        <copy todir="artifacts" includeemptydirs="false" flatten="true" overwrite="true">
+            <fileset basedir="blue.cosacs.server.setup">
+                <!--include name="**/CosacsClient.msi"/-->
+                <include name="**/CosacsClassic.msi"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="wixweb" depends="wix-web">
+        <copy todir="artifacts" includeemptydirs="false" flatten="true" overwrite="true">
+            <fileset basedir="${current.dir}/blue.cosacs.server.setup">
+                <include name="**/CosacsWeb.msi"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="wix-client" depends="wixsetup-win SetUpClickOnce">
+        <exec program="${wix.dir}\heat.exe" commandline="dir PrecompiledWeb\${version} -gg -sfrag -dr Client -cg CosacsClientFiles -template fragment -var var.clientdir -out blue.cosacs.server.setup\CosacsClientContents.wxs"></exec>
+        <exec program="${wix.dir}\heat.exe" commandline="dir OPOS\Disk1 -gg -sfrag -dr Client -cg OPOSDisk1 -template fragment -var var.clientdir -out blue.cosacs.server.setup\OPOSDisk1.wxs"></exec>
+        <exec program="${wix.dir}\heat.exe" commandline="dir OPOS\Disk2 -gg -sfrag -dr Client -cg OPOSDisk2 -template fragment -var var.clientdir -out blue.cosacs.server.setup\OPOSDisk2.wxs"></exec>
+        <exec program="${wix.dir}\heat.exe" commandline="dir OPOS\Disk3 -gg -sfrag -dr Client -cg OPOSDisk3 -template fragment -var var.clientdir -out blue.cosacs.server.setup\OPOSDisk3.wxs"></exec>
+        <exec program="${wix.dir}\heat.exe" commandline="dir OPOS\Disk4 -gg -sfrag -dr Client -cg OPOSDisk4 -template fragment -var var.clientdir -out blue.cosacs.server.setup\OPOSDisk4.wxs"></exec>
+        <exec program="${wix.dir}\heat.exe" commandline="dir OPOS\Disk5 -gg -sfrag -dr Client -cg OPOSDisk5 -template fragment -var var.clientdir -out blue.cosacs.server.setup\OPOSDisk5.wxs"></exec>
+        <exec program="${wix.dir}\heat.exe" commandline="dir OPOS\Disk6 -gg -sfrag -dr Client -cg OPOSDisk6 -template fragment -var var.clientdir -out blue.cosacs.server.setup\OPOSDisk6.wxs"></exec>
+        <exec program="${wix.dir}\candle.exe" commandline="-dclientdir=${current.dir}\OPOS\Disk1 -out .\blue.cosacs.server.setup\OPOSDisk1.wixobj .\blue.cosacs.server.setup\OPOSDisk1.wxs"></exec>
+        <exec program="${wix.dir}\candle.exe" commandline="-dclientdir=${current.dir}\OPOS\Disk2 -out .\blue.cosacs.server.setup\OPOSDisk2.wixobj .\blue.cosacs.server.setup\OPOSDisk2.wxs"></exec>
+        <exec program="${wix.dir}\candle.exe" commandline="-dclientdir=${current.dir}\OPOS\Disk3 -out .\blue.cosacs.server.setup\OPOSDisk3.wixobj .\blue.cosacs.server.setup\OPOSDisk3.wxs"></exec>
+        <exec program="${wix.dir}\candle.exe" commandline="-dclientdir=${current.dir}\OPOS\Disk4 -out .\blue.cosacs.server.setup\OPOSDisk4.wixobj .\blue.cosacs.server.setup\OPOSDisk4.wxs"></exec>
+        <exec program="${wix.dir}\candle.exe" commandline="-dclientdir=${current.dir}\OPOS\Disk5 -out .\blue.cosacs.server.setup\OPOSDisk5.wixobj .\blue.cosacs.server.setup\OPOSDisk5.wxs"></exec>
+        <exec program="${wix.dir}\candle.exe" commandline="-dclientdir=${current.dir}\OPOS\Disk6 -out .\blue.cosacs.server.setup\OPOSDisk6.wixobj .\blue.cosacs.server.setup\OPOSDisk6.wxs"></exec>
+        <exec program="${wix.dir}\candle.exe" commandline="-dclientdir=${current.dir}\PrecompiledWeb\${version} -out .\blue.cosacs.server.setup\CosacsClientContents.wixobj .\blue.cosacs.server.setup\CosacsClientContents.wxs"></exec>
+    </target>
+
+	<script language="C#" prefix="test" >
+        <references>
+			<include name="Microsoft.CSharp.dll" />
+			<include name="System.dll" />
+            <include name="System.Core.dll" />
+			<include name="System.Xml.dll" />
+			<include name="System.Xml.Linq.dll" />
+			<include name="System.Windows.Forms.dll" />
+        </references>
+		<imports>
+			<import namespace="System" />
+			<import namespace="System.Collections.Generic" />
+			<import namespace="System.Linq" />
+			<import namespace="System.Xml" />
+			<import namespace="System.Xml.Linq" />
+		</imports>
+		
+        <code>
+            <![CDATA[
+              [TaskName("cosacsWebServerAddModule")]
+    public class TestTask : Task
+    {
+        #region Private Instance Fields
+        private string _filename;
+        private string _moduleName;
+        #endregion Private Instance Fields
+
+        #region Public Instance Properties
+        [TaskAttribute("filename", Required = true)]
+        public string FileName
+        {
+            get { return _filename; }
+            set { _filename = value; }
+        }
+
+        [TaskAttribute("moduleName", Required = true)]
+        public string ModuleName
+        {
+            get { return _moduleName; }
+            set { _moduleName = value; }
+        }
+
+        #endregion Public Instance Properties
+
+        #region Override implementation of Task
+
+        protected override void ExecuteTask()
+        {
+            var document = System.Xml.Linq.XDocument.Load(FileName);
+            var directory = (from ele in document.Descendants()
+                             where ele.Name.LocalName == "Directory" && ele.Attribute("Id").Value == "Modules"
+                             select ele).First();
+            var feature = (from ele in document.Descendants()
+                           where ele.Name.LocalName == "Feature" && ele.Attribute("Id").Value == "Serverfiles"
+                           select ele).First();
+            var component = (from ele in document.Descendants()
+                             where ele.Name.LocalName == "Component" && ele.Attribute("Id").Value == "ModulesVirtualDir"
+                             select ele).First();
+
+			var property = document.Descendants()
+							.Where(p=> p.Name.LocalName == "Property" && p.Attribute("Id").Value == "InstalledModules")
+							.FirstOrDefault();
+					
+			if (property != null)
+			{
+				property.Remove();
+			}
+			document.Descendants()
+				.Where(p=> p.Name.LocalName == "Product" && p.Attribute("Id").Value == "AC3B09ED-DD5A-441B-B538-CA737436000D")
+				.First()
+				.Add(System.Xml.Linq.XElement.Parse(@"<Property Id='InstalledModules' Value='" + Environment.GetEnvironmentVariable("Modules") + "' xmlns='http://schemas.microsoft.com/wix/2006/wi' />"));
+										 
+            var dir = directory.Descendants()
+                .Where(p => p.Name.LocalName == "Directory" && p.Attribute("Id").Value == string.Format("Mod{0}", ModuleName))
+                .FirstOrDefault();
+
+            if (dir != null)
+            {
+                dir.Remove();
+
+            }
+            directory.Add(System.Xml.Linq.XElement.Parse("<Directory Id=\"Mod" + ModuleName + "\" Name=\"" + ModuleName + "\" xmlns='http://schemas.microsoft.com/wix/2006/wi'></Directory>"));
+
+
+            var comp = directory.Descendants()
+                .Where(p => p.Name.LocalName == "Component" && p.Attribute("Id").Value == string.Format("{0}Dist", ModuleName))
+                .FirstOrDefault();
+
+            if (comp != null)
+            {
+                comp.Remove();
+
+            }
+            directory.Add(System.Xml.Linq.XElement.Parse("<Component Id='" + ModuleName + "Dist' Guid='" + Guid.NewGuid().ToString() + "' Win64='yes' xmlns='http://schemas.microsoft.com/wix/2006/wi'>" +
+                                "<File Id='" + ModuleName + "File' Name='" + ModuleName + @".zip' DiskId='1' Source='..\artifacts\" + ModuleName + ".zip' />" +
+                            "</Component>"));
+
+            var webVirtualDir = component.Descendants()
+                .Where(p => p.Name.LocalName == "WebVirtualDir" && p.Attribute("Id").Value == string.Format("{0}VDir", ModuleName))
+                .FirstOrDefault();
+
+            if (webVirtualDir != null)
+            {
+                webVirtualDir.Remove();
+            }
+            component.Add(System.Xml.Linq.XElement.Parse(string.Format("<iis:WebVirtualDir Id='{0}VDir' Alias='{0}' Directory='Mod{0}' WebSite='DefaultWebSite' WebApplication='CWebApp' xmlns:iis='http://schemas.microsoft.com/wix/IIsExtension' />", ModuleName)));
+
+            var componentRef = (from e in feature.Descendants()
+                                where e.Name.LocalName == "ComponentRef" && e.Attribute("Id").Value == string.Format("{0}Dist", ModuleName)
+                                select e).FirstOrDefault();
+
+            if (componentRef != null)
+            {
+                componentRef.Remove();
+            }
+            feature.Add(System.Xml.Linq.XElement.Parse(@"<ComponentRef Id ='" + ModuleName + @"Dist' xmlns='http://schemas.microsoft.com/wix/2006/wi' />"));
+
+            document.Save(FileName);
+        }
+		
+        #endregion Override implementation of Task
+    }
+            ]]>
+        </code>
+    </script>
+
+    <target name="wix-server" depends="wix-client wixsetup-win SetUpClickOnce">
+        <exec program="${wix.dir}\candle.exe" commandline="-out .\blue.cosacs.server.setup\Server-CustomActions.wixobj .\blue.cosacs.server.setup\Server-CustomActions.wxs"/>
+        <exec program="${wix.dir}\candle.exe" commandline="-out .\blue.cosacs.server.setup\cosacsserver.wixobj .\blue.cosacs.server.setup\cosacsserver.wxs -ext WixIIsExtension.dll -dVersion=${version}"></exec>
+        <exec program="${wix.dir}\light.exe" commandline="-out .\blue.cosacs.server.setup\CosacsClassic.msi .\blue.cosacs.server.setup\Server-CustomActions.wixobj .\blue.cosacs.server.setup\cosacsserver.wixobj  .\blue.cosacs.server.setup\CosacsClientContents.wixobj .\blue.cosacs.server.setup\OPOSDisk1.wixobj .\blue.cosacs.server.setup\OPOSDisk2.wixobj .\blue.cosacs.server.setup\OPOSDisk3.wixobj .\blue.cosacs.server.setup\OPOSDisk4.wixobj .\blue.cosacs.server.setup\OPOSDisk5.wixobj .\blue.cosacs.server.setup\OPOSDisk6.wixobj -ext WixUIExtension.dll -ext WixIIsExtension.dll -ext WiXNetFxExtension" />
+    </target>
+
+    <target name="wix-web" depends="wixsetup-web">
+		<foreach item="String" in="${modules}" delim="," property="module">
+			<echo message="Adding ${module} to the MSI configuration" />	
+			
+			<cosacsWebServerAddModule
+				filename=".\blue.cosacs.server.setup\CosacsWebServer.wxs"
+				moduleName="${module}" />
+		</foreach>
+		
+        <exec program="${wix.dir}\candle.exe" commandline="-out .\blue.cosacs.server.setup\Server-CustomActions.wixobj .\blue.cosacs.server.setup\Server-CustomActions.wxs"/>
+        <exec program="${wix.dir}\candle.exe" commandline="-out .\blue.cosacs.server.setup\CosacsWebServer.wixobj .\blue.cosacs.server.setup\CosacsWebServer.wxs -ext WixIIsExtension.dll -dVersion=${version}"></exec>
+        <exec program="${wix.dir}\light.exe" commandline="-out .\blue.cosacs.server.setup\CosacsWeb.msi .\blue.cosacs.server.setup\Server-CustomActions.wixobj .\blue.cosacs.server.setup\CosacsWebServer.wixobj -ext WixUIExtension.dll -ext WixIIsExtension.dll -ext WiXNetFxExtension" />
+    </target>
+
+    <target name="version" description="Updates the version number from version.txt on all required files.">
+        <delete file="Courts.NET.WS\CommonAssemblyInfo.cs" failonerror="false"/>
+        <delete file="Courts.NET.WS\UpdateVersion.xml" failonerror="false"/>
+        <property name="version" value="${environment::get-variable('BUILD_NUMBER')}"/>
+		<echo message="------------------------------ ${version} ------------------------------" />
+        <asminfo output="Courts.NET.WS\CommonAssemblyInfo.cs" language="CSharp">
+            <imports>
+                <import namespace="System.Reflection" />
+                <import namespace="System.Runtime.InteropServices" />
+            </imports>
+            <attributes>
+                <attribute type="ComVisibleAttribute" value="false" />
+                <attribute type="AssemblyCopyrightAttribute" value="Copyright Blue Bridge Solutions Ltd 2010" />
+                <attribute type="AssemblyProductAttribute" value="CoSACS" />
+                <attribute type="AssemblyCompanyAttribute" value="Blue Bridge Solutions, Ltd" />
+                <attribute type="AssemblyVersionAttribute" value="${version}" />
+                <attribute type="AssemblyFileVersionAttribute" value="${version}" />
+                <attribute type="AssemblyInformationalVersionAttribute" value="${version}" />
+            </attributes>
+        </asminfo>
+        <echo file="Courts.NET.WS\UpdateVersion.xml" message='&lt;VersionConfig&gt;
+    &lt;AvailableVersion&gt;${version}&lt;/AvailableVersion&gt;
+    &lt;ApplicationUrl&gt;http://localhost/Courts.NET.WS/${version}&lt;/ApplicationUrl&gt;
+&lt;/VersionConfig&gt;' />
+    </target>
+
+    <target name="clean">
+        <delete file="NUnit-Results.xml" />
+        <delete file="NUnit-Results-Full.xml" />
+        <delete dir="artifacts" />
+        <!--delete>
+            <fileset>
+				<exclude name="**/node_modules/**"/>
+                <exclude name="Courts.NET.WS/bin/*.dll.refresh"/>
+                <exclude name="Blue.Cosacs.Automated.Tests/**"/>
+                <-include name="**/bin/**" />
+                <include name="**/obj/**" />
+                <include name="**/*.suo" />
+                <include name="**/*.user" /->
+            </fileset>
+        </delete-->
+        <msbuild project="Courts.NET.sln" target="Clean" />
+        <delete dir="PrecompiledWeb" failonerror="false" />
+        <delete dir="Courts.NET.PL/ClickOnce" failonerror="false" />
+		<delete failonerror="false">
+			<fileset basedir="modulesSql">
+				<include name="**\*" />
+			</fileset>
+		</delete>
+    </target>
+	
+	
+
+    <target name="compile" depends="clean version" description="Compiles CoSACS source code">
+        <msbuild project="Courts.NET.sln">
+            <property name="Configuration" value="Release"/>
+            <property name="Platform" value="Any CPU" />
+        </msbuild>
+        <call target="minify" />
+        <!--<exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_compiler.exe" commandline="-v Courts.NET.WS -f -u -c -p Courts.NET.WS PrecompiledWeb\Courts.NET.WS" />-->
+        <copy todir="PrecompiledWeb\Courts.NET.WS" includeemptydirs="false">
+            <fileset basedir="Courts.NET.WS">
+                <include name="**/*.*"/>
+                <include name="static/**/*.less"/>
+                <exclude name="Common/**"/>
+                <exclude name="Controllers/**"/>
+                <exclude name="App_Code/**"/>
+                <exclude name="obj/**"/>
+                <exclude name="Helpers/**"/>
+                <exclude name="Areas/Warehouse/Controllers/**"/>
+                <exclude name="Areas/Warehouse/*.*"/>
+                <exclude name="Models/**"/>
+                <exclude name="OPOS/**"/>
+                <exclude name="Photos/**"/>
+                <exclude name="Properties/**"/>
+                <exclude name="Schemas/**"/>
+                <exclude name="static/**/*.coffee"/>
+                <exclude name="bin/*.pdb"/>
+                <exclude name="bin/*.refresh"/>
+                <exclude name="**/*.exclude" />
+                <exclude name="CachedItems.cs"/>
+                <exclude name="Customers.cs"/>
+                <exclude name="CommonAssemblyInfo.cs" />
+                <exclude name="Global.asax.cs" />
+                <exclude name="**/*.asmx.cs"/>
+                <exclude name="*.csproj"/>
+                <exclude name="*.vspscc"/>
+                <exclude name="*.vsdisco"/>
+            </fileset>
+        </copy>
+
+        <attrib normal="true">
+            <fileset>
+                <include name="PrecompiledWeb/**/*.*" />
+            </fileset>
+        </attrib>
+    </target>
+	
+	<target name="compile-modules">
+	    <foreach item="String" in="${modules}" delim="," property="module">
+			<echo message="===================== Building ${module} ======================" />
+			<delete file="${module}/${module}.zip" />
+			<property name="ModuleName" value="${module}"/>
+			<nant>
+				<buildfiles>
+					<include name="module.build" />
+				</buildfiles>
+			</nant>
+			<move file="minify/${module}/${module}.zip" todir="artifacts" />
+        </foreach>
+ 	</target>
+	<!-- curl -O http://teamcity.bluebridgeltd.com/repository/download/Glaucous/.lastSuccessful/Glaucous.zip -->
+
+    <target name="SetUpClickOnce" description="Create Clickonce deployment Package">
+
+        <copy todir="Courts.NET.PL\ClickOnce" includeemptydirs="false">
+            <fileset basedir="..\lib\ClickOnce">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+
+        <copy todir="Courts.NET.PL\ClickOnce" includeemptydirs="false">
+            <fileset basedir="Courts.NET.PL\Keys">
+                <include name="**/*.pfx"/>
+            </fileset>
+        </copy>
+
+        <zip zipfile="Courts.NET.PL\ClickOnce\ClickOnce.zip" includeemptydirs="false">
+            <fileset basedir="Courts.NET.PL\ClickOnce">
+                <exclude name="**/*.zip" />
+                <include name="**/*" />
+            </fileset>
+        </zip>
+    </target>
+
+    <target name="wixsetup-win" depends="compile">
+
+        <!--<delete dir="PrecompiledWeb\Sql" failonerror="false" />
+        <delete dir="PrecompiledWeb\Client" failonerror="false" />-->
+
+        <exec program="cmd" commandline="/c ren PrecompiledWeb\Courts.NET.WS Server"/>
+
+        <copy todir="PrecompiledWeb\Server\bin\batch" flatten="true" overwrite="true">
+            <fileset>
+                <include name="Courts.NET.Batch\bin\Release\EOD*.*"/>
+            </fileset>
+        </copy>
+
+        <xmlpoke file="PrecompiledWeb\Server\web.config"
+        xpath="/configuration/system.web/compilation/@debug"
+        value="false" />
+
+        <delete>
+            <fileset>
+                <include name="PrecompiledWeb\Server\bin\*.pdb" />
+                <include name="PrecompiledWeb\Server\*.resx"/>
+            </fileset>
+        </delete>
+
+        <delete dir="PrecompiledWeb\server\OPOS" failonerror="false" />
+        <delete dir="PrecompiledWeb\server\Schemas" failonerror="false" />
+
+        <delete dir="PrecompiledWeb\${version}" failonerror="false" />
+
+        <copy todir="PrecompiledWeb\${version}" includeemptydirs="false">
+            <fileset basedir="Courts.NET.PL/bin/Release">
+                <exclude name="**/*.pdb"/>
+                <exclude name="**/*.vssscc"/>
+                <exclude name="**/*.ssmssln"/>
+                <exclude name="**/*.csproj"/>
+                <exclude name="**/*.vspscc"/>
+                <exclude name="**/*.application"/>
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+
+        <copy todir="PrecompiledWeb\${version}\Resources" includeemptydirs="false">
+            <fileset basedir="Courts.NET.PL/Resources">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+
+        <copy todir="PrecompiledWeb\${version}\images" includeemptydirs="false">
+            <fileset basedir="Courts.NET.PL/images">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+
+        <zip zipfile="PrecompiledWeb\WinSql.zip" includeemptydirs="false">
+            <fileset basedir="Blue.Cosacs.StoredProcedures">
+                <exclude name="**/*.pdb"/>
+                <exclude name="**/*.vssscc"/>
+                <exclude name="**/*.ssmssln"/>
+                <exclude name="**/*.csproj"/>
+                <exclude name="**/*.vspscc"/>
+                <exclude name="**/*.exe"/>
+                <exclude name="TallyManInterface/*.*"/>
+                <exclude name="CopyFiles/*.*"/>
+                <exclude name="obj/*.*"/>
+                <exclude name="Upgrade/*.*"/>
+                <exclude name="Testdata/*.*"/>
+                <exclude name="Tests/*.*"/>
+                <include name="**/*" />
+            </fileset>
+        </zip>
+
+        <zip zipfile="PrecompiledWeb\Server.zip" includeemptydirs="false">
+            <fileset basedir="PrecompiledWeb\Server">
+                <exclude name="**/*.pdb"/>
+                <exclude name="**/*.vssscc"/>
+                <exclude name="**/*.ssmssln"/>
+                <exclude name="**/*.csproj"/>
+                <exclude name="**/*.vspscc"/>
+                <!--exclude name="**/*.cs"/-->
+                <exclude name="obj/**/*"/>
+                <exclude name="Opos/**/*"/>
+                <include name="**/*" />
+            </fileset>
+        </zip>
+
+        <copy
+            file="PrecompiledWeb\Server\Updateversion.xml"
+            tofile="PrecompiledWeb\Appstart.config"/>
+    </target>
+
+    <target name="wixsetup-web" depends="artifacts BuildASDatabaseFile">
+        <!--mkdir dir="${current.dir}\PrecompiledWeb" failonerror="false"/>
+        <delete dir="PrecompiledWeb\${version}" failonerror="false" /-->
+
+		<!--<copy file="CosacsReporting\bin\CosacsReporting.asdatabase"	tofile="PrecompiledWeb\CosacsReporting.asdatabase"/>-->
+        <!--copy file="\\GRID0\Build\$COSACS_Current\Files\Olap\CosacsReporting.asdatabase" tofile="artifacts\CosacsReporting.asdatabase"/-->	
+		
+		<call target="compile-modules" />
+    </target>
+
+    <target name="test" depends="upgrade-win upgrade-web BuildASDatabaseFile compile" description="runs the unit and integration tests">
+        <xmlpoke file="Cosacs.nunit.config"
+                 xpath="/configuration/connectionStrings/add[@name = 'Default']/@connectionString"
+                 value="${connstring}" />
+        <exec program="../lib/NUnit/nunit-console.exe">
+            <arg value="Cosacs.nunit" />
+            <arg value="/xml=NUnit-Results.xml" />
+            <arg value="/framework=4.0.30319" />
+        </exec>
+    </target>
+
+    <target name="full-test" depends="test">
+        <xmlpoke file="TestforFullBuild\Blue.Cosacs.TestforFullBuild\bin\Release\Blue.Cosacs.TestforFullBuild.dll.config"
+                 xpath="/configuration/connectionStrings/add[@name = 'Default']/@connectionString"
+                 value="${connstring}" />
+        <xmlpoke file="Blue.Cosacs.Test\bin\Release\Blue.Cosacs.Test.dll.config"
+                 xpath="/configuration/connectionStrings/add[@name = 'Default']/@connectionString"
+                 value="${connstring}" />
+
+        <exec program="../lib/NUnit/nunit-console-x86.exe">
+            <arg value="TestforFullBuild\Blue.Cosacs.TestforFullBuild\bin\Release\Blue.Cosacs.TestforFullBuild.dll" />
+            <arg value="/xml=NUnit-Results-Full.xml" />
+            <arg value="/framework=4.0.30319" />
+        </exec>
+        <exec program="../lib/NUnit/nunit-console-x86.exe">
+            <arg value="Blue.Cosacs.Test\bin\Release\Blue.Cosacs.Test.dll" />
+            <arg value="/xml=NUnit-Blue.Cosacs.Test-Results-Full.xml" />
+            <arg value="/framework=4.0.30319" />
+        </exec>
+    </target>
+
+    <target name="artifacts" depends="compile" description="COSACS Server, Client and Batch executables/binaries">
+        <!--<call target="minify" />-->
+        <!--copy todir="${path::combine(artifacs-release-folder,'Minified')}" includeemptydirs="false"-->
+		<touch file="minify\web\_version.txt" />
+		<echo message="${build.number}" file="minify\web\_version.txt" append="false"/>
+		<zip zipfile="artifacts/CosacsWeb.zip" includeemptydirs="false">
+            <fileset basedir="minify\web\">
+                <exclude name="coverage"/>
+                <exclude name="node_modules"/>
+                <exclude name="test"/>
+                <exclude name="*.sh"/>
+                <exclude name="*.Stylecop"/>
+                <exclude name="bower.json"/>
+                <exclude name="package.json"/>
+                <include name="**/*.*"/>
+            </fileset>
+		</zip>
+
+        <!--Client -->
+        <!--copy todir="${path::combine(artifacs-release-folder,'Client')}" includeemptydirs="false"-->
+		<zip zipfile="artifacts/Client.zip" includeemptydirs="false">
+            <fileset basedir="Courts.NET.PL\bin\Release">
+                <exclude name="**/*.pdb"/>
+                <include name="**/*.*"/>
+            </fileset>
+        </zip>
+        
+		<!--POS.net -->
+        <copy todir="artifacts" includeemptydirs="false">
+            <fileset basedir="..\lib">
+                <include name="PosFor.Net.zip"/>
+            </fileset>
+        </copy>
+        
+		<!-- EPOS -->
+        <!--zip zipfile="artifacts/EPOS.zip" includeemptydirs="false">
+            <fileset basedir="Blue.Cosacs.Epos\bin\Release">
+                <exclude name="**/*.pdb"/>
+                <include name="**/*.*"/>
+            </fileset>
+        </zip-->
+        
+		<!-- Sql -->
+        <!--copy todir="${path::combine(artifacs-release-folder,'WinSql')}" includeemptydirs="false"-->
+		<zip zipfile="artifacts/WinSql.zip" includeemptydirs="false">
+            <fileset basedir="Blue.Cosacs.StoredProcedures">
+                <exclude name="**/*.pdb"/>
+                <exclude name="**/*.vssscc"/>
+                <exclude name="**/*.ssmssln"/>
+                <exclude name="**/*.csproj"/>
+                <exclude name="**/*.vspscc"/>
+                <exclude name="**/*.exe"/>
+                <exclude name="TallyManInterface/*.*"/>
+                <exclude name="bin/**/*"/>
+                <exclude name="obj/**/*"/>
+                <exclude name="Upgrade/**/*"/>
+                <exclude name="Properties/**/*"/>
+                <exclude name="CopyFiles/**/*"/>
+                <exclude name="Tests/**/*"/>
+                <include name="**/*.*"/>
+            </fileset>
+        </zip>
+
+        <!--copy todir="${path::combine(artifacs-release-folder,'WebSql')}" includeemptydirs="false"-->
+		<zip zipfile="artifacts/WebSql.zip" includeemptydirs="false">
+            <fileset basedir="Blue.Cosacs.Web.Sql">
+                <exclude name="**/*.vssscc"/>
+                <exclude name="**/*.ssmssln"/>
+                <exclude name="**/*.csproj"/>
+                <exclude name="**/*.dbproj"/>
+                <exclude name="**/*.vspscc"/>
+                <exclude name="obj/*.*"/>
+                <exclude name="sql/*.*"/>
+				<exclude name="*.*"/>
+                <include name="**/*.*"/>
+            </fileset>
+        </zip>
+
+        <!-- Solr -->
+        <!--copy todir="${path::combine(artifacs-release-folder,'Solr')}" includeemptydirs="false"-->
+		<zip zipfile="artifacts/Solr.zip" includeemptydirs="true">
+            <fileset basedir="../bin/solr">
+                <include name="**/*"/>
+            </fileset>
+        </zip>
+
+        <!-- Redis -->
+        <!--copy todir="${path::combine(artifacs-release-folder,'redis')}" includeemptydirs="false"-->
+		<zip zipfile="artifacts/Redis.zip" includeemptydirs="false">
+            <fileset basedir="../bin/redis">
+                <include name="**/*.*"/>
+            </fileset>
+        </zip>
+		
+        <!-- EndOfDay -->
+        <copy todir="PrecompiledWeb\Courts.NET.WS\bin\batch" includeemptydirs="false">
+            <fileset basedir="Courts.NET.Batch\bin\Release">
+                <exclude name="**/*.pdb"/>
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+			
+		
+		<!--Server-->
+        <!--copy todir="${path::combine(artifacs-release-folder,'Server')}" includeemptydirs="false"-->
+		<zip zipfile="artifacts/Courts.NET.WS.zip" includeemptydirs="false">
+            <fileset basedir="PrecompiledWeb\Courts.NET.WS">
+                <exclude name="**/*.pdb"/>
+                <include name="**/*.*"/>
+            </fileset>
+        </zip>
+
+        <!-- Hub -->
+        <!--copy todir="${path::combine(artifacs-release-folder,'Hub')}" includeemptydirs="false"-->
+		<zip zipfile="artifacts/Hub.zip" includeemptydirs="false">
+            <fileset basedir="Blue.Hub.Service.Host\bin\Release\">
+                <exclude name="**/*.pdb"/>
+                <exclude name="**/*.log"/>
+                <exclude name="**/*.vshost.*"/>
+                <exclude name="**/*.xml"/>
+                <exclude name="**/Blue.Hub.Service.Host.*"/>
+                <include name="**/*" />
+            </fileset>
+        </zip>
+	   
+        <!--echo file="${path::combine(artifacs-release-folder,version + '.version')}" message="${version}" /-->
+		
+    </target>
+ 
+</project>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="SalesManagement" namespace="Blue.Cosacs.SalesManagement" label="Sales Management">
+    <Connection server="." database="cosacs" />
+    <Queries>
+        <DataSet name ="SalesSummaryPerYear"></DataSet>
+    </Queries>
+    <Tables>
+        <Table name="CustomerSalesPerson" />
+        <Table name="CallType"/>
+        <Table name="Call"/>
+        <Table name="FollowUpCall"/>
+        <Table name="CsrUnavailable" />
+        <Table name="SalesPersonTargets"></Table>
+        <Table name="IconTypes"></Table>
+        <Table name="AdditionalCustomersInteraction"></Table>
+        <Table name="MailsToSend"></Table>
+        <Table name="SmsToSend"></Table>
+        <Table name="SummaryTable"></Table>
+    </Tables>
+    <Views>
+        <View name="SalesPersonUnavailableView"/>
+        <View name="CallsFromUnavailableCSRView"/>
+        <View name="CustomerDetailsView"></View>
+        <View name="BranchManagerCall"></View>
+    </Views>
+    <Settings>
+        <Setting id="DaysToCallBeforeInstallmentEnds" name="Schedule date for a Last instalment call " type="int" category="Sales Management">
+            <Description>Date at which 'Last Instalment call' can be scheduled </Description>
+            <Default>3</Default>
+        </Setting>
+        <Setting id="DaysToScheduleCallBeforeInstallmentEnds" name=" The number of days before last instalment date" type="int" category="Sales Management">
+            <Description>No of days before Last Instalment date that a customer can be considered for Last instalment call</Description>
+            <Default>10</Default>
+        </Setting>
+        <Setting id="HowManyDaysToBeAnInactiveCreditCustomer" name="Days since the Customer made the last payment to be considered as an Inactive Credit/Cash customer" type="int" category="Sales Management">
+            <Description>The number of days since the Customer made the last payment to be considered as an inactive credit/cash customer</Description>
+            <Default>180</Default>
+        </Setting>
+        <Setting id="HowManyDaysToBeAnInactiveCashCustomer" name="Days since the last call to a Customer to be considered as an Inactive Credit/Cash customer" type="int" category="Sales Management">
+            <Description>The number of days since the last call for a Customer to be considered as an inactive credit/cash customer</Description>
+            <Default>180</Default>
+        </Setting>
+        <Setting id="DaysToScheduleCallToInactiveCustomers" name="Schedule the call to a date X days after today for inactive customers" type="int" category="Sales Management">
+            <Description>The number of days ahead to schedule a call to an inactive customer</Description>
+            <Default>3</Default>
+        </Setting>
+        <Setting id="DaysToFlushUnmadeCalls" name="No of Days to get a date prior to which all unmade calls can be flushed" type="int" category="Sales Management">
+            <Description>No of days to get a date prior to which all unmade calls will be flushed </Description>
+            <Default>7</Default>
+        </Setting>
+        <Setting id="LastXCalls" name="Previous Calls to display" type="int" category="Sales Management">
+            <Description>Number of previous calls to display in the Call Log page when logging a call.</Description>
+            <Default>5</Default>
+        </Setting>
+        <Setting id="SlowServiceRequests" name="No of days since SR is open " type="int" category="Sales Management">
+            <Description>How many days an SR must be unresolved and not closed to appear in Slow SR list</Description>
+            <Default>8</Default>
+        </Setting>
+        <Setting id="SalesFollowUpThreshold" name="Sales Follow-up Threshold" type="decimal" category="Sales Management">
+            <Description>Amount of the sales order (aggrement total for credit and total sale value for cash sales) for customer to be added to the sales follow-up list</Description>
+            <Default>1000</Default>
+        </Setting>
+    </Settings>
+</Model>

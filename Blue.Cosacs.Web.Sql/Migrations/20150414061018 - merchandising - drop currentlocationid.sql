@@ -1,0 +1,5 @@
+alter table merchandising.stocktransferproduct
+drop constraint FK_Merchandising_StockTransferProduct_CurrentLocationId
+
+alter table merchandising.stocktransferproduct
+drop column currentlocationid

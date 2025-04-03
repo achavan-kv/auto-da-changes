@@ -1,0 +1,8 @@
+alter table Merchandising.PurchaseOrder drop
+constraint UX_Merchandising_PurchaseOrder_PoNumber
+
+alter table merchandising.purchaseorder
+alter column CorporatePoNumber int null
+
+alter table Merchandising.PurchaseOrder add
+constraint UX_Merchandising_PurchaseOrder_PoNumber unique (OriginSystem, CorporatePoNumber)

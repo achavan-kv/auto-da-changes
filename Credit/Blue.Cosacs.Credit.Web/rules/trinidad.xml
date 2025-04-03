@@ -1,0 +1,1148 @@
+<ScoreCard xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Applicant</Name>
+    <Decline>133</Decline>
+    <Refer>0</Refer>
+    <ScoringRules>
+        <RuleSet>
+            <Result>16</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Marital Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Married</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Marital Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Widowed</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>11</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Marital Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Divorced</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Marital Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Separated</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>8</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Marital Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Single</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Marital Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Other</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>12</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Residential Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Owner Paid</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Residential Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Owner Paying</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>8</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Residential Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Other</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Residential Status</Class>
+                        <Operator>Is</Operator>
+                        <Variable>With Parents</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>2</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Number of Settled Agreements</Class>
+                        <Operator>Is</Operator>
+                        <Variable>0</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>4</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Number of Settled Agreements</Class>
+                        <Operator>Is</Operator>
+                        <Variable>1</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>15</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Number of Settled Agreements</Class>
+                        <Operator>Is</Operator>
+                        <Variable>2</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Number of Settled Agreements</Class>
+                        <Operator>Is</Operator>
+                        <Variable>3</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>22</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Number of Settled Agreements</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>4</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Number of Settled Agreements</Class>
+                        <Operator>&lt;=</Operator>
+                        <Variable>6</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>39</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Number of Settled Agreements</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>7</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>42</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                        <Variable></Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                        <Variable></Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>59</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                        <Variable></Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>72</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                        <Variable>1</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                        <Variable>2</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>24</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                        <Variable>3</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>57</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Staff</Class>
+                        <Operator>Exists</Operator>
+                        <Variable></Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>3</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>9</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>21</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>4</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>21</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>32</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>5</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>32</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>48</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>6</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>48</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;=</Operator>
+                        <Variable>72</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>16</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;</Operator>
+                        <Variable>72</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>120</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>22</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>120</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>180</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>24</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>180</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>233</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>26</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>233</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>-10</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;=</Operator>
+                        <Variable>10</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>7</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>10</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>30</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>8</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>30</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>66</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+
+        <RuleSet>
+            <Result>16</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>66</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>396</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>19</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months in Current Employment</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>396</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>11</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Title</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Mrs</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>6</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Title</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Ms</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>-2</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Title</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Mr</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Title</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Dr</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>-3</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Title</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Miss</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>1</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Title</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Other</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+
+        <RuleSet>
+            <Result>6</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Pay Frequency</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Annual</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>2</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Pay Frequency</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Weekly</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>10</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Pay Frequency</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Monthly</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+
+        <RuleSet>
+            <Result>24</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Nurse</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Teacher</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+
+        <RuleSet>
+            <Result>16</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Drivers</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Civil Servant</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Managerial</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Professional</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>14</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Agriculture</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Comm Agent</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Fisherman</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Entertainment</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Other</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>14</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Business Owner</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Vendor</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>12</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Clerical</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>6</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Domestic/Janitor</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Waitress</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Factory</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Manual</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Occupation</Class>
+                        <Operator>Is</Operator>
+                        <Variable>Skilled Trade</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>5</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>25</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>29</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>7</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>29</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>33</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>9</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>33</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>40</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>18</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>40</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>42</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>20</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>42</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>51</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>23</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>51</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>61</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>36</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Age</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>61</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+
+        <RuleSet>
+            <Result>2</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months Since Last Delivery</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>1</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months Since Last Delivery</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>5</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>10</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months Since Last Delivery</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>5</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Months Since Last Delivery</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>7</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>12</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Months Since Last Delivery</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>7</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+
+        <RuleSet>
+            <Result>25</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                    </Rule>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>26</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Not Exists</Operator>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>62</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>1</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>49</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>2</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>35</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>3</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>27</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>4</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>-20</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>5</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>31</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Staff</Class>
+                        <Operator>Exists</Operator>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+    </ScoringRules>
+    <ReferRules>
+        <RuleSet>
+            <Result>Nationality</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Nationality</Class>
+                        <Operator>Is Not</Operator>
+                        <Variable>Trinidad</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>Monthly Expenses</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Monthly Expenses (without Accommodation)</Class>
+                        <Operator>&lt;</Operator>
+                        <Variable>900</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+
+        <RuleSet>
+            <Result>Phone</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Work Phone</Class>
+                        <Operator>Not Exists</Operator>
+                    </Rule>
+                    <Rule>
+                        <Class>Home Phone</Class>
+                        <Operator>Not Exists</Operator>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>Sc</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>4</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>5</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>sc</Result>
+            <Rules>
+                <Class>Or</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>4</Variable>
+                    </Rule>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>Is</Operator>
+                        <Variable>5</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>sc</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Current Agreements (All Status History)</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>6</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>sc</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Worst Status for Settled Agreements (All Status History)</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>6</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>Spending Limit</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>RF Spending Limit</Class>
+                        <Operator>&gt;</Operator>
+                        <Variable>15000</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+        <RuleSet>
+            <Result>Total Liability</Result>
+            <Rules>
+                <Class>And</Class>
+                <Expression>
+                    <Rule>
+                        <Class>Total Liability</Class>
+                        <Operator>&gt;=</Operator>
+                        <Variable>33000</Variable>
+                    </Rule>
+                </Expression>
+            </Rules>
+        </RuleSet>
+    </ReferRules>
+    <DeclineRules/>
+</ScoreCard>

@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C8EDA2D-9EFD-48A5-A12E-10A29887A3A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blue.Cosacs.Merchandising</RootNamespace>
+    <AssemblyName>Blue.Cosacs.Merchandising</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>82c93ec1</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK, Version=1.5.39.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AWSSDK.1.5.39.0\lib\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Admin">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Admin.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Caching">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Config">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Elmah">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Events">
+      <HintPath>..\..\lib\EventStore\Blue.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Glaucous.Client">
+      <HintPath>..\..\..\..\cosacs\Cron\Blue.Glaucous.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Hub.Client">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Hub.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Networking">
+      <HintPath>..\..\..\..\cosacs\CosacsWeb\bin\Blue.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Blue.Transactions">
+      <HintPath>..\..\..\..\cosacs\Courts.NET.WS\bin\Blue.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert, Version=6.0.2.8, Culture=neutral, PublicKeyToken=630a17433349cb76, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.0.0.7, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.0.0.7\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FileHelpers, Version=3.1.5.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.1.5\lib\net45\FileHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.AspNet">
+      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core">
+      <HintPath>..\packages\Glimpse.1.8.2\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Mvc3">
+      <HintPath>..\packages\Glimpse.Mvc3.1.5.3\lib\net40\Glimpse.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\packages\FileHelpers.2.0.0.0\lib\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Office">
+      <HintPath>..\packages\FileHelpers.2.0.0.0\lib\Interop.Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq">
+      <HintPath>..\packages\morelinq.1.1.0\lib\net35\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PercolatorAnalysis">
+      <HintPath>..\packages\PercolatorAnalysisServices.0.3.2\lib\PercolatorAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.1.608.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.1.608\lib\net45\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis.Extensions.Core, Version=1.1.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.Extensions.Core.1.1.12.0\lib\net45\StackExchange.Redis.Extensions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis.Extensions.Newtonsoft, Version=1.1.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.Extensions.Newtonsoft.1.1.10.0\lib\net45\StackExchange.Redis.Extensions.Newtonsoft.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculations\AWC.cs" />
+    <Compile Include="DataWarehousing\Models\DepartmentSalesModel.cs" />
+    <Compile Include="DataWarehousing\Models\DivisionSalesModel.cs" />
+    <Compile Include="DataWarehousing\Models\StockValueItemModel.cs" />
+    <Compile Include="DataWarehousing\Models\StockValueLocationModel.cs" />
+    <Compile Include="Enums\BookingTypes.cs" />
+    <Compile Include="Enums\CintOrderType.cs" />
+    <Compile Include="Enums\MagnetoExportTypes.cs" />
+    <Compile Include="Enums\PromotionLocation.cs" />
+    <Compile Include="Enums\GoodsReceiptType.cs" />
+    <Compile Include="Enums\ProductStatuses.cs" />
+    <Compile Include="Enums\ProductTypes.cs" />
+    <Compile Include="Enums\PurchaseOrderStatuses.cs" />
+    <Compile Include="Enums\SupplierStatusEnum.cs" />
+    <Compile Include="Event\DirectReceiptEvents.cs" />
+    <Compile Include="Event\GoodOnLoanEvents.cs" />
+    <Compile Include="Event\StockAllocationEvents.cs" />
+    <Compile Include="Event\StockRequisitionEvents.cs" />
+    <Compile Include="Event\StockTransferEvents.cs" />
+    <Compile Include="Event\StockCountEvents.cs" />
+    <Compile Include="Event\StockAdjustmentEvents.cs" />
+    <Compile Include="Event\StockAdjustmentReasonEvents.cs" />
+    <Compile Include="Event\VendorReturnEvents.cs" />
+    <Compile Include="Event\GoodsReceivedEvents.cs" />
+    <Compile Include="Event\PurchaseEvents.cs" />
+    <Compile Include="Event\PromotionEvents.cs" />
+    <Compile Include="Event\RetailPriceEvents.cs" />
+    <Compile Include="Event\SetEvents.cs" />
+    <Compile Include="Event\ComboEvents.cs" />
+    <Compile Include="Event\SupplierEvents.cs" />
+    <Compile Include="Event\RepossessedConditionEvents.cs" />
+    <Compile Include="Event\ProductEvents.cs" />
+    <Compile Include="Extensions\ProductStaging.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\NegativeStockComparer.cs" />
+    <Compile Include="Helpers\StockValuationComparer.cs" />
+    <Compile Include="Helpers\TaxHelper.cs" />
+    <Compile Include="Helpers\Transmute.cs" />
+    <Compile Include="Helpers\DateTimeExtensions.cs" />
+    <Compile Include="Helpers\DecimalExtensions.cs" />
+    <Compile Include="Helpers\FieldSchemaExtensions.cs" />
+    <Compile Include="Helpers\FieldTitleAttribute.cs" />
+    <Compile Include="Helpers\FileHelperExtensions.cs" />
+    <Compile Include="Helpers\IQueryableExtensions.cs" />
+    <Compile Include="Helpers\LevelComparer.cs" />
+    <Compile Include="Helpers\PDFHelper.cs" />
+    <Compile Include="Helpers\TagComparer.cs" />
+    <Compile Include="Helpers\EnumerableExtensions.cs" />
+    <Compile Include="Helpers\JsonConvertHelper.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Helpers\SearchHelper.cs" />
+    <Compile Include="Helpers\TypeExtensions.cs" />
+    <Compile Include="Helpers\UnicodeEscapeConverter.cs" />
+    <Compile Include="Infrastructure\ILog.cs" />
+    <Compile Include="Infrastructure\IMerchandisingConfiguration.cs" />
+    <Compile Include="Infrastructure\IndexingException.cs" />
+    <Compile Include="Infrastructure\Log.cs" />
+    <Compile Include="Infrastructure\Lunr.cs" />
+    <Compile Include="Infrastructure\PagedSearchResult.cs" />
+    <Compile Include="Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ashley\Customer.cs" />
+    <Compile Include="Models\Ashley\CustomerAddress.cs" />
+    <Compile Include="Models\Ashley\LineItem.cs" />
+    <Compile Include="Models\Ashley\LineItemDetails.cs" />
+    <Compile Include="Models\Ashley\LineItemList.cs" />
+    <Compile Include="Models\Ashley\PaymentDetails.cs" />
+    <Compile Include="Models\Ashley\SaveNewAccountParameters.cs" />
+    <Compile Include="Models\Cint\Awc.cs" />
+    <Compile Include="Models\Cint\CintsOrder.cs" />
+    <Compile Include="Models\CostPrice\CostPriceCreateModel.cs" />
+    <Compile Include="Models\Export\AbbreviatedStockExportModel.cs" />
+    <Compile Include="Models\Export\NegativeStockExportItem.cs" />
+    <Compile Include="Models\HierarchyTypes\HierarchyTagImport.cs" />
+    <Compile Include="Models\HierarchyTypes\WarehouseOversupplyReportView.cs" />
+    <Compile Include="Models\HierarchyTypes\ProductHierarchyView.cs" />
+    <Compile Include="Models\ProductAWC.cs" />
+    <Compile Include="Models\Product\BasicProductDetails.cs" />
+    <Compile Include="Models\Product\ProductSKU.cs" />
+    <Compile Include="Models\ReindexedProductsModel.cs" />
+    <Compile Include="Models\Reports\BuyerSalesHistoryReport\BuyerSalesHistoryExportModel.cs" />
+    <Compile Include="Models\Reports\BuyerSalesHistoryReport\BuyerSalesHistoryKpiModel.cs" />
+    <Compile Include="Models\Reports\PromotionReport\PromotionReportPrintModel.cs" />
+    <Compile Include="Models\Reports\TradingExport\TradingExportDatesModel.cs" />
+    <Compile Include="Models\Reports\TradingExport\TradingExportGenericModel.cs" />
+    <Compile Include="Models\Reports\TradingExport\TradingExportModel.cs" />
+    <Compile Include="Models\Reports\WarehouseOversupplyReport\WarehouseOversupplyExportModel.cs" />
+    <Compile Include="Models\Export\StockValueExportItem.cs" />
+    <Compile Include="Models\Export\TopSkuExportModel.cs" />
+    <Compile Include="Models\Lunr\PurchaseOrderLunrModel.cs" />
+    <Compile Include="Models\Promotion\PromotionProductModel.cs" />
+    <Compile Include="Models\Promotion\PromotionalPriceViewModel.cs" />
+    <Compile Include="Logic\TaxCalcuator.cs" />
+    <Compile Include="Mappers\MerchandisingAutomapperProfile.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Enums\MerchandisingPermissionEnum.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Event\WarrantyHierarchyEvents.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MerchandisingPickLists.cs" />
+    <Compile Include="Models\ApplicablePromo.cs" />
+    <Compile Include="Models\Export\AssociatedProductExportModel.cs" />
+    <Compile Include="Models\Export\HyperionExportModel.cs" />
+    <Compile Include="Models\Export\MagentoExportEligbleModel.cs" />
+    <Compile Include="Models\Export\MagentoExportIneligibleModel.cs" />
+    <Compile Include="Models\Export\PromoExportModel.cs" />
+    <Compile Include="Models\Export\PromoExportViewModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanProductPrintModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanUpdateModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanQueryModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanSearchResultModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanStockInfoModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanPrintModel.cs" />
+    <Compile Include="Models\ProductPrice.cs" />
+    <Compile Include="Models\Product\ProductSalesModel.cs" />
+    <Compile Include="Models\Product\ProductSalesViewModel.cs" />
+    <Compile Include="Models\PurchaseOrder\PurchaseOrderAttribute.cs" />
+    <Compile Include="Mappers\IProductMapper.cs" />
+    <Compile Include="Mappers\IVendorReturnMapper.cs" />
+    <Compile Include="Mappers\ProductMapper.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Mappers\IStockAdjustmentReasonMapper.cs" />
+    <Compile Include="Mappers\StockAdjustmentReasonMapper.cs" />
+    <Compile Include="Mappers\VendorReturnMapper.cs" />
+    <Compile Include="Models\AssociatedProduct\AssociatedProduct.cs" />
+    <Compile Include="Models\Export\ProductExportViewModel.cs" />
+    <Compile Include="Models\PurchaseOrder\PurchaseOrderProductLabelModel.cs" />
+    <Compile Include="Models\PurchaseOrder\PurchaseOrderProductImportModel.cs" />
+    <Compile Include="Models\Handheld\SimpleStockCountProductViewModel.cs" />
+    <Compile Include="Models\Handheld\SimpleStockCountViewModel.cs" />
+    <Compile Include="Models\PurchaseOrder\LabelModel.cs" />
+    <Compile Include="Models\Reports\BuyerSalesHistoryReport\BuyerSalesHistoryPrintModel.cs" />
+    <Compile Include="Models\Reports\BuyerSalesHistoryReport\BuyerSalesHistoryProductViewModel.cs" />
+    <Compile Include="Models\Reports\BuyerSalesHistoryReport\BuyerSalesHistorySearchModel.cs" />
+    <Compile Include="Models\Reports\BuyerSalesHistoryReport\BuyerSalesHistoryViewModel.cs" />
+    <Compile Include="Models\Reports\NegativeStockReport\NegativeStockPrintModel.cs" />
+    <Compile Include="Models\Reports\PromotionReport\PromotionReportSearchModel.cs" />
+    <Compile Include="Models\Reports\PromotionReport\PromotionReportViewModel.cs" />
+    <Compile Include="Models\Reports\SalesComparisonReport\SalesComparisonSalesModel.cs" />
+    <Compile Include="Models\Reports\SalesComparisonReport\SalesComparisonGroupViewModel.cs" />
+    <Compile Include="Models\Reports\SalesComparisonReport\SalesComparisonViewModel.cs" />
+    <Compile Include="Models\Reports\SalesComparisonReport\SalesComparisonSearchModel.cs" />
+    <Compile Include="Models\Reports\SalesComparisonReport\SalesComparisonPrintModel.cs" />
+    <Compile Include="Models\Reports\NegativeStockReport\NegativeStockLocationModel.cs" />
+    <Compile Include="Models\Reports\NegativeStockReport\NegativeStockReportModel.cs" />
+    <Compile Include="Models\Reports\NegativeStockReport\NegativeStockSearchModel.cs" />
+    <Compile Include="Models\Reports\StockValueReport\StockValueSearchModel.cs" />
+    <Compile Include="Models\Reports\StockValueReport\StockValueReportItem.cs" />
+    <Compile Include="Models\Reports\StockValueReport\StockValueLocationGroup.cs" />
+    <Compile Include="Models\Reports\SummaryUpdateControlReport\SummaryUpdateControlReportExportModel.cs" />
+    <Compile Include="Models\Reports\SummaryUpdateControlReport\SummaryUpdateControlReportPrintModel.cs" />
+    <Compile Include="Models\Reports\TopSkuReport\TopSkuProductViewModel.cs" />
+    <Compile Include="Models\Reports\TopSkuReport\TopSkuSearchModel.cs" />
+    <Compile Include="Models\Reports\TopSkuReport\TopSkuLocationViewModel.cs" />
+    <Compile Include="Models\Reports\TopSkuReport\TopSkuPrintViewModel.cs" />
+    <Compile Include="Models\Reports\TopSkuReport\TopSkuViewModel.cs" />
+    <Compile Include="Models\Reports\WarehouseOversupplyReport\WarehouseOversupplyPrintModel.cs" />
+    <Compile Include="Models\Reports\WarehouseOversupplyReport\WarehouseOversupplyViewModel.cs" />
+    <Compile Include="Models\Reports\WarehouseOversupplyReport\WarehouseOversupplySearchModel.cs" />
+    <Compile Include="Models\RP3Export\GoodsReceiptExportModel.cs" />
+    <Compile Include="Models\RP3Export\GoodsReceiptProductExportModel.cs" />
+    <Compile Include="Models\Reports\WarehouseOversupplyReport\WarehouseOversupplyProductViewModel.cs" />
+    <Compile Include="Models\RP3Export\LocationExportModel.cs" />
+    <Compile Include="Models\RP3Export\ProductExportModel.cs" />
+    <Compile Include="Models\RP3Export\ProductModel.cs" />
+    <Compile Include="Models\RP3Export\PurchaseOrderExportModel.cs" />
+    <Compile Include="Models\RP3Export\PurchaseOrderProductExportModel.cs" />
+    <Compile Include="Models\RP3Export\StockAdjustmentExportModel.cs" />
+    <Compile Include="Models\RP3Export\StockAdjustmentProductExportModel.cs" />
+    <Compile Include="Models\RP3Export\StockTransferExportModel.cs" />
+    <Compile Include="Models\RP3Export\StockTransferProductExportModel.cs" />
+    <Compile Include="Models\RP3Export\VendorReturnExportModel.cs" />
+    <Compile Include="Models\RP3Export\VendorReturnProductExportModel.cs" />
+    <Compile Include="Models\RP3Export\WeeklyMerchandisingReportExportModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockMovementModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentModel.cs" />
+    <Compile Include="Models\StockAllocation\StockAllocationProduct.cs" />
+    <Compile Include="Models\StockAllocation\StockAllocationCreateModel.cs" />
+    <Compile Include="Models\StockAllocation\StockAllocationProductCreateModel.cs" />
+    <Compile Include="Models\StockAllocation\StockAllocationProductViewModel.cs" />
+    <Compile Include="Models\StockAllocation\StockAllocationQueryModel.cs" />
+    <Compile Include="Models\StockAllocation\StockAllocationSearchResultModel.cs" />
+    <Compile Include="Models\StockAllocation\StockAllocationStockInfoModel.cs" />
+    <Compile Include="Models\StockCancellation.cs" />
+    <Compile Include="Models\StockCount\StockCountProductExportModel.cs" />
+    <Compile Include="Models\StockMovement\StockMovementPrintModel.cs" />
+    <Compile Include="Models\StockMovement\StockMovementReportModel.cs" />
+    <Compile Include="Models\StockMovement\StockMovementQueryModel.cs" />
+    <Compile Include="Models\StockMovement\StockMovementTotalModel.cs" />
+    <Compile Include="Models\StockReceived\ReferenceLink.cs" />
+    <Compile Include="Models\StockReceived\StockReceivedPrintModel.cs" />
+    <Compile Include="Models\StockReceived\StockReceivedQueryModel.cs" />
+    <Compile Include="Models\StockReceived\StockReceivedReportModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionProduct.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionOnOrderViewModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionOnOrderProductViewModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionStockInfoModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionCreateModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionProductCreateModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionProductViewModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionQueryModel.cs" />
+    <Compile Include="Models\StockRequisition\StockRequisitionSearchResultModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanProductViewModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanViewModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanCreateModel.cs" />
+    <Compile Include="Models\GoodsOnLoan\GoodsOnLoanProductCreateModel.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferProduct.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferProductCreateModel.cs" />
+    <Compile Include="Models\StockCount\StockCountHierarchyPrintModel.cs" />
+    <Compile Include="Models\StockCount\StockCountPrintModel.cs" />
+    <Compile Include="Models\StockMovementViewModel.cs" />
+    <Compile Include="Models\StockCount\StockCountSearchModel.cs" />
+    <Compile Include="Models\StockCount\StockCountSearchResultModel.cs" />
+    <Compile Include="Models\StockCount\StockCountSearchQueryModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentProductPrintModel.cs" />
+    <Compile Include="Models\LevelModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentPrintModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentSearchModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentSearchQueryModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentSearchResultModel.cs" />
+    <Compile Include="Models\StockCount\StockCountPreviousItemViewModel.cs" />
+    <Compile Include="Models\StockCount\StockCountPreviousViewModel.cs" />
+    <Compile Include="Models\StockCount\StockCountProductCreateModel.cs" />
+    <Compile Include="Models\StockCount\StockCountProductViewModel.cs" />
+    <Compile Include="Models\StockMovementTypeViewModel.cs" />
+    <Compile Include="Models\StockCount\StockCountStartViewModel.cs" />
+    <Compile Include="Models\StockCount\StockCountViewModel.cs" />
+    <Compile Include="Models\StockCount\StockCountCreateModel.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferCreateModel.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferProductViewModel.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferQueryModel.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferSearchResultModel.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferPrintModel.cs" />
+    <Compile Include="Models\StockTransfer\StockTransferViewModel.cs" />
+    <Compile Include="Models\Supplier\SupplierImportModel.cs" />
+    <Compile Include="Models\TagModel.cs" />
+    <Compile Include="DataWarehousing\Models\InventoryModel.cs" />
+    <Compile Include="Models\Reports\TradingReport\InventoryReport.cs" />
+    <Compile Include="Models\Reports\TradingReport\SalesReport.cs" />
+    <Compile Include="Models\Reports\TradingReport\InventoryStatistics.cs" />
+    <Compile Include="Models\Reports\TradingReport\SalesStatistics.cs" />
+    <Compile Include="Models\Reports\TradingReport\InventoryStatisticsDetails.cs" />
+    <Compile Include="Models\Reports\TradingReport\SalesStatisticsDetails.cs" />
+    <Compile Include="Models\Reports\TradingReport\TradingReportGroup.cs" />
+    <Compile Include="Models\Reports\TradingReport\TradingReportViewModel.cs" />
+    <Compile Include="Models\TransactionTypeUpdateModel.cs" />
+    <Compile Include="Models\TransactionTypeViewModel.cs" />
+    <Compile Include="Models\VendorReturn\Direct\VendorReturnDirectNewModel.cs" />
+    <Compile Include="Models\VendorReturn\Direct\VendorReturnDirectPrintModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnPrintModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnProductPrintModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnPurchaseOrderPrintModel.cs" />
+    <Compile Include="Models\Export\StockLevelExportModel.cs" />
+    <Compile Include="Models\Export\SetExportModel.cs" />
+    <Compile Include="Models\Export\ProductExportModel.cs" />
+    <Compile Include="Models\Export\PurchaseOrderExportModel.cs" />
+    <Compile Include="Models\PurchaseOrder\PurchaseOrderPrintModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptBulkPrintModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptCostsPurchaseOrderModel.cs" />
+    <Compile Include="Models\GoodsReceipt\Direct\GoodsReceiptDirectPrintProductModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptCostsProductModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptCostsModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptAuditModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptProductAuditModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptPurchaseOrderAuditModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentCreateModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentProductCreateModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentProductViewModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentViewModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentReasonViewModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentReasonCreateModel.cs" />
+    <Compile Include="Models\StockAdjustment\StockAdjustmentSecondaryReasonViewModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnProductCreateModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnCreateModel.cs" />
+    <Compile Include="Models\GoodsReceipt\Direct\GoodsReceiptDirectProductCreateModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnProductNewModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnProductViewModel.cs" />
+    <Compile Include="Models\GoodsReceipt\Direct\GoodsReceiptDirectPrintModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptPurchaseOrderViewModel.cs" />
+    <Compile Include="Models\Promotion\PromotionalPrice.cs" />
+    <Compile Include="Models\RetailPriceModel.cs" />
+    <Compile Include="Models\StringKeyValue.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Context.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Event\EventCategories.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Event\LocationEvents.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Models\Combo\ComboProductPriceModel.cs" />
+    <Compile Include="Models\Combo\ComboPriceLocationModel.cs" />
+    <Compile Include="Models\PurchaseOrder\EditPurchaseOrderProductViewModel.cs" />
+    <Compile Include="Models\PurchaseOrder\EditPurchaseOrderViewModel.cs" />
+    <Compile Include="Models\GoodsReceipt\Direct\GoodsReceiptDirectEditModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptCreateModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptProductCreateModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptProductViewModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptPurchaseOrderCreateModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnPurchaseOrderNewModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnPurchaseOrderViewModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptPrintModel.cs" />
+    <Compile Include="Models\GoodsReceipt\Direct\GoodsReceiptDirectViewModel.cs" />
+    <Compile Include="Models\GoodsReceipt\GoodsReceiptViewModel.cs" />
+    <Compile Include="Models\Location\LocationListItemViewModel.cs" />
+    <Compile Include="Models\Location\LocationPriceModel.cs" />
+    <Compile Include="Models\EditRepossessedCondition.cs" />
+    <Compile Include="Models\FieldSchema.cs" />
+    <Compile Include="Models\Period.cs" />
+    <Compile Include="Models\CostPrice\CostPriceModel.cs" />
+    <Compile Include="Models\Promotion\PromotionViewModel.cs" />
+    <Compile Include="Models\MasterProductDataModel.cs" />
+    <Compile Include="Models\Product\ProductStatusViewModel.cs" />
+    <Compile Include="Models\Combo\ComboViewModel.cs" />
+    <Compile Include="Models\RetailPriceViewModel.cs" />
+    <Compile Include="Models\SetViewModel.cs" />
+    <Compile Include="Models\Supplier\SupplierViewModel.cs" />
+    <Compile Include="Models\HierarchyTagCondition.cs" />
+    <Compile Include="Models\AssociatedProduct\AssociatedProductViewModel.cs" />
+    <Compile Include="Models\Combo\ComboModel.cs" />
+    <Compile Include="Models\SetModel.cs" />
+    <Compile Include="Models\Supplier\SupplierModel.cs" />
+    <Compile Include="Models\RepossessedProductViewModel.cs" />
+    <Compile Include="Models\Level.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Models\Location\LocationModel.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Models\PeriodYear.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Models\Product\Product.cs" />
+    <Compile Include="Models\Product\ProductViewModel.cs" />
+    <Compile Include="Models\RepossessedCondition.cs" />
+    <Compile Include="Models\RepossessionDetailsModel.cs" />
+    <Compile Include="Models\Tag.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Models\TaxRateModel.cs" />
+    <Compile Include="Models\TicketingModel.cs" />
+    <Compile Include="Models\TicketingViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Models\UserPermissionsViewModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnNewModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnSearchModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnSearchQueryModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnSearchResultModel.cs" />
+    <Compile Include="Models\VendorReturn\Direct\VendorReturnDirectViewModel.cs" />
+    <Compile Include="Models\VendorReturn\VendorReturnViewModel.cs" />
+    <Compile Include="Models\Lunr\StockAvailableLunrModel.cs" />
+    <Compile Include="DataWarehousing\PecolatorCube.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PecolatorCube.generated.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\AllocatedStockRepository.cs" />
+    <Compile Include="Repositories\AdditionalCostRepository.cs" />
+    <Compile Include="Repositories\AshleyScheduleJobRepository.cs" />
+    <Compile Include="Repositories\AshleySetUpRepository.cs" />
+    <Compile Include="Repositories\ProductRangeRepository.cs" />
+    <Compile Include="Repositories\RenissanceSalesRepository.cs" />
+    <Compile Include="Models\Reports\SummaryUpdateControlReport\InventoryModel.cs" />
+    <Compile Include="Repositories\BuyerSalesHistoryRepository.cs" />
+    <Compile Include="Repositories\StockCountStartRepository.cs" />
+    <Compile Include="Repositories\NonWarrantableItemsRepository.cs" />
+    <Compile Include="Repositories\TradingExportRepository.cs" />
+    <Compile Include="Repositories\WarehouseOversupplyReportRepository.cs" />
+    <Compile Include="Repositories\PromotionReportRepository.cs" />
+    <Compile Include="Repositories\NegativeStockRepository.cs" />
+    <Compile Include="Repositories\RP3ExportRepository.cs" />
+    <Compile Include="Repositories\SalesComparisonReportRepository.cs" />
+    <Compile Include="Repositories\ProductSalesRepository.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ProductStatusProgresser.cs" />
+    <Compile Include="PromoPrice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Publishers\GoodsReceiptDirectPublisher.cs" />
+    <Compile Include="Publishers\CintOrderPublisher.cs" />
+    <Compile Include="Publishers\StockAllocationPublisher.cs" />
+    <Compile Include="Publishers\StockRequisitionPublisher.cs" />
+    <Compile Include="Publishers\VendorReturnDirectPublisher.cs" />
+    <Compile Include="Publishers\StockTransferPublisher.cs" />
+    <Compile Include="Publishers\VendorReturnPublisher.cs" />
+    <Compile Include="Publishers\GoodsReceiptPublisher.cs" />
+    <Compile Include="Publishers\StockAdjustmentPublisher.cs" />
+    <Compile Include="Registry.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Repositories\BrandRepository.cs" />
+    <Compile Include="Repositories\CINTRepository.cs" />
+    <Compile Include="Models\Cint\CintErrorQueryModel.cs" />
+    <Compile Include="Models\Cint\CintErrorCreateModel.cs" />
+    <Compile Include="Repositories\CintErrorRepository.cs" />
+    <Compile Include="Repositories\ComboRepository.cs" />
+    <Compile Include="Repositories\GoodsOnLoanRepository.cs" />
+    <Compile Include="Repositories\ExportRepository.cs" />
+    <Compile Include="Infrastructure\InvalidProductException.cs" />
+    <Compile Include="Models\PurchaseOrder\PurchaseOrderCreateModel.cs" />
+    <Compile Include="Models\Product\ProductDescriptor.cs" />
+    <Compile Include="Models\Reports\SummaryUpdateControlReport\SummaryUpdateControlReportQueryModel.cs" />
+    <Compile Include="Repositories\SummaryUpdateControlReportRepository.cs" />
+    <Compile Include="Models\Reports\SummaryUpdateControlReport\SummaryUpdateControlReportViewModel.cs" />
+    <Compile Include="Repositories\TopSkuReportRepository.cs" />
+    <Compile Include="Repositories\StockValueReportRepository.cs" />
+    <Compile Include="Repositories\TradingReportRepository.cs" />
+    <Compile Include="Solr\ReIndexingProduct.cs" />
+    <Compile Include="Solr\StockLevelsSolrIndexer.cs" />
+    <Compile Include="Solr\GoodsReceiptSolrIndexer.cs" />
+    <Compile Include="Solr\PromotionSolrIndexer.cs" />
+    <Compile Include="Solr\PurchaseOrderSolrIndexer.cs" />
+    <Compile Include="Solr\LocationSolrIndexer.cs" />
+    <Compile Include="Repositories\ServiceRequestRepository.cs" />
+    <Compile Include="Solr\StockSolrIndexer.cs" />
+    <Compile Include="Repositories\StockAdjustmentReasonRepository.cs" />
+    <Compile Include="Repositories\StockAllocationRepository.cs" />
+    <Compile Include="Repositories\StockRequisitionRepository.cs" />
+    <Compile Include="Repositories\StockTransferRepository.cs" />
+    <Compile Include="Repositories\StockAdjustmentRepository.cs" />
+    <Compile Include="Repositories\StockCountRepository.cs" />
+    <Compile Include="Repositories\StockMovementRepository.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Repositories\TransactionTypeRepository.cs" />
+    <Compile Include="Repositories\VendorReturnDirectRepository.cs" />
+    <Compile Include="Repositories\VendorReturnRepository.cs" />
+    <Compile Include="Repositories\GoodsReceiptDirectRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\GoodsReceiptRepository.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Repositories\CostRepository.cs" />
+    <Compile Include="Repositories\PromotionRepository.cs" />
+    <Compile Include="Models\PurchaseOrder\PurchaseOrderProductViewModel.cs" />
+    <Compile Include="Models\PurchaseOrder\PurchaseOrderViewModel.cs" />
+    <Compile Include="Repositories\PurchaseRepository.cs" />
+    <Compile Include="Repositories\TaxRepository.cs" />
+    <Compile Include="Repositories\ProductStockRepository.cs" />
+    <Compile Include="Repositories\ProductStatusRepository.cs" />
+    <Compile Include="Repositories\RetailPriceRepository.cs" />
+    <Compile Include="Repositories\RepossessedConditionsRepository.cs" />
+    <Compile Include="Repositories\SetRepository.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Repositories\LocationRepository.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Repositories\MerchandisingHierarchyRepository.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Repositories\PeriodDataRepository.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\TagValuesRepository.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Repositories\TicketingRepository.cs" />
+    <Compile Include="Solr\StockSummarySolrIndexer.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Solr\VendorSolrIndexer.cs" />
+    <Compile Include="SpOutput\AutoCancelPurchaseOrdersOutput.cs" />
+    <Compile Include="SpOutput\AutoExpirePurchaseOrdersOutput.cs" />
+    <Compile Include="SpOutput\CintOrderSaveOutput.cs" />
+    <Compile Include="SpOutput\CintOrderStatsGetQuantityOutput.cs" />
+    <Compile Include="Validators\FutureDateAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataWarehousing\Generator.ttinclude" />
+    <None Include="DataWarehousing\Include.ttinclude" />
+    <None Include="DataWarehousing\PecolatorCube.generated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PecolatorCube.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\DataSources\Blue.Cosacs.Merchandising.Models.LocationModel.datasource" />
+    <None Include="Properties\DataSources\Blue.Cosacs.Merchandising.Models.PurchaseOrderProductViewModel.datasource" />
+    <None Include="Properties\DataSources\Blue.Cosacs.Merchandising.Models.PurchaseOrderViewModel.datasource" />
+    <None Include="Properties\DataSources\Blue.Cosacs.Merchandising.Models.SupplierModel.datasource" />
+    <None Include="Properties\DataSources\Blue.Cosacs.Merchandising.Models.SupplierViewModel.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataWarehousing\Documentation.txt" />
+    <Content Include="model.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTemplates\PurchaseOrder.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blue.Cosacs.Messages\Blue.Cosacs.Messages.csproj">
+      <Project>{b56e7b9b-d3d5-4388-904b-1c5fa2923cee}</Project>
+      <Name>Blue.Cosacs.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blue.Cosacs.Domain\Blue.Cosacs.Shared.csproj">
+      <Project>{9de3832f-d9b2-4fed-8f2f-fe4109dba642}</Project>
+      <Name>Blue.Cosacs.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blue.Cosacs\Blue.Cosacs.csproj">
+      <Project>{1ac4029d-c85e-40c6-adaf-519ee389cd61}</Project>
+      <Name>Blue.Cosacs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Courts.NET.Common\Courts.NET.Common.csproj">
+      <Project>{7d986b94-4b29-46ba-a814-55111484bac7}</Project>
+      <Name>Courts.NET.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Courts.NET.DAL\Courts.NET.DAL.csproj">
+      <Project>{8d8b1620-94f6-453c-8f7c-c9011142fb83}</Project>
+      <Name>Courts.NET.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unicomer.CosacsService\Unicomer.CosacsService.csproj">
+      <Project>{a1eec6a0-21fc-4f8e-959f-2e369fd0497b}</Project>
+      <Name>Unicomer.CosacsService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\StyleCop.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

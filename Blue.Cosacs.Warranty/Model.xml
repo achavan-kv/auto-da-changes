@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Warranty" namespace="Blue.Cosacs.Warranty" label="Warranty">
+    <Connection server="." database="cosacs" />
+    <Queries>
+        <DataSet name="GetInsertBulkEdit"/>
+    </Queries>
+    <Tables>
+        <Table name="Level"/>
+        <Table name="Tag"/>
+        <Table name="Warranty"/>
+        <Table name="WarrantyTags"/>
+        <Table name="WarrantyPrice"/>
+        <Table name="Link"/>
+        <Table name="LinkProduct"/>
+        <Table name="LinkWarranty"/>
+        <Table name="WarrantyPromotion"/>
+        <Table name="WarrantyReturn"/>
+        <Table name="WarrantyReturnFilter"/>
+        <Table name="WarrantySale"/>
+        <Table name="WarrantyPotentialSale"/>
+        <Table name="WarrantyContact"/>
+        <Table name="Renewal"/>
+    </Tables>
+    <Views>
+        <View name="BranchLookup"/>
+        <View name="PriceCalcView"/>
+        <View name="ViewWarrantyPromotion" />
+        <View name="WarrantyReturnSearchView"/>
+        <View name="WarrantyPromotionsView"/>
+        <View name="LinkWarrantyTypeView"/>
+        <View name="SalePersonView"/>
+        <View name="ProductWarrantyLinkView" />
+    </Views>
+    <Settings>
+        <Setting id="EmailSSL" name="SSL" type="bit" category="Email Notification Account">
+            <Default>false</Default>
+        </Setting>
+    </Settings>
+</Model>

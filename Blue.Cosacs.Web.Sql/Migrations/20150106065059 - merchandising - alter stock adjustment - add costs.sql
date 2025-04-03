@@ -1,0 +1,1 @@
+alter table Merchandising.[StockAdjustmentProduct] add AverageWeightedCost money NOT NULL default(0)

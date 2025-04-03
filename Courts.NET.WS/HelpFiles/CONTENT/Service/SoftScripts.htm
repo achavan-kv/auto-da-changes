@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Service">
+    <head><title>Soft Script Popup</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapUtilities.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffects.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapBody.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapHighlighter.js">/*<![CDATA[*/ /*]]>*/</script>
+    </head>
+    <body>
+        <h1>Soft Script Popup</h1>
+        <p class="MyStyle">This will be a popup dialogue opened by the ‘Repair’ button on the Service Request screen. A series of questions loaded from the code maintenance category ‘SRSCRIPT’ will be loaded. Each question will have two tick boxes to indicate a ‘Yes’ or ‘No’ answer. The user will read through the script with the customer in order to decide whether to continue with the SR or close the SR. </p>
+        <p class="MyStyle">The comments will be added to the same comments for the SR visible as the ‘Comments’ tab on the Service Request screen. </p>
+        <p class="MyStyle">The date, time and employee number will be automatically added to each comment.
+</p>
+        <p class="MyStyle">The ‘Service Evaluation’ list of options will only be enabled once all the questions are ticked with either a ‘Yes’ or ‘No’ answer. </p>
+        <p class="MyStyle">The ‘Service Evaluation’ will be mandatory and must be entered to enable the ‘Allocate’ and ‘Close SR’ buttons. </p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle"><b>This will be set to one of:</b>
+        </p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">No Fault Found (NFF) - only the ‘Close SR’ button will be enabled (status ‘C’ will be returned)
+</li>
+            <li style="font-family: Arial;" value="2">Misuse by the customer (MIS) - will enable both buttons (status ‘D’ will be returned)
+</li>
+            <li style="font-family: Arial;" value="3">Event or terms not covered (EVC) - will enable both buttons (status ‘D’ will be returned)
+</li>
+            <li style="font-family: Arial;" value="4">Warranty Covered (WAR) - will enable both buttons (status ‘A’ will be returned)
+</li>
+        </ul>
+        <p class="MyStyle">The ‘Service Evaluation’ will be passed back to the Service Request screen where it will be displayed as a read only field on the ‘Product’ tab.
+</p>
+        <p class="MyStyle">The ‘Allocate’ button will save any comments and will  set the column Service Request status to either ‘A’ or ‘D’ according to the Service Evaluation selected.
+</p>
+        <p class="MyStyle">The ‘Close SR’ button will save any comments and close the SR by adding a resolution date and setting the resolution description to ‘Save a Call’ (SAC). In this case the column Service Request Status will be set to ‘C’.
+     <![CDATA[ ]]></p>
+        <p class="MyStyle"><a class="MCRelatedTopics" href="javascript:void(0);" onclick="FMCLinkControl( event, this ); return false;" onkeydown="this.MCKeydown = true;" MadCap:topics="The Product Tab|SR_Product Tab.htm||Service Request Summary on Account Details|SRAccountdetails.htm||Service Request Search|ServiceSearch.htm||Service Failure Report|ServiceFailure Report.htm||Service Request Screen|Service Request Screen.htm||Service Request Audit|Service Request Audit.htm||Service Progress Report|Service Progress Report.htm||Payment screen for Service|Service Payment.htm||The Resolution Tab|Resolution.htm||Outstanding Service Requests|OutstandingSR.htm||Customer Interaction|CustomerInteraction.htm||Claims submission report|ClaimsSubmissions.htm||Charge To Analysis|Charge To.htm||Beyond Economic Repair (BER)|BER.htm||Batch Printing|BatchPrint.htm||Service Request Allocation|Allocation.htm"><img src="../SkinSupport/RelatedTopics.gif" style="border: none;margin-right: 5px;" />Related Topics</a>
+        </p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

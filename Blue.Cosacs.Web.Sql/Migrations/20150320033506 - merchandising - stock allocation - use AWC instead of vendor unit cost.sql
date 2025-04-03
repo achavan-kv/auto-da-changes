@@ -1,0 +1,5 @@
+alter table Merchandising.StockAllocationProduct
+drop column VendorUnitCost
+
+alter table Merchandising.StockAllocationProduct
+add AverageWeightedCost money not null

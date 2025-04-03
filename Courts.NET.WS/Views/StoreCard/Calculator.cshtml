@@ -1,0 +1,60 @@
+﻿@model Blue.Cosacs.Shared.StoreCardCalcCustomer
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "StoreCard Calculator";
+}
+<h1 style="text-align: center">
+    CoSACS Payment Calculator</h1>
+<div class="heading">
+    <div>
+        @String.Format("{0} {1}", Model.Customer.firstname, Model.Customer.name)</div>
+    <div>
+        @Model.CustAddress.cusaddr1</div>
+    <div>
+        @Model.CustAddress.cusaddr2</div>
+    <div>
+        @Model.CustAddress.cusaddr3</div>
+    <div>
+        @Model.CustAddress.cuspocode</div>
+        <div style="margin-top:20px">
+        @DateTime.Today.ToShortDateString()</div>
+</div>
+<table style="width:100%">
+    <tr>
+        <td>
+            Balance
+        </td>
+        <td>
+            @ViewBag.balance
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Interest Rate
+        </td>
+        <td>@ViewBag.interestRate %
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Term in Months
+        </td>
+        <td>@ViewBag.term
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Monthly Repayments
+        </td>
+        <td>@ViewBag.monthyRepayments
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Total
+        </td>
+        <td>@ViewBag.total
+        </td>
+    </tr>
+</table>
+<div style="border-bottom: 1px solid black"></div>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Blue.Cosacs.Shared.LinkedContractsView>
+@using Blue.Cosacs.Shared.Extensions;
+
+<style type="text/css">
+       .pageBreak {
+        page-break-after: always;
+        clear: both;
+}
+
+</style>
+
+
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "Ready Assist";
+
+    var count = 0;
+}
+
+<!--Print multiple Store Card Statements that are in a Batch -->
+@foreach (var item in Model)
+{
+    count += 1;
+    
+    <div>@Html.Partial(item.Contract, item)</div>
+    
+    if (count < Model.Count())
+    {
+        <div class="pageBreak"></div>
+    }
+
+}

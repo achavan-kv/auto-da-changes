@@ -1,0 +1,5 @@
+Id,Name,Department,Category,Class,RefCode,StoreType,ItemNumber,StockBranch,TypeCode
+139,Test_1,,,,,C,CC704,,E
+140,Test_2,PCE,,,,C,,,I
+141,Test_3,PCF,50,,,N,,,E
+145,Test_4,PCO,,,,C,,745,E

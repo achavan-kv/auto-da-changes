@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:element name="logMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="tns:EventLogEntryType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="EventLogEntryType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Error" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="Information" />
+          <s:enumeration value="SuccessAudit" />
+          <s:enumeration value="FailureAudit" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="logMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="logMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="tns:EventLogEntryType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="logMessagesResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="logMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:logMessage" />
+  </wsdl:message>
+  <wsdl:message name="logMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:logMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="logMessageAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="logMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:logMessages" />
+  </wsdl:message>
+  <wsdl:message name="logMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:logMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="logMessagesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WClientLoggingSoap">
+    <wsdl:operation name="logMessage">
+      <wsdl:input message="tns:logMessageSoapIn" />
+      <wsdl:output message="tns:logMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logMessages">
+      <wsdl:input message="tns:logMessagesSoapIn" />
+      <wsdl:output message="tns:logMessagesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WClientLoggingSoap" type="tns:WClientLoggingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="logMessage">
+      <soap:operation soapAction="http://strategicthought.com/webservices/logMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:logMessageAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logMessages">
+      <soap:operation soapAction="http://strategicthought.com/webservices/logMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:logMessagesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WClientLoggingSoap12" type="tns:WClientLoggingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="logMessage">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/logMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:logMessageAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logMessages">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/logMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:logMessagesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WClientLogging">
+    <wsdl:port name="WClientLoggingSoap" binding="tns:WClientLoggingSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WClientLogging.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WClientLoggingSoap12" binding="tns:WClientLoggingSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WClientLogging.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

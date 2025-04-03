@@ -1,0 +1,453 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3ccebfaa-57fa-4fc3-8d82-469dc5115e13" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Service Request</ID>
+  <Name>Service Request</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="8" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4108" scrolltop="-4327" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12118" y="22384" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="ServiceRequest" left="-1726" top="-6403" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="5079" height="13122" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000d713000042330000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Service_OLAPview_ServiceRequest" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="RequestType" left="926" top="7699" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Service_OLAPview_RequestType" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="927" top="6419" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="1780" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAPview_ServiceRequest-OLAPview_RequestType]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="0" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1326" y="7699" />
+              <point x="1326" y="7209" />
+              <point x="1363" y="7209" />
+              <point x="1363" y="6719" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4108</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4327</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-1726</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-6403</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="141">
+            <Shape Id="Servicerequest" Expanded="true">
+              <Attributes>
+                <Attribute Id="Servicerequest" />
+                <Attribute Id="Customer Account" />
+                <Attribute Id="Dateallocated" />
+                <Attribute Id="Datelogged" />
+                <Attribute Id="Daysoutstanding" />
+                <Attribute Id="Daystoallocate" />
+                <Attribute Id="Outstandingtype" />
+                <Attribute Id="Name 1" />
+                <Attribute Id="Resolution" />
+                <Attribute Id="Resolution Date" />
+                <Attribute Id="State" />
+                <Attribute Id="Total Cost" />
+                <Attribute Id="Warranty Contract Number" />
+                <Attribute Id="Warrantytype" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="576c959d-aee2-45aa-976e-e3eaa113f6ab">
+    <DataSourceViewID>CosacsReporting</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="73c82dbe-084b-4f55-a694-225082c57e5f">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="10600c02-6868-4e0c-a36e-610a37b774c9">
+      <ID>Servicerequest</ID>
+      <Name>Request Number</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>71684</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="96e02578-9bd6-4440-a4f1-af9177a37f2c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="72171758-8350-4601-a6b1-936102314b11">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>Servicerequest</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="e2ad004d-cc75-4354-b9e4-01b5e80df4f3">
+          <AttributeID>Datelogged</AttributeID>
+          <Name>Date Logged</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3bc72f70-572b-4e0a-9f91-f626eef65534">
+          <AttributeID>Outstandingtype</AttributeID>
+          <Name>Outstanding Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f38f5188-3b1c-421f-a5d7-8995f759cd3d">
+          <AttributeID>Daysoutstanding</AttributeID>
+          <Name>Days Outstanding</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a0ac7bd2-f6d2-4920-a7cf-1e1d7dfc7378">
+          <AttributeID>Dateallocated</AttributeID>
+          <Name>Date Allocated</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2b08de7f-f457-4f08-8bec-b69899f8b411">
+          <AttributeID>Daystoallocate</AttributeID>
+          <Name>Days To Allocate</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d3315297-02e4-47d5-a30b-b2f95d228406">
+          <AttributeID>Resolution</AttributeID>
+          <Name>Resolution</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bb118db2-0599-4ebe-8bd6-d8c0d4141277">
+          <AttributeID>Resolution Date</AttributeID>
+          <Name>Resolution Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="89ffe74b-8e78-4d50-9661-d5a69776d692">
+          <AttributeID>Total Cost</AttributeID>
+          <Name>Total Cost</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3bcc9842-e31c-469d-831c-349830f81d08">
+          <AttributeID>Customer Account</AttributeID>
+          <Name>Customer Account</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e12a8ea7-15a4-4004-93f4-e053aa55d474">
+          <AttributeID>Warranty Contract Number</AttributeID>
+          <Name>Warranty Contract Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8e2fe0cf-024c-4735-9870-08685021bb96">
+          <AttributeID>State</AttributeID>
+          <Name>State</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="05e844cb-cdc3-42ed-a351-29365dee5ef3">
+          <AttributeID>Warrantytype</AttributeID>
+          <Name>Warranty Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cbb1d388-b769-4bde-a068-6079d2444b1a">
+          <AttributeID>Name 1</AttributeID>
+          <Name>Request Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e299bda1-53f0-4ad0-a31c-debea7f6f10d">
+          <AttributeID>Warranty Sale ID</AttributeID>
+          <Name>Warranty Sale ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="462a50d3-5751-4945-bad4-f93895f0088c">
+          <AttributeID>Created On Day</AttributeID>
+          <Name>Created On Day</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="83b49c7a-08e9-4887-a1bd-bfc1e2033334">
+      <ID>State</ID>
+      <Name>State</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="36c9a367-f16e-49ab-9778-66853c05318f">
+          <DataType>WChar</DataType>
+          <DataSize>32</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="61633190-247b-4a63-ad67-a273803962b9">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>State</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1edc1350-e696-4a6c-b30f-b33076d0cfee">
+      <ID>Datelogged</ID>
+      <Name>Date Logged</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="255b6d64-c4b6-4fa6-81ce-03ac976f645d">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dd95b8e2-6ee5-4907-b3fb-981b5ebbff68">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>Datelogged</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="39dc4035-fca9-4ede-a965-cab470e4ccde">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="46397157-5a63-400b-85a3-433c38f92847">
+          <TableID>Service_OLAPview_ServiceRequest</TableID>
+          <ColumnID>FormatedDatelogged</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e4b681ed-9513-48a4-a650-b20c3a0e794a">
+      <ID>Outstandingtype</ID>
+      <Name>Outstanding Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="698ee3cf-e4e9-440e-8c89-28d79ec9e101">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a6e21234-78fc-4a42-898d-1f52d30a1547">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>Outstandingtype</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fd296b57-83d3-4eef-a996-4420159302ff">
+      <ID>Daysoutstanding</ID>
+      <Name>Days Outstanding</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="acbf5c4b-0ae4-4891-9685-6757d3ca0b25">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="93246143-56cc-4bd0-975c-2b2d8a5c4be0">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>Daysoutstanding</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="13242b53-cace-4d16-b526-d1dfa7d0d644">
+      <ID>Dateallocated</ID>
+      <Name>Date Allocated</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="54b4c44a-1f91-422b-84be-bbab439e23ac">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c5ffe24c-9f16-4aab-9e13-2da3a3db24a0">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>Dateallocated</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="60ec7d8f-e6b8-4217-8885-335a53401eba">
+      <ID>Daystoallocate</ID>
+      <Name>Days To Allocate</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="583e31f2-9d3a-4c1c-a80f-6c902f899625">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="38412ef3-3073-4e3f-a079-e427106d8d8b">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>Daystoallocate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b3318e54-1240-4814-ab57-89255eddad8f">
+      <ID>Warrantytype</ID>
+      <Name>Warranty Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="627824b4-83c4-4c9c-8212-43ccfeb8371e">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="133c2628-970f-451b-980a-2bd153573703">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>Warrantytype</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="04c01235-17ee-4e6f-bf62-b1fe1e3e3544">
+      <ID>Resolution</ID>
+      <Name>Resolution</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="405231d3-c750-498d-a1e6-730067a60f80">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="85453d42-81d0-4529-a713-066a9d61b6bc">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>resolution</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="48564472-ca59-46ed-8e11-b61a06d23d85">
+      <ID>Resolution Date</ID>
+      <Name>Resolution Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="054c339f-ab77-49d2-8a5e-88596aba9711">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ed22f754-c5ed-4ba0-a052-cf11f381c346">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>ResolutionDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="aaec1f4c-4ec2-4716-a211-7c02a36bb0fb">
+      <ID>Name 1</ID>
+      <Name>Request Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6d4aa99b-c572-4b54-bda5-aba8c0087454">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d44eb152-fd9c-4059-b036-db5794d77f8a">
+            <TableID>Service_OLAPview_RequestType</TableID>
+            <ColumnID>Name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3f0197cd-0cf7-4445-8747-0009b5d8a446">
+      <ID>Total Cost</ID>
+      <Name>Total Cost</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cf776336-2022-47aa-8e97-06a36ef4d64f">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6f58bd47-57f5-481b-9b87-dd7da217bb2c">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>TotalCost</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7b101f39-b1d5-4e8d-b489-09c33b3e446e">
+      <ID>Customer Account</ID>
+      <Name>Customer Account</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="51bee76d-e9ad-420b-9646-e28bd39721f5">
+          <DataType>WChar</DataType>
+          <DataSize>12</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7d360a2d-27c3-4e98-9187-58c3dd744791">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>CustomerAccount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f97a2862-4078-45fc-9b7e-26fc1819a58c">
+      <ID>Warranty Contract Number</ID>
+      <Name>Warranty Contract Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1c25f557-3aa6-4567-b42c-e9f235a10866">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6f6645a-a090-4647-aad3-73964aeee23c">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>WarrantyContractNumber</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cbb6821c-2949-4b1e-ac9d-b756ade34072">
+      <ID>Warranty Sale ID</ID>
+      <Name>Warranty Sale ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="824fd6bc-f27b-4119-8712-c976e5308145">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="37ad8daf-3dcf-4354-be54-c9c77c8410a3">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>WarrantySaleID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1e82b1de-9a8b-4252-904f-8778d229fc2a">
+      <ID>Created On Day</ID>
+      <Name>Created On Day</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bc8f6128-485a-4163-9785-3d4f0be02e08">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d0b2ac85-7261-4d6e-95e9-375870bc9194">
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+            <ColumnID>CreatedOnDay</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+</Dimension>

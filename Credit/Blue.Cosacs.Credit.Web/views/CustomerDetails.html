@@ -1,0 +1,167 @@
+<div class="container credit" ng-controller="customerDetailsController">
+    <h1 ng-bind="pageHeading"></h1>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="section"> Picture </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="glyphicons camera" ng-click="show()"></span>
+                </div>
+            </div>
+            <br/>
+            <div class="row" ng-if="customerDetails.ProfilePhoto">
+                <div class="col-lg-12">
+                    <img ng-src="/File/api/media/{{customerDetails.ProfilePhoto}}/">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 tagsContainer">
+            <div class="section"> Tags </div>
+            <form class="form-horizontal" novalidate autocomplete="off" name="newTagForm" ng-submit="addCustomerTag(newTagForm.$valid)">
+                <div class="form-group" ng-class="{'has-error': newTagForm['newTag'].$invalid}">
+                    <div class="col-lg-9">
+                        <list scope="creditSettings.CustomerTag" required ng-class="form-control" ng-model="newTag.Tag" name="newTag" id="newTag"></list>
+                    </div>
+                    <div class="col-lg-3">
+                        <span class="glyphicons plus cursorPointer" ng-disabled="newTagForm.$invalid" ng-click="addCustomerTag(newTagForm.$valid)"></span>
+                    </div>
+                </div>
+            </form>
+            <div class="row" ng-if="!customerTags.length">
+                <div class="col-lg-12">
+                    <div class="section"></div>
+                    <p> No tags associated with this customer. </p>
+                </div>
+            </div>
+            <div class="row" ng-if="customerTags.length">
+                <div class="col-lg-4" ng-repeat="tag in customerTags">
+                    <label class="label label-default"> {{tag.Tag}} </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 form-horizontal basicDetailsContainer">
+            <div class="section"> Basic details </div>
+            <div class="form-group">
+                <label class="col-lg-4 control-label"> Branch </label>
+                <div class="form-control-static col-lg-8"> {{ customerDetails.Branch ? customerDetails.Branch : "N/A" }} </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-4 control-label"> Title </label>
+                <div class="form-control-static col-lg-8"> {{ customerDetails.Title ? customerDetails.Title : "N/A" }} </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-4 control-label"> First Name </label>
+                <div class="form-control-static col-lg-8"> {{ customerDetails.FirstName ? customerDetails.FirstName : "N/A" }} </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-4 control-label"> Last Name </label>
+                <div class="form-control-static col-lg-8"> {{ customerDetails.LastName ? customerDetails.LastName : "N/A" }} </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-4 control-label"> Alias </label>
+                <div class="form-control-static col-lg-8"> {{ customerDetails.Alias ? customerDetails.Alias : "N/A" }} </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-4 control-label"> Date of Birth </label>
+                <div class="form-control-static col-lg-8"> {{ customerDetails.DateOfBirth ? formatDate(customerDetails.DateOfBirth) : "N/A" }} </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-4 control-label"> Gender </label>
+                <div class="form-control-static col-lg-8"> {{ customerDetails.Gender ? customerDetails.Gender : "N/A" }} </div>
+            </div>
+        </div>
+        <div class="col-lg-4 contactDetailsContainer">
+            <div class="section"> Contact Details </div>
+            <div ng-if="!customerContacts.length">
+                <p> No contact details. </p>
+                <div class="section"></div>
+            </div>
+            <div ng-if="customerContacts.length" class="contacts">
+                <div class="form-horizontal contactRow" ng-repeat="contact in customerContacts">
+                    <div class="form-control-static col-lg-5 contactFormType"> {{ contact.ContactType }} </div>
+                    <div class="form-control-static col-lg-5 contactFormContact"> {{ contact.Contact }} </div>
+                    <div class="form-control-static col-lg-2 contactFormButton">
+                        <span class="glyphicons bin" title="Delete" ng-click="removeContactDetails(contact.Id)"></span>
+                    </div>
+                </div>
+            </div>
+            <form class="form-horizontal" novalidate autocomplete="off" name="newContactForm">
+                <div class="col-lg-5 contactFormType" ng-class="{'has-error': newContactForm['newContactType'].$invalid}">
+                    <list scope="creditSettings.ContactType" required ng-class="form-control" ng-model="newContactDetails.ContactType" name="newContactType" id="newContactType"></list>
+                </div>
+                <div class="col-lg-5 contactFormContact" ng-class="{'has-error': newContactForm['newContact'].$invalid}">
+                    <input type="text" class="form-control" required name="newContact" ng-model="newContactDetails.Contact" >
+                </div>
+                <div class="col-lg-2">
+                    <span class="glyphicons plus cursorPointer" ng-disabled="newContactForm.$invalid" ng-click="addContactDetails(newContactForm.$valid)"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section"> Addresses </div>
+        </div>
+        <div class="col-lg-4">
+            <form class="form-horizontal" novalidate autocomplete="off" name="newAddressForm" ng-submit="addAddress(newAddressForm.$valid)">
+                <div class="form-group" ng-class="{'has-error': newAddressForm['newAddressType'].$invalid}" ng-if="addressFormSettings['AddressType'].visible">
+                    <label class="col-lg-5 control-label"> Address Type </label>
+                    <div class="col-lg-7">
+                        <list scope="creditSettings.AddressType" ng-readonly="addressFormSettings['AddressType'].readonly" ng-required="addressFormSettings['AddressType'].required" ng-class="form-control" ng-model="newAddressDetails.AddressType" name="newAddressType" id="newAddressType"></list>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': newAddressForm['newAddressLine1'].$invalid}" ng-if="addressFormSettings['Line1'].visible">
+                    <label class="col-lg-5 control-label"> Address Line 1 </label>
+                    <div class="col-lg-7">
+                        <input type="text" ng-readonly="addressFormSettings['Line1'].readonly" ng-required="true" maxlength="addressFormSettings['Line1'].length" class="form-control" ng-model="newAddressDetails.AddressLine1" name="newAddressLine1" id="newAddressLine1">
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': newAddressForm['newAddressLine2'].$invalid}" ng-if="addressFormSettings['Line2'].visible" >
+                    <label class="col-lg-5 control-label"> Address Line 2 </label>
+                    <div class="col-lg-7">
+                        <input type="text" ng-readonly="addressFormSettings['Line2'].readonly" ng-required="addressFormSettings['Line2'].required" maxlength="addressFormSettings['Line2'].length" class="form-control" ng-model="newAddressDetails.AddressLine2" name="newAddressLine2" id="newAddressLine2">
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': newAddressForm['newAddressCity'].$invalid}" ng-if="addressFormSettings['City'].visible">
+                    <label class="col-lg-5 control-label"> City </label>
+                    <div class="col-lg-7">
+                        <input ng-readonly="addressFormSettings['City'].readonly" ng-required="addressFormSettings['City'].required" maxlength="addressFormSettings['City'].length" type="text" class="form-control" ng-model="newAddressDetails.City" name="newAddressCity" id="newAddressCity">
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': newAddressForm['newAddressPostCode'].$invalid}" ng-if="addressFormSettings['PostCode'].visible">
+                    <label class="col-lg-5 control-label"> Post Code </label>
+                    <div class="col-lg-7">
+                        <input ng-readonly="addressFormSettings['PostCode'].readonly" ng-required="addressFormSettings['PostCode'].required" maxlength="addressFormSettings['PostCode'].length" type="text" class="form-control" ng-model="newAddressDetails.PostCode" name="newAddressPostCode" id="newAddressPostCode">
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error': newAddressForm['newAddressDeliveryArea'].$invalid}" ng-if="addressFormSettings['DeliveryArea'].visible">
+                    <label class="col-lg-5 control-label"> Delivery Area </label>
+                    <div class="col-lg-7">
+                        <list ng-readonly="addressFormSettings['DeliveryArea'].readonly" ng-required="addressFormSettings['DeliveryArea'].required" scope="creditSettings.DeliveryArea" ng-class="form-control" ng-model="newAddressDetails.DeliveryArea" name="newAddressDeliveryArea" id="newAddressDeliveryArea"></list>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-9 col-lg-3">
+                        <button type="submit" class="form-control btn btn-primary" ng-disabled="newAddressForm.$invalid"> Add </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-8 addressContainer">
+            <div class="col-lg-4" ng-repeat="address in customerAddresses">
+                <address>
+                    <p ng-if="address.AddressType">
+                        <strong> {{ address.AddressType }} </strong>
+                        <span ng-if="address.IsAddressVerified" class="col-lg-5 label label-success"> Verified </span>
+                        <span ng-if="!address.IsAddressVerified" class="col-lg-5 label label-danger"> Not Verified </span>
+                    </p>
+                    <p ng-if="address.AddressLine1"> {{ address.AddressLine1 }} </p>
+                    <p ng-if="address.AddressLine2"> {{ address.AddressLine2 }} </p>
+                    <p ng-if="address.City || address.PostCode"> {{ address.City }} {{address.City && address.PostCode ? "," : ""}} {{ address.PostCode }} </p>
+                    <p ng-if="address.DeliveryArea"> <span class="glyphicons truck" title="Delivery Area"></span> {{ address.DeliveryArea }} </p>
+                </address>
+            </div>
+        </div>
+    </div>
+</div>

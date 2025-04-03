@@ -1,0 +1,108 @@
+<table class="col col-lg-12 table table-bordered">
+    <thead>
+    <tr>
+        <td class="col col-lg-2">
+            <strong>
+                <small>Transaction</small>
+            </strong>
+        </td>
+        <td class="col col-lg-3">
+            <strong>
+                <small>Date</small>
+            </strong>
+        </td>
+        <td class="col col-lg-1">
+            <strong>
+                <small>User</small>
+            </strong>
+        </td>
+        <td class="col col-lg-2">
+            <strong>
+                <small>Amount</small>
+            </strong>
+        </td>
+        <td class="col col-lg-2">
+            <strong>
+                <small>Currency</small>
+            </strong>
+        </td>
+        <td class="col col-lg-2">
+            <strong>
+                <small>Payment Type</small>
+            </strong>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="main-item"
+        ng-repeat="trans in transactions | filter: { AgreementNumber: result.AgreementNumber }">
+        <td class="col col-lg-2"> <!-- Type -->
+            <span class="pull-left">
+                <small>{{ trans.Type }}</small>
+            </span>
+        </td>
+        <td class="col col-lg-3"> <!-- Date -->
+            <span class="pull-left">
+                <small>{{ moment(trans.Date).format(dateFormat) }}</small>
+            </span>
+        </td>
+        <td class="col col-lg-1"> <!-- User -->
+            <span class="pull-right">
+                <small>{{ trans.User }}</small>
+            </span>
+        </td>
+        <td class="col col-lg-2"> <!-- Amount -->
+            <span class="pull-right">
+                <small>{{ trans.Amount | currency }}</small>
+            </span>
+        </td>
+        <td class="col col-lg-2"> <!-- Currency -->
+            <span class="pull-right">
+                <small>{{ trans.Currency }}</small>
+            </span>
+        </td>
+        <td class="col col-lg-2"> <!-- Payment Type -->
+            <span class="pull-right">
+                <small>{{ trans.PaymentType }}</small>
+            </span>
+        </td>
+    </tr>
+    <tr style="width: 99%"
+        ng-show="orderItem.warranties.length > 0 || orderItem.installations.length > 0 || orderItem.discounts.length > 0">
+        <td class="sub-items no-padding" colspan="5">
+            <table class="table">
+                <tbody>
+                <tr ng-repeat="orderItem in orderItem.warranties">
+                    <td>
+                        Warranty {{orderItem.itemNo}}
+                    </td>
+                    <td>
+                        {{ orderItem.description + '(' + orderItem.warrantyTypeCode + ')' }}
+                    </td>
+                    <td>
+                        <span class="pull-right">{{ orderItem.price | currency }}</span>
+                    </td>
+                    <td>
+                        <span class="pull-right">{{ ' (Tax ' + orderItem.taxRate + '%) ' +
+                            (orderItem.taxAmount | currency) }}</span>
+                    </td>
+                </tr>
+                <tr ng-repeat="orderItem in orderItem.installations">
+                    <td>Installation {{orderItem.itemNo}}</td>
+                    <td>{{ orderItem.description }}</td>
+                    <td><span class="pull-right">{{ orderItem.price | currency }}</span></td>
+                    <td><span class="pull-right">{{' (Tax ' + orderItem.taxRate + '%) ' + (orderItem.taxAmount |
+                        currency)}}</span></td>
+                </tr>
+                <tr ng-repeat="orderItem in orderItem.discounts">
+                    <td>Discount {{orderItem.itemNo}}</td>
+                    <td>{{ orderItem.description }}</td>
+                    <td><span class="pull-right">{{ math.abs(orderItem.percentage) + '% ' }}</span></td>
+                    <td><span class="pull-right">{{ orderItem.amount | currency }}</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>

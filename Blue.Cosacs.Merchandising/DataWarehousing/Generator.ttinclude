@@ -1,0 +1,108 @@
+﻿/**********************************************************************************************************************
+*
+*								Thank you for using Percolator Analysis Services!!!!!!!
+*
+*	WARNING: Changing this auto generated file may lead to wonky actions, and could possibly injure many puppies. 
+*			 Any manual changes will be lost upon new generation. 
+*
+*	CONNECTION STRING: <#=PercolatorGen.ConnectionString#>
+*	LAST GENERATION: <#=DateTime.Now#>
+*
+*	SHOWING:
+*		<#=PercolatorGen.OnlyVisible_Dimensions ? "Visible dimensions only" : "Visible and hidden dimensions"#>
+*		<#=PercolatorGen.OnlyVisible_Hierarchies ? "Visible hierarchies only" : "Visible and hidden hierarchies"#>
+*		<#=PercolatorGen.OnlyVisible_Attributes ? "Visible attributes only" : "Visible and hidden attributes"#>
+*		<#=PercolatorGen.OnlyVisible_Measures ? "Visible measures only" : "Visible and hidden measures"#>
+*
+**********************************************************************************************************************/
+
+using System.Configuration;
+
+namespace <#=PercolatorGen.Namespace#>
+{
+	using Percolator.AnalysisServices;
+	using Percolator.AnalysisServices.Attributes;
+	using Percolator.AnalysisServices.Linq;
+
+<#List<CubeInfo> cubeInfos = PercolatorGen.GetThemCubes().ToList();#>
+	public partial class <#=PercolatorGen.Clean(PercolatorGen.DBName)#> : CubeBase
+	{
+		static string _CON { get { return <#if(string.IsNullOrEmpty(PercolatorGen.ConfigFileName)){#> @"<#=PercolatorGen.ConnectionString#>";<#}else{#>ConfigurationManager.ConnectionStrings["<#=PercolatorGen.ConfigFileName#>"].ConnectionString;<#}#> } }
+
+		public <#=PercolatorGen.Clean(PercolatorGen.DBName)#>()
+			: base(_CON) 
+		{
+<#foreach(CubeInfo cube in cubeInfos){#>
+			this.<#=cube.CleanName#> = new Cube<<#=cube.CleanName#>>(this._provider);
+<#}#>
+		}
+
+		public <#=PercolatorGen.Clean(PercolatorGen.DBName)#>(string connectionString)
+			: base(connectionString) 
+		{
+<#foreach(CubeInfo cube in cubeInfos){#>
+			this.<#=cube.CleanName#> = new Cube<<#=cube.CleanName#>>(this._provider);
+<#}#>
+		}
+		
+		#region Cubes
+<#foreach(CubeInfo cube in cubeInfos){#>
+		/// <summary>
+        /// The <#=cube.Name#> cube from the <#=PercolatorGen.DatabaseName#> database.
+        /// </summary>
+		public Cube<<#=cube.CleanName#>> <#=cube.CleanName#> { get; private set; }
+<#}#>
+		#endregion
+	}
+
+<#foreach(CubeInfo cube in cubeInfos){#>
+	[Cube(Tag = "<#=cube.Name#>")]
+	public partial class <#=cube.CleanName#> : ICubeObject
+	{
+		static <#=cube.CleanName#> _instance;
+		public static <#=cube.CleanName#> Instance { get { return <#=cube.CleanName#>._instance ?? (<#=cube.CleanName#>._instance = new <#=cube.CleanName#>()); } }
+
+<#foreach(DimensionInfo dim in cube.Dimensions.Where(x => x.Cube == cube.Name)){#>
+		public <#=dim.CleanName#>_Dimension <#=dim.CleanName == cube.CleanName ? "_"+dim.CleanName : dim.CleanName#>  { get { return <#=dim.CleanName#>_Dimension.Instance; } }
+<#}#><#foreach(MeasureInfo measure in cube.Measures.Where(x => x.Cube == cube.Name)){#>
+		
+		public Measure <#=measure.CleanName#> { get { return new Measure("<#=measure.Name#>"); } }
+<#}#>
+	}
+
+<#}#>
+
+	#region Dimensions
+<#foreach(DimensionInfo dimension in PercolatorGen.DimensionList){#>
+	[Dimension]
+	public partial class <#=dimension.CleanName#>_Dimension : ICubeObject
+	{
+		static <#=dimension.CleanName#>_Dimension _instance;
+		public static <#=dimension.CleanName#>_Dimension Instance { get { return <#=dimension.CleanName#>_Dimension._instance ?? (<#=dimension.CleanName#>_Dimension._instance = new <#=dimension.CleanName#>_Dimension()); } }
+		
+		<#=dimension.CleanName#>_Dimension() { }
+<#foreach(AttributeInfo attribute in dimension.Attributes){#>
+		
+		public Attribute <#=attribute.CleanName#> { get { return "[<#=dimension.Name#>].[<#=attribute.Name#>]"; } }
+<#}#>
+<#foreach(HierarchyInfo hier in dimension.Hierarchies){#>
+		
+		[Hierarchy]
+		public <#=hier.CleanName#>_Hierarchy <#=hier.CleanName#> { get { return new <#=hier.CleanName#>_Hierarchy(); } }
+		
+		public partial class <#=hier.CleanName#>_Hierarchy : Hierarchy, ICubeObject
+		{
+			public <#=hier.CleanName#>_Hierarchy()
+				: base("<#=hier.Name#>") { }
+
+<#foreach(Tuple<string, byte> level in hier.Levels.OrderBy(x => x.Item2)){#>
+			
+			public Level <#=level.Item1.Replace(" ", "").Replace("-", "").Replace(".", "_")#> { get { return new Level("<#=hier.Name#>.[<#=level.Item1#>]", <#=level.Item2#>); } }
+<#}#>
+		}
+<#}#>
+	}
+
+<#}#>
+	#endregion
+}

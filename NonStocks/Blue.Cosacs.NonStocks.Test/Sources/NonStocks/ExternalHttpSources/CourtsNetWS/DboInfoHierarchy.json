@@ -1,0 +1,3813 @@
+﻿[
+  {
+    "Name": "Division",
+    "Data": [
+      {
+        "Key": "8",
+        "Name": "Electrical"
+      },
+      {
+        "Key": "7",
+        "Name": "Furniture"
+      },
+      {
+        "Key": "6",
+        "Name": "Other"
+      },
+      {
+        "Key": "R",
+        "Name": "Workstation"
+      }
+    ]
+  },
+  {
+    "Name": "Department",
+    "Data": [
+      {
+        "Key": "3",
+        "Name": "Major White"
+      },
+      {
+        "Key": "1",
+        "Name": "Vision"
+      },
+      {
+        "Key": "805",
+        "Name": "VIDEO"
+      },
+      {
+        "Key": "6",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "14",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "4",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "5",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "2",
+        "Name": "Audio"
+      },
+      {
+        "Key": "810",
+        "Name": "AUDIO"
+      },
+      {
+        "Key": "850",
+        "Name": "WASHING MACHINE AND D"
+      },
+      {
+        "Key": "845",
+        "Name": "STOVES"
+      },
+      {
+        "Key": "631",
+        "Name": "VIDEO GAMES"
+      },
+      {
+        "Key": "840",
+        "Name": "REFRIGERATION"
+      },
+      {
+        "Key": "861",
+        "Name": "SEWING MACHINE"
+      },
+      {
+        "Key": "862",
+        "Name": "PERSONAL CARE GOODS"
+      },
+      {
+        "Key": "860",
+        "Name": "SMALL ELECTRICAL APPL"
+      },
+      {
+        "Key": "864",
+        "Name": "RI WARRANTY CATEGORY"
+      },
+      {
+        "Key": "820",
+        "Name": "MUSICAL INSTRUMENTS"
+      },
+      {
+        "Key": "855",
+        "Name": "VENTILATION AND HEATI"
+      },
+      {
+        "Key": "815",
+        "Name": "MEDIA IN WHITE AND AC"
+      },
+      {
+        "Key": "891",
+        "Name": "ELECTRIC GENERATORS"
+      },
+      {
+        "Key": "645",
+        "Name": "INDIVIDUAL SPORTS"
+      },
+      {
+        "Key": "863",
+        "Name": "GIFT"
+      },
+      {
+        "Key": "93",
+        "Name": "Installation"
+      },
+      {
+        "Key": "893",
+        "Name": "INSTALLATION"
+      },
+      {
+        "Key": "15",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "84",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "715",
+        "Name": "LAMPS AND DECORATION"
+      },
+      {
+        "Key": "705",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "720",
+        "Name": "BEDROOM ACCESSORIES"
+      },
+      {
+        "Key": "864",
+        "Name": "RI WARRANTY CATEGORY"
+      },
+      {
+        "Key": "710",
+        "Name": "MATTRESS"
+      },
+      {
+        "Key": "50",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "70",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "75",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "85",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "80",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "91",
+        "Name": "Installation"
+      },
+      {
+        "Key": "92",
+        "Name": "Delivery"
+      },
+      {
+        "Key": "60",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "81",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "20",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "11",
+        "Name": "Affinity"
+      },
+      {
+        "Key": "95",
+        "Name": "Category95 "
+      },
+      {
+        "Key": "90",
+        "Name": "Category90 "
+      },
+      {
+        "Key": "76",
+        "Name": "Category76 "
+      },
+      {
+        "Key": "89",
+        "Name": "Category89 "
+      },
+      {
+        "Key": "96",
+        "Name": "Category96 "
+      },
+      {
+        "Key": "21",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "825",
+        "Name": "COMPUTERS AND ACC"
+      },
+      {
+        "Key": "22",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "26",
+        "Name": "Other Charges"
+      }
+    ]
+  },
+  {
+    "Name": "Class",
+    "Data": [
+      {
+        "Key": "000",
+        "Name": "Major White"
+      },
+      {
+        "Key": "300",
+        "Name": "Major White"
+      },
+      {
+        "Key": "30 ",
+        "Name": "Major White"
+      },
+      {
+        "Key": "301",
+        "Name": "Major White"
+      },
+      {
+        "Key": "302",
+        "Name": "Major White"
+      },
+      {
+        "Key": "303",
+        "Name": "Major White"
+      },
+      {
+        "Key": "304",
+        "Name": "Major White"
+      },
+      {
+        "Key": "306",
+        "Name": "Major White"
+      },
+      {
+        "Key": "310",
+        "Name": "Major White"
+      },
+      {
+        "Key": "31 ",
+        "Name": "Major White"
+      },
+      {
+        "Key": "311",
+        "Name": "Major White"
+      },
+      {
+        "Key": "312",
+        "Name": "Major White"
+      },
+      {
+        "Key": "314",
+        "Name": "Major White"
+      },
+      {
+        "Key": "315",
+        "Name": "Major White"
+      },
+      {
+        "Key": "322",
+        "Name": "Major White"
+      },
+      {
+        "Key": "32 ",
+        "Name": "Major White"
+      },
+      {
+        "Key": "323",
+        "Name": "Major White"
+      },
+      {
+        "Key": "326",
+        "Name": "Major White"
+      },
+      {
+        "Key": "327",
+        "Name": "Major White"
+      },
+      {
+        "Key": "329",
+        "Name": "Major White"
+      },
+      {
+        "Key": "33 ",
+        "Name": "Major White"
+      },
+      {
+        "Key": "330",
+        "Name": "Major White"
+      },
+      {
+        "Key": "331",
+        "Name": "Major White"
+      },
+      {
+        "Key": "BMT",
+        "Name": "Major White"
+      },
+      {
+        "Key": "CL7",
+        "Name": "Major White"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Major White"
+      },
+      {
+        "Key": "10 ",
+        "Name": "Vision"
+      },
+      {
+        "Key": "101",
+        "Name": "Vision"
+      },
+      {
+        "Key": "103",
+        "Name": "Vision"
+      },
+      {
+        "Key": "104",
+        "Name": "Vision"
+      },
+      {
+        "Key": "105",
+        "Name": "Vision"
+      },
+      {
+        "Key": "106",
+        "Name": "Vision"
+      },
+      {
+        "Key": "107",
+        "Name": "Vision"
+      },
+      {
+        "Key": "108",
+        "Name": "Vision"
+      },
+      {
+        "Key": "109",
+        "Name": "Vision"
+      },
+      {
+        "Key": "11 ",
+        "Name": "Vision"
+      },
+      {
+        "Key": "114",
+        "Name": "Vision"
+      },
+      {
+        "Key": "12 ",
+        "Name": "Vision"
+      },
+      {
+        "Key": "121",
+        "Name": "Vision"
+      },
+      {
+        "Key": "125",
+        "Name": "Vision"
+      },
+      {
+        "Key": "13 ",
+        "Name": "Vision"
+      },
+      {
+        "Key": "130",
+        "Name": "Vision"
+      },
+      {
+        "Key": "131",
+        "Name": "Vision"
+      },
+      {
+        "Key": "134",
+        "Name": "Vision"
+      },
+      {
+        "Key": "203",
+        "Name": "Vision"
+      },
+      {
+        "Key": "214",
+        "Name": "Vision"
+      },
+      {
+        "Key": "403",
+        "Name": "Vision"
+      },
+      {
+        "Key": "40 ",
+        "Name": "Vision"
+      },
+      {
+        "Key": "7D0",
+        "Name": "Vision"
+      },
+      {
+        "Key": "AA ",
+        "Name": "Vision"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Vision"
+      },
+      {
+        "Key": "10 ",
+        "Name": "VIDEO"
+      },
+      {
+        "Key": "10 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "12 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "128",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "13 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "134",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "331",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "404",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "407",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "40 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "41 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "416",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "520",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "600",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "60 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "601",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "605",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "608",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "610",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "61 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "613",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "616",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "85 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "AA ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "TEM",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "114",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "11 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "12 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "128",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "30 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "40 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "501",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "502",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "50 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "52 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "60 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "610",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "61 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "84 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "AA ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "AA8",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "AAT",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "SB ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "TI ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "125",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "400",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "402",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "40 ",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "403",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "407",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "41 ",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "410",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "411",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "412",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "414",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "416",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "616",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "CLT",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "WA ",
+        "Name": "Business Equipment"
+      },
+      {
+        "Key": "196",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "19 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "226",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "50 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "500",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "501",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "502",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "503",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "504",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "505",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "507",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "508",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "51 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "510",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "512",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "513",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "520",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "521",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "52 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "522",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "523",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "525",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "528",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "530",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "53 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "531",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "532",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "533",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "54 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "540",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "541",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "542",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "60 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "609",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "840",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "84 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "89 ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "AA ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "WA ",
+        "Name": "Small Appliances"
+      },
+      {
+        "Key": "201",
+        "Name": "Audio"
+      },
+      {
+        "Key": "20 ",
+        "Name": "Audio"
+      },
+      {
+        "Key": "202",
+        "Name": "Audio"
+      },
+      {
+        "Key": "203",
+        "Name": "Audio"
+      },
+      {
+        "Key": "207",
+        "Name": "Audio"
+      },
+      {
+        "Key": "208",
+        "Name": "Audio"
+      },
+      {
+        "Key": "21 ",
+        "Name": "Audio"
+      },
+      {
+        "Key": "214",
+        "Name": "Audio"
+      },
+      {
+        "Key": "219",
+        "Name": "Audio"
+      },
+      {
+        "Key": "22 ",
+        "Name": "Audio"
+      },
+      {
+        "Key": "220",
+        "Name": "Audio"
+      },
+      {
+        "Key": "222",
+        "Name": "Audio"
+      },
+      {
+        "Key": "224",
+        "Name": "Audio"
+      },
+      {
+        "Key": "225",
+        "Name": "Audio"
+      },
+      {
+        "Key": "226",
+        "Name": "Audio"
+      },
+      {
+        "Key": "23 ",
+        "Name": "Audio"
+      },
+      {
+        "Key": "231",
+        "Name": "Audio"
+      },
+      {
+        "Key": "AA ",
+        "Name": "Audio"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Audio"
+      },
+      {
+        "Key": "MOC",
+        "Name": "Audio"
+      },
+      {
+        "Key": "ST ",
+        "Name": "Audio"
+      },
+      {
+        "Key": "20 ",
+        "Name": "AUDIO"
+      },
+      {
+        "Key": "43 ",
+        "Name": "AUDIO"
+      },
+      {
+        "Key": "44 ",
+        "Name": "AUDIO"
+      },
+      {
+        "Key": "45 ",
+        "Name": "AUDIO"
+      },
+      {
+        "Key": "30 ",
+        "Name": "WASHING MACHINE AND D"
+      },
+      {
+        "Key": "47 ",
+        "Name": "WASHING MACHINE AND D"
+      },
+      {
+        "Key": "32 ",
+        "Name": "STOVES"
+      },
+      {
+        "Key": "41 ",
+        "Name": "VIDEO GAMES"
+      },
+      {
+        "Key": "41 ",
+        "Name": "REFRIGERATION"
+      },
+      {
+        "Key": "45 ",
+        "Name": "REFRIGERATION"
+      },
+      {
+        "Key": "48 ",
+        "Name": "REFRIGERATION"
+      },
+      {
+        "Key": "41 ",
+        "Name": "SEWING MACHINE"
+      },
+      {
+        "Key": "41 ",
+        "Name": "PERSONAL CARE GOODS"
+      },
+      {
+        "Key": "45 ",
+        "Name": "PERSONAL CARE GOODS"
+      },
+      {
+        "Key": "46 ",
+        "Name": "PERSONAL CARE GOODS"
+      },
+      {
+        "Key": "44 ",
+        "Name": "SMALL ELECTRICAL APPL"
+      },
+      {
+        "Key": "45 ",
+        "Name": "SMALL ELECTRICAL APPL"
+      },
+      {
+        "Key": "44 ",
+        "Name": "RI WARRANTY CATEGORY"
+      },
+      {
+        "Key": "45 ",
+        "Name": "MUSICAL INSTRUMENTS"
+      },
+      {
+        "Key": "48 ",
+        "Name": "MUSICAL INSTRUMENTS"
+      },
+      {
+        "Key": "51 ",
+        "Name": "VENTILATION AND HEATI"
+      },
+      {
+        "Key": "52 ",
+        "Name": "MEDIA IN WHITE AND AC"
+      },
+      {
+        "Key": "ME ",
+        "Name": "MEDIA IN WHITE AND AC"
+      },
+      {
+        "Key": "52 ",
+        "Name": "ELECTRIC GENERATORS"
+      },
+      {
+        "Key": "52 ",
+        "Name": "INDIVIDUAL SPORTS"
+      },
+      {
+        "Key": "AA ",
+        "Name": "GIFT"
+      },
+      {
+        "Key": "AC ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "ACI",
+        "Name": "Installation"
+      },
+      {
+        "Key": "CS ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "CTI",
+        "Name": "Installation"
+      },
+      {
+        "Key": "DIN",
+        "Name": "Installation"
+      },
+      {
+        "Key": "FIN",
+        "Name": "Installation"
+      },
+      {
+        "Key": "GDI",
+        "Name": "Installation"
+      },
+      {
+        "Key": "GYM",
+        "Name": "Installation"
+      },
+      {
+        "Key": "HM ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "IC ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "LCD",
+        "Name": "Installation"
+      },
+      {
+        "Key": "RH ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "STC",
+        "Name": "Installation"
+      },
+      {
+        "Key": "ST ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "TO ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "WMI",
+        "Name": "Installation"
+      },
+      {
+        "Key": "WM ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "CS ",
+        "Name": "INSTALLATION"
+      },
+      {
+        "Key": "D1 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D11",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D12",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D2 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D20",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D21",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D22",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D4 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D41",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D50",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D5 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D51",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D52",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D53",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D54",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D6 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D84",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E1 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E11",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E12",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E2 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E20",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E21",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E4 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E50",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E5 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E52",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "F2 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "F3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "F30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "F31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "F40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "F4 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "F5 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "G3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "G30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "G31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "G32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "G40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "H30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "I22",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "I3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "I30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "I31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "I32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "I40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "J32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "R30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "S30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "S31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "S32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "T30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "T32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "U10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "U20",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "U30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "U3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "V10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "V30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "V31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "V3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W11",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W20",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W22",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W33",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W50",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "W84",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X1 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X2 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X20",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "X40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y1 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y11",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y13",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y2 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y20",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y22",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y4 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y50",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y52",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y5 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y54",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Y60",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z0 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z10",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z1 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z11",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z12",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z13",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z2 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z20",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z21",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z22",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z30",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z3 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z31",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z32",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z4 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z40",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z5 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z50",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z51",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z52",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z54",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z60",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z8 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "Z84",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZA ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZC ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "11 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "61 ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "615",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "AA ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "AA8",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "AAT",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "GF ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "GF7",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "SB ",
+        "Name": "Free Gifts"
+      },
+      {
+        "Key": "43 ",
+        "Name": "LAMPS AND DECORATION"
+      },
+      {
+        "Key": "FB ",
+        "Name": "LAMPS AND DECORATION"
+      },
+      {
+        "Key": "44 ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "CD ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "CL ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "CN ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "DA ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "DR ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "LH ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "LR ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "ME ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "SB ",
+        "Name": "FURNITURE"
+      },
+      {
+        "Key": "44 ",
+        "Name": "BEDROOM ACCESSORIES"
+      },
+      {
+        "Key": "FC ",
+        "Name": "BEDROOM ACCESSORIES"
+      },
+      {
+        "Key": "44 ",
+        "Name": "RI WARRANTY CATEGORY"
+      },
+      {
+        "Key": "44 ",
+        "Name": "MATTRESS"
+      },
+      {
+        "Key": "BE ",
+        "Name": "MATTRESS"
+      },
+      {
+        "Key": "BR ",
+        "Name": "MATTRESS"
+      },
+      {
+        "Key": "AAT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LA ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LA7",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LAT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LG ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LG8",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LG9",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LGT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH0",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH2",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH3",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH4",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH5",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH6",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH8",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LH9",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LHT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LJT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LK ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LL ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LM ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LM7",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LM8",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LM9",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LMT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LN ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LN9",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LNT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LP ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LP7",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LP8",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LP9",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LPT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LQ ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LR ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LR7",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LR9",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LRT",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "LV0",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "MS0",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "MS ",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "SJ0",
+        "Name": "Lounge"
+      },
+      {
+        "Key": "BA ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BA9",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BB ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BB0",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BB7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BBT",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BJ7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BJ ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BK ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BK7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BM7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BP ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BPT",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BV ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CCT",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CD ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CD7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CG ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CG7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CJ ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CJ0",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CJ7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CK ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CL ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CL0",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CL7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CL8",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CL9",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CLT",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CM ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CM0",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CM7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CM9",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CMT",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CN ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CN0",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CN9",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CNT",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CP ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "CW7",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "DP ",
+        "Name": "Bedroom"
+      },
+      {
+        "Key": "BA7",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BA ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BA9",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BB ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BB0",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BB8",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BBT",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BD ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BE ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BE7",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BF ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BF7",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BJ ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BK7",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BL0",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BL ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BL9",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BM ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BM0",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BM3",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BM5",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BM7",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BMT",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BN0",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BN ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BN5",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BN8",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BR ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BR0",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BR7",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BRT",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BS ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BS0",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BST",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BV ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BV7",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BVT",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "LQ ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "LQ9",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "TI ",
+        "Name": "Bedding"
+      },
+      {
+        "Key": "BR7",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D22",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "D5 ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBF",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBK",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBP",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DBS",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DC ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DCD",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DCL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DCM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DCN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DD ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDE",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDK",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DDR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DF ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DFB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DL ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLP",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLQ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DLW",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DMB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DM ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DME",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DMF",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DMG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DS ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DSB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DSE",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "DSL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "E22",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBF",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBP",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EBR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EC ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ECD",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ECL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ECN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ED ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EDA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EDB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EDG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELP",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELQ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ELR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EMF",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "EMK",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ES ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ESB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "FC ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "GDA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "GLG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "GLH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "GLN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "GLR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "GSB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "SB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "SZ ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "VB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "WBA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "WB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "WBB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "WBM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "WBR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "WCN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XBL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XBM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XBN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XDA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XL ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XLA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "XLH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YBA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YBB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YBF",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YBL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YBM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YBN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YC ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YDA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YD ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YDB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YDG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YDR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YL ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YLA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YLH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YSB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "YS ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZB ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBF",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBJ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZBR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZC ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZCD",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZCJ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZCL",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZCM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZCN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZD ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZDA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZDB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZDG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZDH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZDM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZDR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZFA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZF ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZFB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZFC",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZL ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZLA",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZLH",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZLM",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZLN",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZLR",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZM ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZMG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZMK",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZS ",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZSB",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZSE",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "ZSG",
+        "Name": "Second Hand"
+      },
+      {
+        "Key": "BST",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DE ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DI ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DK ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DKT",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DM ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DM7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DN ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DQ ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "DR ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "GC ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "GF ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "LG9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "LH ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "LN ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "LT ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "LW5",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MB ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MB8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "ME ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "ME0",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "ME1",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MF ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MF7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MF8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MF9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MG ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MG8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MG9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MGT",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MH0",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MJ ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MJ9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MK ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MK7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MK9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MKT",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "ML ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MM ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MM7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MM8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MM9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MMT",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MN0",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "MP ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SB ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SB0",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SB7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SB8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SB9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SBT",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SC ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SD ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SE ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SE0",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SE7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SE8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SE9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SET",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG0",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG1",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG2",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG3",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG6",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SG9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SH ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SL ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SS ",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SS7",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SS8",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SS9",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "SST",
+        "Name": "Occasional/Misc."
+      },
+      {
+        "Key": "CD ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "DC ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "FC ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "TD ",
+        "Name": "Installation"
+      },
+      {
+        "Key": "CD ",
+        "Name": "Delivery"
+      },
+      {
+        "Key": "CDC",
+        "Name": "Delivery"
+      },
+      {
+        "Key": "IC ",
+        "Name": "Delivery"
+      },
+      {
+        "Key": "DA ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DA0",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DA8",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DA9",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DAT",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DB7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DB ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DE7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DG ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DG7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DG8",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DH ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DH7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DHT",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DI ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DK7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DK ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DKT",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DL8",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DL ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DM ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DMT",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DN ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DP ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DP7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DR ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DR7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DR9",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "SBT",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "SB ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "SE ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "SL ",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "SL7",
+        "Name": "Dining Room"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FA ",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FA7",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FA9",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FB ",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FB0",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FB7",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FB8",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FBT",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FC ",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FC7",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FC8",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FC9",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FD7",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FD ",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "FD9",
+        "Name": "Floor Coverings"
+      },
+      {
+        "Key": "70 ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "700",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "710",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "71 ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "711",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "712",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "713",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "714",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "715",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "716",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "720",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "72 ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "722",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "730",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "73 ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "750",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "75 ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "751",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7A ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7A0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7A1",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7A2",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7A3",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7AC",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7B ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7C ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7C2",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7C5",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7D0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7D ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7D1",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7DR",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7E ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7E0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7F ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7F0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7G ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7G2",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7I ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7I0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7L0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7L ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7M ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7P ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7S ",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7S0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7SB",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7SP",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "7U0",
+        "Name": "Spare Parts"
+      },
+      {
+        "Key": "A0 ",
+        "Name": "Affinity"
+      },
+      {
+        "Key": "A00",
+        "Name": "Affinity"
+      },
+      {
+        "Key": "AF ",
+        "Name": "Affinity"
+      },
+      {
+        "Key": "B0 ",
+        "Name": "Affinity"
+      },
+      {
+        "Key": "MOC",
+        "Name": "Affinity"
+      },
+      {
+        "Key": "AD ",
+        "Name": "Category95 "
+      },
+      {
+        "Key": "OC ",
+        "Name": "Category95 "
+      },
+      {
+        "Key": "RE ",
+        "Name": "Category95 "
+      },
+      {
+        "Key": "SA ",
+        "Name": "Category95 "
+      },
+      {
+        "Key": "WA ",
+        "Name": "Category95 "
+      },
+      {
+        "Key": "DT ",
+        "Name": "Category90 "
+      },
+      {
+        "Key": "SC ",
+        "Name": "Category90 "
+      },
+      {
+        "Key": "LO ",
+        "Name": "Category76 "
+      },
+      {
+        "Key": "RB ",
+        "Name": "Category89 "
+      },
+      {
+        "Key": "RE ",
+        "Name": "Category89 "
+      },
+      {
+        "Key": "SA ",
+        "Name": "Category96 "
+      },
+      {
+        "Key": "ST ",
+        "Name": "Category96 "
+      },
+      {
+        "Key": "VA ",
+        "Name": "Category96 "
+      },
+      {
+        "Key": "131",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "40 ",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "400",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "401",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "403",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "407",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "408",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "409",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "414",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "616",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "DE ",
+        "Name": "PCs \u0026 Notebooks"
+      },
+      {
+        "Key": "40 ",
+        "Name": "COMPUTERS AND ACC"
+      },
+      {
+        "Key": "41 ",
+        "Name": "COMPUTERS AND ACC"
+      },
+      {
+        "Key": "42 ",
+        "Name": "COMPUTERS AND ACC"
+      },
+      {
+        "Key": "402",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "40 ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "406",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "407",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "408",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "605",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "616",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "DE ",
+        "Name": "Accessories"
+      },
+      {
+        "Key": "OC ",
+        "Name": "Other Charges"
+      },
+      {
+        "Key": "OCW",
+        "Name": "Other Charges"
+      }
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+﻿<#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral" #>
+<#@ assembly name="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral" #>
+<#@ assembly name="Microsoft.SqlServer.ConnectionInfo" #>
+<#@ assembly name="Microsoft.SqlServer.Smo" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+<#+
+public class DataSetTemplate : ProcedureTemplate
+{
+    public DataSet Model;
+	
+    public override string TransformText()
+    {
+		this.Name = Model.name;
+		base.TransformText();
+		PushIndent("\t");
+		
+		var proc = Database.StoredProcedures[Model.name, "dbo"];
+#>
+partial class <#= proc.Name #>
+{
+	public override DataSet ExecuteDataSet()
+	{
+		return ((cmd.Connection != null && cmd.Connection.State != ConnectionState.Closed) ? base.ExecuteDataSet() : Context.Database().ExecuteDataSet(cmd));
+	}
+
+	<#+ if (proc.Parameters.Count > 0) { #>
+	public DataSet ExecuteDataSet(<#= Args(proc) #>)
+	{
+		<#= ArgsAssignPreExecute(proc) #>
+		var __result = ExecuteDataSet();
+		<#= ArgsAssignPosExecute(proc) #>
+		return __result;
+	}
+	<#+ } #>
+}
+
+<#+
+		PopIndent();
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

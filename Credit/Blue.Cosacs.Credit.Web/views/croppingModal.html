@@ -1,0 +1,23 @@
+<div class="modal-content credit">
+    <div class="modal-header">
+        <h2> Choose a profile picture </h2>
+    </div>
+    <div class="modal-body">
+        <div ng-if="dataUrl" class="img-container">
+            <img ng-if="dataUrl" ng-src="{{dataUrl}}"
+                 ng-cropper ng-show="{{showEvent}}" ng-hide="{{hideEvent}}" ng-options="options">
+        </div>
+
+        <div class="preview-container">
+            <img ng-if="preview.dataUrl" ng-src="{{preview.dataUrl}}">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="fileUpload btn btn-warning">
+            <span> Choose picture </span>
+            <input class="upload" type="file" onchange="angular.element(this).scope().onFile(this.files[0])">
+        </div>
+        <button class="btn btn-primary" ng-click="saveImage()"> Save </button>
+        <button class="btn btn-default" ng-click="cancel()"> Cancel </button>
+    </div>
+</div>

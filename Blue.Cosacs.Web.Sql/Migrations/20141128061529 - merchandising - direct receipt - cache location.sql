@@ -1,0 +1,7 @@
+alter table merchandising.goodsreceiptdirect
+add Location varchar(100) null
+
+alter table merchandising.GoodsReceiptDirectProduct
+drop constraint FK_Merchandising_GoodsReceiptDirectProduct_Supplier
+alter table merchandising.GoodsReceiptDirectProduct
+drop column VendorId

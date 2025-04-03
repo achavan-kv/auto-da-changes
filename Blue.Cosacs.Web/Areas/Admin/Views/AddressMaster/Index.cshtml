@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Blue.Cosacs.Web.Areas.Admin.Models.AddressMaster>
+
+    @{ ViewBag.Title = "Address Master"; }
+
+    <div data-module="form-inline" data-controller="AddressMaster" data-label="Address Master">
+        <div class="row">
+            <div class="col-lg-8">
+                <form class="search form-horizontal" method=get action='@Url.Action("Index", "AddressMaster")'>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            @Html.TextBox("s.Region", null, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Region / Parish"
+                            })
+                        </div>
+                        <div class="col-lg-4">
+                            @Html.TextBox("s.Village", null, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Village"
+                            })
+                        </div>
+                        <div class="col-lg-4">
+                            <button type="submit" class="btn btn-default">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <table class="data table table-striped table-bordered table-hover" onsubmit="return false;">
+                    <thead>
+                        <tr>
+                            @if (Html.HasPermission(Blue.Service.ServicePermissionEnum.AddressMasterManage))
+                            {
+                                <th class="col-2"></th>
+                            }
+                            <th>Region / Parish</th>
+                            <th>Village</th>
+                            <th>Zip Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            @Html.Partial("RecordView", item)
+                        }
+                    </tbody>
+                    @if (Html.HasPermission(Blue.Service.ServicePermissionEnum.AddressMasterManage))
+                    {
+                        <tfoot>
+                            <tr>
+                                <td class="actions"></td>
+                                <td colspan="3">&nbsp;</td>
+                            </tr>
+                        </tfoot>
+                    }
+                </table>
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
+        <script id="templateNew" type="text/template">
+            @Html.Partial("RecordEdit", ViewData["DefaultNew"])
+        </script>
+    </div>

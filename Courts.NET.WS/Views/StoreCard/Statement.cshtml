@@ -1,0 +1,247 @@
+﻿@model Blue.Cosacs.SCStatement
+@using Blue.Cosacs.Shared.Extensions;
+@section Head
+{
+    <style type="text/css">
+        #fintable {
+            padding: 5px;
+            display: inline-block;
+            float: left;
+            border: 1px solid black;
+        }
+        #fintable thead {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            padding: 5px 0px;
+            text-align: centre;
+        }
+        
+        #fintable tr:nth-child(even) {
+            background-color: Silver;
+        }
+
+        .InfoHeader .fixedwidth{ text-align: left; }        
+        .fixedwidthsum {
+            width: 150px;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 10px;
+        }
+        
+        #acctsummary  
+        {
+            margin-top: 10px;
+            border: 1px solid black;
+        }
+      
+        .borderbottom {
+            border-bottom: thin solid black;
+        }
+    </style>
+}
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "StoreCard Statement";
+}
+<div id="main">
+    <div class="heading">
+        <div>
+            @Model.Customer.firstname &nbsp; @Model.Customer.name</div>
+        <div>
+            @Model.CustAddress.cusaddr1</div>
+        <div>
+            @Model.CustAddress.cusaddr2</div>
+        <div>
+            @Model.CustAddress.cusaddr3</div>
+        <div>
+            @Model.CustAddress.cuspocode</div>
+    </div>
+    <div class="centre">
+        <h2>
+            Store Card Statement</h2>
+    </div>
+    <div class="InfoHeader">
+        <table class="fill">
+            <tr>
+                <td class="fixedwidth">
+                    For the period:
+                </td>
+                <td colspan="3" class="bottomspace10">
+                    @String.Format("{0:dd MMM yyyy} - {1:dd MMM yyyy}", Model.StoreCardStatement.DateFrom, Model.StoreCardStatement.DateTo)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="bold centre" style="padding-top: 10px">
+                    Account Information
+                </td>
+            </tr>
+            <tr>
+                <td class="fixedwidth">
+                    Name:
+                </td>
+                <td>@String.Format("{0} {1}", Model.Customer.firstname, Model.Customer.name)
+                </td>
+                <td class="fixedwidth">
+                    Credit Limit:
+                </td>
+                <td>
+                    @Model.Customer.StoreCardLimit.Value.ToString(Model.DecimalPlace)
+                </td>
+            </tr>
+            <tr>
+                <td class="fixedwidth">
+                    Card Number:
+                </td>
+                <td>@Model.StoreCard.CardNumber.ToString("####-####-####-####")
+                </td>
+                <td class="fixedwidth">
+                    Credit Available:
+                </td>
+                <td>@Model.Customer.StoreCardAvailable.Value.ToString(Model.DecimalPlace)
+                </td>
+            </tr>
+            <tr>
+                <td class="fixedwidth">
+                    Current Interest Rate:
+                </td>
+               @* <td>@Math.Round(Model.PaymentDetails.InterestRate, 2).ToString("F" + Model.DecimalPlace.Substring(1, 1))%*@
+                <td>@Model.PaymentDetails.InterestRate.ToString()%
+                </td>
+                <td class="fixedwidth">
+                    Account No:
+                </td>
+                <td>
+                    @String.Format("{0:###-####-####-#}", Convert.ToInt64(Model.PaymentDetails.acctno))
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="bold centre" style="padding-top: 10px">
+                    Payment Information
+                </td>
+            </tr>
+            <tr>
+                <td class="fixedwidth">
+                    Statement Date:
+                </td>
+                <td>
+                    @Model.StoreCardStatement.DateTo.ToString("dd MMM yyyy")
+                </td>
+                <td class="fixedwidth">
+                    Overdue Amount:
+                </td>
+                <td>@Model.OverDue.ToString(Model.DecimalPlace)
+                </td>
+            </tr>
+            <tr>
+                <td class="fixedwidth">
+                    Payment Due Date:
+                </td>
+                <td>
+                    @String.Format("{0:dd MMM yyyy}", Model.DueDate)
+                </td>
+                <td class="fixedwidth">
+                    Minimum Payment Due:
+                </td>
+                <td>
+                    @Model.MinAmount.ToString(Model.DecimalPlace)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="History">
+        <div class="centre">
+            <h4>
+                Account Activity</h4>
+        </div>
+        <div id="fintable">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%">
+                            Transaction Date
+                        </th>
+                        <th style="width: 20%">
+                            Reference #
+                        </th>
+                        <th style="width: 39%">
+                            Description
+                        </th>
+                        <th style="width: 13%">
+                            Amount
+                        </th>
+                        <th style="width: 13%">
+                            Balance
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.StatementFin != null)
+                    {
+                        foreach (var trans in Model.StatementFin)
+                        {
+                        <tr>
+                            <td>@trans.DateTrans.ToShortDateString()
+                            </td>
+                            <td>
+                                @Html.Raw(trans.Code == "SCT" ? String.Format("Invoice No {1}/{2}", trans.CardNumber.ToString().Substring(12), trans.TransferAccount, trans.agrmtno, trans.branchname) : null)
+                            </td>
+                            <td>
+                                @{
+                            var description2 = Model.ConvertCode(trans.Code);
+                            description2 += trans.Code == "SCT" ? String.Format(" x-{0} at {3} ", trans.CardNumber.ToString().Substring(12), trans.TransferAccount, trans.agrmtno, trans.branchname) : null;
+                                }@Html.Raw(description2)
+                            </td>
+                            <td class="right">
+                                @Html.Raw(trans.Value.DisplayCurrenyPrint(Model.DecimalPlace))
+                            </td>
+                            <td class="right">
+                                @Html.Raw(trans.RunningTotal.DisplayCurrenyPrint(Model.DecimalPlace))   
+                            </td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <table id="acctsummary" cellpadding="5" cellspacing="5">
+        <tr>
+            <td colspan="3"><strong>Account Summary</strong></td>
+        </tr>
+        <tr>
+            <td>Previous Balance:</td>
+            <td class="right">@Model.OpenBalance.ToString(Model.DecimalPlace)</td>
+            <td class="left">@(Model.OpenBalance < 0 ? "CR" : "")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>+ New Purchases:</td>
+            <td class="right">@Model.Purchases.ToString(Model.DecimalPlace)</td>
+            <td class="left">@(Model.Purchases < 0 ? "CR" : "")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>+ Fees and Charges:</td>
+            <td class="right">@Model.Fees.ToString(Model.DecimalPlace)</td>
+            <td class="left">@(Model.Fees < 0 ? "CR" : "")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>+ Interest Charges:</td>
+            <td class="right">@Model.Interest.ToString(Model.DecimalPlace)</td>
+            <td class="left">@(Model.Interest < 0 ? "CR" : "")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>- Payments:</td>
+            <td class="right">@Math.Abs(Model.Payments).ToString(Model.DecimalPlace)</td>
+            <td>CR</td>
+        </tr>
+        <tr>
+            <td><strong>= Closing Balance:</strong></td>
+            <td class="right">@Model.EndBalance.ToString(Model.DecimalPlace)</td>
+            <td class="left">@(Model.EndBalance < 0 ? "CR" : "")</td>
+            <td></td>
+        </tr>
+    </table>
+</div>

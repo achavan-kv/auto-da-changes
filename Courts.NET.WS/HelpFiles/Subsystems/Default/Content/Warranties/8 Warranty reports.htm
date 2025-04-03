@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="" MadCap:tocPath="Warranties">
+    <head><title>Warranty Reports</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapBody.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapUtilities.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapHighlighter.js"> <![CDATA[ ]]></script>
+    </head>
+    <body>
+        <h1 class="Heading1">&#160;</h1>
+        <h1 class="Heading1"><a name="8"></a>8 Warranty Reports</h1>
+        <p>Warranty reports can be accessed from the Reports menu. </p>
+        <p>Reports can by grouped by one of the following: </p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Account Type</li>
+            <li style="font-family: Arial;" value="2">Category</li>
+            <li style="font-family: Arial;" value="3">Branch</li>
+            <li style="font-family: Arial;" value="4">Sales Person</li>
+        </ul>
+        <p style="font-family: Arial;">The report can also be filtered according to user defined categories. This is done by using the Category Set Maintenance screen. This is accessed from the category drop down. </p>
+        <p style="font-family: Arial;">The report can also be based on either Warranty Delivery date, Item Delivery date or Order date for various reports. Some reports are restricted to a specific date type. </p>
+        <p>Here is a list and description of each of the reports:</p>
+        <h2 class="CH2">Supashield Sales</h2>
+        <p>This reports on all Supashield Sales based on the date range chosen. It does not matter if the SS has since been cancelled. It will still show. Cancellations will show on the cancelled warranties report.</p>
+        <h2 class="CH2">Instant Replacement Sales</h2>
+        <p>A report of all IR&#160;sales.</p>
+        <h2 class="CH2">Instant Replacement Claims</h2>
+        <p>A report of all IR&#160;Claims in the period chosen. </p>
+        <h2 class="CH2">Warranties due for renewal</h2>
+        <p>This will report on all warranties that have expired or due to expire in the period chosen. Each row in the result will have a status of either:&#160;Due to expire, Expired and expired - passed renewal period. </p>
+        <p>All warranties passed renewal period will not be renewable. All the other warranties displayed will be renewable. </p>
+        <h2 class="CH2">Renewal Sales</h2>
+        <p>This is a report on all Renewal Sales. This report is based on Delivery date</p>
+        <h2 class="CH2">Second Effort Solicitation</h2>
+        <p>This is a report on warranty sales which occured after the original item was delivered. </p>
+        <h2 class="CH2">Warranty Repossessions</h2>
+        <p>A report on Warranty repossessions</p>
+        <h2 class="CH2">Warranty cancellations</h2>
+        <p>A report on Warranty Cancellations</p>
+        <h2 class="CH2">Missed Warranty Sales</h2>
+        <p>This is a report on all Warrantable Sales where a warranty was not sold. </p>
+        <h2 class="CH2">Warranty Hit Rate</h2>
+        <p>This reports on the % of Warrantable Sales which where actually sold with a warranty. </p>
+        <h2 class="CH2">Insurance Claims on warranties</h2>
+        <p>This will report on all Insurance claims which used the code INW. In the general financial transactions screen, when a user processes an INW on an account they will be prompted to choose the warrantable product being claimed against (if there is one). Courts are due a refund in these circumstances. The other reports won’t pick this up as it is not recognised as a Cancellation or a Repossession </p>
+        <h2 class="CH2">Lost Warranty Sales Commission</h2>
+        <p>This is a report on all the Missed Warranty Sale opportunities and how these misses affect the commission of the sales person.
+</p>
+        <p>A country parameter will be required for this report. It is called Target Hit rate %.</p>
+        <p>Currently there is a target hit rate % assigned to warranty sales. For example:
+</p>
+        <p>Total Warrantable Sales Value= 1000
+</p>
+        <p>Target hit Rate % = 40%
+</p>
+        <p>Therefore required sales value for the sales person need to be 400 or above (1000 * 40%)
+</p>
+        <p>The	Lost Sales Value is calculated as: </p>
+        <p>(Total Warranty Sales Value – Required Sales value. Only negative results should show here. If the value is positive it means that there was no lost sales value and the report should show a zero value)</p>
+        <p>Lost units is calculated as:</p>
+        <p>(Actual Warranties Sold Qty - (Total Warrantable Sales Qty * Target Hit rate %)). Only negative results should show here. If the value is positive it means that there was no lost sales units and the report should show a zero value</p>
+        <p>Lost Commission is calculated as:</p>
+        <p>(Lost Sales value * Commission rate against that warranty)</p>
+        <h1 class="Heading1">&#160;</h1>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

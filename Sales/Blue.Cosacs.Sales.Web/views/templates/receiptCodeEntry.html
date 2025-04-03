@@ -1,0 +1,20 @@
+<div class="modal-content">
+    <div class="modal-header"><h3>Load Receipt</h3></div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="receipt-barcode">
+                    <div class="barcode">
+                        <input type="text" id="barcode-value" class="form-control" ng-model="barcode"
+                               placeholder="Invoice No" bb-focus-on="barcodeFocus" autofocus/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-right">
+            <button class="btn btn-primary" ng-click="loadReceipt($event)">Load receipt</button>
+            <button class="btn btn-default" ng-click="cancel($event)">Cancel</button>
+        </div>
+    </div>
+</div>

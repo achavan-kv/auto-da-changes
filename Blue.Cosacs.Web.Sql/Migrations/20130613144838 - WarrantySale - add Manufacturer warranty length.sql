@@ -1,0 +1,2 @@
+alter table Warranty.WarrantySale
+add ManufacturerWarrantyLength smallint

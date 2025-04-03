@@ -1,0 +1,202 @@
+<html>
+<head>
+    <style>
+        td, th {
+            /*border: 1px solid #dddddd;*/
+            padding: 4px;
+        }
+
+        ol {
+            padding-inline-start: 30px;
+        }
+
+        li {
+            padding-inline-start: 25px;
+        }
+
+        .CheckMark {
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            border: 1px solid;
+        }
+
+        .SignPart {
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body text="#00bfff" style="margin: 30px 25px; font-size:medium;">
+    <br />
+    <div style="width:100%;">
+        <div style="width:35%; float:left;">
+            <lable style="font-size: x-large; font-weight: bolder;">UNICOMER (Trinidad) Ltd</lable>
+
+        </div>
+        <div style="width:65%; float:right;">
+            <lable style="font-size: x-large;">ACCOUNT NUMBER</lable>
+            &nbsp;&nbsp; <input type="text" value="{{AccountNumber}}" disabled id="AccountNumber" style="font-size: x-large; border: 1px solid; height: 35px; width: 200px;" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <p style="margin: 5px 0px;">
+        AGREEMENT made this  {{PropDay}}  day of {{PropMonth}}  {{PropYear}}
+    </p>
+    <p style="margin: 5px 0px;">
+        <div>
+            Between UNICOMER (Trinidad) Ltd whose registered office is situated at Corner Don Miguel Road & Churchill Roosevelt, Highway, EI Socorro, San Juan, Trinidad
+        </div>
+        <div>
+            (hereinafter called "the Owners" which expression shall include their successors and assigns) and (hereinafter called "the Hirer")
+        </div>
+    </p>
+    <div style="width:100%; clear:both;">
+        <div style="width:60%; float:left; text-align:center;">
+            <!--<br>-->
+            "This agreement is subject to verification of customer information and final<br />
+            credit approval by UNICOMER.<br />
+            Delivery of goods will ONLY be made after final approval."<br />
+            Monthly instalment payment must be made one(1) month after delivery.<br />
+            I HAVE SEEN AND ACKNOWLEDGE AND AGREE TO THIS CONDITION<br />
+            <br />
+            <!--<hr style=" width:50%; text-align:center;">-->
+            <div class="signature">
+                <div id="signature-2FA"></div>
+                <!--<div id="signature-2FA" style="float:right;"> ________________________</div>-->
+            </div>
+
+        </div>
+        <div style="width:40%; float:right;">
+            <div style="width:15%; float:left;">
+                <br>
+                <lable style="margin-left:10%;margin-top:5%">Name:</lable><br><!--<br>-->
+                <lable style="margin-left:10%;margin-top:5%">Address:</lable>
+            </div>
+            <div style="width:70%; float:right; border:1px solid; height:150px;">
+                <br>&nbsp;
+                <lable style="margin-top:5%">{{Name}}</lable><br>
+                <br>&nbsp;
+                <lable style="margin-top:5%">{{Address}}</lable>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <!--<div>
+        <table cellpadding="0" cellspacing="0" border="1" style="width:100%; min-height:250px; border:1px solid;">
+            <thead>
+                <tr>
+                    <th>QTY</th>
+                    <th>DESCRIPTION OF GOODS</th>
+                    <th>PRICE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br /><br />
+    <br /><br />-->
+    <div style="width:100%; clear:both; border:1px solid; border-bottom:0px;">
+        WHEREBY UNICOMER will supply and the customer will take the goods listed in the schedule upon the following terms and conditions:
+    </div>
+    <div style="width:100%; clear:both; border:1px solid;">
+        <table style="width:100%;border-collapse: collapse;" cellpadding="0" cellspacing="0">
+            <tr style="text-align:center; border-bottom :none;">
+                <td style="width:45%; border-bottom:none; border-right:1px solid;">
+                    <lable>
+                        NOTICE <br />
+                        PURSUANT TO THE HIRE PURCHASE ACT CHAP.82.33 <br />RIGHT OF HIRER TO TERMINATE AGREEMENT
+                    </lable>
+                </td>
+                <td style="width:55%;  border-bottom:none;">
+                    <lable>
+                        RESTRICTION OF OWNERS RIGHT TO RECOVER GOODS WHERE SEVENTY PER CENTUM OF <br />
+                        THE HIRE PURCHASE PRICE HAS BEEN PAID <br />
+                        ON AGREEMENT UP TO $15000.00
+                    </lable>
+                </td>
+            </tr>
+            <tr style="vertical-align:top;">
+                <td style="width:45%;  border-top:none; border-right:1px solid;">
+                    <br />
+                    <ol>
+                        <li>The Hirer may put an end to this Agreement by giving notice to termination in writing to any person who is entitled to collect or receive the hire-rent and at the same time or prior thereto delivering the goods to the Owners.</li>
+                        <li>He must then pay any instalments which are in arrears at the time he gives notice.</li>
+                        <li>If the Hirer does not deliver the Articles to the Owners at the time mentioned in paragraph 1 above the notice of termination will be ineffective and the Agreement will remain in force.</li>
+                        <li>If the Articles have been damaged owing to the hirer having failed to take reasonable care of them the Owners may sue him for the amount of the damage unless that amount can be agreed between the hirer and the Owners.</li>
+                        <li>The Hirer should see whether this Agreement contains provisions allowing him to put an end to the Agreement on terms more Favourable to him  than those just mentioned. If it does he may put  an end to the Agreement on those terms.</li>
+                    </ol>
+                </td>
+                <td style="width:55%; border-top:none;">
+                    <br />
+                    <table cellpadding="0" cellspacing="0" border="0" style="width:100%;border: none;">
+                        <tr style="width:100%;border: none;">
+                            <td>
+                                <ol>
+                                    <li>After the Hirer pays $ {{PurchaseAmount}} then unless the Hirer has himself put an end to the Agreement or has committed some breach of the Agreement the Owners of the goods cannot take them back from the Hirer without the Hirer's consent unless the Owners obtain an order from Court.</li>
+                                    <li>If the owners apply to the Court for such an order the Court may if it thinks it just to do so allow the Hirer to keep either:</li>
+                                    <ol type="a">
+                                        <li>the whole of the goods on condition that the Hirer pay the balance of the price in a manner ordered by the Court.</li>
+                                        <li>A fair proportion of the goods having regard to what the Hirer has already paid.</li>
+                                    </ol>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <lable>
+                                    RESTRICTION OF OWNER'S RIGHT TO RECOVER GOODS WHERE SEVENTY PER <br />
+                                    CENTUM OF THE HIRE PURCHASE PRICE HAS NOT BEEN PAID ON AGREEMENTS <br />
+                                    UP TO $15000.00
+                                </lable>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ol>
+                                    <li>
+                                        Where less than $ {{PurchaseAmount}} has been paid, unless the Hirer has himself put an end to the Agreement or has committed some breach of the Agreement other than failure to pay an instalment of the Hire purchase price, the Owners of the goods cannot take them back from the Hirer without the Hirer's consent unless the Owners have given to the Hirer twenty one clear days written notice of its intention to do so.
+                                    </li>
+                                    <li>If within the said period of twenty one days the Hirer pays to the Owners all instalments of the Hire Purchase Price due at the date of such notice the Agreement will continue in force.</li>
+                                </ol>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="clear:both; width:100%; margin-top:5px;">
+        The Hirer agrees that the Owners have handed to me a complete copy of this Agreement. I have been informed of the cash price of the goods before 
+entering into this Agreement and I understand the contents of this Agreement and of the schedule thereto.
+    </div>
+    <br />
+    <div style="clear:both; width:100%;">
+        <div class="name" style="float:left; width:50%;">
+
+            <div id="namediv" style="float:left; width:10%;"> NAME: </div>
+            <div id="namedivleft" style="float:right; width:78%;">
+                {{Name}}
+                <!--<hr style=" width:100%; text-align:center; border:1px solid;">-->
+
+            </div>
+        </div>
+        <div class="signature" style="float:right; width:50%;">
+            <div id="signature-1FA" style="float:left; width:15%;"> SIGNATURE: </div>
+            <!--<div id="namedivleft" style="float:right; margin-top:10px; width:83%;"> <hr style=" width:100%; text-align:center; border:1px solid;"> </div>-->
+
+        </div>
+    </div>
+    <br />
+    <br />
+</body>
+</html>
+

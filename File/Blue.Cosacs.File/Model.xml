@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="File" namespace="Blue.Cosacs.File" label="File">
+    <Connection server="." database="cosacs" />
+    <Queries>
+    </Queries>
+    <Tables>
+        <Table name="FileDescription" />
+    </Tables>
+    <Views>
+    </Views>
+    <Settings>
+    </Settings>
+</Model>

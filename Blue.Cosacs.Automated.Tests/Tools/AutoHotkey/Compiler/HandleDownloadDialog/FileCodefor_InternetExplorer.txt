@@ -1,0 +1,10 @@
+﻿  public static void TypeInFileLocation(string fileName)
+	    {
+            string fileLocation = GetImageFilePath(fileName);
+
+            Process process = new Process();
+            process.StartInfo.FileName = @"C:\Program Files (x86)\AutoHotkey\Compiler\DownloadDriverCommission\DownloadDriverCommission.exe";
+            process.StartInfo.Arguments = @"" + fileLocation +"";
+            process.Start();
+            
+        }

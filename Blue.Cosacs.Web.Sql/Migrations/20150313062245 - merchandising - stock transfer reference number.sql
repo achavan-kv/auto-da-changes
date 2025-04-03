@@ -1,0 +1,1 @@
+sp_rename 'Merchandising.StockTransfer.Reference', 'ReferenceNumber' , 'COLUMN'

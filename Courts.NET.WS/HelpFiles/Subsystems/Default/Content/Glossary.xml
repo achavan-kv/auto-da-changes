@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="">
+    <head>
+        <title>Glossary</title>
+        <link href="Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" />
+        <link href="SkinSupport/MadCap.css" rel="stylesheet" />
+        <script src="SkinSupport/MadCapUtilities.js"> </script>
+        <script src="SkinSupport/MadCapEffects.js"> </script>
+        <script src="SkinSupport/MadCapEffectsMenu.js"> </script>
+        <script src="SkinSupport/MadCapGlossary.js"> </script>
+    </head>
+    <body style="background-color: #fafafa;">
+        <div id="GlossaryBody">
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_0" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">CRE</a>
+                    <a name="2860753317_anchor1">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_0" style="display: none;">This is a customer recovery transaction for warranties sold in association with products in the electrical product category. With repossessions the customer’s account is credited the value of the unexpired portion of the warranty via a CRE transaction. With cancellations after one month the customer is expected to pay the expired portion of the warranty at the point of cancellation. A CRE will increase the outstanding balance on the account</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_1" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">CRF</a>
+                    <a name="2860753317_anchor2">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_1" style="display: none;">This is a customer recovery transaction for warranties sold in association with products in the furniture product category. With repossessions the customer’s account is credited the value of the unexpired portion of the warranty via a CRF transaction. With cancellations after one month the customer is expected to pay the expired portion of the warranty at the point of cancellation. A CRF will increase the outstanding balance on the account</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_2" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Exchange</a>
+                    <a name="2860753317_anchor3">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_2" style="display: none;">This is when the item being replaced is different to the original item. A revision is required here allowing the user to add the new item to the agreement.</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_3" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Identical replacement</a>
+                    <a name="2860753317_anchor4">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_3" style="display: none;">This is when the item being replaced is identical to the original item. This process is quicker than a replacement because the delivery and collection notes are generated immediately after the goods return is completed. There is not need to revise the account. The collection can be processed at the same time as the delivery.</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_4" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Instant Replacement</a>
+                    <a name="2860753317_anchor5">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_4" style="display: none;">Instant Replacement warranties are offered on smaller items and allow the customer to be given a no quibble replacement if the product is defective. These products would typically be toasters, irons, kettles etc.  Instant replacement warranties and Supashield Warranties are exclusive. They may not be offered on the same product.</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_5" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Repossession</a>
+                    <a name="2860753317_anchor6">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_5" style="display: none;">This is when a product is repossessed. If the product was sold with a warranty, this warranty is automatically repossessed at a zero value. The customer is refunded the unexpired portion of the warranty. This is discussed in detail later on.</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_6" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Supashield</a>
+                    <a name="2860753317_anchor7">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_6" style="display: none;">Supashield Warranties are the standard 3 or 5 year cover offered to customers for electrical and furniture items.</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_7" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Warranties on Credit</a>
+                    <a name="2860753317_anchor8">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_7" style="display: none;">There are times when the customer brings in exactly the right amount of cash for an item but has not realised that a warranty was available on the product. In these cases the warranty can be sold to the customer on credit. The customer does not need to go through the credit sanctioning process. They have a certain number of days in which to pay off the warranty. The time period is set at country level via in country maintenance.</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_8" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Warranty Renewals</a>
+                    <a name="2860753317_anchor9">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_8" style="display: none;">The warranty renewal scheme allows the customer to renew existing warranties that are due to expire or have recently expired. Renewals will be discussed later in this document</div>
+            </div>
+            <div class="GlossaryPageEntry">
+                <div class="GlossaryPageTerm">
+                    <a href="javascript:void(0);" class="GlossaryPageTerm" id="MCDropDownHotSpot_2860753317_9" onclick="FMCDropDown( this ); FMCScrollToVisible( window, this.parentNode.parentNode ); return false;">Warranty Return Codes</a>
+                    <a name="2860753317_anchor10">
+                    </a>
+                </div>
+                <div class="GlossaryPageDefinition" id="MCDropDownBody_2860753317_9" style="display: none;">These codes are used when repossessions or cancellations are processed in CoSACS. This unique return code enables the system to work out the expired vs unexpired portion of the warranty at the time the return takes place.  Customers are not expected to pay for unexpired portions of the warranty for repossessions and cancellations.</div>
+            </div>
+        </div>
+        <p>&#160;</p>
+        <script type="text/javascript" src="SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

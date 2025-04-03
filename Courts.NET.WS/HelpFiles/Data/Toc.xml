@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1">
+    <TocEntry Title="Cashiers">
+        <TocEntry Title="Cashier Deposits" Link="/Content/Cashiers/Cashier Deposits.htm" />
+        <TocEntry Title="Cashier Totals" Link="/Content/Cashiers/Cashier Totals.htm" />
+        <TocEntry Title="The Cashier Process flow High level Summary" Link="/Content/Cashiers/Cashier User rights.htm" />
+        <TocEntry Title="Cashier Process Flow Working Example" Link="/Content/Cashiers/Cashier Process Working Example.htm" />
+        <TocEntry Title="Financial Interface File" Link="/Content/Cashiers/Financial Interface.htm" />
+        <TocEntry Title="Issuing Floats" Link="/Content/Cashiers/Issuing Floats.htm" />
+        <TocEntry Title="Overages and Shortages" Link="/Content/Cashiers/Overages and Shortages.htm" />
+    </TocEntry>
+    <TocEntry Title="Commission">
+        <TocEntry Title="Commissions - New Sales Order" Link="/Content/Commissions/Commissions - New Sales Order.htm" />
+        <TocEntry Title="What is Commission Calculated on?" Link="/Content/Commissions/Commissioncalculations.htm" />
+        <TocEntry Title="Commission Enquiry" Link="/Content/Commissions/CommissionEnquiry.htm" />
+        <TocEntry Title="Commissions Report" Link="/Content/Commissions/CommissionReports.htm" />
+        <TocEntry Title="Setting up commissions" Link="/Content/Commissions/CommissionsSetUp.htm" />
+        <TocEntry Title="Setting up Spiffs" Link="/Content/Commissions/Spiffsetup.htm" />
+    </TocEntry>
+    <TocEntry Title="Configuration">
+        <TocEntry Title="Calculations" Link="/Content/Configuration/Calculations.htm" />
+        <TocEntry Title="Customise scoring rules" Link="/Content/Configuration/Customise scoring rules.htm" />
+        <TocEntry Title="Mandatory Fields" Link="/Content/Configuration/Mandatory Fields.htm" />
+        <TocEntry Title="RF Matrix" Link="/Content/Configuration/RF Matrix.htm" />
+        <TocEntry Title="Codes maintenance">
+            <TocEntry Title="Codes Maintenance - New Sales" Link="/Content/Configuration/Codes/Codes Maintenance - New Sales.htm" />
+            <TocEntry Title="Codes Categories for Sanction Stages" Link="/Content/Configuration/Codes/Codes Maintenance- Sanction stages.htm" />
+        </TocEntry>
+        <TocEntry Title="User rights">
+            <TocEntry Title="User rights related to RF Accounts" Link="/Content/Configuration/Menus/Menus - RF.htm" />
+        </TocEntry>
+        <TocEntry Title="Country Maintenance">
+            <TocEntry Title="Country Parameter Table" Link="/Content/Configuration/Country Maintenance/Country Parameter Table.htm" />
+            <TocEntry Title="Country Maintenance - Associated Products" Link="/Content/Configuration/Country Maintenance/Country Maintenance - Associated Products.htm" />
+            <TocEntry Title="Country Maintenance - Cash Loans and Instant Credit" Link="/Content/Configuration/Country Maintenance/Country Maintenance - Cash Loans and Instant Credit.htm" />
+            <TocEntry Title="Country Maintenance - Discounts" Link="/Content/Configuration/Country Maintenance/Country Maintenance - Discounts.htm" />
+            <TocEntry Title="Country Maintenance - Out of Stock" Link="/Content/Configuration/Country Maintenance/Country Maintenance - Out of Stock.htm" />
+            <TocEntry Title="Country Maintenance - Credit Accounts" Link="/Content/Configuration/Country Maintenance/Country Maintenance - Credit.htm" />
+            <TocEntry Title="Country Maintenance - Service Charge Banding" Link="/Content/Configuration/Country Maintenance/Country Maintenance - Service Charge Banding.htm" />
+            <TocEntry Title="Country Maintenance - New Sales" Link="/Content/Configuration/Country Maintenance/Country Maintenance - New Sales.htm" />
+            <TocEntry Title="Commission Country Parameters" Link="/Content/Configuration/Country Maintenance/CommissionCP.htm" />
+        </TocEntry>
+    </TocEntry>
+    <TocEntry Title="CoSACS Audit Trails">
+        <TocEntry Title="Introduction" Link="/Content/CoSACS Audit Trails/Audit Trails.htm" />
+    </TocEntry>
+    <TocEntry Title="Credit Collections">
+        <TocEntry Title="Strategies, routes, worklists" Link="/Content/Follow Up/Strategy Routes and Worklists.htm" />
+        <TocEntry Title="Follow up system configuration" Link="/Content/Follow Up/Follow up system configuration.htm" />
+    </TocEntry>
+    <TocEntry Title="Customer">
+        <TocEntry Title="Loyalty Club">
+            <TocEntry Title="loyalty" Link="/Content/Customer/Loyalty Club/loyalty.htm" />
+            <TocEntry Title="loyalty1" Link="/Content/Customer/Loyalty Club/loyalty1.htm" />
+            <TocEntry Title="loyalty2" Link="/Content/Customer/Loyalty Club/loyalty2.htm" />
+            <TocEntry Title="loyalty3" Link="/Content/Customer/Loyalty Club/loyalty3.htm" />
+        </TocEntry>
+        <TocEntry Title="4.0.0 General Account and Customer Functions" Link="/Content/Customer/General Account and Customer Functions.htm" />
+        <TocEntry Title="Gift Vouchers" Link="/Content/Customer/Gift Vouchers.htm" />
+        <TocEntry Title="Prize Draw" Link="/Content/Customer/Prize Draw.htm" />
+    </TocEntry>
+    <TocEntry Title="Deliveries">
+        <TocEntry Title="Delivery Process" Link="/Content/Deliveries/1 The Delivery Process.htm" />
+        <TocEntry Title="Delivery Scheduling" Link="/Content/Deliveries/10 Delivery Scheduling.htm" />
+        <TocEntry Title="Transport Pick Lists" Link="/Content/Deliveries/11 Transport Pick Lists.htm" />
+        <TocEntry Title="Order Changes" Link="/Content/Deliveries/12 Changes to a schedule.htm" />
+        <TocEntry Title="Notifying Deliveries" Link="/Content/Deliveries/13 Notifying Deliveries.htm" />
+        <TocEntry Title="Collections" Link="/Content/Deliveries/14 Collections Process.htm" />
+        <TocEntry Title="Good Return" Link="/Content/Deliveries/14.1Goods Return.htm" />
+        <TocEntry Title="Repossessions" Link="/Content/Deliveries/15 Redelivery after Repossession.htm" />
+        <TocEntry Title="Reprint Delivery Notes" Link="/Content/Deliveries/16 Reprint Delivery Note.htm" />
+        <TocEntry Title="Cancelling Accounts" Link="/Content/Deliveries/17 Cancelling Accounts.htm" />
+        <TocEntry Title="Cancel Collection note" Link="/Content/Deliveries/18 Cancel Collection Note.htm" />
+        <TocEntry Title="Transport Maintenance" Link="/Content/Deliveries/2 Transport Maintenance.htm" />
+        <TocEntry Title="Deliveries - New Sales Order" Link="/Content/Deliveries/3 New Sales Order.htm" />
+        <TocEntry Title="Delivery Area Maintenance" Link="/Content/Deliveries/Delivery Area Maintenance.htm" />
+        <TocEntry Title="Delivery Authorisation" Link="/Content/Deliveries/5 Delivery Authorisation.htm" />
+        <TocEntry Title="Immediate Delivery" Link="/Content/Deliveries/6 Orders for delivery scheduling.htm" />
+        <TocEntry Title="Orders for Delivery and Collection" Link="/Content/Deliveries/6. 1 Orders for delivery &amp; Collection 2.htm" />
+        <TocEntry Title="Order Pick Lists" Link="/Content/Deliveries/7 Order Pick Lists.htm" />
+        <TocEntry Title="Amend Pick Lists" Link="/Content/Deliveries/8 Amend Pick Lists.htm" />
+        <TocEntry Title="Immediate Delivery" Link="/Content/Deliveries/9 Immediate Delivery.htm" />
+    </TocEntry>
+    <TocEntry Title="EOD">
+        <TocEntry Title="Setup" Link="/Content/EOD/EOD.htm" />
+    </TocEntry>
+    <TocEntry Title="Follow Up">
+        <TocEntry Title="BDW">
+            <TocEntry Title="Bad Debt Write Off" Link="/Content/Follow Up/BDW/Bad Debt Write Off.htm" />
+            <TocEntry Title="Bad Debt Write Off1" Link="/Content/Follow Up/BDW/Bad Debt Write Off1.htm" />
+        </TocEntry>
+        <TocEntry Title="Follow up system configuration" Link="/Content/Follow Up/Follow up system configuration.htm" />
+        <TocEntry Title="Strategies, routes, worklists" Link="/Content/Follow Up/Strategy Routes and Worklists.htm" />
+    </TocEntry>
+    <TocEntry Title="Payments">
+        <TocEntry Title="Corrections and Refunds" Link="/Content/Payments/Corrections and Refunds.htm" />
+        <TocEntry Title="Foreign Currency" Link="/Content/Payments/Foreign Currency.htm" />
+        <TocEntry Title="Payments NET" Link="/Content/Payments/Payments NET.htm" />
+        <TocEntry Title="Ready Finance Payments" Link="/Content/Payments/Ready Finance Payments.htm" />
+        <TocEntry Title="Returned Cheques" Link="/Content/Payments/Returned Cheques.htm" />
+    </TocEntry>
+    <TocEntry Title="Sales">
+        <TocEntry Title="Ready Finance" Link="/Content/Sales/Ready Finance Header.htm" />
+        <TocEntry Title="Creating a new RF account" Link="/Content/Sales/Creating New RF.htm" />
+        <TocEntry Title="New Sales Process" Link="/Content/Sales/New Sales Process.htm" />
+        <TocEntry Title="Add To" Link="/Content/Sales/Add To.htm" />
+        <TocEntry Title="Affinity Sales" Link="/Content/Sales/Affinity Sales.htm" />
+        <TocEntry Title="Cash And Go" Link="/Content/Sales/Cash And Go.htm" />
+        <TocEntry Title="Cash and Go Return" Link="/Content/Sales/Cash and Go Return.htm" />
+        <TocEntry Title="Manual Sales" Link="/Content/Sales/Manual Sales.htm" />
+        <TocEntry Title="Cash Loans" Link="/Content/Cash Loans/Cash Loans.htm" />
+        <TocEntry Title="Reversing Cancellations" Link="/Content/Sales/Reversing Cancellations.htm" />
+        <TocEntry Title="Stock Management">
+            <TocEntry Title="Out of Stock " Link="/Content/Sales/Stock Items/out of stock.htm" />
+            <TocEntry Title="Tax Rates on Sotck Items" Link="/Content/Sales/Stock Items/Tax Rates on Stock Items.htm" />
+        </TocEntry>
+        <TocEntry Title="Promotion and Discounts">
+            <TocEntry Title="Discounts" Link="/Content/Sales/Discounts.htm" />
+            <TocEntry Title="Associated" Link="/Content/Sales/Associated.htm" />
+        </TocEntry>
+    </TocEntry>
+    <TocEntry Title="Sanctioning and other Credit functions">
+        <TocEntry Title="Choosing Date First" Link="/Content/Sanctioning and other Credit functions/Choosing Date First.htm" />
+        <TocEntry Title="Incomplete Credit Applications" Link="/Content/Sanctioning and other Credit functions/Incomplete Credit Applications.htm" />
+        <TocEntry Title="Update Day Due" Link="/Content/Sanctioning and other Credit functions/Update Day Due.htm" />
+        <TocEntry Title="What is Express Credit" Link="/Content/Sanctioning and other Credit functions/What is Express Credit.htm" />
+    </TocEntry>
+    <TocEntry Title="Service">
+        <TocEntry Title="Service Request Allocation" Link="/Content/Service/Allocation.htm" />
+        <TocEntry Title="Batch Printing" Link="/Content/Service/BatchPrint.htm" />
+        <TocEntry Title="Beyond Economic Repair (BER)" Link="/Content/Service/BER.htm" />
+        <TocEntry Title="Charge To Analysis" Link="/Content/Service/Charge To.htm" />
+        <TocEntry Title="Claims submission report" Link="/Content/Service/ClaimsSubmissions.htm" />
+        <TocEntry Title="Customer Interaction" Link="/Content/Service/CustomerInteraction.htm" />
+        <TocEntry Title="Outstanding Service Requests" Link="/Content/Service/OutstandingSR.htm" />
+        <TocEntry Title="The Resolution Tab" Link="/Content/Service/Resolution.htm" />
+        <TocEntry Title="Payment screen for Service" Link="/Content/Service/Service Payment.htm" />
+        <TocEntry Title="Service Progress Report" Link="/Content/Service/Service Progress Report.htm" />
+        <TocEntry Title="Service Request Audit" Link="/Content/Service/Service Request Audit.htm" />
+        <TocEntry Title="Service Request Screen" Link="/Content/Service/Service Request Screen.htm" />
+        <TocEntry Title="Service Failure Report" Link="/Content/Service/ServiceFailure Report.htm" />
+        <TocEntry Title="Service Request Search" Link="/Content/Service/ServiceSearch.htm" />
+        <TocEntry Title="Soft Script Popup" Link="/Content/Service/SoftScripts.htm" />
+        <TocEntry Title="Service Request Summary on Account Details" Link="/Content/Service/SRAccountdetails.htm" />
+        <TocEntry Title="The Product Tab" Link="/Content/Service/SR_Product Tab.htm" />
+    </TocEntry>
+    <TocEntry Title="Terms Types">
+        <TocEntry Title="Payment Holidays" Link="/Content/Terms Types/Payment Holidays.htm" />
+        <TocEntry Title="Service Charge Scoring Bands" Link="/Content/Terms Types/Service Charge Scoring Bands.htm" />
+        <TocEntry Title="Terms Types Maintenance" Link="/Content/Terms Types/Terms Types Maintenance.htm" />
+    </TocEntry>
+    <TocEntry Title="Transactions">
+        <TocEntry Title="General Financial Transactions" Link="/Content/Transactions/General Financial Transactions.htm" />
+        <TocEntry Title="Transaction Journal Enquiry" Link="/Content/Transactions/Transaction Journal Enquiry.htm" />
+        <TocEntry Title="Transaction Type Maintenance" Link="/Content/Transactions/Transaction Type Maintenance.htm" />
+        <TocEntry Title="Transfer Transaction Screen" Link="/Content/Transactions/Transfer Transaction Screen.htm" />
+    </TocEntry>
+    <TocEntry Title="Warranties">
+        <TocEntry Title="Warranty Reports" Link="/Content/Warranties/1 Warranty Repossessions.htm" />
+        <TocEntry Title="Identical Replacement" Link="/Content/Warranties/2 Identical Replacement.htm" />
+        <TocEntry Title="Warranty Exchanges" Link="/Content/Warranties/3 Exchanges.htm" />
+        <TocEntry Title="Cancellations" Link="/Content/Warranties/4 Cancellations.htm" />
+        <TocEntry Title="Instant Replacement" Link="/Content/Warranties/5 Instant Replacement.htm" />
+        <TocEntry Title="Instant Replacement " Link="/Content/Warranties/5.1 Instant Replacement.htm" />
+        <TocEntry Title="Warranty Renewals" Link="/Content/Warranties/6 Warranty Renewals.htm" />
+        <TocEntry Title="Warranty on Credit" Link="/Content/Warranties/7 Warranty on credit.htm" />
+        <TocEntry Title="Warranty Reports" Link="/Content/Warranties/8 Warranty reports.htm" />
+        <TocEntry Title="Insurance Claims on Warranties" Link="/Content/Warranties/Insurance Claims on Warranties.htm" />
+        <TocEntry Title="Second Effort Solicitation" Link="/Content/Warranties/Second Effort Solicitation.htm" />
+    </TocEntry>
+</CatapultToc>

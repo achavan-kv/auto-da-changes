@@ -1,0 +1,129 @@
+<div class="container credit" ng-controller="scoringBandMatrixController">
+    <h1><span ng-bind="title">Scoring Band Matrix Setup</span></h1>
+
+    <div class="row">
+        &nbsp;
+    </div>
+    <form class="col-lg-10 form-horizontal" role="form" name="scoringBandMatrixSetupForm">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th class="col-lg-1">
+                </th>
+                <th class="col-lg-3">
+                    Score Card
+                </th>
+                <th class="col-lg-2">
+                    Points From
+                </th>
+                <th class="col-lg-2">
+                    Points To
+                </th>
+                <th class="col-lg-2">
+                    Band
+                </th>
+                <th class="col-lg-1">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="scoringBandMatrix in scoringBandMatrixList">
+                <td>
+                    <div class="form-control-static text-center">
+                        <span class="glyphicons floppy_save" title="Save" ng-click="save(scoringBandMatrix)"></span>
+                    </div>
+                </td>
+                <td>
+                    <list scope="scorecardList"
+                          placeholder="Select Score Card"
+                          ng-model="scoringBandMatrix.ScoreCard"
+                          ng-required="true"></list>
+                </td>
+                <td>
+                    <input type="text"
+                           class="form-control"
+                           scope="scoringBandMatrix.PointsFrom"
+                           ng-model="scoringBandMatrix.PointsFrom"
+                           ng-required="true">
+                </td>
+                <td>
+                    <input type="text"
+                           class="form-control"
+                           scope="scoringBandMatrix.PointsTo"
+                           ng-model="scoringBandMatrix.PointsTo"
+                           ng-required="true">
+                </td>
+                <td>
+                    <input type="text"
+                           class="form-control"
+                           scope="scoringBandMatrix.Band"
+                           ng-model="scoringBandMatrix.Band"
+                           ng-required="true">
+                </td>
+                <td>
+                    <span class="glyphicons bin" title="Delete" ng-click="delete(scoringBandMatrix.Id)"></span>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr ng-hide="addNew">
+                <td class="action text-center">
+                                    <span class="glyphicons plus" href="#" id="addNew"
+                                          title="New" ng-click="add()"></span>
+                </td>
+                <td colspan="5"></td>
+            </tr>
+            <tr ng-show="addNew">
+                <td>
+                    <div class="form-control-static text-center">
+                        <span class="glyphicons floppy_save" title="Save" ng-click="save(newScoringBandMatrix)" id="Save"
+                              ng-hide="scoringBandMatrixSetupForm.$invalid"></span>
+                        <span class="glyphicons undo" title="Cancel" ng-click="cancel()"></span>
+                    </div>
+                </td>
+                <td ng-class="{'has-error': scoringBandMatrixSetupForm['scoreCard'].$invalid}">
+                    <list scope="scorecardList"
+                          placeholder="Select Score Card"
+                          ng-model="newScoringBandMatrix.ScoreCard"
+                          name="scoreCard"
+                          ng-required="true"></list>
+                </td>
+                <td ng-class="{'has-error': scoringBandMatrixSetupForm['pointsFrom'].$invalid}">
+                    <div>
+                        <input type="text"
+                               class="form-control"
+                               scope="scoringBandMatrix.PointsFrom"
+                               ng-model="newScoringBandMatrix.PointsFrom"
+                               name="pointsFrom"
+                               ng-required="true">
+                    </div>
+                </td>
+                <td ng-class="{'has-error': scoringBandMatrixSetupForm['pointsTo'].$invalid}">
+                    <div>
+                        <input type="text"
+                               class="form-control"
+                               scope="scoringBandMatrix.PointsTo"
+                               ng-model="newScoringBandMatrix.PointsTo"
+                               name="pointsTo"
+                               ng-required="true">
+                    </div>
+                </td>
+                <td ng-class="{'has-error': scoringBandMatrixSetupForm['band'].$invalid}">
+                    <div>
+                        <input type="text"
+                               class="form-control"
+                               scope="scoringBandMatrix.Band"
+                               ng-model="newScoringBandMatrix.Band"
+                               name="band"
+                               ng-required="true">
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            </tfoot>
+        </table>
+        <!--<textarea-->
+        <!--placeholder=" Line 1 &#x0a; Line 2 &#x0a; Postal Code &#x0a; City "-->
+        <!--rows="5" cols="35"></textarea>-->
+    </form>
+</div>

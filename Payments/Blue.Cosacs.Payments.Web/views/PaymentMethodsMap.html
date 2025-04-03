@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8" ng-controller="paymentMapController">
+            <h1>Payment Methods Mapping</h1>
+            <p>&nbsp;</p>
+            <table class="col-lg-8 col-md-8 table table-striped table-bordered table-hover table-responsive">
+                <thead>
+                <tr>
+                    <th class="col-lg-8 col-md-8">Payment Method</th>
+                    <th class="col-lg-2 col-md-2">WinCosacs Id</th>
+                    <th class="col-lg-2 col-md-2">&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="paymentMapping in paymentMappingData">
+                    <td>{{paymentMapping.Description}}</td>
+                    <td class="text-right">
+                        <span ng-if="!paymentMapping.isEditing">{{paymentMapping.WinCosacsId}}</span>
+                        <div class="field"  ng-if="paymentMapping.isEditing">
+                            <input required ng-model="paymentMapping.WinCosacsId" type="text" class="form-control text-right"/>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="pull-right">
+                            <span class="glyphicons glyph-btn pencil click" title="Edit" ng-click="startEdit(paymentMapping)"
+                                  ng-if="!paymentMapping.isEditing"></span>
+                            <span class="glyphicons glyph-btn ok_2 click" title="Save" ng-click="saveMapping(paymentMapping)"
+                                  ng-if="paymentMapping.isEditing"></span>
+                            <span class="glyphicons glyph-btn undo click" title="Cancel" ng-click="cancelEdit(paymentMapping)"
+                                  ng-if="paymentMapping.isEditing"></span>
+                        </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        >
+    </div>
+</div>
+</div>

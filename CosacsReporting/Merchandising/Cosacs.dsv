@@ -1,0 +1,1118 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a4a9aaf6-6674-4ebc-a6d7-c505afc3f1d3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cosacs</ID>
+  <Name>Cosacs</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="34" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3468" scrolltop="13994" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="105" x="44424" y="25612" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Dates" left="6944" top="19013" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3836" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000fc0e000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Merchandising_Dates" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="MerchandiseSales" left="13180" top="25065" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3307" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00009b0f0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Merchandising_CintOrder" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="ProductStock" left="20" top="0" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="3572" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000f40d0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="ProductStock" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="AffinitySales" left="10062" top="8418" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3307" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="AffinitySales" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="OtherCharges" left="13180" top="19516" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3307" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="OtherCharges" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="ServiceChargeSales" left="1502" top="31459" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3307" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="ServiceCharges" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="InterestCharges" left="12916" top="31459" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3307" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="InterestCharges" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Rebates" left="13180" top="13967" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3307" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Rebates" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="LoanDisbursement" left="1237" top="16530" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3307" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c0000a50a0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="LoanDisbursement" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Discounts" left="4355" top="7572" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3307" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00009b0f0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Discounts" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="WarrantySales" left="7209" top="31459" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="3307" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000eb0c00009b0f0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="WarrantySales" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="PriceDifferential" left="20" top="21655" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="4524" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000ac110000ea120000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="PriceDifferential" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="StockValuationSnapshot" left="19487" top="15128" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="4419" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000800004311000043110000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Merchandising_StockValuationSnapshot" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Location" left="19976" top="7728" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="3440" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000700d000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Merchandising_Location" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Product" left="26305" top="11851" logicalid="15" controlid="15" masterid="0" hint1="0" hint2="0" width="3254" height="3572" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b60c0000f40d0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Product" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Division" left="26432" top="7572" logicalid="16" controlid="16" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Division" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Department" left="31959" top="12697" logicalid="17" controlid="17" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Department" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Class" left="26432" top="17823" logicalid="18" controlid="18" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Class" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="21297" top="12229" logicalid="19" controlid="19" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FK_StockValuation_LocationId_Location]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="14" destid="13" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="21696" y="12728" />
+                    <point x="21696" y="15128" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="10480" top="22764" logicalid="20" controlid="20" masterid="0" hint1="0" hint2="0" width="3000" height="4598" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[CintOrder-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="29" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="10780" y="23163" />
+                    <point x="11980" y="23163" />
+                    <point x="11980" y="27062" />
+                    <point x="13180" y="27062" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="9013" top="11267" logicalid="21" controlid="21" masterid="0" hint1="0" hint2="0" width="3002" height="8246" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[AffinitySales-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="4" sourceattachpoint="8" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="9412" y="19013" />
+                    <point x="9412" y="15290" />
+                    <point x="11715" y="15290" />
+                    <point x="11715" y="11567" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="10480" top="20790" logicalid="22" controlid="22" masterid="0" hint1="0" hint2="0" width="3000" height="1123" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[OtherCharges-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="5" sourceattachpoint="23" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="10780" y="21513" />
+                    <point x="11980" y="21513" />
+                    <point x="11980" y="21090" />
+                    <point x="13180" y="21090" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="2855" top="23514" logicalid="23" controlid="23" masterid="0" hint1="0" hint2="0" width="4757" height="8245" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[ServiceCharges-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="6" sourceattachpoint="1" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="7212" y="24013" />
+                    <point x="7212" y="27736" />
+                    <point x="3155" y="27736" />
+                    <point x="3155" y="31459" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="10113" top="23514" logicalid="24" controlid="24" masterid="0" hint1="0" hint2="0" width="4756" height="8245" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[InterestCharges-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="7" sourceattachpoint="13" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="10512" y="24013" />
+                    <point x="10512" y="27736" />
+                    <point x="14569" y="27736" />
+                    <point x="14569" y="31459" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="10480" top="15241" logicalid="25" controlid="25" masterid="0" hint1="0" hint2="0" width="3000" height="5022" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Rebates-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="8" sourceattachpoint="17" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="10780" y="19863" />
+                    <point x="11980" y="19863" />
+                    <point x="11980" y="15541" />
+                    <point x="13180" y="15541" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="4244" top="17592" logicalid="26" controlid="26" masterid="0" hint1="0" hint2="0" width="3000" height="3221" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[LoanDisbursement-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="9" sourceattachpoint="18" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="6944" y="20413" />
+                    <point x="5744" y="20413" />
+                    <point x="5744" y="17892" />
+                    <point x="4544" y="17892" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="5708" top="11267" logicalid="27" controlid="27" masterid="0" hint1="0" hint2="0" width="2454" height="8246" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Discounts-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="10" sourceattachpoint="2" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="7762" y="19013" />
+                    <point x="7762" y="15290" />
+                    <point x="6008" y="15290" />
+                    <point x="6008" y="11567" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="8463" top="23514" logicalid="28" controlid="28" masterid="0" hint1="0" hint2="0" width="799" height="8245" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[WarrantySales-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="11" sourceattachpoint="7" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="8862" y="24013" />
+                    <point x="8862" y="31459" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="4244" top="21664" logicalid="29" controlid="29" masterid="0" hint1="0" hint2="0" width="3000" height="2712" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[PriceDifferential-Dates]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="12" sourceattachpoint="24" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="6944" y="22063" />
+                    <point x="5744" y="22063" />
+                    <point x="5744" y="24076" />
+                    <point x="4544" y="24076" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="23606" top="13238" logicalid="30" controlid="30" masterid="0" hint1="0" hint2="0" width="2999" height="4399" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[StockValuationSnapshot-Product]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="15" destid="13" sourceattachpoint="16" destattachpoint="21" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="26305" y="13637" />
+                    <point x="25106" y="13637" />
+                    <point x="25106" y="17337" />
+                    <point x="23906" y="17337" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="27533" top="8952" logicalid="31" controlid="31" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Product-Division]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="16" destid="15" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="27932" y="9451" />
+                    <point x="27932" y="11851" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="29259" top="13237" logicalid="32" controlid="32" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Product-Department]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="17" destid="15" sourceattachpoint="12" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="31959" y="13636" />
+                    <point x="30759" y="13636" />
+                    <point x="30759" y="13637" />
+                    <point x="29559" y="13637" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="27533" top="15123" logicalid="33" controlid="33" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[Product-Class]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="18" destid="15" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="27932" y="17823" />
+                    <point x="27932" y="15423" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-3468</DiagramViewPortLeft>
+            <DiagramViewPortTop>13994</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>105</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Cosacs</DataSourceID>
+  <Schema>
+    <xs:schema id="Cosacs" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Cosacs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="1a15dd00-11f3-49bd-8a67-1dee7100ba53">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Merchandising_Dates" msprop:design-time-name="f33cb23b-b1e9-408b-ac56-e5143de33a9a" msprop:FriendlyName="Dates" msprop:DbSchemaName="Merchandising" msprop:DbTableName="Dates" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DateKey" msprop:design-time-name="febd872c-3ff9-46c2-a5e6-cb4a77ae8009" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey" type="xs:int" />
+                  <xs:element name="FullDateAlternateKey" msprop:design-time-name="83e232ed-4f58-4468-b8d2-b9d1c04b8893" msprop:DbColumnName="FullDateAlternateKey" msprop:FriendlyName="FullDateAlternateKey" type="xs:dateTime" />
+                  <xs:element name="DayNumberOFWeek" msprop:design-time-name="a15547f3-3a5f-468d-b803-d1b0de882776" msprop:DbColumnName="DayNumberOFWeek" msprop:FriendlyName="DayNumberOFWeek" type="xs:unsignedByte" />
+                  <xs:element name="DayNameOfWeek" msprop:design-time-name="c8367ee0-8541-4bb7-8c5f-b712baaba78a" msprop:DbColumnName="DayNameOfWeek" msprop:FriendlyName="DayNameOfWeek">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DayNumberOfMonth" msprop:design-time-name="4a2cd5d1-26e2-49e5-af01-4d89b050f8f3" msprop:DbColumnName="DayNumberOfMonth" msprop:FriendlyName="DayNumberOfMonth" type="xs:unsignedByte" />
+                  <xs:element name="DayOfFiscalYear" msprop:design-time-name="9052f6bd-0698-41cf-857f-f5148fcbf054" msprop:DbColumnName="DayOfFiscalYear" msprop:FriendlyName="DayOfFiscalYear" type="xs:short" />
+                  <xs:element name="DayOfCalendarYear" msprop:design-time-name="07b6e24b-0107-4e95-aebe-32ab0b0c645b" msprop:DbColumnName="DayOfCalendarYear" msprop:FriendlyName="DayOfCalendarYear" type="xs:short" />
+                  <xs:element name="CalendarWeek" msprop:design-time-name="c8421d31-7457-4722-b377-3785a098eeeb" msprop:DbColumnName="CalendarWeek" msprop:FriendlyName="CalendarWeek" type="xs:unsignedByte" />
+                  <xs:element name="FiscalWeek" msprop:design-time-name="a3e7e9f1-f286-4c75-8478-0e877ade345a" msprop:DbColumnName="FiscalWeek" msprop:FriendlyName="FiscalWeek" type="xs:unsignedByte" />
+                  <xs:element name="MonthName" msprop:design-time-name="1116ea6b-7df4-40b2-8215-2bb8eec8271e" msprop:DbColumnName="MonthName" msprop:FriendlyName="MonthName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CalendarPeriod" msprop:design-time-name="209648f7-b656-4c36-bf5d-42b4f2b2c0bf" msprop:DbColumnName="CalendarPeriod" msprop:FriendlyName="CalendarPeriod" type="xs:unsignedByte" />
+                  <xs:element name="FiscalPeriod" msprop:design-time-name="e6defefa-904d-4d87-a89f-21d5eb26965a" msprop:DbColumnName="FiscalPeriod" msprop:FriendlyName="FiscalPeriod" type="xs:unsignedByte" />
+                  <xs:element name="CalendarYear" msprop:design-time-name="303056d2-ee6b-4cb3-8d3f-d4085427dc70" msprop:DbColumnName="CalendarYear" msprop:FriendlyName="CalendarYear" type="xs:short" />
+                  <xs:element name="FiscalYear" msprop:design-time-name="3c71840f-1fd8-45bf-9411-b7d737b8e0c7" msprop:DbColumnName="FiscalYear" msprop:FriendlyName="FiscalYear" type="xs:short" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Merchandising_CintOrder" msprop:design-time-name="9232e8df-5ffd-4593-8094-fd72f9b05852" msprop:IsLogical="True" msprop:FriendlyName="MerchandiseSales" msprop:DbTableName="MerchandiseSales" msprop:TableType="View" msprop:QueryDefinition="SELECT        co.Id, co.SaleType, CONVERT(INT, CONVERT(VARCHAR(8), DATEADD(mi, DATEDIFF(mi, GETUTCDATE(), GETDATE()), co.TransactionDate), 112)) AS TransactionDate, co.Price * co.Quantity AS Price, &#xD;&#xA;                         (co.Price - cp.AverageWeightedCost) * co.Quantity AS GrossProfit, ISNULL(division.Tag, '(Unknown Division)') AS Division, ISNULL(Department.Tag, '(Unknown Department)') AS Department&#xD;&#xA;FROM            Merchandising.CintOrder AS co INNER JOIN&#xD;&#xA;                         Merchandising.Product AS p ON co.Sku = p.SKU AND co.Type IN ('Return', 'Delivery', 'Redelivery', 'Repossession') INNER JOIN&#xD;&#xA;                         Merchandising.CurrentCostPriceView AS cp ON p.Id = cp.ProductId LEFT OUTER JOIN&#xD;&#xA;                         Merchandising.ProductHierarchyView AS division ON division.ProductId = p.Id AND division.[Level] = 'Division' LEFT OUTER JOIN&#xD;&#xA;                         Merchandising.ProductHierarchyView AS Department ON Department.ProductId = p.Id AND Department.[Level] = 'Department' INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS d ON CONVERT(INT, CONVERT(VARCHAR(8), DATEADD(mi, DATEDIFF(mi, GETUTCDATE(), GETDATE()), co.TransactionDate), 112)) = d.DateKey" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SaleType" msprop:design-time-name="9823f104-7e20-4353-8330-1b88d4eb5a77" msprop:DbColumnName="SaleType" msprop:FriendlyName="SaleType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msprop:design-time-name="064ed318-b368-4645-bdaa-4daf9b9ccac6" msprop:DbColumnName="Price" msprop:FriendlyName="Price" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="TransactionDate" msprop:design-time-name="16df3b2b-19d0-41a4-a332-00945a8d5977" msprop:DbColumnName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Id" msprop:design-time-name="2880ff34-c128-409a-a537-e0216c07fce5" msprop:DbColumnName="Id" type="xs:int" minOccurs="0" />
+                  <xs:element name="GrossProfit" msprop:design-time-name="4853b722-68c8-44d1-8dae-595f389eb931" msprop:DbColumnName="GrossProfit" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Department" msprop:design-time-name="6732cf1e-6514-4f78-9c09-032332b4ce70" msprop:DbColumnName="Department" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Division" msprop:design-time-name="baea94e7-c601-43d6-a99e-6cf718751e98" msprop:DbColumnName="Division" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ProductStock" msprop:design-time-name="e96f9612-d21c-4abc-b26c-d7c8834353b2" msprop:IsLogical="True" msprop:FriendlyName="ProductStock" msprop:DbTableName="ProductStock" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        p.Id, ISNULL(division.Tag, '(Unknown Division)') AS Division, ISNULL(Department.Tag, '(Unknown Department)') AS Department, p.StockOnHand * cp.AverageWeightedCost AS StockValue, p.ProductId, &#xD;&#xA;                         p.LocationId&#xD;&#xA;FROM            Merchandising.ProductStockLevel AS p LEFT OUTER JOIN&#xD;&#xA;                         Merchandising.ProductHierarchyView AS division ON division.ProductId = p.ProductId AND division.[Level] = 'Division' LEFT OUTER JOIN&#xD;&#xA;                         Merchandising.ProductHierarchyView AS Department ON Department.ProductId = p.ProductId AND Department.[Level] = 'Department' LEFT OUTER JOIN&#xD;&#xA;                         Merchandising.CurrentCostPriceView AS cp ON p.ProductId = cp.ProductId" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Division" msdata:ReadOnly="true" msprop:design-time-name="e5946347-0002-40e9-986b-9d5ef2aea309" msprop:DbColumnName="Division" msprop:FriendlyName="Division" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Department" msdata:ReadOnly="true" msprop:design-time-name="493304f8-cdd1-4fbb-a4fa-e26e9fae6286" msprop:DbColumnName="Department" msprop:FriendlyName="Department" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="StockValue" msdata:ReadOnly="true" msprop:design-time-name="84a5e580-02a3-4b33-a57a-c50307d56804" msprop:DbColumnName="StockValue" msprop:FriendlyName="StockValue" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="ProductId" msprop:design-time-name="62580a51-70dd-419d-921b-0dec2756047b" msprop:DbColumnName="ProductId" msprop:FriendlyName="ProductId" type="xs:int" minOccurs="0" />
+                  <xs:element name="LocationId" msprop:design-time-name="33bb2253-8a3d-4132-b014-77b2862ac460" msprop:DbColumnName="LocationId" msprop:FriendlyName="LocationId" type="xs:int" minOccurs="0" />
+                  <xs:element name="Id" msprop:design-time-name="182b420b-d42f-4e13-9e04-50c1863f9d82" msprop:DbColumnName="Id" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="AffinitySales" msprop:design-time-name="218c0d72-ab30-450f-bb4e-2a0cbc29aff2" msprop:IsLogical="True" msprop:FriendlyName="AffinitySales" msprop:DbTableName="AffinitySales" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT CONVERT(varchar, d.acctno) + CONVERT(varchar, d.datetrans) + CONVERT(varchar, d.agrmtno) + CONVERT(varchar, ns.Id) AS Id, CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) AS TransactionDate, CASE ns.[Type] WHEN 'rassist' THEN 'Ready Assist' ELSE 'Other' END AS Type, CASE WHEN c.agrmttaxtype = 'I' AND &#xD;&#xA;         c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) ELSE d .transvalue END AS Price, (CASE WHEN c.agrmttaxtype = 'I' AND c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) ELSE d .transvalue END) - d.quantity * COALESCE (branchprice.CostPrice, fasciaprice.CostPrice, allprice.CostPrice) AS GrossProfit&#xD;&#xA;FROM  country AS c CROSS JOIN&#xD;&#xA;         delivery AS d INNER JOIN&#xD;&#xA;         branch AS b ON b.branchno = d.branchno INNER JOIN&#xD;&#xA;         StockInfo AS i ON i.Id = d.ItemID INNER JOIN&#xD;&#xA;         NonStocks.NonStock AS ns ON ns.SKU = i.SKU INNER JOIN&#xD;&#xA;         Merchandising.Dates AS dates ON CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) = dates.DateKey LEFT OUTER JOIN&#xD;&#xA;         NonStocks.NonStockPrice AS branchprice ON branchprice.NonStockId = ns.Id AND branchprice.BranchNumber = b.branchno AND branchprice.EffectiveDate &lt;= d.datetrans LEFT OUTER JOIN&#xD;&#xA;         NonStocks.NonStockPrice AS fasciaprice ON fasciaprice.NonStockId = ns.Id AND fasciaprice.Fascia = b.StoreType AND fasciaprice.EffectiveDate &lt;= d.datetrans AND fasciaprice.BranchNumber IS NULL LEFT OUTER JOIN&#xD;&#xA;         NonStocks.NonStockPrice AS allprice ON allprice.NonStockId = ns.Id AND allprice.Fascia IS NULL AND allprice.BranchNumber IS NULL AND allprice.EffectiveDate &lt;= d.datetrans&#xD;&#xA;WHERE (ns.Type IN ('rassist', 'annual')) AND (branchprice.EffectiveDate IS NULL OR&#xD;&#xA;         branchprice.EffectiveDate IN&#xD;&#xA;             (SELECT MAX(EffectiveDate) AS Expr1&#xD;&#xA;            FROM  NonStocks.NonStockPrice AS m&#xD;&#xA;            WHERE (Id = branchprice.Id) AND (EffectiveDate &lt;= d.datetrans))) AND (fasciaprice.EffectiveDate IS NULL OR&#xD;&#xA;         fasciaprice.EffectiveDate IN&#xD;&#xA;             (SELECT MAX(EffectiveDate) AS Expr1&#xD;&#xA;            FROM  NonStocks.NonStockPrice AS m&#xD;&#xA;            WHERE (Id = fasciaprice.Id) AND (EffectiveDate &lt;= d.datetrans))) AND (allprice.EffectiveDate IS NULL OR&#xD;&#xA;         allprice.EffectiveDate IN&#xD;&#xA;             (SELECT MAX(EffectiveDate) AS Expr1&#xD;&#xA;            FROM  NonStocks.NonStockPrice AS m&#xD;&#xA;            WHERE (Id = allprice.Id) AND (EffectiveDate &lt;= d.datetrans)))" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="7999c8d1-b923-49c6-a57c-7219d6d0bc99" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Type" msdata:ReadOnly="true" msprop:design-time-name="a9a90cdd-a886-4fb1-b134-776135e22a3c" msprop:DbColumnName="Type" msprop:FriendlyName="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msprop:design-time-name="4138244d-252e-4c94-ba81-d171c8d0d9ba" msprop:DbColumnName="Price" type="xs:double" minOccurs="0" />
+                  <xs:element name="GrossProfit" msprop:design-time-name="e3150105-c66d-40e5-be8c-2073c2008684" msprop:DbColumnName="GrossProfit" type="xs:double" minOccurs="0" />
+                  <xs:element name="Id" msprop:design-time-name="5f508eb0-69db-4aa6-aa76-8c5e92098357" msprop:DbColumnName="Id">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="120" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="OtherCharges" msprop:design-time-name="8cc95161-d14f-469d-8bdf-f74ddc592179" msprop:IsLogical="True" msprop:FriendlyName="OtherCharges" msprop:DbTableName="OtherCharges" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        CONVERT(VARCHAR, d.acctno) + CONVERT(VARCHAR, d.datetrans, 109) + CONVERT(VARCHAR, d.agrmtno) + CONVERT(VARCHAR, ns.Id) AS Id, CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) &#xD;&#xA;                         AS TransactionDate, CASE ns.[Type] WHEN 'inst' THEN 'Installation' WHEN 'assembly' THEN 'Assembly' WHEN 'Generic' THEN 'Generic Services' END AS Type, CASE WHEN c.agrmttaxtype = 'I' AND &#xD;&#xA;                         c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) ELSE d .transvalue END AS Price, (CASE WHEN c.agrmttaxtype = 'I' AND c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) ELSE d .transvalue END) &#xD;&#xA;                         - d.quantity * COALESCE (branchprice.CostPrice, fasciaprice.CostPrice, allprice.CostPrice) AS GrossProfit&#xD;&#xA;FROM            country AS c CROSS JOIN&#xD;&#xA;                         delivery AS d INNER JOIN&#xD;&#xA;                         branch AS b ON b.branchno = d.branchno INNER JOIN&#xD;&#xA;                         StockInfo AS i ON i.Id = d.ItemID INNER JOIN&#xD;&#xA;                         NonStocks.NonStock AS ns ON ns.SKU = i.SKU LEFT OUTER JOIN&#xD;&#xA;                         NonStocks.NonStockPrice AS branchprice ON branchprice.NonStockId = ns.Id AND branchprice.BranchNumber = b.branchno AND branchprice.EffectiveDate &lt;= d.datetrans LEFT OUTER JOIN&#xD;&#xA;                         NonStocks.NonStockPrice AS fasciaprice ON fasciaprice.NonStockId = ns.Id AND fasciaprice.Fascia = b.StoreType AND fasciaprice.EffectiveDate &lt;= d.datetrans AND fasciaprice.BranchNumber IS NULL &#xD;&#xA;                         LEFT OUTER JOIN&#xD;&#xA;                         NonStocks.NonStockPrice AS allprice ON allprice.NonStockId = ns.Id AND allprice.Fascia IS NULL AND allprice.BranchNumber IS NULL AND allprice.EffectiveDate &lt;= d.datetrans INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS dates ON CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) = dates.DateKey&#xD;&#xA;WHERE        (ns.Type IN ('inst', 'assembly', 'generic')) AND (ns.SKU NOT IN ('DT', 'RB', 'LOAN', 'STAX')) AND (branchprice.EffectiveDate IS NULL OR&#xD;&#xA;                         branchprice.EffectiveDate IN&#xD;&#xA;                             (SELECT        MAX(EffectiveDate) AS Expr1&#xD;&#xA;                               FROM            NonStocks.NonStockPrice AS m&#xD;&#xA;                               WHERE        (Id = branchprice.Id) AND (EffectiveDate &lt;= d.datetrans))) AND (fasciaprice.EffectiveDate IS NULL OR&#xD;&#xA;                         fasciaprice.EffectiveDate IN&#xD;&#xA;                             (SELECT        MAX(EffectiveDate) AS Expr1&#xD;&#xA;                               FROM            NonStocks.NonStockPrice AS m&#xD;&#xA;                               WHERE        (Id = fasciaprice.Id) AND (EffectiveDate &lt;= d.datetrans))) AND (allprice.EffectiveDate IS NULL OR&#xD;&#xA;                         allprice.EffectiveDate IN&#xD;&#xA;                             (SELECT        MAX(EffectiveDate) AS Expr1&#xD;&#xA;                               FROM            NonStocks.NonStockPrice AS m&#xD;&#xA;                               WHERE        (Id = allprice.Id) AND (EffectiveDate &lt;= d.datetrans)))" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="3fc3abda-725b-4145-802b-698219d48754" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Type" msdata:ReadOnly="true" msprop:design-time-name="e59de636-5afa-4b61-9d0a-755b9a5316f9" msprop:DbColumnName="Type" msprop:FriendlyName="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="16" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Id" msprop:design-time-name="d22695f4-faa5-4f9c-8c73-68620885ffca" msprop:DbColumnName="Id">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="120" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msprop:design-time-name="cc9b0f32-57ad-41b0-b80e-227d471dbf49" msprop:DbColumnName="Price" type="xs:double" minOccurs="0" />
+                  <xs:element name="GrossProfit" msprop:design-time-name="548b423e-9df0-499e-b1c0-8b27054a345d" msprop:DbColumnName="GrossProfit" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ServiceCharges" msprop:design-time-name="b1e8e122-0d27-4ae1-90bd-7e192290e89e" msprop:IsLogical="True" msprop:FriendlyName="ServiceChargeSales" msprop:DbTableName="ServiceChargeSales" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        CONVERT(VARCHAR, d.acctno) + CONVERT(VARCHAR, d.datetrans, 109) + CONVERT(VARCHAR, d.agrmtno) + CONVERT(VARCHAR, i.Id) AS Id, CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) &#xD;&#xA;                         AS TransactionDate, CASE WHEN l.LoanStatus IS NOT NULL THEN 'Loan Service Charge' ELSE 'Credit Service Charge' END AS Type, CASE WHEN c.agrmttaxtype = 'I' AND &#xD;&#xA;                         c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) ELSE d .transvalue END AS Price, CASE WHEN c.agrmttaxtype = 'I' AND c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) &#xD;&#xA;                         ELSE d .transvalue END AS GrossProfit&#xD;&#xA;FROM            country AS c CROSS JOIN&#xD;&#xA;                         delivery AS d INNER JOIN&#xD;&#xA;                         custacct AS ca ON ca.acctno = d.acctno AND ca.hldorjnt = 'H' INNER JOIN&#xD;&#xA;                         StockInfo AS i ON i.Id = d.ItemID LEFT OUTER JOIN&#xD;&#xA;                         CashLoan AS l ON l.AcctNo = d.acctno AND ca.custid = l.Custid INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS dates ON CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) = dates.DateKey&#xD;&#xA;WHERE        (i.SKU IN ('DT'))" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="9e2be2e3-fe18-4e4e-8666-f0e82857093c" msprop:DbColumnName="Id" msprop:FriendlyName="Id">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="120" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="c01a9572-f4c6-4e80-b9b3-888a5b22314f" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Type" msdata:ReadOnly="true" msprop:design-time-name="c5315928-29fe-47f3-b9ad-c30aed711a10" msprop:DbColumnName="Type" msprop:FriendlyName="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="21" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msprop:design-time-name="94c49d47-6ced-48df-9054-d9d1cfa67491" msprop:DbColumnName="Price" type="xs:double" minOccurs="0" />
+                  <xs:element name="GrossProfit" msprop:design-time-name="0a771c37-d390-41e4-9526-df7f4cb7dc9c" msprop:DbColumnName="GrossProfit" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="InterestCharges" msprop:design-time-name="b0c43e0f-8ff7-4a25-93a4-7cd466a0025c" msprop:IsLogical="True" msprop:FriendlyName="InterestCharges" msprop:DbTableName="InterestCharges" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        f.ID AS Id, CONVERT(INT, CONVERT(VARCHAR(8), f.datetrans, 112)) AS TransactionDate, CASE WHEN s.CardNumber IS NOT NULL THEN 'Store Card Interest' WHEN l.LoanStatus IS NOT NULL &#xD;&#xA;                         THEN 'Loan Penalty Interest' ELSE 'Credit Penalty Interest' END AS Type, f.transvalue AS Price, f.transvalue AS GrossProfit&#xD;&#xA;FROM            fintrans AS f INNER JOIN&#xD;&#xA;                         custacct AS ca ON ca.acctno = f.acctno AND ca.hldorjnt = 'H' LEFT OUTER JOIN&#xD;&#xA;                         CashLoan AS l ON l.AcctNo = f.acctno AND l.Custid = ca.custid LEFT OUTER JOIN&#xD;&#xA;                         StoreCard AS s ON s.AcctNo = f.acctno INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS dates ON CONVERT(INT, CONVERT(VARCHAR(8), f.datetrans, 112)) = dates.DateKey&#xD;&#xA;WHERE        (f.transtypecode = 'INT')" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" msdata:ReadOnly="true" msprop:design-time-name="55635700-acd9-4644-b29c-5524a4826cc6" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" />
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="909c8b3f-248f-452b-b7f0-140f086f7808" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Type" msdata:ReadOnly="true" msprop:design-time-name="c4afb2c7-fdae-46b3-bd75-0c67356a8044" msprop:DbColumnName="Type" msprop:FriendlyName="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="23" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msprop:design-time-name="c55f2f96-d02b-4f9b-a684-8acdda1cfce5" msprop:DbColumnName="Price" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="GrossProfit" msprop:design-time-name="6c5f3ef9-5b46-459c-b146-e474fdadeac8" msprop:DbColumnName="GrossProfit" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Rebates" msprop:design-time-name="819d0967-d567-469d-85a2-25c63e832eea" msprop:IsLogical="True" msprop:FriendlyName="Rebates" msprop:DbTableName="Rebates" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        CONVERT(VARCHAR, d.acctno) + CONVERT(VARCHAR, d.datetrans, 109) + CONVERT(VARCHAR, d.agrmtno) + CONVERT(VARCHAR, i.Id) AS Id, CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) &#xD;&#xA;                         AS TransactionDate, CASE WHEN i.sku = 'RB' THEN 'Rebate' END AS Type, CASE WHEN c.agrmttaxtype = 'I' AND c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) ELSE d .transvalue END AS Price, &#xD;&#xA;                         CASE WHEN c.agrmttaxtype = 'I' AND c.taxtype = 'I' THEN d .transvalue / (1 + i.taxrate / 100) ELSE d .transvalue END AS GrossProfit&#xD;&#xA;FROM            country AS c CROSS JOIN&#xD;&#xA;                         delivery AS d INNER JOIN&#xD;&#xA;                         custacct AS ca ON ca.acctno = d.acctno AND ca.hldorjnt = 'H' INNER JOIN&#xD;&#xA;                         StockInfo AS i ON i.Id = d.ItemID LEFT OUTER JOIN&#xD;&#xA;                         CashLoan AS l ON l.AcctNo = d.acctno AND ca.custid = l.Custid INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS dates ON CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) = dates.DateKey&#xD;&#xA;WHERE        (i.SKU IN ('RB'))" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="4d26f98f-eb6c-4803-8742-0dd5a3ddba05" msprop:DbColumnName="Id" msprop:FriendlyName="Id">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="120" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="1c286dfa-4c2e-400c-b8a4-888e09c08bdc" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Type" msdata:ReadOnly="true" msprop:design-time-name="7161969f-8fea-4f29-841e-377573e0982e" msprop:DbColumnName="Type" msprop:FriendlyName="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="6" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msdata:ReadOnly="true" msprop:design-time-name="ac66b66b-0f96-4c6a-86f3-a4ca2b770efd" msprop:DbColumnName="Price" msprop:FriendlyName="Price" type="xs:double" minOccurs="0" />
+                  <xs:element name="GrossProfit" msdata:ReadOnly="true" msprop:design-time-name="c361ea82-50a2-4847-8bb1-38c637b63a77" msprop:DbColumnName="GrossProfit" msprop:FriendlyName="GrossProfit" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="LoanDisbursement" msprop:design-time-name="5d3b0b79-b060-40c2-b7fe-89d0a5622210" msprop:IsLogical="True" msprop:FriendlyName="LoanDisbursement" msprop:DbTableName="LoanDisbursement" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        CONVERT(VARCHAR, d.acctno) + CONVERT(VARCHAR, d.datetrans, 109) + CONVERT(VARCHAR, d.agrmtno) + CONVERT(varchar, i.Id) AS Id, CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) &#xD;&#xA;                         AS TransactionDate, d.transvalue AS Price, d.transvalue AS GrossProfit&#xD;&#xA;FROM            country AS c CROSS JOIN&#xD;&#xA;                         delivery AS d INNER JOIN&#xD;&#xA;                         custacct AS ca ON ca.acctno = d.acctno AND ca.hldorjnt = 'H' INNER JOIN&#xD;&#xA;                         StockInfo AS i ON i.Id = d.ItemID LEFT OUTER JOIN&#xD;&#xA;                         CashLoan AS l ON l.AcctNo = d.acctno AND ca.custid = l.Custid INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS dates ON CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) = dates.DateKey&#xD;&#xA;WHERE        (i.SKU IN ('LOAN'))" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="e314f55b-6100-4b45-8cb3-43c7066e6e34" msprop:DbColumnName="Id" msprop:FriendlyName="Id">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="120" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="18c99d5f-2cf3-4401-9125-98efa4e33238" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Price" msprop:design-time-name="4e8033fc-c4d4-4625-971a-737dd8484c7e" msprop:DbColumnName="Price" msprop:FriendlyName="Price" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="GrossProfit" msprop:design-time-name="20679600-6468-4945-8b6d-eb33182e4dac" msprop:DbColumnName="GrossProfit" msprop:FriendlyName="GrossProfit" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Discounts" msprop:design-time-name="b6b17189-040c-42d4-8033-7a8423b98b59" msprop:IsLogical="True" msprop:FriendlyName="Discounts" msprop:DbTableName="Discounts" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        co.Id, co.SaleType, CONVERT(INT, CONVERT(VARCHAR(8), DATEADD(mi, DATEDIFF(mi, GETUTCDATE(), GETDATE()), co.TransactionDate), 112)) AS TransactionDate, co.Discount AS Price, &#xD;&#xA;                         co.Discount AS GrossProfit, ISNULL(division.Tag, '(Unknown Division)') AS Division, ISNULL(Department.Tag, '(Unknown Department)') AS Department&#xD;&#xA;FROM            Merchandising.CintOrder AS co INNER JOIN&#xD;&#xA;                         Merchandising.Product AS p ON co.Sku = p.SKU AND co.Type IN ('Return', 'Delivery', 'Redelivery', 'Repossession') INNER JOIN&#xD;&#xA;                         Merchandising.CurrentCostPriceView AS cp ON p.Id = cp.ProductId LEFT OUTER JOIN&#xD;&#xA;                         Merchandising.ProductHierarchyView AS division ON division.ProductId = p.Id AND division.[Level] = 'Division' LEFT OUTER JOIN&#xD;&#xA;                         Merchandising.ProductHierarchyView AS Department ON Department.ProductId = p.Id AND Department.[Level] = 'Department' INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS d ON CONVERT(INT, CONVERT(VARCHAR(8), DATEADD(mi, DATEDIFF(mi, GETUTCDATE(), GETDATE()), co.TransactionDate), 112)) = d.DateKey" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="d6f1bc77-0229-43a1-91e5-90bd1d94dce0" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" minOccurs="0" />
+                  <xs:element name="SaleType" msprop:design-time-name="8829a091-8d53-4e79-8739-2c4527117b2a" msprop:DbColumnName="SaleType" msprop:FriendlyName="SaleType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="1d25ec4e-551a-4257-b773-a35545e1039d" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Department" msdata:ReadOnly="true" msprop:design-time-name="3fb3ca3f-8dcd-4913-90ad-00cbdaad68c1" msprop:DbColumnName="Department" msprop:FriendlyName="Department" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msprop:design-time-name="fe0cb7a4-5e64-436f-925b-683dadffdaa1" msprop:DbColumnName="Price" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="GrossProfit" msprop:design-time-name="3a31cbe0-2838-4404-9e44-915ed77b361f" msprop:DbColumnName="GrossProfit" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Division" msprop:design-time-name="b47ece6a-99a4-4465-8e53-889f9a33d262" msprop:DbColumnName="Division" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="WarrantySales" msprop:design-time-name="4e96e9cf-285e-4db8-b651-0539891d10a3" msprop:IsLogical="True" msprop:FriendlyName="WarrantySales" msprop:DbTableName="WarrantySales" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        CONVERT(VARCHAR, d.acctno) + CONVERT(VARCHAR, d.datetrans, 109) + CONVERT(VARCHAR, d.agrmtno) + CONVERT(VARCHAR, w.Id) AS Id, CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) &#xD;&#xA;                         AS TransactionDate, CASE SUBSTRING(d .acctno, 4, 1) WHEN '5' THEN 'Cash' WHEN '4' THEN 'Cash' ELSE 'Credit' END AS SaleType, COALESCE (t.Name, '(Unknown Division)') AS Division, &#xD;&#xA;                         CASE w.TypeCode WHEN 'E' THEN 'Extended' WHEN 'F' THEN 'Free' ELSE 'Unknown' END AS Type, CASE WHEN c.agrmttaxtype = 'I' AND c.taxtype = 'I' THEN d .transvalue / (1 + w.taxrate / 100) &#xD;&#xA;                         ELSE d .transvalue END AS Price, (CASE WHEN c.agrmttaxtype = 'I' AND c.taxtype = 'I' THEN d .transvalue / (1 + w.taxrate / 100) ELSE d .transvalue END) - d.quantity * COALESCE (branchprice.CostPrice, &#xD;&#xA;                         fasciaprice.CostPrice, allprice.CostPrice) AS GrossProfit&#xD;&#xA;FROM            country AS c CROSS JOIN&#xD;&#xA;                         delivery AS d INNER JOIN&#xD;&#xA;                         branch AS b ON b.branchno = d.branchno INNER JOIN&#xD;&#xA;                         StockInfo AS i ON i.Id = d.ItemID INNER JOIN&#xD;&#xA;                         Warranty.Warranty AS w ON w.Number = i.itemno INNER JOIN&#xD;&#xA;                         Merchandising.Dates AS dates ON CONVERT(INT, CONVERT(VARCHAR(8), d.datetrans, 112)) = dates.DateKey LEFT OUTER JOIN&#xD;&#xA;                         Warranty.WarrantyPrice AS branchprice ON branchprice.WarrantyId = w.Id AND branchprice.BranchNumber = b.branchno AND branchprice.EffectiveDate &lt;= d.datetrans LEFT OUTER JOIN&#xD;&#xA;                         Warranty.WarrantyPrice AS fasciaprice ON fasciaprice.WarrantyId = w.Id AND fasciaprice.BranchType = b.StoreType AND fasciaprice.EffectiveDate &lt;= d.datetrans AND fasciaprice.BranchNumber IS NULL &#xD;&#xA;                         LEFT OUTER JOIN&#xD;&#xA;                         Warranty.WarrantyPrice AS allprice ON allprice.WarrantyId = w.Id AND allprice.BranchType IS NULL AND allprice.BranchNumber IS NULL AND allprice.EffectiveDate &lt;= d.datetrans LEFT OUTER JOIN&#xD;&#xA;                         Warranty.WarrantyTags AS wt ON wt.WarrantyId = w.Id AND wt.LevelId =&#xD;&#xA;                             (SELECT        MIN(Id) AS Expr1&#xD;&#xA;                               FROM            Warranty.[Level]) LEFT OUTER JOIN&#xD;&#xA;                         Warranty.Tag AS t ON t.Id = wt.TagId&#xD;&#xA;WHERE        (branchprice.EffectiveDate IS NULL OR&#xD;&#xA;                         branchprice.EffectiveDate IN&#xD;&#xA;                             (SELECT        MAX(EffectiveDate) AS Expr1&#xD;&#xA;                               FROM            Warranty.WarrantyPrice AS m&#xD;&#xA;                               WHERE        (Id = branchprice.Id) AND (EffectiveDate &lt;= d.datetrans))) AND (fasciaprice.EffectiveDate IS NULL OR&#xD;&#xA;                         fasciaprice.EffectiveDate IN&#xD;&#xA;                             (SELECT        MAX(EffectiveDate) AS Expr1&#xD;&#xA;                               FROM            Warranty.WarrantyPrice AS m&#xD;&#xA;                               WHERE        (Id = fasciaprice.Id) AND (EffectiveDate &lt;= d.datetrans))) AND (allprice.EffectiveDate IS NULL OR&#xD;&#xA;                         allprice.EffectiveDate IN&#xD;&#xA;                             (SELECT        MAX(EffectiveDate) AS Expr1&#xD;&#xA;                               FROM            Warranty.WarrantyPrice AS m&#xD;&#xA;                               WHERE        (Id = allprice.Id) AND (EffectiveDate &lt;= d.datetrans)))" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="6483ac0c-4a50-4dd1-8803-97527e9c44ea" msprop:DbColumnName="Id" msprop:FriendlyName="Id" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="120" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="14dcc58b-0f54-425a-b192-faa615cd7bc2" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="SaleType" msdata:ReadOnly="true" msprop:design-time-name="17fdb5ad-4c8f-4630-81eb-35aa31afe4de" msprop:DbColumnName="SaleType" msprop:FriendlyName="SaleType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="6" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Division" msprop:design-time-name="91843c07-5211-4c94-8447-a444070289cf" msprop:DbColumnName="Division" msprop:FriendlyName="Division" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Type" msdata:ReadOnly="true" msprop:design-time-name="613c4265-5423-4fa0-b093-7d6fba754777" msprop:DbColumnName="Type" msprop:FriendlyName="Type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Price" msdata:ReadOnly="true" msprop:design-time-name="42b4de9c-874a-497d-bf14-1a3cc4cdc611" msprop:DbColumnName="Price" msprop:FriendlyName="Price" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="GrossProfit" msdata:ReadOnly="true" msprop:design-time-name="43b95c1b-0d8e-4cf5-8fd3-cc989b4cb1de" msprop:DbColumnName="GrossProfit" msprop:FriendlyName="GrossProfit" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="PriceDifferential" msprop:design-time-name="1f228168-dbaa-483f-a02d-68de57d30da1" msprop:IsLogical="True" msprop:FriendlyName="PriceDifferential" msprop:DbTableName="PriceDifferential" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        &#xD;&#xA;    co.Id,&#xD;&#xA;    co.SaleType,&#xD;&#xA;    CONVERT(INT, CONVERT(VARCHAR(8), DATEADD(mi, DATEDIFF(mi, GETUTCDATE(), GETDATE()), co.TransactionDate), 112)) AS TransactionDate, &#xD;&#xA;    co.Quantity * co.Price AS Price, &#xD;&#xA;    co.Quantity * (co.Price - cp.AverageWeightedCost) AS GrossProfit, &#xD;&#xA;    ISNULL(division.Tag, '(Unknown Division)') AS Division, &#xD;&#xA;    ISNULL(Department.Tag, '(Unknown Department)') AS Department, &#xD;&#xA;    (co.Price - co2.CashPrice) * co.Quantity AS PriceDifferential, &#xD;&#xA;    (co.Price - co2.CashPrice) * co.Quantity AS PriceDifferentialGrossProfit&#xD;&#xA;FROM Merchandising.CintOrder AS co &#xD;&#xA;INNER JOIN Merchandising.Product AS p &#xD;&#xA;    ON co.Sku = p.SKU &#xD;&#xA;    AND co.Type IN ('Return', 'Delivery', 'Redelivery', 'Repossession') &#xD;&#xA;INNER JOIN Merchandising.CurrentCostPriceView AS cp &#xD;&#xA;    ON p.Id = cp.ProductId &#xD;&#xA;LEFT JOIN Merchandising.ProductHierarchyView AS division &#xD;&#xA;    ON division.ProductId = p.Id &#xD;&#xA;    AND division.[Level] = 'Division' &#xD;&#xA;LEFT JOIN Merchandising.ProductHierarchyView AS Department &#xD;&#xA;    ON Department.ProductId = p.Id &#xD;&#xA;    AND Department.[Level] = 'Department' &#xD;&#xA;INNER JOIN Merchandising.Dates AS d &#xD;&#xA;    ON CONVERT(INT, CONVERT(VARCHAR(8), DATEADD(mi, DATEDIFF(mi, GETUTCDATE(), GETDATE()), co.TransactionDate), 112)) = d.DateKey &#xD;&#xA;INNER JOIN Merchandising.CintOrder AS co2 &#xD;&#xA;    ON co.Id != co2.Id &#xD;&#xA;    AND co.PrimaryReference = co2.PrimaryReference &#xD;&#xA;    AND co.StockLocation = co2.StockLocation &#xD;&#xA;    AND co.Sku = co2.Sku &#xD;&#xA;    AND co2.[Type] = 'RegularOrder' &#xD;&#xA;    AND &#xD;&#xA;&#x9;(&#xD;&#xA;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;co2.ReferenceType = 'invoice' &#xD;&#xA;&#x9;&#x9;&#x9;AND co2.SecondaryReference = co.SecondaryReference&#xD;&#xA;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;OR co2.ReferenceType != 'invoice'&#xD;&#xA;&#x9;) &#xD;&#xA;    AND co2.TransactionDate = &#xD;&#xA;&#x9;(&#xD;&#xA;        SELECT MAX(TransactionDate) AS Expr1&#xD;&#xA;        FROM Merchandising.CintOrder AS co3&#xD;&#xA;        WHERE [Type] = 'RegularOrder'&#xD;&#xA;            AND PrimaryReference = co.PrimaryReference&#xD;&#xA;            AND StockLocation = co.StockLocation&#xD;&#xA;&#x9;&#x9;&#x9;AND Id != co.Id &#xD;&#xA;&#x9;&#x9;&#x9;AND Sku = co.Sku&#xD;&#xA;&#x9;&#x9;&#x9;AND&#xD;&#xA;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ReferenceType = 'invoice'&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;AND SecondaryReference = co.SecondaryReference&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;OR ReferenceType != 'invoice'&#xD;&#xA;&#x9;&#x9;&#x9;)&#xD;&#xA;    )&#xD;&#xA;WHERE co.SaleType = 'Credit'" msprop:QueryBuilder="GenericQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="07e90c01-9fd0-4858-b3a8-84658bbc3726" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" minOccurs="0" />
+                  <xs:element name="SaleType" msprop:design-time-name="cf9680cd-eeb3-4984-875d-e4ab05522f2b" msprop:DbColumnName="SaleType" msprop:FriendlyName="SaleType" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TransactionDate" msdata:ReadOnly="true" msprop:design-time-name="8d0d5552-7cf9-405f-900a-2aabeba6a613" msprop:DbColumnName="TransactionDate" msprop:FriendlyName="TransactionDate" type="xs:int" minOccurs="0" />
+                  <xs:element name="Price" msprop:design-time-name="eade78d9-c54b-4cbf-892b-fe1dbb061663" msprop:DbColumnName="Price" msprop:FriendlyName="Price" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="GrossProfit" msdata:ReadOnly="true" msprop:design-time-name="f1ac6b39-5cd5-4e7c-8b1f-e87d2f49bc60" msprop:DbColumnName="GrossProfit" msprop:FriendlyName="GrossProfit" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Division" msdata:ReadOnly="true" msprop:design-time-name="c698159c-c826-4fe5-81d1-06903886aec1" msprop:DbColumnName="Division" msprop:FriendlyName="Division" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Department" msdata:ReadOnly="true" msprop:design-time-name="bef07b9a-6119-46eb-a786-b2f8d98c8530" msprop:DbColumnName="Department" msprop:FriendlyName="Department" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PriceDifferential" msdata:ReadOnly="true" msprop:design-time-name="a7f9f765-4b6f-4835-a3f1-4e3e2c394a4b" msprop:DbColumnName="PriceDifferential" msprop:FriendlyName="PriceDifferential" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="PriceDifferentialGrossProfit" msprop:design-time-name="64af368f-8a07-4dc4-9eae-5515fb58a871" msprop:DbColumnName="PriceDifferentialGrossProfit" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Merchandising_StockValuationSnapshot" msprop:design-time-name="c2d272a6-9b4b-435a-9197-f5ca8a5ca70e" msprop:FriendlyName="StockValuationSnapshot" msprop:DbSchemaName="Merchandising" msprop:DbTableName="StockValuationSnapshot" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="eafc5f48-fa16-45f1-9ddd-3ec4d6b84404" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" />
+                  <xs:element name="ProductId" msprop:design-time-name="7bef70d4-0183-487e-ac2b-7920ace3c4f3" msprop:DbColumnName="ProductId" msprop:FriendlyName="ProductId" type="xs:int" />
+                  <xs:element name="LocationId" msprop:design-time-name="7db6d209-d638-4633-a64e-6eaeb055bd71" msprop:DbColumnName="LocationId" msprop:FriendlyName="LocationId" type="xs:int" />
+                  <xs:element name="StockOnHandQuantity" msprop:design-time-name="3410690e-ad7d-451c-893f-37655c79ae25" msprop:DbColumnName="StockOnHandQuantity" msprop:FriendlyName="StockOnHandQuantity" type="xs:int" minOccurs="0" />
+                  <xs:element name="StockOnHandValue" msprop:design-time-name="33850e01-d54a-45b8-8157-dfde27198513" msprop:DbColumnName="StockOnHandValue" msprop:FriendlyName="StockOnHandValue" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="StockOnHandSalesValue" msprop:design-time-name="32df8a5d-75d7-4408-88a3-43f9bf6ec054" msprop:DbColumnName="StockOnHandSalesValue" msprop:FriendlyName="StockOnHandSalesValue" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="SnapshotDateId" msprop:design-time-name="ef6b93a9-6a13-4d15-b8a4-c7eba6624c0b" msprop:DbColumnName="SnapshotDateId" msprop:FriendlyName="SnapshotDateId" type="xs:int" minOccurs="0" />
+                  <xs:element name="CashPrice" msprop:design-time-name="ed432332-13d8-4305-afdd-628843d67755" msprop:DbColumnName="CashPrice" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Merchandising_Location" msprop:design-time-name="249be140-e101-419a-8923-b868def29eeb" msprop:FriendlyName="Location" msprop:DbSchemaName="Merchandising" msprop:DbTableName="Location" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8f56f69f-95ff-4c3b-af91-2f84f0605bca" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" />
+                  <xs:element name="LocationId" msprop:design-time-name="e1843dde-3e4a-459e-ac2a-ab4bcf0ed257" msprop:DbColumnName="LocationId" msprop:FriendlyName="LocationId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Name" msprop:design-time-name="41ae453f-e55b-4a2a-9618-d439b72227b8" msprop:DbColumnName="Name" msprop:FriendlyName="Name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Fascia" msprop:design-time-name="bf7272c3-bc30-402a-a8c6-64206ed65485" msprop:DbColumnName="Fascia" msprop:FriendlyName="Fascia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="StoreType" msprop:design-time-name="aeed84b5-170a-4fc3-91be-c3abb6f1ae98" msprop:DbColumnName="StoreType" msprop:FriendlyName="StoreType">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Warehouse" msprop:design-time-name="d978da44-2193-4da5-9c3f-358c946e8cf6" msprop:DbColumnName="Warehouse" msprop:FriendlyName="Warehouse" type="xs:boolean" />
+                  <xs:element name="AddressLine1" msprop:design-time-name="cbd614a1-8db3-4f8c-adf5-1b8d0598be6a" msprop:DbColumnName="AddressLine1" msprop:FriendlyName="AddressLine1">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AddressLine2" msprop:design-time-name="560537ee-667b-49ea-b9ad-1e00b8cef30c" msprop:DbColumnName="AddressLine2" msprop:FriendlyName="AddressLine2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="City" msprop:design-time-name="4e0462c5-5e34-4785-b473-bddf5156a5ca" msprop:DbColumnName="City" msprop:FriendlyName="City">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PostCode" msprop:design-time-name="83855b1a-56e8-473c-bc2e-f9fd0686f29e" msprop:DbColumnName="PostCode" msprop:FriendlyName="PostCode" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Contacts" msprop:design-time-name="042df9fa-0e86-4f0e-82d6-1216a195f06c" msprop:DbColumnName="Contacts" msprop:FriendlyName="Contacts" type="xs:string" minOccurs="0" />
+                  <xs:element name="SalesId" msprop:design-time-name="6f9c4ac1-7044-464b-b60e-6d4f283932c0" msprop:DbColumnName="SalesId" msprop:FriendlyName="SalesId">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Active" msprop:design-time-name="cb8eef0b-2c24-41cf-8335-4ff847a7a933" msprop:DbColumnName="Active" msprop:FriendlyName="Active" type="xs:boolean" />
+                  <xs:element name="VirtualWarehouse" msprop:design-time-name="fbd08a62-0cd4-4a09-8c2c-6922a0d0ffe1" msprop:DbColumnName="VirtualWarehouse" msprop:FriendlyName="VirtualWarehouse" type="xs:boolean" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Product" msprop:design-time-name="f4fd5d99-9edf-4336-83ca-89f9236b88c7" msprop:IsLogical="True" msprop:FriendlyName="Product" msprop:DbTableName="Product" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT DISTINCT p.Id, p.SKU, p.LongDescription, ISNULL(division.TagId, 0) AS DivisionId, ISNULL(Department.TagId, 0) AS DepartmentId, ISNULL(Class.TagId, 0) AS ClassId&#xD;&#xA;FROM  Merchandising.Product AS p LEFT OUTER JOIN&#xD;&#xA;         Merchandising.ProductStockLevel AS stock ON stock.ProductId = p.Id LEFT OUTER JOIN&#xD;&#xA;         Merchandising.ProductStatus AS s ON p.Status = s.Id LEFT OUTER JOIN&#xD;&#xA;         Merchandising.ProductHierarchyView AS division ON division.ProductId = p.Id AND division.[Level] = 'Division' LEFT OUTER JOIN&#xD;&#xA;         Merchandising.ProductHierarchyView AS Department ON Department.ProductId = p.Id AND Department.[Level] = 'Department' LEFT OUTER JOIN&#xD;&#xA;         Merchandising.ProductHierarchyView AS Class ON Class.ProductId = p.Id AND Class.[Level] = 'Class'" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="44cdd7c6-42cd-4d37-b54d-84beb025f5b0" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" />
+                  <xs:element name="SKU" msprop:design-time-name="2be06a0b-2906-4bfa-9a10-a7bc0e4f3f62" msprop:DbColumnName="SKU" msprop:FriendlyName="SKU" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LongDescription" msprop:design-time-name="1da17ae8-cd15-46fa-8387-bc5c335b2a66" msprop:DbColumnName="LongDescription" msprop:FriendlyName="LongDescription" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="240" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DivisionId" msprop:design-time-name="41518277-fa20-4284-b1a6-44bea6527725" msprop:DbColumnName="DivisionId" msprop:FriendlyName="DivisionId" type="xs:int" minOccurs="0" />
+                  <xs:element name="DepartmentId" msprop:design-time-name="c9ebd282-d57f-4740-9485-0fa6489c0512" msprop:DbColumnName="DepartmentId" msprop:FriendlyName="DepartmentId" type="xs:int" minOccurs="0" />
+                  <xs:element name="ClassId" msprop:design-time-name="bb75edd4-644b-4655-a663-7dd0bffa3eeb" msprop:DbColumnName="ClassId" msprop:FriendlyName="ClassId" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Division" msprop:design-time-name="70a7cf45-b0a9-40aa-9a39-e1ca440acfaf" msprop:IsLogical="True" msprop:FriendlyName="Division" msprop:DbTableName="Division" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        0 AS Id, 'Unknown' AS Name&#xD;&#xA;UNION&#xD;&#xA;SELECT        t.Id, t.Name&#xD;&#xA;FROM            Merchandising.HierarchyTag AS t INNER JOIN&#xD;&#xA;                         Merchandising.HierarchyLevel AS l ON t.LevelId = l.Id&#xD;&#xA;WHERE        (l.Name = 'Division')" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="1a8a16b4-a9d4-477f-8074-ab25c8a3dd92" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" />
+                  <xs:element name="Name" msprop:design-time-name="68cdc194-b9e8-4c40-986b-4eabdec8f34a" msprop:DbColumnName="Name" msprop:FriendlyName="Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Department" msprop:design-time-name="f7300650-f60c-4e96-ba9a-89e83fed027a" msprop:IsLogical="True" msprop:FriendlyName="Department" msprop:DbTableName="Department" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        0 AS Id, 'Unknown' AS Name&#xD;&#xA;UNION&#xD;&#xA;SELECT        t.Id, t.Name&#xD;&#xA;FROM            Merchandising.HierarchyTag AS t INNER JOIN&#xD;&#xA;                         Merchandising.HierarchyLevel AS l ON t.LevelId = l.Id&#xD;&#xA;WHERE        (l.Name = 'Department')" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:ReadOnly="true" msprop:design-time-name="a8c3efa9-43bb-4e1a-a583-d5d3b47cd5e2" msprop:DbColumnName="Id" msprop:FriendlyName="Id" type="xs:int" />
+                  <xs:element name="Name" msprop:design-time-name="c883f717-ddfc-4922-8967-44963a1580ee" msprop:DbColumnName="Name" msprop:FriendlyName="Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Class" msprop:design-time-name="ab7256b7-b40f-4024-8de3-a1137d8fe502" msprop:IsLogical="True" msprop:FriendlyName="Class" msprop:DbTableName="Class" msprop:TableType="View" msprop:Description="" msprop:QueryDefinition="SELECT        0 AS Id, 'Unknown' AS Name&#xD;&#xA;UNION&#xD;&#xA;SELECT        t.Id, t.Name&#xD;&#xA;FROM            Merchandising.HierarchyTag AS t INNER JOIN&#xD;&#xA;                         Merchandising.HierarchyLevel AS l ON t.LevelId = l.Id&#xD;&#xA;WHERE        (l.Name = 'Class')" msprop:QueryBuilder="SpecificQueryBuilder">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msprop:design-time-name="56295b71-e3e9-473e-b392-0b7a45755df3" msprop:DbColumnName="Id" type="xs:int" />
+                  <xs:element name="Name" msprop:design-time-name="f3d5e8ac-89ef-4585-9373-533155e3fb59" msprop:DbColumnName="Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Merchandising_Dates" />
+          <xs:field xpath="DateKey" />
+        </xs:unique>
+        <xs:unique name="Merchandising_CintOrder_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Merchandising_CintOrder" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="ProductStock_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//ProductStock" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="AffinitySales_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//AffinitySales" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="OtherCharges_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//OtherCharges" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="ServiceCharges_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//ServiceCharges" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="InterestCharges_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//InterestCharges" />
+          <xs:field xpath="ID" />
+        </xs:unique>
+        <xs:unique name="Rebates_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Rebates" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="LoanDisbursement_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//LoanDisbursement" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="Discounts_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Discounts" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="WarrantySales_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//WarrantySales" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="PriceDifferential_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//PriceDifferential" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="Merchandising_StockValuationSnapshot_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Merchandising_StockValuationSnapshot" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="Merchandising_Location_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Merchandising_Location" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="Product_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Product" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="Division_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Division" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="Department_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Department" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="Class_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Class" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:keyref name="FK_StockValuation_LocationId_Location" refer="Merchandising_Location_Constraint1">
+          <xs:selector xpath=".//Merchandising_StockValuationSnapshot" />
+          <xs:field xpath="LocationId" />
+        </xs:keyref>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="CintOrder-Dates" msdata:parent="Merchandising_Dates" msdata:child="Merchandising_CintOrder" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="AffinitySales-Dates" msdata:parent="Merchandising_Dates" msdata:child="AffinitySales" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="OtherCharges-Dates" msdata:parent="Merchandising_Dates" msdata:child="OtherCharges" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="ServiceCharges-Dates" msdata:parent="Merchandising_Dates" msdata:child="ServiceCharges" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="InterestCharges-Dates" msdata:parent="Merchandising_Dates" msdata:child="InterestCharges" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="Rebates-Dates" msdata:parent="Merchandising_Dates" msdata:child="Rebates" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="LoanDisbursement-Dates" msdata:parent="Merchandising_Dates" msdata:child="LoanDisbursement" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="Discounts-Dates" msdata:parent="Merchandising_Dates" msdata:child="Discounts" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="WarrantySales-Dates" msdata:parent="Merchandising_Dates" msdata:child="WarrantySales" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="PriceDifferential-Dates" msdata:parent="Merchandising_Dates" msdata:child="PriceDifferential" msdata:parentkey="DateKey" msdata:childkey="TransactionDate" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="StockValuationSnapshot-Product" msdata:parent="Product" msdata:child="Merchandising_StockValuationSnapshot" msdata:parentkey="Id" msdata:childkey="ProductId" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="Product-Division" msdata:parent="Division" msdata:child="Product" msdata:parentkey="Id" msdata:childkey="DivisionId" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="Product-Department" msdata:parent="Department" msdata:child="Product" msdata:parentkey="Id" msdata:childkey="DepartmentId" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="Product-Class" msdata:parent="Class" msdata:child="Product" msdata:parentkey="Id" msdata:childkey="ClassId" msprop:IsLogical="True" msprop:Description="" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <Cosacs xmlns="" />
+  </Schema>
+</DataSourceView>

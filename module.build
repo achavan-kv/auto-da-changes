@@ -1,0 +1,80 @@
+﻿<project name="Cosacs.module" default="default" xmlns="http://nant.sf.net/release/0.92/nant.xsd">
+
+    <loadtasks assembly="..\bin\\nantcontrib-0.85\bin\NAnt.Contrib.Tasks.dll"/>
+    <property name="nant.settings.currentframework" value="net-4.0" />
+    <property name="destinationPath" value="${path::combine('minify', ModuleName)}" /> 
+    <target name="default" depends="build install-dependencies unitTests">
+        <call target="artifacts" />
+        <call target="artifacts-zip" />
+    </target>
+
+    <target name="build">
+        <msbuild project="${ModuleName}\Blue.Cosacs.${ModuleName}.sln">
+            <property name="Configuration" value="Release"/>
+            <property name="Platform" value="Any CPU" />
+        </msbuild>
+    </target>
+
+	<property name ="ModuleWebPath" value = "${ModuleName}\Blue.Cosacs.${ModuleName}.Web"/>
+    <target name="install-dependencies">
+        <exec program="cmd.exe" workingdir="${ModuleWebPath}">
+            <arg value="/c npm install"/>
+        </exec>
+        <exec program="cmd.exe" workingdir="${ModuleWebPath}">
+            <arg value="/c grunt release"/>
+        </exec>
+    </target>
+
+    <target name="artifacts">
+        <mkdir dir="minify"/>
+        <delete dir="${destinationPath}"/>
+        <mkdir dir="${destinationPath}"/>
+        
+        <copy todir="${path::combine(destinationPath, 'bin')}" includeemptydirs="true">
+            <fileset basedir="${ModuleWebPath}\bin">
+                <include name="*.dll"/>
+            </fileset>
+        </copy>
+        <copy todir="${path::combine(destinationPath, 'views')}" includeemptydirs="true">
+            <fileset basedir="${ModuleWebPath}\views" />
+        </copy>
+        <copy if="${directory::exists(path::combine(ModuleWebPath, 'print'))}" todir="${path::combine(destinationPath, 'print')}" includeemptydirs="true">
+            <fileset basedir="${ModuleWebPath}\print" />
+        </copy>        
+        <copy todir="${path::combine(destinationPath, 'Sql')}" includeemptydirs="true">
+            <fileset basedir="${ModuleWebPath}\..\Sql"/>
+        </copy>
+      
+	    <copy todir="modulesSql" includeemptydirs="false" overwrite="true">
+            <fileset basedir="${ModuleWebPath}\..\Sql"/>
+		</copy>
+	  	  
+        <copy tofile="${path::combine(destinationPath, 'module.js')}" file="${path::combine(ModuleWebPath, 'module.min.js')}" overwrite="true"/>
+        <copy tofile="${path::combine(destinationPath, 'routes.json')}" file="${path::combine(ModuleWebPath, 'routes.json')}" overwrite="true"/>
+        <copy tofile="${path::combine(destinationPath, 'sitemap.json')}" file="${path::combine(ModuleWebPath, 'sitemap.json')}" overwrite="true"/>
+        <copy tofile="${path::combine(destinationPath, 'web.config')}" file="${path::combine(ModuleWebPath, 'web.config')}" overwrite="true"/>
+        <copy tofile="${path::combine(destinationPath, 'module.css')}" file="${path::combine(ModuleWebPath, 'module.css')}" overwrite="true" />
+        <copy tofile="${path::combine(destinationPath, 'Global.asax')}" file="${path::combine(ModuleWebPath, 'Global.asax')}" overwrite="true"/>
+    </target>
+    
+    <target name="artifacts-zip">
+        <zip zipfile="${path::combine('minify', ModuleName)}\${ModuleName}.zip" includeemptydirs="false">
+            <fileset basedir="${destinationPath}">
+                <include name="**/*.*" />
+            </fileset>
+        </zip>
+    </target>
+	
+    <target name="unitTests">
+        <property name ="TestsPath" value = "${ModuleName}\Blue.Cosacs.${ModuleName}.Test"/>
+        <if test="${directory::exists(TestsPath)}">
+                <exec program="..\bin\nunit\nunit-console.exe"
+                workingdir="${TestsPath}"
+                commandline=".\bin\Release\Blue.Cosacs.${ModuleName}.Test.dll /xml:TestResults.xml /nologo" /> 
+        </if>
+    </target>
+	
+	<target name="wixweb" />
+	<target name="wixwin" />
+	<target name="full-test" />
+</project>

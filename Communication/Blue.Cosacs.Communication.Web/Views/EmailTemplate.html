@@ -1,0 +1,78 @@
+<div class="container">
+    <h1>Configure Email Templates</h1>
+
+    <div ng-controller="mailChimpTemplateController" ng-cloak>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th class="action col-lg-1"></th>
+                <th class="col-lg-3">Name</th>
+                <th class="col-lg-2">Template Id</th>
+                <th class="col-lg-2">Can Set Body</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="template in results">
+                <td class="action">
+                    <a class="glyphicons glyph-btn action save floppy_disk click"
+                       ng-class="IsValidTemplate(template) ? 'click' : 'disabled'" title="Save"
+                       ng-click="updateTemplate(template)"></a>
+                    <a class="glyphicons glyph-btn action-delete bin click" title="Delete"
+                       ng-click="deleteTemplate(template.Id)"></a>
+                </td>
+                <td>
+                    <div class="field" ng-class="{'has-error': !template.Name}">
+                        <input class="form-control ng-valid ng-valid-maxlength ng-touched ng-dirty ng-valid-parse"
+                               type="text" maxlength="32" ng-model="template.Name">
+                    </div>
+                </td>
+                <td>
+                    <div class="field" ng-class="{'has-error': !template.TemplateId}">
+                        <input class="form-control ng-valid ng-valid-maxlength ng-touched ng-dirty ng-valid-parse"
+                               type="text" maxlength="32" ng-model="template.TemplateId">
+                    </div>
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="template.CanSetBody" />
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr ng-hide="addingTemplate">
+                <td class="action text-center">
+                    <span class="ui-widget glyphicons click action-new plus" href="#" title="New"
+                          ng-click="createNewTemplate()"></span>
+                </td>
+                <td colspan="4"></td>
+            </tr>
+            <tr ng-show="addingTemplate">
+                <form name="createTemplate" ng-submit="" novalidate>
+                    <td>
+                        <div class="form-control-static text-center">
+                            <span class="action click save glyph-btn glyphicons floppy_save text-danger"
+                                  ng-click="insertTemplate(newTemplate)"
+                                  ng-class="!IsValidTemplate(newTemplate) ? 'disabled' : 'click'" title="Add"></span>
+                            <span class="action click cancel glyph-btn glyphicons undo" title="Cancel"
+                                  ng-click="cancelTemplate()"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field" ng-class="{'has-error': !newTemplate.Name}">
+                            <input class="form-control ng-valid ng-valid-maxlength ng-touched ng-dirty ng-valid-parse" type="text" maxlength="32" ng-model="newTemplate.Name" required>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field" ng-class="{'has-error': !newTemplate.TemplateId}">
+                            <input class="form-control ng-valid ng-valid-maxlength ng-touched ng-dirty ng-valid-parse"
+                                   type="text" maxlength="32" ng-model="newTemplate.TemplateId">
+                        </div>
+                    </td>
+                    <td>
+                        <input type="checkbox" ng-model="newTemplate.CanSetBody" />
+                    </td>
+                </form>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

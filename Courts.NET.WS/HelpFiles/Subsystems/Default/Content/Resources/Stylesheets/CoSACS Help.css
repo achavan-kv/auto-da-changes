@@ -1,0 +1,203 @@
+/*<meta />*/
+
+p.MyStyle
+{
+	margin: 0px;
+	font-size: 10pt;
+	font-family: Arial;
+	padding-bottom: 5px;
+}
+
+img
+{
+	border: none;
+}
+
+a.Popup
+{
+	
+}
+
+h1
+{
+	font-family: Arial;
+}
+
+h1.CH1
+{
+	font-family: Arial;
+}
+
+span.CH2
+{
+	font-size: 14pt;
+}
+
+h2.CH2
+{
+	font: Arial;
+	font-family: Arial;
+	font-size: 14pt;
+}
+
+p.cp
+{
+	font: Arial;
+	font-size: 10pt;
+}
+
+h3.ch3
+{
+	font-size: 10pt;
+	color: #000000;
+	font-family: Arial;
+}
+
+p.bullets
+{
+	font: Arial;
+	text-indent: 40px;
+	font-size: 10pt;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-offset: 10px;
+	mc-auto-number-format: '{n+}.   ';
+	font-style: inherit;
+}
+
+h3
+{
+	font: Arial;
+}
+
+p.reset
+{
+	margin: 0px;
+	font-size: 10pt;
+	font-family: Arial;
+	mc-auto-number-format: '{ =0}';
+}
+
+p.Index5
+{
+	font: Arial;
+	font-size: 10pt;
+}
+
+ol
+{
+	font: Arial;
+	font-size: 10pt;
+}
+
+li
+{
+	font: Arial;
+	font-size: 10pt;
+	padding-bottom: 10px;
+}
+
+dropDownHead
+{
+	font: Arial;
+	font-size: 10pt;
+}
+
+expandingHead
+{
+	color: #000000;
+}
+
+li.lileft
+{
+	font: Arial;
+	font-size: 10pt;
+	padding-bottom: 10px;
+	font-family: Arial;
+	text-indent: 2px;
+}
+
+td.tdc
+{
+	font-family: Arial;
+	font-size: 10pt;
+	padding: 10px;
+}
+
+table.MyTable
+{
+	padding: 10px;
+	font-family: Arial;
+	font-size: 10pt;
+	border: solid 2px;
+	border-bottom: solid 1px;
+	border-bottom-color: #000000;
+	border-color: #000000;
+	border-left: solid 1px;
+	border-right: solid 1px;
+	border-style: solid;
+	border-top: solid 1px;
+	mc-table-style: url('CoSACS Help.css');
+	background-color: #ffffff;
+	left: 40px;
+}
+
+tbody
+{
+	border: solid 1px;
+}
+
+td
+{
+	border: solid 1px;
+	background-color: #4682b4;
+}
+
+table
+{
+	border: solid 1px;
+}
+
+tr
+{
+	border-color: #000000;
+	border: solid 2px;
+}
+
+p.hyperlink
+{
+	font-family: Arial;
+	font-size: 8pt;
+}
+
+ul.nikkilist
+{
+	list-style-type: square;
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+p.nikkiindex
+{
+	font-family: Arial;
+	font-size: 8pt;
+	color: #9932cc;
+}
+
+p
+{
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+dropDown
+{
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+dropDownHotspot
+{
+	font-family: Arial;
+	font-size: 10pt;
+}
+

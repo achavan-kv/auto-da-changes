@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Credit" namespace="Blue.Cosacs.Credit" label="Credit">
+    <Connection server="." database="cosacs" />
+    <Queries>
+    </Queries>
+    <Tables>
+        <Table name="Proposal" />
+        <Table name="ProposalAddress"/>
+        <Table name="ProposalApplicant2" />
+        <Table name="ProposalReference" />
+        <Table name="CustomizeFields" />
+        <Table name="DocumentConfirmationRules" />
+        <Table name="DocumentConfirmation" />
+        <Table name="Customer" />
+        <Table name="CustomerAddress" />
+        <Table name="CustomerContact" />
+        <Table name="HiLo" />
+        <Table name="Account" />
+        <Table name="File" />
+        <Table name="EmploymentHistory" />
+        <Table name="ScoringBandMatrix" />
+        <Table name="ScoreCardConfiguration"/>
+        <Table name="TermsTypeFreeInstalments" />
+        <Table name="CustomerTag" />
+        <Table name="TermsTypeProductHierarchyTag" />
+        <Table name="TermsType" />
+        <Table name="TermsTypeDetails" />
+        <Table name="TermsTypeFascia" />
+        <Table name="TermsTypeCustomerBand" />
+        <Table name="TermsTypeCustomerTag" />
+        <Table name="TermsTypeProductSKU" />
+        <Table name="InstallmentPlan" />
+    </Tables>
+    <Views>
+    </Views>
+    <Settings>
+        <Setting id="Nationality" name="Other Nationalities" type="list" category="Credit">
+            <Description>Other Nationalities</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="EthnicGroup" name="Ethnic Group" type="list" category="Credit">
+            <Description>Ethnic Group</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="Title" name="Title" type="list" category="Credit">
+            <Description>Customer Title</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="AddressType" name="Address Type" type="list" category="Credit">
+            <Description>Type of Address</Description>
+            <Default></Default>
+            <Fixed>Home
+                Work
+                Delivery</Fixed>
+        </Setting>
+        <Setting id="DeliveryArea" name="Delivery Area" type="list" category="Credit">
+            <Description>Delivery Area</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="ResidentialStatus" name="Residential Status" type="list" category="Credit">
+            <Description>Residential Status</Description>
+            <Default></Default>
+            <Fixed>Renting</Fixed>
+        </Setting>
+        <Setting id="PropertyType" name="Property Type" type="list" category="Credit">
+            <Description>Property Type</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="Occupation" name="Occupation" type="list" category="Credit">
+            <Description>Occupation</Description>
+            <Default></Default>
+            <Fixed>Government Employees</Fixed>
+        </Setting>
+        <Setting id="EmploymentStatus" name="Employment Status" type="list" category="Credit">
+            <Description>Employment Status</Description>
+            <Default></Default>
+            <Fixed>Self Employed</Fixed>
+        </Setting>
+        <Setting id="Bank" name="Bank" type="list" category="Credit">
+            <Description>Bank</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="AccountType" name="Account Type" type="list" category="Credit">
+            <Description>Account Type</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="Relationship" name="Relationship" type="list" category="Credit">
+            <Description>Relationship</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="NoOfMonthsInCurrentAddress" name="Months in current address" type="int" category="Credit">
+            <Description>Number of months in current address</Description>
+            <Default>0</Default>
+        </Setting>
+        <Setting id="CompulsoryId" name="Compulsory Form of Id" type="list" category="Credit">
+            <Description>Compulsory Form of Id</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="OptionalId" name="Optional Form of Id" type="list" category="Credit">
+            <Description>Optional Form of Id</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="ProofAddress" name="Proof of Address" type="list" category="Credit">
+            <Description>Proof of Address</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="ProofIncome" name="Proof of Income (Employment)" type="list" category="Credit">
+            <Description>Proof of Income (Employment)</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="ProofIncomeOther" name="Proof of Income (Other)" type="list" category="Credit">
+            <Description>Proof of Income (Other)</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="LocalNationality" name="Local Nationality" type="string" category="Credit">
+            <Description>Local Nationality</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="ContactType" name="Contact Type" type="list" category="Credit">
+            <Description>Contact Type</Description>
+            <Default></Default>
+            <Fixed>Email
+                Home Phone
+                Work Phone
+                Mobile Phone</Fixed>
+        </Setting>
+        <Setting id="PayFrequency" name="Pay Frequency" type="list" category="Credit">
+            <Description>Pay Frequency</Description>
+            <Default></Default>
+            <Fixed>Weekly
+            Fortnightly
+            Monthly
+            Annual</Fixed>
+        </Setting>
+        <Setting id="CustomerTag" name="Customer Tag" type="list" category="Credit">
+            <Description> Customer Tag </Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="MaritalStatus" name="Marital Status" type="list" category="Credit">
+            <Description>Marital Status</Description>
+            <Default></Default>
+        </Setting>
+    </Settings>
+</Model>

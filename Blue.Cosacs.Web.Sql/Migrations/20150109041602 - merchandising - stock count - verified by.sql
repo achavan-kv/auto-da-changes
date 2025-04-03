@@ -1,0 +1,1 @@
+exec sp_RENAME 'Merchandising.StockCountProduct.CreatedById' , 'VerifiedById', 'COLUMN'

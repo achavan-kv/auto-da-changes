@@ -1,0 +1,70 @@
+﻿[
+  {
+    "url": "proposals/:Id/:State",
+    "template": "views/proposal/Proposal.html"
+  },
+  {
+    "url": "proposals/:Id/applicant2/:State",
+    "template": "views/proposal/Applicant2.html"
+  },
+  {
+    "url": "proposals/:Id/sanctionStage1/:Applicant/:State",
+    "template": "views/proposal/SanctionStage1.html"
+  },
+  {
+    "url": "proposals/:Id/sanctionStage2/:Applicant/:State",
+    "template": "views/proposal/SanctionStage2.html"
+  },
+  {
+    "url": "nav",
+    "template": "views/proposal/templates/nav.html"
+  },
+  {
+    "url": "proposals",
+    "template": "views/proposal/Search.html"
+  },
+  {
+    "url": "customizeMandatoryFields",
+    "template": "views/CustomizeMandatoryFields.html"
+  },
+  {
+    "url": "proposals/:Id/documentConfirmation/:State",
+    "template": "views/DocumentConfirmation.html"
+  },
+  {
+    "url": "proposals/:Id/score/:State",
+    "template": "views/proposal/Score.html"
+  },
+  {
+    "url": "customers/:Id",
+    "template": "views/CustomerDetails.html"
+  },
+  {
+    "url": "configureScoring",
+    "template": "views/ScoringConfig.html"
+  },
+  {
+    "url": "termsType/:Id/:State",
+    "template": "views/TermsType.html"
+  },
+  {
+    "url": "customerSearch",
+    "template": "views/CustomerSearch.html"
+  },
+  {
+    "url": "termsTypeSearch",
+    "template": "views/TermsTypeSearch.html"
+  },
+  {
+    "url": "configureScoring",
+    "template": "views/ScoringConfig.html"
+  },
+  {
+    "url": "scoringBandMatrixSetup",
+    "template": "views/ScoringBandMatrixSetup.html"
+  },
+  {
+    "url": "termsTypeSimulator",
+    "template": "views/termsTypeSimulator.html"
+  }
+]

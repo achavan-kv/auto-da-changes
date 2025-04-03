@@ -1,0 +1,341 @@
+﻿<div ng-controller="callLogController" ng-cloak>
+    <h1>CSR Call Log</h1>
+    <div id="filterCallsList">
+        <div class="section">Search</div>
+        <div class="row">
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label class="col col-lg-4 control-label" for="callType">Call Type</label>
+                    <div class="col col-lg-5">
+                        <list ng-model="callTypeId" scope="callTypes" placeholder="Call Type"></list>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label for="scheduledDateFrom" class="col col-lg-4 control-label">Scheduled Date From</label>
+                    <div class="col col-lg-5">
+                        <input name="scheduledDateFrom" type="date" ng-model="scheduledDateFrom" class="date form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label class="col col-lg-4 control-label" for="scheduledDateTo">Scheduled Date To</label>
+                    <div class="col col-lg-5">
+                        <input name="scheduledDateTo" type="date" ng-model="scheduledDateTo" class=" date form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label class="col col-lg-4 control-label" for="customerName">Customer Name</label>
+                    <div class="col col-lg-5">
+                        <input type="text" id="txtCustomerName" placeholder="Customer Name" class="date form-control" ng-model="customerName" name="customerName" />
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label class="col col-lg-4 control-label" for="reasonForCalling">Reason for calling</label>
+                    <div class="col col-lg-5">
+                        <input type="text" id="txtReasonForCalling" placeholder="Reason for calling" class="date form-control" ng-model="reasonForCalling" name="reasonForCalling" maxlength="32" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search row">&nbsp;</div>
+    <div class="row">
+        <div class="col-lg-6">
+            <button type="reset" class="btn btn-default" id="btnClear" ng-click="clearFilter()" title="Clear Search">Clear</button>
+            <button type="submit" class="btn btn-primary" id="btnSearch" ng-click="search()">Search</button>
+            <button type="submit" class="btn btn-default" id="logUnscheduledCall" ng-click="displayUnscheduledLog()" title="Unscheduled Call">Log Unscheduled Call</button>
+        </div>
+    </div>
+    <div class="search row">&nbsp;</div>
+    <div ng-show="emptyResults == 2">
+        <section id="callLists" class="col-lg-6">
+            <label>Total : {{noOfCallsDisplayed}} out of {{noOfCalls}} </label>
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-lg-5">Customer Name
+                        </th>
+                        <th class="col-lg-6">Reason for calling
+                        </th>
+                        <th class="col-lg-1">Call Hour
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="item in getGroupedDates">
+                    <tr>
+                        <td id="dateRow" colspan="3" ng-class="getDateRowClass(item.Date)"><b>{{item.FormatedDate}}</b></td>
+                    </tr>
+                    <tr ng-repeat="value in getScheduledCallsDetailsByDate(item.Date)" class="pointer" title="Log Call" ng-click="displayCallLogSection(value.Id)">
+                        <td>{{value.CustomerFirstName}} {{value.CustomerLastName}}</td>
+                        <td><span class="glyphicons {{value.Icon}}"></span>&nbsp;{{value.ReasonToCall}}</td>
+                        <td>{{value.Hour}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div ng-show="emptyResults == 1">
+        There are no values matching your search filter.
+    </div>
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6" ng-show="displayCallLog == 1">
+        <div class="section">
+            <div class="col-lg-3 pull-Left">Details</div>
+            <div class="col-lg-9 pull-right">
+                <div class="label label-tag label-success ng-binding ng-scope pull-right" ng-show="hasItemInService == true">
+                    Item in Service
+                </div>
+                <div class="label label-tag label-info ng-binding ng-scope pull-right" style="margin: 0px 5px" ng-show="arrearsAndUndeliveredAccount.IsInArrears == true">
+                    In the Arrears
+                </div>
+                <div class="label label-tag label-primary ng-binding ng-scope pull-right" ng-show="arrearsAndUndeliveredAccount.HasUndeliveredAccount == true">
+                    Undelivered Account
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Customer</label>
+            </div>
+            <div class="col-lg-8">
+                {{currentCall.customerFullNameLog}} - {{currentCall.CustomerId}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Reason for calling</label>
+            </div>
+            <div class="col-lg-8">
+                {{currentCall.ReasonToCall}}
+            </div>
+        </div>
+        <div class="row" ng-if="currentCall.MobileNumber">
+            <div class="col-lg-4">
+                <label ng-model="currentCall.Phone">Mobile</label>
+            </div>
+            <div class="col-lg-8">
+                {{currentCall.MobileNumber}}
+            </div>
+        </div>
+        <div class="row" ng-if="currentCall.LandLinePhone">
+            <div class="col-lg-4">
+                <label ng-model="currentCall.Phone">Land Line</label>
+            </div>
+            <div class="col-lg-8">
+                {{currentCall.LandLinePhone}}
+            </div>
+        </div>
+        <div class="row" ng-if="currentCall.Email">
+            <div class="col-lg-4">
+                <label ng-model="currentCall.Email">Email</label>
+            </div>
+            <div class="col-lg-8">
+                {{currentCall.Email}}
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="col col-lg-12" ng-show="currentCall.PendingCalls.length != 0">
+            <div class="row">
+                Pending calls for this customer
+            </div>
+            <div class="radio" ng-repeat="pendingCall in currentCall.PendingCalls">
+                <input id="pendingCall" ng-model="pendingCall.Selected" type="checkbox" checked="checked" />
+                {{pendingCall.Message}}
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+            </div>
+            <div class="col col-lg-4">
+                <input type="checkbox" ng-model="currentCall.SpokeToCustomer" ng-click="changeCallLabel(currentCall.SpokeToCustomer)" />
+                <label>Spoke to customer</label>
+            </div>
+            <div class="col-lg-4">
+                <input type="checkbox" ng-model="currentCall.DoNotCallAgain" />
+                <label id="Label3">No unsolicited calls</label>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label>Called At</label>
+            </div>
+            <div class="col col-lg-4">
+                <input name="CalledAt" type="date" ng-model="currentCall.CalledAt" class="date form-control">
+            </div>
+            <div class="col-lg-4">
+                <input class="date form-control" type="time" class="date form-control " ng-model="currentCall.CalledAtHour" />
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label>{{changeCallLabel(currentCall.SpokeToCustomer)}}</label>
+            </div>
+            <div class="col-lg-4">
+                <input name="ScheduleCallback" type="date" ng-model="currentCall.ScheduleCallback" class="date form-control" />
+            </div>
+            <div class="col-lg-4" ng-class="{'has-error': !currentCall.ScheduleCallbackHour}" ng-show="currentCall.ScheduleCallback">
+                <input class="date form-control" type="time" class="date form-control " ng-model="currentCall.ScheduleCallbackHour" />
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row" ng-show="currentCall.SpokeToCustomer && currentCall.ScheduleCallbackHour">
+            <label class="col col-lg-4" for="reasonForCalling">Reason for calling</label>
+            <div class="col col-lg-8">
+                <input type="text" placeholder="Reason for calling" class="date form-control" ng-model="currentCall.ReasonToCallAgain" maxlength="32"/>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <textarea rows="4" placeholder="Enter comments here" aria-multiline="true" class="col col-lg-12" ng-model="currentCall.Comments" />
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row" style="margin-bottom:35px">
+            <button type="submit" class="btn btn-primary" ng-click="logCall()" ng-class="!isHourValid(currentCall.ScheduleCallbackHour, currentCall.ScheduleCallback) ? 'disabled' : 'click'">Log call</button>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="section" ng-show="customerPreviousCalls.length > 0">Previous Calls</div>
+        <div class="searchWarranty result search-result panel panel-default" ng-repeat="value in customerPreviousCalls">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <span title="Spoke to Customer" class="glyphicons earphone" ng-show="{{value.SpokeToCustomer}}"></span>
+                        <span title="Called On"><b>{{value.CalledAt}}</b></span>
+                    </div>
+                    <div class="col-lg-6">
+                        <span title="Called By"><b>{{value.SalesPersonName}}</b></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col col-lg-6" title="Call Type">
+                        {{value.CallTypeName}}
+                    </div>
+                    <div class="col col-lg-6" title="Reason For Calling">
+                        {{value.ReasonForCalling}}
+                    </div>
+                    <div class="col col-lg-12" title="Comments">
+                        <div class="search row">&nbsp;</div>
+                        {{value.Comments}}
+                    </div>
+                    <div class="col col-lg-12" ng-show="value.RescheduledOn != null">
+                        <div class="search row">&nbsp;</div>
+                        Call rescheduled on : {{value.RescheduledOn}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-6" ng-show="displayCallLog == 4">
+        <div class="section">Log Unscheduled Call(s)</div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label id="Label2">Customer</label>
+            </div>
+            <div class="col-lg-8" ng-class="{'has-error': !newCall.CustomerId}">
+                <list ng-model="newCall.CustomerId" scope="newCall.CustomerList" placeholder="Customer"></list>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row" ng-show="newCall.CustomerId">
+            <div class="col-lg-4">
+                <label ng-model="currentCall.Phone">Mobile</label>
+            </div>
+            <div class="col-lg-8">
+                {{newCall.MobileNumber}}
+            </div>
+        </div>
+        <div class="row" ng-show="newCall.CustomerId">
+            <div class="col-lg-4">
+                <label ng-model="currentCall.Phone">Land Line</label>
+            </div>
+            <div class="col-lg-8">
+                {{newCall.LandLinePhone}}
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="col col-lg-12" ng-show="newCall.PendingCalls.length > 0 && newCall.CustomerId">
+            <div class="row">
+                Pending calls for this customer
+            </div>
+            <div class="radio" ng-repeat="pendingCall in newCall.PendingCalls">
+                <input ng-model="pendingCall.Selected" type="checkbox" checked="checked" />
+                {{pendingCall.Message}}
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4"></div>
+            <div class="col col-lg-4">
+                <input type="checkbox" checked="checked" disabled="disabled" scope="newCall.SpokeToCustomer" />
+                <label id="Label5">Spoke to customer</label>
+            </div>
+            <div class="col col-lg-4">
+                <input type="checkbox" ng-model="newCall.DoNotCallAgain" />
+                <label id="Label7">No unsolicited calls</label>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label>Reason for calling</label>
+            </div>
+            <div class="col col-lg-8" ng-class="{'has-error': !newCall.ReasonToCallAgain}">
+                <input class="form-control" type="text" ng-model="newCall.ReasonToCallAgain" placeholder="Reason for calling" maxlength="32" />
+            </div>
+        </div>
+
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label id="Label4">Called At</label>
+            </div>
+            <div class="col col-lg-4">
+                <input name="CalledAt" type="date" ng-model="newCall.CalledAt" class="date form-control">
+            </div>
+            <div class="col-lg-4">
+                <input type="time" class="date form-control" ng-model="newCall.CalledAtHour" />
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label>Schedule Callback</label>
+            </div>
+            <div class="col col-lg-4">
+                <input type="date" ng-model="newCall.ScheduleCallback" class="date form-control" />
+            </div>
+            <div class="col col-lg-4" ng-class="{'has-error': !newCall.ScheduleCallbackHour}" ng-show="newCall.ScheduleCallback">
+                <input type="time" class="date form-control" ng-model="newCall.ScheduleCallbackHour" />
+            </div>
+        </div>
+
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <textarea rows="4" placeholder="Enter comments here" aria-multiline="true" class="col col-lg-12" ng-model="newCall.Comments" />
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row" style="margin-bottom:35px">
+            <button type="submit" class="btn btn-primary" ng-click="logUnscheduledCall(newCall.CustomerId)" ng-class="!isDataValid(newCall) ? 'disabled' : 'click'">Log unscheduled call</button>
+            <button type="submit" class="btn btn-default" ng-click="cancelLogCall()">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/">
+      <s:element name="GetPendingItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="deliveryAuthorisedAfter" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="deliveryAuthorisedBefore" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="stockLocation" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="authorisedOnly" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="deliveredOnly" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="top" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingItemsResult" type="tns:ArrayOfInstResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInstResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InstResult" nillable="true" type="tns:InstResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InstResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InstNo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormattedStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AcctNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgreementNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryAddress3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneHome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneWork" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeliveryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasWarranty" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CourtsCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductDescription1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductDescription2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockLocation" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthorisedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrimaryChargeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResolutionRowVersion" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="TechnicianId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TechnicianName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkTelNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchParam" type="tns:InstSearchParameter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InstSearchParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AcctNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstNo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstDateFrom" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstDateTo" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="tns:InstStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="InstStatus">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="Unknown" />
+              <s:enumeration value="New" />
+              <s:enumeration value="Booked" />
+              <s:enumeration value="ToBeClosed" />
+              <s:enumeration value="Closed" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:element name="SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchResult" type="tns:ArrayOfInstResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookTechnician">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="record" type="tns:Installation" />
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="slots" type="tns:ArrayOfShort" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rebookingReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Installation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InstallationNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BranchNo" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="AcctNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgreementNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockLocation" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstallationDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CourtsCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShort">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="short" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BookTechnicianResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookTechnicianResult" type="tns:Installation" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReleaseTechnician">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="slotNoAny" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReleaseTechnicianResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReleaseTechnicianResult" type="tns:Installation" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="installationNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="withHistory" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookingsResult" type="tns:ArrayOfInstBookingResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInstBookingResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InstBookingResult" nillable="true" type="tns:InstBookingResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InstBookingResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InstNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartSlot" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoOfSlots" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormattedSlots" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TechnicianId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TechnicianName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReleasedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReleasedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RebookingReasonText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RebookingReasonCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBookingForPrint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="installationNoFrom" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="installationNoTo" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="installationDateFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="installationDateTo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="allocationDateFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="allocationDateTo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="technicianId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookingForPrintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookingForPrintResult" type="tns:ArrayOfInstTechPrintResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInstTechPrintResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InstTechPrintResult" nillable="true" type="tns:InstTechPrintResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InstTechPrintResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InstNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TechnicianId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TechnicianName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartSlot" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfSlots" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AcctNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CourtsCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstItemNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstCourtsCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsBooked">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="installationNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsBookedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsBookedResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSparePartDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="partNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSparePartDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSparePartDetailResult" type="tns:StockItemDetails" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StockItemDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StockInfo" type="tns:StockInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="StockPrices" type="tns:ArrayOfStockPrice" />
+          <s:element minOccurs="0" maxOccurs="1" name="StockQuantities" type="tns:ArrayOfStockQuantity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StockInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="itemno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdescr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdescr2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="category" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Supplier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prodstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="suppliercode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="warrantable" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="warrantyrenewalflag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="leadtime" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="assemblyrequired" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="taxrate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IUPC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Class" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColourName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColourCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtyBoxes" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="WarrantyLength" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="VendorWarranty" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Brand" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorStyle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorLongStyle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorEAN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RepossessedItem" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemPOSDescr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SparePart" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineAvailable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineDateAdded" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineDateRemoved" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineDConly" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WarrantyType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStockPrice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StockPrice" nillable="true" type="tns:StockPrice" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StockPrice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="itemno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="branchno" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditPrice" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CashPrice" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DutyFreePrice" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CostPrice" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Refcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateActivated" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStockQuantity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StockQuantity" nillable="true" type="tns:StockQuantity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StockQuantity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="itemno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stocklocn" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="qtyAvailable" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="stock" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="stockonorder" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="stockdamage" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="leadtime" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="dateupdated" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="deleted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastOperationSource" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateResolution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="installationNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="resolution" type="tns:InstallationResolution" />
+            <s:element minOccurs="0" maxOccurs="1" name="spareParts" type="tns:ArrayOfInstallationSparePart" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InstallationResolution">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InstallationNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrimaryChargeTo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdditionalCost" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LabourCost" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NonCourtsPartCost" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CourtsPartCost" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCost" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCompleted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthorisedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AuthorisedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowVersion" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInstallationSparePart">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InstallationSparePart" nillable="true" type="tns:InstallationSparePart" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InstallationSparePart">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InstallationNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockLocation" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNonCourts" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PartID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CourtsPartNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateResolutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateResolutionResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="conflictOccurred" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResolution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="installationNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResolutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResolutionResult" type="tns:InstResolutionResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InstResolutionResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Resolution" type="tns:InstallationResolution" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpareParts" type="tns:ArrayOfInstallationSparePart" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BuildEmptyChargeAnalysis">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuildEmptyChargeAnalysisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuildEmptyChargeAnalysisResult" type="tns:ArrayOfInstChargeAnalysisResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInstChargeAnalysisResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InstChargeAnalysisResult" nillable="true" type="tns:InstChargeAnalysisResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InstChargeAnalysisResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InstNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BreakDownText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BreakDownCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Electrical" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Furniture" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPendingItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingItems" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingItemsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="BookTechnicianSoapIn">
+    <wsdl:part name="parameters" element="tns:BookTechnician" />
+  </wsdl:message>
+  <wsdl:message name="BookTechnicianSoapOut">
+    <wsdl:part name="parameters" element="tns:BookTechnicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookTechnicianAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseTechnicianSoapIn">
+    <wsdl:part name="parameters" element="tns:ReleaseTechnician" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseTechnicianSoapOut">
+    <wsdl:part name="parameters" element="tns:ReleaseTechnicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseTechnicianAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetBookingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookings" />
+  </wsdl:message>
+  <wsdl:message name="GetBookingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookingsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetBookingForPrintSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookingForPrint" />
+  </wsdl:message>
+  <wsdl:message name="GetBookingForPrintSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookingForPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookingForPrintAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="IsBookedSoapIn">
+    <wsdl:part name="parameters" element="tns:IsBooked" />
+  </wsdl:message>
+  <wsdl:message name="IsBookedSoapOut">
+    <wsdl:part name="parameters" element="tns:IsBookedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsBookedAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSparePartDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSparePartDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetSparePartDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSparePartDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSparePartDetailAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResolutionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateResolution" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResolutionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResolutionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetResolutionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResolution" />
+  </wsdl:message>
+  <wsdl:message name="GetResolutionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResolutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResolutionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="BuildEmptyChargeAnalysisSoapIn">
+    <wsdl:part name="parameters" element="tns:BuildEmptyChargeAnalysis" />
+  </wsdl:message>
+  <wsdl:message name="BuildEmptyChargeAnalysisSoapOut">
+    <wsdl:part name="parameters" element="tns:BuildEmptyChargeAnalysisResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuildEmptyChargeAnalysisAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WInstallationSoap">
+    <wsdl:operation name="GetPendingItems">
+      <wsdl:input message="tns:GetPendingItemsSoapIn" />
+      <wsdl:output message="tns:GetPendingItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input message="tns:SearchSoapIn" />
+      <wsdl:output message="tns:SearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookTechnician">
+      <wsdl:input message="tns:BookTechnicianSoapIn" />
+      <wsdl:output message="tns:BookTechnicianSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseTechnician">
+      <wsdl:input message="tns:ReleaseTechnicianSoapIn" />
+      <wsdl:output message="tns:ReleaseTechnicianSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookings">
+      <wsdl:input message="tns:GetBookingsSoapIn" />
+      <wsdl:output message="tns:GetBookingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingForPrint">
+      <wsdl:input message="tns:GetBookingForPrintSoapIn" />
+      <wsdl:output message="tns:GetBookingForPrintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBooked">
+      <wsdl:input message="tns:IsBookedSoapIn" />
+      <wsdl:output message="tns:IsBookedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSparePartDetail">
+      <wsdl:input message="tns:GetSparePartDetailSoapIn" />
+      <wsdl:output message="tns:GetSparePartDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResolution">
+      <wsdl:input message="tns:UpdateResolutionSoapIn" />
+      <wsdl:output message="tns:UpdateResolutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResolution">
+      <wsdl:input message="tns:GetResolutionSoapIn" />
+      <wsdl:output message="tns:GetResolutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuildEmptyChargeAnalysis">
+      <wsdl:input message="tns:BuildEmptyChargeAnalysisSoapIn" />
+      <wsdl:output message="tns:BuildEmptyChargeAnalysisSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WInstallationSoap" type="tns:WInstallationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPendingItems">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetPendingItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPendingItemsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SearchAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookTechnician">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/BookTechnician" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BookTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseTechnician">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/ReleaseTechnician" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReleaseTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookings">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetBookings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBookingsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingForPrint">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetBookingForPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBookingForPrintAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBooked">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/IsBooked" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsBookedAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSparePartDetail">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetSparePartDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSparePartDetailAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResolution">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/UpdateResolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateResolutionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResolution">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetResolution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetResolutionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildEmptyChargeAnalysis">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/BuildEmptyChargeAnalysis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuildEmptyChargeAnalysisAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WInstallationSoap12" type="tns:WInstallationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPendingItems">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetPendingItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPendingItemsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SearchAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookTechnician">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/BookTechnician" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BookTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseTechnician">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/ReleaseTechnician" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ReleaseTechnicianAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookings">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetBookings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBookingsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookingForPrint">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetBookingForPrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBookingForPrintAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBooked">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/IsBooked" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsBookedAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSparePartDetail">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetSparePartDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSparePartDetailAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResolution">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/UpdateResolution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateResolutionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResolution">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/GetResolution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetResolutionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildEmptyChargeAnalysis">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/installation/2011/01/BuildEmptyChargeAnalysis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BuildEmptyChargeAnalysisAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WInstallation">
+    <wsdl:port name="WInstallationSoap" binding="tns:WInstallationSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WInstallation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WInstallationSoap12" binding="tns:WInstallationSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WInstallation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,111 @@
+<div class="container search" ng-controller="searchController">
+    <h1><span ng-bind="mainTitle">Payments Search</span></h1>
+
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="section">Search Type</div>
+    <form name="searchTypeForm" class="searchTypeStyle">
+        <label>
+            <input type="radio" ng-model="searchType" value="order"> Order
+        </label>
+        <label>
+            <input type="radio" ng-model="searchType" value="agreement"> Agreement
+        </label>
+        <label>
+            <input type="radio" ng-model="searchType" value="customer"> Customer
+        </label>
+    </form>
+    <div class="row">&nbsp;</div>
+    <div class="section">Search Criteria</div>
+    <form ng-submit="searchPayments()" class="form-horizontal">
+        <div class="row"
+             ng-show="searchType == 'order' || searchType == 'agreement'">
+            <div class="col col-lg-4">
+                <div class="form-group">
+                    <label class="col col-lg-5 control-label" for="dateFrom">Date From</label>
+
+                    <div class="col col-lg-7">
+                        <input type="date" ng-model="search.dateFrom"
+                               class="date form-control ng-pristine ng-untouched ng-valid"
+                               id="dateFrom" name="dateFrom">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-4">
+                <div class="form-group">
+                    <label class="col col-lg-5 control-label" for="dateTo">Date To</label>
+
+                    <div class="col col-lg-7">
+                        <input type="date" ng-model="search.dateTo"
+                               class="date form-control ng-pristine ng-untouched ng-valid"
+                               id="dateTo" name="dateTo">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-4" ng-show="searchType == 'order'">
+                <div class="form-group">
+                    <label class="col col-lg-5 control-label" for="orderNumber">Order Number</label>
+
+                    <div class="col col-lg-7">
+                        <input type="text" ng-model="search.orderNumber"
+                               class="date form-control ng-pristine ng-untouched ng-valid"
+                               id="orderNumber" name="orderNumber">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-lg-4" ng-show="searchType == 'agreement'">
+                <div class="form-group">
+                    <label class="col col-lg-5 control-label" for="agreementNumber">Agreement
+                        Number</label>
+
+                    <div class="col col-lg-7">
+                        <input type="text" ng-model="search.agreementNumber"
+                               class="date form-control ng-pristine ng-untouched ng-valid"
+                               id="agreementNumber" name="agreementNumber">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="searchType == 'customer'">
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label class="col col-lg-5 control-label" for="customerFirstName">Customer First
+                        Name</label>
+
+                    <div class="col col-lg-7">
+                        <input type="text" ng-model="search.customerFirstName"
+                               class="date form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength"
+                               id="customerFirstName" name="customerFirstName">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label class="col col-lg-5 control-label" for="customerLastName">Customer Last
+                        Name</label>
+
+                    <div class="col col-lg-7">
+                        <input type="text" ng-model="search.customerLastName"
+                               class="date form-control ng-pristine ng-untouched ng-valid"
+                               id="customerLastName" name="customerLastName">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <input type="reset" id="btnClear" class="btn btn-default" ng-click="clearSearchFilters()"
+               value="Clear"/>
+        <input type="submit" id="btnSearch" class="btn btn-primary" ng-click="searchPayments()"
+               value="Search"/>
+    </form>
+    <div class="row">&nbsp;</div>
+    <div class="section">Search Results</div>
+    <div ng-show="searchType == 'order'"
+         ng-include="'/payments/views/templates/OrderSearchResult.html'"></div>
+    <div ng-show="searchType == 'agreement'"
+         ng-include="'/payments/views/templates/AgreementSearchResult.html'"></div>
+    <div ng-show="searchType == 'customer'"
+         ng-include="'/payments/views/templates/CustomerSearchResult.html'"></div>
+</div>

@@ -1,0 +1,58 @@
+﻿<div class="container">
+    <h1>CSR Targets</h1>
+    <div ng-controller="csrTargetsController" ng-cloak>
+        <div class="row">
+            <div class="search row">&nbsp;</div>
+            <div class="col col-lg-12">
+                <div class="form-group">
+                    <div class="col col-lg-3">
+                        <label class="col col-lg-6 control-label" for="week">Weekly Sales</label>
+                        <div class="col col-lg-6" ng-class="{'has-error': !currentYear.weeklySales}">
+                            <input type="text" class="date form-control" ng-model="currentYear.weeklySales" ng-blur="calculateMonthlyAndAnnualSales()"/>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3">
+                        <label class="col col-lg-6 control-label" for="month">Monthly Sales</label>
+                        <div class="col col-lg-6" ng-class="{'has-error': !currentYear.monthlySales}">
+                            <input type="text" class="date form-control" ng-model="currentYear.monthlySales" ng-blur="calculateWeeklyAndAnnualSales()" />
+                        </div>
+                    </div>
+                    <div class="col col-lg-3">
+                        <label class="col col-lg-6 control-label" for="year">Annual Sales</label>
+                        <div class="col col-lg-6" ng-class="{'has-error': !currentYear.annualSales}">
+                            <input type="text" class="date form-control" ng-model="currentYear.annualSales" ng-blur="calculateWeeklyAndMonthlySales()" />
+                        </div>
+                    </div>
+                    <div class="col col-lg-3">
+                        <button type="submit" class="btn btn-primary" id="btnSearch" ng-click="save()" ng-disabled="!currentYear.weeklySales && !currentYear.monthlySales && !currentYear.annualSales">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row" ng-show="getAnnualTargetHistory.length > 0">
+            <table class="table table-bordered table-hover table-striped">
+                <thead ng-show="getAnnualTargetHistory">
+                    <tr>
+                        <th class="col col-lg-3">Year
+                        </th>
+                        <th class="col col-lg-3"> Weekly Target
+                        </th>
+                        <th class="col col-lg-3"> Monthly Target
+                        </th>
+                        <th class="col col-lg-3"> Annual Target
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="value in getAnnualTargetHistory">
+                        <td class="col col-lg-3">{{value.Year}}</td>
+                        <td class="col col-lg-3">{{getWeeklyTargets(value.TargetYear)}}</td>
+                        <td class="col col-lg-3">{{getMonthlyTargets(value.TargetYear)}}</td>
+                        <td class="col col-lg-3">{{getAnnualTargets(value.TargetYear)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

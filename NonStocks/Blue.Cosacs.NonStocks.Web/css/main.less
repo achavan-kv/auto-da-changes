@@ -1,0 +1,163 @@
+@DefaultBlackColor: #333;
+@DefaultWhiteColor: #fff;
+@DefaultGreyColor: #adadad;
+@DefaultGrey2: #f5f5f5;
+@LockedGreyColor: #cecece;
+@HeadingBackgroundColor: #d5d5d5;
+@HeadingTextColor: @DefaultBlackColor;
+@HeadingBorderColor: #ddd;
+@DisabledButtonBackgroundColor: #428bca;
+@DisabledButtonBorderColor: #357ebd;
+@DisabledButtonBackgroundColorHover: #3276b1;
+@DisabledButtonBorderColorHover: #285e8e;
+
+.non-stocks {
+    [disabled='disabled'] {
+        background-color: @LockedGreyColor;
+    }
+
+    .left-group {
+        .ckbox-form-control {
+            float: left;
+            width: 18px;
+            height: 18px;
+            margin-top: 6px;
+        }
+    }
+
+    .right-group {
+        .hierarchyLevel {
+            .levelControl {
+            }
+        }
+    }
+
+    .actions {
+        button {
+            color: @DefaultWhiteColor;
+            background-color: @DisabledButtonBackgroundColor;
+            border-color: @DisabledButtonBorderColor;
+        }
+
+        button:hover {
+            color: @DefaultWhiteColor;
+            background-color: @DisabledButtonBackgroundColorHover;
+            border-color: @DisabledButtonBorderColorHover;
+        }
+    }
+}
+
+.non-stocks-search-result {
+
+    .results-heading {
+        font-size: 14px;
+        height: 42px;
+        margin: 10px;
+        padding: 10px;
+        color: @HeadingTextColor;
+        background-color: @HeadingBackgroundColor;
+        border-color: @HeadingBorderColor;
+
+        a {
+            font-size: larger;
+        }
+
+        .resultType {
+            font-size: 16px;
+        }
+
+        .statusLabel {
+            background-color: #999;
+            display: inline;
+            padding: 5px 10px;
+            font-size: 80%;
+            font-weight: bold;
+            line-height: 1;
+            color: @DefaultBlackColor;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 4px;
+        }
+    }
+
+    .results-body {
+        height: 64px;
+        margin: 10px;
+        padding: 10px;
+
+        .description {
+            .desc1, .desc2 {
+                font-weight: 300;
+            }
+        }
+
+        .hierarchyL1, .hierarchyL2, .hierarchyL3 {
+        }
+    }
+}
+
+.product-link {
+    .control-label {
+        text-align: right;
+        padding-top: 7px;
+    }
+
+    .control-static {
+        padding-top: 7px;
+        padding-left: 14px;
+    }
+
+    .search {
+        label {
+            text-align: right;
+        }
+    }
+
+    .product-links {
+        .section {
+            margin-left: 10px;
+        }
+        .link {
+            padding: 15px;
+            border: solid @DefaultGreyColor 1px;
+            margin: 0px 0px 10px 0px;
+
+            .editing-link {
+                margin: -15px -15px 15px -15px;
+                font-size: 15px;
+                color: @DefaultBlackColor;
+                background-color: @DefaultGrey2;
+                padding: 10px 15px;
+                border-color: @HeadingBorderColor;
+                border-bottom: 1px solid @HeadingBorderColor;
+            }
+
+            table {
+                thead {
+                    th {
+                        font-size: 14px;
+                        text-align: left;
+                        padding: 30px 8px 8px 8px;
+                    }
+                }
+                td {
+                    height: 55px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+    .pagination {
+
+    }
+}
+
+.nonStocksTable {
+    label.control-label {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+

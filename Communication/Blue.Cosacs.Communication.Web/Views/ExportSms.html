@@ -1,0 +1,18 @@
+<div ng-controller="exportSmsController" ng-cloak>
+    <h1>Sms Export</h1>
+    <div class="row">
+        <br />
+        <h4 ng-show="noData">There are no new Sms to export</h4>
+        <a ng-hide="noData" href="/Communication/api/ExportSms"  class="btn btn-default">Download Sms File</a>
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="row">
+        <h4 ng-show="noData">Previews Exports</h4>
+        <div ng-repeat="value in previewsExports">
+            <span>Exported On {{value.FriendlyExportedOn}} ({{value.Total}} sms exported)</span>
+            <a href="/Communication/api/ExportSms?exportedOn={{value.ExportedOn}}">Re-Export</a>
+        </div>
+    </div>
+</div>

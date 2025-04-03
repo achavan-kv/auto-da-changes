@@ -1,0 +1,65 @@
+<div class="container">
+    <h1>Configure Additional Customers Interaction</h1>
+
+    <div ng-controller="inactiveCustomerController" ng-cloak>
+        <div class="row" ng-repeat="inactive in data">
+            <h2>{{inactive.Title}}</h2>
+            <div class="col-lg-1 text-center">
+                <span class="action click save glyph-btn glyphicons floppy_save text-danger" ng-class="isValidInactive(inactive) ? 'click' : 'disabled'" ng-click="updateValues(inactive)" title="Save"></span>
+            </div>
+            <div class="col-md-4">
+                <div><strong>Contact Via</strong></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="radio" name="ContactVia{{inactive.Id}}" value="{{contactMeans.Phone}}" ng-model="inactive.SelectedContactType"> Phone Call
+                    </div>
+                </div>
+                <div class="row" ng-class="{'has-error': (!inactive.ContactViaTemplate && inactive.SelectedContactType == contactMeans.Email)}">
+                    <div class="col-md-12">
+                        <input type="radio" name="ContactVia{{inactive.Id}}" ng-click="inactive.IfFlushedContactType = contactMeans.None" value="{{contactMeans.Email}}" ng-model="inactive.SelectedContactType"> Email
+                    </div>
+                    <div class="col-md-12">
+                        <list ng-model="inactive.ContactViaTemplate" scope="Templates" placeholder="Email Template For {{inactive.Title}}" ng-disabled="!(inactive.SelectedContactType == contactMeans.Email)"></list>
+                        <div><label for="newContactSubject">Email Subject</label></div>
+                        <input type="text" id="newContactSubject" class="form-control" ng-model="inactive.ContactEmailSubject" maxlength="128" placeholder="Email Subject" ng-disabled="!(inactive.SelectedContactType == contactMeans.Email)" />
+                    </div>
+                </div>
+                <div class="row" ng-class="{'has-error': (!inactive.ContactViaSms && inactive.SelectedContactType == contactMeans.Sms)}">
+                    <div class="col-md-12">
+                        <input type="radio" name="ContactVia{{inactive.Id}}" ng-click="inactive.IfFlushedContactType = contactMeans.None" value="{{contactMeans.Sms}}" ng-model="inactive.SelectedContactType"> Sms
+                        <span for="smsText">({{inactive.ContactViaSms.length}})</span>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea id="newSmsText" class="form-control" ng-model="inactive.ContactViaSms" rows="5" ng-trim="true" maxlength="160" ng-disabled="inactive.SelectedContactType != contactMeans.Sms"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            <div><strong>If Call is Flushed</strong></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="radio" name="SendAfter{{inactive.Id}}" value="{{contactMeans.None}}" ng-model="inactive.IfFlushedContactType"> None
+                </div>
+            </div>
+            <div class="row" ng-class="{'has-error': (!inactive.IfFlushedTemplate && inactive.IfFlushedContactType == contactMeans.Email)}">
+                <div class="col-md-12">
+                    <input type="radio" ng-disabled="inactive.SelectedContactType != contactMeans.Phone"  name="SendAfter{{inactive.Id}}" value="{{contactMeans.Email}}" ng-model="inactive.IfFlushedContactType"> Send Email
+                    <list ng-model="inactive.IfFlushedTemplate" scope="Templates" placeholder="Flushed Template For {{inactive.Title}}" ng-disabled="!(inactive.IfFlushedContactType == contactMeans.Email)"></list>
+                    <div><label for="newflushedContactSubject">Email Subject</label></div>
+                    <input type="text" id="newflushedContactSubject" class="form-control" ng-model="inactive.FlushedEmailSubject" maxlength="128" placeholder="Email Subject" ng-disabled="!(inactive.IfFlushedContactType == contactMeans.Email)" />
+                </div>
+            </div>
+            <div class="row" ng-class="{'has-error': (!inactive.IfFlushedSms && inactive.IfFlushedContactType == contactMeans.Sms)}">
+                <div class="col-md-12">
+                    <input type="radio" ng-disabled="inactive.SelectedContactType != contactMeans.Phone"  name="SendAfter{{inactive.Id}}" value="{{contactMeans.Sms}}" ng-model="inactive.IfFlushedContactType"> Send Sms
+                    <span for="smsText">({{inactive.IfFlushedSms.length}})</span>
+                </div>
+                <div class="col-md-12">
+                    <textarea id="newSmsCallFlushed" class="form-control" ng-model="inactive.IfFlushedSms" rows="5" ng-trim="true" maxlength="160" ng-disabled="!(inactive.IfFlushedContactType == contactMeans.Sms)"></textarea>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,1 @@
+<%@ Codebehind="App_Code\Global.asax.cs" Inherits="STL.WS.Global" Language="C#" %>

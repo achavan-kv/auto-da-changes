@@ -1,0 +1,205 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b0e5ef5f-c4d8-4ba9-9eeb-589e3f044ac5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sales</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Cint Order</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="57236a39-55f4-47aa-86a1-ed546ff91e3e">
+          <ID>Merchandise Sales</ID>
+          <Name>Merchandise Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f304f087-d278-48fd-ae1f-069839d14938">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>Merchandising_CintOrder</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Affinity Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="49afb424-246b-4df4-ab6a-b70ea4aebcc7">
+          <ID>Affinity Sales</ID>
+          <Name>Affinity Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f5efdd0c-293f-48c4-b164-e31998c8967b">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>AffinitySales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Service Charges</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="0623767a-d7a8-4d24-ac41-ee894aeddf2d">
+          <ID>Service Charges</ID>
+          <Name>Service Charges</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="007b84c5-3730-49a8-a3e9-7f0532bc0c58">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>ServiceCharges</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Rebates</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8b07f37a-0c99-4507-b8df-0951a01b3cf1">
+          <ID>Rebates</ID>
+          <Name>Rebates</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="ff686c1a-b792-4e5b-b551-152eb8831cb0">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>Rebates</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Other Charges</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="e190ed1b-027f-4ae3-9176-a7a6748e6405">
+          <ID>Other Charges</ID>
+          <Name>Other Charges</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="52774331-4a3b-4c11-ae15-77cdc3737863">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>OtherCharges</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Interest Charges</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="cb35bacf-2179-46bd-a4b2-11c3417ac03e">
+          <ID>Interest Charges</ID>
+          <Name>Interest Charges</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="ae60d4b0-d1e7-4c1d-9c50-1d60b410340a">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>InterestCharges</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Loan Disbursement</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="706c6317-e5ba-42f5-876e-1b2ff231d507">
+          <ID>Loan Disbursement</ID>
+          <Name>Loan Disbursement</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="7cba3af8-1a35-47dc-91ac-d23608811c41">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>LoanDisbursement</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Discounts</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="09e813cb-94d3-4274-ac6d-6a2f4b58dfdf">
+          <ID>Discounts</ID>
+          <Name>Discounts</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c3c412c3-46c5-4b9c-bdac-f3b2e417a8ac">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>Discounts</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Warranty Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="350993c3-6ec2-4ad5-b945-ca19221e86c8">
+          <ID>Warranty Sales</ID>
+          <Name>Warranty Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="4e53a8ad-fa87-40c9-9b9f-04e46b3afd32">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>WarrantySales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Price Differential</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="64946e82-3e37-4539-8e1e-c57215bbbb64">
+          <ID>Price Differential</ID>
+          <Name>Price Differential</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="694eb5b2-3426-40cd-8195-d6d940ff29e3">
+            <DataSourceViewID>Cosacs</DataSourceViewID>
+            <TableID>PriceDifferential</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

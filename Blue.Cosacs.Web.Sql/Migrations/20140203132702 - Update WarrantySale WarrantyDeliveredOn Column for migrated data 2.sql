@@ -1,0 +1,11 @@
+-- transaction: true
+-- Change the previous line to false to disable running this whole migration in one transaction.
+-- Removing that first line will default to 'true'.
+-- 
+-- Put your SQL code here
+
+
+update warranty.warrantysale
+set WarrantyDeliveredOn = ItemDeliveredOn
+where WarrantyDeliveredOn = dateadd(year,1,ItemDeliveredOn)
+

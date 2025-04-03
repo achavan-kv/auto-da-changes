@@ -1,0 +1,32 @@
+[
+  {
+    "url": "pos",
+    "template": "views/pos.html",
+    "reloadOnSearch": false
+  },
+  {
+    "url": "pos/:invoiceNo",
+    "template": "views/pos.html",
+    "reloadOnSearch": false
+  },
+  {
+    "url": "Orders",
+    "template": "views/orders.html",
+    "reloadOnSearch": false
+  },
+  {
+    "url": "PaymentSetup",
+    "template": "views/paymentSetup.html",
+    "reloadOnSearch": false
+  },
+  {
+    "url": "ContractsSetup",
+    "template": "views/contractsSetup.html",
+    "reloadOnSearch": false
+  },
+  {
+    "url": "DiscountLimitSetup",
+    "template": "views/discountLimitSetup.html",
+    "reloadOnSearch": false
+  }
+]

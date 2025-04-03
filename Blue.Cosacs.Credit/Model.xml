@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Credit" namespace="Blue.Cosacs.Credit" label="Credit">
+    <Connection server="." database="Cosacs" />
+    <Queries>
+        <NonQuery name="ThirdPartyStoreCardImport"/>
+    </Queries>
+    <Tables>
+        <Table name="StoreCardImport" />
+    </Tables>
+    <Views>
+        <View name="ActiveStoreCardsView"/>
+    </Views>
+    <Settings>
+    </Settings>
+</Model>

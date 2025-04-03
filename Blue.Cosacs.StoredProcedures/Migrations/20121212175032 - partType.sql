@@ -1,0 +1,2 @@
+ALTER TABLE Service.RequestPart
+ALTER COLUMN PartType VARCHAR(30) NOT null

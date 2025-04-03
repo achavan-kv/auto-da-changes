@@ -1,0 +1,352 @@
+/*<meta />*/
+
+/*
+// {{MadCap}} //////////////////////////////////////////////////////////////////
+// Copyright: MadCap Software, Inc - www.madcapsoftware.com ////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// <version>2.0.0.0</version>
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+.MCDropDown
+{
+	
+}
+
+.MCDropDownHead
+{
+	
+}
+
+.MCDropDownHotSpot
+{
+	
+}
+
+.MCDropDownBody
+{
+	
+}
+
+.MCDropDownIcon
+{
+	border: none;
+}
+
+.MCExpanding
+{
+	
+}
+
+.MCExpandingHead
+{
+	
+}
+
+.MCExpandingBody
+{
+	
+}
+
+.MCExpandingIcon
+{
+	border: none;
+}
+
+.MCKLink
+{
+	
+}
+
+.MCKLinkSpot
+{
+	
+}
+
+.MCKLinkBody
+{
+	background-color: #bbccdd;
+	border: solid 1px #000000;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	cursor: pointer;
+	cursor: hand;
+	filter: alpha( opacity = 100 );
+	-moz-opacity: 1.0;
+	z-index: 2;
+}
+
+.MCKLinkBodyBG
+{
+	background-color: #000000;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	filter: alpha( opacity = 100 );
+	-moz-opacity: 1.0;
+	z-index: 1;
+}
+
+.MCKLinkBodyCell_Highlighted
+{
+	padding: 5px;
+	background-color: Blue;
+	color: White;
+}
+
+.MCKLinkBodyCell
+{
+	padding: 5px;
+	background-color: Transparent;
+	color: Black;
+}
+
+.MCKeywordLinkIcon
+{
+	border: none;
+}
+
+.MCConceptLinkIcon
+{
+	border: none;
+}
+
+.MCRelatedTopicsIcon
+{
+	border: none;
+}
+
+.MCPopup
+{
+	
+}
+
+.MCPopupSpot
+{
+	
+}
+
+.MCPopupBody
+{
+	background-color: #ffffff;
+	border: solid 1px #000000;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	filter: alpha( opacity = 0 );
+	-moz-opacity: 0.0;
+	z-index: 2;
+}
+
+.MCPopupBodyBG
+{
+	background-color: #000000;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	filter: alpha( opacity = 0 );
+	-moz-opacity: 0.0;
+	z-index: 1;
+}
+
+.MCTextPopup
+{
+	
+}
+
+.MCTextPopupSpot
+{
+	
+}
+
+.MCTextPopupBody
+{
+	background-color: #bbccdd;
+	border: solid 1px #000000;
+	margin: 0px;
+	padding: 5px;
+	position: absolute;
+	overflow: auto;
+	filter: alpha( opacity = 0 );
+	-moz-opacity: 0.0;
+	z-index: 2;
+}
+
+.MCTextPopupBodyBG
+{
+	background-color: #000000;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	filter: alpha( opacity = 0 );
+	-moz-opacity: 0.0;
+	z-index: 1;
+}
+
+.MCToggler
+{
+	
+}
+
+.MCTogglerIcon
+{
+	border: none;
+}
+
+div.MCDropDown
+{
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+a.MCDropDownHotSpot
+{
+	font: Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot:link
+{
+	font: Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot:visited
+{
+	font: Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot:hover
+{
+	
+}
+
+a.MCDropDownHotSpot:focus
+{
+	
+}
+
+a.MCXref_ContinueTo
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+a.MCXref_ContinueTo:link
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+a.MCXref_ContinueTo:visited
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+a.MCXref_ContinueTo:hover
+{
+	
+}
+
+a.MCXref_ContinueTo:focus
+{
+	
+}
+
+a.MCXref_ContinueFrom
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+a.MCXref_ContinueFrom:link
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+a.MCXref_ContinueFrom:visited
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+a.MCXref_ContinueFrom:hover
+{
+	
+}
+
+a.MCXref_ContinueFrom:focus
+{
+	
+}
+
+a.MCDropDownHotSpot_0
+{
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot_0:link
+{
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot_0:visited
+{
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot_0:hover
+{
+	
+}
+
+a.MCDropDownHotSpot_0:focus
+{
+	
+}
+
+a.MCDropDownHotSpot_1
+{
+	font-family: Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot_1:link
+{
+	font-family: Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot_1:visited
+{
+	font-family: Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+
+a.MCDropDownHotSpot_1:hover
+{
+	
+}
+
+a.MCDropDownHotSpot_1:focus
+{
+	
+}
+
+div.MCDropDownHead
+{
+	font: Arial;
+	font-size: 10pt;
+	text-decoration: none;
+}
+

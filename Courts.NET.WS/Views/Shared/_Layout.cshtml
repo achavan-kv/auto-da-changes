@@ -1,0 +1,47 @@
+﻿<!doctype html>  
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    @{ Html.RenderPartial("Head"); }
+    @RenderSection("Head", false)
+   
+</head>
+<body class="maximized">
+
+    <div class="container_16">
+        <div class="grid_16 horizontal" id="menu">
+            @(new Menu(System.Web.HttpContext.Current, search: false, notifications: false, tutorial: false, maximize: false).RenderToString())
+        </div>         
+        <div id="center" class="grid_16">
+            <div class="grid_16">
+                <div><h2 id="page-heading"></h2></div>
+                <div class="ValidationSummary">@Html.ValidationSummary()</div>
+                @RenderBody()
+            </div>
+        </div>
+
+
+        <div class="clear"></div>
+        @* Javascript at the bottom for fast page loading *@
+        <script>document.getElementById('page-heading').innerHTML = document.title;</script>
+        @{ Html.RenderPartial("Footer"); }
+        @*  var status = ViewData.GetOrDefault<Status>(); 
+            if (status != null) 
+            Response.Write("<script type=\"text/javascript\">$().message('" + status.Info() + "');</script>");
+        *@
+    </div> 
+    <script type="text/javascript">
+        window.BaseURL = '@Url.Content("~/")'
+    </script>
+    <script data-main='@Url.Content("~/static/js/main")' src='@Url.Content("~/static/js/require-jquery.js")'></script>
+    @RenderSection("Script", false)
+</body>
+</html>
+
+
+

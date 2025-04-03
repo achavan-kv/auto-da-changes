@@ -1,0 +1,14 @@
+-- transaction: true
+-- Change the previous line to false to disable running this whole migration in one transaction.
+-- Removing that first line will default to 'true'.
+-- 
+-- Put your SQL code here
+
+UPDATE StockInfo
+	set SKU=ItemNo,IUPC=itemno
+Where IUPC is Null
+and ItemType ='N'
+and Category not in (12,82)
+
+
+

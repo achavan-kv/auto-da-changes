@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:element name="GetFunctionsForType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFunctionsForTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFunctionsForTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="UpdateFunctionsForRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="functions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateFunctionsForRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFunctionsForRoleResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TallymanExtract">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tallyRequest" type="tns:TallymanExtractRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TallymanExtractRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NewAccountsExtract" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateExistingDetails" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TallymanExtractResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TallymanExtractResult" type="tns:TallymanExtractResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TallymanExtractResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NewAccountSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateAccountSuccess" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TallymanSegmentImport">
+        <s:complexType />
+      </s:element>
+      <s:element name="TallymanSegmentImportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TallymanSegmentImportResult" type="tns:TallymanImportResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TallymanImportResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RunJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobNameList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RunJobsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MonitorJobStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MonitorJobStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MonitorJobStatusResult" type="tns:MonitorResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MonitorResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentExecutionStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotifyEventLog" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastRunOutcome" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateLastRun" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFunctionsForTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFunctionsForType" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionsForTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFunctionsForTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFunctionsForTypeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFunctionsForRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFunctionsForRole" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFunctionsForRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFunctionsForRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFunctionsForRoleAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="TallymanExtractSoapIn">
+    <wsdl:part name="parameters" element="tns:TallymanExtract" />
+  </wsdl:message>
+  <wsdl:message name="TallymanExtractSoapOut">
+    <wsdl:part name="parameters" element="tns:TallymanExtractResponse" />
+  </wsdl:message>
+  <wsdl:message name="TallymanExtractAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="TallymanSegmentImportSoapIn">
+    <wsdl:part name="parameters" element="tns:TallymanSegmentImport" />
+  </wsdl:message>
+  <wsdl:message name="TallymanSegmentImportSoapOut">
+    <wsdl:part name="parameters" element="tns:TallymanSegmentImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="TallymanSegmentImportAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="RunJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:RunJobs" />
+  </wsdl:message>
+  <wsdl:message name="RunJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:RunJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunJobsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="MonitorJobStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:MonitorJobStatus" />
+  </wsdl:message>
+  <wsdl:message name="MonitorJobStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:MonitorJobStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="MonitorJobStatusAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WSystemConfigSoap">
+    <wsdl:operation name="GetFunctionsForType">
+      <wsdl:input message="tns:GetFunctionsForTypeSoapIn" />
+      <wsdl:output message="tns:GetFunctionsForTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFunctionsForRole">
+      <wsdl:input message="tns:UpdateFunctionsForRoleSoapIn" />
+      <wsdl:output message="tns:UpdateFunctionsForRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TallymanExtract">
+      <wsdl:input message="tns:TallymanExtractSoapIn" />
+      <wsdl:output message="tns:TallymanExtractSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TallymanSegmentImport">
+      <wsdl:input message="tns:TallymanSegmentImportSoapIn" />
+      <wsdl:output message="tns:TallymanSegmentImportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunJobs">
+      <wsdl:input message="tns:RunJobsSoapIn" />
+      <wsdl:output message="tns:RunJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorJobStatus">
+      <wsdl:input message="tns:MonitorJobStatusSoapIn" />
+      <wsdl:output message="tns:MonitorJobStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSystemConfigSoap" type="tns:WSystemConfigSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFunctionsForType">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetFunctionsForType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFunctionsForTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFunctionsForRole">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UpdateFunctionsForRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateFunctionsForRoleAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TallymanExtract">
+      <soap:operation soapAction="http://strategicthought.com/webservices/TallymanExtract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TallymanExtractAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TallymanSegmentImport">
+      <soap:operation soapAction="http://strategicthought.com/webservices/TallymanSegmentImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TallymanSegmentImportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunJobs">
+      <soap:operation soapAction="http://strategicthought.com/webservices/RunJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RunJobsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorJobStatus">
+      <soap:operation soapAction="http://strategicthought.com/webservices/MonitorJobStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MonitorJobStatusAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSystemConfigSoap12" type="tns:WSystemConfigSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFunctionsForType">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetFunctionsForType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFunctionsForTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFunctionsForRole">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UpdateFunctionsForRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateFunctionsForRoleAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TallymanExtract">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/TallymanExtract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TallymanExtractAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TallymanSegmentImport">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/TallymanSegmentImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TallymanSegmentImportAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunJobs">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/RunJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RunJobsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorJobStatus">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/MonitorJobStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MonitorJobStatusAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSystemConfig">
+    <wsdl:port name="WSystemConfigSoap" binding="tns:WSystemConfigSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WSystemConfig.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSystemConfigSoap12" binding="tns:WSystemConfigSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WSystemConfig.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

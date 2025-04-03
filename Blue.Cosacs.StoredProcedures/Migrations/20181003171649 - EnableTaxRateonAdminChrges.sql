@@ -1,0 +1,2 @@
+INSERT into CountryMaintenance	(CountryCode,ParameterCategory,Name,Value,[Type],[Precision],OptionCategory,OptionListName,[Description],CodeName)
+	Values ((select top 1 Countrycode from country),'30','Enable tax on Admin Charges','True','checkbox',0,'','','If true, the tax rate will be applied on the amortized cash loan','CL_TaxRateApplied'); 

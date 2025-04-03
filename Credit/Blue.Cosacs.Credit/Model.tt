@@ -1,0 +1,6 @@
+﻿<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ include file="..\..\Blue.Template\Templates\Main.tt" #>
+<#@ output extension="cs" #>
+<#
+    new MainTemplate(Host.ResolvePath("Model.xml")).Render();
+#>

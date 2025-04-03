@@ -1,0 +1,124 @@
+<div class="panel panel-default serviceSearch result search-result">
+    <div class="Booking-Columnn panel-heading">
+        <div class="row">
+            <div class="col-lg-2" title="View">
+                <a ng-href="#/Credit/proposals/{{result.Id}}/view">Proposal #{{result.Id}}</a>
+            </div>
+            <div class="col-lg-3">
+                <span class="glyphicons user" title="User"></span>&nbsp;
+
+                <strong>{{result.Applicant1.Title}} {{result.Applicant1.FirstName}}
+                    {{result.Applicant1.LastName}}</strong>
+                <strong ng-hide="!result.Applicant1.Alias"> - ({{result.Applicant1.Alias}})</strong>
+            </div>
+            <div class="col-lg-1">
+                <span title="Application Type">{{result.Applicant1.ApplicationType}}</span>
+            </div>
+            <div class="col-lg-3">
+                <div ng-show="result.Applicant2">
+                    <span class="glyphicons user" title="User"></span>
+
+                    <strong>{{result.Applicant2.Title}} {{result.Applicant2.FirstName}}
+                        {{result.Applicant2.LastName}}</strong>
+                    <strong ng-hide="!result.Applicant2.Alias"> - ({{result.Applicant2.Alias}})</strong>
+                </div>
+            </div>
+            <div class="col-lg-1" title="Branch No.">
+                {{result.Applicant1.Branch}}
+            </div>
+            <div class="col-lg-2 pull-right">
+                <div class="status label label-default editLink pull-right"
+                     title="{{permissions.editProposal ? 'Edit' : 'Insufficient Permissions'}}">
+                    <a ng-show="permissions.editProposal"
+                       ng-href="{{editLink(result.Applicant1.ApplicationStage, result.Id)}}" style="color:white">
+                        {{convertStage(result.Applicant1.ApplicationStage).name}}
+                        <span class="glyphicons pencil" title="Edit"></span>
+                    </a>
+                    <span ng-show="!permissions.editProposal"> {{convertStage(result.Applicant1.ApplicationStage).name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body centre-section">
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div ng-show="result.Applicant1.HomePhone"><strong>Home Phone</strong>
+                        {{result.Applicant1.HomePhone}}
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div ng-show="result.Applicant1.MobilePhone"><strong>Mobile Phone</strong>
+                        {{result.Applicant1.MobilePhone}}
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div ng-show="result.Applicant1.WorkPhone"><strong>Work Phone</strong>
+                        {{result.Applicant1.WorkPhone}}
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div ng-show="result.Applicant1.Email.length > 0" class="wrap"><strong>Email</strong>
+                        {{result.Applicant1.Email}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div ng-repeat="address in result.Addresses">
+                    <div class="col-lg-3">
+                        <address class="wrap">
+                            <strong>{{address.AddressType}}</strong></span>
+                            <br>
+                            {{address.Line1}}, {{address.Line2}}<br>
+                            {{address.City}} {{address.PostCode}}<br>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div><strong>Source</strong>
+                        {{result.Applicant1.Source}}
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div><strong>Fascia</strong>
+
+                    </div>
+                </div>
+                <div class="col-lg-3" ng-show="result.CompulsoryIdType">
+                    <div><strong>Compulsory Id Type</strong>
+                        {{result.CompulsoryIdType}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div>
+                <div>
+                    <div>
+                        <span><b>Last updated</b> {{fromNow(result.Applicant1.UpdatedOn)}}</span>
+                    </div>
+                    <div>
+                        <div class="date" title="{{result.CreatedOn }}">
+                            {{result.Applicant1.UpdatedOn | date:'EEEE dd-MMMM-yyyy HH:mm'}}
+                        </div>
+                        <div>by <a ng-href="Cosacs/Admin/Users/Profile/{{result.Applicant1.CreatedBy}}">{{result.Applicant1.UpdatedBy}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span><b>Created</b></span><span>  {{fromNow(result.Applicant1.CreatedOn)}}</span>
+                </div>
+                <div>
+                    <div class="date" title="{{result.CreatedOn }}">
+                        {{result.Applicant1.CreatedOn | date:'EEEE dd-MMMM-yyyy HH:mm'}}
+                    </div>
+                    <div>by <a ng-href="Cosacs/Admin/Users/Profile/{{result.Applicant1.CreatedBy}}">{{result.Applicant1.CreatedBy}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

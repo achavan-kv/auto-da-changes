@@ -1,0 +1,72 @@
+<project name="Blue.Cosacs.Web" default="default" xmlns="http://nant.sf.net/release/0.92/nant.xsd">
+	<loadtasks assembly="..\bin\\nantcontrib-0.85\bin\NAnt.Contrib.Tasks.dll"/>
+	<!-- <property name="testFolders" value="Glaucous,POS"/> -->
+	
+    <target name="default">
+		<property name="BaseTestFolder" value="${directory::get-parent-directory(directory::get-current-directory())}\tests" />
+		<property name="CurrentFolder" value="${BaseTestFolder}" />
+		
+		<echo message="===================== Starting Python's Selenium Tests ======================" /> 
+		
+		<echo message="===================== Deploying Cyan library ======================" />
+		<delete dir="${BaseTestFolder}\cyan"  failonerror="false"/>
+		<exec program="git" verbose="true" workingdir="${BaseTestFolder}" failonerror="false">
+			<arg value="clone" />
+			<arg value="https://github.com/bluebridge/cyan.git" />
+		</exec>
+						
+		<iniwrite filename="${path::combine(CurrentFolder, 'settings.ini')}" section="SITE" key="SiteUrl" value="${environment::get-variable('SiteUrl')}"/>
+		<iniwrite filename="${path::combine(CurrentFolder, 'settings.ini')}" section="SITE" key="ConnectionString" value="Driver={SQL Server}; Server=${environment::get-variable('DBServer')}; Database=${environment::get-variable('DBName')};uid=sa;pwd=;"/>
+		<iniwrite filename="${path::combine(CurrentFolder, 'settings.ini')}" section="SELENIUM" key="UseHub" value="True"/>
+		<iniwrite filename="${path::combine(CurrentFolder, 'settings.ini')}" section="SELENIUM" key="HubIp" value="grid.cosacs.net"/>
+				
+		<call target="RunModuleTests" />
+		<call target="LoopFolder" />
+	</target>
+	
+	<target name="LoopFolder">	
+		<foreach item="String" in="${testFolders}" delim="," property="testFolder">
+			<echo message="===================== Starting ${testFolder}'s test suite ======================" />
+		
+			<property name="CurrentFolder" value="${BaseTestFolder}\${testFolder}" />
+			<call target="RunModuleTests" />
+			<call target="task.recursive" />
+			<!--call target="RunModuleTests" /-->
+		</foreach>
+	</target>
+	
+	<target name="task.recursive">
+		<foreach item="Folder" in="${CurrentFolder}" property="folder">
+			<echo message="${folder}" />
+			<property name="CurrentFolder" value="${folder}" />
+			<call target="RunModuleTests" />
+			<call target="task.recursive" />
+			<!--call target="RunModuleTests" /-->
+		</foreach>
+	</target>
+	
+	<target name="RunModuleTests">
+		<echo message="${CurrentFolder}" /> 
+		<foreach item="File" in="${CurrentFolder}" property="fileName">
+				<trycatch if="${string::ends-with(fileName,'Test.py') or string::ends-with(fileName,'Tests.py')}">
+					<try>
+						<echo message="===================== Starting ${path::get-file-name-without-extension(fileName)}'s test ======================" />
+						
+						<exec program="nosetests" verbose="true" workingdir="${BaseTestFolder}" failonerror="false">
+							<arg value="-sv" />
+							<arg value="--with-xunit" />
+							<arg value="${fileName}" />
+							<arg value="--xunit-testsuite-name=${testFolder}" />
+						</exec>
+					</try>
+					<catch property="failure">
+						<!-- <echo message="Caught failure: ${failure}" /> -->
+					</catch>
+					<finally>
+						<echo message="===================== Ending ${path::get-file-name-without-extension(fileName)}'s test ======================" />
+					</finally>
+				</trycatch> 
+		</foreach>	
+	</target>
+	
+</project>

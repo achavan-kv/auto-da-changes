@@ -1,0 +1,109 @@
+<div class="container">
+    <h1>CSR Unavailable</h1>
+
+    <div ng-controller="csrUnavailableController" ng-cloak>
+        <div class="section">Search</div>
+        <div class="row">
+            <div class="col col-lg-6">
+                <div class="form-group">
+                    <label class="col col-lg-4 control-label" for="salesPeople">CSR</label>
+                    <div class="col col-lg-8">
+                        <list id="csrs" name="salesPeople" ng-model="filter.salesPerson" scope="salesPeople"
+                              placeholder="CSR"></list>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-3">
+                <div class="form-group">
+                    <label class="col col-lg-4 control-label" for="from">From</label>
+
+                    <div class="col col-lg-8">
+                        <input name="from" type="date" ng-model="filter.from" class="date form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-3">
+                <div class="form-group">
+                    <label class="col col-lg-4 control-label" for="to">To</label>
+                    <div class="col col-lg-8">
+                        <input name="to" type="date" ng-model="filter.to" class="date form-control"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col-lg-6">
+                <button type="submit" class="btn btn-primary click" id="btnSearch" ng-click="search()">Search</button>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th class="action col-lg-1"></th>
+                <th class="col-lg-6">
+                    CSR
+                </th>
+                <th class="col-lg-3">
+                    Beginning
+                </th>
+                <th class="col-lg-3">
+                    End
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in results">
+                <td class="action">
+                    <a class="glyphicons glyph-btn action save floppy_disk click"
+                       ng-class="!isValid(item) ? 'disabled' : 'click'" title="Save"
+                       ng-click="updateUnavailability(item)"></a>
+                    <a class="glyphicons glyph-btn action-delete bin click" title="Delete"ng-click="deleteUnavailability(item.Id)"></a>
+                </td>
+                <td><user ng-model="item.SalesPersonId" /> </td>
+                <td>
+                    <input class="form-control" type="date" ng-model="item.BeggingUnavailable"></td>
+                <td>
+                    <input class="form-control" type="date" ng-model="item.EndUnavailable"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr ng-hide="adding">
+                    <td class="action text-center">
+                            <span class="ui-widget glyphicons click action-new plus" href="#" title="New"
+                                  ng-click="createNewUnavailability()"></span>
+                    </td>
+                    <td colspan="3"></td>
+                </tr>
+                <tr ng-show="adding">
+                    <td>
+                        <div class="form-control-static text-center">
+                                <span class="action click save glyph-btn glyphicons floppy_save text-danger"
+                                      ng-click="insertUnavailability(newUnavailability)"
+                                      ng-class="!isValid(newUnavailability) ? 'disabled' : 'click'"
+                                      title="Add"></span>
+                                <span class="action click cancel glyph-btn glyphicons undo" title="Cancel"
+                                      ng-click="cancelNewUnavailability()"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field has-error" ng-class="{'has-error': !newUnavailability.SalesPersonId}">
+                            <list ng-model="newUnavailability.SalesPersonId" scope="salesPeople" placeholder="New CSR"></list>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field has-error" ng-class="{'has-error': !newUnavailability.BeggingUnavailable}">
+                            <input class="form-control" type="date" ng-model="newUnavailability.BeggingUnavailable">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field has-error" ng-class="{'has-error': !newUnavailability.EndUnavailable}">
+                            <input class="form-control" type="date" ng-model="newUnavailability.EndUnavailable">
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

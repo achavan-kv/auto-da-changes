@@ -1,0 +1,7 @@
+ALTER TABLE SERVICE.request
+DROP COLUMN itemquantity
+go
+
+
+ALTER TABLE SERVICE.request
+ALTER COLUMN ItemId varchar(25) NOT NULL

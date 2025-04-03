@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode roles="*" SecurityTrimmingEnabled="true">
+        <!--<siteMapNode title="Warehouse &amp; Deliveries" roles="*">
+            --><!--<siteMapNode url="~/Warehouse/Host" title="Host" roles="*" />--><!--
+            <siteMapNode url="~/Warehouse/Picking" title="Picking" roles="*" />
+            <siteMapNode url="~/Warehouse/Picking/PrintSelection" title="Search PickList " roles="*" />
+            --><!--<siteMapNode url="~/Warehouse/LoadConfirm" title="Confirm Load" roles="*" />--><!--
+            <siteMapNode url="~/Warehouse/LoadPrint" title="Print Load Schedule" roles="*" />
+            <siteMapNode url="~/Warehouse/OrderSchedule" title="Confirm Load" roles="*" />
+            <siteMapNode url="~/Warehouse/DeliveryConfirm" title="Confirm Delivery" roles="*" />
+        </siteMapNode>-->
+        <siteMapNode title="Administration" roles="*">
+            <siteMapNode url="~/Audit" title="Audit" roles="*" />
+            <!--<siteMapNode url="~/Warehouse/Picking/Reference" title="Print PickList Reference" roles="*" />-->
+            <siteMapNode url="/cosacs.client/cosacsclient.application" title="Install CoSaCS Client" roles="*" />
+        </siteMapNode>
+        <!--<siteMapNode title="Test" roles="*">
+            <siteMapNode url="~/home/test" title="Test Page" roles="*" />
+            <siteMapNode url="~/Warehouse/Picking/Print" title="Print PickList" roles="*" />
+            <siteMapNode url="~/Warehouse/Printing/LoadConfirmation" title="Print Load Confirmation" roles="*" />
+            <siteMapNode url="~/Warehouse/Printing/DeliveryList" title="Print DeliveryList" roles="*" />
+            <siteMapNode url="~/Warehouse/Host" title="Booking Submit" roles="*" />
+        </siteMapNode>-->
+    </siteMapNode>
+</siteMap>

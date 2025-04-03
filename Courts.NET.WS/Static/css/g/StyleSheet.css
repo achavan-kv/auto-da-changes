@@ -1,0 +1,95 @@
+﻿        
+        body 
+        {
+              font-family:Tahoma;
+              font-size: 12pt;
+                
+            }
+        #main
+        {
+            /*margin: 10mm;*/
+            width: 270mm;
+        }
+        #left
+        {
+            float: left;
+            width: 50%;
+          
+        }
+        #right
+        {
+            float: right;
+            width: 23%;
+               font-size: 8pt;
+        }
+        .heading
+        {
+            margin-top: 20mm;
+            margin-bottom: 20mm;
+        }
+          .headingleft
+        {
+            margin-top: 1mm;
+            margin-bottom: 1mm;
+            font-size:larger;
+            font-weight:bolder
+        }
+        ul
+        {
+            list-style-type: none;
+            margin-bottom: 10;
+            padding: 0;
+            position: relative;
+        }
+        li
+        {
+            position: relative;
+        }
+        .bold
+        {
+            font-weight: bold;
+        }
+        .rightalign
+        {
+            position: absolute;
+            right: 0;
+        }
+        #HistoryHeader
+        {
+             border-bottom: 1px solid grey;
+            padding: 10px 0px;
+            background-color:Silver;
+            
+        }
+        .alt
+        {
+            background-color:Silver;
+        }
+        .headerRow td
+        {
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+            padding: 10px 0px;
+            text-align: center;
+            
+        }
+         #Fintable
+        {
+            
+        }
+         #Fintable table
+        {
+          width:100%;  
+          padding: 0px;
+          margin: 0px;
+          
+        }    
+        #endsummary
+        {
+         font-weight:bolder;
+         margin-top:20px;
+            }
+        .space
+        {
+            border-bottom:8mm;
+            }

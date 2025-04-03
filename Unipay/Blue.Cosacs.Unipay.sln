@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unicomer.Cosacs.Business", "Unicomer.Cosacs.Business\Unicomer.Cosacs.Business.csproj", "{7B085032-3CD3-4F4F-8324-6745D3407412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unicomer.Cosacs.Model", "Unicomer.Cosacs.Model\Unicomer.Cosacs.Model.csproj", "{77944363-BC1D-4C23-B50D-730CDC293673}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unicomer.Cosacs.Repository", "Unicomer.Cosacs.Repository\Unicomer.Cosacs.Repository.csproj", "{94CF6035-50B1-48EE-A63E-6B99C08C678C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Unipay.Web", "Blue.Cosacs.Unipay.Web\Blue.Cosacs.Unipay.Web.csproj", "{2C8C92FF-ECF4-44C3-9BC7-C8ECCBA07DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Unipay.Test", "Blue.Cosacs.Unipay.Test\Blue.Cosacs.Unipay.Test.csproj", "{9014CCCB-967D-4D22-9A27-1BA0867B69D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B085032-3CD3-4F4F-8324-6745D3407412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B085032-3CD3-4F4F-8324-6745D3407412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B085032-3CD3-4F4F-8324-6745D3407412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B085032-3CD3-4F4F-8324-6745D3407412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77944363-BC1D-4C23-B50D-730CDC293673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77944363-BC1D-4C23-B50D-730CDC293673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77944363-BC1D-4C23-B50D-730CDC293673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77944363-BC1D-4C23-B50D-730CDC293673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CF6035-50B1-48EE-A63E-6B99C08C678C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CF6035-50B1-48EE-A63E-6B99C08C678C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CF6035-50B1-48EE-A63E-6B99C08C678C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CF6035-50B1-48EE-A63E-6B99C08C678C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8C92FF-ECF4-44C3-9BC7-C8ECCBA07DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8C92FF-ECF4-44C3-9BC7-C8ECCBA07DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8C92FF-ECF4-44C3-9BC7-C8ECCBA07DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8C92FF-ECF4-44C3-9BC7-C8ECCBA07DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9014CCCB-967D-4D22-9A27-1BA0867B69D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9014CCCB-967D-4D22-9A27-1BA0867B69D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9014CCCB-967D-4D22-9A27-1BA0867B69D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9014CCCB-967D-4D22-9A27-1BA0867B69D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = es\Unity.2.1.505.0\lib\NET35;es\Unity.Interception.2.1.505.0\lib\NET35;es\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;es\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+		SolutionGuid = {5C5E186B-E4E6-4E42-B199-D0F4389B7671}
+	EndGlobalSection
+EndGlobal

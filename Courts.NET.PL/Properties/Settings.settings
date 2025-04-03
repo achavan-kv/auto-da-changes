@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="STL.PL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Courts_NET_PL_WS11_WServiceManager" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.NET.WS/WServiceManager.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_WS12_WCollectionsManager" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.NET.WS/WCollectionsManager.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_WSPrinting_WPrinting" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.NET.WS/WPrinting.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_WSStoreCard_WStoreCard" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.NET.WS/WStoreCard.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_WSInstallation_WInstallation" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.NET.WS/WInstallation.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_W13_WLogin" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/courts.net.ws/wlogin.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_WSStockManager_WStockManager" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.NET.WS/WStock.asmx</Value>
+    </Setting>
+    <Setting Name="Branch" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Culture" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SplashImage" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ThermalPrinterEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PrinterName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CashDrawerID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ReceiptPrinterModel" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Courts_NET_PL_Cache_Cache" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.NET.WS/Cache.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_WS2_WAccountManager" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.Net.WS/WAccountManager.asmx</Value>
+    </Setting>
+    <Setting Name="Courts_NET_PL_WS8_WPaymentManager" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/Courts.Net.WS/WPaymentManager.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,77 @@
+﻿<div class="non-stocks col-lg-12" ng-controller="promotionsController" ng-cloak>
+    <h1>Non-Stock Promotions</h1>
+    <article class="nonStock-promotions">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="form-horizontal ng-pristine ng-valid">
+                    <div class="section">Search</div>
+                    <div class="row form-group">
+                        <label for="filterName" class="col-lg-2">Name</label>
+                        <div class="col-lg-6">
+                            <input type="text" id="filterName" name="filterName"
+                                   ng-model="filterPromotions.NonStock" class="form-control"
+                                   maxlength="50" ui-reset placeholder="Non Stock Name" style="width: 60%"/>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="fascia" class="col-lg-2">Fascia</label>
+                        <div class="col-lg-2">
+                            <list id="fascia" name="fascia" placeholder="Fascia"
+                                  ng-model="filterPromotions.Fascia" scope="MasterData.fascia"></list>
+                        </div>
+                        <label for="branch" class="col-lg-1">Branch</label>
+                        <div class="col-lg-3">
+                            <list id="branch" name="branch" placeholder="Branch"
+                                  ng-model="filterPromotions.BranchNumber" scope="MasterData.branches"></list>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="filterNonStockSKU" class="col-lg-2">SKU</label>
+                        <div class="col-lg-6">
+                            <input type="test" id="filterNonStockSKU" name="filterNonStockSKU"
+                                   ng-model="filterPromotions.SKU" class="form-control"
+                                   ui-reset placeholder="Non-Stock SKU" style="width: 60%"/>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label for="filterEffectiveDateStart" class="col col-lg-2">Effective Date</label>
+                        <div class="col col-lg-3">
+                            <input type="date" id="filterEffectiveDateStart" ng-model="filterPromotions.ActiveFrom"
+                                   class="date form-control ng-pristine ng-valid" placeholder="From Effective Date">
+                        </div>
+                        <div class="col col-lg-3">
+                            <input type="date" id="filterEffectiveDateEnd" ng-model="filterPromotions.ActiveTo"
+                                   class="date form-control ng-pristine ng-valid" placeholder="To Effective Date">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="reset" class="btn" ng-click="clearFilter()" title="Clear Search">Clear</button>
+                    <button type="submit" class="btn btn-primary" ng-click="performSearch()"
+                            ng-disabled="!filterPromotions.NonStock && !(filterPromotions.ActiveFrom || filterPromotions.ActiveTo) &&
+                                !filterPromotions.SKU && !filterPromotions.Fascia && !filterPromotions.BranchNumber"
+                            disabled="disabled">Search</button>
+                </div>
+                <br />
+
+                <section class="existing">
+                    <ng-include src="'NonStocks/views/templates/PromotionResults.html'"></ng-include>
+                </section>
+
+                <br/>
+            </div>
+        </div>
+    </article>
+
+    <div class="col col-lg-12">
+        <pagination class="pagination" ng-model="filterPromotions.PageIndex"
+                    ng-change="selectPage(filterPromotions.PageIndex)" boundary-Links="true"
+                    total-Items="filterPromotions.RecordCount" max-Size="filterPromotions.PageCount"
+                    items-Per-Page="filterPromotions.PageSize">
+        </pagination>
+    </div>
+
+</div>

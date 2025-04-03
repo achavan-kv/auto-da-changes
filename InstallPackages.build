@@ -1,0 +1,40 @@
+<project name="Blue.Cosacs.Packages" default="default" xmlns="http://nant.sf.net/release/0.92/nant.xsd">
+	<property name="modules" value="${environment::get-variable('Modules')}" />
+
+	<target name="default">
+		<!--Cosacs web packages
+		<echo message="===================== Installing packages for CosacsWeb ======================" />
+		<property name ="NantFolder" value = ".\.nuget"/>
+		<property name="commandline" value="install ..\Blue.Cosacs.Web\packages.config" />
+		<call target="ExecuteNant" />
+		-->
+		
+		<foreach item="String" in="${modules}" delim="," property="current">
+			<echo message="===================== Installing packages for ${current} ======================" />
+
+			<property name ="NantFolder" value = ".\${current}\.nuget"/>
+			<property name ="TestsPath" value = ".\${current}\Blue.Cosacs.${current}.Test"/>
+			
+			<property name="commandline" value="install ..\Blue.Cosacs.${current}\packages.config" />
+			<call target="ExecuteNant" />
+			
+			<property name="commandline" value="install ..\Blue.Cosacs.${current}.Api\packages.config" />
+			<call target="ExecuteNant" />
+			
+			<property name="commandline" value="install ..\Blue.Cosacs.${current}.Web\packages.config" />
+			<call target="ExecuteNant" />
+			
+			<if test="${directory::exists(TestsPath)}">
+				<property name="commandline" value="install ..\Blue.Cosacs.${current}.Test\packages.config" />
+				<call target="ExecuteNant" />
+			</if>
+		</foreach>
+	</target>
+	
+	<target name="ExecuteNant">
+		<exec program="${path::combine(NantFolder, 'NuGet.exe')}"
+			workingdir="${NantFolder}"
+			commandline="${commandline}" />
+	</target>
+	
+</project>

@@ -1,0 +1,39 @@
+﻿<ServiceCharges xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd">
+  <EmpeeNo>99999</EmpeeNo>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>30</Value>
+    <Cost>20</Cost>
+    <Tax>3.75</Tax>
+    <ChargeType>Customer</ChargeType>
+    <Label>Parts Cosacs</Label>
+	<IsExternal>true</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>56.25</Value>
+    <Cost>45</Cost>
+    <Tax>7.03</Tax>
+    <ChargeType>Customer</ChargeType>
+    <Label>Parts Other</Label>
+	<IsExternal>true</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>250</Value>
+    <Cost>120</Cost>
+    <Tax>31.25</Tax>
+    <ChargeType>Customer</ChargeType>
+    <Label>Labour</Label>
+	<IsExternal>true</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>0</Value>
+    <Cost>0</Cost>
+    <Tax>0.00</Tax>
+    <ChargeType>Customer</ChargeType>
+    <Label>Additional</Label>
+	<IsExternal>true</IsExternal>
+  </ServiceCharge>
+</ServiceCharges>

@@ -1,0 +1,1 @@
+grep  --recursive data-module= Blue.Cosacs.Web/ | sed -re 's/.*data\-module\=(\"|'\'')([^\"'\'']+)(\"|'\'').*/\2/g' | sort | uniq | grep --invert-match "<%- Module %>" | sed -re 's/(.*)/"\1",/g' > data-modules.partial.txt

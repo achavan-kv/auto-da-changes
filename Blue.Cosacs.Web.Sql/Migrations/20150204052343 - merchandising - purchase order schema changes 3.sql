@@ -1,0 +1,2 @@
+alter table Merchandising.PurchaseOrder add
+constraint UX_Merchandising_PurchaseOrder_PoNumber unique (OriginSystem, CorporatePoNumber)

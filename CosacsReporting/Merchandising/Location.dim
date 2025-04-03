@@ -1,0 +1,301 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4a6e26b2-dcb2-489c-a1e2-5e2d07b2a856" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Location</ID>
+  <Name>Location</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4266" scrolltop="-4896" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12012" y="11906" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="Location" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3440" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000a0000700d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Merchandising_Location" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4266</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4896</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="85">
+            <Shape Id="Id" Expanded="true">
+              <Attributes>
+                <Attribute Id="Id" />
+                <Attribute Id="Store Type" />
+                <Attribute Id="Virtual Warehouse" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Name" />
+              </Attributes>
+              <Position x="131" y="20" />
+            </Shape>
+            <Shape Id="Warehouse" Expanded="false">
+              <Attributes>
+                <Attribute Id="Warehouse" />
+              </Attributes>
+              <Position x="131" y="68" />
+            </Shape>
+            <Shape Id="Sales Id" Expanded="false">
+              <Attributes>
+                <Attribute Id="Sales Id" />
+              </Attributes>
+              <Position x="131" y="116" />
+            </Shape>
+            <Shape Id="Fascia" Expanded="false">
+              <Attributes>
+                <Attribute Id="Fascia" />
+              </Attributes>
+              <Position x="131" y="164" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c7cf4d80-8278-4be9-afdb-83824fd668ae">
+    <DataSourceViewID>Cosacs</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="56fbb53b-3182-4de0-b3a8-fc03e2424ab4">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="f65f604c-6f9f-4a90-bb54-5625057bc2fa">
+      <ID>Id</ID>
+      <Name>Location Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="49ca489b-3e27-484e-bb72-a1a34fd99410">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2b33b5df-cbb7-4f9c-ad5a-8b50b3f7503f">
+            <TableID>Merchandising_Location</TableID>
+            <ColumnID>Id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="444950ae-9924-471d-82b0-286130c6c7e3">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="accf9050-7074-4f0b-87ee-2529fa8f9b32">
+          <TableID>Merchandising_Location</TableID>
+          <ColumnID>Id</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ba39faf6-ea89-41de-9a3b-6396755f9c22">
+          <AttributeID>Fascia</AttributeID>
+          <Name>Fascia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2ee6be12-6a76-4686-8aa5-3763d9416825">
+          <AttributeID>Sales Id</AttributeID>
+          <Name>Sales Id</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c14a9225-d017-48e7-b45c-59bffba32660">
+          <AttributeID>Virtual Warehouse</AttributeID>
+          <Name>Virtual Warehouse</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7cf0fa69-f9c4-412e-9ad1-a37b1c21bb38">
+          <AttributeID>Warehouse</AttributeID>
+          <Name>Warehouse</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="51dbdf3a-a4c9-4280-9cd2-e41e6b52158f">
+          <AttributeID>Store Type</AttributeID>
+          <Name>Store Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="efbaa30b-c517-40fb-b615-99a8e9af8a30">
+          <AttributeID>Name</AttributeID>
+          <Name>Location Name</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="095ce68d-354d-4cfc-b61b-acc8369fc210">
+      <ID>Fascia</ID>
+      <Name>Fascia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="80a924ef-b885-48c5-af7f-29abfcf6549e">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="082a70a0-5aaf-48d4-b0b2-a668c436179f">
+            <TableID>Merchandising_Location</TableID>
+            <ColumnID>Fascia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b14dcea7-ac6f-4527-b80b-a638ac4262c7">
+      <ID>Name</ID>
+      <Name>Location Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3ee9c82b-c633-41c8-a8e1-879847413178">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2bc9f95a-d4eb-4966-ae40-3efdbfc017cb">
+            <TableID>Merchandising_Location</TableID>
+            <ColumnID>Name</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a0db21d3-cf27-4f4b-8ab0-3f86f6cc70dc">
+      <ID>Sales Id</ID>
+      <Name>Sales Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ee3dcc92-239a-474b-8deb-748cd4a672e8">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a737219-ae2d-496c-aeb8-bda7b8e37d26">
+            <TableID>Merchandising_Location</TableID>
+            <ColumnID>SalesId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d2c33194-2f70-44db-8c09-cd898e991152">
+      <ID>Virtual Warehouse</ID>
+      <Name>Virtual Warehouse</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="665375fe-66bd-485b-89a7-301a3e7fb2b1">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c131e7d7-f271-46d3-b2b3-eb5459d64b73">
+            <TableID>Merchandising_Location</TableID>
+            <ColumnID>VirtualWarehouse</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e38af995-62e1-4ebc-b20f-52efd1c82e07">
+      <ID>Warehouse</ID>
+      <Name>Warehouse</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bf9042f3-17ec-4fa5-9185-fb4f306f5b31">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="40d22ac0-49ad-427f-ad87-ed447270c44a">
+            <TableID>Merchandising_Location</TableID>
+            <ColumnID>Warehouse</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f5b31639-218a-4f37-b4bd-aa993d98ee4e">
+      <ID>Store Type</ID>
+      <Name>Store Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="43c00d0f-210d-4c2f-86bd-9abfa7e649dc">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e46531fb-d355-4eca-b73a-9f5be695ef79">
+            <TableID>Merchandising_Location</TableID>
+            <ColumnID>StoreType</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="a9365e28-2284-4aac-97f6-395e4ae7a47a">
+      <ID>Hierarchy</ID>
+      <Name>Hierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="1fdfe098-335d-48df-8872-b29894fbde2f">
+          <ID>Location Id</ID>
+          <Name>Location Id</Name>
+          <SourceAttributeID>Id</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="6a263223-c009-4f1d-9b12-f32127e84e11">
+          <ID>Location Name</ID>
+          <Name>Location Name</Name>
+          <SourceAttributeID>Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="07338cd0-3e6a-463b-b3e4-623a0710e329">
+          <ID>Sales Id</ID>
+          <Name>Sales Id</Name>
+          <SourceAttributeID>Sales Id</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="20b09198-639f-4b4d-b2fe-5290226e7c49">
+          <ID>Fascia</ID>
+          <Name>Fascia</Name>
+          <SourceAttributeID>Fascia</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="80753aa9-4bc7-4ca0-a2d4-697a45529a8c">
+          <ID>Warehouse</ID>
+          <Name>Warehouse</Name>
+          <SourceAttributeID>Warehouse</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

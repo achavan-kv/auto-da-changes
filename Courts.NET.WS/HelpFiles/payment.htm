@@ -1,0 +1,229 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Payment</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1799>
+<meta name=layout-width content=619>
+
+
+<!--(Links)=========================================================-->
+
+<link rel=stylesheet href=default.css>
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<h1>Payment Screen</h1>
+
+<p style="text-align: justify;">The Payments screen is used to take payments 
+ across the different account types (Cash, Hire Purchase, Ready Finance) 
+ belonging to a Customer.</p>
+
+<p>&nbsp;</p>
+
+<p style="font-size: 12pt;
+			x-text-underline: off;
+			font-weight: bold;
+			/*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">Payments 
+ on combined Ready Finance accounts</p>
+
+<p style="x-text-underline: normal; /*begin!kadov{{*/ text-decoration: underline; /*}}end!kadov*/ ">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="text-align: justify;">If there is more 
+ than 1 Ready Finance account that has been delivered, these will appear 
+ as combined and any payment made will be split across all Ready Finance 
+ accounts (It will be a pro rata split).</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">Towards the right-hand 
+ side of the screen there is a button called ‘Combined Ready Finance Accounts’. 
+ Clicking on this button will enable you to view the individual details 
+ (such as Instalment, Outstanding Balance, Arrears, Payment) on each account.</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">The Details tab towards 
+ the right-hand side of the screen should display the combined details 
+ for the combined Ready Finance accounts (e.g. Outstanding Balance, Instalment 
+ Amount, Arrears).</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">If a payment amount 
+ is entered on the Payments screen which is &lt; than the combined installment 
+ amount across the Ready Finance accounts, the payment should be correctly 
+ split in proportion to the installment amounts on each account, where 
+ an adjustment may be made to the most recently opened Ready Finance account 
+ to ensure that the correct payment is made. This can be seen by clicking 
+ on the 'Combined Ready Finance' button. </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">If a payment amount 
+ is entered <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->on 
+ the Payments screen which is = to the combined installment amount, the 
+ payment should be correctly split where the installment amount on each 
+ account is exactly paid. This can be seen by clicking on the 'Combined 
+ Ready Finance' button. </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">Through the ‘Ready 
+ Finance Combined’ screen for individual Ready Finance accounts, you are 
+ able to override a payment amount on any of the accounts by entering a 
+ value into the Payment field.</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">If the combined ‘Settlement 
+ Figure’ is entered into the Payment Amount field, then the individual 
+ settlement amounts should be paid on each account. This can be seen by 
+ viewing the split by clicking on the 'Combined Ready Finance' button. 
+ </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">If a Payment Amount 
+ is entered which covers the ‘Settlement Amount’ of some Ready Finance 
+ accounts, then the split will make sure that only the settlement amount 
+ is paid towards these accounts. </p></li>
+</ul>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify;
+			font-weight: bold;
+			x-text-underline: off;
+			/*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">Payments 
+ on combined Ready Finance accounts allocated to Bailiffs</p>
+
+<p style="x-text-underline: normal; text-align: justify; /*begin!kadov{{*/ text-decoration: underline; /*}}end!kadov*/ ">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="text-align: justify;">If an account is 
+ in arrears, is allocated to a bailiff and the debit account indicator 
+ is set to true for the bailiff (on Bailiff Commissions) screen then two 
+ new fields should appear in the Payments screen which are ‘Total Amount’ 
+ &amp; ‘Credit Fee’.</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">Entering ‘0’ in the 
+ ‘Total Amount’ field should correctly calculate the whole payment amount 
+ that you would be needed to cover the arrears + fee amount on the accounts.</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">If there are multiple 
+ Ready Finance accounts allocated to different bailiffs, than you should 
+ note that the Fee on each individual account should be based on the commission 
+ rate of the Bailiff allocated to that account.</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">Please note that 
+ the Fee is calculated based on the status that the account was in when 
+ it was allocated to the Bailiff, and the commission percentage that applies 
+ to that status. </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">Please note that 
+ there is a country parameter ‘Fees calculated on Payment Amount’ (under 
+ Tax/Service Charges/Fees). <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->If 
+ this is set to True, then the minimum Part Payment is the part payment 
+ + fee amount needed to cover the minimum part payment. </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">If ‘Fees calculated 
+ on Payment Amount’ is set to False, then the minimum Part Payment is just 
+ the arrears amount.</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">If <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->there 
+ are multiple Ready Finance accounts allocated to different bailiffs and 
+ you enter a payment amount for one of the accounts in the ‘Combined Ready 
+ Finance’ screen, then the FEE field should be auto-calculated. Again the 
+ Fee amount calculated will depend upon different criteria such as the 
+ amount you have entered, the status of the account, and whether you are 
+ making a whole or part payment. The payment should only be processed against 
+ the account that you entered the payment amount for and all other Ready 
+ Finance accounts should remain the same as before the transaction.</p></li>
+</ul>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify;
+			x-text-underline: off;
+			font-weight: bold;
+			/*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">Combined 
+ Ready Finance printing on Receipt &amp; Payments Cards</p>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="text-align: justify;">When a Payment Amount 
+ is entered which is split across Ready Finance accounts, or an individual 
+ account (through the 'Combined Ready Finance Accounts' screen and a receipt 
+ is printed, the combined remaining balance across all Ready Finance accounts 
+ should be printed on the receipt. This also applies when the transactions 
+ are updated on the Payments Card. </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">When a new Payment 
+ Card is printed, the combined Agreement Total of the Ready Finance accounts 
+ should be displayed. </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;">Individual statements 
+ on each Ready Finance account can be printed by selecting the account 
+ from the Accounts List (black arrow marks the highlighted account), and 
+ then selecting from the menu ‘Print' -&gt; Statement of Account’. The 
+ details of that account should only be printed.</p></li>
+</ul>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify;
+			x-text-underline: off;
+			font-weight: bold;
+			/*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">Payment 
+ Card printing</p>
+
+<p style="text-align: justify; x-text-underline: normal; /*begin!kadov{{*/ text-decoration: underline; /*}}end!kadov*/ ">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="text-align: justify; x-text-underline: off; /*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">When 
+ entering the Payments screen and loading the accounts belonging to a Customer,if 
+ there are any unprinted transactions you should receive a prompt : “Unprinted 
+ Transactions for account number <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->‘nnn-nnnn-nnnn-1’ 
+ Please enter Payment Card for printing at row number (1)”.</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify; x-text-underline: off; /*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">The 
+ Payment Card should display any unprinted transactions that were previously 
+ taken but were not printed. If the payments were taken on the same day 
+ then the sum of all payments taken on that day should be printed. <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}--></p></li>
+	
+	<li class=kadov-p><p style="text-align: justify; x-text-underline: off; /*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">If 
+ the account has been delivered and it is the first time you are entering 
+ the Payment screen since delivering the account you should receive the 
+ prompt: “Deliveries Outstanding – do you wish to update the payment card 
+ for the installment and due date? “</p></li>
+	
+	<li class=kadov-p><p style="text-align: justify; x-text-underline: off; /*begin!kadov{{*/ text-decoration: none; /*}}end!kadov*/ ">When 
+ printing a new Payment Card , the correct ‘Agreement Total’, ‘Customers 
+ Name and Address’, and ‘RF Credit Limit’ if it is a Ready Finance account 
+ should be displayed. If this is a HP account, then no RF Credit Limit 
+ should be printed. <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}--></p></li>
+</ul>
+
+</body>
+
+</html>

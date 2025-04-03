@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Config" namespace="Blue.Config" label="Configuration">
+    <Connection server="." database="cosacs" />
+    <Queries>
+    </Queries>
+    <Tables>
+        <Table name="PublicHoliday"/>
+        <Table name="PickRow"/>
+        <Table name="PickList"/>
+        <Table name="DecisionTable"/>
+        <Table name="DecisionTableType" />
+        <Table name="Setting"/>
+    </Tables>
+    <Views>
+        <View name="SettingView" />
+    </Views>
+    <Settings>
+        <Setting id="ContactType" name="Contact Type" type="list" category="Picklists">
+            <Description>The options for the type of contact information</Description>
+            <Default>Email
+Fax
+HomePhone
+MobilePhone
+WorkPhone
+Facebook
+Twitter</Default>
+        </Setting>
+        <Setting id="CurrencySymbol" name="Currency Symbol" type="text" category="Localisation">
+            <Description>The currency symbol to use when displaying amounts</Description>
+            <Default>$</Default>
+        </Setting>
+        <Setting id="DecimalPlaces" name="Decimal Places" type="int" category="Localisation">
+            <Description>The number of decimal places to show when displaying amounts</Description>
+            <Default>2</Default>
+        </Setting>
+        <Setting id="NonCourtsDealerName" name="Non Courts Dealership Brand Name" type="string" category="Localisation">
+            <Description>This is the full Non Courts Dealership Brand Name as you wish it to appear on any screen or documentation. e.g Lucky Dollar (countryname) Ltd. </Description>
+            <Default>Lucky Dollar (countryname) Ltd</Default>
+        </Setting>
+        <Setting id="EmailUser" name="User Address" type="string" category="Email Notification Account" >
+            <Description>The email address to be used for outgoing system notifications</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="EmailPassword" name="Password" type="string" category="Email Notification Account">
+            <Description>The password for the email account specified above</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="EmailSMTP" name="SMTP Server" type="string" category="Email Notification Account">
+            <Description>The SMTP server from which to send notification emails</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="EmailPort" name="Port" type="int" category="Email Notification Account">
+            <Description>The SMTP port for sending notification emails</Description>
+            <Default>25</Default>
+        </Setting>
+        <Setting id="EmailSSL" name="SSL" type="bit" category="Email Notification Account">
+            <Description>Whether or not to use SSL for connecting to the SMTP server</Description>
+            <Default>false</Default>
+        </Setting>
+        <Setting id="GlobalNotificationSystemAccount" name="Email Address" type="string" category="Global Notification System Account">
+            <Description>The email address to which system notification emails will be sent</Description>
+            <Default>alert@alert.com</Default>
+        </Setting>
+        <Setting id="PrintoutLogoCourts" name="Printout logo for Courts stores" type="image" category="Printing">
+          <Description>The printout logo should respect the image ratio of 300x100 (width x height).</Description>
+        </Setting>
+        <Setting id="PrintoutLogoNonCourts" name="Printout logo for Non-Courts stores" type="image" category="Printing">
+            <Description>The printout logo should respect the image ratio of 300x100 (width x height).</Description>
+        </Setting>
+    </Settings>
+</Model>

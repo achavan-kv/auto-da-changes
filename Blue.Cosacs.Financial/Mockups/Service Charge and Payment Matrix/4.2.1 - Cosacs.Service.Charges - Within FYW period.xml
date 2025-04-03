@@ -1,0 +1,61 @@
+﻿<ServiceCharges xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd">
+  <EmpeeNo>99999</EmpeeNo>
+  <ServiceCharge>
+    <Account>SONY</Account>
+    <Value>22</Value>
+    <Cost>20</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>Supplier</ChargeType>
+    <Label>Parts Cosacs</Label>
+	<IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account>SONY</Account>
+    <Value>0</Value>
+    <Cost>0</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>Supplier</ChargeType>
+    <Label>Parts Other</Label>
+	<IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account>SONY</Account>
+    <Value>28</Value>
+    <Cost>28</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>Supplier</ChargeType>
+    <Label>Labour and Additional</Label>
+	<IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>0</Value>
+    <Cost>0</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>FYW</ChargeType>
+    <Label>Parts Cosacs</Label>
+	<IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <ServiceRequestNo>90952</ServiceRequestNo>
+    <Branch>780</Branch>
+    <CustomerId>SIVAT</CustomerId>
+    <Account xsi:nil="true" />
+    <ItemNumber>7L0002</ItemNumber>
+    <Value>0</Value>
+    <Cost>0</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>FYW</ChargeType>
+    <Label>Parts Other</Label>
+	<IsExternal>false</IsExternal>
+  </ServiceCharge>
+  <ServiceCharge>
+    <Account xsi:nil="true" />
+    <Value>72</Value>
+    <Cost>72</Cost>
+    <Tax xsi:nil="true" />
+    <ChargeType>FYW</ChargeType>
+    <Label>Labour and Additional</Label>
+	<IsExternal>false</IsExternal>
+  </ServiceCharge>
+</ServiceCharges>

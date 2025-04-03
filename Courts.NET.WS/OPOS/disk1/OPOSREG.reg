@@ -1,0 +1,97 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceInfo\EPSON OPOS ADK]
+"PrimaryConfig"="EPSON2.0"
+"COMMax"=dword:00000002
+"LPTMax"=dword:00000001
+"Ap_ListView"=dword:00000003
+"Ap_Hydra"=dword:00000001
+"Ap_Check"=dword:00000001
+"Ap_MainView"=dword:00000001
+"Ap_TurnView"=dword:00000001
+"Ap_ToolBar"=dword:00000001
+"Ap_StatsBar"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceInfo\EPSON OPOS ADK\EPSON2.0]
+"Configuration"="Assorted"
+"Version"="2.20"
+"OposDir"="C:\\PROGRA~1\\OPOS\\Epson2"
+"Custom"="0"
+"InstallUser"="Peacock"
+"InstallUserOrgnz"="Strategic Thought Ltd"
+"FolderName"="OPOS"
+"TiTle"="EPSON OPOS ADK Version"
+"APG/CPG_Version"="1.6"
+"Language"="US"
+"NotOverWrite"="100"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceInfo\EPSON OPOS ADK\EPSON2.0\Assorted]
+"COPY"=""
+"DEVICE"="POSPrinter,MICR,CashDrawer,CheckScanner"
+"REGSVR"="CCO\\POSPrinter,CCO\\MICR,CCO\\CashDrawer,CCO\\CheckScanner"
+"HOOK"=""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceInfo\EPSON OPOS ADK\EPSON2.0\Assorted\DeviceInfo]
+"POSPrinterINF"="Pp*.inf"
+"POSPrinterREG"="OPOSPOSPrinter.ocx,SoPtr10.dll"
+"MICRINF"="Mi*.inf"
+"MICRREG"="OPOSMICR.ocx,Somicr11.dll"
+"CashDrawerINF"="Cr*.inf"
+"CashDrawerREG"="OPOSCashDrawer.ocx,SoDrw10.dll"
+"CheckScannerINF"="Cs*.inf"
+"CheckScannerREG"="CoCScn15.ocx,SoCScn11.dll"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceInfo\EPSON OPOS ADK\EPSON2.0\BatchSetup]
+"IM-300"="PpT882.inf(TM-T88IIR):PpT882M.inf(TM-T88IIRM):PpU210A.inf(TM-U210AR):PpU210AM.inf(TM-U210ARM):PpH3kR.inf(TM-H3000R),Ld102015.inf:Ld106115.inf:Ld106315.inf,MsMr012.inf:MsMr013.inf:MsMr123.inf,KlIM300l.inf"
+"IM-310"="PpT882.inf(TM-T88IIR):PpT882M.inf(TM-T88IIRM):PpU210A.inf(TM-U210AR):PpU210AM.inf(TM-U210ARM):PpH3kR.inf(TM-H3000R),Ld102015.inf:Ld106115.inf:Ld106315.inf,MsMr012.inf:MsMr013.inf:MsMr123.inf,KlIM310l.inf,Ht310CF.inf"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceInfo\EPSON OPOS ADK\EPSON2.0\SetupPOS]
+"InfoFlag"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceInfo\EPSON OPOS ADK\EPSON2.0\TraceInfo]
+"SOTraceDevice"="POSPrinter,MICR,CheckScanner"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceOPOS\POSPrinter]
+"SlipPrinter"="TM-295"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\OLEforRetail\ServiceOPOS\POSPrinter\TM-295]
+"DeviceDesc"="EPSON TM-295 POS Printer"
+"DeviceName"="TM-295"
+"GroupID"="Ptrs_S"
+"RegFormatType"="EPSON"
+@="SOEPSON.POSPrinter.1"
+"OutputBuf"=dword:0000000a
+"Timeout"=dword:000009c4
+"IdleSleep"=dword:00000014
+"OptionFirmVersion"=dword:00000001
+"Port"="COM1"
+"Baudrate"=dword:00000006
+"BitLength"=dword:00000001
+"Parity"=dword:00000000
+"Stop"=dword:00000001
+"XonXoff"=dword:00000000
+"HandShake"=dword:00000002
+"BaudrateSel"="3,4,5,6"
+"BitLengthSel"="1"
+"HandShakeSel"="2"
+"OutputLD"=dword:00000001
+"OutputDK"=dword:00000001
+"OutputMICR"=dword:00000000
+"OutputMin"=dword:00000002
+"OutputMax"=dword:00000040
+"ParitySel"="0,1,2"
+"StopSel"="1"
+"XonXoffSel"="0"
+"PrinterDllName"="P29510.Dll"
+"InternalVersion"=dword:001e8480
+"CapRealtimeKick"=dword:00000000
+"PulseUNITTime"=dword:00000002
+"CapASB"=dword:00000001
+"DeviceID"=dword:00000002
+"DefPort"="COM1"
+"InstKey"=dword:4e535045
+"PortFlag"=dword:00000002
+"Service"="C:\\PROGRA~1\\OPOS\\Epson2\\SoPtr10.dll"
+"Version"="1.5.20"
+"Description"="EPSON POS Printer OPOS Service Object, Copyright (C) 1995-2002 SEIKO EPSON CORP."
+

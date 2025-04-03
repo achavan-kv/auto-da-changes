@@ -1,0 +1,3 @@
+IF Exists(Select 'A' From CountryMaintenance where CodeName='CL_Amortized')BEGINUpdate CountryMaintenance set Value ='False' where codename='CL_Amortized'END  ELSE BEGIN  insert into CountryMaintenance(CountryCode,ParameterCategory,Name,Value,[Type],[Precision],OptionCategory,OptionListName,[Description],CodeName)values
+					((select countrycode from country),(select code from code where codedescript='Cash Loans'),'Enable Amortized Cash Loan','False','checkbox',0,'','','Tick this field to enable amortized cash loan','CL_Amortized')
+END

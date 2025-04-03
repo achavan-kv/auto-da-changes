@@ -1,0 +1,149 @@
+﻿<#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral" #>
+<#@ assembly name="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral" #>
+<#@ assembly name="Microsoft.SqlServer.ConnectionInfo" #>
+<#@ assembly name="Microsoft.SqlServer.Smo" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+<#+
+public class ProcedureTemplate : Template
+{
+    public string Name;
+	public Database Database;
+		
+	protected static string ClrDataType(Microsoft.SqlServer.Management.Smo.DataType t)
+	{
+		switch(t.Name)
+		{
+			case "nvarchar" : 	    return "string";
+			case "varchar" : 	    return "string";
+			case "char" : 		    return "string";
+			case "int" : 		    return "int?";
+			case "bigint" : 	    return "long?";
+			case "smallint" : 	    return "short?";
+			case "money" : 		    return "decimal?";
+			case "decimal" : 	    return "decimal?";
+			case "datetime" : 	    return "DateTime?";
+			case "date" : 		    return "DateTime?";
+			case "smalldatetime" : 	return "DateTime?";
+			case "bit" : 		    return "bool?";
+			case "tinyint" : 	    return "byte?";
+			case "interest_rate" : 	return "decimal?";
+			case "float" : 	        return "double?";
+			default: throw new ArgumentException("Unsupported data type '" + t + "'.");
+		}
+	}
+
+	protected string SqlDataType(Microsoft.SqlServer.Management.Smo.DataType t)
+	{
+		switch(t.Name)
+		{
+			case "interest_rate" : 	return "SqlDbType.Decimal";
+			default: return "SqlDbType." + t.SqlDataType;
+		}
+	}
+	
+	protected string SqlDataTypeLen(Microsoft.SqlServer.Management.Smo.DataType t)
+	{
+		return string.Format(", {0}", t.MaximumLength);
+	}
+	
+	protected string ClrName(StoredProcedureParameter p)
+	{
+		var name = p.Name.Replace("@", "");
+		if (name == "return")
+			name = "Return";	
+		return name;
+	}
+	
+	protected string Args(StoredProcedure proc)
+	{
+		var sb = new StringBuilder();
+		for (var i = 0; i < proc.Parameters.Count; i++) 
+		{
+			var p = proc.Parameters[i];
+			sb.AppendFormat("{0} {1} _{2},", p.IsOutputParameter ? "out" : "", ClrDataType(p.DataType), ClrName(p));
+		}
+		if (sb.Length > 0)
+			sb.Length--;
+		return sb.ToString();
+	}
+	
+	protected string ArgsAssignPreExecute(StoredProcedure proc)
+	{
+		var sb = new StringBuilder();
+		for (var i = 0; i < proc.Parameters.Count; i++) 
+		{
+			var p = proc.Parameters[i];
+			if (!p.IsOutputParameter)
+				sb.AppendFormat("this.{0} = _{0};\n", ClrName(p));
+		}
+		return sb.ToString();
+	}
+	
+	protected string ArgsAssignPosExecute(StoredProcedure proc)
+	{
+		var sb = new StringBuilder();
+		for (var i = 0; i < proc.Parameters.Count; i++) 
+		{
+			var p = proc.Parameters[i];
+			if (p.IsOutputParameter)
+				sb.AppendFormat("_{0} =this.{0};\n", ClrName(p));
+		}
+		return sb.ToString();
+	}
+
+    public override string TransformText()
+    {
+		PushIndent("\t");
+		
+		var proc = Database.StoredProcedures[Name, "dbo"];
+
+		if (proc == null)
+			throw new ArgumentException("No procedure named '" + Name + "' was found.");
+#>
+public partial class <#= proc.Name #> : Blue.Cosacs.Procedure
+{
+	public <#= proc.Name #>(SqlConnection connection = null, SqlTransaction transaction = null) : base("<#= proc.Name #>", connection, transaction)
+	{
+		<#+	for (var i = 0; i < proc.Parameters.Count; i++) 
+			{ 
+				var p = proc.Parameters[i];
+				var direction = p.IsOutputParameter ? "Output" : "Input";
+		#>
+		cmd.Parameters.Add(new SqlParameter("<#= p.Name #>", <#= SqlDataType(p.DataType) #><#= SqlDataTypeLen(p.DataType) #>)).Direction = ParameterDirection.<#= direction #>;
+		<#+ } #>
+	}
+
+	<#+	for (var i = 0; i < proc.Parameters.Count; i++) 
+		{ 
+			var p = proc.Parameters[i];
+			var name = ClrName(p);
+			var type = ClrDataType(p.DataType);
+	#>
+	public <#= type #> <#= name #>
+	{
+		get 
+		{ 
+			var v = cmd.Parameters[<#= i #>].Value;
+			if (v == DBNull.Value)
+				return null;
+			return (<#= type #>)v;
+		}
+		set 
+		{ 
+			if (value == null)
+				cmd.Parameters[<#= i #>].Value = DBNull.Value;
+			else
+				cmd.Parameters[<#= i #>].Value = value; 
+		}
+	}
+	<#+ } #>
+}
+
+<#+
+		PopIndent();
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

@@ -1,0 +1,2 @@
+alter table merchandising.stockallocationproduct
+add VendorUnitCost money not null

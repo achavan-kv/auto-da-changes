@@ -1,0 +1,1339 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="23752fc5-af88-4f47-acd8-5cc983c79d43" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Warranty</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Warranty Sale</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f982d796-5b9b-4c8c-b48d-94fb4f29a705">
+          <ID>Warranty Sale</ID>
+          <Name>Warranty Sale</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b8f9f2e7-a349-4a6d-872c-bf7151871fca">
+            <DataSourceViewID>CosacsReporting</DataSourceViewID>
+            <TableID>Warranty_OLAPview_WarrantySales</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>602299</EstimatedRows>
+          <AggregationDesignID>AggregationDesign_33</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign_33</ID>
+          <Name>WarrantySale_33</Name>
+          <CreatedTimestamp>2014-05-25T10:25:28.3Z</CreatedTimestamp>
+          <LastSchemaUpdate>2014-05-25T10:25:28.3Z</LastSchemaUpdate>
+          <EstimatedRows>602299</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Warranty</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Warranty Id</AttributeID>
+                  <EstimatedCount>398</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Number</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Length</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Type</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Warranty Price</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Product</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Productid</AttributeID>
+                  <EstimatedCount>51910</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Itemtype</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Supplier</AttributeID>
+                  <EstimatedCount>324</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tax Rate</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Category Code</AttributeID>
+                  <EstimatedCount>33</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Warranty Sale</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Warranty Sale Id</AttributeID>
+                  <EstimatedCount>602299</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Product Id</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Price</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Customer Id</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Number</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sold On</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Warranty Id 1</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Is Cancelled Or Repossessed</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cancelled Price</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                  <EstimatedCount>7305</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Trimester Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Half Year Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Year</AttributeID>
+                  <EstimatedCount>21</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Week Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Trimester Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Half Year Of Year</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Category Code</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Warranty Id</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Supplier</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Service Request</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d2eca49e-994a-4e57-a5fc-ed15ab920986">
+          <ID>Service Request</ID>
+          <Name>Service Request</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="38221001-862d-40d2-9293-1f3f7b90baae">
+            <DataSourceViewID>CosacsReporting</DataSourceViewID>
+            <TableID>Service_OLAPview_ServiceRequest</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>71684</EstimatedRows>
+          <AggregationDesignID>AggregationDesign_41</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign_41</ID>
+          <Name>ServiceRequest_41</Name>
+          <CreatedTimestamp>2014-05-25T09:57:26.97Z</CreatedTimestamp>
+          <LastSchemaUpdate>2014-05-25T09:57:26.97Z</LastSchemaUpdate>
+          <EstimatedRows>71684</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Product</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Productid</AttributeID>
+                  <EstimatedCount>51910</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Itemtype</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Supplier</AttributeID>
+                  <EstimatedCount>324</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tax Rate</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Category Code</AttributeID>
+                  <EstimatedCount>33</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Warranty Sale</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Warranty Sale Id</AttributeID>
+                  <EstimatedCount>602299</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Product Id</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Price</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Customer Id</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Number</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sold On</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Warranty Id 1</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Is Cancelled Or Repossessed</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Cancelled Price</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Productid</AttributeID>
+                  <EstimatedCount>51910</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Itemtype</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Supplier</AttributeID>
+                  <EstimatedCount>324</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tax Rate</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Category Code</AttributeID>
+                  <EstimatedCount>33</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Service Request</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Servicerequest</AttributeID>
+                  <EstimatedCount>71684</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>State</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Datelogged</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Outstandingtype</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Daysoutstanding</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dateallocated</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Daystoallocate</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Warrantytype</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Resolution</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Resolution Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Name 1</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Total Cost</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Customer Account</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Warranty Contract Number</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Warranty Sale ID</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Created On Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Warranty</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Warranty Id</AttributeID>
+                  <EstimatedCount>398</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Number</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Length</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Type</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Warranty Price</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                  <EstimatedCount>7305</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Of Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quarter Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Trimester Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Half Year Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Year</AttributeID>
+                  <EstimatedCount>21</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Month</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Day Of Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Week Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Trimester</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Month Of Quarter</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Trimester Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter Of Half Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Half Year Of Year</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Category Code</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Category Code</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category Code</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category Code</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Supplier</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Supplier</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Supplier</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Supplier</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category Code</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category Code</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Warranty Id</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation d</ID>
+              <Name>Aggregation d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Warranty Id</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation e</ID>
+              <Name>Aggregation e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Itemtype</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation f</ID>
+              <Name>Aggregation f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty Sale - Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Service Request</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Warranty</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fiscal Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

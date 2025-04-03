@@ -1,0 +1,32 @@
+[
+    {
+        "label": "Non Stocks",
+        "nodes": [
+			{
+                "label": "New Non-Stock",
+                "url": "#/NonStocks/Details/0",
+                "permission": 2501
+            },
+            {
+                "label": "Non-Stocks/Product Link",
+                "url": "#/NonStocks/ProductLink",
+                "permission": 2506
+            },
+            {
+                "label": "Search Non-Stocks",
+                "url": "#/NonStocks/Search",
+                "permission": 2500
+            },
+			{
+                "label": "Non-Stock Promotions",
+                "url": "#/NonStocks/Promotions/",
+                "permission": 2504
+            },
+            {
+                "label": "Non-Stocks Export",
+                "url": "#/NonStocks/Export/",
+                "permission": 2508
+            }
+        ]
+    }
+]

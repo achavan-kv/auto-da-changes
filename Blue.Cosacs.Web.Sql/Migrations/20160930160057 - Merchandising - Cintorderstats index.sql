@@ -1,0 +1,4 @@
+CREATE INDEX IX_Merchandising_CintOrderStats_PrimaryReference ON Merchandising.CintOrderStats
+(
+	PrimaryReference DESC
+)

@@ -1,0 +1,228 @@
+<div class="pos-pane large row" id="payment">
+
+    <p>&nbsp;</p>
+
+    <div class="payment-due"
+         ng-if="(cart.balance || cart.items.length) && !cart.isCustomerDataMissing && !checkReturnPayment() &&
+         !cart.saleComplete && !isCashierBalanceOutstanding">
+        <div class="row">
+            <div class="col-md-12 form-horizontal large">
+                <div id="payment-methods" class="pay-method form-group">
+                    <div class="col-md-3 no-margin" ng-if="method.value"
+                         ng-repeat="method in paymentMethods">
+                        <button class="btn btn-default btn-lg btn-block"
+                                ng-class="{'btn-primary': payment.paymentMethodId == method.value}"
+                                ng-click="choosePaymentMethod(method.value, method.type)"
+                                data-payment-type="{{method.type}}">
+                            {{method.type}}
+                        </button>
+                    </div>
+                </div>
+                <div id="payment-fields" class="payOptions no-margin">
+                    <div ng-if="sections.chequeNo.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.chequeNo.visible && !payment.chequeNo}">
+                        <label class="col-md-4 control-label">Cheque Number</label>
+
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" maxlength="16"
+                                   ng-model="payment.chequeNo" ng-required="sections.chequeNo.visible"/>
+                        </div>
+                    </div>
+                    <div ng-if="sections.bank.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.bank.visible && !payment.bank}">
+                        <label class="col-md-4 control-label" for="bank">Bank</label>
+
+                        <!--<div class="col-md-6">-->
+                        <list ng-model="payment.bank" container-class="form-control" scope="banksScope"
+                              placeholder="Select Bank" name="bank"
+                              id="bank" class="col-md-6"></list>
+                    </div>
+                    <div ng-if="sections.cardType.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.cardType.visible && !payment.cardType}">
+                        <label class="col-md-4 control-label">Card Type</label>
+
+                        <div class="col-md-6 btn-group">
+                            <button class="btn btn-primary btn-lg" ng-model="payment.cardType" btn-radio="card"
+                                    ng-repeat="card in cardTypes" ng-hide="card == ''">{{card}}
+                            </button>
+                        </div>
+                    </div>
+                    <div ng-if="sections.cardNo.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.cardNo.visible && !payment.cardNo}">
+                        <label class="col-md-4 control-label">Card Number</label>
+
+                        <div class="col-md-3 form-control-static">xxxx-xxxx-xxxx-</div>
+                        <div class="col-md-2">
+                            <input class="form-control" size="4" type="text" ng-model="payment.cardNo" maxlength="4"/>
+                        </div>
+                    </div>
+                    <div ng-if="sections.bankAccountNo.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.bankAccountNo.visible && !payment.bankAccountNo}">
+                        <label class="col-md-4 control-label">Bank Account Number</label>
+
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="payment.bankAccountNo" type="text"/></div>
+                    </div>
+                    <div ng-if="sections.storeCardNo.visible" class="form-group no-margin"
+                         ng-class="{'has-error': !isValidStoreCardInput(payment.storeCardNo)}">
+                        <label class="col-md-4 control-label">Store Card Number</label>
+
+                        <div class="col-md-6">
+                            <input class="form-control" ng-disabled="!canEditCustCard && !editCustCardGranted"
+                                   ng-model="payment.storeCardNo"
+                                   id="storeCardNo" type="text"/>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-lg btn-block btn-primary"
+                                    ng-if="!canEditCustCard && sections.storeCardNo.visible && !editCustCardGranted"
+                                    ng-click="authoriseStoreCardEdit()">Allow Input
+                            </button>
+                            <button class="btn btn-lg btn-block btn-primary"
+                                    ng-if="(!canEditCustCard && editCustCardGranted || canEditCustCard)&& sections.storeCardNo.visible && isValidStoreCardInput(payment.storeCardNo) && !cart.Customer.FirstName"
+                                    ng-click="getCustomerDetails()">Get Customer
+                            </button>
+                        </div>
+                    </div>
+                    <div ng-if="sections.voucherNo.visible" class="form-group no-margin">
+                        <label class="col-md-4 control-label">Issuer Type</label>
+
+                        <div class="col-md-6">
+                            <input type="radio" ng-model="payment.voucherIssuer" value="C" id="issuerCourts"> Courts
+                            <input type="radio" ng-model="payment.voucherIssuer" value="N" id="issuerOther"> Other
+                        </div>
+                    </div>
+                    <div ng-if="sections.voucherNo.visible && payment.voucherIssuer === 'N'"
+                         class="form-group no-margin"
+                         ng-class="{'has-error': sections.voucherNo.visible && payment.voucherIssuer === 'N' && !payment.voucherIssuerCode}">
+                        <label class="col-md-4 control-label">Other Company No</label>
+
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="payment.voucherIssuerCode" type="text"
+                                   id="otherCompanyNo"/></div>
+                    </div>
+                    <div ng-if="sections.voucherNo.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.voucherNo.visible && !payment.voucherNo}">
+                        <label class="col-md-4 control-label">Voucher Number</label>
+
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="payment.voucherNo" type="text" id="voucherNo"/></div>
+                    </div>
+                    <div ng-if="sections.currency.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.currency.visible && !payment.currency}">
+                        <label class="col-md-4 control-label">Currency</label>
+
+                        <div class="col-md-6">
+                            <list container-class="form-control" on-change="onCurrencyChange(key, value)"
+                                  ng-model="payment.currency" scope="currencyCodes"
+                                  placeholder="Select Currency"></list>
+                        </div>
+                    </div>
+                    <div ng-if="sections.tendered.visible" class="form-group no-margin"
+                         ng-class="{'has-error': sections.tendered.visible && (!payment.tendered && cart.balance)}">
+                        <label class="col-md-4 control-label">Tendered</label>
+
+                        <div class="col-md-6">
+                            <input class="form-control" ng-model="payment.tendered"
+                                   ng-change="restrictTenderedAmount()" type="number" id="tenderedAmount" tendered
+                                   name="tendered"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-lg-offset-4"
+                             ng-if="payment.currencyRate && sections.currency.visible">x
+                            {{payment.currencyRate}} =
+                            {{payment.currencyRate * payment.tendered | currency : culture.CurrencySymbol :
+                            culture.DecimalPlaces}}
+                        </div>
+                    </div>
+                    <div ng-hide="!sections.change.visible" class="form-group no-margin">
+                        <label class="col-md-4 control-label" ng-if="cart.totalAmount >= 0">Change</label>
+                        <label class="col-md-4 control-label" ng-if="cart.totalAmount < 0">Remaining</label>
+                        <div class="col-md-6"><p class="form-control-static" id="changeAmount">{{calChange() |
+                            currency :
+                            culture.CurrencySymbol : culture.DecimalPlaces}}</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&nbsp;</p>
+
+        <div id="payment-action" class="row">
+            <div class="col-md-4 col-lg-offset-8">
+                <div class="col-md-6 no-margin">
+                    <button class="ok btn btn-lg btn-block btn-primary" ng-click="savePayment()"
+                            ng-disabled="checkPayment()" ng-if="sections.buttonPay.visible" id="paymentBtn">Pay
+                    </button>
+                </div>
+                <div class="col-md-6 no-margin">
+                    <button class="clear btn btn-lg btn-block btn-default" ng-click="payment.clear()">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-payment row"
+         ng-show="!cart.balance && !cart.items.length && !cart.returnedItems.length && !isCashierBalanceOutstanding">
+        <div class="col-md-12">
+            <div class="text-center text-muted">
+                <p>&nbsp;</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">No payment due</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-payment row"
+         ng-if="(cart.items.length || cart.returnedItems.length) && cart.isCustomerDataMissing && !isCashierBalanceOutstanding">
+        <div class="col-md-12">
+            <div class="text-center text-danger">
+                <p>&nbsp;</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">The customer's details must be entered before you take payment.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-payment row"
+         ng-if="(cart.items.length || cart.returnedItems.length) && checkReturnPayment() && !isCashierBalanceOutstanding">
+        <div class="col-md-12">
+            <div class="text-center text-danger">
+                <p>&nbsp;</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">The return/exchange process must be authorised before you take payment.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-payment row" ng-if="cart.saleComplete">
+        <div class="col-md-12">
+            <div class="text-center text-muted">
+                <p>&nbsp;</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-header"></div>
+                    <div class="panel-body" id="completedMsg">Sale Completed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-payment row" ng-if="isCashierBalanceOutstanding">
+        <div class="col-lg-12 col-md-12">
+            <div class="text-center text-danger">
+                <p>&nbsp;</p>
+
+                <div class="panel panel-default">
+                    <div class="panel-header"></div>
+                    <div class="panel-body">Outstanding income must be deposited before completing a sale.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

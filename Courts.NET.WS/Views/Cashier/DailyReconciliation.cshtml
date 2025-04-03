@@ -1,0 +1,125 @@
+﻿@model List<Blue.Cosacs.Shared.CashierTotalledView>
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "Cashier Daily Reconciliation";
+}
+@{
+    ViewBag.Title = "DailyReconciliation";
+}
+@{
+    Layout = "~/Views/Shared/_Print.cshtml";
+}
+<h1 style="font-family: Arial; font-size: 20px">
+    Cashier Daily Reconciliation
+</h1>
+<div class="grid_6 fontlarger">
+    <div>
+        <span>Employee Name: </span><span class="bold">@ViewBag.empeeName</span> 
+    </div>
+     <div>
+        <span>Branch No: </span><span class="bold">@ViewBag.branchNo</span> 
+    </div>
+    <div>
+        <span>Workstation#: </span><span class="bold">@ViewBag.machineName</span> 
+    </div>
+    
+</div>
+<div class="grid_6 fontlarger">
+     <div>
+        <span>From: </span><span class="bold">@ViewBag.dateFrom</span>
+    </div>
+     <div>
+     <span> </span>
+        <span>To: </span><span class="bold">@ViewBag.dateTo</span> 
+    </div>
+</div>
+<div class="grid_12 headerspace">
+    <table id="cashiertotals">
+        <thead> 
+            <tr>
+                <th width="8%" align=left>
+                    Pay Methods
+                </th>
+                <th width="8%" align=right>
+                    Payments
+                </th>
+                <th width="8%" align=right>
+                    Corrections
+                </th>
+                <th width="8%" align=right>
+                    Refunds
+                </th>
+                <th width="5%" align=right>
+                    Petty Cash
+                </th>
+                <th  width="10%" align=right>
+                    JN Remittance
+                </th>
+                <th width="10%" align=right>
+                    Disbursements
+                </th>
+                 <th width="8%" align=right>
+                    Allocations
+                </th>
+                <th width="8%" align=right>
+                    Net Receipts
+                </th>
+                <th width="6%" align=right>
+                    User Amounts
+                </th>
+                <th width="8%" align=right>
+                    Difference
+                </th>
+                <th width="13%" align=centre>
+                    Comments
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var row in Model)
+                {
+                <tr>
+                    <td align=left>
+                     @row.codedescript
+                    </td>
+                     <td align=right>
+                     @Math.Round(row.Payments.Value, 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(row.Corrections.Value, 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(row.Refunds.Value, 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(row.PettyCash.Value, 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(Convert.ToDecimal(row.Remittances), 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(Convert.ToDecimal(row.Disbursements), 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(Convert.ToDecimal(row.Allocations), 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(row.NetReceipts, 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(row.usertotal, 2)
+                    </td>
+                     <td align=right>
+                     @Math.Round(row.difference, 2)
+                    </td>
+                     <td align=left>
+                     @row.Comments
+                    </td>
+                </tr>
+               
+                }
+            }
+        </tbody>
+    </table>
+</div>

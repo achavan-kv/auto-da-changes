@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Commission">
+    <head><title>What is Commission Calculated on?</title>
+        <link href="../Resources/Stylesheets/onlinehelp.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapUtilities.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapBody.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapHighlighter.js">/*<![CDATA[*/ /*]]>*/</script>
+    </head>
+    <body>
+        <h1>What is Commission Calculated on?</h1>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;font-size: 10pt;" value="1">Commission will be calculated on all goods delivered based on date notified . The date from and date to period will be based on transactions posted since the last end of day SPIFF calculation run. </li>
+            <li style="font-family: Arial;font-size: 10pt;" value="2">The Commission should be based on the cash/regular price (excluding tax). For countries where the country.taxtype = ‘I’  the commission should be reduced by the tax amount. 
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="3">Commission Order Calculation :When calculating commission extra SPIFFS from the new sales order screen will override normal SPIFFS.  It is possible to earn a SPIFF on a product AND Commission from either the product group or product itself.  Commission on individual products will override Product group commissions will override product category commissions
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="4">Discounts attached to products will (if they are a credit) reduce the value of the commission on the product and be excluded from any further commission calculation themselves. Discounts not attached will reduce the value of the commission based on their product/product group commission percentage. 
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="5">If an item is part of a kit product then the commission will be based on the commission percentage applied to the kit product not the item. </li>
+            <li style="font-family: Arial;font-size: 10pt;" value="6">Discounts attached to kits will reduce the commission based on commission % applied to the kit
+•	The commission dates used will be calculated based on Agreement Date for Cash and Go accounts and date account open for credit and cash accounts. For warranties the commission date used will be based on the date of delivery. 
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="7">Deliveries subsequent to a Goods return authorisation with an Identical replacement or exchange option chosen will not qualify for commission with the exception of any changes in service charge.</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="8">Add-tos (ADDDR, ADDCR) and rebates (‘RB’) will be excluded from the delivery commission calculations (the RB record will reduce Commission on service charge transactions).
+</li>
+            <li style="font-family: Arial;font-size: 10pt;" value="9">Commission for terms types will be calculated on the Service charge element.
+</li>
+        </ul>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

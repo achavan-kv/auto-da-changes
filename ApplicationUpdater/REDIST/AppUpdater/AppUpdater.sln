@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppUpdater", "AppUpdater.csproj", "{0B88ED59-656E-4982-B402-A3448A81D84B}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectName0 = \u0022$/CURRENT/Courts.NET/ApplicationUpdater/REDIST\u0022,\u0020TDUAAAAA
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection0 = AppUpdater\\
+		SccProjectUniqueName1 = AppUpdater.csproj
+		SccLocalPath1 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = AppUpdater\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Debug|Default.ActiveCfg = Debug|Any CPU
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Debug|Default.Build.0 = Debug|Any CPU
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Release|Default.ActiveCfg = Release|Any CPU
+		{0B88ED59-656E-4982-B402-A3448A81D84B}.Release|Default.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

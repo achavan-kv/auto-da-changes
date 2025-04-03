@@ -1,0 +1,47 @@
+﻿#notifications-popup 
+{
+    position: absolute;
+    right: 5px;
+    top: 27px;
+    background-color: White;
+    .box-shadow(0px, 0px, 2px, 2px, #ddd);
+    z-index: 99;
+    padding: 0px;
+    border: 1px solid @dark-blue;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    min-width: 150px;
+    max-width: 300px;
+    ul { margin-bottom: 0px; }
+    .title 
+    {
+        padding: 5px 10px; 
+        border-bottom: 1px solid @dark-blue; 
+        font-weight: bold;
+        color: @dark-blue;
+    }
+    li 
+    { 
+        list-style: none; 
+        margin-left: 0px; 
+        border-bottom: 1px solid @dark-blue; 
+    
+        a 
+        { 
+            text-decoration: none; 
+            cursor: default; 
+            padding: 10px; 
+            padding-bottom: 20px;
+            display: block;
+        }
+        .text { display: block; }
+        .createdOn { color: @dark-neutral-color; float: right; }
+        
+        &.unread a { font-weight: bold; }
+        &.link { cursor: pointer; a { cursor: pointer; } }
+        &.link:hover { background-color: @contrast-color; a { color: White; } .createdOn { color: @neutral-color; } }
+    }
+}
+#notifications.clicked { background-color: White; }
+#menu.horizontal > ul.nav.main > .secondary > #notifications.clicked > .ui-icon { background-image: url('blue/images/ui-icons_C60C46_256x240.png'); }
+#menu.horizontal > ul.nav.main > .secondary > #notifications.clicked > .ui-icon:hover { background-image: url('blue/images/ui-icons_ffffff_256x240.png'); }

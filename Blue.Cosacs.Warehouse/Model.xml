@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Warehouse" namespace="Blue.Cosacs.Warehouse" label="Logistics">
+    <Connection server="." database="COSACS" />
+    <Queries>
+       <DataSet name="BookingDetails"/>
+       <NonQuery name="UpdateStockQty"/>
+    </Queries>
+    <Tables>
+        <Table name="Booking"/>
+        <Table name="Picking"/>
+        <Table name="Truck"/>
+        <Table name="ZoneAssignment"/>
+        <Table name="Zone"/>
+        <Table name="Load"/>
+        <Table name="Driver"/>
+        <Table name="Cancellation"/>
+        <Table name="DriverCommission"/>
+        <Table name="DriverPayment"/>
+    </Tables>
+    <Views>
+        <View name="StatusView"/>
+        <View name="DriverCommissionView" />
+        <View name="PickListView"/>
+        <View name="PickingView"/>
+        <View name="TruckPendingView"/>
+        <View name="TruckDeliveryView"/>
+        <View name="TruckView"/>
+        <View name="TruckConfirmedView"/>
+        <View name="BookingPendingView" />
+        <View name="ZonePriorityView"/>
+        <View name="LoadView"/>
+        <View name="ScheduleView"/>
+        <View name="BookingForceView"/>
+        <View name="BookingHistoryView"/>       
+        <View name="DriverPaymentView" />
+        <View name="BookingView"/>
+        <View name="UserView" />
+    </Views>
+    <Settings>
+        <Setting id="DELREJECT" name="Delivery Warehouse Reject Codes" type="list" category="Code-cat">
+            <Description>WDR - Delivery Rejection Reasons</Description>
+            <Default>Delivery Rejected</Default>
+        </Setting>
+        <Setting id="LOADREJECT" name="Load Warehouse Reject Codes" type="list" category="Code-cat">
+            <Description>WLR - Load Rejection Reasons</Description>
+            <Default>Load Rejected</Default>
+        </Setting>
+        <Setting id="PICKREJECT" name="Picking Warehouse Reject Codes" type="list" category="Code-cat">
+            <Description>WPR - Picking Rejection Reasons</Description>
+            <Default>Picking Rejected</Default>
+        </Setting>
+        <Setting id="COLREJECT" name="Collection Warehouse Reject Codes" type="list" category="Code-cat">
+            <Description>WCR - Collection Rejection Reasons</Description>
+            <Default>Return Rejected</Default>
+        </Setting>
+        <Setting id="PICKUPREJECT" name="PickUp Warehouse Reject Codes" type="list" category="Code-cat">
+            <Description>WPUR - PickUp Rejection Reasons</Description>
+            <Default>PickUp Rejected</Default>
+        </Setting>
+         <Setting id="TRUCKSIZE" name="Truck Sizes for Internal Driver Payments" type="list" category="Code-cat">
+            <Description>Truck Sizes</Description>
+            <Default>Regular</Default>
+        </Setting>
+    </Settings>
+</Model>

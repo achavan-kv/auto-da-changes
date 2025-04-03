@@ -1,0 +1,2915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetConditions">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConditionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConditionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetActions">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActionsWithStrategy">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActionsWithStrategyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActionsWithStrategyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategyActions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategyActionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStrategyActionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkLists">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWorkListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkListsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategyConditions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategyConditionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStrategyConditionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategies">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStrategiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStrategiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategiesToSendTo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategiesToSendToResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStrategiesToSendToResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategiesForBailiff">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStrategiesForBailiffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStrategiesForBailiffResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLetters">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLettersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLettersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSMS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSMSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorklistDataSet">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWorklistDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorklistDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveStrategyCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsStrategy">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="canBeAllocated" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="manual" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveStrategyConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveStrategyConditionResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smsName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveSMSResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetStrategyActive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeValue" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetStrategyActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetStrategyActiveResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWorkList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="worklist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWorkListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteWorkListResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sms" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSMSResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStrategyAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="worklist" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasonForWriteOff" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStrategyAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStrategyAccountsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LockAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acct" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LockAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LockAccountResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnlockAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acct" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnlockAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnlockAccountResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteExistingStrategy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteExistingStrategyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteExistingStrategyResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategyActionsForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empeeno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strategy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkForSupervisorRight" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStrategyActionsForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStrategyActionsForEmployeeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerTelephoneNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HTelNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HDialCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WTelNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WDialCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MTelNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MDialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Empeeno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HomeTelephoneChanged" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WorkTelephoneChanged" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="MobileTelephoneChanged" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerTelephoneNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomerTelephoneNoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBailActionsWithTelephoneActions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateDue" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="actionValue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="spaDateExpiry" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="spaReasonCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="spaInstal" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="reminderDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelOutstandingReminders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsExtraActionDetail">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="callingSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBailActionsWithTelephoneActionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveBailActionsWithTelephoneActionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkList_ActionRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsRightsInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkList_ActionRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateWorkList_ActionRightsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveWorkLists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsWorkList">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveWorkListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveWorkListsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadWorkListOrderColumns">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadWorkListOrderColumnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadWorkListOrderColumnsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadWorkListSortOrder">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadWorkListSortOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadWorkListSortOrderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkListSortOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsSortOrder">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkListSortOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateWorkListSortOrderResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistinctLetterCodesByRunNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="runNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistinctLetterCodesByRunNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDistinctLetterCodesByRunNoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadLetterFieldsbyCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="letterCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="runNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="storeType" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="spouseDetailRequired" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="guarantorDetailRequired" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadLetterFieldsbyCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadLetterFieldsbyCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchByStoreType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="storeType" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchByStoreTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchByStoreTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZones">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZonesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZoneAllocatableEmployeeInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetZoneAllocatableEmployeeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZoneAllocatableEmployeeInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActionRightsHierarchy">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActionRightsHierarchyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActionRightsHierarchyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorklistRightsHierarchy">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWorklistRightsHierarchyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorklistRightsHierarchyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCallReminderInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCallReminderInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCallReminderInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLegalFraudInsuranceDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLegalFraudInsuranceDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLegalFraudInsuranceDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllocateableStaffandTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllocateableStaffandTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllocateableStaffandTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountGetCombinedSPADetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountGetCombinedSPADetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountGetCombinedSPADetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBailActionsForSPA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateDue" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="actionValue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="spaDateExpiry" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="spaReasonCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="spaInstal" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="reminderDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelOutstandingReminders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSPADetails">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="callingSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBailActionsForSPAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveBailActionsForSPAResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPAWriteRefinance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateDue" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="actionValue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="spaDateExpiry" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="spaReasonCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="spaInstal" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="reminderDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelOutstandingReminders" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtSPADetails">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="callingSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPAWriteRefinanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SPAWriteRefinanceResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveZoneRule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsZone">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveZoneRuleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveZoneRuleResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBailiffZoneAllocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsZoneAllocation">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBailiffZoneAllocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveBailiffZoneAllocationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteZoneResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveZones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveZonesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyZones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyZonesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadUnallocatedAddressZones">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadUnallocatedAddressZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadUnallocatedAddressZonesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadZoneRules">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadZoneRulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadZoneRulesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BailiffAllocationRulesLoad">
+        <s:complexType />
+      </s:element>
+      <s:element name="BailiffAllocationRulesLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BailiffAllocationRulesLoadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesGet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="permission" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RolesGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RolesGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVillages">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVillagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVillagesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="village" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="village" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZipCodeResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetConditionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConditions" />
+  </wsdl:message>
+  <wsdl:message name="GetConditionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConditionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConditionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetActionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActions" />
+  </wsdl:message>
+  <wsdl:message name="GetActionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetActionsWithStrategySoapIn">
+    <wsdl:part name="parameters" element="tns:GetActionsWithStrategy" />
+  </wsdl:message>
+  <wsdl:message name="GetActionsWithStrategySoapOut">
+    <wsdl:part name="parameters" element="tns:GetActionsWithStrategyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActionsWithStrategyAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyActionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStrategyActions" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyActionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStrategyActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyActionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkListsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkLists" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkListsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkListsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyConditionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStrategyConditions" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyConditionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStrategyConditionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyConditionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStrategies" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStrategiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesToSendToSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStrategiesToSendTo" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesToSendToSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStrategiesToSendToResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesToSendToAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesForBailiffSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStrategiesForBailiff" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesForBailiffSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStrategiesForBailiffResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategiesForBailiffAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetLettersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLetters" />
+  </wsdl:message>
+  <wsdl:message name="GetLettersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLettersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLettersAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSMS" />
+  </wsdl:message>
+  <wsdl:message name="GetSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSMSAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetWorklistDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorklistDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetWorklistDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorklistDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorklistDataSetAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveStrategyConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveStrategyCondition" />
+  </wsdl:message>
+  <wsdl:message name="SaveStrategyConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveStrategyConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveStrategyConditionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveSMS" />
+  </wsdl:message>
+  <wsdl:message name="SaveSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSMSAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SetStrategyActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:SetStrategyActive" />
+  </wsdl:message>
+  <wsdl:message name="SetStrategyActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:SetStrategyActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetStrategyActiveAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWorkListSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteWorkList" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWorkListSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteWorkListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWorkListAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSMS" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSMSAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStrategyAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStrategyAccounts" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStrategyAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStrategyAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStrategyAccountsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LockAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:LockAccount" />
+  </wsdl:message>
+  <wsdl:message name="LockAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:LockAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="LockAccountAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UnlockAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:UnlockAccount" />
+  </wsdl:message>
+  <wsdl:message name="UnlockAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:UnlockAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnlockAccountAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteExistingStrategySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteExistingStrategy" />
+  </wsdl:message>
+  <wsdl:message name="DeleteExistingStrategySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteExistingStrategyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteExistingStrategyAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyActionsForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStrategyActionsForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyActionsForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStrategyActionsForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStrategyActionsForEmployeeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerTelephoneNoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerTelephoneNo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerTelephoneNoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerTelephoneNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerTelephoneNoAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailActionsWithTelephoneActionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBailActionsWithTelephoneActions" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailActionsWithTelephoneActionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBailActionsWithTelephoneActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailActionsWithTelephoneActionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkList_ActionRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWorkList_ActionRights" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkList_ActionRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWorkList_ActionRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkList_ActionRightsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveWorkListsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveWorkLists" />
+  </wsdl:message>
+  <wsdl:message name="SaveWorkListsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveWorkListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveWorkListsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadWorkListOrderColumnsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadWorkListOrderColumns" />
+  </wsdl:message>
+  <wsdl:message name="LoadWorkListOrderColumnsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadWorkListOrderColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadWorkListOrderColumnsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadWorkListSortOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadWorkListSortOrder" />
+  </wsdl:message>
+  <wsdl:message name="LoadWorkListSortOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadWorkListSortOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadWorkListSortOrderAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkListSortOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWorkListSortOrder" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkListSortOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWorkListSortOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkListSortOrderAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDistinctLetterCodesByRunNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDistinctLetterCodesByRunNo" />
+  </wsdl:message>
+  <wsdl:message name="GetDistinctLetterCodesByRunNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDistinctLetterCodesByRunNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDistinctLetterCodesByRunNoAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadLetterFieldsbyCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadLetterFieldsbyCode" />
+  </wsdl:message>
+  <wsdl:message name="LoadLetterFieldsbyCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadLetterFieldsbyCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadLetterFieldsbyCodeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchByStoreTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchByStoreType" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchByStoreTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchByStoreTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchByStoreTypeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZones" />
+  </wsdl:message>
+  <wsdl:message name="GetZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZonesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneAllocatableEmployeeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZoneAllocatableEmployeeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneAllocatableEmployeeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZoneAllocatableEmployeeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneAllocatableEmployeeInfoAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetActionRightsHierarchySoapIn">
+    <wsdl:part name="parameters" element="tns:GetActionRightsHierarchy" />
+  </wsdl:message>
+  <wsdl:message name="GetActionRightsHierarchySoapOut">
+    <wsdl:part name="parameters" element="tns:GetActionRightsHierarchyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActionRightsHierarchyAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetWorklistRightsHierarchySoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorklistRightsHierarchy" />
+  </wsdl:message>
+  <wsdl:message name="GetWorklistRightsHierarchySoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorklistRightsHierarchyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorklistRightsHierarchyAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCallReminderInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCallReminderInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCallReminderInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCallReminderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCallReminderInfoAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalFraudInsuranceDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLegalFraudInsuranceDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalFraudInsuranceDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLegalFraudInsuranceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalFraudInsuranceDetailsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllocateableStaffandTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllocateableStaffandTypes" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllocateableStaffandTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllocateableStaffandTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllocateableStaffandTypesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="AccountGetCombinedSPADetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountGetCombinedSPADetails" />
+  </wsdl:message>
+  <wsdl:message name="AccountGetCombinedSPADetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountGetCombinedSPADetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountGetCombinedSPADetailsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailActionsForSPASoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBailActionsForSPA" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailActionsForSPASoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBailActionsForSPAResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailActionsForSPAAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SPAWriteRefinanceSoapIn">
+    <wsdl:part name="parameters" element="tns:SPAWriteRefinance" />
+  </wsdl:message>
+  <wsdl:message name="SPAWriteRefinanceSoapOut">
+    <wsdl:part name="parameters" element="tns:SPAWriteRefinanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPAWriteRefinanceAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveZoneRuleSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveZoneRule" />
+  </wsdl:message>
+  <wsdl:message name="SaveZoneRuleSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveZoneRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveZoneRuleAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailiffZoneAllocationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBailiffZoneAllocation" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailiffZoneAllocationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBailiffZoneAllocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBailiffZoneAllocationAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DeleteZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteZone" />
+  </wsdl:message>
+  <wsdl:message name="DeleteZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteZoneAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveZones" />
+  </wsdl:message>
+  <wsdl:message name="SaveZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveZonesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ApplyZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:ApplyZones" />
+  </wsdl:message>
+  <wsdl:message name="ApplyZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:ApplyZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplyZonesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadUnallocatedAddressZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadUnallocatedAddressZones" />
+  </wsdl:message>
+  <wsdl:message name="LoadUnallocatedAddressZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadUnallocatedAddressZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadUnallocatedAddressZonesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadZoneRulesSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadZoneRules" />
+  </wsdl:message>
+  <wsdl:message name="LoadZoneRulesSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadZoneRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadZoneRulesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="BailiffAllocationRulesLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:BailiffAllocationRulesLoad" />
+  </wsdl:message>
+  <wsdl:message name="BailiffAllocationRulesLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:BailiffAllocationRulesLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="BailiffAllocationRulesLoadAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="RolesGetSoapIn">
+    <wsdl:part name="parameters" element="tns:RolesGet" />
+  </wsdl:message>
+  <wsdl:message name="RolesGetSoapOut">
+    <wsdl:part name="parameters" element="tns:RolesGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="RolesGetAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetVillagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVillages" />
+  </wsdl:message>
+  <wsdl:message name="GetVillagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVillagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVillagesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegions" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZipCode" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WCollectionsManagerSoap">
+    <wsdl:operation name="GetConditions">
+      <wsdl:input message="tns:GetConditionsSoapIn" />
+      <wsdl:output message="tns:GetConditionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActions">
+      <wsdl:input message="tns:GetActionsSoapIn" />
+      <wsdl:output message="tns:GetActionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActionsWithStrategy">
+      <wsdl:input message="tns:GetActionsWithStrategySoapIn" />
+      <wsdl:output message="tns:GetActionsWithStrategySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyActions">
+      <wsdl:input message="tns:GetStrategyActionsSoapIn" />
+      <wsdl:output message="tns:GetStrategyActionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkLists">
+      <wsdl:input message="tns:GetWorkListsSoapIn" />
+      <wsdl:output message="tns:GetWorkListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyConditions">
+      <wsdl:input message="tns:GetStrategyConditionsSoapIn" />
+      <wsdl:output message="tns:GetStrategyConditionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategies">
+      <wsdl:input message="tns:GetStrategiesSoapIn" />
+      <wsdl:output message="tns:GetStrategiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategiesToSendTo">
+      <wsdl:input message="tns:GetStrategiesToSendToSoapIn" />
+      <wsdl:output message="tns:GetStrategiesToSendToSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategiesForBailiff">
+      <wsdl:input message="tns:GetStrategiesForBailiffSoapIn" />
+      <wsdl:output message="tns:GetStrategiesForBailiffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLetters">
+      <wsdl:input message="tns:GetLettersSoapIn" />
+      <wsdl:output message="tns:GetLettersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSMS">
+      <wsdl:input message="tns:GetSMSSoapIn" />
+      <wsdl:output message="tns:GetSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorklistDataSet">
+      <wsdl:input message="tns:GetWorklistDataSetSoapIn" />
+      <wsdl:output message="tns:GetWorklistDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStrategyCondition">
+      <wsdl:input message="tns:SaveStrategyConditionSoapIn" />
+      <wsdl:output message="tns:SaveStrategyConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSMS">
+      <wsdl:input message="tns:SaveSMSSoapIn" />
+      <wsdl:output message="tns:SaveSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetStrategyActive">
+      <wsdl:input message="tns:SetStrategyActiveSoapIn" />
+      <wsdl:output message="tns:SetStrategyActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkList">
+      <wsdl:input message="tns:DeleteWorkListSoapIn" />
+      <wsdl:output message="tns:DeleteWorkListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSMS">
+      <wsdl:input message="tns:DeleteSMSSoapIn" />
+      <wsdl:output message="tns:DeleteSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStrategyAccounts">
+      <wsdl:input message="tns:UpdateStrategyAccountsSoapIn" />
+      <wsdl:output message="tns:UpdateStrategyAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LockAccount">
+      <wsdl:input message="tns:LockAccountSoapIn" />
+      <wsdl:output message="tns:LockAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockAccount">
+      <wsdl:input message="tns:UnlockAccountSoapIn" />
+      <wsdl:output message="tns:UnlockAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExistingStrategy">
+      <wsdl:input message="tns:DeleteExistingStrategySoapIn" />
+      <wsdl:output message="tns:DeleteExistingStrategySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyActionsForEmployee">
+      <wsdl:input message="tns:GetStrategyActionsForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetStrategyActionsForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerTelephoneNo">
+      <wsdl:input message="tns:UpdateCustomerTelephoneNoSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerTelephoneNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailActionsWithTelephoneActions">
+      <wsdl:input message="tns:SaveBailActionsWithTelephoneActionsSoapIn" />
+      <wsdl:output message="tns:SaveBailActionsWithTelephoneActionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkList_ActionRights">
+      <wsdl:input message="tns:UpdateWorkList_ActionRightsSoapIn" />
+      <wsdl:output message="tns:UpdateWorkList_ActionRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWorkLists">
+      <wsdl:input message="tns:SaveWorkListsSoapIn" />
+      <wsdl:output message="tns:SaveWorkListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadWorkListOrderColumns">
+      <wsdl:input message="tns:LoadWorkListOrderColumnsSoapIn" />
+      <wsdl:output message="tns:LoadWorkListOrderColumnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadWorkListSortOrder">
+      <wsdl:input message="tns:LoadWorkListSortOrderSoapIn" />
+      <wsdl:output message="tns:LoadWorkListSortOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkListSortOrder">
+      <wsdl:input message="tns:UpdateWorkListSortOrderSoapIn" />
+      <wsdl:output message="tns:UpdateWorkListSortOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistinctLetterCodesByRunNo">
+      <wsdl:input message="tns:GetDistinctLetterCodesByRunNoSoapIn" />
+      <wsdl:output message="tns:GetDistinctLetterCodesByRunNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadLetterFieldsbyCode">
+      <wsdl:input message="tns:LoadLetterFieldsbyCodeSoapIn" />
+      <wsdl:output message="tns:LoadLetterFieldsbyCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByStoreType">
+      <wsdl:input message="tns:GetBranchByStoreTypeSoapIn" />
+      <wsdl:output message="tns:GetBranchByStoreTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZones">
+      <wsdl:input message="tns:GetZonesSoapIn" />
+      <wsdl:output message="tns:GetZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneAllocatableEmployeeInfo">
+      <wsdl:input message="tns:GetZoneAllocatableEmployeeInfoSoapIn" />
+      <wsdl:output message="tns:GetZoneAllocatableEmployeeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActionRightsHierarchy">
+      <wsdl:input message="tns:GetActionRightsHierarchySoapIn" />
+      <wsdl:output message="tns:GetActionRightsHierarchySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorklistRightsHierarchy">
+      <wsdl:input message="tns:GetWorklistRightsHierarchySoapIn" />
+      <wsdl:output message="tns:GetWorklistRightsHierarchySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCallReminderInfo">
+      <wsdl:input message="tns:GetCallReminderInfoSoapIn" />
+      <wsdl:output message="tns:GetCallReminderInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalFraudInsuranceDetails">
+      <wsdl:input message="tns:GetLegalFraudInsuranceDetailsSoapIn" />
+      <wsdl:output message="tns:GetLegalFraudInsuranceDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllocateableStaffandTypes">
+      <wsdl:input message="tns:LoadAllocateableStaffandTypesSoapIn" />
+      <wsdl:output message="tns:LoadAllocateableStaffandTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountGetCombinedSPADetails">
+      <wsdl:input message="tns:AccountGetCombinedSPADetailsSoapIn" />
+      <wsdl:output message="tns:AccountGetCombinedSPADetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailActionsForSPA">
+      <wsdl:input message="tns:SaveBailActionsForSPASoapIn" />
+      <wsdl:output message="tns:SaveBailActionsForSPASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPAWriteRefinance">
+      <wsdl:input message="tns:SPAWriteRefinanceSoapIn" />
+      <wsdl:output message="tns:SPAWriteRefinanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveZoneRule">
+      <wsdl:input message="tns:SaveZoneRuleSoapIn" />
+      <wsdl:output message="tns:SaveZoneRuleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailiffZoneAllocation">
+      <wsdl:input message="tns:SaveBailiffZoneAllocationSoapIn" />
+      <wsdl:output message="tns:SaveBailiffZoneAllocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteZone">
+      <wsdl:input message="tns:DeleteZoneSoapIn" />
+      <wsdl:output message="tns:DeleteZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveZones">
+      <wsdl:input message="tns:SaveZonesSoapIn" />
+      <wsdl:output message="tns:SaveZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyZones">
+      <wsdl:input message="tns:ApplyZonesSoapIn" />
+      <wsdl:output message="tns:ApplyZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadUnallocatedAddressZones">
+      <wsdl:input message="tns:LoadUnallocatedAddressZonesSoapIn" />
+      <wsdl:output message="tns:LoadUnallocatedAddressZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadZoneRules">
+      <wsdl:input message="tns:LoadZoneRulesSoapIn" />
+      <wsdl:output message="tns:LoadZoneRulesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BailiffAllocationRulesLoad">
+      <wsdl:input message="tns:BailiffAllocationRulesLoadSoapIn" />
+      <wsdl:output message="tns:BailiffAllocationRulesLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RolesGet">
+      <wsdl:input message="tns:RolesGetSoapIn" />
+      <wsdl:output message="tns:RolesGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVillages">
+      <wsdl:input message="tns:GetVillagesSoapIn" />
+      <wsdl:output message="tns:GetVillagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <wsdl:input message="tns:GetRegionsSoapIn" />
+      <wsdl:output message="tns:GetRegionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <wsdl:input message="tns:GetZipCodeSoapIn" />
+      <wsdl:output message="tns:GetZipCodeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WCollectionsManagerSoap" type="tns:WCollectionsManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetConditions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetConditions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetConditionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActionsWithStrategy">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetActionsWithStrategy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActionsWithStrategyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyActions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetStrategyActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStrategyActionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkLists">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetWorkLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWorkListsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyConditions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetStrategyConditions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStrategyConditionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategies">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetStrategies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStrategiesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategiesToSendTo">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetStrategiesToSendTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStrategiesToSendToAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategiesForBailiff">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetStrategiesForBailiff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStrategiesForBailiffAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLetters">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetLetters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLettersAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSMS">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSMSAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorklistDataSet">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetWorklistDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWorklistDataSetAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStrategyCondition">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveStrategyCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveStrategyConditionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSMS">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveSMSAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetStrategyActive">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SetStrategyActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetStrategyActiveAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkList">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DeleteWorkList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteWorkListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSMS">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DeleteSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteSMSAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStrategyAccounts">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UpdateStrategyAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateStrategyAccountsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockAccount">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LockAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LockAccountAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockAccount">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UnlockAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UnlockAccountAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExistingStrategy">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DeleteExistingStrategy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteExistingStrategyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyActionsForEmployee">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetStrategyActionsForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStrategyActionsForEmployeeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerTelephoneNo">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UpdateCustomerTelephoneNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateCustomerTelephoneNoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailActionsWithTelephoneActions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveBailActionsWithTelephoneActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveBailActionsWithTelephoneActionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkList_ActionRights">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UpdateWorkList_ActionRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateWorkList_ActionRightsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWorkLists">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveWorkLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveWorkListsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadWorkListOrderColumns">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadWorkListOrderColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadWorkListOrderColumnsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadWorkListSortOrder">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadWorkListSortOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadWorkListSortOrderAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkListSortOrder">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UpdateWorkListSortOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateWorkListSortOrderAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistinctLetterCodesByRunNo">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetDistinctLetterCodesByRunNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDistinctLetterCodesByRunNoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadLetterFieldsbyCode">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadLetterFieldsbyCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadLetterFieldsbyCodeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByStoreType">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetBranchByStoreType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBranchByStoreTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZones">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneAllocatableEmployeeInfo">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetZoneAllocatableEmployeeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetZoneAllocatableEmployeeInfoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActionRightsHierarchy">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetActionRightsHierarchy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActionRightsHierarchyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorklistRightsHierarchy">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetWorklistRightsHierarchy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWorklistRightsHierarchyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCallReminderInfo">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetCallReminderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCallReminderInfoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalFraudInsuranceDetails">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetLegalFraudInsuranceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLegalFraudInsuranceDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllocateableStaffandTypes">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadAllocateableStaffandTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllocateableStaffandTypesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountGetCombinedSPADetails">
+      <soap:operation soapAction="http://strategicthought.com/webservices/AccountGetCombinedSPADetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AccountGetCombinedSPADetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailActionsForSPA">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveBailActionsForSPA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveBailActionsForSPAAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPAWriteRefinance">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SPAWriteRefinance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SPAWriteRefinanceAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZoneRule">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveZoneRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveZoneRuleAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailiffZoneAllocation">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveBailiffZoneAllocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveBailiffZoneAllocationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteZone">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DeleteZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteZoneAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZones">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyZones">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ApplyZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ApplyZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadUnallocatedAddressZones">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadUnallocatedAddressZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadUnallocatedAddressZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadZoneRules">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadZoneRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadZoneRulesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BailiffAllocationRulesLoad">
+      <soap:operation soapAction="http://strategicthought.com/webservices/BailiffAllocationRulesLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BailiffAllocationRulesLoadAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesGet">
+      <soap:operation soapAction="http://strategicthought.com/webservices/RolesGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RolesGetAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVillages">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetVillages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetVillagesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRegionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetZipCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetZipCodeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WCollectionsManagerSoap12" type="tns:WCollectionsManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetConditions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetConditions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetConditionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetActions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActionsWithStrategy">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetActionsWithStrategy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActionsWithStrategyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyActions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetStrategyActions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStrategyActionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkLists">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetWorkLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWorkListsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyConditions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetStrategyConditions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStrategyConditionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategies">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetStrategies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStrategiesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategiesToSendTo">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetStrategiesToSendTo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStrategiesToSendToAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategiesForBailiff">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetStrategiesForBailiff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStrategiesForBailiffAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLetters">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetLetters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLettersAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSMS">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSMSAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorklistDataSet">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetWorklistDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWorklistDataSetAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStrategyCondition">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveStrategyCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveStrategyConditionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSMS">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveSMSAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetStrategyActive">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SetStrategyActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetStrategyActiveAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkList">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DeleteWorkList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteWorkListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSMS">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DeleteSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteSMSAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStrategyAccounts">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UpdateStrategyAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateStrategyAccountsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockAccount">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LockAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LockAccountAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockAccount">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UnlockAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UnlockAccountAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExistingStrategy">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DeleteExistingStrategy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteExistingStrategyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrategyActionsForEmployee">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetStrategyActionsForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStrategyActionsForEmployeeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerTelephoneNo">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UpdateCustomerTelephoneNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateCustomerTelephoneNoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailActionsWithTelephoneActions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveBailActionsWithTelephoneActions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveBailActionsWithTelephoneActionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkList_ActionRights">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UpdateWorkList_ActionRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateWorkList_ActionRightsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWorkLists">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveWorkLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveWorkListsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadWorkListOrderColumns">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadWorkListOrderColumns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadWorkListOrderColumnsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadWorkListSortOrder">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadWorkListSortOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadWorkListSortOrderAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkListSortOrder">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UpdateWorkListSortOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateWorkListSortOrderAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistinctLetterCodesByRunNo">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetDistinctLetterCodesByRunNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDistinctLetterCodesByRunNoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadLetterFieldsbyCode">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadLetterFieldsbyCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadLetterFieldsbyCodeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByStoreType">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetBranchByStoreType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBranchByStoreTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZones">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneAllocatableEmployeeInfo">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetZoneAllocatableEmployeeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetZoneAllocatableEmployeeInfoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActionRightsHierarchy">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetActionRightsHierarchy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActionRightsHierarchyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorklistRightsHierarchy">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetWorklistRightsHierarchy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWorklistRightsHierarchyAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCallReminderInfo">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetCallReminderInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCallReminderInfoAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalFraudInsuranceDetails">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetLegalFraudInsuranceDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLegalFraudInsuranceDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllocateableStaffandTypes">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadAllocateableStaffandTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllocateableStaffandTypesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountGetCombinedSPADetails">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/AccountGetCombinedSPADetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AccountGetCombinedSPADetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailActionsForSPA">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveBailActionsForSPA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveBailActionsForSPAAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPAWriteRefinance">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SPAWriteRefinance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SPAWriteRefinanceAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZoneRule">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveZoneRule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveZoneRuleAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBailiffZoneAllocation">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveBailiffZoneAllocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveBailiffZoneAllocationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteZone">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DeleteZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteZoneAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZones">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyZones">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ApplyZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ApplyZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadUnallocatedAddressZones">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadUnallocatedAddressZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadUnallocatedAddressZonesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadZoneRules">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadZoneRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadZoneRulesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BailiffAllocationRulesLoad">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/BailiffAllocationRulesLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BailiffAllocationRulesLoadAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolesGet">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/RolesGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RolesGetAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVillages">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetVillages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetVillagesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetRegions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRegionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetZipCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetZipCodeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCollectionsManager">
+    <wsdl:port name="WCollectionsManagerSoap" binding="tns:WCollectionsManagerSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WCollectionsManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WCollectionsManagerSoap12" binding="tns:WCollectionsManagerSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WCollectionsManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

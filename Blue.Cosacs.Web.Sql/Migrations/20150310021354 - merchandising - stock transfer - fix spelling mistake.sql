@@ -1,0 +1,1 @@
+sp_RENAME 'Merchandising.StockTransfer.RecevingLocationId', 'ReceivingLocationId' , 'COLUMN'

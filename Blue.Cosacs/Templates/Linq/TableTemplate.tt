@@ -1,0 +1,92 @@
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+<#@ import namespace="System.CodeDom.Compiler" #>
+<#+
+public class LinqTableTemplate : Template
+{
+	public Database Database;
+    public TableViewBase Tabular;
+	private static CodeDomProvider csharpProvider = CodeDomProvider.CreateProvider("C#");
+	
+	protected static string ClrDataType(Column c)
+	{
+		var t = c.DataType;
+		var suffix = "";
+		if (c.Nullable)
+			suffix = "?";
+		
+		switch(t.Name)
+		{
+			case "nvarchar" : 	return "string";
+			case "varchar" : 	return "string";
+			case "char" : 		return "string";
+			case "int" : 		return "int" + suffix;
+			case "bigint" : 	return "long" + suffix;
+			case "smallint" : 	return "short" + suffix;
+			case "money" : 		return "decimal" + suffix;
+			case "real" : 		return "float" + suffix;
+			case "float" : 		return "double" + suffix;
+			case "decimal" : 	return "decimal" + suffix;
+			case "datetime" : 	return "DateTime" + suffix;
+			case "date" : 		return "DateTime" + suffix;
+			case "smalldatetime" : 	return "DateTime" + suffix;
+			case "bit" : 		return "bool" + suffix;
+			case "tinyint" : 	return "byte" + suffix;
+			case "interest_rate" : 	return "decimal" + suffix;
+			case "timestamp" : return "byte[]";
+			default: throw new ArgumentException("Unsupported data type '" + t + "'.");
+		}
+	}
+	
+	public static string ColName(Column c)
+	{
+		if (c.Name.StartsWith("$"))
+			return c.Name.Replace("$", "");
+		return c.Name;
+	}
+	
+	public static string ColNameValidated(Column c)
+	{
+		var colName = ColName(c);
+		if(csharpProvider.IsValidIdentifier(colName))
+			return colName;
+		else
+			return string.Format("@{0}", colName);
+	}
+		
+    public override string TransformText()
+    {
+#>
+[Serializable]
+public partial class <#= Tabular.Name #> : INotifyPropertyChanged
+{
+	<#+ foreach (Column column in Tabular.Columns) { #>
+	public <#= ClrDataType(column) #> <#= ColNameValidated(column) #>
+	{ 
+		get { return this.f_<#= ColName(column) #>; }
+		set 
+		{  
+			if (this.f_<#= ColName(column) #> != value)
+            {
+				this.f_<#= ColName(column) #> = value;
+				NotifyPropertyChanged("<#= ColName(column) #>");
+			}
+		}
+	}
+	
+	private <#= ClrDataType(column) #> f_<#= ColName(column) #>;
+	<#+ } #>
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+
+    private void NotifyPropertyChanged(string name)
+    {
+        if (PropertyChanged != null)
+            PropertyChanged(this, new PropertyChangedEventArgs(name));
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

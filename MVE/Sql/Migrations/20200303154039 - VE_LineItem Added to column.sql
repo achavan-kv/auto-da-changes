@@ -1,0 +1,37 @@
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE NAME = 'VE_LineItem')
+	BEGIN
+	CREATE TABLE [dbo].[VE_LineItem](
+	[CheckOutId] [int] NULL,
+	[OrderNo] [int] NULL,
+	[acctno] [char](12) NOT NULL,
+	[price] [money] NOT NULL,
+	[taxrate] [float] NULL,
+	[taxamt] [float] NOT NULL CONSTRAINT [DF_VE_LineItem_taxamt]  DEFAULT ((0)),
+	[quantity] [float] NOT NULL,
+	[discount] [money] NULL,
+	[stocklocn] [smallint] NOT NULL,
+	[itemno] [varchar](18) NULL,
+	[ItemID] [int] NOT NULL CONSTRAINT [DF_VE_LineItem_ItemID]  DEFAULT ((0)),
+	[IsDeliver] [bit] NULL,
+	[IsCancel] [bit] NULL,
+	[IsReturn] [bit] NULL,
+	[IsReplace] [bit] NULL,
+	[IsSync] [bit] NULL,
+	[SyncDate] [datetime] NULL,
+	[DeliveryPercent] [bit] NULL,
+	[CreatedDate] [datetime] NULL,
+	[ModifyDate] [datetime] NULL,
+	[BillType] [varchar](20) NULL,
+	[PickingId] [varchar](20) NULL,
+	[ScheduleId] [varchar](20) NULL,
+	[PickCancel] [bit] NULL,
+	[ScheduleCancel] [bit] NULL,
+	[ShipmentCancel] [bit] NULL,
+	[Authorize] [bit] NULL,
+	[OldCheckOutId] [nvarchar](100) NULL,
+	[IsExchange] [bit] NULL,
+	[OldOrderNo] [int] NULL,
+	[ExchgAmtDiff] [money] NULL,
+	[PaymentType] [varchar](5) NULL
+) ON [PRIMARY]
+END

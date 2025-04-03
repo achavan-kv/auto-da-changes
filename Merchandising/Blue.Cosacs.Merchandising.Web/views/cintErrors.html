@@ -1,0 +1,107 @@
+﻿Hello!
+<div ng-controller="CintErrorCtrl" class="buffer-sm bottom">
+    <div class="buffer-sm top" ng-form="queryForm">
+        <div class="row buffer-sm bottom">
+            <div class="col-lg-12">
+                <div class="pull-right">
+                    <button id="buttonClear" class="clear btn btn-default" ng-click="reset()">Clear</button>
+                    <button id="buttonSearch" class="btn btn-primary" ng-click="search()"
+                            ng-enabled="canSearch()">Search
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="id">Run Number</label>
+                    <input class="form-control" pb-integer name="runNo" ng-model="query.runNo"/>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="referenceNumber">Reference Number</label>
+                    <input class="form-control" type="text" name="referenceNumber" ng-model="query.primaryReference"
+                           ng-disabled="query.bulk"/>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group" style="padding-top: 29px">
+                    <input class="radio-inline" type="radio" name="bulk" ng-model="query.bulk" ng-value="true"
+                           ng-init="query.bulk = true"/>
+                    <label for="">Bulk Errors (Queue 201)</label>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="fromDate">From Date</label>
+                    <input class="form-control" type="date" name="fromDate" placeholder="Select Date"
+                           ng-model="query.fromDate">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="toDate">To Date</label>
+                    <input class="form-control" type="date" name="toDate" placeholder="Select Date"
+                           ng-model="query.toDate">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group" style="padding-top: 29px">
+
+                    <input class="radio-inline" type="radio" name="bulk" ng-model="query.bulk" ng-value="false"/>
+                    <label for="">Validation Errors (Queue 200)</label>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped" ng-show="results.bulk.length > 0">
+            <thead>
+            <tr>
+                <th class="col-sm">Run Number</th>
+                <th class="col-sm date">Date</th>
+                <th class="col-sm">Error Message</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="cintError in results.bulk">
+                <td>{{cintError.runNo}}</td>
+                <td>{{cintError.errorMessage}}</td>
+                <td>{{cintError.date | pbDateTime : true}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-striped" ng-show="results.validation.length > 0">
+            <thead>
+            <tr>
+                <th class="col-sm">Run Number</th>
+                <th class="col-sm">Product Code</th>
+                <th class="col-sm">Reference Number</th>
+                <th class="col-sm">Type</th>
+                <th class="col-sm">Stock Location</th>
+                <th class="col-sm">Sale Location</th>
+                <th class="col-sm">Error Message</th>
+                <th class="col-sm date">First Run Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="cintError in results.validation">
+                <td>{{cintError.runNo}}</td>
+                <td>{{cintError.productCode}}</td>
+                <td>{{cintError.primaryReference}}</td>
+                <td>{{cintError.type}}</td>
+                <td>{{cintError.stockLocation}}</td>
+                <td>{{cintError.saleLocation}}</td>
+                <td>{{cintError.errorMessage}}</td>
+                <td>{{cintError.date | pbDateTime : true}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

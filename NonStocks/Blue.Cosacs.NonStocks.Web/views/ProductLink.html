@@ -1,0 +1,220 @@
+<div class="product-link col-lg-12" ng-controller="productLinkController" ng-cloak>
+    <h1>Non-Stocks/Product Link</h1>
+    <div class="search">
+        <div class="section">Search</div>
+        <div class="row form-group">
+            <label class="col-lg-2" for="searchName">Name</label>
+            <div class="col-lg-6">
+                <input type="text" placeholder="Filter by Name"
+                       class="form-control" id="searchName" name="searchName"
+                       ng-model="filter.Name" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-lg-2" for="searchDateFrom">Effective Date</label>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="date" placeholder="Date from"
+                               class="form-control" id="searchDateFrom" name="searchDateFrom"
+                               ng-model="filter.dateFromObj" />
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="date" placeholder="Date from"
+                               class="form-control" id="searchDateTo" name="searchDateTo"
+                               ng-model="filter.dateToObj" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-6">
+                <div>
+                    <button class="btn" ng-click="clearSearchForm()">Clear</button>
+                    <button class="btn btn-primary" ng-click="search()">Search</button>
+                    <button class="btn" ng-click="addNewNonStockProductLink()">Add New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-links col-lg-12">
+        <div class="row">
+            <div class="link" ng-repeat="linkElement in formData.links">
+                <div class="editing-link" ng-show="addingNewNonStockProductLink && linkElement.Id==0">
+                    Creating
+                </div>
+                <div class="editing-link" ng-show="(linkElement.productLinkEdit || linkElement.nonStocksEdit) && linkElement.Id>0">
+                    Editing
+                </div>
+                <div class="form-horizontal">
+                    <div class="link-header form-group">
+                        <label class="col-lg-1 control-label">Name</label>
+                        <div class="col-lg-3" ng-class="{ 'has-error': linkElement.Name.length <= 0 }">
+                            <input type="text" class="form-control" placeholder="Name"
+                                   ng-model="linkElement.Name" ng-show="linkElement.productLinkEdit" />
+                            <div class="control-static" title="{{ linkElement.Id }}"
+                                 ng-hide="linkElement.productLinkEdit">
+                                {{ linkElement.Name }}
+                            </div>
+                        </div>
+                        <label class="col-lg-2 control-label" for="effectiveDate_{{$index}}">Effective Date</label>
+                        <div class="col-lg-3" ng-class="{ 'has-error': isEffectiveDateInvalid(linkElement) }">
+                            <input type="date" required
+                                   id="effectiveDate_{{$index}}" name="effectiveDate_{{$index}}"
+                                   class="form-control" placeholder="Name"
+                                   ng-model="linkElement.effectiveDate" ng-show="linkElement.productLinkEdit" />
+                            <div class="control-static" title="{{ linkElement.Id }}"
+                                 ng-hide="linkElement.productLinkEdit">
+                                {{ linkElement.EffectiveDate | date:"dd/MM/yyyy" }}
+                            </div>
+                        </div>
+                        <!-- link edit buttons -->
+                        <div class="col-lg-2 col-lg-offset-1 text-right">
+                            <span class="glyphicons bin glyph-btn click" title="Delete Link"
+                                  ng-show="hasEditLinkPermission && linkElement.Id && !linkElement.productLinkEdit"
+                                  ng-click="removeLinkElement($index, linkElement)"></span>
+                            <span class="glyphicons glyph-btn pencil click" title="Edit Details"
+                                  ng-show="hasEditLinkPermission && !linkElement.productLinkEdit"
+                                  ng-click="startEditDetails(linkElement)"></span>
+                            <span class="glyphicons undo glyph-btn click" title="Stop Edit Details"
+                                  ng-show="hasEditLinkPermission && linkElement.Id && linkElement.productLinkEdit"
+                                  ng-click="stopEditingLink($index, linkElement)"></span>
+                            <span class="glyphicons glyph-btn floppy_save click" title="Save Details"
+                                  ng-class="{ false:'disabled', true:'click' }[ isProductLinkValid(linkElement) ]"
+                                  ng-show="linkElement.productLinkEdit && hasEditLinkPermission"
+                                  ng-click="saveLink(linkElement)"></span>
+                            <span class="glyphicons undo glyph-btn click" title="Discard Link"
+                                  ng-show="hasEditLinkPermission && linkElement.productLinkEdit && addingNewNonStockProductLink"
+                                  ng-click="discardNonStockProductLink()"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="section">Products</div>
+                <table class="product-table table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th class="col-lg-1"></th>
+                        <th class="col-lg-{{ helpers.prodLinkCol }}"
+                            ng-repeat="level in formData.levels">
+                            <span>{{ level.name }}</span>
+                        </th>
+                        <th class="col-lg-{{ helpers.prodLinkRest }}"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="productItem in linkElement.linkProducts">
+                        <td>
+                            <span ng-click="removeLinkProduct($index, productItem, linkElement)"
+                                  ng-show="hasEditLinkPermission && linkElement.productLinkEdit" title="Remove"
+                                  class="glyph-btn glyphicons bin"></span>
+                        </td>
+                        <td class="link-cell text-center" ng-repeat="levelName in formData.linkLevelNames">
+                            <span>
+                                {{ formData.levels[$index].dataScope[productItem[levelName]] || 'All' }}
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                    <tfoot ng-show="hasEditLinkPermission && linkElement.productLinkEdit">
+                    <tr ng-hide="linkElement.addingProductLink">
+                        <td>
+                            <span class="glyph-btn glyphicons plus" href="#" title="New"
+                                  ng-click="toggleProductLinkEdit(linkElement)"></span>
+                        </td>
+                        <td colspan="{{ formData.levels.length + 1 }}"></td>
+                    </tr>
+                    <tr ng-show="linkElement.addingProductLink">
+                        <td>
+                            <span class="glyph-btn glyphicons undo" href="#" title="Cancel"
+                                  ng-click="toggleProductLinkEdit(linkElement)"></span>
+                            <span class="glyph-btn glyphicons floppy_save" title="Save Details"
+                                  ng-show="hasEditLinkPermission && linkElement.nonStocksEdit"
+                                  ng-click="saveNewProductLink(linkElement)"></span>
+                        </td>
+                        <td class="col-lg-{{ helpers.prodLinkCol }}" ng-repeat="level in formData.levels">
+                            <!--TODO-->
+                            <list placeholder="{{ level.name }}" required
+                                  id="newHierarchyLevel" name="newHierarchyLevel"
+                                  ng-model="level.val" scope="level.dataScope"
+                                  ng-disabled=""></list>
+                        </td>
+                        <td class="col-lg-{{ helpers.prodLinkRest }}"></td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+
+                <div class="section">Associated Non-Stock</div>
+                <table class="product-table table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th class="col-lg-1"></th>
+                        <th class="col-lg-{{ helpers.prodLinkCol * formData.levels.length }}">
+                            <span>Non-Stock</span>
+                        </th>
+                        <th class="col-lg-{{ helpers.prodLinkRest }}"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="nonStocksItem in linkElement.linkNonStocks">
+                        <td>
+                            <span ng-click="removeNonStock($index, nonStocksItem, linkElement)"
+                                  ng-show="hasEditLinkPermission && linkElement.nonStocksEdit" title="Remove"
+                                  class="glyph-btn glyphicons bin"></span>
+                        </td>
+                        <td class="text-center">
+                            <a class="refLink" href="/#/NonStocks/Details/{{ nonStocksItem.NonStockObj.Id }}">
+                                {{ nonStocksItem.NonStockObj.SKU + ' - ' +
+                                nonStocksItem.NonStockObj.ShortDescription + ' ' +
+                                nonStocksItem.NonStockObj.LongDescription }}
+                            </a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                    <tfoot ng-show="hasEditLinkPermission && linkElement.nonStocksEdit">
+                    <tr ng-hide="linkElement.addingNonStocks">
+                        <td>
+                            <span class="glyph-btn glyphicons plus" href="#" title="New"
+                                  ng-click="linkElement.addingNonStocks = !linkElement.addingNonStocks"></span>
+                        </td>
+                        <td colspan="{{ formData.levels.length + 1 }}"></td>
+                    </tr>
+                    <tr ng-show="linkElement.addingNonStocks">
+                        <td>
+                            <span class="glyph-btn glyphicons undo" href="#" title="Cancel"
+                                  ng-click="toggleNonStocksEdit(linkElement)"></span>
+                            <span class="glyph-btn glyphicons floppy_save" title="Save Details"
+                                  ng-show="hasEditLinkPermission && linkElement.nonStocksEdit"
+                                  ng-class="{ false:'disabled', true:'click' }[formData.newNonStock.NonStockId]"
+                                  ng-click="saveNewNonStock(linkElement)"></span>
+                        </td>
+                        <td ng-class="{ true:'has-error' }[!isNewNonStockValid()]">
+                            <list placeholder="{{ level.name }}" required
+                                  id="newNonStock" name="newNonStock"
+                                  scope="formData.allProductsScope"
+                                  ng-model="formData.newNonStock.NonStockId"
+                                  ng-keydown="" ng-click="" ng-disabled=""></list>
+                        </td>
+                        <td class="col-lg-{{ helpers.prodLinkRest }}"></td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <br/>
+        <div class="col-lg-12">
+            <pagination class="pagination" ng-model="filter.PageIndex"
+                        ng-change="selectPage(filter.PageIndex)" boundary-Links="true"
+                        total-Items="filter.RecordCount" max-Size="filter.PageCount"
+                        items-Per-Page="filter.PageSize">
+            </pagination>
+        </div>
+        <br/>
+        <br/>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+See the ".NET Application Updater.doc" in the "docs" folder for a walk through of using this sample.

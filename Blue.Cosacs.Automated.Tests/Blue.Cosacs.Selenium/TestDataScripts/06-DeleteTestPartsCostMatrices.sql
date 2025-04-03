@@ -1,0 +1,26 @@
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF EXISTS (SELECT * FROM SYSOBJECTS 
+           WHERE NAME = 'DeleteTestPartsCostMatrices'
+           AND xtype = 'P')
+BEGIN 
+DROP PROCEDURE DeleteTestPartsCostMatrices
+END
+GO
+
+CREATE PROCEDURE DeleteTestPartsCostMatrices
+
+AS
+BEGIN
+
+    DELETE FROM SERVICE.PARTSCOSTMATRIX WHERE LABEL LIKE 'Selenium Test%'
+
+END
+
+GO
+
+EXEC DeleteTestPartsCostMatrices

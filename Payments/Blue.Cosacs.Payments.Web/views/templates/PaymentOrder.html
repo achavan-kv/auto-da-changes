@@ -1,0 +1,99 @@
+<div class="panel panel-default small-margin-bottom">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-lg-3 text-left">
+                <span>
+                    <strong>
+                        <a href="{{ '/#/Sales/pos?inv=' + order.id}}">{{ order.id }}</a>
+                    </strong>
+                        {{ ' (Branch ' + order.branchNo + ')' }}
+                </span>
+            </div>
+            <div class="col-lg-3 text-center">
+                <span>
+                    <strong> Total </strong>
+                    <span>{{ order.totalAmount | currency }}</span>
+                </span>
+            </div>
+            <div class="col-lg-3 text-center">
+                <span>
+                    <strong> Tax </strong>
+                    <span>{{ order.totalTaxAmount | currency }}</span>
+                </span>
+            </div>
+            <div class="col-lg-3 text-right">
+                <span>
+                    {{ moment(order.createdOn).format(dateFormatShort) }}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="order-items panel-body centre-section">
+        <div class="section">Items</div>
+        <table class="col col-lg-12" ng-repeat="orderItem in order.items">
+            <tbody>
+            <tr class="main-item">
+                <td class="col col-lg-1">
+                    <span>{{ orderItem.productItemId }}</span>
+                </td>
+                <td class="col col-lg-5">
+                    <span>
+                        <!--<a href="{{ '/#/Sales/pos?q=%7B&quot;query&quot;:&quot;' + orderItem.itemNo + '&quot;%7D' }}">-->
+                            {{ orderItem.description }}
+                        <!--</a>-->
+                    </span>
+                </td>
+                <td class="col col-lg-2">
+                    <span class="pull-right">{{ orderItem.price | currency }}</span>
+                </td>
+                <td class="col col-lg-2">
+                    <span class="pull-right">{{ '(Tax) ' + (orderItem.taxAmount | currency) }}</span>
+                </td>
+                <td class="col col-lg-2" ng-show="!orderItem.toFollow">
+                    <span class="pull-right">{{ moment(order.deliveredOn).format(dateFormatShort) }}</span>
+                </td>
+                <td class="col col-lg-2" ng-show="orderItem.toFollow">
+                    <div class="pull-right text-danger">To Follow</div>
+                </td>
+            </tr>
+            <tr style="width: 99%"
+                ng-show="orderItem.warranties.length > 0 || orderItem.installations.length > 0 || orderItem.discounts.length > 0">
+                <td class="sub-items no-padding" colspan="5">
+                    <table class="table">
+                        <tbody>
+                        <tr ng-repeat="orderItem in orderItem.warranties">
+                            <td>
+                                Warranty {{orderItem.itemNo}}
+                            </td>
+                            <td>
+                                {{ orderItem.description + '(' + orderItem.warrantyTypeCode + ')' }}
+                            </td>
+                            <td>
+                                <span class="pull-right">{{ orderItem.price | currency }}</span>
+                            </td>
+                            <td>
+                        <span class="pull-right">{{ ' (Tax ' + orderItem.taxRate + '%) ' +
+                            (orderItem.taxAmount | currency) }}</span>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="orderItem in orderItem.installations">
+                            <td>Installation {{orderItem.itemNo}}</td>
+                            <td>{{ orderItem.description }}</td>
+                            <td><span class="pull-right">{{ orderItem.price | currency }}</span></td>
+                            <td><span class="pull-right">{{' (Tax ' + orderItem.taxRate + '%) ' + (orderItem.taxAmount |
+                        currency)}}</span></td>
+                        </tr>
+                        <tr ng-repeat="orderItem in orderItem.discounts">
+                            <td>Discount {{orderItem.itemNo}}</td>
+                            <td>{{ orderItem.description }}</td>
+                            <td><span class="pull-right">{{ math.abs(orderItem.percentage) + '% ' }}</span></td>
+                            <td><span class="pull-right">{{ orderItem.amount | currency }}</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

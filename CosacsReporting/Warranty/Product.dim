@@ -1,0 +1,303 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="469c31cb-b4f8-4613-ae7d-73a71f2eac0e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Product</ID>
+  <Name>Product</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4261" scrolltop="-8983" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11880" y="21299" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Product" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Olapview_Product" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4261</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-8983</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="108">
+            <Shape Id="Productid" Expanded="true">
+              <Attributes>
+                <Attribute Id="Productid" />
+                <Attribute Id="Description" />
+                <Attribute Id="Tax Rate" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Category Code" Expanded="false">
+              <Attributes>
+                <Attribute Id="Category Code" />
+              </Attributes>
+              <Position x="160" y="20" />
+            </Shape>
+            <Shape Id="Supplier" Expanded="false">
+              <Attributes>
+                <Attribute Id="Supplier" />
+              </Attributes>
+              <Position x="160" y="68" />
+            </Shape>
+            <Shape Id="Itemtype" Expanded="false">
+              <Attributes>
+                <Attribute Id="Itemtype" />
+              </Attributes>
+              <Position x="160" y="116" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="29ba098f-9be2-484b-87a2-01d9a3067208">
+    <DataSourceViewID>CosacsReporting</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="e72130fa-aefe-47cd-8022-73bea15eeb2f">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="8d3f105f-6cae-46bf-aea6-b6fc53dded37">
+      <ID>Productid</ID>
+      <Name>Product Code</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>51910</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f9aa4335-9197-4c2a-8b5c-59367805767d">
+          <NullProcessing>UnknownMember</NullProcessing>
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7b3b5661-6f00-48ec-ab30-a4e1346de743">
+            <TableID>dbo_Olapview_Product</TableID>
+            <ColumnID>Productid</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="cf4ba722-5b2f-423d-bf55-eb3529b5c72b">
+        <DataType>WChar</DataType>
+        <DataSize>18</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d3036b37-a76e-4ae1-8030-4b549669542d">
+          <TableID>dbo_Olapview_Product</TableID>
+          <ColumnID>Product</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ce482eaf-60c7-4ebe-8319-7f3eb5ef0a2a">
+          <AttributeID>Itemtype</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Itemtype</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a05fc784-8b24-4d7d-aba9-7d40e1a13818">
+          <AttributeID>Supplier</AttributeID>
+          <Name>Supplier</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="702eb944-866d-4e35-8515-82ad94c2a7f3">
+          <AttributeID>Tax Rate</AttributeID>
+          <Name>Tax Rate</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="341a6e3d-85b6-41cd-8c8f-c35bd48387c2">
+          <AttributeID>Description</AttributeID>
+          <Name>Description</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="936addfa-2468-470c-93e7-8d49a01478f5">
+          <AttributeID>Category Code</AttributeID>
+          <Name>Product Category</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2ecce146-498b-4e87-9772-52bbc1b6f3dd">
+      <ID>Description</ID>
+      <Name>Product Description</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6678315d-6d28-4faa-99c1-012fdfbf0f79">
+          <DataType>WChar</DataType>
+          <DataSize>45</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0aec7b4-02aa-40d3-9890-d25298bcabac">
+            <TableID>dbo_Olapview_Product</TableID>
+            <ColumnID>Description</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e08303f1-9ee5-4cd5-ad67-3aaf3c396474">
+      <ID>Itemtype</ID>
+      <Name>Itemtype</Name>
+      <EstimatedCount>3</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="68419586-c0a0-44b6-9f4e-11151ba8dcdf">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="49776ca5-c511-4cf8-8257-3d6f9ccd815a">
+            <TableID>dbo_Olapview_Product</TableID>
+            <ColumnID>Itemtype</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f10890da-56f6-4bfc-b513-28b69d212108">
+      <ID>Supplier</ID>
+      <Name>Supplier</Name>
+      <EstimatedCount>324</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5b921c21-5ddf-4606-be2a-c680f8134aef">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="956ca015-d584-4484-93ed-9bccf05e0ea3">
+            <TableID>dbo_Olapview_Product</TableID>
+            <ColumnID>Supplier</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5d5140d1-dbc6-4a7c-bdb4-20291c46cf0c">
+      <ID>Tax Rate</ID>
+      <Name>Tax Rate</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ef7e4ed3-36af-41b9-8bec-697d41a7a22c">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d711b975-cf57-472f-8709-75166b36fdfd">
+            <TableID>dbo_Olapview_Product</TableID>
+            <ColumnID>TaxRate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b3577075-71b8-4ae7-a78a-478479233960">
+      <ID>Category Code</ID>
+      <Name>Product Category</Name>
+      <EstimatedCount>33</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="53d19186-9d60-4656-ad87-078aa16b3c68">
+          <DataType>WChar</DataType>
+          <DataSize>18</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7f1c68ec-98a7-42cf-a027-ebee5cafd1a2">
+            <TableID>dbo_Olapview_Product</TableID>
+            <ColumnID>CategoryCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c9330a3a-c3bf-4b7c-a6c0-39e5e01cb6e9">
+        <DataType>WChar</DataType>
+        <DataSize>85</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="eae82b74-0e90-4959-891b-beb6b0ca817e">
+          <TableID>dbo_Olapview_Product</TableID>
+          <ColumnID>Category</ColumnID>
+        </Source>
+      </NameColumn>
+      <IsAggregatable>false</IsAggregatable>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="0632eaf3-37c1-4dd4-acbc-196d03a0271c">
+      <ID>Hierarchy</ID>
+      <Name>ItemType Product</Name>
+      <Levels>
+        <Level dwd:design-time-name="a514264e-0c8f-4830-ab70-2668ba6bcb9a">
+          <ID>Itemtype</ID>
+          <Name>Itemtype</Name>
+          <SourceAttributeID>Itemtype</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="4d3c2fb7-41b4-4521-8b24-3630f8c3412a">
+          <ID>Product</ID>
+          <Name>Product</Name>
+          <SourceAttributeID>Productid</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="313f23d3-0f78-4540-8b0e-047312e265a0">
+      <ID>Hierarchy 1 1</ID>
+      <Name>Supplier Product</Name>
+      <Levels>
+        <Level dwd:design-time-name="e9fd75a2-6168-4596-8403-67e8fc66d3fe">
+          <ID>Supplier</ID>
+          <Name>Supplier</Name>
+          <SourceAttributeID>Supplier</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="16e766e6-6be9-449d-8f9a-a0cf8980e17c">
+          <ID>Product</ID>
+          <Name>Product</Name>
+          <SourceAttributeID>Productid</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="c39b001b-9c75-494b-8c41-78aa8bf84484">
+      <ID>Hierarchy 1</ID>
+      <Name>Category Product</Name>
+      <Levels>
+        <Level dwd:design-time-name="dd23f564-261c-47ef-b80c-b9aa18dc3d94">
+          <ID>Product Category</ID>
+          <Name>Product Category</Name>
+          <SourceAttributeID>Category Code</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="370d2c6c-bfcd-4b68-9b85-b4f2aaaf9af0">
+          <ID>Product Code</ID>
+          <Name>Product Code</Name>
+          <SourceAttributeID>Productid</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

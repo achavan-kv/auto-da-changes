@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Communication" namespace="Blue.Cosacs.Communication" label="Communication">
+    <Connection server="." database="cosacs" />
+    <Queries>
+        <NonQuery name="InsertBlackEmailList"/>
+        <DataSet name="GetSmsNotSent"/>
+    </Queries>
+    <Tables>
+        <Table name="MailchimpTemplateID"></Table>
+        <Table name="SandBoxMails"></Table>
+        <Table name="BlackEmailList"></Table>
+        <Table name="SmsToSend"></Table>
+        <Table name="SmsUnsubcription"></Table>
+        <Table name="CustomerInteraction"></Table>
+    </Tables>
+    <Views>
+    </Views>
+    <Settings>
+        <Setting id="MandrillApiKey" name="Api key for using Mandrill" type="string" category="Communication">
+            <Description>Mandrill api key for sending transactional emails</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="SandBoxMode" name="Don't send to Mandrill" type="bit" category="Communication">
+            <Description>Leave as true for testing emails within CoSaCS only. When set to false, scheduled emails will be passed to Mandrill for actually sending to customers. Note that Mandrill can additionally be used in 'test mode' as an extra layer of testing</Description>
+            <Default>true</Default>
+        </Setting>
+        <Setting id="EmailsSender" name="User Address" type="string" category="Communication">
+            <Description>The email address to which customers notification emails will be sent</Description>
+        </Setting>    
+    </Settings>
+</Model>

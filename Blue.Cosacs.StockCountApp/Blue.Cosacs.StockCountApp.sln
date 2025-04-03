@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.StockCountApp", "Blue.Cosacs.StockCountApp.csproj", "{3166CF03-CF76-40E2-A037-934D6FAC7460}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "Blue.Cosacs.StockCountApp.Deploy", "..\Blue.Cosacs.StockCountApp.Deploy\Blue.Cosacs.StockCountApp.Deploy.vddproj", "{7043E7B0-B466-4EB9-BF34-9760AAECBCB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3166CF03-CF76-40E2-A037-934D6FAC7460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3166CF03-CF76-40E2-A037-934D6FAC7460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3166CF03-CF76-40E2-A037-934D6FAC7460}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3166CF03-CF76-40E2-A037-934D6FAC7460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3166CF03-CF76-40E2-A037-934D6FAC7460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3166CF03-CF76-40E2-A037-934D6FAC7460}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7043E7B0-B466-4EB9-BF34-9760AAECBCB1}.Debug|Any CPU.ActiveCfg = Debug
+		{7043E7B0-B466-4EB9-BF34-9760AAECBCB1}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

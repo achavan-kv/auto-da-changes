@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1">
+    <TocEntry Title="Country Parameters">
+        <TocEntry Title="Delivery Country Parameters" Link="/Content/Country Parameters/DeliveryCM.htm" />
+        <TocEntry Title="Warranty Country Parameters" Link="/Content/Country Parameters/WarrantyCM.htm#top" />
+    </TocEntry>
+    <TocEntry Title="Deliveries">
+        <TocEntry Title="The Delivery Process" Link="/Content/Deliveries/1 The Delivery Process.htm" />
+        <TocEntry Title="Transport Maintenance" Link="/Content/Deliveries/2 Transport Maintenance.htm" />
+        <TocEntry Title="New Sales Order" Link="/Content/Deliveries/3 New Sales Order.htm" />
+        <TocEntry Title="Delivery Area Maintenance" Link="/Content/Deliveries/4 Delivery Area Maintenance.htm">
+            <TocEntry Title="Amend / View Delivery Area" Link="/Content/Deliveries/4 Delivery Area Maintenance.htm#4.1" />
+            <TocEntry Title="Create Delivery Area" Link="/Content/Deliveries/4 Delivery Area Maintenance.htm#4.2" />
+        </TocEntry>
+        <TocEntry Title="Delivery Authorisation" Link="/Content/Deliveries/5 Delivery Authorisation.htm" />
+        <TocEntry Title="Orders for Delivery and Collection" Link="/Content/Deliveries/6 Orders for delivery scheduling.htm">
+            <TocEntry Title="Immediate Deliveries in Orders for Delivery" Link="/Content/Deliveries/6. 1 Orders for delivery &amp; Collection 2.htm#6.1" />
+            <TocEntry Title="Scheduled Orders in Orders for Delivery" Link="/Content/Deliveries/6. 1 Orders for delivery &amp; Collection 2.htm#6.2" />
+        </TocEntry>
+        <TocEntry Title="Order Pick Lists" Link="/Content/Deliveries/7 Order Pick Lists.htm" />
+        <TocEntry Title="Amend Pick Lists" Link="/Content/Deliveries/8 Amend Pick Lists.htm" />
+        <TocEntry Title="Immediate Delivery" Link="/Content/Deliveries/9 Immediate Delivery.htm" />
+        <TocEntry Title="Delivery Scheduling" Link="/Content/Deliveries/10 Delivery Scheduling.htm" />
+        <TocEntry Title="Transport Pick Lists" Link="/Content/Deliveries/11 Transport Pick Lists.htm" />
+        <TocEntry Title="Changes to a schedule" Link="/Content/Deliveries/12 Changes to a schedule.htm">
+            <TocEntry Title="Change Order Details" Link="/Content/Deliveries/12 Changes to a schedule.htm#12.1" />
+            <TocEntry Title="Changes after scheduling" Link="/Content/Deliveries/12 Changes to a schedule.htm#12.2" />
+            <TocEntry Title="Revising Accounts on a schedule" Link="/Content/Deliveries/12 Changes to a schedule.htm#12.3" />
+        </TocEntry>
+        <TocEntry Title="Notifying Deliveries" Link="/Content/Deliveries/13 Notifying Deliveries.htm" />
+        <TocEntry Title="Collections Process" Link="/Content/Deliveries/14 Collections Process.htm">
+            <TocEntry Title="Goods Return" Link="/Content/Deliveries/14.1Goods Return.htm" />
+        </TocEntry>
+        <TocEntry Title="Redelivery after Repossession" Link="/Content/Deliveries/15 Redelivery after Repossession.htm" />
+        <TocEntry Title="Reprint Delivery Note" Link="/Content/Deliveries/16 Reprint Delivery Note.htm" />
+        <TocEntry Title="Cancelling Accounts" Link="/Content/Deliveries/17 Cancelling Accounts.htm">
+            <TocEntry Title="Accounts without payment and no delivery" Link="/Content/Deliveries/17 Cancelling Accounts.htm#17.1.1" />
+            <TocEntry Title="Accounts with payment but no delivery" Link="/Content/Deliveries/17 Cancelling Accounts.htm#17.1.2" />
+            <TocEntry Title="Accounts without payment but have delivery" Link="/Content/Deliveries/17 Cancelling Accounts.htm#17.1.3" />
+            <TocEntry Title="Accounts with payments and delivery " Link="/Content/Deliveries/17 Cancelling Accounts.htm#17.1.4" />
+        </TocEntry>
+        <TocEntry Title="Cancel Collection Note" Link="/Content/Deliveries/18 Cancel Collection Note.htm" />
+    </TocEntry>
+    <TocEntry Title="Warranties">
+        <TocEntry Title="1 Warranty Repossessions" Link="/Content/Warranties/1 Warranty Repossessions.htm" />
+        <TocEntry Title="2 Identical Replacement" Link="/Content/Warranties/2 Identical Replacement.htm" />
+        <TocEntry Title="3 Exchanges" Link="/Content/Warranties/3 Exchanges.htm" />
+        <TocEntry Title="4 Cancellations" Link="/Content/Warranties/4 Cancellations.htm" />
+        <TocEntry Title="5 Instant Replacement" Link="/Content/Warranties/5 Instant Replacement.htm" />
+        <TocEntry Title="6 Warranty Renewals" Link="/Content/Warranties/6 Warranty Renewals.htm" />
+        <TocEntry Title="7 Warranty on credit" Link="/Content/Warranties/7 Warranty on credit.htm" />
+        <TocEntry Title="8 Warranty Reports" Link="/Content/Warranties/8 Warranty reports.htm" />
+    </TocEntry>
+</CatapultToc>

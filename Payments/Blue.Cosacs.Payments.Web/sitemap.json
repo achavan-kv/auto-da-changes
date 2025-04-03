@@ -1,0 +1,32 @@
+[
+    {
+        "label": "Payments",
+        "nodes": [
+            {
+                "label": "Search",
+                "url": "#/Payments/Search",
+                "permission": 801
+            },
+            {
+                "label": "Bank Maintenance",
+                "url": "#/Payments/BankMaintenance",
+                "permission": 803
+            },
+            {
+                "label": "Payment Methods Setup",
+                "url": "#/Payments/PaymentSetup",
+                "permission": 804
+            },
+            {
+                "label": "Payment Methods Map",
+                "url": "#/Payments/PaymentMethodsMap",
+                "permission": 804
+            },
+            {
+                "label": "Exchange Rate",
+                "url": "#/Payments/ExchangeRate",
+                "permission": 805
+            }
+        ]
+    }
+]

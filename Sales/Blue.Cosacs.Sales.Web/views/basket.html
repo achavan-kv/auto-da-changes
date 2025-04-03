@@ -1,0 +1,830 @@
+<div id="items-list" class="item-list row">
+    <div id="return-list" class="form-horizontal original-order" ng-if="cart.originalOrder.order">
+        <div class="row col-lg-12 col-md-12">
+            <article class="row">
+                <div>
+                    <div class="col-lg-4 col-md-4 text-left form-control-static" id="originalOrderNo">
+                        <h4>Original Order #{{cart.originalOrder.receiptNumber | padNo:10}}</h4>
+                    </div>
+                    <div ng-if="cart.originalOrderId" class="col-lg-4 col-md-4 text-left form-control-static">
+                        <h4>Order Date : {{cart.originalOrder.order.createdOn | date:'dd/MM/yyyy'}}</h4>
+                    </div>
+                    <div class="col-lg-4 col-md-4 pull-right form-control-static">
+                        <div class="row" ng-if="cart.authorisationPending">
+                            <div class="pull-right">
+                                <button class="btn btn-lg btn-block btn-primary" ng-if="!cart.manualReturn"
+                                        ng-click="requestReturnAuthorisation()">Authorise Refund/Exchange
+                                </button>
+                                <button class="btn btn-lg btn-block btn-primary" ng-if="cart.manualReturn"
+                                        ng-click="requestManualReturnAuthorisation()">Authorise Manual Return/Exchange
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="row">
+            <!--<div class="col-lg-5 col-md-5 text-center" ng-if="cart.itemBeingReturned">-->
+            <!--<div class="form-control-static">Item</div>-->
+            <!--</div>-->
+            <!--<div class="col-lg-5 col-md-5 col-md-offset-2 text-center" ng-if="!cart.itemBeingReturned">-->
+            <!--<div class="form-control-static">Item</div>-->
+            <!--</div>-->
+            <div class="col-lg-6 col-md-6 text-center">
+                <div class="form-control-static">Item</div>
+            </div>
+            <div class="col-lg-1 col-md-1 text-center">
+                <div class="form-control-static">Bought</div>
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <div class="form-control-static">Available</div>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center">
+                <div class="form-control-static">Price</div>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center" ng-if="cart.itemBeingReturned">
+                <div class="form-control-static">Returning</div>
+            </div>
+        </div>
+        <div ng-repeat="item in cart.originalOrder.order.items  track by $index">
+            <div class="col-lg-12 col-md-12 item bg-warning">
+                <div class="row" ng-class="{'bg-info': item.returned}">
+                    <div class="col-lg-6 col-md-6 no-padding">
+                        <div id="retReturn" class="col-lg-1 col-md-1 basket-btn"
+                             ng-if="!item.returned && item.operationsRequired && !item.parentId">
+                            <span class="input-group-addon glyphicons bordered undo click"
+                                  ng-click="returnItem(item)"
+                                  title="Return item"
+                                  id="retItemBtn{{item.itemNo}}">
+
+                            </span>
+                        </div>
+                        <div id="retExchange" class="col-lg-1 col-md-1 basket-btn"
+                             ng-if="!item.returned && item.operationsRequired && !item.parentId && canDoExchange(item)">
+                            <span class="input-group-addon glyphicons bordered transfer click"
+                                  ng-click="exchangeItem(item)"
+                                  title="{{ canDoIrExchange(item) ? 'Exchange IR item' : 'Exchange item' }}"
+                                  ng-class="{'blue-text': canDoIrExchange(item)}"
+                            ></span>
+                        </div>
+
+                        <div id="retCancel" class="col-lg-1 col-md-1 basket-btn"
+                             ng-if="item.returned && cart.basketChangesAllowed && item.operationsRequired && !item.parentId &&
+                         !item.isIrExchange">
+                            <span class="input-group-addon glyphicons bordered remove_2 click"
+                                  ng-click="cart.cancelReturnOrExchange(item)"
+                                  title="Cancel return"></span>
+                        </div>
+                        <div class="col-lg-1 col-md-1"
+                             ng-if="item.returned && cart.basketChangesAllowed && item.operationsRequired && !item.parentId && !item.isIrExchange">
+                            &nbsp;
+                        </div>
+                        <div id="retDescription" class="col-lg-9 col-md-9 onlyLeftSidePadding">
+                            <div class="form-control-static">{{item.itemNo}} {{item.description}}</div>
+                        </div>
+                    </div>
+                    <div id="retBought" class="col-lg-1 col-md-1 no-padding">
+                        <div class="form-control-static text-center">{{item.quantity}}</div>
+                    </div>
+                    <div id="retAvailableQuantity" class="col-lg-1 col-md-1 no-padding">
+                        <div class="form-control-static text-center">{{item.availableQuantity}}</div>
+                    </div>
+                    <div id="retPrice" class="col-lg-2 col-md-2 text-right no-padding">
+                        <div class="row text-right">
+                            <div class="form-control-static  col-lg-5 col-md-5">
+                                {{item.price | currency : culture.CurrencySymbol :
+                                culture.DecimalPlaces}} each
+                            </div>
+                            <div class="small text-muted  v-center col-lg-7 col-md-7">
+                                + {{item.taxAmount | currency : culture.CurrencySymbol :
+                                culture.DecimalPlaces}} Tax
+                            </div>
+                        </div>
+                    </div>
+                    <div id="retQuantity" class="col-lg-2 col-md-2 no-padding"
+                         ng-if="item.returned && item.operationsRequired">
+                        <div class="input-group">
+                            <span class="input-group-addon glyphicons minus click"
+                                  ng-click="decreaseReturnQuantity(item)" title="Decrease quantity"
+                                  ng-if="!cart.manualReturn && item.operationsRequired && !item.parentId"
+                                  ng-disabled="!cart.basketChangesAllowed"></span>
+                            <span ng-if="item.parentId">&nbsp;</span>
+                            <input type="text" class="form-control text-center quantitySize" readonly="readonly"
+                                   data-ret-qty-itemno="{{item.itemNo}}"
+                                   ng-model="item.returnQuantity"/>
+                            <span class="input-group-addon glyphicons plus click"
+                                  ng-click="increaseReturnQuantity(item)" title="Increase quantity"
+                                  ng-if="!cart.manualReturn && item.operationsRequired && !item.parentId"
+                                  ng-disabled="!cart.basketChangesAllowed"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-class="{'bg-info': item.returned}"
+                     ng-if="item.returned && item.operationsRequired && !item.parentId">
+                    <div class="col-lg-6 col-md-6 col-md-offset-1 pull-right">
+                        <list class="form-control"
+                              ng-model="item.returnReason" scope="MasterData.refundExchangeReasons"
+                              placeholder="Select Reason"
+                              ng-class="{'has-error': (item.returned&& !item.returnReason)}"
+                              ng-disabled="!cart.basketChangesAllowed"
+                              on-change="reasonChangedForItem(item)"></list>
+                    </div>
+                </div>
+                <div class="row" id="retDiscountRw"
+                     ng-if="item.discounts.length > 0">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="sub-item added" ng-repeat="discount in item.discounts track by $index">
+                            <div class="row" ng-class="{'bg-info': discount.returned}">
+                                <div class="col-lg-6 col-md-6 no-padding">
+                                    <div class="col-lg-1 col-md-1 basket-btn">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 basket-btn">
+                                    </div>
+                                    <!--<div class="col-lg-1 col-md-1">-->
+                                    <!-- -->
+                                    <!--</div>-->
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="form-control-static">{{discount.itemNo}} - {{discount.description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 form-control-static text-right">
+                                    %
+                                </div>
+                                <div class="col-lg-1 col-md-1">
+                                    <div class="form-control-static text-left">
+                                        {{discount.percentage}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2">
+                                    <div class="form-control-static text-left">
+                                        {{discount.amount | currency : culture.CurrencySymbol :
+                                        culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 text-left">
+                                    <div class="form-control-static "
+                                         data-discount-tax="{{item.itemNo}} {{discount.itemNo}}">
+                                        {{discount.taxAmount | currency : culture.CurrencySymbol :
+                                        culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="returnInstallationRw" ng-if="item.installations.length > 0">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="sub-item added" ng-repeat="installation in item.installations track by $index">
+                            <div class="row" ng-class="{'bg-info': installation.returned}">
+                                <div class="col-lg-6 col-md-6 no-padding">
+                                    <div class="col-lg-1 col-md-1 basket-btn" ng-if="!installation.returned">
+                                            <span ng-click="cart.returnInstallation($index, item)"
+                                                  class="input-group-addon glyphicons bordered undo click"
+                                                  title="Return Installation">
+                                            </span>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 basket-btn" ng-if="installation.returned">
+                                            <span ng-click="cart.cancelReturnInstallation($index, item)"
+                                                  class="input-group-addon glyphicons bordered remove_2 click"
+                                                  title="Keep Installation" ng-class="{'disabled': item.returned}"
+                                            >
+                                            </span>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 text-right">
+                                        <div class="form-control-static">
+                                            <span class="glyphicons wrench" title="Installation"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="form-control-static">{{installation.itemNo}}
+                                            {{installation.description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="InstallationQty" class="col-lg-1 col-md-1">
+                                    <div class="form-control-static text-center">{{installation.quantity}}</div>
+                                </div>
+                                <div id="InstallationAvailableQty" class="col-lg-1 col-md-1">
+                                    <div class="form-control-static text-center">{{installation.availableQuantity}}
+                                    </div>
+                                </div>
+                                <div id="installationPrice" class="col-lg-2 col-md-2 no-padding">
+                                    <div class="row text-right">
+                                        <div class="form-control-static col-lg-5 col-md-5">
+                                            {{installation.price | currency : culture.CurrencySymbol :
+                                            culture.DecimalPlaces}}
+                                        </div>
+                                        <div class="small text-muted v-center col-lg-7 col-md-7">
+                                            + {{installation.taxAmount | currency : culture.CurrencySymbol :
+                                            culture.DecimalPlaces}} Tax
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="retInstallationQty" class="col-lg-2 col-md-2 no-padding"
+                                     ng-if="(item.returned && installation.returned ) || installation.returned">
+                                    <div class="input-group">
+                                        <span class="input-group-addon glyphicons minus click"
+                                              ng-click="decreaseInstallationRetQty(item,installation)"
+                                              title="Decrease quantity"
+                                              ng-disabled="!cart.basketChangesAllowed"></span>
+                                        <input type="text" class="form-control text-center quantitySize"
+                                               readonly="readonly"
+                                               ng-model="installation.returnQuantity"/>
+                                        <span class="input-group-addon glyphicons plus click"
+                                              ng-click="increaseInstallationRetQty(item,installation)"
+                                              title="Increase quantity"
+                                              ng-disabled="!cart.basketChangesAllowed"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row bg-info" ng-if="!item.returned && installation.returned">
+                                <div class="col-lg-6 col-md-6 col-md-offset-1 pull-right">
+                                    <list class="form-control"
+                                          ng-model="installation.returnReason" scope="MasterData.refundExchangeReasons"
+                                          placeholder="Select Reason"
+                                          ng-class="{'has-error': installation.returned && !installation.returnReason}"
+                                          ng-disabled="!cart.basketChangesAllowed"
+                                          on-change="installationReturnReasonChanged(installation)">
+
+                                    </list>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="returnWarrantiesRw" ng-if="item.warranties.length > 0">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="sub-item added" ng-repeat="warranty in item.warranties track by $index">
+                            <div class="row" ng-class="{'bg-info': warranty.returned || warranty.isClaimed}">
+                                <div class="col-lg-6 col-md-6 no-padding">
+                                    <div class="col-lg-1 col-md-1 basket-btn"
+                                         ng-if="!warranty.returned && warranty.operationsRequired && !warranty.isClaimed">
+                                            <span ng-if="!warranty.isWarrantyFree"
+                                                  ng-click="returnWarranty($index, item)"
+                                                  class="input-group-addon glyphicons bordered undo click"
+                                                  title="Return warranty">
+
+                                            </span>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 basket-btn"
+                                         ng-if="warranty.returned && warranty.operationsRequired">
+                                            <span ng-if="!warranty.isWarrantyFree && !item.isIrExchange"
+                                                  ng-click="cart.cancelReturnWarranty($index, item)"
+                                                  class="input-group-addon glyphicons bordered remove_2 click"
+                                                  title="Keep warranty"
+                                                  ng-class="{'disabled': !item.canWarrantyBeKept}"></span>
+
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 text-right">
+                                        <div class="form-control-static">
+                                            <span class="glyphicons retweet"
+                                                  ng-class="{'green-text' : warranty.warrantyTypeCode === 'F',
+                                                  'red-text' : warranty.warrantyTypeCode === 'E',
+                                                  'blue-text' : warranty.warrantyTypeCode === 'I'}"
+                                                  title="{{warranty.warrantyType}} Warranty"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="form-control-static">{{warranty.itemNo}} {{warranty.description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 text-center">
+                                    <div class="form-control-static">{{warranty.warrantyLengthMonths}} months</div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 no-padding" ng-if="!warranty.isWarrantyFree">
+                                    <div class="row text-right">
+                                        <div class="form-control-static col-lg-5 col-md-5">
+                                            {{warranty.salePrice | currency : culture.CurrencySymbol :
+                                            culture.DecimalPlaces}}
+                                        </div>
+                                        <div class="small text-muted v-center col-lg-7 col-md-7">
+                                            + {{warranty.saleTaxAmount | currency : culture.CurrencySymbol :
+                                            culture.DecimalPlaces}} Tax
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 text-center" ng-if="warranty.isWarrantyFree">
+                                    <div class="form-control-static">Free</div>
+                                </div>
+
+                            </div>
+                            <div class="row bg-info"
+                                 ng-if="!item.returned && warranty.returned && warranty.operationsRequired">
+                                <div class="col-lg-6 col-md-6 col-md-offset-1 pull-right">
+                                    <list class="form-control"
+                                          ng-model="warranty.returnReason" scope="MasterData.refundExchangeReasons"
+                                          placeholder="Select Reason"
+                                          ng-class="{'has-error': warranty.returned && !warranty.returnReason}"
+                                          ng-disabled="!cart.basketChangesAllowed"
+                                          on-change="reasonChangedForWarranty(warranty)"></list>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-if="cart.itemBeingReturned || cart.returnedItems.length">
+            <div class="col-lg-12 col-md-12 ">
+                <textarea class="pull-right" rows="2" cols="105" maxlength="1024" ng-model="cart.Comments"
+                          placeholder="Additional Comments"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div id="current-list" class="striped form-horizontal" ng-if="cart.items.length">
+        <p ng-if="cart.originalOrder.order">
+
+        <p></p>
+        <h4>Current items</h4>
+        </p>
+        <article id="current-header" class="row">
+            <div class="col-md-1">
+                <div class="form-control-static">&nbsp;</div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="form-control-static">Item</div>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center">
+                <div class="form-control-static">Purchasing</div>
+            </div>
+            <div class="col-lg-2 col-md-2">
+                <div class="form-control-static text-center">Unit Price</div>
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <div class="form-control-static text-center">Tax</div>
+            </div>
+        </article>
+        <div id="cartDetails">
+            <div id="cartItems"
+                 ng-repeat="item in cart.items  | orderBy:['productItemId','parentId']  | filter:{returned:false} track by $index"
+                 ng-click="cart.selectItem(item.itemNo)">
+                <div id="itemRw" class="col-lg-12 col-md-12 item" ng-class="{'bg-warning': item.returned===true}">
+                    <div class="row" id="itemDetailsRw">
+                        <div class="col-lg-7 col-md-7 no-padding">
+                                    <span class="glyphicons input-group-addon bordered bin click basket-btn col-lg-1"
+                                          ng-click="cart.removeItem(item)"
+                                          title="Remove Item"
+                                          ng-if="cart.basketChangesAllowed && (item.isReplacement || !item.parentId)">
+                                    </span>
+                            <span class="glyphicons click bordered input-group-addon basket-btn col-lg-1"
+                                  ng-class="{'down_arrow' : !item.showAvailableDiscount,'up_arrow': item.showAvailableDiscount}"
+                                  ng-click="showAvailableDiscount(item)" title="Show or Hide Discount"
+                                  data-show-discount="{{item.itemNo}}"
+                                  ng-if="!item.isReplacement"></span>
+                            <!--<div class="col-lg-1 col-md-1" ng-if="item.isReplacement">-->
+                            <!--&nbsp;-->
+                            <!--</div>-->
+                            <div class="form-control-static onlyLeftSidePadding col-lg-9" data-itemNo="{{item.itemNo}}">
+                                {{item.itemNo}}
+                                {{item.description}}
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2">
+                            <div class="input-group">
+                            <span class="input-group-addon glyphicons minus click" ng-click="decreaseQuantity(item)"
+                                  ng-if="cart.basketChangesAllowed && !item.parentId" title="Decrease quantity"
+                                  data-item-qtyDecrease="{{item.itemNo}}"></span>
+                                <!--<span ng-if="item.parentId">&nbsp;</span>-->
+                                <input type="text" class="form-control text-center quantitySize" readonly="readonly"
+                                       data-item-qty="{{item.itemNo}}"
+                                       ng-model="item.quantity"/>
+                                <span class="input-group-addon glyphicons plus click"
+                                      ng-click="cart.increaseItemQuantity(item)"
+                                      ng-if="cart.basketChangesAllowed && !item.parentId"
+                                      title="Increase quantity"
+                                      data-item-qtyIncrease="{{item.itemNo}}"></span>
+                                <!--<span ng-if="item.parentId">&nbsp;</span>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 text-right" ng-hide="item.isKitParent">
+                            <div class="form-control-static" ng-if="!item.isZeroPrice"
+                                 data-item-price="{{item.itemNo}}">{{item.price |
+                                currency :
+                                culture.CurrencySymbol : culture.DecimalPlaces}}
+                            </div>
+                            <input class="form-control" ng-if="item.isZeroPrice" ng-model="item.manualPrice"
+                                   ng-change="manualPriceEdit()"/>
+                        </div>
+                        <div class="col-lg-1 col-md-1 text-right onlyRightSidePadding" ng-hide="item.isKitParent">
+                            <div class="form-control-static " data-item-tax="{{item.itemNo}}">{{item.taxAmount |
+                                currency :
+                                culture.CurrencySymbol :
+                                culture.DecimalPlaces}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="itemDiscountRw"
+                         ng-if="item.showAvailableDiscount && item.discounts.length > 0">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="sub-item added row" ng-repeat="discount in item.discounts track by $index">
+                                <!--<div class="col-lg-1 col-md-1">-->
+                                <!--&nbsp;-->
+                                <!--</div>-->
+                                <div class="col-lg-7 col-md-7 no-padding">
+                                    <div class="col-lg-1 col-md-1 basket-btn">
+                                        <div ng-if="cart.basketChangesAllowed && discount && !discount.isKitDiscount">
+                                        <span class="input-group-addon glyphicons bordered bin click"
+                                              ng-click="removeSelectedDiscount(item, discount.code)"
+                                              title="Remove Selected Discount"
+                                              data-remove-discount="{{item.itemNo}} {{discount.itemNo}}"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1"></div>
+                                    <div class="col-lg-9 col-md-9 onlyLeftSidePadding">
+                                        <div class="form-control-static">
+                                            {{discount.itemNo}} - {{discount.description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 form-control-static text-right">
+                                    %
+                                </div>
+                                <div class="col-lg-1 col-md-1">
+                                    <div class="form-control-static text-right"
+                                         data-discount-percentage="{{item.itemNo}} {{discount.itemNo}}">
+                                        {{discount.percentage}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2  text-right onlyRightSidePadding">
+                                    <div class="form-control-static"
+                                         data-discount-value="{{item.itemNo}} {{discount.itemNo}}">
+                                        {{discount.amount | currency : culture.CurrencySymbol :
+                                        culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 text-right onlyRightSidePadding">
+                                    <div class="form-control-static "
+                                         data-discount-tax="{{item.itemNo}} {{discount.itemNo}}">
+                                        {{discount.taxAmount | currency : culture.CurrencySymbol :
+                                        culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="itemDiscountAddRw" ng-if="item.showAvailableDiscount">
+                        <div class="col-md-6 no-padding">
+                            <div class="col-lg-1 col-md-1 basket-btn">
+                                <div ng-if="cart.basketChangesAllowed && item.selectedDiscountKey && item.selectedDiscount.percentage && item.selectedDiscount.amount">
+                                        <span class="input-group-addon glyphicons bordered plus click"
+                                              ng-click="addSelectedDiscount(item)"
+                                              title="Add Selected Discount"
+                                              data-add-discount="{{item.itemNo}}"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1"></div>
+                            <div class="col-lg-9 col-md-9 form-control-static">
+                                <list class="" name="listDiscounts" ng-model="item.selectedDiscountKey"
+                                      scope="item.availableDiscounts" ng-disabled="!cart.basketChangesAllowed"
+                                      placeholder="Select a discount"
+                                      on-change="discountChanged(key, value,item)"
+                                      data-input-discount="{{item.itemNo}}">
+                                </list>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 form-control-static text-right">
+                            %
+                        </div>
+                        <div class="col-lg-2 col-md-2"
+                             ng-class="{'has-error': item.selectedDiscount && item.selectedDiscountKey && !item.selectedDiscount.percentage}">
+                            <input class="form-control text-right"
+                                   id="discountPercentage"
+                                   type="text" ng-model="item.discountPercentageChange" placeholder="%"
+                                   ng-disabled="!item.selectedDiscount || !cart .basketChangesAllowed ||
+                                   (item.selectedDiscount && item.selectedDiscount.isFixedDiscount)"
+                                   ng-required="item.selectedDiscount" title="Percentage"
+                                   ng-change="itemDiscountChanged(item)"
+                                   data-input-percentage="{{item.itemNo }}" bb-valid-numbers/>
+                        </div>
+                        <div class="col-lg-1 col-md-1 form-control-static text-right">
+                            Value
+                        </div>
+                        <div class="col-lg-2 col-md-2"
+                             ng-class="{'has-error': item.selectedDiscount && item.selectedDiscountKey && !item.selectedDiscount.amount}">
+                            <input class="form-control text-right" id="discountAmount" type="text"
+                                   ng-model="item.discountChange" placeholder="Value"
+                                   ng-disabled="!item.selectedDiscount  || !cart.basketChangesAllowed ||
+                                   (item.selectedDiscount && item.selectedDiscount.isFixedDiscount)"
+                                   ng-required="item.selectedDiscount" title="Value"
+                                   ng-change="itemDiscountChanged(item, true)"
+                                   data-input-value="{{item.itemNo}}" bb-valid-numbers/>
+                        </div>
+                    </div>
+                    <div class="row" id="itemWarrantyRw" ng-if="item.warranties.length > 0">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="sub-item added" ng-repeat="warranty in item.warranties track by $index">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 no-padding">
+                                        <div class="col-lg-1 col-md-1 basket-btn">
+                                                <span
+                                                        ng-if="!warranty.isWarrantyFree && cart.basketChangesAllowed"
+                                                        ng-click="removeWarranty($index, item)"
+                                                        class="input-group-addon glyphicons bin click bordered"
+                                                        title="Remove {{warranty.warrantyType}} warranty">
+                                                </span>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1">
+                                            <div class="form-control-static">
+                                                <span class="glyphicons retweet"
+                                                      ng-class="{'green-text' : warranty.warrantyTypeCode === 'F',
+                                                                  'red-text' : warranty.warrantyTypeCode === 'E',
+                                                                  'blue-text' : warranty.warrantyTypeCode === 'I'}"
+                                                      title="{{warranty.warrantyType}} Warranty"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9">
+                                            <div class="form-control-static">
+                                                {{warranty.itemNo}} {{warranty.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2">
+                                        <div class="input-group">
+                                            <div class="col-lg-7 text-right form-control-static">
+                                                {{warranty.warrantyLengthMonths}}
+                                            </div>
+                                            <div class="col-lg-5 form-control-static">months</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 text-right" ng-if="!warranty.isWarrantyFree">
+                                        <div class="form-control-static">{{warranty.price | currency :
+                                            culture.CurrencySymbol : culture.DecimalPlaces}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 text-right onlyRightSidePadding"
+                                         ng-if="!warranty.isWarrantyFree">
+                                        <div class="form-control-static">{{warranty.taxAmount | currency :
+                                            culture.CurrencySymbol : culture.DecimalPlaces}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 text-center" ng-if="warranty.isWarrantyFree">
+                                        <div class="form-control-static">Free</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="kitItemsRw" ng-if="item.kitItems.length > 0">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="sub-item added" ng-repeat="kitItem in item.kitItems track by $index">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 no-padding">
+                                        <div class="col-lg-1 col-md-1">
+                                            &nbsp;
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 form-control-static">
+                                            <span class="glyphicons package" title="Kit's Item"></span>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9">
+                                            <div class="form-control-static" data-kitItem-itemNo="{{kitItem.itemNo}}">
+                                                {{kitItem.itemNo}}
+                                                {{kitItem.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-2 col-md-2">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control text-center quantitySize"
+                                                   readonly="readonly"
+                                                   ng-model="kitItem.quantity"
+                                                   data-kitItem-qty="{{kitItem.itemNo}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 text-right">
+                                        <div class="form-control-static" data-kitItem-price="{{kitItem.itemNo}}">
+                                            {{kitItem.price | currency :
+                                            culture.CurrencySymbol : culture.DecimalPlaces}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 text-right onlyRightSidePadding">
+                                        <div class="form-control-static " data-kitItem-tax="{{kitItem.itemNo}}">
+                                            {{kitItem.taxAmount | currency :
+                                            culture.CurrencySymbol : culture.DecimalPlaces}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="itemInstallationRw" ng-if="item.installations.length > 0">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="sub-item added" ng-repeat="installation in item.installations track by $index">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 no-padding">
+                                        <div class="col-lg-1 col-md-1 basket-btn">
+                                                <span
+                                                        ng-click="removeInstallation($index, item)"
+                                                        class="input-group-addon glyphicons bin click bordered"
+                                                        title="Remove installation"
+                                                        ng-if="cart.basketChangesAllowed">
+
+                                                </span>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1">
+                                            <div class="form-control-static">
+                                                <span class="glyphicons wrench" title="Installation"
+                                                      data-inst="{{item.itemNo}} {{installation.itemNo}}"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9">
+                                            <div class="form-control-static no-padding"
+                                                 data-inst-itemNo="{{item.itemNo}} {{installation.itemNo}}">
+                                                {{installation.itemNo}}
+                                                {{installation.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2">
+                                        <div class="input-group">
+                                        <span class="input-group-addon glyphicons minus click"
+                                              ng-click="decreaseInstallationQty(item,installation)"
+                                              ng-if="cart.basketChangesAllowed" title="Decrease quantity"
+                                              data-inst-qtyDecrease="{{item.itemNo}} {{installation.itemNo}}"></span>
+                                            <input type="text" class="form-control text-center quantitySize"
+                                                   readonly="readonly"
+                                                   ng-model="installation.quantity"
+                                                   data-inst-qty="{{item.itemNo}} {{installation.itemNo}}"/>
+                                            <span class="input-group-addon glyphicons plus click"
+                                                  ng-click="increaseInstallationQty(item,installation)"
+                                                  ng-if="cart.basketChangesAllowed"
+                                                  title="Increase quantity"
+                                                  data-inst-qtyIncrease="{{item.itemNo}} {{installation.itemNo}}"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 text-right">
+                                        <div class="form-control-static"
+                                             data-inst-price="{{item.itemNo}} {{installation.itemNo}}">
+                                            {{installation.price | currency :
+                                            culture.CurrencySymbol : culture.DecimalPlaces}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 text-right onlyRightSidePadding">
+                                        <div class="form-control-static"
+                                             data-inst-tax="{{item.itemNo}} {{installation.itemNo}}">
+                                            {{installation.taxAmount | currency :
+                                            culture.CurrencySymbol : culture.DecimalPlaces}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="availableWarrantiesRw" class="col-lg-12 available-sub-item"
+                     ng-if="cart.basketChangesAllowed && item.availableWarranties.length > 0">
+                    <div class="row">
+                        <div class="col-lg-11 col-md-11 col-md-offset-1 sub-item potential"
+                             ng-repeat="warranty in item.availableWarranties track by $index"
+                             ng-if="item.canAddWarranty || warranty.isWarrantyFree">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 no-padding">
+                                    <div class="col-lg-1 col-md-1 basket-btn">
+                                        <span ng-click="addWarranty(warranty, item)"
+                                              class="input-group-addon glyphicons bordered cart_in click"
+                                              ng-class="{'disabled': (!item.canAddWarranty && !warranty.isWarrantyFree)}"
+                                              title="Add {{warranty.warrantyType}} Warranty">
+
+                                        </span>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1">
+                                        <div class="form-control-static">
+                                            <span class="glyphicons retweet"
+                                                  ng-class="{'green-text' : warranty.warrantyTypeCode === 'F',
+                                                  'red-text' : warranty.warrantyTypeCode === 'E',
+                                                  'blue-text' : warranty.warrantyTypeCode === 'I'}"
+                                                  title="{{warranty.warrantyType}} Warranty"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 onlyLeftSidePadding">
+                                        <div class="form-control-static">
+                                            {{warranty.itemNo}} {{warranty.description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2">
+                                    <div class="input-group">
+                                        <div class="col-lg-4 text-center form-control-static no-sidePadding">
+                                            {{warranty.warrantyLengthMonths}}
+                                        </div>
+                                        <div class="col-lg-8 form-control-static">months</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 text-right" ng-if="!warranty.isWarrantyFree">
+                                    <div class="form-control-static">{{warranty.price | currency :
+                                        culture.CurrencySymbol :
+                                        culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 text-right onlyRightSidePadding"
+                                     ng-if="!warranty.isWarrantyFree">
+                                    <div class="form-control-static">{{warranty.taxAmount | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 text-right" ng-if="warranty.isWarrantyFree">
+                                    <div class="form-control-static">Free</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="availableInstallationsRw" class="col-lg-12 available-sub-item"
+                     ng-if="cart.basketChangesAllowed && item.availableInstallations.length > 0 && item.canAddInstallation">
+                    <div class="row">
+                        <div class="col-lg-11 col-md-11 col-md-offset-1 sub-item potential"
+                             ng-repeat="installation in item.availableInstallations track by $index">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-9 no-padding">
+                                    <div class="col-lg-1 col-md-1 basket-btn">
+                                        <div ng-if="cart.basketChangesAllowed">
+                                        <span ng-click="addInstallation(installation, item)"
+                                              class="input-group-addon  glyphicons bordered cart_in click"
+                                              ng-class="{'disabled': !item.canAddInstallation}"
+                                              title="Add Installation"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1">
+                                        <div class="form-control-static">
+                                            <span class="glyphicons wrench" title="Installation"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 no-padding">
+                                        <div class="form-control-static">{{installation.itemNo}}
+                                            {{installation.description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 text-right">
+                                    <div class="form-control-static">{{installation.price | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 text-right onlyRightSidePadding">
+                                    <div class="form-control-static">{{installation.taxAmount | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="availableAssociatedProductsRw" class="col-lg-12 available-sub-item"
+                     ng-if="cart.basketChangesAllowed && item.availableAssociatedProducts.length > 0">
+                    <div class="row">
+                        <div class="col-lg-11 col-md-11 col-md-offset-1 sub-item potential"
+                             ng-repeat="product in item.availableAssociatedProducts">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-12 no-padding">
+                                    <div class="col-lg-1 col-md-1 basket-btn">
+                                        <div ng-if="cart.basketChangesAllowed">
+                                        <span ng-click="addAssociatedProductAsNewItem(product)"
+                                              class="input-group-addon glyphicons bordered cart_in click"
+                                              title="Add Associated Product"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1">
+                                        <div class="form-control-static">
+                                            <span class="glyphicons link" title="Associated Product"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 no-padding">
+                                        <div class="form-control-static">{{product.itemNo}} {{product.description}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 text-right">
+                                    <div class="form-control-static">{{product.price | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 text-right  onlyRightSidePadding">
+                                    <div class="form-control-static">{{product.taxAmount | currency :
+                                        culture.CurrencySymbol
+                                        : culture.DecimalPlaces}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="empty-list" ng-if="!cart.items.length && !cart.originalOrder.order" class="text-center text-muted">
+        <p>&nbsp;</p>
+
+        <div class="panel panel-default">
+            <div class="panel-header"></div>
+            <div class="panel-body">No items added</div>
+        </div>
+    </div>
+</div>

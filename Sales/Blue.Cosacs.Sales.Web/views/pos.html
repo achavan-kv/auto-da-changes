@@ -1,0 +1,271 @@
+<div class="pos-sales container" data-ng-controller="PosController" data-ng-cloak data-tax-type="E">
+    <section class="row sale-main">
+
+        <div class="col-md-9 col-sm-10">
+            <div class="row text-center">
+                <div class="col-lg-1 col-md-1 ">
+                    <button type="button" tooltip-placement="bottom" tooltip="{{togglePopover}}"
+                            class="pos-navbar-toggle"
+                            data-ng-click="toggleMaximise()">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="col-lg-11 col-md-11">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 no-margin no-pad">
+                            <button data-ng-click="setView('productSearch')"
+                                    class="btn tab-select btn-default btn-lg btn-block glyphicons cargo bb-btn-active"
+                                    data-ng-class="{'btn-primary active': views.productSearch.visible}"> &nbsp;&nbsp;Products
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-md-3 no-margin no-pad">
+                            <button data-ng-click="setView('customer')"
+                                    class="btn tab-select btn-default btn-lg btn-block glyphicons parents bb-btn-active"
+                                    data-ng-class="{'btn-primary active': views.customer.visible}"> &nbsp;&nbsp;Customer<span
+                                    ng-class="{'warning-icon':cart.isCustomerDataMissing}"
+                                    id="customer-missing-ico"></span></button>
+                        </div>
+                        <div class="col-lg-3 col-md-3 no-margin no-pad basket-button">
+                            <button data-ng-click="setView('itemList')"
+                                    class="btn tab-select btn-default btn-lg btn-block glyphicons shopping_cart bb-btn-active"
+                                    data-ng-class="{'btn-primary active': views.itemList.visible}">
+                                &nbsp;&nbsp;Basket<span
+                                    class="badge item-count"
+                                    data-ng-if="cart.items.length">{{cart.totalQuantity}}</span>
+                            </button>
+                            <div class="basket-info">{{views.itemList.message}}</div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 no-margin no-pad">
+                            <button data-ng-click=" setView('payment')"
+                                    class="btn tab-select btn-default btn-lg btn-block glyphicons money bb-btn-active"
+                                    data-ng-class="{'btn-primary active': views.payment.visible}"> &nbsp;&nbsp;Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <div data-ng-controller="ProductController">
+                        <div class="pos-pane" id="products" data-ng-if="views.productSearch.visible" data-ng-include
+                             src="'Sales/views/products.html'"></div>
+                    </div>
+                    <div data-ng-controller="BasketController">
+                        <div class="pos-pane large" id="basket" data-ng-if="views.itemList.visible" data-ng-include
+                             src="'Sales/views/basket.html'"></div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 pos-pane large" id="customer" data-ng-show="views.customer.visible">
+                        <bb-Customer customer="cart.Customer"
+                                     is-customer-details-locked="cart.isCustomerDetailsLocked"
+                                     basket-changes-allowed="cart.basketChangesAllowed"
+                                     is-customer-data-required="cart.isCustomerDataRequired"/>
+                    </div>
+                    <div class="col-lg-12 col-md-12 pos-pane large" id="paymentView"
+                         data-ng-show="views.payment.visible">
+                        <bb-payment cart="cart"
+                                    pay-methods="MasterData.payMethods"
+                                    currency-codes="MasterData.currencyCodes" card-types="MasterData.cardType"
+                                    payment="payment" user="user" payment-visible="views.payment.visible"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-2 sidebar-outer no-padding">
+            <aside class="sidebar sidebar-right">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Sale</div>
+                    <div class="panel-body">
+                        <p>&nbsp;</p>
+
+                        <div class="row" id="BalancePanelRw">
+                            <div class="form-group">
+                                <label class="col-sm-4 form-control-static text-left">Due</label>
+
+                                <div class="col-sm-8">
+                                    <p class="form-control-static amount text-right" id="dueAmount">{{(cart.totalAmount
+                                        || 0) |
+                                        currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}</p>
+                                </div>
+                            </div>
+                            <div class="form-group dueDetails">
+                                <label class="col-sm-3 col-sm-offset-1 form-control-static text-left no-sidePadding">
+                                    <small><span class="glyphicons stop form-control-static"></span> Items</small>
+                                </label>
+
+                                <div class="col-sm-8 form-control-static amount text-right">
+                                    <small id="itemsTotal"> {{cart.itemsTotal | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </small>
+                                </div>
+                                <label class="col-sm-3 col-sm-offset-1 form-control-static text-left no-sidePadding">
+                                    <small><span class="glyphicons stop form-control-static"></span> Tax</small>
+                                </label>
+
+                                <div class="col-sm-8 form-control-static amount text-right">
+                                    <small id="taxTotal"> {{cart.totalTaxAmount | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-4 form-control-static text-left">Paid</label>
+
+                                <div class="col-sm-8">
+                                    <p class="form-control-static amount text-right" id="paidAmount">
+                                        {{cart.paymentsTotal | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </p>
+                                </div>
+                            </div>
+                            <!---->
+                            <div class="form-group payments clearfix" data-ng-repeat="payment in cart.payments">
+                                <div ng-if="!payment.isChange">
+                                    <label class="col-sm-6 form-control-static text-right payment-method">
+                                        <small>{{payment.payType}} <span
+                                                ng-if="payment.subType"> ({{payment.subType}})</span></small>
+                                    </label>
+
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static amount text-right ">
+                                            <small> {{payment.amount | currency : culture.CurrencySymbol :
+                                                culture.DecimalPlaces}}
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" data-ng-if="cart.changeTotal !== 0">
+                                <label class="col-sm-4 form-control-static text-left">
+                                    Change
+                                </label>
+
+                                <div class="col-sm-8">
+                                    <p class="form-control-static amount text-right text-danger" id="changeAmount">
+                                        {{cart.changeTotal | currency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 form-control-static text-left">
+                                    Balance
+                                </label>
+
+                                <div class="col-sm-8">
+                                    <p class="form-control-static amount text-right"
+                                       data-ng-class="{'highlight': cart.balance}" id="balanceAmount">
+                                        {{cart.balance | currency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="cart.saleComplete">
+                                <label class="col-sm-4 form-control-static text-left">
+                                    Ord/Invoice No.<!--Suvidha Invoice CR-->
+                                </label>
+
+                                <div class="col-sm-8">
+                                    <p class="form-control-static text-right" id="invNo">
+                                        <!--{{cart.AgreementInvoiceNumber}}--> <!--Suvidha-->
+                                        {{cart.InvoiceNo | padNo:10}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group panel panel-body pull-right clearfix">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" ng-model="cart.isTaxFreeSale"
+                                           ng-Change="changeSaleType('tax')"
+                                           ng-disabled="cart.payments.length > 0" id="taxFree">Tax Free
+                                </label>
+                                <label class="checkbox-inline" ng-if="MasterData.settings.isDutyFreeSaleAllowed">
+                                    <input type="checkbox" ng-model="cart.isDutyFreeSale"
+                                           ng-Change="changeSaleType('duty')"
+                                           ng-disabled="cart.payments.length > 0" id="dutyFree">Duty Free
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row" id="CSR">
+                            <div class="form-group"
+                                 ng-class="{'has-error': !cart.soldBy}">
+                                <label class="col-sm-3 form-control-static text-left">Sold By</label>
+                                <list ng-model="cart.soldBy" scope="csrList" ng-disabled="cart.originalOrderId"
+                                      placeholder="Select CSR" name="soldBy"
+                                      id="soldBy" class="col-sm-8 form-control-static"></list>
+                            </div>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div class="row" id="CancelSalesRw"
+                             data-ng-if="!cart.saleComplete && cart.basketChangesAllowed">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons remove_2"
+                                        data-ng-click="cancelSale()" id="CancelSaleBtn">&nbsp;&nbsp;Cancel Sale
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="FinaliseSaleRw" data-ng-if="enableFinaliseSale()">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons ok_2"
+                                        data-ng-click="finaliseSale()">
+                                    &nbsp;&nbsp;Finalise Sale
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="StartNewSaleRw" data-ng-if="cart.saleComplete">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block" data-ng-click="startNewSale()"
+                                        id="NewSaleBtn">Start New Sale
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="ReprintReceiptRw"
+                             data-ng-if="(cart.saleComplete || (cart.originalOrderId)) && isReprintAllowed">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons print"
+                                        data-ng-click="printReceipt(cart.InvoiceNo || cart.originalOrderId)">
+                                    &nbsp;&nbsp;Reprint
+                                    Receipt
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="ReprintContractRw"
+                             data-ng-if="(cart.saleComplete || (cart.originalOrderId)) && isReprintAllowed && cart.getExtendedCartWarranties().length>0">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons print"
+                                        data-ng-click="rePrintItemContracts()">
+                                    &nbsp;&nbsp;Reprint Contract
+                                </button>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+
+                        <div class="row" id="LoadReceiptRw">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons notes"
+                                        data-ng-click="refundOrExchange()">
+                                    &nbsp;&nbsp;Load Receipt
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="ManualReturnRw">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons transfer"
+                                        data-ng-click="manualReturn()"
+                                        data-ng-if="cart.items.length && !cart.originalOrder.order && !cart.saleComplete">
+                                    &nbsp;&nbsp;Manual Return
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+    </section>
+    <button class="btn btn-primary btn-lg" ng-click="testPrinting()" ng-if="showPrintBtn">Print</button>
+</div>

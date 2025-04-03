@@ -1,0 +1,52 @@
+<div class="col-lg-8 col-md-8" data-ng-controller="ContractsSetupController">
+    <h1>Contracts Setup</h1>
+
+    <p>&nbsp;</p>
+
+    <form name="linkedContractsSetup">
+        <table class="data">
+            <thead>
+            <tr>
+                <th>Contract</th>
+                <th></th>
+                <th>Items</th>
+                <th>Categories</th>
+            </tr>
+            <tr>
+                <th>&nbsp</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="contract in contractsSetup">
+                <td style="color:Orange">
+                    <label ng-model="contract.contractName"><strong>{{contract.contractName}}</strong></label>
+                </td>
+                <td>
+                    &nbsp &nbsp &nbsp
+                </td>
+                <td>
+                    <textarea name="Items" type="text" maxlength="4000"
+                              ng-required=" !contract.items && !contract.categories"
+                              ng-model="contract.items" rows="5"
+                              cols="55"></textarea>
+
+                </td>
+
+                <td>
+                    <textarea name="Categories" type="text" maxlength="4000"
+                              ng-required="!contract.items && !contract.categories"
+                              ng-model="contract.categories" rows="5" cols="55"></textarea>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <button class="btn btn-primary" ng-disabled="linkedContractsSetup.$invalid || checkDisableSave()"
+                    ng-click="save()">Save
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Service" namespace="Blue.Cosacs.Service" label="Service">
+    <Connection server="." database="cosacs" />
+    <Queries>
+        <DataSet name="NewInternalServiceRequest"/>
+        <!--<NonQuery name="DeleteSupplierCosts"/>-->
+    </Queries>
+    <Tables>
+        <Table name="Request"/>
+        <Table name="RequestContact"/>
+        <Table name="RequestFoodLoss"/>
+        <Table name="RequestPart"/>
+        <Table name="RequestScriptAnswer"/>
+        <Table name="FaultTag"/>
+        <Table name="Technician"/>
+        <Table name="ZoneUser"/>
+        <Table name="SupplierCost"/>
+        <Table name="Holiday"/>
+        <Table name="TechnicianBooking"/>
+        <Table name="Comment"/>
+        <Table name="Payment"/>
+        <Table name="TechnicianBookingDelete"/>
+        <Table name="TechnicianBookingReject"/>
+        <Table name="ServiceSupplier"/>
+        <Table name="Charge"/>
+        <Table name="LabourCostMatrix" />
+        <Table name="PartsCostMatrix" />
+        <Table name="Resolution" />
+    </Tables>
+    <Views>
+        <View name="BranchLookup"/>
+        <View name="InvoiceSearchView"/>
+        <View name="CustTelView"/>
+        <View name="CountryView"/>
+        <View name="AdminTechProfileUsersView"/>
+        <View name="AdminUserView"/>
+        <View name="UserProfileView"/>
+        <View name="SummaryPrintView"/>
+        <View name="StockView"/>
+        <View name="PublicHolidayView"/>
+        <View name="ExchangeRateView"/>
+        <View name="SummaryView"/>
+        <View name="WarrantyBandView"/>
+        <View name="GetRejectedJobsView"/>
+        <View name="PendingHolidaysNameView"/>
+        <View name="HistoryView"/>
+        <View name="RequestIndexView"/>
+        <View name="RequestSlotTimesView"/>
+        <View name="TechnicianPaymentsView"/>
+        <View name="TechnicianPaymentsTotCostView"/>
+        <View name="TechnicianAvailableRequestView"/>
+        <View name="TechnicianAllocatedRequestView"/>
+        <View name="TechnicianNameView"/>
+        <View name="TechnicianUser"/>
+        <View name="ReceiptBranchDetailsView"/>
+        <View name="ChargeToView" />
+        <View name="PrimaryChargeToView" />
+        <View name="WarrantyTotalRequestsView" />
+        <View name="ItemsWithoutWarrantyView" />
+        <View name="ItemsByInvoiceNoSearchView" />
+        <View name ="RequestPartView"/>
+    </Views>
+    <Settings>
+        <Setting id="ServiceAction" name="Service Action" type="list" category="Code-cat and Picklists">
+            <Description>The options for the Evaluation > Action Required field</Description>
+            <Default>
+                Collected
+                Not Collected
+                Send Technician
+            </Default>
+        </Setting>
+        <Setting id="ServiceChargeTo" name="Service Charge To" type="list" category="Code-cat and Picklists">
+            <Description>The default options for the Primary Charge To field</Description>
+            <Default>
+                Customer
+                Deliverer
+                EW
+                FYW
+                Internal
+                Supplier
+            </Default>
+        </Setting>
+        <Setting id="ServiceDeliverers" name="Service Deliverers" type="list" category="Code-cat and Picklists">
+            <Default>Add deliverer codes</Default>
+        </Setting>
+        <Setting id="ServiceLocation" name="Service Location" type="list" category="Code-cat and Picklists">
+            <Description>The options for the location where the service will take place</Description>
+            <Default>SERVICE</Default>
+        </Setting>
+        <Setting id="ServicePartMonth" name="Service Part Month" type="list" category="Code-cat and Picklists">
+            <Description>Month options for specifying Supplier Contractual Costs matrix</Description>
+            <Default>
+                1 - 12
+                13 - 24
+                25 - 36
+                37 - 48
+                49 - 60
+            </Default>
+        </Setting>
+        <Setting id="ServiceQuestions" name="Service Questions" type="list" category="Code-cat and Picklists">
+            <Description>Script questions for service evaluation</Description>
+            <Default>
+                1) Have you read the instruction manual?
+                2) Is the item under warranty?
+                3) Is the item in use domestically?
+                4) Was the item installed by qualified personnel?
+                5) Has the item been moved from the delivery address?
+            </Default>
+        </Setting>
+        <Setting id="ServiceFaultTag" name="Fault tag" type="list" category="Code-cat and Picklists">
+            <Description>Options for Fault Tags that the technician can specify. These can then be used to search/report on</Description>
+            <Default>
+                Rust
+                Faulty hinge
+            </Default>
+        </Setting>
+        <Setting id="ServiceTechReasons" name="Service Reassign Technician Reasons" type="list" category="Code-cat and Picklists">
+            <Description>Reasons for re-assigning a service request to another technician</Description>
+            <Default>
+                Customer not comfortabl wt tech
+                Customer migrated another area
+                Part availability taking too long
+                Technician taking too long
+                Vehicle cannot go in area
+            </Default>
+        </Setting>
+        <Setting id="ServiceTechRejectReasons" name="Service Reject Technician Reasons" type="list" category="Code-cat and Picklists">
+            <Description>Reasons why a technician is rejecting a job</Description>
+            <Default>Leave Requested</Default>
+        </Setting>
+        <Setting id="TechDeleteDayLimit" name="Job Rejection Limit in Days " type="int" category="Country Maintenance">
+            <Description>Maximum number of days before a job that a technician can reject the job</Description>
+            <Default>2</Default>
+        </Setting>
+
+        <Setting id="ServiceZone" name="Service Technician Category" type="list" category="Code-cat and Picklists">
+            <Description>Categories for which the technician can do jobs</Description>
+            <Default>
+                BROWN
+                WHITES
+                FURNITURE
+                COMPUTER
+            </Default>
+        </Setting>
+        <Setting id="ServiceRepairType" name="Service Repair Type" type="list" category="Code-cat and Picklists">
+            <Description>The type of repair - this will be used to calculate charges</Description>
+            <Default>
+                Assessment
+                Minor
+                Major
+            </Default>
+        </Setting>
+        <Setting id="ServiceReasonForExchange" name="Service Reason For Exchange" type="list" category="Code-cat and Picklists">
+            <Description>The reason why an item that is BER is being replaced</Description>
+            <Default>
+                Electrical Defect
+                Hardware
+                Mechanical Defect
+                Rusting
+                Structure
+            </Default>
+        </Setting>
+        <Setting id="ServiceRetailer" name="Service Retailer" type="list" category="Code-cat and Picklists">
+            <Description>Retailers show as options when creating an External service request</Description>
+            <Default>Other</Default>
+        </Setting>
+        <Setting id="DefaultStockLocationBranch" name="Default Stock Location Branch" type="codeList" category="Code-cat and Picklists" codeList="BRANCH">
+            <Description>The Branch number used as default value for the Stock Location Branch inside the Matching Stock dialog.</Description>
+            <Default>705</Default>
+        </Setting>
+
+        <Setting id="ServiceBER" name="Service BER Limit" type="int" category="Country Maintenance">
+            <Description>The percentage of the original Cost Price that when exceeded means the product is probably beyond economic repair (BER)</Description>
+            <Default>75</Default>
+        </Setting>
+        <Setting id="ServiceReplacement" name="Service BER Replacement" type="bit" category="Country Maintenance">
+            <Description>When ticked this will allow products beyond economic repair to be instantly replaced</Description>
+            <Default>FALSE</Default>
+        </Setting>
+        <Setting id="ServiceBERMarkup" name="Service BER Markup" type="int" category="Country Maintenance">
+            <Description>This is the percentage of the costprice of the item which is BER that will be applied to the costprice when calculating the courts parts total</Description>
+            <Default>10</Default>
+        </Setting>
+        <Setting id="ServiceStockAccount" name="Service Stock Account" type="string" category="Country Maintenance">
+            <Description>The special account number for the service parts inventory</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="InstallationStockAccount" name="Service Installation Stock Account" type="string" category="Country Maintenance">
+            <Description>The special account number for the service installation parts inventory</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="ShowWarrantyAvailOnStatement" name="Show Warranty Availability on Statement" type="bit" category="Country Maintenance">
+            <Description>When ticked 'Warranty Available' label will be visible on SR Printouts</Description>
+            <Default>FALSE</Default>
+        </Setting>
+        <Setting id="InstallElectrical" name="Installation Account Electrical" type="string" category="Country Maintenance">
+            <Description>The special account number for Electrical Installations</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="InstallFurniture" name="Installation Account Furniture" type="string" category="Country Maintenance">
+            <Description>The special account number for Furniture Installations</Description>
+            <Default></Default>
+        </Setting>
+        <Setting id="PreviousRepairCostPercentage" name="Previous Repair Cost Warning Percentage" type="int" category="Country Maintenance">
+            <Description>The percentage of cost price above which there should be a warning to tell the user that the previous repairs exceeded this amount.</Description>
+            <Default>50</Default>
+        </Setting>
+    </Settings>
+</Model>

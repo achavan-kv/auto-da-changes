@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="NonStocks" namespace="Blue.Cosacs.NonStocks" label="NonStocks">
+    <Connection server="." database="cosacs" />
+    <Queries>
+    </Queries>
+    <Tables>
+        <Table name="NonStock" />
+        <Table name="NonStockHierarchy" />
+        <Table name="NonStockPrice" />
+        <Table name="NonStockPromotion" />
+        <Table name="Link" />
+        <Table name="LinkProduct" />
+        <Table name="LinkNonStock" />
+        <Table name="NonStockType" />
+    </Tables>
+    <Views>
+      <View name="ViewNonStockPromotion" />
+      <View name="NonStockPromotionsView" />
+      <View name="PricesView" />
+    </Views>
+    <Settings>
+        <Setting id="Setting1" name="Setting1" type="int" category="Settings">
+            <Description>Setting1</Description>
+            <Default>0</Default>
+        </Setting>
+    </Settings>
+</Model>

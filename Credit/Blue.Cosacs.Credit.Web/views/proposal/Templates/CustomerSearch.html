@@ -1,0 +1,21 @@
+<div class="col-lg-3 customerSearch">
+    <div class="section">Matching Customers <span class="glyphicons" title="Customers"></span></div>
+    <div class="results">
+
+        <div class="row" ng-repeat="customer in search">
+            <address>
+                <a href="#">
+                    <strong>{{customer.FirstName}} {{customer.LastName}} <span ng-show="customer.Alias">({{customer.Alias}})</span></strong>
+                </a>
+                <span name="Link" Title="Link to Customer" class="glyphicons link close" ng-click="linkCustomer(customer)"></span><br>
+                {{customer.AddressLine1}} {{customer.AddressLine2}}<br>
+                {{customer.TownOrCity}} {{customer.PostCode}}<br>
+                <span ng-show="customer.HomePhoneNumber" class="glyphicons phone_alt"> {{customer.HomePhoneNumber}}<br></span>
+                <span ng-show="customer.MobilePhoneNumber"
+                      class="glyphicons phone_alt" title="Mobile Phone Number"> {{customer.MobilePhoneNumber}}<br></span>
+                <span ng-show="customer.Email" class="glyphicons envelope" title="Email"> {{customer.Email}}</span>
+            </address>
+        </div>
+    </div>
+    <div ng-show="moreResults > 0">{{moreResults}} matches not shown.</div>
+</div>

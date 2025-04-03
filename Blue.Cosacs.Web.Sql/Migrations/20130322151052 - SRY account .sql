@@ -1,0 +1,48 @@
+delete from dbo.transtype
+where transtypecode = 'sry'
+
+INSERT INTO dbo.transtype
+        ( origbr ,
+          transtypecode ,
+          tccodedr ,
+          tccodecr ,
+          description ,
+          balordue ,
+          exportfilesuffix ,
+          batchtype ,
+          interfaceaccount ,
+          interfacesecaccount ,
+          branchsplit ,
+          isdeposit ,
+          interfacebalancing ,
+          IncludeinGFT ,
+          empeenochange ,
+          referencemandatory ,
+          referenceunique ,
+          interfacesecbalancing ,
+          branchsplitbalancing ,
+          SCInterfaceAccount ,
+          SCInterfaceBalancing
+        )
+SELECT origbr ,
+        'SRY' ,
+        tccodedr ,
+        tccodecr ,
+        'Service Request FYW' ,
+        balordue ,
+        exportfilesuffix ,
+        batchtype ,
+        '9020F' ,
+        interfacesecaccount ,
+        branchsplit ,
+        isdeposit ,
+        '2930' ,
+        IncludeinGFT ,
+        empeenochange ,
+        referencemandatory ,
+        referenceunique ,
+        interfacesecbalancing ,
+        branchsplitbalancing ,
+        '9020F' ,
+        '2930'FROM dbo.transtype
+WHERE transtypecode = 'srs'

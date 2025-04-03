@@ -1,0 +1,690 @@
+
+--if exists (select * FROM sysobjects where  name ='DN_DeliveryOrdersLoadSP')
+--drop procedure DN_DeliveryOrdersLoadSP
+--go
+
+--CREATE PROCEDURE dbo.DN_DeliveryOrdersLoadSP
+---- ================================================
+---- Project      : CoSACS .NET
+---- File Name    : DN_DeliveryOrdersLoadSP.prc
+---- File Type    : MSSQL Server Stored Procedure Script
+---- Title        : Delivery Orders Load
+---- Author       : ??
+---- Date         : ??
+----
+---- Change Control
+---- --------------
+---- Date      By  Description
+---- ----      --  -----------
+---- 19/04/10  jec UAT64 Resequence columns in Orders for Delivery screen
+---- 18/05/11  jec RI Integration 
+---- 15/05/12  ip  #9883 - LW74869 - changed empeename and empname to cater for (101) characters as this is taken from Courtsperson.Empeename
+----				 which is a computed field that has a length of (101) characters.
+---- 16/05/12  ip #9883 - LW74869 - Altered the size of GrtCreatedBy.
+---- ================================================
+--	-- Add the parameters for the stored procedure here
+--    @orderfrom              datetime,       -- default this to 3 months ago
+--    @orderto                datetime,       -- default this to today + 23:59
+--    @deliveryarea           varchar(12),    -- can be 'ALL'
+--    @includedeliveries      bit,            -- 1 for bring back deliveries
+--    @includecollections     bit,            -- 1 for bring back collections
+--    @includeaddresses       bit,            -- IGNORE THIS - ALWAYS BRING BACK ADDRESS DETAILS AND LET THE SCREEN FILTER AS REQUIRED
+--    @retrievelinkeditems    bit,            -- 1 for bringing back all other items (regardless of category etc.) that relate to the same buffno as a qualifying item
+--    @deliveryprocess        char(1),        -- 'S' for scheduling or 'I' for immediate
+--    @majorcategory          varchar(12),    -- can be 'ALL'
+--    @minorcategory          varchar(6),     -- can be  'ALL'
+--    @acctno                 varchar(13),    -- can be '' or '000000000000'
+--    @user                   int,            -- current user
+--    @branch                 int,            -- stock location for printing ??
+--    @delnotebranch          int,
+--    @reqdelsearch           bit,            -- determines whether orders are loaded by req del date
+--    @includeassembly        bit,
+--    @includenonassembly     bit,
+--    @TimeLocked             DATETIME OUTPUT,
+--    @return                 INT OUTPUT 
+----WITH RECOMPILE 
+--AS
+--    select @TimeLocked = GetDate()
+--    SET NOCOUNT ON 
+--    DECLARE @account VARCHAR(14),
+--			@3PLDels bit
+----SET ROWCOUNT  500
+--    declare @deltype1 char(1), @deltype2 char(1), @deltype3 char(1), @deltype4 char(1)
+--    set @deltype1 =''
+--    set @deltype2 =''
+--    set @deltype3 =''
+--    set @deltype4 =''
+    
+
+--	IF(@deliveryprocess = '3')
+--	BEGIN
+--		SET @deliveryprocess = 'S'
+--		SET @3PLDels = 1
+--	END
+--	ELSE
+--	BEGIN
+--		SET @3PLDels = 0
+--	END
+
+--    if @deliveryarea ='ALL'
+--        SET  @deliveryarea = NULL 
+--    --else
+--      --  SET  @deliveryarea  --=@deliveryarea + '%'
+
+
+--    set @orderto= dateadd(hour,23,@orderto)
+--    set @orderto= dateadd(minute,59,@orderto)
+--    set @orderto= dateadd(second,59,@orderto)
+
+---- restricting by category
+---- Major categories:PCF furniture categories PCE electrical categories PCD delivery categories
+---- Minor categories - if PCE or PCF 2 digit categories
+---- minor categories if PCD then itemno begins with this
+---- if @majorcategory ='All' then 
+---- minor category between 0 and 100
+---- itemno like %
+---- if @minorcategory='All' then
+---- link directly to the code table
+---- select * from code where category = 'pce'
+----	DELETE FROM schedule WHERE EXISTS (SELECT * FROM acct a 
+----	WHERE a.acctno = schedule.acctno AND a.currstatus = 'S') 
+	
+
+--    declare @mincategory smallint,@maxcategory smallint, @itemnolike varchar(10)
+
+--    set @mincategory = 0
+--    set @maxcategory = 1000
+--    set @itemnolike= '%'
+
+--    if @majorcategory =''
+--    BEGIN
+--        set @majorcategory ='ALL'
+--    END       
+--    if @majorcategory = 'ALL'
+--    BEGIN
+--        set @itemnolike= '%'
+--    END
+
+--    if @majorcategory != 'PCD' AND @minorcategory !='ALL'
+--    BEGIN
+--        SET  @mincategory = @minorcategory 
+--        SET  @maxcategory = @minorcategory 
+--    END
+
+--    if @majorcategory='PCD' AND @minorcategory !='ALL'
+--    begin
+--        SET @itemnolike = @minorcategory + '%'
+--    END
+
+--    SELECT @return = 0
+--    --if @deliveryarea=''
+--      --  set @deliveryarea ='%'
+   
+
+
+--    if @includedeliveries = 1
+--    begin 
+--        set @deltype1 = 'D'
+--        -- set @deltype2 =''
+--		set @deltype2 ='R'		-- UAT 5.0.0 issue 231. include redeliveries in delivery option (jec 23/03/07)
+--    end
+
+--    if @includecollections = 1
+--    begin
+--        set @deltype3 ='C'
+--        --set @deltype4 ='R'	-- UAT 5.0.0 issue 231. include redeliveries in delivery option	(jec 23/03/07)
+--    end
+
+----    if @includedeliveries = 1  RD 18/08/05 removed as was not picking up collection/redelivery
+--    BEGIN
+--    IF (ISNULL(@acctno,'') = '' OR @acctno = '000000000000')
+--        SET @account = '%'
+--    ELSE        
+--        SELECT @account = @acctno+N'%'
+    
+--    IF (@return = 0)
+--    BEGIN 
+    
+--     DECLARE @dhlBranches TABLE(branch int)        
+             
+--     INSERT INTO @dhlBranches (branch) 
+--     SELECT branchno FROM branch WHERE ThirdPartyWarehouse = 'Y' --OR branchno = @currentbranch    
+     
+--    -- Performance 70419
+--    if exists (select * from accountlocking where acctno like @account and LockCount <= 0 )--AA performance
+--			DELETE 
+--			FROM	AccountLocking 
+--			WHERE	LockCount <= 0  -- RD 20/09/05 67595 Modified to ensure that accounts are loaded correctly in the Print Delivery Screen
+--			AND  acctno LIKE @account
+    
+--        -- Lock accounts that have lineitems to be delivered AND that are not locked
+--        INSERT INTO accountlocking (acctno, lockedby, lockedat, lockcount)
+--        SELECT DISTINCT(l.acctno), @user, @TimeLocked, 1
+--        FROM lineitem l
+--            INNER JOIN schedule d ON l.acctno =d.acctno 
+--                --AND l.itemno = d.itemno AND l.stocklocn = d.stocklocn
+--                AND l.itemID = d.itemID AND l.stocklocn = d.stocklocn
+--            INNER JOIN acct ON d.acctno = acct.acctno
+--            INNER JOIN agreement g on g.acctno =d.acctno AND g.agrmtno =d.agrmtno
+--            --INNER JOIN StockInfo s ON d.itemno = s.itemno  --AND d.stocklocn = s.stocklocn
+--            INNER JOIN StockInfo s ON d.itemID = s.ID		-- RI
+--            LEFT OUTER JOIN accountlocking a ON l.acctno = a.acctno
+--            WHERE d.acctno LIKE @account
+--                    AND D.quantity !=0
+--            --UAT 219 --AND isnull(d.retstocklocn,d.stocklocn) = @branch
+--            AND (@branch = (CASE WHEN ISNULL(d.retstocklocn,0) = 0 THEN d.stocklocn ELSE d.retstocklocn END) OR @branch = -5)
+--            AND	(((l.delnotebranch = @delnotebranch OR @delnotebranch = -5) AND @3PLDels = 0) --IP/JC - 01/03/10 - CR1072 - Malaysia 3PL 
+--				OR (l.stocklocn = @delnotebranch AND @3PLDels = 1 
+--					AND D.vanno = 'DHL'
+--					AND EXISTS(SELECT * FROM @dhlBranches h 
+--								WHERE l.delnotebranch = h.branch) )) --check if delnotebranch is dhl warehouse
+--            AND acct.currstatus not in ('0', 'U', 'S') 
+--            AND d.itemno not in ('DT','STAX')     /*will be removing all non-stock items later*/     
+--            AND (l.quantity != 0 OR (l.quantity = 0 AND d.quantity < 0))  
+--            AND l.Iskit = 0
+--            AND l.itemtype != 'N'
+--              AND G.holdprop = 'N' 
+--              AND acct.currstatus !='S'
+--            --AND NOT EXISTS (SELECT c.AcctNo FROM Cancellation c WHERE c.AcctNo = d.AcctNo)
+--			AND left(l.deliveryarea,6)= ISNULL(@deliveryarea,left(l.deliveryarea,6)) 
+--            --AND l.itemno like @itemnolike
+--            and ISNULL(s.iupc,'IUPCmissing') like @itemnolike		-- RI
+--            AND ((g.dateagrmt between @orderfrom and @orderto and @reqdelsearch = 0)
+--                  OR (l.datereqdel between @orderfrom and @orderto and @reqdelsearch = 1))
+--            AND d.delorcoll in (@deltype1,@deltype2,@deltype3,@deltype4)
+--                        AND NOT EXISTS (SELECT * FROM AccountLocking ac WHERE ac.acctno= l.acctno) 
+--            AND l.deliveryprocess = @deliveryprocess -- scheduled or immediate
+--            AND d.loadno = 0
+--            AND d.dateprinted is null  -- not already printed 
+--            --AND d.picklistnumber = 0            
+
+
+--		CREATE TABLE  #lines  (
+--		deliveryarea varchar(8) NOT NULL,	acctno varchar(12) NOT NULL,
+--		addtype char(2) NOT NULL,	custid varchar(20) NOT NULL,
+--		itemno varchar(18) NOT NULL,		-- RI	
+--		quantity float NOT NULL,
+--		delqty float NOT NULL,	itemnotes varchar(200) NOT NULL,
+--		stocklocn smallint NOT NULL,	delnotebranch smallint NOT NULL,
+--		price money NOT NULL,	ordval money NOT NULL,
+--		datereqdel datetime NULL,	timereqdel varchar(12) NULL,
+--		dateplANDel datetime NULL,	empeenosale int NOT NULL,
+--		--empname varchar(20) NOT NULL,	dateagrmt datetime NULL,
+--		empname varchar(101) NOT NULL,	dateagrmt datetime NULL,				--IP - 15/05/12 - #9883 - LW74869
+--		--empeename varchar(20) NOT NULL,	deliveryaddress char(2) NOT NULL,
+--		empeename varchar(101) NOT NULL,	deliveryaddress char(2) NOT NULL,	--IP - 15/05/12 - #9883 - LW74869
+--		category varchar(30) NULL,	buffno int NOT NULL,
+--		undeliveredflag char(1) NOT NULL,	buffbranchno smallint NOT NULL,
+--		DelOrColl varchar(20) NULL,itemdescr1 varchar(35) NOT NULL,				-- RI jec 22/07/11
+--		itemdescr2 varchar(40) NOT NULL,picklistnumber int NOT NULL,
+--		loadno smallint NOT NULL,stockactual float NOT NULL,
+--		stockonorder float NOT NULL,stockstatus varchar(2) NOT NULL,
+--		released bit NULL,scheduledqty float NOT NULL,
+--		assemblyrequired char(1) NOT NULL,damaged char(1) NOT NULL,
+--		Homephone varchar(20) NULL,Cellphone varchar(20) NULL,
+--		id INT IDENTITY  ,
+--		GrtCreatedOn VARCHAR(12) NULL, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--		--GrtCreatedBy VARCHAR(26) NULL ,--IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--		GrtCreatedBy VARCHAR(110) NULL ,--IP - 16/05/12 - #9883 - LW74869 --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--		ItemID INT		-- RI
+--		--PRIMARY KEY (custid,acctno ,itemno,stocklocn ,id) )  
+--		PRIMARY KEY (custid,acctno ,itemID,stocklocn ,id) )		-- RI   
+		
+--        IF @@error = 0    
+--        BEGIN
+--            -- Fetch address type from lineitem table
+--            -- TODO - Include Stock Status once CR556 has been done
+            
+--				INSERT INTO #lines (
+--				deliveryarea,	acctno,	addtype,	custid,
+--				itemno,	quantity,	delqty,	itemnotes,
+--				stocklocn,	
+--				delnotebranch,	price,	ordval,
+--				datereqdel,	timereqdel,	dateplANDel,	empeenosale,
+--				empname,	dateagrmt,	empeename,	deliveryaddress,
+--				category,	buffno,	undeliveredflag,	buffbranchno,
+--				DelOrColl,	itemdescr1,	itemdescr2,	picklistnumber,
+--				loadno,	stockactual,	stockonorder,	stockstatus,
+--				released,	scheduledqty,	assemblyrequired,	damaged, 
+--				GrtCreatedOn, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--				GrtCreatedBy, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--				ItemID		-- RI
+--				)
+--				SELECT     DISTINCT 
+--                l.deliveryarea, al.acctno, isnull (l.deliveryaddress, '') , ca.custid, 
+--                --l.itemno,
+--                ISNULL(si.IUPC,'IUPCmissing'),		-- RI                 
+--                l.quantity,                l.delqty,       l.notes , 
+--                -- UAT 219 --isnull(d.retstocklocn,d.stocklocn) as stocklocn,
+--                CASE WHEN ISNULL(d.retstocklocn,0) = 0 THEN d.stocklocn ELSE d.retstocklocn END ,
+--                isnull (l.delnotebranch, 0) as delnotebranch,                 l.price,                 l.ordval,
+--                l.datereqdel,  l.timereqdel,l.dateplANDel,     ag.empeenosale,
+--                sp.FullName ,  ag.dateagrmt, ISNULL(cp.FullName,'') , isnull (l.deliveryaddress, '') ,
+--                '' , d.buffno, d.undeliveredflag, d.buffbranchno,
+--                convert(varchar(20),d.delorcoll) , '',  '', isnull(d.picklistnumber,0) ,
+--                isnull(d.loadno,0), s.stock,  s.stockonorder,'  ' , 
+--                convert(bit,0) ,  d.quantity as scheduledqty,   isnull(l.assemblyrequired, 'N') ,
+--                isnull(l.damaged, 'N') as damaged,
+--                ISNULL(CAST(d.datecreated AS VARCHAR(12)), '') as GrtCreatedOn,  --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--                ISNULL(CAST(d.createdby AS VARCHAR(5)) + ' ' + cp1.FullName,'') AS GrtCreatedBy, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--                l.ItemID		-- RI
+--            FROM     accountlocking al				
+--            INNER JOIN lineitem l ON al.acctno = l.acctno 
+--            INNER JOIN agreement ag ON al.acctno = ag.acctno 
+--            INNER JOIN custacct ca ON l.acctno = ca.acctno AND ca.hldorjnt = 'H'
+--            INNER JOIN schedule d ON l.acctno = d.acctno 
+--                --AND l.itemno = d.itemno 
+--                and l.ItemID=d.ItemID		-- RI
+--                AND l.stocklocn = d.stocklocn   
+--				AND l.ParentItemID = d.ParentItemID
+--            INNER JOIN StockQuantity  s ON s.ID=l.ItemID	-- RI	s.itemno = l.itemno
+--                              AND l.stocklocn = s.stocklocn 
+--    --              AND l.stocklocn = d.stocklocn --KEF commented out as not necessary - need to join to same table as itemno
+--            INNER JOIN Admin.[User] sp ON ag.empeenosale = sp.id
+--            LEFT JOIN Admin.[User] cp ON ag.empeenochange = cp.id
+--            LEFT JOIN Admin.[User] cp1 ON d.createdby = cp1.id --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--            INNER JOIN StockInfo si on l.itemID = Si.ID		-- RI 
+--/*			LEFT JOIN custtel ct ON ca.custid = ct.custid --IP - 21/07/08 - CR951
+--			AND ct.tellocn = 'H' and ct.datediscon is NULL --IP - 21/07/08 - CR951
+--			LEFT JOIN custtel cm ON ca.custid = cm.custid --IP - 21/07/08 - CR951
+--			AND cm.tellocn = 'M' and cm.datediscon is NULL --IP - 21/07/08 - CR951
+--*/
+--            WHERE al.lockedby = @user
+--            --AND   al.lockedat = @TimeLocked -- Can't use this in case the acct was locked earlier
+            
+--            AND l.itemtype != 'N'    --KEF changed to look at stockitem not lineitem -- AA reversing for performance reasons
+--            AND l.Iskit = 0
+--            -- UAT 219 --AND isnull(d.retstocklocn,l.stocklocn) = @branch 
+--            AND (@branch = (CASE WHEN ISNULL(d.retstocklocn,0) = 0 THEN d.stocklocn ELSE d.retstocklocn END) OR @branch = -5)
+--            --AND	(l.delnotebranch = @delnotebranch OR @delnotebranch = -5)
+--             AND	(((l.delnotebranch = @delnotebranch OR @delnotebranch = -5) AND @3PLDels = 0)--IP/JC - 01/03/10 - CR1072 - Malaysia 3PL 
+--				OR (l.stocklocn = @delnotebranch AND @3PLDels = 1 
+--					AND D.vanno = 'DHL'
+--					AND EXISTS(SELECT * FROM @dhlBranches h 
+--								WHERE l.delnotebranch = h.branch) )) --check if delnotebranch is dhl warehouse
+--            --AND l.deliveryarea like @deliveryarea
+--            AND left(l.deliveryarea,6)= ISNULL(@deliveryarea,left(l.deliveryarea,6)) 
+
+--            --AND l.itemno like @itemnolike
+--            and ISNULL(si.iupc,'IUPCmissing') like @itemnolike		-- RI
+--            --and s.category between @mincategory and @maxcategory -- moving down below
+--            AND d.delorcoll in (@deltype1,@deltype2,@deltype3,@deltype4)
+--            AND ((ag.dateagrmt between @orderfrom and @orderto and @reqdelsearch = 0)
+--                  OR (l.datereqdel between @orderfrom and @orderto and @reqdelsearch = 1))
+--            AND al.acctno like @account
+--            AND l.deliveryprocess = @deliveryprocess
+--            and d.dateprinted is null 
+--                        and d.loadno = 0
+----AND d.picklistnumber = 0
+            
+--            SELECT @return = @@error
+--        END
+
+--		UPDATE #lines SET category = convert(varchar,s.category),
+--		itemdescr1 = s.itemdescr1,
+--		itemdescr2 = s.itemdescr2
+--		FROM StockInfo s WHERE s.ID=#lines.ItemID	-- RI		--s.itemno =#lines.itemno
+
+--		DELETE FROM #lines WHERE EXISTS (SELECT * FROM StockInfo s 
+--		WHERE s.ID=#Lines.ItemID	-- RI		-- s.itemno = #lines.itemno 
+--		AND (s.category NOT BETWEEN @mincategory AND @maxcategory
+--		OR s.category IN ( select code from code where category IN ('WAR', 'PCDIS'))))-- exclude warranties and discounts)
+		
+--		--SELECT * INTO xll FROM #lines 
+--        -- If we are including 'linked' items we need to get all other items with the same
+--        -- buffno (delivery note number) as those already selected that were previously excluded
+--        -- by the selection criteria.
+--        IF @@error = 0 AND @retrievelinkeditems = 1    
+--        BEGIN
+        
+--                INSERT INTO #lines
+--                (	deliveryarea,	acctno,	addtype,	custid,
+--				itemno,	quantity,	delqty,	itemnotes,
+--				stocklocn,	
+--				delnotebranch,	price,	ordval,
+--				datereqdel,	timereqdel,	dateplANDel,	empeenosale,
+--				empname,	dateagrmt,	empeename,	deliveryaddress,
+--				category,	buffno,	undeliveredflag,	buffbranchno,
+--				DelOrColl,	itemdescr1,	itemdescr2,	picklistnumber,
+--				loadno,	stockactual,	stockonorder,	stockstatus,
+--				released,	scheduledqty,	assemblyrequired,	damaged,
+--				GrtCreatedOn, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--				GrtCreatedBy, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--				ItemID		-- RI
+--				)
+--            SELECT DISTINCT 
+--                l.deliveryarea,
+--                al.acctno, 
+--                isnull (l.deliveryaddress, 'H') as addtype, 
+--                ca.custid, 
+--                --l.itemno,
+--                ISNULL(si.IUPC,'IUPCmissing'),		-- RI 
+--                l.quantity, 
+--                   l.delqty, 
+--                l.notes as itemnotes, 
+--                --UAT 219 --isnull(d.retstocklocn,d.stocklocn) as stocklocn, 
+--                CASE WHEN ISNULL(d.retstocklocn,0) = 0 THEN d.stocklocn ELSE d.retstocklocn END as stocklocn,
+--                isnull (l.delnotebranch, 0) as delnotebranch, 
+--                l.price, 
+--                l.ordval,
+--                l.datereqdel, 
+--                l.timereqdel, 
+--                l.dateplANDel, 
+--                ag.empeenosale,
+--                sp.empeename as empname,
+--                ag.dateagrmt, 
+--                cp.empeename, 
+--                isnull (l.deliveryaddress, '') as deliveryaddress,
+--                '',
+--                d.buffno,
+--                d.undeliveredflag,
+--                d.buffbranchno,
+--                convert(varchar(20),d.delorcoll) as DelOrColl,
+--                '',
+--                '',
+--                isnull(d.picklistnumber,0) as picklistnumber,
+--                isnull(d.loadno,0) as loadno,
+--                s.stock,
+--                s.stockonorder,
+--                '  ' as stockstatus,
+--                convert(bit,0) as released,
+--                d.quantity as scheduledqty,
+--                isnull(l.assemblyrequired, 'N') as assemblyrequired,
+--                isnull(l.damaged, 'N') as damaged,
+--                ISNULL(CAST(d.datecreated AS VARCHAR(12)), '') as GrtCreatedOn,  --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--                ISNULL(CAST(d.createdby AS VARCHAR(5)) + ' ' + cp1.empeename,'') AS GrtCreatedBy, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--                l.ItemID		-- RI
+--            --INTO     #linkedlines
+--            FROM     accountlocking al
+--            INNER JOIN lineitem l ON al.acctno = l.acctno 
+--            INNER JOIN agreement ag ON al.acctno = ag.acctno 
+--            INNER JOIN custacct ca ON l.acctno = ca.acctno
+--            INNER JOIN schedule d ON l.acctno =d.acctno 
+--            AND l.itemno = d.itemno
+--            --UAT 219 --AND l.stocklocn = isnull(d.retstocklocn,d.stocklocn)
+--            AND   l.stocklocn = (CASE WHEN ISNULL(d.retstocklocn,0) = 0 THEN d.stocklocn ELSE d.retstocklocn END)
+--            INNER JOIN stockquantity s ON s.ID=l.ItemID		-- RI 	--s.itemno =l.itemno
+----            AND s.stocklocn = d.stocklocn --KEF commented out as not necessary - need to join to same table as itemno
+--            AND s.stocklocn = l.stocklocn
+--            INNER JOIN Admin.[User] cp ON ag.empeenochange = cp.id	
+--            INNER JOIN Admin.[User] sp ON ag.empeenosale = sp.Id
+--            LEFT JOIN Admin.[User] cp1 ON d.createdby = cp1.Id --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--            INNER JOIN StockInfo si on l.ItemID=si.ID		-- RI
+--			/*LEFT JOIN custtel ct ON ca.custid = ct.custid --IP - 21/07/08 - CR951
+--			AND ct.tellocn = 'H' and ct.datediscon is NULL --IP - 21/07/08 - CR951
+--			LEFT JOIN custtel cm ON ca.custid = cm.custid --IP - 21/07/08 - CR951
+--			AND cm.tellocn = 'M' and cm.datediscon is NULL --IP - 21/07/08 - CR951
+--*/
+--            WHERE al.lockedby = @user
+--            --AND   al.lockedat = @TimeLocked -- Can't use this in case the acct was locked earlier
+--            --AND d.buffno in (SELECT buffno FROM #lines l WHERE l.itemno != d.itemno)
+--            AND d.buffno in (SELECT buffno FROM #lines l WHERE l.itemID != d.itemID)	-- RI
+--            AND l.itemtype != 'N'    --KEF added so don't include non-stocks
+--            AND d.dateprinted is null
+--                        AND d.loadno = 0
+--            AND l.Iskit = 0
+--             -- AND d.picklistnumber = 0
+            
+--            SELECT @return = @@error
+
+
+--			UPDATE #lines SET category = convert(varchar,s.category),
+--			itemdescr1 = s.itemdescr1,
+--			itemdescr2 = s.itemdescr2
+--			FROM StockInfo s WHERE s.ID=#lines.ItemID	-- RI	--s.itemno =#lines.itemno
+--			AND #lines.category = ''
+            
+--        END
+
+
+--		-- Homephone
+--		UPDATE l SET   homephone  = ISNULL(c.telno,'')
+--		FROM #lines l ,custtel c WHERE c.custid = l.custid AND ISNULL(c.datediscon,'1-jan-1900') = '1-Jan-1900'
+--		AND c.tellocn = 'H'
+
+--		-- Mobile
+--		UPDATE l SET   cellphone = ISNULL(c.telno,'')
+--		FROM #lines l, custtel c WHERE c.custid = l.custid AND ISNULL(c.datediscon,'1-jan-1900') = '1-Jan-1900'
+--		AND c.tellocn= 'M' 
+
+            
+--        IF @@error = 0    
+--        BEGIN
+--            -- Catch any dodgy address types    
+--            UPDATE     l
+--            SET         addtype = 'H'
+--            FROM #lines l 
+--            WHERE     NOT EXISTS (SELECT custid 
+--                        FROM   custaddress 
+--                        WHERE  custaddress.custid = l.custid
+--                             AND       custaddress.addtype = l.addtype 
+--                        AND    custaddress.datemoved is null )
+--            SELECT     @return = @@error
+--        END 
+ 
+--            /*IF @@error = 0    excluding settled/cancelled accounts in the first select.
+--        BEGIN
+--            delete l 
+--            from #lines l where exists (select * from cancellation where cancellation.acctno = l.acctno)
+--            END*/
+--            IF @@error = 0    
+--           BEGIN
+--               if @majorcategory != 'ALL' AND @minorcategory ='ALL'
+--                begin -- remove items not in this category from the temporary table            
+--                    delete from #lines where convert(varchar,category)
+--                     not in (select code from code where category = @majorcategory)
+--                end
+--            END
+
+--        IF @@error = 0
+--        BEGIN
+--            UPDATE l
+--            set stockactual = stockactual -isnull((select sum(quantity)
+--            from schedule where	schedule.itemID =l.itemID	-- RI	--schedule.itemno =l.itemno 
+--            and schedule.stocklocn = l.stocklocn
+--            and (schedule.dateprinted is not null or schedule.datePicklistPrinted is not null)),0)
+--            FROM #lines l 
+--        END 
+        
+--        IF @@error = 0
+--        BEGIN
+--            UPDATE    #lines
+--            SET        released = convert(bit,0)
+--            WHERE    picklistnumber > 0
+--        END
+
+--		IF @@error = 0
+--		BEGIN
+--			UPDATE	#lines
+--			SET		stockstatus = 'IS'
+--			WHERE	stockactual > 0
+--		END
+		
+--        IF @@error = 0
+--        BEGIN
+--            UPDATE #lines
+--            SET stockstatus = 'OR'
+--            WHERE stockstatus = '  ' AND stockonorder > 0
+--        END
+
+--        IF @@error = 0
+--        BEGIN
+--            UPDATE #lines
+--            SET stockstatus = 'NS'
+--            WHERE stockactual <= 0 AND stockonorder <= 0
+--        END
+--   END        
+--        IF @@error = 0    
+--        BEGIN
+
+--            -- Have to use CREATE TABLE instead of SELECT INTO because the 
+--            -- compiler won't allow SELECT INTO the same #table twice even
+--            -- though they are in an IF-ELSE.
+
+--            DECLARE @privclub TABLE 
+--                (CustId     VARCHAR(20) NOT NULL PRIMARY KEY ,
+--                 CodeDesc   VARCHAR(64) NOT NULL)
+--if (select Value from CountryMaintenance where name like 'Loyalty Card')='True'  
+--  BEGIN  
+--            IF EXISTS (SELECT 1 FROM CountryMaintenance
+--                       WHERE  CodeName = 'TierPCEnabled' AND Value = 'True')
+--            BEGIN
+--                -- Tier1/2 Privilege club is enabled
+                
+--                INSERT INTO @PrivCLub
+--                    (CustId, CodeDesc)
+--                SELECT  c.custid, cd.CodeDescript
+--                FROM    custcatcode c, Code cd
+--                WHERE   exists (select custid from #lines l where l.custid = c.custid)
+--                AND     c.Code IN ('TIR1', 'TIR2')
+--                AND     ISNULL(c.DateDeleted,'') = ''
+--                AND     cd.Category = 'CC1'
+--                AND     cd.Code = c.Code
+--                AND EXISTS (SELECT * FROM #lines l WHERE l.custid = c.custid) 
+--            END
+--            ELSE
+--            BEGIN
+--                -- Classic Privilege Club
+
+--                /* KEF added temp table to find custcatcode for priviledge club as can have more than 1 record for a customer */
+--                INSERT INTO @PrivCLub
+--                    (CustId, CodeDesc)
+--                select  c.custid, cd.CodeDescript
+--                from    custcatcode c, Code cd
+--                where   exists (select custid from #lines l where l.custid = c.custid)
+--                and     c.code = 'CLAC'
+--                AND     ISNULL(c.DateDeleted,'') = ''
+--                and not exists (select custid from custcatcode c2
+--                                where c2.custid = c.custid and c2.code in ('CLAS','CLAW')
+--                                AND   ISNULL(c2.DateDeleted,'') = '')
+--                AND     cd.Category = 'CC1'
+--                AND     cd.Code = c.Code
+--                AND EXISTS (SELECT * FROM #lines l WHERE l.custid = c.custid) 
+--            END
+--   End 
+--    --        SELECT     DISTINCT 
+--    --            l.buffno,
+--    --            SUBSTRING(l.acctno,1,3)+'-'+SUBSTRING(l.acctno,4,4)+'-'+SUBSTRING(l.acctno,8,4)+'-'+SUBSTRING(l.acctno,12,1) as acctno,
+--    --            cad.cusaddr1, 
+--    --            cad.cusaddr2, 
+--    --            cad.cusaddr3, 
+--    --            cad.cuspocode, 
+--    --            l.itemno,
+--    --            released,
+--    --            ' ' as picked,
+--    --            l.damaged,
+--    --            l.timereqdel, 
+--    --            l.undeliveredflag,
+--    --            l.deliveryarea,
+--    --            c.title, 
+--    --            c.firstname, 
+--    --            c.name, 
+--    --            ISNULL(codecat.catdescript,'Unknown') + ' - ' + ISNULL(code.codedescript,'Unknown') as codedescript,
+--    --            l.datereqdel, 
+--    --            --ISNULL(p.CodeDesc,'No') as PrivilegeClub,
+--    --            l.dateagrmt,
+--    --            l.itemdescr1,
+--    --            l.itemdescr2,
+--    --            l.GrtCreatedOn, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--				--l.GrtCreatedBy, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--    --            l.empeenosale,
+--    --            l.empeename,
+--    --            l.DelOrColl,
+--    --            l.deliveryaddress, 
+--    --            l.buffbranchno,
+--    --            convert(varchar(300), 
+--    --            cad.notes) as cusnotes, 
+--    --            l.empname,
+--    --            ISNULL(p.CodeDesc,'No') as PrivilegeClub, --IP - 15/02/10 CR1072 - (CR1048 - 3.1.6) - Move PrivilegeClub 
+--    --            l.stocklocn,
+--    --            l.delnotebranch,
+--    --            l.picklistnumber,
+--    --            l.loadno,
+--    --            stockstatus,
+--    --            l.stockactual as StockAvailable,
+--    --            scheduledqty,
+--    --            isnull(l.assemblyrequired,'N') as assemblyrequired,
+--    --            l.itemnotes,
+--    --            c.custid,
+--    --            c.alias,
+--				--l.Homephone, --IP - 21/07/08 - CR951
+--				--l.Cellphone --IP - 21/07/08 - CR951	
+--    --        FROM     #lines l
+--    --        INNER JOIN customer c ON l.custid = c.custid
+--    --        INNER JOIN custaddress cad ON l.custid = cad.custid 
+--    --        AND l.addtype = cad.addtype
+--    --        LEFT OUTER JOIN code ON code.code = l.category AND code.category IN ('PCD','PCE','PCF','PCO','PCW')
+--    --        LEFT OUTER JOIN codecat ON code.category = codecat.category
+--    --        LEFT OUTER JOIN @privclub p ON p.custid = c.custid
+--    --        WHERE    cad.datemoved IS NULL 
+--    --        ORDER BY c.name
+    
+--	-- UAT64 - Re-sequence column order
+-- SELECT     DISTINCT
+--				SUBSTRING(l.acctno,1,3)+'-'+SUBSTRING(l.acctno,4,4)+'-'+SUBSTRING(l.acctno,8,4)+'-'+SUBSTRING(l.acctno,12,1) as acctno, 
+--                l.itemno,
+--                released,                
+--                l.empeenosale,
+--                l.DelOrColl,
+--                l.buffbranchno,
+--                l.buffno,
+--                l.deliveryaddress,
+--                l.datereqdel, 
+--                l.timereqdel,
+--                c.title, 
+--                c.firstname, 
+--                c.name,                
+--                cad.cusaddr1, 
+--                cad.cusaddr2, 
+--                cad.cusaddr3, 
+--                cad.cuspocode,
+--                ' ' as picked,
+--                l.damaged,      
+--                l.undeliveredflag,
+--                l.deliveryarea,
+--                l.dateagrmt,
+--                l.itemdescr1,
+--                l.itemdescr2,
+--                l.GrtCreatedOn, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--				l.GrtCreatedBy, --IP - 16/02/10 - CR1072 - CR1048 - 3.1.8 (ref:3.1.46 & 3.1.47) from 4.3
+--                l.empeename,
+--                l.empname,
+--                ISNULL(p.CodeDesc,'No') as PrivilegeClub, --IP - 15/02/10 CR1072 - (CR1048 - 3.1.6) - Move PrivilegeClub 
+--                l.stocklocn,
+--                stockstatus,
+--                l.stockactual as StockAvailable,
+--                scheduledqty,
+--                l.Homephone, --IP - 21/07/08 - CR951
+--				l.Cellphone, --IP - 21/07/08 - CR951
+                
+--                l.picklistnumber,
+--                l.loadno,
+--                isnull(l.assemblyrequired,'N') as assemblyrequired,
+--                l.itemnotes,
+--                c.custid,
+--                c.alias,
+--				convert(varchar(300),cad.notes) as cusnotes,
+--				ISNULL(codecat.catdescript,'Unknown') + ' - ' + ISNULL(code.codedescript,'Unknown') as codedescript,
+--				l.ItemID	-- RI                
+--                --ISNULL(p.CodeDesc,'No') as PrivilegeClub,	
+--            FROM     #lines l
+--            INNER JOIN customer c ON l.custid = c.custid
+--            INNER JOIN custaddress cad ON l.custid = cad.custid 
+--            AND l.addtype = cad.addtype
+--            LEFT OUTER JOIN code ON code.code = l.category AND code.category IN ('PCD','PCE','PCF','PCO','PCW')
+--            LEFT OUTER JOIN codecat ON code.category = codecat.category
+--            LEFT OUTER JOIN @privclub p ON p.custid = c.custid
+--            WHERE    cad.datemoved IS NULL 
+--            ORDER BY c.name
+            
+--            SELECT     @return = @@error
+
+--		 END
+
+--END 
+--GO    
+--    --SET ROWCOUNT 0
+    
+---- End End End End End End End End End End End End End End End End End End End End End End End End End End
+
+ 

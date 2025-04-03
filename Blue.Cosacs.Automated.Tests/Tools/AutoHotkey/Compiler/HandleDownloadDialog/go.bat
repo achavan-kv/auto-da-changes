@@ -1,0 +1,1 @@
+start /w ..\..\AutoHotkey.exe .\Download.ahk "C:\_test.log"

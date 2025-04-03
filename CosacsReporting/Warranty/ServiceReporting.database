@@ -1,0 +1,111 @@
+﻿<Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="611def21-9d8a-4501-867b-ef3cc4ad04bf" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CosacsReporting</ID>
+  <Name>CosacsReporting</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectProjectID</Name>
+      <Value>796bf3ab-5b90-4aad-8890-2017e56a9e44</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CreateSubjectArea</Name>
+      <Value>True</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectDataSourceID</Name>
+      <Value>CosacsReporting</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectDSVID</Name>
+      <Value>CosacsReporting</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectDSVName</Name>
+      <Value>CosacsReporting</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectOwningSchema</Name>
+      <Value>dbo</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectCreatePkeyOnDimTable</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectCreateIndexes</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectEnforceRefIntegrity</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectPreserveData</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SubjectPopulateTimeTable</Name>
+      <Value>2</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:PKeyPrefix</Name>
+      <Value>PK</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:FKeyPrefix</Name>
+      <Value>FK</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Separator</Name>
+      <Value>_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DimAttrNameColumnSuffix</Name>
+      <Value>Name</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DimAttrCustRollUpColumnSuffix</Name>
+      <Value>CustomRollup</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DimAttrCustRollUpPropColumnSuffix</Name>
+      <Value>CustomRollupProperties</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DimAttrUnaryOperatorColumnSuffix</Name>
+      <Value>UnaryOperator</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DimAttrSkippedLevelsColumnSuffix</Name>
+      <Value>SkippedLevels</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DimAttrValueColumnSuffix</Name>
+      <Value>Value</Value>
+    </Annotation>
+    <Annotation>
+      <Name>B77886FF900E4C18A95F79A6BFA488A9</Name>
+      <Value>
+        <Results xmlns="B77886FF900E4C18A95F79A6BFA488A9">
+          <Result sourcePath="[Product].[GroupCategoryProduct]" sourceType="Hierarchy" rule="12"></Result>
+          <Result sourcePath="[Service Request].[Servicerequest].[Name_]" sourceType="AttributeRelationship" rule="34"></Result>
+          <Result sourcePath="[Service Request].[Servicerequest].[Name_ 1]" sourceType="AttributeRelationship" rule="34"></Result>
+          <Result sourcePath="[Product].[Category].[Description]" sourceType="AttributeRelationship" rule="33">make sence</Result>
+          <Result sourcePath="[Product].[Sub Class].[Description]" sourceType="AttributeRelationship" rule="33">make sence</Result>
+        </Results>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <LastUpdate>0001-01-01T00:00:00Z</LastUpdate>
+  <DataSourceImpersonationInfo>
+    <ImpersonationMode>Default</ImpersonationMode>
+    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+  </DataSourceImpersonationInfo>
+  <Dimensions />
+  <Cubes />
+  <DataSources />
+  <DataSourceViews />
+</Database>

@@ -1,0 +1,6 @@
+ALTER TABLE Warehouse.Booking
+ADD UnitPrice MONEY NOT NULL CONSTRAINT bookingUnit DEFAULT 0
+
+ALTER TABLE Warehouse.Booking
+DROP CONSTRAINT bookingUnit
+GO

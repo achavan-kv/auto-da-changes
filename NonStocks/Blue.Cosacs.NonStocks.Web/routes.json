@@ -1,0 +1,28 @@
+[
+    {
+        "url": "Details/:Id",
+        "template": "views/Details.html"
+    },
+    {
+        "url": "Indexing",
+        "template": "views/Indexing.html"
+    },
+    {
+        "url": "ProductLink",
+        "template": "views/ProductLink.html"
+    },
+    {
+        "url": "Search",
+        "template": "views/Search.html",
+        "reloadOnSearch": false
+    },
+    {
+        "url": "Promotions",
+        "template": "views/Promotions.html",
+        "reloadOnSearch": false
+    },
+    {
+        "url": "Export",
+        "template": "views/Export.html"
+    }
+]

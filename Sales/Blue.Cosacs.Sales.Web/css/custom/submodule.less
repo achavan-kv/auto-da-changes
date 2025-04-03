@@ -1,0 +1,156 @@
+@import "./global.less";
+
+.pos-sales {
+
+  .pos-navbar-toggle {
+    position: relative;
+    float: right;
+    margin-right: @navbar-padding-horizontal;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background-color: @btn-primary-bg;
+    border: 1px solid transparent;
+    border-radius: @border-radius-base;
+
+    // Bars
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      background-color: @btn-primary-color;
+    }
+    .icon-bar + .icon-bar {
+      margin-top: 4px;
+    }
+  }
+
+  .badge.item-count {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    background-color: @bb-contrast;
+  }
+
+  .warning-icon {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+  }
+
+  .panel-default {
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
+
+  .amount {
+    font-size: 1.3em;
+  }
+
+  .grid-item .amount {
+    position: absolute;
+    bottom: 0px;
+    font-size: 11px;
+  }
+
+  button.tab-select {
+    &.active {
+      border-color: transparent;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.glyphicons:focus {
+      color: #ffffff;
+    }
+  }
+
+  .item {
+    border: 1px solid @neutral-color;
+  }
+
+  .striped {
+    > div:nth-child(odd) {
+      background-color: @table-bg-accent;
+    }
+  }
+
+  .sub-item {
+    padding-bottom: 3px;
+
+    &.added {
+      border-bottom: 1px solid;
+    }
+  }
+
+  .available-sub-item {
+    padding-bottom: 5px;
+    background-color: #fff;
+    .sub-item {
+      border-bottom: 1px dashed @dark-neutral-color;
+      border-left: 1px dashed @dark-neutral-color;
+      border-right: 1px dashed @dark-neutral-color;
+      background-color: @lightgrey-hover;
+    }
+  }
+
+  .grid-item {
+    .item-description {
+      height: 51px;
+      overflow: hidden;
+      font-size: 11px;
+    }
+
+    &.added {
+
+      background-color: @neutral-color;
+    }
+
+    .cart_in.added {
+      font-size: 4em;
+      position: absolute;
+      left: 113px;
+      top: 5px;
+      transition: all 2s;
+    }
+  }
+
+  .basket-button {
+    position: relative;
+  }
+
+  .basket-info {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: @bb-contrast;
+    color: #fff;
+    display: none;
+    z-index: 10;
+    padding: 10px;
+  }
+
+  .bb-btn-active.active:hover {
+    color: #cceeff;
+  }
+
+  .v-center {
+    padding-top: 8px;
+  }
+}
+
+.saleContainer{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 7px !important;
+  padding-right: 7px !important;
+}
+
+.quantitySize{
+  min-width: 47px
+}
+
+.input-group-addon {
+  font-size: 1.6em !important;
+}

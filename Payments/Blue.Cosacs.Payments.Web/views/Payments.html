@@ -1,0 +1,134 @@
+<div class="container payments" ng-controller="paymentsController">
+    <h1><span ng-bind="mainTitle">Payments</span></h1>
+    <br/>
+
+    <form class="customer-details col col-lg-4">
+        <div class="section">Customer</div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col col-lg-10">
+                    <strong>
+                        <span class="">{{ customerName }}</span>
+                    </strong>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col col-lg-9">
+                    <div class="row">
+                        <div class="col col-lg-12"
+                             ng-repeat="addrLine in customerAddress.split('\n')">
+                            {{ addrLine.trim() }}
+                        </div>
+                    </div>
+                    <div class="col col-lg-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">Payment</div>
+        <div class="col col-lg-11 row">
+            <div class="form-group">
+                <list id="paymentMethods" placeholder="Select Payment Method" scope="paymentMethodsScope"
+                      ng-model="paymentMethod"></list>
+
+                <div ng-show="paymentMethod == 'Foreign Cash'">
+                    <label class="small-margin-top">Foreign Cash</label>
+                    <list id="foreignCash" placeholder="Select Foreign Cash" scope="foreignCashScope"
+                          ng-model="foreignCash"></list>
+                </div>
+
+                <div ng-if="paymentMethod == 'Cheque'">
+                    <label class="small-margin-top">Bank</label>
+                    <list id="banks" name="banks"
+                          scope="banksScope" ng-model="selectedBank" placeholder="Select Bank"></list>
+
+                    <label class="small-margin-top" for="chequeNumber">Cheque Number</label>
+                    <input type="number" class="form-control" maxlength="16"
+                           ng-model="chequeNumber" id="chequeNumber" name="chequeNumber" required>
+                </div>
+
+                <div ng-if="paymentMethod == 'Travellers Cheque'">
+                    <label class="small-margin-top" for="travelersChequeNumber">Cheque Number</label>
+                    <input type="number" class="form-control" maxlength="16"
+                           ng-model="travelersChequeNumber" id="travelersChequeNumber"
+                           name="travelersChequeNumber" required>
+                </div>
+
+                <div ng-if="paymentMethod == 'Debit/Credit Card'">
+
+                    <label class="small-margin-top">Card Type</label>
+                    <list id="cardType" placeholder="Card Type"
+                          scope="MasterData.paymentCardType" ng-model="cardType"></list>
+
+                    <label class="small-margin-top" for="cardNumber">Card Number</label>
+                    <br>
+                    <input class="inlineResizableFormControl col-lg-8" placeholder="XXXX-XXXX-XXXX-" disabled>
+                    <input class="inlineResizableFormControl col-lg-4" type="text" maxlength="4"
+                           ng-model="cardNumber" id="cardNumber" name="cardNumber" required>
+                </div>
+
+                <div ng-if="paymentMethod == 'Store Card'">
+                    <label class="small-margin-top" for="storeCardNumber">Store Card Number</label>
+                    <input class="form-control" type="text" maxlength="16"
+                           ng-model="storeCardNumber" id="storeCardNumber" name="storeCardNumber" required>
+                </div>
+
+                <hr>
+
+                <label for="voucherCode">Voucher Code</label>
+                <input type="text" class="form-control" ng-blur="applyVoucher()"
+                       ng-model="voucherCode" id="voucherCode" name="voucherCode">
+
+                <label class="small-margin-top" for="paymentAmount">Amount</label>
+                <input type="number" class="form-control" placeholder="0"
+                       ng-model="paymentAmount" id="paymentAmount" name="paymentAmount">
+
+                <label class="small-margin-top" for="tenderedAmount">Tendered</label>
+                <input type="number" class="form-control" placeholder="0"
+                       ng-model="tenderedAmount" id="tenderedAmount" name="tenderedAmount"
+                       ng-disabled="isTenderedAmountInputDisabled()">
+
+                <div ng-if="bailiffTotalFeeDue > 0">
+                    <label class="small-margin-top" for="fees">Fees</label>
+                    <input type="number" class="form-control"
+                           ng-model="bailiffTotalFeeDue" id="fees" name="fees" disabled>
+                </div>
+
+                <label class="small-margin-top" for="change">Change</label>
+                <input type="number" class="form-control"
+                       ng-model="change" id="change" name="change" disabled>
+
+            </div>
+        </div>
+        <input type="submit" value="Submit Payment" class="btn btn-primary" ng-click="payment()"
+               id="buttonPayment" name="buttonPayment" ng-disabled="isPaymentButtonEnabled()">
+    </form>
+    <form class="col col-lg-8 form-horizontal">
+
+        <div class="row" ng-show="agreements && agreements.length > 0">
+            <div class="section">Agreements
+                <div class="pull-right text-info" ng-show="AgreementTotalDue > 0">
+                    <strong>
+                        {{ (AgreementTotalDue | currency) }}
+                    </strong>
+                    due on
+                    <strong>
+                        {{ moment(AgreementTotalDueNextPayment).format(dateFormatShort) }}
+                    </strong>
+                </div>
+            </div>
+            <div ng-include="'/payments/views/templates/PaymentAgreement.html'"
+                 ng-repeat="result in agreements"></div>
+        </div>
+
+        <div class="row" ng-show="order">
+            <div class="section">Order</div>
+            <div ng-include="'/payments/views/templates/PaymentOrder.html'"></div>
+        </div>
+
+    </form>
+
+</div>

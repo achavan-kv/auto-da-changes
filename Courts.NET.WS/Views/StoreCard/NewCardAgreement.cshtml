@@ -1,0 +1,22 @@
+﻿@model Blue.Cosacs.Shared.StoreCardNewCardAgreement
+@using Blue.Cosacs.Shared.Extensions;
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "New Card Agreement";
+}
+<h1>
+    StoreCard New Card Agreement
+</h1>
+<div style="margin-top: 100px">
+    I [@Model.Customer.firstname.FirstCaps() @Model.Customer.name.FirstCaps()] of [@Model.CustAddress.cusaddr1.FirstCaps()
+    @Model.CustAddress.cusaddr2.FirstCaps(),@Model.CustAddress.cusaddr3.FirstCaps(),@Model.CustAddress.cuspocode.FirstCaps()]
+    agree that [@Model.NewCustomer.firstname.FirstCaps() @Model.NewCustomer.name.FirstCaps()]
+    of [@Model.NewCustAddress.cusaddr1.FirstCaps() @Model.NewCustAddress.cusaddr2.FirstCaps(),@Model.NewCustAddress.cusaddr3.FirstCaps(),@Model.NewCustAddress.cuspocode.FirstCaps()]
+    is authorised to make purchases on my storecard account [@ViewBag.acctno] and should be issed with his/her own card.
+</div>
+<div style="margin-top: 100px">
+    Signed by __________________________________ @Model.Customer.firstname @Model.Customer.name
+</div>
+<div style="margin-top: 100px">
+    Witnessed by ________________________________ Witness Name ___________________
+</div>

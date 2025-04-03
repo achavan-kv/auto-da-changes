@@ -1,0 +1,7 @@
+CustomerId,SalesPersonId,TempSalesPersonId,TimeFrameTempSalesPerson,DoNotCallAgain,PhoneNumber,TempSalesPersonIdBegin,TempSalesPersonIdEnd,CustomerBranch
+1,1,,,0,111111111,,,761
+Test1,3,,,0,111111111,,,761
+Test2,5,,,0,111111111,,,761
+Test3,5,,,0,111111111,,,761
+Test4,6,,,0,111111111,,,761
+Test5,3,,,0,111111111,,,761

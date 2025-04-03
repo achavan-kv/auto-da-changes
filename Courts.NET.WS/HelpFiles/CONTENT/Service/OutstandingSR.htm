@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Service">
+    <head><title>Outstanding Service Requests</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapUtilities.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffects.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapBody.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapHighlighter.js">/*<![CDATA[*/ /*]]>*/</script>
+    </head>
+    <body>
+        <h1>Outstanding Service Requests</h1>
+        <p class="MyStyle">This screen will provide a set of reports for open Service Requests. A drop down will allow the user to select a type of report. A date range and/or an SR number range may be optionally entered to filter the results. The ‘Not Updated Since’ and ‘Technician’ fields will only be enabled for certain report types.</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The report results will be generated in a DataGridView when the search button is pressed. </p>
+        <p class="MyStyle">This will enable an excel button  to allow the results to be copied to file and printed.
+</p>
+        <p class="MyStyle">The set of reports are:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Unallocated
+</li>
+            <li style="font-family: Arial;" value="2">Awaiting Deposit ~ only included if the country parameter ‘SERVICE Deposit’ is enabled.
+</li>
+            <li style="font-family: Arial;" value="3">Not Updated Since
+</li>
+            <li style="font-family: Arial;" value="4">By Technician
+</li>
+            <li style="font-family: Arial;" value="5">By Date Logged
+</li>
+            <li style="font-family: Arial;" value="6">Awaiting Spare Parts
+</li>
+            <li style="font-family: Arial;" value="7">Awaiting Payment
+</li>
+            <li style="font-family: Arial;" value="8">Awaiting Estimate
+</li>
+        </ul>
+        <h2 class="CH2">Unallocated
+</h2>
+        <p class="MyStyle">These are all SR's not yet allocated</p>
+        <p class="MyStyle"> The report columns will be:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">Deposit paid Y/N - only visible if the country parameter ‘SERVICE Deposit’ is enabled.
+</li>
+        </ul>
+        <h2 class="CH2">Awaiting Deposit
+</h2>
+        <p class="MyStyle">These are all accounts awaiting deposit</p>
+        <p class="MyStyle">The report columns will be:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">Deposit Amount
+</li>
+        </ul>
+        <p class="MyStyle">The user will be able to right click a row to open the standard authorisation prompt. When authorised the deposit amount will be reset to zero and the deposit paid indicator set to ‘Y’.
+</p>
+        <p class="MyStyle">&#160;</p>
+        <h2 class="CH2">Not Updated Since
+</h2>
+        <p class="MyStyle">All SR's that have not been updated within the specific date range. This report will pick up when thetre are no changes with these dates: </p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Date Logged - ‘SR_ServiceRequest.DateLogged’
+</li>
+            <li style="font-family: Arial;" value="2">Date Allocated - ‘SR_Allocation.DateAllocated’
+</li>
+            <li style="font-family: Arial;" value="3">Date Re-opened - ‘SR_ServiceRequest.DateReopened’
+
+</li>
+        </ul>
+        <p class="MyStyle">The report columns will be:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">Technician</li>
+            <li style="font-family: Arial;" value="4">Date Allocated
+</li>
+            <li style="font-family: Arial;" value="5">Repair date
+</li>
+        </ul>
+        <p class="MyStyle">
+        </p>
+        <h2 class="CH2">By Technician
+</h2>
+        <p class="MyStyle">This is a report of all SR's allocated to a technician</p>
+        <p class="MyStyle">The report columns will be:
+
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">Technician
+</li>
+            <li style="font-family: Arial;" value="4">Repair date
+
+</li>
+        </ul>
+        <p class="MyStyle">&#160;</p>
+        <h2 class="CH2">By Date Logged
+</h2>
+        <p class="MyStyle">This will bring back all SR's by date logged that are not yet closed or resolved.      <![CDATA[ ]]></p>
+        <p class="MyStyle">The report columns will be:
+
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">	Technician
+</li>
+            <li style="font-family: Arial;" value="4">Date Allocated
+</li>
+            <li style="font-family: Arial;" value="5">Repair date
+</li>
+        </ul>
+        <p class="MyStyle">&#160;</p>
+        <h2 class="CH2">Awaiting Spare Parts
+</h2>
+        <p class="MyStyle">All SR's awaiting spare parts      <![CDATA[ ]]></p>
+        <p class="MyStyle">The report columns will be:
+
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">Technician
+</li>
+            <li style="font-family: Arial;" value="4">	Date Allocated
+</li>
+            <li style="font-family: Arial;" value="5">Parts Expected Date
+</li>
+            <li style="font-family: Arial;" value="6">Repair date
+</li>
+            <li style="font-family: Arial;" value="7">Product Code
+</li>
+            <li style="font-family: Arial;" value="8">Product Description
+
+</li>
+        </ul>
+        <p class="MyStyle">&#160;</p>
+        <h2 class="CH2">Awaiting Payment
+</h2>
+        <p class="MyStyle">All accounts awaiting payment. </p>
+        <p class="MyStyle"> The report columns will be:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">Date Allocated
+</li>
+            <li style="font-family: Arial;" value="4">Repair Date
+</li>
+            <li style="font-family: Arial;" value="5">Outstanding Balance
+</li>
+        </ul>
+        <p class="MyStyle">&#160;</p>
+        <h2 class="CH2">Awaiting Estimate
+</h2>
+        <p class="MyStyle">All accounts Beyond economic repair that are awaiting an estimate.</p>
+        <p class="MyStyle">The report columns will be:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Service Request Number
+</li>
+            <li style="font-family: Arial;" value="2">Date Logged
+</li>
+            <li style="font-family: Arial;" value="3">Product Code
+</li>
+            <li style="font-family: Arial;" value="4">Product Description
+
+#</li>
+        </ul>
+        <p class="MyStyle"><a class="MCRelatedTopics" href="javascript:void(0);" onclick="FMCLinkControl( event, this ); return false;" onkeydown="this.MCKeydown = true;" MadCap:topics="The Product Tab|SR_Product Tab.htm||Service Request Summary on Account Details|SRAccountdetails.htm||Soft Script Popup|SoftScripts.htm||Service Request Search|ServiceSearch.htm||Service Failure Report|ServiceFailure Report.htm||Service Request Screen|Service Request Screen.htm||Service Request Audit|Service Request Audit.htm||Service Progress Report|Service Progress Report.htm||Payment screen for Service|Service Payment.htm||The Resolution Tab|Resolution.htm||Customer Interaction|CustomerInteraction.htm||Claims submission report|ClaimsSubmissions.htm||Charge To Analysis|Charge To.htm||Beyond Economic Repair (BER)|BER.htm||Batch Printing|BatchPrint.htm||Service Request Allocation|Allocation.htm"><img src="../SkinSupport/RelatedTopics.gif" style="border: none;margin-right: 5px;" />Related Topics</a>
+        </p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

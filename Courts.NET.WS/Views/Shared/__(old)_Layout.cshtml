@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CoSaCS - @ViewBag.Title</title>
+    @Html.Css("bootstrap.css", "default.css")
+    @RenderSection("Head", false)
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="fill">
+            <div class="container">
+                <h3>@Html.ActionLink("CoSaCS", "Index", "Home")</h3>
+                <ul class="nav">
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Audit", "Index", "Audit")</li>
+                    <li><a href="/cosacs.client/cosacsclient.application">Install Client</a></li>
+                    <li class="dropdown">
+                  @*<a href="#" class="dropdown-toggle">Dropdown</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Secondary link</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Another link</a></li>
+                  </ul>*@
+            </li>
+                </ul>
+                <ul class="nav secondary-nav">
+                    <li class="dropdown">
+                          <a href="#" class="dropdown-toggle">Settings</a>
+                          <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Log Off", "Index", "Logoff")</li>
+                            @*<li class="divider"></li>
+                            <li><a href="#">Another link</a></li>*@
+                          </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="content">
+            @RenderBody()
+      </div>
+
+    <footer>
+        <p>&copy; Blue Bridge Ltd 2011</p>
+    </footer>
+
+    </div> <!-- /container -->
+    @Html.Js("jquery-1.4.4.min.js", "jquery.validate.min.js", "jquery.validate.unobtrusive.min.js")
+    <script>
+        $(function () {
+            $("body").bind("click", function (e) {
+                $('.dropdown-toggle, .menu').parent("li").removeClass("open");
+            });
+            $(".dropdown-toggle, .menu").click(function (e) {
+                var $li = $(this).parent("li").toggleClass('open');
+                return false;
+            });
+        });
+    </script>
+    @RenderSection("Script", false)
+</body>
+</html>

@@ -1,0 +1,355 @@
+-- transaction: true
+-- Change the previous line to false to disable running this whole migration in one transaction.
+-- Removing that first line will default to 'true'.
+-- 
+-- Put your SQL code here
+
+IF EXISTS(select * from transtype where transtypecode = 'RAR')
+BEGIN
+
+	update transtype
+	set [description] = 'Ready Assist Recovery Credit', 
+		interfaceaccount = 1301,
+		interfacebalancing = 5111,
+		tccodedr = 32,
+		tccodecr = 11,
+		balordue = 'B'
+	where transtypecode = 'RAR'
+END
+
+IF NOT EXISTS(select * from transtype where transtypecode = 'RRC')
+BEGIN
+
+	insert into TransType(origbr, 
+					  transtypecode,
+					  tccodedr,
+					  tccodecr,
+					  [description],
+					  balordue,
+					  exportfilesuffix,
+					  batchtype,
+					  interfaceaccount,
+					  interfacesecaccount,
+					  branchsplit,
+					  isdeposit,
+					  interfacebalancing,
+					  IncludeinGFT,
+					  empeenochange,
+					  referencemandatory,
+					  referenceunique,
+					  interfacesecbalancing,
+					  branchsplitbalancing,
+					  SCInterfaceAccount,
+					  SCInterfaceBalancing
+					  )
+select	null,
+		'RRC',
+	    32,
+	    11,
+	    'Ready Assist Recovery Cash',
+	    'B',
+		'C',
+		'FIN',
+		'1301',
+		'',
+		1,
+		0,
+		'5211',
+		0,
+		0,
+		0,
+		0,
+		'',
+		1,
+		'',
+		''	
+END
+
+IF NOT EXISTS(select * from transtype where transtypecode = 'BHR')
+BEGIN
+
+	insert into TransType(origbr, 
+					  transtypecode,
+					  tccodedr,
+					  tccodecr,
+					  [description],
+					  balordue,
+					  exportfilesuffix,
+					  batchtype,
+					  interfaceaccount,
+					  interfacesecaccount,
+					  branchsplit,
+					  isdeposit,
+					  interfacebalancing,
+					  IncludeinGFT,
+					  empeenochange,
+					  referencemandatory,
+					  referenceunique,
+					  interfacesecbalancing,
+					  branchsplitbalancing,
+					  SCInterfaceAccount,
+					  SCInterfaceBalancing
+					  )
+select	null,
+		'BHR',
+	    32,
+	    11,
+	    'Credit Sale of the RA Service',
+	    'B',
+		'C',
+		'FIN',
+		'1301',
+		'',
+		1,
+		0,
+		'5111',
+		0,
+		0,
+		0,
+		0,
+		'',
+		1,
+		'',
+		''	
+END
+
+IF NOT EXISTS(select * from transtype where transtypecode = 'BCR')
+BEGIN
+
+	insert into TransType(origbr, 
+					  transtypecode,
+					  tccodedr,
+					  tccodecr,
+					  [description],
+					  balordue,
+					  exportfilesuffix,
+					  batchtype,
+					  interfaceaccount,
+					  interfacesecaccount,
+					  branchsplit,
+					  isdeposit,
+					  interfacebalancing,
+					  IncludeinGFT,
+					  empeenochange,
+					  referencemandatory,
+					  referenceunique,
+					  interfacesecbalancing,
+					  branchsplitbalancing,
+					  SCInterfaceAccount,
+					  SCInterfaceBalancing
+					  )
+select	null,
+		'BCR',
+	    32,
+	    11,
+	    'Cash Sale of the RA Service',
+	    'B',
+		'C',
+		'FIN',
+		'1301',
+		'',
+		1,
+		0,
+		'5211',
+		0,
+		0,
+		0,
+		0,
+		'',
+		1,
+		'',
+		''	
+END
+
+
+IF NOT EXISTS(select * from transtype where transtypecode = 'BRS')
+BEGIN
+
+	insert into TransType(origbr, 
+					  transtypecode,
+					  tccodedr,
+					  tccodecr,
+					  [description],
+					  balordue,
+					  exportfilesuffix,
+					  batchtype,
+					  interfaceaccount,
+					  interfacesecaccount,
+					  branchsplit,
+					  isdeposit,
+					  interfacebalancing,
+					  IncludeinGFT,
+					  empeenochange,
+					  referencemandatory,
+					  referenceunique,
+					  interfacesecbalancing,
+					  branchsplitbalancing,
+					  SCInterfaceAccount,
+					  SCInterfaceBalancing
+					  )
+select	null,
+		'BRS',
+	    32,
+	    11,
+	    'Service Charge on Credit RA Service',
+	    'B',
+		'C',
+		'FIN',
+		'1301',
+		'',
+		1,
+		0,
+		'5390',
+		0,
+		0,
+		0,
+		0,
+		'',
+		1,
+		'',
+		''	
+END
+
+IF NOT EXISTS(select * from transtype where transtypecode = 'CRA')
+BEGIN
+
+	insert into TransType(origbr, 
+					  transtypecode,
+					  tccodedr,
+					  tccodecr,
+					  [description],
+					  balordue,
+					  exportfilesuffix,
+					  batchtype,
+					  interfaceaccount,
+					  interfacesecaccount,
+					  branchsplit,
+					  isdeposit,
+					  interfacebalancing,
+					  IncludeinGFT,
+					  empeenochange,
+					  referencemandatory,
+					  referenceunique,
+					  interfacesecbalancing,
+					  branchsplitbalancing,
+					  SCInterfaceAccount,
+					  SCInterfaceBalancing
+					  )
+select	null,
+		'CRA',
+	    32,
+	    11,
+	    'Cost of Sale for the RA Service',
+	    'B',
+		'C',
+		'FIN',
+		'6011',
+		'',
+		1,
+		0,
+		'2915',
+		0,
+		0,
+		0,
+		0,
+		'',
+		1,
+		'',
+		''	
+END
+
+IF NOT EXISTS(select * from transtype where transtypecode = 'CNR')
+BEGIN
+
+	insert into TransType(origbr, 
+					  transtypecode,
+					  tccodedr,
+					  tccodecr,
+					  [description],
+					  balordue,
+					  exportfilesuffix,
+					  batchtype,
+					  interfaceaccount,
+					  interfacesecaccount,
+					  branchsplit,
+					  isdeposit,
+					  interfacebalancing,
+					  IncludeinGFT,
+					  empeenochange,
+					  referencemandatory,
+					  referenceunique,
+					  interfacesecbalancing,
+					  branchsplitbalancing,
+					  SCInterfaceAccount,
+					  SCInterfaceBalancing
+					  )
+select	null,
+		'CNR',
+	    32,
+	    11,
+	    'Cancellation of RA Credit',
+	    'B',
+		'C',
+		'FIN',
+		'1301',
+		'',
+		1,
+		0,
+		'5111',
+		0,
+		0,
+		0,
+		0,
+		'',
+		1,
+		'',
+		''	
+END
+
+IF NOT EXISTS(select * from transtype where transtypecode = 'CRC')
+BEGIN
+
+	insert into TransType(origbr, 
+					  transtypecode,
+					  tccodedr,
+					  tccodecr,
+					  [description],
+					  balordue,
+					  exportfilesuffix,
+					  batchtype,
+					  interfaceaccount,
+					  interfacesecaccount,
+					  branchsplit,
+					  isdeposit,
+					  interfacebalancing,
+					  IncludeinGFT,
+					  empeenochange,
+					  referencemandatory,
+					  referenceunique,
+					  interfacesecbalancing,
+					  branchsplitbalancing,
+					  SCInterfaceAccount,
+					  SCInterfaceBalancing
+					  )
+select	null,
+		'CRC',
+	    32,
+	    11,
+	    'Cancellation of RA Cash',
+	    'B',
+		'C',
+		'FIN',
+		'1301',
+		'',
+		1,
+		0,
+		'5211',
+		0,
+		0,
+		0,
+		0,
+		'',
+		1,
+		'',
+		''	
+END

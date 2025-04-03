@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetSetsForTName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSetsForTNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSetsForTNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetSetsForTNameBranch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSetsForTNameBranchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSetsForTNameBranchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSetsForTNameBranchAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSetsForTNameBranchAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSetsForTNameBranchAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="columnType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="setDescript" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveSetsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSetDetailsForSetName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSetDetailsForSetNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSetDetailsForSetNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSetsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoryItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoryItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCategoryItemResult" type="tns:CategoryItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CategoryItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodeDescript" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveSetDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columnType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="setDescript" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveSetDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveSetDetailsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProvisions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfProvisionsItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProvisionsItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProvisionsItem" nillable="true" type="tns:ProvisionsItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProvisionsItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Acctype" type="s1:char" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusUpper" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusLower" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MonthsName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MonthsUpper" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MonthsLower" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Provision" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveProvisionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadProvisions">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadProvisionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadProvisionsResult" type="tns:ArrayOfProvisionsItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSetsForTNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSetsForTName" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSetsForTNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameBranchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSetsForTNameBranch" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameBranchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSetsForTNameBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameBranchAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameBranchAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSetsForTNameBranchAll" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameBranchAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSetsForTNameBranchAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsForTNameBranchAllAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveSetsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveSets" />
+  </wsdl:message>
+  <wsdl:message name="SaveSetsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSetsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSetDetailsForSetNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSetDetailsForSetName" />
+  </wsdl:message>
+  <wsdl:message name="GetSetDetailsForSetNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSetDetailsForSetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSetDetailsForSetNameAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSets" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSetsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoryItem" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoryItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryItemAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveSetDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveSetDetails" />
+  </wsdl:message>
+  <wsdl:message name="SaveSetDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveSetDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSetDetailsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveProvisionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveProvisions" />
+  </wsdl:message>
+  <wsdl:message name="SaveProvisionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveProvisionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveProvisionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadProvisionsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadProvisions" />
+  </wsdl:message>
+  <wsdl:message name="LoadProvisionsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadProvisionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadProvisionsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WSetDataSoap">
+    <wsdl:operation name="GetSetsForTName">
+      <wsdl:input message="tns:GetSetsForTNameSoapIn" />
+      <wsdl:output message="tns:GetSetsForTNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForTNameBranch">
+      <wsdl:input message="tns:GetSetsForTNameBranchSoapIn" />
+      <wsdl:output message="tns:GetSetsForTNameBranchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForTNameBranchAll">
+      <wsdl:input message="tns:GetSetsForTNameBranchAllSoapIn" />
+      <wsdl:output message="tns:GetSetsForTNameBranchAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSets">
+      <wsdl:input message="tns:SaveSetsSoapIn" />
+      <wsdl:output message="tns:SaveSetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSetDetailsForSetName">
+      <wsdl:input message="tns:GetSetDetailsForSetNameSoapIn" />
+      <wsdl:output message="tns:GetSetDetailsForSetNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSets">
+      <wsdl:input message="tns:GetSetsSoapIn" />
+      <wsdl:output message="tns:GetSetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryItem">
+      <wsdl:input message="tns:GetCategoryItemSoapIn" />
+      <wsdl:output message="tns:GetCategoryItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSetDetails">
+      <wsdl:input message="tns:SaveSetDetailsSoapIn" />
+      <wsdl:output message="tns:SaveSetDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProvisions">
+      <wsdl:input message="tns:SaveProvisionsSoapIn" />
+      <wsdl:output message="tns:SaveProvisionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadProvisions">
+      <wsdl:input message="tns:LoadProvisionsSoapIn" />
+      <wsdl:output message="tns:LoadProvisionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSetDataSoap" type="tns:WSetDataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSetsForTName">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSetsForTName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSetsForTNameAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForTNameBranch">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSetsForTNameBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSetsForTNameBranchAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForTNameBranchAll">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSetsForTNameBranchAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSetsForTNameBranchAllAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSets">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveSets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveSetsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetDetailsForSetName">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSetDetailsForSetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSetDetailsForSetNameAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSets">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSetsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryItem">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetCategoryItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCategoryItemAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSetDetails">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveSetDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveSetDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProvisions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveProvisions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveProvisionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadProvisions">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadProvisions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadProvisionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSetDataSoap12" type="tns:WSetDataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSetsForTName">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSetsForTName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSetsForTNameAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForTNameBranch">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSetsForTNameBranch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSetsForTNameBranchAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForTNameBranchAll">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSetsForTNameBranchAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSetsForTNameBranchAllAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSets">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveSets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveSetsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetDetailsForSetName">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSetDetailsForSetName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSetDetailsForSetNameAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSets">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSetsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryItem">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetCategoryItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCategoryItemAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSetDetails">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveSetDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveSetDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProvisions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveProvisions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveProvisionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadProvisions">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadProvisions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadProvisionsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSetData">
+    <wsdl:port name="WSetDataSoap" binding="tns:WSetDataSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WSetData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSetDataSoap12" binding="tns:WSetDataSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WSetData.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

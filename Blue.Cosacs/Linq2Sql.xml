@@ -1,0 +1,9837 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Database Name="Cosacs" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+	<!-- Tables -->
+	
+    <Table Name="dbo.Code" Member="Blue.Cosacs.Shared.Code">
+        <Type Name="Blue.Cosacs.Shared.Code">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[category]" Member="category" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[code]" Member="code" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[codedescript]" Member="codedescript" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[statusflag]" Member="statusflag" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[sortorder]" Member="sortorder" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reference]" Member="reference" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[additional]" Member="additional" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Additional2]" Member="Additional2" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CodeCat" Member="Blue.Cosacs.Shared.CodeCat">
+        <Type Name="Blue.Cosacs.Shared.CodeCat">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[category]" Member="category" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[catdescript]" Member="catdescript" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[codelgth]" Member="codelgth" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[forcenum]" Member="forcenum" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[forcenumdesc]" Member="forcenumdesc" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[usermaint]" Member="usermaint" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CodeHeaderText]" Member="CodeHeaderText" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DescriptionHeaderText]" Member="DescriptionHeaderText" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SortOrderHeaderText]" Member="SortOrderHeaderText" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReferenceHeaderText]" Member="ReferenceHeaderText" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AdditionalHeaderText]" Member="AdditionalHeaderText" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ToolTipText]" Member="ToolTipText" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Additional2HeaderText]" Member="Additional2HeaderText" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.AccountLocking" Member="Blue.Cosacs.Shared.AccountLocking">
+        <Type Name="Blue.Cosacs.Shared.AccountLocking">
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[lockedby]" Member="lockedby" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[lockedat]" Member="lockedat" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[lockcount]" Member="lockcount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CurrentAction]" Member="CurrentAction" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Acct" Member="Blue.Cosacs.Shared.Acct">
+        <Type Name="Blue.Cosacs.Shared.Acct">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[accttype]" Member="accttype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateacctopen]" Member="dateacctopen" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[creditdays]" Member="creditdays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrmttotal]" Member="agrmttotal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datelastpaid]" Member="datelastpaid" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[as400bal]" Member="as400bal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[outstbal]" Member="outstbal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[arrears]" Member="arrears" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[highststatus]" Member="highststatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[currstatus]" Member="currstatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[histatusdays]" Member="histatusdays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[paidpcent]" Member="paidpcent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[termstype]" Member="termstype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[repossarrears]" Member="repossarrears" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[repossvalue]" Member="repossvalue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateintoarrears]" Member="dateintoarrears" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[lastupdatedby]" Member="lastupdatedby" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Securitised]" Member="Securitised" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bdwbalance]" Member="bdwbalance" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bdwcharges]" Member="bdwcharges" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hasstocklineitems]" Member="hasstocklineitems" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MaxMonthsInArrears]" Member="MaxMonthsInArrears" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[tallyManAcct]" Member="tallyManAcct" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MonthsInArrears]" Member="MonthsInArrears" 
+					
+					IsDbGenerated="true" AutoSync="Always" UpdateCheck="Never" 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.acctnoctrl" Member="Blue.Cosacs.Shared.acctnoctrl">
+        <Type Name="Blue.Cosacs.Shared.acctnoctrl">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[acctcat]" Member="acctcat" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[acctcatdesc]" Member="acctcatdesc" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hiallocated]" Member="hiallocated" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hiallowed]" Member="hiallowed" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Branch" Member="Blue.Cosacs.Shared.Branch">
+        <Type Name="Blue.Cosacs.Shared.Branch">
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[branchname]" Member="branchname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchaddr1]" Member="branchaddr1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchaddr2]" Member="branchaddr2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchaddr3]" Member="branchaddr3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchpocode]" Member="branchpocode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[telno]" Member="telno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[servpcent]" Member="servpcent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[countrycode]" Member="countrycode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[croffno]" Member="croffno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[daterun]" Member="daterun" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[weekno]" Member="weekno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[oldpctype]" Member="oldpctype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[newpctype]" Member="newpctype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datepcchange]" Member="datepcchange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[batchctrlno]" Member="batchctrlno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hissn]" Member="hissn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hibuffno]" Member="hibuffno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[warehouseno]" Member="warehouseno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[as400exp]" Member="as400exp" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hirefno]" Member="hirefno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[as400branchno]" Member="as400branchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[codreceipt]" Member="codreceipt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[region]" Member="region" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[defaultdeposit]" Member="defaultdeposit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[depositscreenlocked]" Member="depositscreenlocked" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[servicelocation]" Member="servicelocation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[highpicklistno]" Member="highpicklistno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[warehouseregion]" Member="warehouseregion" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dotnetforwarehouse]" Member="dotnetforwarehouse" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hightranschedno]" Member="hightranschedno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StoreType]" Member="StoreType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreateRFAccounts]" Member="CreateRFAccounts" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreateCashAccounts]" Member="CreateCashAccounts" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreateHPAccounts]" Member="CreateHPAccounts" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ScoreHPbefore]" Member="ScoreHPbefore" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Fact2000BranchLetter]" Member="Fact2000BranchLetter" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hiExtInvoiceNo]" Member="hiExtInvoiceNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SRCashAndGoCustid]" Member="SRCashAndGoCustid" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ServiceRepairCentre]" Member="ServiceRepairCentre" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BehaviouralScoring]" Member="BehaviouralScoring" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ThirdPartyWarehouse]" Member="ThirdPartyWarehouse" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[defaultPrintLocation]" Member="defaultPrintLocation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreateStore]" Member="CreateStore" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashLoanBranch]" Member="CashLoanBranch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LuckyDollarStore]" Member="LuckyDollarStore" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AshleyStore]" Member="AshleyStore" 
+					
+					 
+					 
+					/>
+          
+        <Column Name="[RadioShackStore]" Member="RadioShackStore" 
+					
+					 
+					 
+					/>
+          
+        <Column Name="[DisplayType]" Member="DisplayType" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Agreement" Member="Blue.Cosacs.Shared.Agreement">
+        <Type Name="Blue.Cosacs.Shared.Agreement">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[dateagrmt]" Member="dateagrmt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenosale]" Member="empeenosale" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datedepchqclr]" Member="datedepchqclr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[holdmerch]" Member="holdmerch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[holdprop]" Member="holdprop" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datedel]" Member="datedel" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datenextdue]" Member="datenextdue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[oldagrmtbal]" Member="oldagrmtbal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cashprice]" Member="cashprice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[discount]" Member="discount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[pxallowed]" Member="pxallowed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[servicechg]" Member="servicechg" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[sdrychgtot]" Member="sdrychgtot" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrmttotal]" Member="agrmttotal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deposit]" Member="deposit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[codflag]" Member="codflag" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[soa]" Member="soa" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[paymethod]" Member="paymethod" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[unpaidflag]" Member="unpaidflag" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deliveryflag]" Member="deliveryflag" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[fulldelflag]" Member="fulldelflag" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PaymentMethod]" Member="PaymentMethod" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenoauth]" Member="empeenoauth" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateauth]" Member="dateauth" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenochange]" Member="empeenochange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datechange]" Member="datechange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AdminFee]" Member="AdminFee" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InsCharge]" Member="InsCharge" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datefullydelivered]" Member="datefullydelivered" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[createdby]" Member="createdby" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[paymentcardline]" Member="paymentcardline" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[paymentholidays]" Member="paymentholidays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AgreementPrinted]" Member="AgreementPrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TaxInvoicePrinted]" Member="TaxInvoicePrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyPrinted]" Member="WarrantyPrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[source]" Member="source" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TaxFree]" Member="TaxFree" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Bailaction" Member="Blue.Cosacs.Shared.Bailaction">
+        <Type Name="Blue.Cosacs.Shared.Bailaction">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[allocno]" Member="allocno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[actionno]" Member="actionno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[empeeno]" Member="empeeno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[dateadded]" Member="dateadded" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[code]" Member="code" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[actionvalue]" Member="actionvalue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datedue]" Member="datedue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[amtcommpaidon]" Member="amtcommpaidon" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[notes]" Member="notes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[addedby]" Member="addedby" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.BarCodeItem" Member="Blue.Cosacs.Shared.BarCodeItem">
+        <Type Name="Blue.Cosacs.Shared.BarCodeItem">
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[barcodeno]" Member="barcodeno" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CourtsPersonTable" Member="Blue.Cosacs.Shared.CourtsPersonTable">
+        <Type Name="Blue.Cosacs.Shared.CourtsPersonTable">
+			
+			<Column Name="[UserId]" Member="UserId" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[commndue]" Member="commndue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[alloccount]" Member="alloccount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[serialno]" Member="serialno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datelstaudit]" Member="datelstaudit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[maxrow]" Member="maxrow" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[lstcommn]" Member="lstcommn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[UpliftCommissionRate]" Member="UpliftCommissionRate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MinAccounts]" Member="MinAccounts" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MaxAccounts]" Member="MaxAccounts" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AllocationRank]" Member="AllocationRank" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RICashierCode]" Member="RICashierCode" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Customer" Member="Blue.Cosacs.Shared.Customer">
+        <Type Name="Blue.Cosacs.Shared.Customer">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custid]" Member="custid" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[otherid]" Member="otherid" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchnohdle]" Member="branchnohdle" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[name]" Member="name" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[firstname]" Member="firstname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[title]" Member="title" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[alias]" Member="alias" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[addrsort]" Member="addrsort" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[namesort]" Member="namesort" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateborn]" Member="dateborn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[sex]" Member="sex" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ethnicity]" Member="ethnicity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[morerewardsno]" Member="morerewardsno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[effectivedate]" Member="effectivedate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IdNumber]" Member="IdNumber" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IdType]" Member="IdType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[creditblocked]" Member="creditblocked" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RFCreditLimit]" Member="RFCreditLimit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RFCardSeqNo]" Member="RFCardSeqNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RFCardPrinted]" Member="RFCardPrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datelastscored]" Member="datelastscored" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RFDateReminded]" Member="RFDateReminded" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenochange]" Member="empeenochange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datechange]" Member="datechange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[maidenname]" Member="maidenname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OldRFCreditLimit]" Member="OldRFCreditLimit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LimitType]" Member="LimitType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AvailableSpend]" Member="AvailableSpend" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ScoringBand]" Member="ScoringBand" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InstantCredit]" Member="InstantCredit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StoreType]" Member="StoreType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LoanQualified]" Member="LoanQualified" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dependants]" Member="dependants" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[maritalstat]" Member="maritalstat" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Nationality]" Member="Nationality" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[recurringarrears]" Member="recurringarrears" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[age]" Member="age" 
+					
+					IsDbGenerated="true" AutoSync="Always" UpdateCheck="Never" 
+					 
+					/>
+			
+			<Column Name="[ScoreCardType]" Member="ScoreCardType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StoreCardApproved]" Member="StoreCardApproved" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StoreCardLimit]" Member="StoreCardLimit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StoreCardAvailable]" Member="StoreCardAvailable" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SCardApprovedDate]" Member="SCardApprovedDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashLoanBlocked]" Member="CashLoanBlocked" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashLoanNew]" Member="CashLoanNew" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashLoanRecent]" Member="CashLoanRecent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashLoanExisting]" Member="CashLoanExisting" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashLoanStaff]" Member="CashLoanStaff" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Id]" Member="Id" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ResieveSms]" Member="ResieveSms" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CustomerLocking" Member="Blue.Cosacs.Shared.CustomerLocking">
+        <Type Name="Blue.Cosacs.Shared.CustomerLocking">
+			
+			<Column Name="[CustID]" Member="CustID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[LockedBy]" Member="LockedBy" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[LockedAt]" Member="LockedAt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LockCount]" Member="LockCount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CurrentAction]" Member="CurrentAction" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CustAcct" Member="Blue.Cosacs.Shared.CustAcct">
+        <Type Name="Blue.Cosacs.Shared.CustAcct">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custid]" Member="custid" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[hldorjnt]" Member="hldorjnt" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CustAddress" Member="Blue.Cosacs.Shared.CustAddress">
+        <Type Name="Blue.Cosacs.Shared.CustAddress">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custid]" Member="custid" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[addtype]" Member="addtype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datein]" Member="datein" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cusaddr1]" Member="cusaddr1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cusaddr2]" Member="cusaddr2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cusaddr3]" Member="cusaddr3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cuspocode]" Member="cuspocode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custlocn]" Member="custlocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[resstatus]" Member="resstatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mthlyrent]" Member="mthlyrent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datemoved]" Member="datemoved" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hasstring]" Member="hasstring" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Email]" Member="Email" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PropType]" Member="PropType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenochange]" Member="empeenochange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datechange]" Member="datechange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Notes]" Member="Notes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deliveryarea]" Member="deliveryarea" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AddressID]" Member="AddressID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[zone]" Member="zone" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CustTel" Member="Blue.Cosacs.Shared.CustTel">
+        <Type Name="Blue.Cosacs.Shared.CustTel">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custid]" Member="custid" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[tellocn]" Member="tellocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateteladd]" Member="dateteladd" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datediscon]" Member="datediscon" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[telno]" Member="telno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[extnno]" Member="extnno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DialCode]" Member="DialCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenochange]" Member="empeenochange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datechange]" Member="datechange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CustTelId]" Member="CustTelId" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashierTotals" Member="Blue.Cosacs.Shared.CashierTotals">
+        <Type Name="Blue.Cosacs.Shared.CashierTotals">
+			
+			<Column Name="[id]" Member="id" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[datefrom]" Member="datefrom" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateto]" Member="dateto" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeeno]" Member="empeeno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[runno]" Member="runno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenoauth]" Member="empeenoauth" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[usertotal]" Member="usertotal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[systemtotal]" Member="systemtotal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[difference]" Member="difference" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deposittotal]" Member="deposittotal" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashierTotalsBreakdown" Member="Blue.Cosacs.Shared.CashierTotalsBreakdown">
+        <Type Name="Blue.Cosacs.Shared.CashierTotalsBreakdown">
+			
+			<Column Name="[cashiertotalid]" Member="cashiertotalid" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[paymethod]" Member="paymethod" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[systemtotal]" Member="systemtotal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[usertotal]" Member="usertotal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deposit]" Member="deposit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[difference]" Member="difference" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reason]" Member="reason" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[securitisedtotal]" Member="securitisedtotal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Payments]" Member="Payments" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Corrections]" Member="Corrections" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Refunds]" Member="Refunds" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PettyCash]" Member="PettyCash" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Remittances]" Member="Remittances" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Allocations]" Member="Allocations" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Disbursements]" Member="Disbursements" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[FintransId]" Member="FintransId" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashierTotalWriteOff" Member="Blue.Cosacs.Shared.CashierTotalWriteOff">
+        <Type Name="Blue.Cosacs.Shared.CashierTotalWriteOff">
+			
+			<Column Name="[RunNo]" Member="RunNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WriteOffDate]" Member="WriteOffDate" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Delivery" Member="Blue.Cosacs.Shared.Delivery">
+        <Type Name="Blue.Cosacs.Shared.Delivery">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[datedel]" Member="datedel" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[delorcoll]" Member="delorcoll" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stocklocn]" Member="stocklocn" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[quantity]" Member="quantity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[retitemno]" Member="retitemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[retstocklocn]" Member="retstocklocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[retval]" Member="retval" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[buffno]" Member="buffno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[buffbranchno]" Member="buffbranchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datetrans]" Member="datetrans" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transrefno]" Member="transrefno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transvalue]" Member="transvalue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[runno]" Member="runno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[contractno]" Member="contractno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ReplacementMarker]" Member="ReplacementMarker" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NotifiedBy]" Member="NotifiedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ftnotes]" Member="ftnotes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InvoiceLineNo]" Member="InvoiceLineNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ExtInvoice]" Member="ExtInvoice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ParentItemNo]" Member="ParentItemNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ParentItemID]" Member="ParentItemID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[RetItemID]" Member="RetItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BrokerExRunNo]" Member="BrokerExRunNo" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Instalplan" Member="Blue.Cosacs.Shared.Instalplan">
+        <Type Name="Blue.Cosacs.Shared.Instalplan">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datefirst]" Member="datefirst" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[instalno]" Member="instalno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[instalfreq]" Member="instalfreq" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datelast]" Member="datelast" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[instalamount]" Member="instalamount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[fininstalamt]" Member="fininstalamt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[instaltot]" Member="instaltot" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mthsintfree]" Member="mthsintfree" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenochange]" Member="empeenochange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dueday]" Member="dueday" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InstantCredit]" Member="InstantCredit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[scoringband]" Member="scoringband" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AutoDA]" Member="AutoDA" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InstalmentWaived]" Member="InstalmentWaived" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.InstantCreditFlag" Member="Blue.Cosacs.Shared.InstantCreditFlag">
+        <Type Name="Blue.Cosacs.Shared.InstantCreditFlag">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custid]" Member="custid" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[checktype]" Member="checktype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datecleared]" Member="datecleared" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenopflg]" Member="empeenopflg" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[unclearedby]" Member="unclearedby" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.FinTrans" Member="Blue.Cosacs.Shared.FinTrans">
+        <Type Name="Blue.Cosacs.Shared.FinTrans">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transrefno]" Member="transrefno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datetrans]" Member="datetrans" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transtypecode]" Member="transtypecode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeeno]" Member="empeeno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transupdated]" Member="transupdated" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transprinted]" Member="transprinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transvalue]" Member="transvalue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankcode]" Member="bankcode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankacctno]" Member="bankacctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[chequeno]" Member="chequeno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ftnotes]" Member="ftnotes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[paymethod]" Member="paymethod" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[runno]" Member="runno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[source]" Member="source" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ExportedToTallyman]" Member="ExportedToTallyman" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.FactTrans" Member="Blue.Cosacs.Shared.FactTrans">
+        <Type Name="Blue.Cosacs.Shared.FactTrans">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[buffno]" Member="buffno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stocklocn]" Member="stocklocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[trantype]" Member="trantype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[tccode]" Member="tccode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[trandate]" Member="trandate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[quantity]" Member="quantity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[price]" Member="price" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxamt]" Member="taxamt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[value]" Member="value" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Id]" Member="Id" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.NonStockDeletionDates" Member="Blue.Cosacs.Shared.NonStockDeletionDates">
+        <Type Name="Blue.Cosacs.Shared.NonStockDeletionDates">
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DeletionDate]" Member="DeletionDate" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Proposal" Member="Blue.Cosacs.Shared.Proposal">
+        <Type Name="Blue.Cosacs.Shared.Proposal">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custid]" Member="custid" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[dateprop]" Member="dateprop" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[origbranchno]" Member="origbranchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[sanctserno]" Member="sanctserno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenoprop]" Member="empeenoprop" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[maritalstat]" Member="maritalstat" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dependants]" Member="dependants" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[yrscuremplmt]" Member="yrscuremplmt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mthlyincome]" Member="mthlyincome" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[jobslstyrs]" Member="jobslstyrs" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[health]" Member="health" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[otherpmnts]" Member="otherpmnts" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[scorecardno]" Member="scorecardno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[points]" Member="points" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[propresult]" Member="propresult" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reason]" Member="reason" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[yrscurraddr]" Member="yrscurraddr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[yrsprevaddr]" Member="yrsprevaddr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankaccttype]" Member="bankaccttype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[yrsbankachld]" Member="yrsbankachld" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[propnotes]" Member="propnotes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hasstring]" Member="hasstring" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenochange]" Member="empeenochange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datechange]" Member="datechange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AddIncome]" Member="AddIncome" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AppStatus]" Member="AppStatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CCardNo1]" Member="CCardNo1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CCardNo2]" Member="CCardNo2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CCardNo3]" Member="CCardNo3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CCardNo4]" Member="CCardNo4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Commitments1]" Member="Commitments1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Commitments2]" Member="Commitments2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Commitments3]" Member="Commitments3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpAddr1]" Member="EmpAddr1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpAddr2]" Member="EmpAddr2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpCity]" Member="EmpCity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpDept]" Member="EmpDept" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpName]" Member="EmpName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Location]" Member="Location" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Nationality]" Member="Nationality" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NoOfRef]" Member="NoOfRef" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PEmpMM]" Member="PEmpMM" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PEmpYY]" Member="PEmpYY" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofAddress]" Member="ProofAddress" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofId]" Member="ProofId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofIncome]" Member="ProofIncome" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[S1Comment]" Member="S1Comment" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[S2Comment]" Member="S2Comment" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SpecialPromo]" Member="SpecialPromo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[A2MthlyIncome]" Member="A2MthlyIncome" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[A2AddIncome]" Member="A2AddIncome" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[A2MaritalStat]" Member="A2MaritalStat" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TransactIdNo]" Member="TransactIdNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PAddress1]" Member="PAddress1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PAddress2]" Member="PAddress2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PCity]" Member="PCity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PPostCode]" Member="PPostCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PAddYY]" Member="PAddYY" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PAddMM]" Member="PAddMM" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PResStatus]" Member="PResStatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[A2Relation]" Member="A2Relation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RFCategory]" Member="RFCategory" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpPostCode]" Member="EmpPostCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dctext1]" Member="dctext1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dctext2]" Member="dctext2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dctext3]" Member="dctext3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Notes]" Member="Notes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Bankruptcies]" Member="Bankruptcies" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TimeSinceLawsuit]" Member="TimeSinceLawsuit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NumberLawsuits]" Member="NumberLawsuits" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MobilePhone]" Member="MobilePhone" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[additionalexpenditure1]" Member="additionalexpenditure1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[additionalexpenditure2]" Member="additionalexpenditure2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PayFrequency]" Member="PayFrequency" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmploymentTelNo]" Member="EmploymentTelNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAccountNo]" Member="BankAccountNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAccountOpened]" Member="BankAccountOpened" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmploymentStatus]" Member="EmploymentStatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankCode]" Member="BankCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DatePEmpStart]" Member="DatePEmpStart" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Occupation]" Member="Occupation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateEmpStart]" Member="DateEmpStart" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmploymentDialCode]" Member="EmploymentDialCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[appnumber]" Member="appnumber" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[vehicleregistration]" Member="vehicleregistration" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SystemRecommendation]" Member="SystemRecommendation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ConvertedFromRF]" Member="ConvertedFromRF" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reason2]" Member="reason2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reason3]" Member="reason3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reason4]" Member="reason4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reason5]" Member="reason5" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[reason6]" Member="reason6" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ScoringBand]" Member="ScoringBand" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TransportType]" Member="TransportType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EducationLevel]" Member="EducationLevel" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DistanceFromStore]" Member="DistanceFromStore" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Industry]" Member="Industry" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[JobTitle]" Member="JobTitle" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Organisation]" Member="Organisation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ScorexExtract]" Member="ScorexExtract" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[scorecard]" Member="scorecard" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofOfBank]" Member="ProofOfBank" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofOfBankTxt]" Member="ProofOfBankTxt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateCurrAddress]" Member="DateCurrAddress" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CurrentResStatus]" Member="CurrentResStatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PropertyType]" Member="PropertyType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreditPercentUplift]" Member="CreditPercentUplift" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PurchaseCashLoan]" Member="PurchaseCashLoan" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.ProposalFlag" Member="Blue.Cosacs.Shared.ProposalFlag">
+        <Type Name="Blue.Cosacs.Shared.ProposalFlag">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[custid]" Member="custid" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[dateprop]" Member="dateprop" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[checktype]" Member="checktype" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[datecleared]" Member="datecleared" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenopflg]" Member="empeenopflg" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[unclearedby]" Member="unclearedby" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Acctno]" Member="Acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.LineItem" Member="Blue.Cosacs.Shared.LineItem">
+        <Type Name="Blue.Cosacs.Shared.LineItem">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemsupptext]" Member="itemsupptext" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[quantity]" Member="quantity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[delqty]" Member="delqty" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stocklocn]" Member="stocklocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[price]" Member="price" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ordval]" Member="ordval" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datereqdel]" Member="datereqdel" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[timereqdel]" Member="timereqdel" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateplandel]" Member="dateplandel" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[delnotebranch]" Member="delnotebranch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[qtydiff]" Member="qtydiff" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemtype]" Member="itemtype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[notes]" Member="notes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxamt]" Member="taxamt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[isKit]" Member="isKit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deliveryaddress]" Member="deliveryaddress" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[parentitemno]" Member="parentitemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[parentlocation]" Member="parentlocation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[contractno]" Member="contractno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[expectedreturndate]" Member="expectedreturndate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deliveryprocess]" Member="deliveryprocess" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deliveryarea]" Member="deliveryarea" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DeliveryPrinted]" Member="DeliveryPrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[assemblyrequired]" Member="assemblyrequired" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[damaged]" Member="damaged" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OrderNo]" Member="OrderNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Orderlineno]" Member="Orderlineno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PrintOrder]" Member="PrintOrder" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxrate]" Member="taxrate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ParentItemID]" Member="ParentItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SalesBrnNo]" Member="SalesBrnNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Express]" Member="Express" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyGroupId]" Member="WarrantyGroupId" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.ReadyAssistDetails" Member="Blue.Cosacs.Shared.ReadyAssistDetails">
+        <Type Name="Blue.Cosacs.Shared.ReadyAssistDetails">
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[AgrmtNo]" Member="AgrmtNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[RAContractDate]" Member="RAContractDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RATermLength]" Member="RATermLength" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemId]" Member="ItemId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ContractNo]" Member="ContractNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Status]" Member="Status" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[UnusedPortion]" Member="UnusedPortion" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Schedule" Member="Blue.Cosacs.Shared.Schedule">
+        <Type Name="Blue.Cosacs.Shared.Schedule">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[datedelplan]" Member="datedelplan" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[delorcoll]" Member="delorcoll" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stocklocn]" Member="stocklocn" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[quantity]" Member="quantity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[retstocklocn]" Member="retstocklocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[retitemno]" Member="retitemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[retval]" Member="retval" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[vanno]" Member="vanno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[buffbranchno]" Member="buffbranchno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[buffno]" Member="buffno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[loadno]" Member="loadno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateprinted]" Member="dateprinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[printedby]" Member="printedby" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Picklistnumber]" Member="Picklistnumber" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[undeliveredflag]" Member="undeliveredflag" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datePicklistPrinted]" Member="datePicklistPrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[picklistbranchnumber]" Member="picklistbranchnumber" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[contractno]" Member="contractno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[transchedno]" Member="transchedno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transchednobranch]" Member="transchednobranch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datetranschednoprinted]" Member="datetranschednoprinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OrigBuffno]" Member="OrigBuffno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RunnoImport]" Member="RunnoImport" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Sequence]" Member="Sequence" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[runNo]" Member="runNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DHLPickingDate]" Member="DHLPickingDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[consignmentNoteNo]" Member="consignmentNoteNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deliveryLineNo]" Member="deliveryLineNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DHLDNNo]" Member="DHLDNNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreatedBy]" Member="CreatedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateCreated]" Member="DateCreated" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[GRTnotes]" Member="GRTnotes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[RetItemID]" Member="RetItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ParentItemID]" Member="ParentItemID" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Sets" Member="Blue.Cosacs.Shared.Sets">
+        <Type Name="Blue.Cosacs.Shared.Sets">
+			
+			<Column Name="[setname]" Member="setname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeeno]" Member="empeeno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[tname]" Member="tname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateamend]" Member="dateamend" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[columntype]" Member="columntype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[setdescript]" Member="setdescript" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Value]" Member="Value" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Status" Member="Blue.Cosacs.Shared.Status">
+        <Type Name="Blue.Cosacs.Shared.Status">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datestatchge]" Member="datestatchge" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenostat]" Member="empeenostat" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[statuscode]" Member="statuscode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DaysInStatus]" Member="DaysInStatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CurrentStatus]" Member="CurrentStatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StockInfo" Member="Blue.Cosacs.Shared.StockInfo">
+        <Type Name="Blue.Cosacs.Shared.StockInfo">
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemdescr1]" Member="itemdescr1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemdescr2]" Member="itemdescr2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[category]" Member="category" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Supplier]" Member="Supplier" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[prodstatus]" Member="prodstatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[suppliercode]" Member="suppliercode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[warrantable]" Member="warrantable" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemtype]" Member="itemtype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[warrantyrenewalflag]" Member="warrantyrenewalflag" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[leadtime]" Member="leadtime" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[assemblyrequired]" Member="assemblyrequired" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxrate]" Member="taxrate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SKU]" Member="SKU" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IUPC]" Member="IUPC" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Class]" Member="Class" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SubClass]" Member="SubClass" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ColourName]" Member="ColourName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ColourCode]" Member="ColourCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[QtyBoxes]" Member="QtyBoxes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyLength]" Member="WarrantyLength" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[VendorWarranty]" Member="VendorWarranty" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Brand]" Member="Brand" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[VendorStyle]" Member="VendorStyle" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[VendorLongStyle]" Member="VendorLongStyle" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[VendorEAN]" Member="VendorEAN" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RepossessedItem]" Member="RepossessedItem" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemPOSDescr]" Member="ItemPOSDescr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SparePart]" Member="SparePart" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OnlineAvailable]" Member="OnlineAvailable" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OnlineDateAdded]" Member="OnlineDateAdded" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OnlineDateRemoved]" Member="OnlineDateRemoved" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OnlineDConly]" Member="OnlineDConly" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Id]" Member="Id" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[WarrantyType]" Member="WarrantyType" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StockPrice" Member="Blue.Cosacs.Shared.StockPrice">
+        <Type Name="Blue.Cosacs.Shared.StockPrice">
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[branchno]" Member="branchno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CreditPrice]" Member="CreditPrice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashPrice]" Member="CashPrice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DutyFreePrice]" Member="DutyFreePrice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CostPrice]" Member="CostPrice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Refcode]" Member="Refcode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateActivated]" Member="DateActivated" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ID]" Member="ID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StockQuantity" Member="Blue.Cosacs.Shared.StockQuantity">
+        <Type Name="Blue.Cosacs.Shared.StockQuantity">
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stocklocn]" Member="stocklocn" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[qtyAvailable]" Member="qtyAvailable" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stock]" Member="stock" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stockonorder]" Member="stockonorder" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[stockdamage]" Member="stockdamage" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[leadtime]" Member="leadtime" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateupdated]" Member="dateupdated" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastOperationSource]" Member="LastOperationSource" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deleted]" Member="deleted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ID]" Member="ID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCard" Member="Blue.Cosacs.Shared.StoreCard">
+        <Type Name="Blue.Cosacs.Shared.StoreCard">
+			
+			<Column Name="[CardNumber]" Member="CardNumber" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CardName]" Member="CardName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IssueYear]" Member="IssueYear" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IssueMonth]" Member="IssueMonth" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ExpirationYear]" Member="ExpirationYear" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ExpirationMonth]" Member="ExpirationMonth" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ExportRunNo]" Member="ExportRunNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofAddress]" Member="ProofAddress" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofAddNotes]" Member="ProofAddNotes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofID]" Member="ProofID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ProofIDNotes]" Member="ProofIDNotes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SecurityQ]" Member="SecurityQ" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SecurityA]" Member="SecurityA" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CustID]" Member="CustID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Source]" Member="Source" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCardBranchQualRules" Member="Blue.Cosacs.Shared.StoreCardBranchQualRules">
+        <Type Name="Blue.Cosacs.Shared.StoreCardBranchQualRules">
+			
+			<Column Name="[BranchNo]" Member="BranchNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[MinApplicationScore]" Member="MinApplicationScore" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MinBehaviouralScore]" Member="MinBehaviouralScore" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MinMthsAcctHistX]" Member="MinMthsAcctHistX" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MaxCurrMthsInArrs]" Member="MaxCurrMthsInArrs" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MaxPrevMthsInArrsX]" Member="MaxPrevMthsInArrsX" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PcentInitRFLimit]" Member="PcentInitRFLimit" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeenoChange]" Member="EmpeenoChange" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateChanged]" Member="DateChanged" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MinMthsAcctHistY]" Member="MinMthsAcctHistY" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MaxPrevMthsInArrsY]" Member="MaxPrevMthsInArrsY" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MaxNoCustForApproval]" Member="MaxNoCustForApproval" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StorecardPaymentDetails" Member="Blue.Cosacs.Shared.StorecardPaymentDetails">
+        <Type Name="Blue.Cosacs.Shared.StorecardPaymentDetails">
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[MonthlyAmount]" Member="MonthlyAmount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PaymentMethod]" Member="PaymentMethod" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PaymentOption]" Member="PaymentOption" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RateId]" Member="RateId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InterestRate]" Member="InterestRate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RateFixed]" Member="RateFixed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StatementFrequency]" Member="StatementFrequency" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateLastStatementPrinted]" Member="DateLastStatementPrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DatePaymentDue]" Member="DatePaymentDue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NoStatements]" Member="NoStatements" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ContactMethod]" Member="ContactMethod" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateNotePrinted]" Member="DateNotePrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Status]" Member="Status" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NextContactDate]" Member="NextContactDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastUpdatedBy]" Member="LastUpdatedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastInterestDate]" Member="LastInterestDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MinimumPayment]" Member="MinimumPayment" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[FirstStatementDate]" Member="FirstStatementDate" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCardRateDetails" Member="Blue.Cosacs.Shared.StoreCardRateDetails">
+        <Type Name="Blue.Cosacs.Shared.StoreCardRateDetails">
+			
+			<Column Name="[Id]" Member="Id" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ParentID]" Member="ParentID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AppScoreFrom]" Member="AppScoreFrom" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AppScoreTo]" Member="AppScoreTo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PurchaseInterestRate]" Member="PurchaseInterestRate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BehaveScoreFrom]" Member="BehaveScoreFrom" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BehaveScoreTo]" Member="BehaveScoreTo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreditLimitPercent]" Member="CreditLimitPercent" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCardStatement" Member="Blue.Cosacs.Shared.StoreCardStatement">
+        <Type Name="Blue.Cosacs.Shared.StoreCardStatement">
+			
+			<Column Name="[Id]" Member="Id" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CustID]" Member="CustID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Acctno]" Member="Acctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateFrom]" Member="DateFrom" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateTo]" Member="DateTo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DatePrinted]" Member="DatePrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateLastReprinted]" Member="DateLastReprinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReprintedBy]" Member="ReprintedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StmtMinPayment]" Member="StmtMinPayment" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PrevStmtMinPayment]" Member="PrevStmtMinPayment" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DatePaymentDue]" Member="DatePaymentDue" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RunNo]" Member="RunNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BatchNo]" Member="BatchNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ManualDatePrinted]" Member="ManualDatePrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InterestCalculatedDate]" Member="InterestCalculatedDate" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCardRate" Member="Blue.Cosacs.Shared.StoreCardRate">
+        <Type Name="Blue.Cosacs.Shared.StoreCardRate">
+			
+			<Column Name="[Id]" Member="Id" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[$Version]" Member="Version" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[$IsDeleted]" Member="IsDeleted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Name]" Member="Name" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RateFixed]" Member="RateFixed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IsDefaultRate]" Member="IsDefaultRate" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCardStatus" Member="Blue.Cosacs.Shared.StoreCardStatus">
+        <Type Name="Blue.Cosacs.Shared.StoreCardStatus">
+			
+			<Column Name="[CardNumber]" Member="CardNumber" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[DateChanged]" Member="DateChanged" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[StatusCode]" Member="StatusCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeeNo]" Member="EmpeeNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BranchNo]" Member="BranchNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Notes]" Member="Notes" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.SR_CustomerInteraction" Member="Blue.Cosacs.Shared.SR_CustomerInteraction">
+        <Type Name="Blue.Cosacs.Shared.SR_CustomerInteraction">
+			
+			<Column Name="[CustomerId]" Member="CustomerId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Date]" Member="Date" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Code]" Member="Code" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeeNo]" Member="EmpeeNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ServiceRequestNo]" Member="ServiceRequestNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Comments]" Member="Comments" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.SR_TechnicianDiary" Member="Blue.Cosacs.Shared.SR_TechnicianDiary">
+        <Type Name="Blue.Cosacs.Shared.SR_TechnicianDiary">
+			
+			<Column Name="[TechnicianId]" Member="TechnicianId" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[SlotDate]" Member="SlotDate" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[SlotNo]" Member="SlotNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[BookingType]" Member="BookingType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ServiceRequestNo]" Member="ServiceRequestNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InstallationNo]" Member="InstallationNo" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.SR_Technician" Member="Blue.Cosacs.Shared.SR_Technician">
+        <Type Name="Blue.Cosacs.Shared.SR_Technician">
+			
+			<Column Name="[TechnicianId]" Member="TechnicianId" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Title]" Member="Title" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[FirstName]" Member="FirstName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastName]" Member="LastName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Address1]" Member="Address1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Address2]" Member="Address2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Address3]" Member="Address3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AddressPC]" Member="AddressPC" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PhoneNo]" Member="PhoneNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[MobileNo]" Member="MobileNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Internal]" Member="Internal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[HoursFrom]" Member="HoursFrom" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[HoursTo]" Member="HoursTo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CallsPerDay]" Member="CallsPerDay" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Deleted]" Member="Deleted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Comments]" Member="Comments" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.SR_Zone" Member="Blue.Cosacs.Shared.SR_Zone">
+        <Type Name="Blue.Cosacs.Shared.SR_Zone">
+			
+			<Column Name="[TechnicianId]" Member="TechnicianId" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Code]" Member="Code" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.SR_ChargeAcct" Member="Blue.Cosacs.Shared.SR_ChargeAcct">
+        <Type Name="Blue.Cosacs.Shared.SR_ChargeAcct">
+			
+			<Column Name="[ServiceRequestNo]" Member="ServiceRequestNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ChargeType]" Member="ChargeType" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.SundChgTyp" Member="Blue.Cosacs.Shared.SundChgTyp">
+        <Type Name="Blue.Cosacs.Shared.SundChgTyp">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[chargecode]" Member="chargecode" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[accttype]" Member="accttype" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[amount]" Member="amount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Installation" Member="Blue.Cosacs.Shared.Installation">
+        <Type Name="Blue.Cosacs.Shared.Installation">
+			
+			<Column Name="[InstallationNo]" Member="InstallationNo" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[BranchNo]" Member="BranchNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AgreementNo]" Member="AgreementNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StockLocation]" Member="StockLocation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InstallationDate]" Member="InstallationDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Status]" Member="Status" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreatedBy]" Member="CreatedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastUpdatedBy]" Member="LastUpdatedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreatedOn]" Member="CreatedOn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastUpdatedOn]" Member="LastUpdatedOn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Comment]" Member="Comment" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemId]" Member="ItemId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemNo]" Member="ItemNo" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.InstallationBooking" Member="Blue.Cosacs.Shared.InstallationBooking">
+        <Type Name="Blue.Cosacs.Shared.InstallationBooking">
+			
+			<Column Name="[InstallationNo]" Member="InstallationNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[InstallationDate]" Member="InstallationDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TechnicianId]" Member="TechnicianId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StartSlot]" Member="StartSlot" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NoOfSlots]" Member="NoOfSlots" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Instructions]" Member="Instructions" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BookedBy]" Member="BookedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BookedOn]" Member="BookedOn" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[RebookingReasonCode]" Member="RebookingReasonCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IsDeleted]" Member="IsDeleted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DeletedBy]" Member="DeletedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DeletedOn]" Member="DeletedOn" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.InstallationChargeAnalysis" Member="Blue.Cosacs.Shared.InstallationChargeAnalysis">
+        <Type Name="Blue.Cosacs.Shared.InstallationChargeAnalysis">
+			
+			<Column Name="[InstallationNo]" Member="InstallationNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[BreakDownCode]" Member="BreakDownCode" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Electrical]" Member="Electrical" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Furniture]" Member="Furniture" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.InstallationResolution" Member="Blue.Cosacs.Shared.InstallationResolution">
+        <Type Name="Blue.Cosacs.Shared.InstallationResolution">
+			
+			<Column Name="[InstallationNo]" Member="InstallationNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[PrimaryChargeTo]" Member="PrimaryChargeTo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AdditionalCost]" Member="AdditionalCost" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LabourCost]" Member="LabourCost" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NonCourtsPartCost]" Member="NonCourtsPartCost" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CourtsPartCost]" Member="CourtsPartCost" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TotalCost]" Member="TotalCost" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[IsCompleted]" Member="IsCompleted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreatedBy]" Member="CreatedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreatedOn]" Member="CreatedOn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastUpdatedBy]" Member="LastUpdatedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastUpdatedOn]" Member="LastUpdatedOn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AuthorisedBy]" Member="AuthorisedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AuthorisedOn]" Member="AuthorisedOn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[$RowVersion]" Member="RowVersion" 
+					
+					 
+					 
+					IsDbGenerated="true" IsVersion="true" AutoSync="Always"/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.InstallationSparePart" Member="Blue.Cosacs.Shared.InstallationSparePart">
+        <Type Name="Blue.Cosacs.Shared.InstallationSparePart">
+			
+			<Column Name="[InstallationNo]" Member="InstallationNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[PartNo]" Member="PartNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[StockLocation]" Member="StockLocation" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[IsNonCourts]" Member="IsNonCourts" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Description]" Member="Description" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[UnitPrice]" Member="UnitPrice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Quantity]" Member="Quantity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Total]" Member="Total" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PartID]" Member="PartID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.EodConfigurationOption" Member="Blue.Cosacs.Shared.EodConfigurationOption">
+        <Type Name="Blue.Cosacs.Shared.EodConfigurationOption">
+			
+			<Column Name="[ConfigurationName]" Member="ConfigurationName" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[OptionCode]" Member="OptionCode" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CurrentStep]" Member="CurrentStep" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TotalSteps]" Member="TotalSteps" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LastEditBy]" Member="LastEditBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[SortOrder]" Member="SortOrder" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Status]" Member="Status" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CanReRun]" Member="CanReRun" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReRunNo]" Member="ReRunNo" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.InterfaceControl" Member="Blue.Cosacs.Shared.InterfaceControl">
+        <Type Name="Blue.Cosacs.Shared.InterfaceControl">
+			
+			<Column Name="[Interface]" Member="Interface" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[RunNo]" Member="RunNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[DateStart]" Member="DateStart" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[DateFinish]" Member="DateFinish" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Result]" Member="Result" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StageCompleted]" Member="StageCompleted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[FileName]" Member="FileName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReRunTimes]" Member="ReRunTimes" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CountryMaintenance" Member="Blue.Cosacs.Shared.CountryMaintenance">
+        <Type Name="Blue.Cosacs.Shared.CountryMaintenance">
+			
+			<Column Name="[ParameterID]" Member="ParameterID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CountryCode]" Member="CountryCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ParameterCategory]" Member="ParameterCategory" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Name]" Member="Name" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Value]" Member="Value" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Type]" Member="Type" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Precision]" Member="Precision" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OptionCategory]" Member="OptionCategory" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OptionListName]" Member="OptionListName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Description]" Member="Description" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CodeName]" Member="CodeName" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Country" Member="Blue.Cosacs.Shared.Country">
+        <Type Name="Blue.Cosacs.Shared.Country">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[countrycode]" Member="countrycode" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[countryname]" Member="countryname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hobranchno]" Member="hobranchno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cheqdays]" Member="cheqdays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[letterdays]" Member="letterdays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[letterporw]" Member="letterporw" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxtype]" Member="taxtype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxrate]" Member="taxrate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxname]" Member="taxname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[servpcent]" Member="servpcent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[daterun]" Member="daterun" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateweek1]" Member="dateweek1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[weekno]" Member="weekno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[batchctrlno]" Member="batchctrlno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bailfee]" Member="bailfee" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bailpcent]" Member="bailpcent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[rcptsperbook]" Member="rcptsperbook" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[weeklst400]" Member="weeklst400" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[taxinvtype]" Member="taxinvtype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrmttaxtype]" Member="agrmttaxtype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datelastscor]" Member="datelastscor" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[minhpage]" Member="minhpage" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[maxhpage]" Member="maxhpage" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datelastcalc]" Member="datelastcalc" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dailyexport]" Member="dailyexport" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[globdelpcent]" Member="globdelpcent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[onemonthdel]" Member="onemonthdel" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deldays]" Member="deldays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[arrearsonpay]" Member="arrearsonpay" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[systemopen]" Member="systemopen" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[timing]" Member="timing" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[addtomin]" Member="addtomin" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[addtoterm]" Member="addtoterm" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[adminfee]" Member="adminfee" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[autodownsc5]" Member="autodownsc5" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cashintrate]" Member="cashintrate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datechargesstart]" Member="datechargesstart" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[lastchargesweekno]" Member="lastchargesweekno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[lastyrlastweekno]" Member="lastyrlastweekno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[lettersgap]" Member="lettersgap" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[percentaddto1]" Member="percentaddto1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[percentaddto2]" Member="percentaddto2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[percentaddto3]" Member="percentaddto3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[smallbalance]" Member="smallbalance" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dutyfree]" Member="dutyfree" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[highstatus]" Member="highstatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[loyaltycard]" Member="loyaltycard" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[locktimeout]" Member="locktimeout" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[rebpcent]" Member="rebpcent" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[minperiod]" Member="minperiod" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddleadtime]" Member="ddleadtime" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddfee]" Member="ddfee" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddenabled]" Member="ddenabled" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddbankacctno]" Member="ddbankacctno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deliveryslots]" Member="deliveryslots" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[defdelnotebranch]" Member="defdelnotebranch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[paymentmethod]" Member="paymentmethod" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[nocents]" Member="nocents" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrgprint]" Member="agrgprint" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrtimeprint]" Member="agrtimeprint" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[print90]" Member="print90" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[serviceprint]" Member="serviceprint" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddgenno]" Member="ddgenno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddservicetype]" Member="ddservicetype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddidcodefrom]" Member="ddidcodefrom" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddidcodeto]" Member="ddidcodeto" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddbankbranch]" Member="ddbankbranch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddbankacctname]" Member="ddbankacctname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddbankaccttype]" Member="ddbankaccttype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddtest]" Member="ddtest" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[varstamp]" Member="varstamp" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[notaxcopies]" Member="notaxcopies" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[noagrcopies]" Member="noagrcopies" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrprinttype]" Member="agrprinttype" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddmaxrejections]" Member="ddmaxrejections" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ddfeeoverride]" Member="ddfeeoverride" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[fixeddatefirst]" Member="fixeddatefirst" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transactenabled]" Member="transactenabled" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transacturl]" Member="transacturl" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mandatoryresstatus]" Member="mandatoryresstatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[affinityipt]" Member="affinityipt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[warrantydays]" Member="warrantydays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[noninterestitem]" Member="noninterestitem" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[percenttopay]" Member="percenttopay" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mandwarrantyno]" Member="mandwarrantyno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[printextraname]" Member="printextraname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[systemdrive]" Member="systemdrive" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[sanctionminyears]" Member="sanctionminyears" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[hasbarcodes]" Member="hasbarcodes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AdminItemNo]" Member="AdminItemNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[InsItemNo]" Member="InsItemNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[paywholeunits]" Member="paywholeunits" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bcommissionequalsfee]" Member="bcommissionequalsfee" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[serviceprintdp]" Member="serviceprintdp" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[allowzerostock]" Member="allowzerostock" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[coddefault]" Member="coddefault" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[decimalplaces]" Member="decimalplaces" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[isunicode]" Member="isunicode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ManualRefer]" Member="ManualRefer" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LaserPrintTax]" Member="LaserPrintTax" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[printwarrantycontract]" Member="printwarrantycontract" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[codpercentage]" Member="codpercentage" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[netcashandgo]" Member="netcashandgo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[printcreditnote]" Member="printcreditnote" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DefaultDelDays]" Member="DefaultDelDays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyCustCopy]" Member="WarrantyCustCopy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyCreditCopy]" Member="WarrantyCreditCopy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyHOCopy]" Member="WarrantyHOCopy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[securitisation]" Member="securitisation" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NoRFsummary]" Member="NoRFsummary" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[NoRFdetails]" Member="NoRFdetails" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CreditScanInterval]" Member="CreditScanInterval" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[secureRefunds]" Member="secureRefunds" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[maxRFIncomeRatio]" Member="maxRFIncomeRatio" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[warrantystylesheet]" Member="warrantystylesheet" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[creditwarrantyDays]" Member="creditwarrantyDays" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[creditwarrantyGrace]" Member="creditwarrantyGrace" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CWitemno]" Member="CWitemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[creditwarrantyreminder]" Member="creditwarrantyreminder" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[giftvoucheraccount]" Member="giftvoucheraccount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[defaultvoucherexpiry]" Member="defaultvoucherexpiry" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[copyreferences]" Member="copyreferences" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[minreferences]" Member="minreferences" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[printscheduleofpayments]" Member="printscheduleofpayments" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CancellationCode]" Member="CancellationCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PrintToolBar]" Member="PrintToolBar" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mthsarrears]" Member="mthsarrears" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mthsreposs]" Member="mthsreposs" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankrupt]" Member="bankrupt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[mthsstatus]" Member="mthsstatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[allowsafedeposits]" Member="allowsafedeposits" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[debitcardselectronic]" Member="debitcardselectronic" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[creditcardselectronic]" Member="creditcardselectronic" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[creditcardsconsolidated]" Member="creditcardsconsolidated" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[debitcardsconsolidated]" Member="debitcardsconsolidated" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[blockcreditmonths]" Member="blockcreditmonths" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[cancellationnotes]" Member="cancellationnotes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[tmlink]" Member="tmlink" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[HiExtReceiptNo]" Member="HiExtReceiptNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ISOCountryCode]" Member="ISOCountryCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RIFileTransfer]" Member="RIFileTransfer" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.WTRDates" Member="Blue.Cosacs.Shared.WTRDates">
+        <Type Name="Blue.Cosacs.Shared.WTRDates">
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[DtStartCY1]" Member="DtStartCY1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndCY1]" Member="DtEndCY1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartLY1]" Member="DtStartLY1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndLY1]" Member="DtEndLY1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtActive1]" Member="DtActive1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtFilename1]" Member="DtFilename1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartCY2]" Member="DtStartCY2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndCY2]" Member="DtEndCY2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartLY2]" Member="DtStartLY2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndLY2]" Member="DtEndLY2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtActive2]" Member="DtActive2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtFilename2]" Member="DtFilename2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartCY3]" Member="DtStartCY3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndCY3]" Member="DtEndCY3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartLY3]" Member="DtStartLY3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndLY3]" Member="DtEndLY3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtActive3]" Member="DtActive3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtFilename3]" Member="DtFilename3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartCY4]" Member="DtStartCY4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndCY4]" Member="DtEndCY4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartLY4]" Member="DtStartLY4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndLY4]" Member="DtEndLY4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtActive4]" Member="DtActive4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtFilename4]" Member="DtFilename4" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartCY5]" Member="DtStartCY5" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndCY5]" Member="DtEndCY5" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtStartLY5]" Member="DtStartLY5" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtEndLY5]" Member="DtEndLY5" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtActive5]" Member="DtActive5" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DtFilename5]" Member="DtFilename5" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashLoan" Member="Blue.Cosacs.Shared.CashLoan">
+        <Type Name="Blue.Cosacs.Shared.CashLoan">
+			
+			<Column Name="[Custid]" Member="Custid" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[LoanAmount]" Member="LoanAmount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Term]" Member="Term" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LoanStatus]" Member="LoanStatus" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TermsType]" Member="TermsType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeenoAccept]" Member="EmpeenoAccept" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeenoDisburse]" Member="EmpeenoDisburse" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DatePrinted]" Member="DatePrinted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReferralReasons]" Member="ReferralReasons" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashLoanPurpose]" Member="CashLoanPurpose" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AdminChargeWaived]" Member="AdminChargeWaived" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AdminCharge]" Member="AdminCharge" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeenoAdminChargeWaived]" Member="EmpeenoAdminChargeWaived" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeenoLoanAmountChanged]" Member="EmpeenoLoanAmountChanged" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Bank]" Member="Bank" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAccountType]" Member="BankAccountType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankBranch]" Member="BankBranch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAcctNo]" Member="BankAcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Notes]" Member="Notes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankReferenceNo]" Member="BankReferenceNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAccountName]" Member="BankAccountName" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Finxfr" Member="Blue.Cosacs.Shared.Finxfr">
+        <Type Name="Blue.Cosacs.Shared.Finxfr">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctno]" Member="acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[transrefno]" Member="transrefno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[datetrans]" Member="datetrans" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[acctnoxfr]" Member="acctnoxfr" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[acctname]" Member="acctname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[agrmtno]" Member="agrmtno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[storecardno]" Member="storecardno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OrigTransRefNo]" Member="OrigTransRefNo" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.ExchangeRate" Member="Blue.Cosacs.Shared.ExchangeRate">
+        <Type Name="Blue.Cosacs.Shared.ExchangeRate">
+			
+			<Column Name="[RateId]" Member="RateId" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Currency]" Member="Currency" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateFrom]" Member="DateFrom" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Rate]" Member="Rate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EmpeeNo]" Member="EmpeeNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Status]" Member="Status" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashAndGoReceipt" Member="Blue.Cosacs.Shared.CashAndGoReceipt">
+        <Type Name="Blue.Cosacs.Shared.CashAndGoReceipt">
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AgrmtNo]" Member="AgrmtNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[TaxExempt]" Member="TaxExempt" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Change]" Member="Change" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CashierEmpeeNo]" Member="CashierEmpeeNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PayMethod]" Member="PayMethod" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.LineItemBooking" Member="Blue.Cosacs.Shared.LineItemBooking">
+        <Type Name="Blue.Cosacs.Shared.LineItemBooking">
+			
+			<Column Name="[ID]" Member="ID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[LineItemID]" Member="LineItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Quantity]" Member="Quantity" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.LineItemBookingFailures" Member="Blue.Cosacs.Shared.LineItemBookingFailures">
+        <Type Name="Blue.Cosacs.Shared.LineItemBookingFailures">
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[BookingID]" Member="BookingID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[OriginalBookingID]" Member="OriginalBookingID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Quantity]" Member="Quantity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CancelReason]" Member="CancelReason" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Actioned]" Member="Actioned" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.LineItemBookingSchedule" Member="Blue.Cosacs.Shared.LineItemBookingSchedule">
+        <Type Name="Blue.Cosacs.Shared.LineItemBookingSchedule">
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[LineItemID]" Member="LineItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DelOrColl]" Member="DelOrColl" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RetItemID]" Member="RetItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RetVal]" Member="RetVal" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RetStockLocn]" Member="RetStockLocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BookingId]" Member="BookingId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Quantity]" Member="Quantity" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StockLocn]" Member="StockLocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Price]" Member="Price" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[RepUnitPrice]" Member="RepUnitPrice" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.SR_Summary" Member="Blue.Cosacs.Shared.SR_Summary">
+        <Type Name="Blue.Cosacs.Shared.SR_Summary">
+			
+			<Column Name="[Acctno]" Member="Acctno" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ServiceRequestNo]" Member="ServiceRequestNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ItemId]" Member="ItemId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateLogged]" Member="DateLogged" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DateClosed]" Member="DateClosed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StockLocn]" Member="StockLocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Branch]" Member="Branch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReplacementIssued]" Member="ReplacementIssued" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReplacementActioned]" Member="ReplacementActioned" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BookingId]" Member="BookingId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReplacementDate]" Member="ReplacementDate" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.ServiceChargeAcct" Member="Blue.Cosacs.Shared.ServiceChargeAcct">
+        <Type Name="Blue.Cosacs.Shared.ServiceChargeAcct">
+			
+			<Column Name="[Id]" Member="Id" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ServiceRequestNo]" Member="ServiceRequestNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ChargeType]" Member="ChargeType" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Exchange" Member="Blue.Cosacs.Shared.Exchange">
+        <Type Name="Blue.Cosacs.Shared.Exchange">
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[AgrmtNo]" Member="AgrmtNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ItemNo]" Member="ItemNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[StockLocn]" Member="StockLocn" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[WarrantyNo]" Member="WarrantyNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyLocn]" Member="WarrantyLocn" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ContractNo]" Member="ContractNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ExchangeDate]" Member="ExchangeDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ExchangedBy]" Member="ExchangedBy" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BuffNo]" Member="BuffNo" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[WarrantyID]" Member="WarrantyID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CollectionType]" Member="CollectionType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WarrantyGroupId]" Member="WarrantyGroupId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LinkIrwId]" Member="LinkIrwId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LinkIrwContractno]" Member="LinkIrwContractno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ReplacementItemId]" Member="ReplacementItemId" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.DuplicateCustomers" Member="Blue.Cosacs.Shared.DuplicateCustomers">
+        <Type Name="Blue.Cosacs.Shared.DuplicateCustomers">
+			
+			<Column Name="[Custid]" Member="Custid" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[DuplicateCustid]" Member="DuplicateCustid" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashLoanDisbursement" Member="Blue.Cosacs.Shared.CashLoanDisbursement">
+        <Type Name="Blue.Cosacs.Shared.CashLoanDisbursement">
+			
+			<Column Name="[ID]" Member="ID" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CustId]" Member="CustId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AcctNo]" Member="AcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[AgrmtNo]" Member="AgrmtNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[LoanAmount]" Member="LoanAmount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DisbursementType]" Member="DisbursementType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CardType]" Member="CardType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ChequeCardNo]" Member="ChequeCardNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Bank]" Member="Bank" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAccountType]" Member="BankAccountType" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankBranch]" Member="BankBranch" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAcctNo]" Member="BankAcctNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Notes]" Member="Notes" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankTransferRefNo]" Member="BankTransferRefNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankTransferDate]" Member="BankTransferDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankReferenceNo]" Member="BankReferenceNo" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[BankAccountName]" Member="BankAccountName" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.Bank" Member="Blue.Cosacs.Shared.Bank">
+        <Type Name="Blue.Cosacs.Shared.Bank">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankcode]" Member="bankcode" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[bankname]" Member="bankname" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankaddr1]" Member="bankaddr1" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankaddr2]" Member="bankaddr2" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankaddr3]" Member="bankaddr3" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[bankpocode]" Member="bankpocode" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.FinancialWeeks" Member="Blue.Cosacs.Shared.FinancialWeeks">
+        <Type Name="Blue.Cosacs.Shared.FinancialWeeks">
+			
+			<Column Name="[Year]" Member="Year" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Week]" Member="Week" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[StartDate]" Member="StartDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[EndDate]" Member="EndDate" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[Quarter]" Member="Quarter" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[DaysCount]" Member="DaysCount" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[FinYear]" Member="FinYear" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[FinMonth]" Member="FinMonth" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StockInfoAssociated" Member="Blue.Cosacs.Shared.StockInfoAssociated">
+        <Type Name="Blue.Cosacs.Shared.StockInfoAssociated">
+			
+			<Column Name="[ProductGroup]" Member="ProductGroup" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Category]" Member="Category" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Class]" Member="Class" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[SubClass]" Member="SubClass" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[AssocItemId]" Member="AssocItemId" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[Source]" Member="Source" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.ProductHeirarchy" Member="Blue.Cosacs.Shared.ProductHeirarchy">
+        <Type Name="Blue.Cosacs.Shared.ProductHeirarchy">
+			
+			<Column Name="[RISource]" Member="RISource" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[CatalogType]" Member="CatalogType" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[PrimaryCode]" Member="PrimaryCode" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CodeDescription]" Member="CodeDescription" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ParentCode]" Member="ParentCode" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CodeStatus]" Member="CodeStatus" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.GiftVoucherCourts" Member="Blue.Cosacs.Shared.GiftVoucherCourts">
+        <Type Name="Blue.Cosacs.Shared.GiftVoucherCourts">
+			
+			<Column Name="[reference]" Member="reference" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[value]" Member="value" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenosold]" Member="empeenosold" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datesold]" Member="datesold" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenoredeemed]" Member="empeenoredeemed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateredeemed]" Member="dateredeemed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[empeenoauth]" Member="empeenoauth" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctnosold]" Member="acctnosold" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctnoredeemed]" Member="acctnoredeemed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateexpiry]" Member="dateexpiry" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[writtenoff]" Member="writtenoff" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datewrittenoff]" Member="datewrittenoff" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transrefnoredeemed]" Member="transrefnoredeemed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[free]" Member="free" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.GiftVoucherRedeemed" Member="Blue.Cosacs.Shared.GiftVoucherRedeemed">
+        <Type Name="Blue.Cosacs.Shared.GiftVoucherRedeemed">
+			
+			<Column Name="[reference]" Member="reference" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[acctnoredeemed]" Member="acctnoredeemed" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[transrefnoredeemed]" Member="transrefnoredeemed" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.GiftVoucherOther" Member="Blue.Cosacs.Shared.GiftVoucherOther">
+        <Type Name="Blue.Cosacs.Shared.GiftVoucherOther">
+			
+			<Column Name="[reference]" Member="reference" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[value]" Member="value" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[dateredeemed]" Member="dateredeemed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctnoredeemed]" Member="acctnoredeemed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[acctnocompany]" Member="acctnocompany" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[dateconfirmed]" Member="dateconfirmed" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[datevoided]" Member="datevoided" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[transrefnoredeemed]" Member="transrefnoredeemed" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.KitProduct" Member="Blue.Cosacs.Shared.KitProduct">
+        <Type Name="Blue.Cosacs.Shared.KitProduct">
+			
+			<Column Name="[origbr]" Member="origbr" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[itemno]" Member="itemno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[componentno]" Member="componentno" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[componentqty]" Member="componentqty" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[deleted]" Member="deleted" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ComponentPrice]" Member="ComponentPrice" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ItemID]" Member="ItemID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[ComponentID]" Member="ComponentID" 
+					
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.PaymentMethodLookUp" Member="Blue.Cosacs.Shared.PaymentMethodLookUp">
+        <Type Name="Blue.Cosacs.Shared.PaymentMethodLookUp">
+			
+			<Column Name="[Id]" Member="Id" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[CountryCode]" Member="CountryCode" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[WinCosacsPayMethodId]" Member="WinCosacsPayMethodId" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[PosPayMethodId]" Member="PosPayMethodId" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CacheTableChange" Member="Blue.Cosacs.Shared.CacheTableChange">
+        <Type Name="Blue.Cosacs.Shared.CacheTableChange">
+			
+			<Column Name="[Id]" Member="Id" 
+					DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false"
+					 
+					IsPrimaryKey="true" 
+					/>
+			
+			<Column Name="[TableName]" Member="TableName" 
+					
+					 
+					 
+					/>
+			
+			<Column Name="[ChangedOn]" Member="ChangedOn" 
+					
+					 
+					 
+					/>
+			
+        </Type>
+    </Table>
+	
+	<!-- Views -->
+	
+    <Table Name="dbo.UserView" Member="Blue.Cosacs.Shared.UserView">
+        <Type Name="Blue.Cosacs.Shared.UserView">
+			
+			<Column Name="[Id]" Member="Id" />
+			
+			<Column Name="[BranchNo]" Member="BranchNo" />
+			
+			<Column Name="[Login]" Member="Login" />
+			
+			<Column Name="[Password]" Member="Password" />
+			
+			<Column Name="[LastChangePassword]" Member="LastChangePassword" />
+			
+			<Column Name="[FirstName]" Member="FirstName" />
+			
+			<Column Name="[LastName]" Member="LastName" />
+			
+			<Column Name="[ExternalLogin]" Member="ExternalLogin" />
+			
+			<Column Name="[LegacyPassword]" Member="LegacyPassword" />
+			
+			<Column Name="[eMail]" Member="eMail" />
+			
+			<Column Name="[Locked]" Member="Locked" />
+			
+			<Column Name="[FullName]" Member="FullName" />
+			
+			<Column Name="[RequireChangePassword]" Member="RequireChangePassword" />
+			
+			<Column Name="[FactEmployeeNo]" Member="FactEmployeeNo" />
+			
+			<Column Name="[AddressLine1]" Member="AddressLine1" />
+			
+			<Column Name="[AddressLine2]" Member="AddressLine2" />
+			
+			<Column Name="[AddressLine3]" Member="AddressLine3" />
+			
+			<Column Name="[PostCode]" Member="PostCode" />
+			
+			<Column Name="[Phone]" Member="Phone" />
+			
+			<Column Name="[PhoneAlternate]" Member="PhoneAlternate" />
+			
+			<Column Name="[Probation]" Member="Probation" />
+			
+			<Column Name="[BranchId]" Member="BranchId" />
+			
+			<Column Name="[DepositRequired]" Member="DepositRequired" />
+			
+			<Column Name="[LockedOn]" Member="LockedOn" />
+			
+			<Column Name="[UnLockedOn]" Member="UnLockedOn" />
+			
+			<Column Name="[UserId]" Member="UserId" />
+			
+			<Column Name="[commndue]" Member="commndue" />
+			
+			<Column Name="[alloccount]" Member="alloccount" />
+			
+			<Column Name="[serialno]" Member="serialno" />
+			
+			<Column Name="[datelstaudit]" Member="datelstaudit" />
+			
+			<Column Name="[maxrow]" Member="maxrow" />
+			
+			<Column Name="[lstcommn]" Member="lstcommn" />
+			
+			<Column Name="[UpliftCommissionRate]" Member="UpliftCommissionRate" />
+			
+			<Column Name="[MinAccounts]" Member="MinAccounts" />
+			
+			<Column Name="[MaxAccounts]" Member="MaxAccounts" />
+			
+			<Column Name="[AllocationRank]" Member="AllocationRank" />
+			
+			<Column Name="[RICashierCode]" Member="RICashierCode" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashierTotalsView" Member="Blue.Cosacs.Shared.CashierTotalsView">
+        <Type Name="Blue.Cosacs.Shared.CashierTotalsView">
+			
+			<Column Name="[empeeno]" Member="empeeno" />
+			
+			<Column Name="[paymethod]" Member="paymethod" />
+			
+			<Column Name="[codedescript]" Member="codedescript" />
+			
+			<Column Name="[foreigntender]" Member="foreigntender" />
+			
+			<Column Name="[localchange]" Member="localchange" />
+			
+			<Column Name="[Payments]" Member="Payments" />
+			
+			<Column Name="[Corrections]" Member="Corrections" />
+			
+			<Column Name="[Refunds]" Member="Refunds" />
+			
+			<Column Name="[PettyCash]" Member="PettyCash" />
+			
+			<Column Name="[Remittance]" Member="Remittance" />
+			
+			<Column Name="[Allocation]" Member="Allocation" />
+			
+			<Column Name="[Disbursement]" Member="Disbursement" />
+			
+			<Column Name="[NetReceipts]" Member="NetReceipts" />
+			
+			<Column Name="[datetrans]" Member="datetrans" />
+			
+			<Column Name="[AllowOS]" Member="AllowOS" />
+			
+			<Column Name="[IncludeInCashierTotals]" Member="IncludeInCashierTotals" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashierTotalledView" Member="Blue.Cosacs.Shared.CashierTotalledView">
+        <Type Name="Blue.Cosacs.Shared.CashierTotalledView">
+			
+			<Column Name="[datefrom]" Member="datefrom" />
+			
+			<Column Name="[dateto]" Member="dateto" />
+			
+			<Column Name="[empeeno]" Member="empeeno" />
+			
+			<Column Name="[paymethod]" Member="paymethod" />
+			
+			<Column Name="[NetReceipts]" Member="NetReceipts" />
+			
+			<Column Name="[usertotal]" Member="usertotal" />
+			
+			<Column Name="[deposit]" Member="deposit" />
+			
+			<Column Name="[difference]" Member="difference" />
+			
+			<Column Name="[Comments]" Member="Comments" />
+			
+			<Column Name="[Payments]" Member="Payments" />
+			
+			<Column Name="[Corrections]" Member="Corrections" />
+			
+			<Column Name="[Refunds]" Member="Refunds" />
+			
+			<Column Name="[PettyCash]" Member="PettyCash" />
+			
+			<Column Name="[Remittances]" Member="Remittances" />
+			
+			<Column Name="[Allocations]" Member="Allocations" />
+			
+			<Column Name="[Disbursements]" Member="Disbursements" />
+			
+			<Column Name="[codedescript]" Member="codedescript" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.InstallationVw" Member="Blue.Cosacs.Shared.InstallationVw">
+        <Type Name="Blue.Cosacs.Shared.InstallationVw">
+			
+			<Column Name="[AcctNo]" Member="AcctNo" />
+			
+			<Column Name="[AgreementNo]" Member="AgreementNo" />
+			
+			<Column Name="[ItemId]" Member="ItemId" />
+			
+			<Column Name="[ItemNo]" Member="ItemNo" />
+			
+			<Column Name="[CourtsCode]" Member="CourtsCode" />
+			
+			<Column Name="[ProductDescription1]" Member="ProductDescription1" />
+			
+			<Column Name="[ProductDescription2]" Member="ProductDescription2" />
+			
+			<Column Name="[InstItemId]" Member="InstItemId" />
+			
+			<Column Name="[InstItemNo]" Member="InstItemNo" />
+			
+			<Column Name="[InstCourtsCode]" Member="InstCourtsCode" />
+			
+			<Column Name="[InstValue]" Member="InstValue" />
+			
+			<Column Name="[Quantity]" Member="Quantity" />
+			
+			<Column Name="[DelQty]" Member="DelQty" />
+			
+			<Column Name="[StockLocation]" Member="StockLocation" />
+			
+			<Column Name="[DateReqDel]" Member="DateReqDel" />
+			
+			<Column Name="[DatePlanDel]" Member="DatePlanDel" />
+			
+			<Column Name="[DelNoteBranch]" Member="DelNoteBranch" />
+			
+			<Column Name="[ParentItemId]" Member="ParentItemId" />
+			
+			<Column Name="[ParentLocation]" Member="ParentLocation" />
+			
+			<Column Name="[DelProcess]" Member="DelProcess" />
+			
+			<Column Name="[DateAgreement]" Member="DateAgreement" />
+			
+			<Column Name="[HoldProp]" Member="HoldProp" />
+			
+			<Column Name="[DateDelAuthorised]" Member="DateDelAuthorised" />
+			
+			<Column Name="[CustId]" Member="CustId" />
+			
+			<Column Name="[CustLastName]" Member="CustLastName" />
+			
+			<Column Name="[CustFirstName]" Member="CustFirstName" />
+			
+			<Column Name="[DelAddress1]" Member="DelAddress1" />
+			
+			<Column Name="[DelAddress2]" Member="DelAddress2" />
+			
+			<Column Name="[DelAddress3]" Member="DelAddress3" />
+			
+			<Column Name="[DelAddressNote]" Member="DelAddressNote" />
+			
+			<Column Name="[DelAddressId]" Member="DelAddressId" />
+			
+			<Column Name="[DelPostCode]" Member="DelPostCode" />
+			
+			<Column Name="[HomeTelNo]" Member="HomeTelNo" />
+			
+			<Column Name="[WorkTelNo]" Member="WorkTelNo" />
+			
+			<Column Name="[Supplier]" Member="Supplier" />
+			
+			<Column Name="[SupplierCode]" Member="SupplierCode" />
+			
+			<Column Name="[DelDate]" Member="DelDate" />
+			
+			<Column Name="[DelStatus]" Member="DelStatus" />
+			
+			<Column Name="[HasWarranty]" Member="HasWarranty" />
+			
+			<Column Name="[StockCategory]" Member="StockCategory" />
+			
+			<Column Name="[InstNo]" Member="InstNo" />
+			
+			<Column Name="[InstDate]" Member="InstDate" />
+			
+			<Column Name="[InstallationStatus]" Member="InstallationStatus" />
+			
+			<Column Name="[TechnicianId]" Member="TechnicianId" />
+			
+			<Column Name="[TechnicianName]" Member="TechnicianName" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.TechnicianDiaryVw" Member="Blue.Cosacs.Shared.TechnicianDiaryVw">
+        <Type Name="Blue.Cosacs.Shared.TechnicianDiaryVw">
+			
+			<Column Name="[TechnicianId]" Member="TechnicianId" />
+			
+			<Column Name="[SlotDate]" Member="SlotDate" />
+			
+			<Column Name="[BookingType]" Member="BookingType" />
+			
+			<Column Name="[ServiceRequestNo]" Member="ServiceRequestNo" />
+			
+			<Column Name="[InstallationNo]" Member="InstallationNo" />
+			
+			<Column Name="[StartSlot]" Member="StartSlot" />
+			
+			<Column Name="[NoOfSlots]" Member="NoOfSlots" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCard" Member="Blue.Cosacs.Shared.View_StoreCard">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCard">
+			
+			<Column Name="[FirstName]" Member="FirstName" />
+			
+			<Column Name="[LastName]" Member="LastName" />
+			
+			<Column Name="[DateAcctOpen]" Member="DateAcctOpen" />
+			
+			<Column Name="[Balance]" Member="Balance" />
+			
+			<Column Name="[Address1]" Member="Address1" />
+			
+			<Column Name="[Address2]" Member="Address2" />
+			
+			<Column Name="[Address3]" Member="Address3" />
+			
+			<Column Name="[PostCode]" Member="PostCode" />
+			
+			<Column Name="[HomeTelNo]" Member="HomeTelNo" />
+			
+			<Column Name="[WorkTelNo]" Member="WorkTelNo" />
+			
+			<Column Name="[MobileTelNo]" Member="MobileTelNo" />
+			
+			<Column Name="[StoreCardLimit]" Member="StoreCardLimit" />
+			
+			<Column Name="[AccountNo]" Member="AccountNo" />
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+			<Column Name="[CardCustid]" Member="CardCustid" />
+			
+			<Column Name="[Source]" Member="Source" />
+			
+			<Column Name="[CreditBlocked]" Member="CreditBlocked" />
+			
+			<Column Name="[Holder]" Member="Holder" />
+			
+			<Column Name="[Status]" Member="Status" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCardQualParams" Member="Blue.Cosacs.Shared.View_StoreCardQualParams">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCardQualParams">
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[points]" Member="points" />
+			
+			<Column Name="[ScoreCardType]" Member="ScoreCardType" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCardWithPayments" Member="Blue.Cosacs.Shared.View_StoreCardWithPayments">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCardWithPayments">
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+			<Column Name="[CardName]" Member="CardName" />
+			
+			<Column Name="[IssueYear]" Member="IssueYear" />
+			
+			<Column Name="[IssueMonth]" Member="IssueMonth" />
+			
+			<Column Name="[ExpirationYear]" Member="ExpirationYear" />
+			
+			<Column Name="[ExpirationMonth]" Member="ExpirationMonth" />
+			
+			<Column Name="[Acctno]" Member="Acctno" />
+			
+			<Column Name="[ExportRunNo]" Member="ExportRunNo" />
+			
+			<Column Name="[ProofAddress]" Member="ProofAddress" />
+			
+			<Column Name="[ProofAddNotes]" Member="ProofAddNotes" />
+			
+			<Column Name="[ProofID]" Member="ProofID" />
+			
+			<Column Name="[ProofIDNotes]" Member="ProofIDNotes" />
+			
+			<Column Name="[SecurityQ]" Member="SecurityQ" />
+			
+			<Column Name="[SecurityA]" Member="SecurityA" />
+			
+			<Column Name="[MonthlyAmount]" Member="MonthlyAmount" />
+			
+			<Column Name="[PaymentMethod]" Member="PaymentMethod" />
+			
+			<Column Name="[PaymentOption]" Member="PaymentOption" />
+			
+			<Column Name="[RateId]" Member="RateId" />
+			
+			<Column Name="[InterestRate]" Member="InterestRate" />
+			
+			<Column Name="[RateFixed]" Member="RateFixed" />
+			
+			<Column Name="[StatementFrequency]" Member="StatementFrequency" />
+			
+			<Column Name="[DateLastStatementPrinted]" Member="DateLastStatementPrinted" />
+			
+			<Column Name="[DatePaymentDue]" Member="DatePaymentDue" />
+			
+			<Column Name="[NoStatements]" Member="NoStatements" />
+			
+			<Column Name="[ContactMethod]" Member="ContactMethod" />
+			
+			<Column Name="[DateNotePrinted]" Member="DateNotePrinted" />
+			
+			<Column Name="[StoreCardLimit]" Member="StoreCardLimit" />
+			
+			<Column Name="[StoreCardAvailable]" Member="StoreCardAvailable" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[SPDStatus]" Member="SPDStatus" />
+			
+			<Column Name="[CardStatus]" Member="CardStatus" />
+			
+			<Column Name="[CardStatusDateChanged]" Member="CardStatusDateChanged" />
+			
+			<Column Name="[CardStatusEmpeenoChanged]" Member="CardStatusEmpeenoChanged" />
+			
+			<Column Name="[CardStatusNotes]" Member="CardStatusNotes" />
+			
+			<Column Name="[Holder]" Member="Holder" />
+			
+			<Column Name="[Cancelled]" Member="Cancelled" />
+			
+			<Column Name="[LastInterestDate]" Member="LastInterestDate" />
+			
+			<Column Name="[MinimumPayment]" Member="MinimumPayment" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCardAll" Member="Blue.Cosacs.Shared.View_StoreCardAll">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCardAll">
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+			<Column Name="[CardName]" Member="CardName" />
+			
+			<Column Name="[IssueYear]" Member="IssueYear" />
+			
+			<Column Name="[IssueMonth]" Member="IssueMonth" />
+			
+			<Column Name="[ExpirationYear]" Member="ExpirationYear" />
+			
+			<Column Name="[ExpirationMonth]" Member="ExpirationMonth" />
+			
+			<Column Name="[AcctNo]" Member="AcctNo" />
+			
+			<Column Name="[ExportRunNo]" Member="ExportRunNo" />
+			
+			<Column Name="[MonthlyAmount]" Member="MonthlyAmount" />
+			
+			<Column Name="[PaymentMethod]" Member="PaymentMethod" />
+			
+			<Column Name="[PaymentOption]" Member="PaymentOption" />
+			
+			<Column Name="[RateId]" Member="RateId" />
+			
+			<Column Name="[InterestRate]" Member="InterestRate" />
+			
+			<Column Name="[RateFixed]" Member="RateFixed" />
+			
+			<Column Name="[StatementFrequency]" Member="StatementFrequency" />
+			
+			<Column Name="[DateLastStatementPrinted]" Member="DateLastStatementPrinted" />
+			
+			<Column Name="[DatePaymentDue]" Member="DatePaymentDue" />
+			
+			<Column Name="[StatusCode]" Member="StatusCode" />
+			
+			<Column Name="[NoStatements]" Member="NoStatements" />
+			
+			<Column Name="[ContactMethod]" Member="ContactMethod" />
+			
+			<Column Name="[DateNotePrinted]" Member="DateNotePrinted" />
+			
+			<Column Name="[CustID]" Member="CustID" />
+			
+			<Column Name="[otherid]" Member="otherid" />
+			
+			<Column Name="[branchnohdle]" Member="branchnohdle" />
+			
+			<Column Name="[name]" Member="name" />
+			
+			<Column Name="[firstname]" Member="firstname" />
+			
+			<Column Name="[title]" Member="title" />
+			
+			<Column Name="[alias]" Member="alias" />
+			
+			<Column Name="[addrsort]" Member="addrsort" />
+			
+			<Column Name="[namesort]" Member="namesort" />
+			
+			<Column Name="[dateborn]" Member="dateborn" />
+			
+			<Column Name="[sex]" Member="sex" />
+			
+			<Column Name="[ethnicity]" Member="ethnicity" />
+			
+			<Column Name="[morerewardsno]" Member="morerewardsno" />
+			
+			<Column Name="[effectivedate]" Member="effectivedate" />
+			
+			<Column Name="[IdNumber]" Member="IdNumber" />
+			
+			<Column Name="[IdType]" Member="IdType" />
+			
+			<Column Name="[creditblocked]" Member="creditblocked" />
+			
+			<Column Name="[RFCreditLimit]" Member="RFCreditLimit" />
+			
+			<Column Name="[RFCardSeqNo]" Member="RFCardSeqNo" />
+			
+			<Column Name="[RFCardPrinted]" Member="RFCardPrinted" />
+			
+			<Column Name="[datelastscored]" Member="datelastscored" />
+			
+			<Column Name="[RFDateReminded]" Member="RFDateReminded" />
+			
+			<Column Name="[empeenochange]" Member="empeenochange" />
+			
+			<Column Name="[datechange]" Member="datechange" />
+			
+			<Column Name="[maidenname]" Member="maidenname" />
+			
+			<Column Name="[OldRFCreditLimit]" Member="OldRFCreditLimit" />
+			
+			<Column Name="[LimitType]" Member="LimitType" />
+			
+			<Column Name="[AvailableSpend]" Member="AvailableSpend" />
+			
+			<Column Name="[ScoringBand]" Member="ScoringBand" />
+			
+			<Column Name="[InstantCredit]" Member="InstantCredit" />
+			
+			<Column Name="[StoreType]" Member="StoreType" />
+			
+			<Column Name="[LoanQualified]" Member="LoanQualified" />
+			
+			<Column Name="[dependants]" Member="dependants" />
+			
+			<Column Name="[maritalstat]" Member="maritalstat" />
+			
+			<Column Name="[Nationality]" Member="Nationality" />
+			
+			<Column Name="[recurringarrears]" Member="recurringarrears" />
+			
+			<Column Name="[age]" Member="age" />
+			
+			<Column Name="[ScoreCardType]" Member="ScoreCardType" />
+			
+			<Column Name="[StoreCardApproved]" Member="StoreCardApproved" />
+			
+			<Column Name="[StoreCardLimit]" Member="StoreCardLimit" />
+			
+			<Column Name="[StoreCardAvailable]" Member="StoreCardAvailable" />
+			
+			<Column Name="[SCardApprovedDate]" Member="SCardApprovedDate" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCardHistory" Member="Blue.Cosacs.Shared.View_StoreCardHistory">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCardHistory">
+			
+			<Column Name="[Acctno]" Member="Acctno" />
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+			<Column Name="[DateChanged]" Member="DateChanged" />
+			
+			<Column Name="[Notes]" Member="Notes" />
+			
+			<Column Name="[StatusCode]" Member="StatusCode" />
+			
+			<Column Name="[Empeeno]" Member="Empeeno" />
+			
+			<Column Name="[EmployeeName]" Member="EmployeeName" />
+			
+			<Column Name="[Status]" Member="Status" />
+			
+			<Column Name="[Reason]" Member="Reason" />
+			
+			<Column Name="[Code]" Member="Code" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.view_FintranswithTransfers" Member="Blue.Cosacs.Shared.view_FintranswithTransfers">
+        <Type Name="Blue.Cosacs.Shared.view_FintranswithTransfers">
+			
+			<Column Name="[BranchNo]" Member="BranchNo" />
+			
+			<Column Name="[AcctNo]" Member="AcctNo" />
+			
+			<Column Name="[DateTrans]" Member="DateTrans" />
+			
+			<Column Name="[Code]" Member="Code" />
+			
+			<Column Name="[Description]" Member="Description" />
+			
+			<Column Name="[Empeeno]" Member="Empeeno" />
+			
+			<Column Name="[Value]" Member="Value" />
+			
+			<Column Name="[TransferAccount]" Member="TransferAccount" />
+			
+			<Column Name="[Name]" Member="Name" />
+			
+			<Column Name="[agrmtno]" Member="agrmtno" />
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.view_LineDetails" Member="Blue.Cosacs.Shared.view_LineDetails">
+        <Type Name="Blue.Cosacs.Shared.view_LineDetails">
+			
+			<Column Name="[AcctNo]" Member="AcctNo" />
+			
+			<Column Name="[AgrmtNo]" Member="AgrmtNo" />
+			
+			<Column Name="[ItemNo]" Member="ItemNo" />
+			
+			<Column Name="[quantity]" Member="quantity" />
+			
+			<Column Name="[Value]" Member="Value" />
+			
+			<Column Name="[Description1]" Member="Description1" />
+			
+			<Column Name="[Description2]" Member="Description2" />
+			
+			<Column Name="[ContractNo]" Member="ContractNo" />
+			
+			<Column Name="[SoldBy]" Member="SoldBy" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCardValidationandLimits" Member="Blue.Cosacs.Shared.View_StoreCardValidationandLimits">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCardValidationandLimits">
+			
+			<Column Name="[Acctno]" Member="Acctno" />
+			
+			<Column Name="[CardName]" Member="CardName" />
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+			<Column Name="[ExpirationMonth]" Member="ExpirationMonth" />
+			
+			<Column Name="[ExpirationYear]" Member="ExpirationYear" />
+			
+			<Column Name="[StatusCode]" Member="StatusCode" />
+			
+			<Column Name="[StoreCardAvailable]" Member="StoreCardAvailable" />
+			
+			<Column Name="[StoreCardLimit]" Member="StoreCardLimit" />
+			
+			<Column Name="[creditblocked]" Member="creditblocked" />
+			
+			<Column Name="[suspended]" Member="suspended" />
+			
+			<Column Name="[Balance]" Member="Balance" />
+			
+			<Column Name="[InterestRate]" Member="InterestRate" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCardRateDetailsGetforPoints" Member="Blue.Cosacs.Shared.View_StoreCardRateDetailsGetforPoints">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCardRateDetailsGetforPoints">
+			
+			<Column Name="[RateFixed]" Member="RateFixed" />
+			
+			<Column Name="[PurchaseInterestRate]" Member="PurchaseInterestRate" />
+			
+			<Column Name="[Id]" Member="Id" />
+			
+			<Column Name="[Name]" Member="Name" />
+			
+			<Column Name="[BehaveScoreFrom]" Member="BehaveScoreFrom" />
+			
+			<Column Name="[BehaveScoreTo]" Member="BehaveScoreTo" />
+			
+			<Column Name="[AppScoreFrom]" Member="AppScoreFrom" />
+			
+			<Column Name="[AppScoreTo]" Member="AppScoreTo" />
+			
+			<Column Name="[Custid]" Member="Custid" />
+			
+			<Column Name="[Points]" Member="Points" />
+			
+			<Column Name="[Scorecard]" Member="Scorecard" />
+			
+			<Column Name="[IsDefaultRate]" Member="IsDefaultRate" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_StoreCardTransactionsByCustid" Member="Blue.Cosacs.Shared.View_StoreCardTransactionsByCustid">
+        <Type Name="Blue.Cosacs.Shared.View_StoreCardTransactionsByCustid">
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[transvalue]" Member="transvalue" />
+			
+			<Column Name="[transtypecode]" Member="transtypecode" />
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.VIEW_StoreCardStatusLatest" Member="Blue.Cosacs.Shared.VIEW_StoreCardStatusLatest">
+        <Type Name="Blue.Cosacs.Shared.VIEW_StoreCardStatusLatest">
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+			<Column Name="[DateChanged]" Member="DateChanged" />
+			
+			<Column Name="[StatusCode]" Member="StatusCode" />
+			
+			<Column Name="[EmpeeNo]" Member="EmpeeNo" />
+			
+			<Column Name="[BranchNo]" Member="BranchNo" />
+			
+			<Column Name="[Notes]" Member="Notes" />
+			
+			<Column Name="[AcctNo]" Member="AcctNo" />
+			
+			<Column Name="[CardName]" Member="CardName" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.fintranswithBalancesVW" Member="Blue.Cosacs.Shared.fintranswithBalancesVW">
+        <Type Name="Blue.Cosacs.Shared.fintranswithBalancesVW">
+			
+			<Column Name="[transvalue]" Member="transvalue" />
+			
+			<Column Name="[total]" Member="total" />
+			
+			<Column Name="[datetrans]" Member="datetrans" />
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[transtypecode]" Member="transtypecode" />
+			
+			<Column Name="[InterestRate]" Member="InterestRate" />
+			
+			<Column Name="[Balance]" Member="Balance" />
+			
+			<Column Name="[Status]" Member="Status" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.view_FintransStoreCardStatements" Member="Blue.Cosacs.Shared.view_FintransStoreCardStatements">
+        <Type Name="Blue.Cosacs.Shared.view_FintransStoreCardStatements">
+			
+			<Column Name="[BranchNo]" Member="BranchNo" />
+			
+			<Column Name="[AcctNo]" Member="AcctNo" />
+			
+			<Column Name="[DateTrans]" Member="DateTrans" />
+			
+			<Column Name="[Code]" Member="Code" />
+			
+			<Column Name="[Description]" Member="Description" />
+			
+			<Column Name="[Empeeno]" Member="Empeeno" />
+			
+			<Column Name="[Value]" Member="Value" />
+			
+			<Column Name="[TransferAccount]" Member="TransferAccount" />
+			
+			<Column Name="[Name]" Member="Name" />
+			
+			<Column Name="[agrmtno]" Member="agrmtno" />
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+			<Column Name="[branchname]" Member="branchname" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.view_StoreCardGetProposal" Member="Blue.Cosacs.Shared.view_StoreCardGetProposal">
+        <Type Name="Blue.Cosacs.Shared.view_StoreCardGetProposal">
+			
+			<Column Name="[origbr]" Member="origbr" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[dateprop]" Member="dateprop" />
+			
+			<Column Name="[origbranchno]" Member="origbranchno" />
+			
+			<Column Name="[sanctserno]" Member="sanctserno" />
+			
+			<Column Name="[empeenoprop]" Member="empeenoprop" />
+			
+			<Column Name="[maritalstat]" Member="maritalstat" />
+			
+			<Column Name="[dependants]" Member="dependants" />
+			
+			<Column Name="[yrscuremplmt]" Member="yrscuremplmt" />
+			
+			<Column Name="[mthlyincome]" Member="mthlyincome" />
+			
+			<Column Name="[jobslstyrs]" Member="jobslstyrs" />
+			
+			<Column Name="[health]" Member="health" />
+			
+			<Column Name="[otherpmnts]" Member="otherpmnts" />
+			
+			<Column Name="[scorecardno]" Member="scorecardno" />
+			
+			<Column Name="[points]" Member="points" />
+			
+			<Column Name="[propresult]" Member="propresult" />
+			
+			<Column Name="[reason]" Member="reason" />
+			
+			<Column Name="[yrscurraddr]" Member="yrscurraddr" />
+			
+			<Column Name="[yrsprevaddr]" Member="yrsprevaddr" />
+			
+			<Column Name="[bankaccttype]" Member="bankaccttype" />
+			
+			<Column Name="[yrsbankachld]" Member="yrsbankachld" />
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[propnotes]" Member="propnotes" />
+			
+			<Column Name="[hasstring]" Member="hasstring" />
+			
+			<Column Name="[empeenochange]" Member="empeenochange" />
+			
+			<Column Name="[datechange]" Member="datechange" />
+			
+			<Column Name="[AddIncome]" Member="AddIncome" />
+			
+			<Column Name="[AppStatus]" Member="AppStatus" />
+			
+			<Column Name="[CCardNo1]" Member="CCardNo1" />
+			
+			<Column Name="[CCardNo2]" Member="CCardNo2" />
+			
+			<Column Name="[CCardNo3]" Member="CCardNo3" />
+			
+			<Column Name="[CCardNo4]" Member="CCardNo4" />
+			
+			<Column Name="[Commitments1]" Member="Commitments1" />
+			
+			<Column Name="[Commitments2]" Member="Commitments2" />
+			
+			<Column Name="[Commitments3]" Member="Commitments3" />
+			
+			<Column Name="[EmpAddr1]" Member="EmpAddr1" />
+			
+			<Column Name="[EmpAddr2]" Member="EmpAddr2" />
+			
+			<Column Name="[EmpCity]" Member="EmpCity" />
+			
+			<Column Name="[EmpDept]" Member="EmpDept" />
+			
+			<Column Name="[EmpName]" Member="EmpName" />
+			
+			<Column Name="[Location]" Member="Location" />
+			
+			<Column Name="[Nationality]" Member="Nationality" />
+			
+			<Column Name="[NoOfRef]" Member="NoOfRef" />
+			
+			<Column Name="[PEmpMM]" Member="PEmpMM" />
+			
+			<Column Name="[PEmpYY]" Member="PEmpYY" />
+			
+			<Column Name="[ProofAddress]" Member="ProofAddress" />
+			
+			<Column Name="[ProofId]" Member="ProofId" />
+			
+			<Column Name="[ProofIncome]" Member="ProofIncome" />
+			
+			<Column Name="[S1Comment]" Member="S1Comment" />
+			
+			<Column Name="[S2Comment]" Member="S2Comment" />
+			
+			<Column Name="[SpecialPromo]" Member="SpecialPromo" />
+			
+			<Column Name="[A2MthlyIncome]" Member="A2MthlyIncome" />
+			
+			<Column Name="[A2AddIncome]" Member="A2AddIncome" />
+			
+			<Column Name="[A2MaritalStat]" Member="A2MaritalStat" />
+			
+			<Column Name="[TransactIdNo]" Member="TransactIdNo" />
+			
+			<Column Name="[PAddress1]" Member="PAddress1" />
+			
+			<Column Name="[PAddress2]" Member="PAddress2" />
+			
+			<Column Name="[PCity]" Member="PCity" />
+			
+			<Column Name="[PPostCode]" Member="PPostCode" />
+			
+			<Column Name="[PAddYY]" Member="PAddYY" />
+			
+			<Column Name="[PAddMM]" Member="PAddMM" />
+			
+			<Column Name="[PResStatus]" Member="PResStatus" />
+			
+			<Column Name="[A2Relation]" Member="A2Relation" />
+			
+			<Column Name="[RFCategory]" Member="RFCategory" />
+			
+			<Column Name="[EmpPostCode]" Member="EmpPostCode" />
+			
+			<Column Name="[dctext1]" Member="dctext1" />
+			
+			<Column Name="[dctext2]" Member="dctext2" />
+			
+			<Column Name="[dctext3]" Member="dctext3" />
+			
+			<Column Name="[Notes]" Member="Notes" />
+			
+			<Column Name="[Bankruptcies]" Member="Bankruptcies" />
+			
+			<Column Name="[TimeSinceLawsuit]" Member="TimeSinceLawsuit" />
+			
+			<Column Name="[NumberLawsuits]" Member="NumberLawsuits" />
+			
+			<Column Name="[MobilePhone]" Member="MobilePhone" />
+			
+			<Column Name="[additionalexpenditure1]" Member="additionalexpenditure1" />
+			
+			<Column Name="[additionalexpenditure2]" Member="additionalexpenditure2" />
+			
+			<Column Name="[PayFrequency]" Member="PayFrequency" />
+			
+			<Column Name="[EmploymentTelNo]" Member="EmploymentTelNo" />
+			
+			<Column Name="[BankAccountNo]" Member="BankAccountNo" />
+			
+			<Column Name="[BankAccountOpened]" Member="BankAccountOpened" />
+			
+			<Column Name="[EmploymentStatus]" Member="EmploymentStatus" />
+			
+			<Column Name="[BankCode]" Member="BankCode" />
+			
+			<Column Name="[DatePEmpStart]" Member="DatePEmpStart" />
+			
+			<Column Name="[Occupation]" Member="Occupation" />
+			
+			<Column Name="[DateEmpStart]" Member="DateEmpStart" />
+			
+			<Column Name="[EmploymentDialCode]" Member="EmploymentDialCode" />
+			
+			<Column Name="[appnumber]" Member="appnumber" />
+			
+			<Column Name="[vehicleregistration]" Member="vehicleregistration" />
+			
+			<Column Name="[SystemRecommendation]" Member="SystemRecommendation" />
+			
+			<Column Name="[ConvertedFromRF]" Member="ConvertedFromRF" />
+			
+			<Column Name="[reason2]" Member="reason2" />
+			
+			<Column Name="[reason3]" Member="reason3" />
+			
+			<Column Name="[reason4]" Member="reason4" />
+			
+			<Column Name="[reason5]" Member="reason5" />
+			
+			<Column Name="[reason6]" Member="reason6" />
+			
+			<Column Name="[ScoringBand]" Member="ScoringBand" />
+			
+			<Column Name="[TransportType]" Member="TransportType" />
+			
+			<Column Name="[EducationLevel]" Member="EducationLevel" />
+			
+			<Column Name="[DistanceFromStore]" Member="DistanceFromStore" />
+			
+			<Column Name="[Industry]" Member="Industry" />
+			
+			<Column Name="[JobTitle]" Member="JobTitle" />
+			
+			<Column Name="[Organisation]" Member="Organisation" />
+			
+			<Column Name="[ScorexExtract]" Member="ScorexExtract" />
+			
+			<Column Name="[scorecard]" Member="scorecard" />
+			
+			<Column Name="[ProofOfBank]" Member="ProofOfBank" />
+			
+			<Column Name="[ProofOfBankTxt]" Member="ProofOfBankTxt" />
+			
+			<Column Name="[DateCurrAddress]" Member="DateCurrAddress" />
+			
+			<Column Name="[CurrentResStatus]" Member="CurrentResStatus" />
+			
+			<Column Name="[PropertyType]" Member="PropertyType" />
+			
+			<Column Name="[CreditPercentUplift]" Member="CreditPercentUplift" />
+			
+			<Column Name="[PurchaseCashLoan]" Member="PurchaseCashLoan" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_FintransPayMethod" Member="Blue.Cosacs.Shared.View_FintransPayMethod">
+        <Type Name="Blue.Cosacs.Shared.View_FintransPayMethod">
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[agrmtno]" Member="agrmtno" />
+			
+			<Column Name="[transvalue]" Member="transvalue" />
+			
+			<Column Name="[bankacctno]" Member="bankacctno" />
+			
+			<Column Name="[bankcode]" Member="bankcode" />
+			
+			<Column Name="[chequeno]" Member="chequeno" />
+			
+			<Column Name="[PayMethodDesc]" Member="PayMethodDesc" />
+			
+			<Column Name="[paymethod]" Member="paymethod" />
+			
+			<Column Name="[storecardno]" Member="storecardno" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_TermsType_All" Member="Blue.Cosacs.Shared.View_TermsType_All">
+        <Type Name="Blue.Cosacs.Shared.View_TermsType_All">
+			
+			<Column Name="[OrigBr]" Member="OrigBr" />
+			
+			<Column Name="[CountryCode]" Member="CountryCode" />
+			
+			<Column Name="[TermsType]" Member="TermsType" />
+			
+			<Column Name="[Description]" Member="Description" />
+			
+			<Column Name="[MthsIntFree]" Member="MthsIntFree" />
+			
+			<Column Name="[DepositPaid]" Member="DepositPaid" />
+			
+			<Column Name="[Instalpredel]" Member="Instalpredel" />
+			
+			<Column Name="[Affinity]" Member="Affinity" />
+			
+			<Column Name="[MinTerm]" Member="MinTerm" />
+			
+			<Column Name="[MaxTerm]" Member="MaxTerm" />
+			
+			<Column Name="[AgrText]" Member="AgrText" />
+			
+			<Column Name="[AgrTextX]" Member="AgrTextX" />
+			
+			<Column Name="[AgrTextY]" Member="AgrTextY" />
+			
+			<Column Name="[NoArrearsLetters]" Member="NoArrearsLetters" />
+			
+			<Column Name="[DefaultDeposit]" Member="DefaultDeposit" />
+			
+			<Column Name="[DefaultTerm]" Member="DefaultTerm" />
+			
+			<Column Name="[APR]" Member="APR" />
+			
+			<Column Name="[IsActive]" Member="IsActive" />
+			
+			<Column Name="[HasFreeInstalment]" Member="HasFreeInstalment" />
+			
+			<Column Name="[paymentholidays]" Member="paymentholidays" />
+			
+			<Column Name="[delnonstocks]" Member="delnonstocks" />
+			
+			<Column Name="[DateFrom]" Member="DateFrom" />
+			
+			<Column Name="[DateTo]" Member="DateTo" />
+			
+			<Column Name="[ServPcent]" Member="ServPcent" />
+			
+			<Column Name="[InsPcent]" Member="InsPcent" />
+			
+			<Column Name="[AdminPcent]" Member="AdminPcent" />
+			
+			<Column Name="[InsIncluded]" Member="InsIncluded" />
+			
+			<Column Name="[IncludeWarranty]" Member="IncludeWarranty" />
+			
+			<Column Name="[PaymentHolidayMin]" Member="PaymentHolidayMin" />
+			
+			<Column Name="[DtNetFirstIn]" Member="DtNetFirstIn" />
+			
+			<Column Name="[CashBackMonth]" Member="CashBackMonth" />
+			
+			<Column Name="[CashBackPc]" Member="CashBackPc" />
+			
+			<Column Name="[CashBackAmount]" Member="CashBackAmount" />
+			
+			<Column Name="[AgreementPrint]" Member="AgreementPrint" />
+			
+			<Column Name="[AgreementPrintDesc]" Member="AgreementPrintDesc" />
+			
+			<Column Name="[DeferredMonths]" Member="DeferredMonths" />
+			
+			<Column Name="[FullRebateDays]" Member="FullRebateDays" />
+			
+			<Column Name="[STCPc]" Member="STCPc" />
+			
+			<Column Name="[STCAmount]" Member="STCAmount" />
+			
+			<Column Name="[Band]" Member="Band" />
+			
+			<Column Name="[PointsFrom]" Member="PointsFrom" />
+			
+			<Column Name="[PointsTo]" Member="PointsTo" />
+			
+			<Column Name="[DoNotSecuritise]" Member="DoNotSecuritise" />
+			
+			<Column Name="[isloan]" Member="isloan" />
+			
+			<Column Name="[LoanNewCustomer]" Member="LoanNewCustomer" />
+			
+			<Column Name="[LoanRecentCustomer]" Member="LoanRecentCustomer" />
+			
+			<Column Name="[LoanExistingCustomer]" Member="LoanExistingCustomer" />
+			
+			<Column Name="[LoanStaff]" Member="LoanStaff" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCardLoadforAnnualFee_View" Member="Blue.Cosacs.Shared.StoreCardLoadforAnnualFee_View">
+        <Type Name="Blue.Cosacs.Shared.StoreCardLoadforAnnualFee_View">
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[ActivateAnniversary]" Member="ActivateAnniversary" />
+			
+			<Column Name="[ActivateDate]" Member="ActivateDate" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StoreCardStatements_View" Member="Blue.Cosacs.Shared.StoreCardStatements_View">
+        <Type Name="Blue.Cosacs.Shared.StoreCardStatements_View">
+			
+			<Column Name="[Id]" Member="Id" />
+			
+			<Column Name="[DateFrom]" Member="DateFrom" />
+			
+			<Column Name="[DateTo]" Member="DateTo" />
+			
+			<Column Name="[DatePrinted]" Member="DatePrinted" />
+			
+			<Column Name="[Acctno]" Member="Acctno" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[title]" Member="title" />
+			
+			<Column Name="[firstname]" Member="firstname" />
+			
+			<Column Name="[name]" Member="name" />
+			
+			<Column Name="[StoreCardLimit]" Member="StoreCardLimit" />
+			
+			<Column Name="[StoreCardAvailable]" Member="StoreCardAvailable" />
+			
+			<Column Name="[cusaddr1]" Member="cusaddr1" />
+			
+			<Column Name="[cusaddr2]" Member="cusaddr2" />
+			
+			<Column Name="[cusaddr3]" Member="cusaddr3" />
+			
+			<Column Name="[cuspocode]" Member="cuspocode" />
+			
+			<Column Name="[InterestRate]" Member="InterestRate" />
+			
+			<Column Name="[PrevStmtMinPayment]" Member="PrevStmtMinPayment" />
+			
+			<Column Name="[DatePaymentDue]" Member="DatePaymentDue" />
+			
+			<Column Name="[CardNumber]" Member="CardNumber" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.TermsTypeAllBands" Member="Blue.Cosacs.Shared.TermsTypeAllBands">
+        <Type Name="Blue.Cosacs.Shared.TermsTypeAllBands">
+			
+			<Column Name="[OrigBr]" Member="OrigBr" />
+			
+			<Column Name="[CountryCode]" Member="CountryCode" />
+			
+			<Column Name="[TermsType]" Member="TermsType" />
+			
+			<Column Name="[Description]" Member="Description" />
+			
+			<Column Name="[MthsIntFree]" Member="MthsIntFree" />
+			
+			<Column Name="[DepositPaid]" Member="DepositPaid" />
+			
+			<Column Name="[Instalpredel]" Member="Instalpredel" />
+			
+			<Column Name="[Affinity]" Member="Affinity" />
+			
+			<Column Name="[MinTerm]" Member="MinTerm" />
+			
+			<Column Name="[MaxTerm]" Member="MaxTerm" />
+			
+			<Column Name="[AgrText]" Member="AgrText" />
+			
+			<Column Name="[AgrTextX]" Member="AgrTextX" />
+			
+			<Column Name="[AgrTextY]" Member="AgrTextY" />
+			
+			<Column Name="[NoArrearsLetters]" Member="NoArrearsLetters" />
+			
+			<Column Name="[DefaultDeposit]" Member="DefaultDeposit" />
+			
+			<Column Name="[DefaultTerm]" Member="DefaultTerm" />
+			
+			<Column Name="[APR]" Member="APR" />
+			
+			<Column Name="[IsActive]" Member="IsActive" />
+			
+			<Column Name="[HasFreeInstalment]" Member="HasFreeInstalment" />
+			
+			<Column Name="[paymentholidays]" Member="paymentholidays" />
+			
+			<Column Name="[delnonstocks]" Member="delnonstocks" />
+			
+			<Column Name="[DateFrom]" Member="DateFrom" />
+			
+			<Column Name="[DateTo]" Member="DateTo" />
+			
+			<Column Name="[ServPcent]" Member="ServPcent" />
+			
+			<Column Name="[InsPcent]" Member="InsPcent" />
+			
+			<Column Name="[AdminPcent]" Member="AdminPcent" />
+			
+			<Column Name="[InsIncluded]" Member="InsIncluded" />
+			
+			<Column Name="[IncludeWarranty]" Member="IncludeWarranty" />
+			
+			<Column Name="[PaymentHolidayMin]" Member="PaymentHolidayMin" />
+			
+			<Column Name="[DtNetFirstIn]" Member="DtNetFirstIn" />
+			
+			<Column Name="[CashBackMonth]" Member="CashBackMonth" />
+			
+			<Column Name="[CashBackPc]" Member="CashBackPc" />
+			
+			<Column Name="[CashBackAmount]" Member="CashBackAmount" />
+			
+			<Column Name="[AgreementPrint]" Member="AgreementPrint" />
+			
+			<Column Name="[AgreementPrintDesc]" Member="AgreementPrintDesc" />
+			
+			<Column Name="[DeferredMonths]" Member="DeferredMonths" />
+			
+			<Column Name="[FullRebateDays]" Member="FullRebateDays" />
+			
+			<Column Name="[STCPc]" Member="STCPc" />
+			
+			<Column Name="[STCAmount]" Member="STCAmount" />
+			
+			<Column Name="[Band]" Member="Band" />
+			
+			<Column Name="[PointsFrom]" Member="PointsFrom" />
+			
+			<Column Name="[PointsTo]" Member="PointsTo" />
+			
+			<Column Name="[DoNotSecuritise]" Member="DoNotSecuritise" />
+			
+			<Column Name="[isloan]" Member="isloan" />
+			
+			<Column Name="[LoanNewCustomer]" Member="LoanNewCustomer" />
+			
+			<Column Name="[LoanRecentCustomer]" Member="LoanRecentCustomer" />
+			
+			<Column Name="[LoanExistingCustomer]" Member="LoanExistingCustomer" />
+			
+			<Column Name="[LoanStaff]" Member="LoanStaff" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.View_employment" Member="Blue.Cosacs.Shared.View_employment">
+        <Type Name="Blue.Cosacs.Shared.View_employment">
+			
+			<Column Name="[origbr]" Member="origbr" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[dateemployed]" Member="dateemployed" />
+			
+			<Column Name="[empyrno]" Member="empyrno" />
+			
+			<Column Name="[worktype]" Member="worktype" />
+			
+			<Column Name="[empmtstatus]" Member="empmtstatus" />
+			
+			<Column Name="[fullorpart]" Member="fullorpart" />
+			
+			<Column Name="[temporperm]" Member="temporperm" />
+			
+			<Column Name="[custempeeno]" Member="custempeeno" />
+			
+			<Column Name="[payfreq]" Member="payfreq" />
+			
+			<Column Name="[annualgross]" Member="annualgross" />
+			
+			<Column Name="[dateleft]" Member="dateleft" />
+			
+			<Column Name="[PersDialCode]" Member="PersDialCode" />
+			
+			<Column Name="[PersTel]" Member="PersTel" />
+			
+			<Column Name="[StaffNo]" Member="StaffNo" />
+			
+			<Column Name="[department]" Member="department" />
+			
+			<Column Name="[Industry]" Member="Industry" />
+			
+			<Column Name="[JobTitle]" Member="JobTitle" />
+			
+			<Column Name="[Organisation]" Member="Organisation" />
+			
+			<Column Name="[EducationLevel]" Member="EducationLevel" />
+			
+			<Column Name="[DateChanged]" Member="DateChanged" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashierTotalWriteOffView" Member="Blue.Cosacs.Shared.CashierTotalWriteOffView">
+        <Type Name="Blue.Cosacs.Shared.CashierTotalWriteOffView">
+			
+			<Column Name="[empeeno]" Member="empeeno" />
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[datetrans]" Member="datetrans" />
+			
+			<Column Name="[difference]" Member="difference" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.BookingFailuresView" Member="Blue.Cosacs.Shared.BookingFailuresView">
+        <Type Name="Blue.Cosacs.Shared.BookingFailuresView">
+			
+			<Column Name="[ID]" Member="ID" />
+			
+			<Column Name="[BookingID]" Member="BookingID" />
+			
+			<Column Name="[OriginalBookingID]" Member="OriginalBookingID" />
+			
+			<Column Name="[OrderedQuantity]" Member="OrderedQuantity" />
+			
+			<Column Name="[FailedQty]" Member="FailedQty" />
+			
+			<Column Name="[BookingType]" Member="BookingType" />
+			
+			<Column Name="[CancelReason]" Member="CancelReason" />
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[IUPC]" Member="IUPC" />
+			
+			<Column Name="[itemdescr1]" Member="itemdescr1" />
+			
+			<Column Name="[itemdescr2]" Member="itemdescr2" />
+			
+			<Column Name="[CustomerName]" Member="CustomerName" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[LineItemID]" Member="LineItemID" />
+			
+			<Column Name="[SalesBrnNo]" Member="SalesBrnNo" />
+			
+			<Column Name="[Actioned]" Member="Actioned" />
+			
+			<Column Name="[SalesPerson]" Member="SalesPerson" />
+			
+			<Column Name="[RetItemID]" Member="RetItemID" />
+			
+			<Column Name="[RetVal]" Member="RetVal" />
+			
+			<Column Name="[RetStockLocn]" Member="RetStockLocn" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.RoleView" Member="Blue.Cosacs.Shared.RoleView">
+        <Type Name="Blue.Cosacs.Shared.RoleView">
+			
+			<Column Name="[Id]" Member="Id" />
+			
+			<Column Name="[Name]" Member="Name" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.UserRoleView" Member="Blue.Cosacs.Shared.UserRoleView">
+        <Type Name="Blue.Cosacs.Shared.UserRoleView">
+			
+			<Column Name="[Id]" Member="Id" />
+			
+			<Column Name="[BranchNo]" Member="BranchNo" />
+			
+			<Column Name="[Login]" Member="Login" />
+			
+			<Column Name="[Password]" Member="Password" />
+			
+			<Column Name="[LastChangePassword]" Member="LastChangePassword" />
+			
+			<Column Name="[FirstName]" Member="FirstName" />
+			
+			<Column Name="[LastName]" Member="LastName" />
+			
+			<Column Name="[ExternalLogin]" Member="ExternalLogin" />
+			
+			<Column Name="[LegacyPassword]" Member="LegacyPassword" />
+			
+			<Column Name="[eMail]" Member="eMail" />
+			
+			<Column Name="[Locked]" Member="Locked" />
+			
+			<Column Name="[FullName]" Member="FullName" />
+			
+			<Column Name="[RequireChangePassword]" Member="RequireChangePassword" />
+			
+			<Column Name="[FactEmployeeNo]" Member="FactEmployeeNo" />
+			
+			<Column Name="[AddressLine1]" Member="AddressLine1" />
+			
+			<Column Name="[AddressLine2]" Member="AddressLine2" />
+			
+			<Column Name="[AddressLine3]" Member="AddressLine3" />
+			
+			<Column Name="[PostCode]" Member="PostCode" />
+			
+			<Column Name="[Phone]" Member="Phone" />
+			
+			<Column Name="[PhoneAlternate]" Member="PhoneAlternate" />
+			
+			<Column Name="[Probation]" Member="Probation" />
+			
+			<Column Name="[BranchId]" Member="BranchId" />
+			
+			<Column Name="[DepositRequired]" Member="DepositRequired" />
+			
+			<Column Name="[LockedOn]" Member="LockedOn" />
+			
+			<Column Name="[UnLockedOn]" Member="UnLockedOn" />
+			
+			<Column Name="[UserId]" Member="UserId" />
+			
+			<Column Name="[commndue]" Member="commndue" />
+			
+			<Column Name="[alloccount]" Member="alloccount" />
+			
+			<Column Name="[serialno]" Member="serialno" />
+			
+			<Column Name="[datelstaudit]" Member="datelstaudit" />
+			
+			<Column Name="[maxrow]" Member="maxrow" />
+			
+			<Column Name="[lstcommn]" Member="lstcommn" />
+			
+			<Column Name="[UpliftCommissionRate]" Member="UpliftCommissionRate" />
+			
+			<Column Name="[MinAccounts]" Member="MinAccounts" />
+			
+			<Column Name="[MaxAccounts]" Member="MaxAccounts" />
+			
+			<Column Name="[AllocationRank]" Member="AllocationRank" />
+			
+			<Column Name="[RICashierCode]" Member="RICashierCode" />
+			
+			<Column Name="[RoleId]" Member="RoleId" />
+			
+			<Column Name="[Name]" Member="Name" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.LinkedContractsView" Member="Blue.Cosacs.Shared.LinkedContractsView">
+        <Type Name="Blue.Cosacs.Shared.LinkedContractsView">
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[ID]" Member="ID" />
+			
+			<Column Name="[itemno]" Member="itemno" />
+			
+			<Column Name="[ordval]" Member="ordval" />
+			
+			<Column Name="[ContractLength]" Member="ContractLength" />
+			
+			<Column Name="[Contract]" Member="Contract" />
+			
+			<Column Name="[CustomerName]" Member="CustomerName" />
+			
+			<Column Name="[AddressLine1]" Member="AddressLine1" />
+			
+			<Column Name="[AddressLine2]" Member="AddressLine2" />
+			
+			<Column Name="[AddressLine3]" Member="AddressLine3" />
+			
+			<Column Name="[PostCode]" Member="PostCode" />
+			
+			<Column Name="[AgreementDay]" Member="AgreementDay" />
+			
+			<Column Name="[AgreementMonth]" Member="AgreementMonth" />
+			
+			<Column Name="[AgreementYear]" Member="AgreementYear" />
+			
+			<Column Name="[moneyString]" Member="moneyString" />
+			
+			<Column Name="[moneyValue]" Member="moneyValue" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.BERItemsForReplacementView" Member="Blue.Cosacs.Shared.BERItemsForReplacementView">
+        <Type Name="Blue.Cosacs.Shared.BERItemsForReplacementView">
+			
+			<Column Name="[Acctno]" Member="Acctno" />
+			
+			<Column Name="[ServiceRequestNo]" Member="ServiceRequestNo" />
+			
+			<Column Name="[Branch]" Member="Branch" />
+			
+			<Column Name="[IUPC]" Member="IUPC" />
+			
+			<Column Name="[Itemdescr1]" Member="Itemdescr1" />
+			
+			<Column Name="[Itemdescr2]" Member="Itemdescr2" />
+			
+			<Column Name="[CustomerName]" Member="CustomerName" />
+			
+			<Column Name="[CustId]" Member="CustId" />
+			
+			<Column Name="[CusTel]" Member="CusTel" />
+			
+			<Column Name="[DateAuth]" Member="DateAuth" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.WarrantySaleGenerateView" Member="Blue.Cosacs.Shared.WarrantySaleGenerateView">
+        <Type Name="Blue.Cosacs.Shared.WarrantySaleGenerateView">
+			
+			<Column Name="[invoiceNumber]" Member="invoiceNumber" />
+			
+			<Column Name="[SaleBranch]" Member="SaleBranch" />
+			
+			<Column Name="[SaleBranchName]" Member="SaleBranchName" />
+			
+			<Column Name="[SoldOn]" Member="SoldOn" />
+			
+			<Column Name="[SoldBy]" Member="SoldBy" />
+			
+			<Column Name="[SoldById]" Member="SoldById" />
+			
+			<Column Name="[CustomerAccount]" Member="CustomerAccount" />
+			
+			<Column Name="[customerId]" Member="customerId" />
+			
+			<Column Name="[customerTitle]" Member="customerTitle" />
+			
+			<Column Name="[CustomerFirstName]" Member="CustomerFirstName" />
+			
+			<Column Name="[CustomerLastName]" Member="CustomerLastName" />
+			
+			<Column Name="[CustomerAddressLine1]" Member="CustomerAddressLine1" />
+			
+			<Column Name="[CustomerAddressLine2]" Member="CustomerAddressLine2" />
+			
+			<Column Name="[CustomerAddressLine3]" Member="CustomerAddressLine3" />
+			
+			<Column Name="[CustomerPostCode]" Member="CustomerPostCode" />
+			
+			<Column Name="[CustomerNotes]" Member="CustomerNotes" />
+			
+			<Column Name="[ItemId]" Member="ItemId" />
+			
+			<Column Name="[ItemCostPrice]" Member="ItemCostPrice" />
+			
+			<Column Name="[StockLocation]" Member="StockLocation" />
+			
+			<Column Name="[ItemNumber]" Member="ItemNumber" />
+			
+			<Column Name="[ItemUPC]" Member="ItemUPC" />
+			
+			<Column Name="[ItemPrice]" Member="ItemPrice" />
+			
+			<Column Name="[Description]" Member="Description" />
+			
+			<Column Name="[Model]" Member="Model" />
+			
+			<Column Name="[itemBrand]" Member="itemBrand" />
+			
+			<Column Name="[itemSupplier]" Member="itemSupplier" />
+			
+			<Column Name="[AgreementNumber]" Member="AgreementNumber" />
+			
+			<Column Name="[homePhone]" Member="homePhone" />
+			
+			<Column Name="[workPhone]" Member="workPhone" />
+			
+			<Column Name="[mobilePhone]" Member="mobilePhone" />
+			
+			<Column Name="[Email]" Member="Email" />
+			
+			<Column Name="[Quantity]" Member="Quantity" />
+			
+			<Column Name="[AccountType]" Member="AccountType" />
+			
+			<Column Name="[Department]" Member="Department" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.WarrantyDeliveredView" Member="Blue.Cosacs.Shared.WarrantyDeliveredView">
+        <Type Name="Blue.Cosacs.Shared.WarrantyDeliveredView">
+			
+			<Column Name="[EffectiveDate]" Member="EffectiveDate" />
+			
+			<Column Name="[ProductDeliveryDate]" Member="ProductDeliveryDate" />
+			
+			<Column Name="[ItemId]" Member="ItemId" />
+			
+			<Column Name="[contractno]" Member="contractno" />
+			
+			<Column Name="[stocklocn]" Member="stocklocn" />
+			
+			<Column Name="[warrantyLength]" Member="warrantyLength" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[parentItemNumber]" Member="parentItemNumber" />
+			
+			<Column Name="[parentStockLocation]" Member="parentStockLocation" />
+			
+			<Column Name="[parentItemId]" Member="parentItemId" />
+			
+			<Column Name="[Itemno]" Member="Itemno" />
+			
+			<Column Name="[Description]" Member="Description" />
+			
+			<Column Name="[currstatus]" Member="currstatus" />
+			
+			<Column Name="[WarrantyDeliveredDate]" Member="WarrantyDeliveredDate" />
+			
+			<Column Name="[FreeWarrantyLength]" Member="FreeWarrantyLength" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.ItemsWithoutWarrantiesView" Member="Blue.Cosacs.Shared.ItemsWithoutWarrantiesView">
+        <Type Name="Blue.Cosacs.Shared.ItemsWithoutWarrantiesView">
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[agrmtno]" Member="agrmtno" />
+			
+			<Column Name="[itemno]" Member="itemno" />
+			
+			<Column Name="[ItemID]" Member="ItemID" />
+			
+			<Column Name="[stocklocn]" Member="stocklocn" />
+			
+			<Column Name="[custid]" Member="custid" />
+			
+			<Column Name="[NoOfPrompts]" Member="NoOfPrompts" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.WarrantyRenewalGenerateView" Member="Blue.Cosacs.Shared.WarrantyRenewalGenerateView">
+        <Type Name="Blue.Cosacs.Shared.WarrantyRenewalGenerateView">
+			
+			<Column Name="[invoiceNumber]" Member="invoiceNumber" />
+			
+			<Column Name="[SaleBranch]" Member="SaleBranch" />
+			
+			<Column Name="[SaleBranchName]" Member="SaleBranchName" />
+			
+			<Column Name="[SoldOn]" Member="SoldOn" />
+			
+			<Column Name="[SoldBy]" Member="SoldBy" />
+			
+			<Column Name="[SoldById]" Member="SoldById" />
+			
+			<Column Name="[CustomerAccount]" Member="CustomerAccount" />
+			
+			<Column Name="[customerId]" Member="customerId" />
+			
+			<Column Name="[customerTitle]" Member="customerTitle" />
+			
+			<Column Name="[CustomerFirstName]" Member="CustomerFirstName" />
+			
+			<Column Name="[CustomerLastName]" Member="CustomerLastName" />
+			
+			<Column Name="[CustomerAddressLine1]" Member="CustomerAddressLine1" />
+			
+			<Column Name="[CustomerAddressLine2]" Member="CustomerAddressLine2" />
+			
+			<Column Name="[CustomerAddressLine3]" Member="CustomerAddressLine3" />
+			
+			<Column Name="[CustomerPostCode]" Member="CustomerPostCode" />
+			
+			<Column Name="[CustomerNotes]" Member="CustomerNotes" />
+			
+			<Column Name="[ItemId]" Member="ItemId" />
+			
+			<Column Name="[ItemCostPrice]" Member="ItemCostPrice" />
+			
+			<Column Name="[StockLocation]" Member="StockLocation" />
+			
+			<Column Name="[ItemNumber]" Member="ItemNumber" />
+			
+			<Column Name="[ItemUPC]" Member="ItemUPC" />
+			
+			<Column Name="[ItemPrice]" Member="ItemPrice" />
+			
+			<Column Name="[Description]" Member="Description" />
+			
+			<Column Name="[Model]" Member="Model" />
+			
+			<Column Name="[itemBrand]" Member="itemBrand" />
+			
+			<Column Name="[itemSupplier]" Member="itemSupplier" />
+			
+			<Column Name="[AgreementNumber]" Member="AgreementNumber" />
+			
+			<Column Name="[homePhone]" Member="homePhone" />
+			
+			<Column Name="[workPhone]" Member="workPhone" />
+			
+			<Column Name="[mobilePhone]" Member="mobilePhone" />
+			
+			<Column Name="[Email]" Member="Email" />
+			
+			<Column Name="[Quantity]" Member="Quantity" />
+			
+			<Column Name="[AccountType]" Member="AccountType" />
+			
+			<Column Name="[Department]" Member="Department" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.WarrantyReplacementView" Member="Blue.Cosacs.Shared.WarrantyReplacementView">
+        <Type Name="Blue.Cosacs.Shared.WarrantyReplacementView">
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[agrmtno]" Member="agrmtno" />
+			
+			<Column Name="[ItemID]" Member="ItemID" />
+			
+			<Column Name="[stocklocn]" Member="stocklocn" />
+			
+			<Column Name="[contractno]" Member="contractno" />
+			
+			<Column Name="[CollectionType]" Member="CollectionType" />
+			
+			<Column Name="[ExchangeDate]" Member="ExchangeDate" />
+			
+			<Column Name="[ReplaceWarrantyLength]" Member="ReplaceWarrantyLength" />
+			
+			<Column Name="[WarrantyType]" Member="WarrantyType" />
+			
+			<Column Name="[LinkIrwId]" Member="LinkIrwId" />
+			
+			<Column Name="[LinkIrwContractno]" Member="LinkIrwContractno" />
+			
+			<Column Name="[ReplacementItemId]" Member="ReplacementItemId" />
+			
+			<Column Name="[ReLinkContractNo]" Member="ReLinkContractNo" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.LineItemHasItemsToCollectView" Member="Blue.Cosacs.Shared.LineItemHasItemsToCollectView">
+        <Type Name="Blue.Cosacs.Shared.LineItemHasItemsToCollectView">
+			
+			<Column Name="[acctno]" Member="acctno" />
+			
+			<Column Name="[agrmtno]" Member="agrmtno" />
+			
+			<Column Name="[stocklocn]" Member="stocklocn" />
+			
+			<Column Name="[contractno]" Member="contractno" />
+			
+			<Column Name="[ItemID]" Member="ItemID" />
+			
+			<Column Name="[ParentItemID]" Member="ParentItemID" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CashLoanDisbursementDetailsView" Member="Blue.Cosacs.Shared.CashLoanDisbursementDetailsView">
+        <Type Name="Blue.Cosacs.Shared.CashLoanDisbursementDetailsView">
+			
+			<Column Name="[CustomerId]" Member="CustomerId" />
+			
+			<Column Name="[CustomerName]" Member="CustomerName" />
+			
+			<Column Name="[CustomerAddress1]" Member="CustomerAddress1" />
+			
+			<Column Name="[CustomerAddress2]" Member="CustomerAddress2" />
+			
+			<Column Name="[CustomerAddress3]" Member="CustomerAddress3" />
+			
+			<Column Name="[CustomerPostCode]" Member="CustomerPostCode" />
+			
+			<Column Name="[CustomerEmail]" Member="CustomerEmail" />
+			
+			<Column Name="[CustomerTelephoneNumber]" Member="CustomerTelephoneNumber" />
+			
+			<Column Name="[AccountNumber]" Member="AccountNumber" />
+			
+			<Column Name="[LoanAmount]" Member="LoanAmount" />
+			
+			<Column Name="[BankName]" Member="BankName" />
+			
+			<Column Name="[BankBranch]" Member="BankBranch" />
+			
+			<Column Name="[BankAccountType]" Member="BankAccountType" />
+			
+			<Column Name="[BankAccountNumber]" Member="BankAccountNumber" />
+			
+			<Column Name="[BankReferenceNo]" Member="BankReferenceNo" />
+			
+			<Column Name="[BankAccountName]" Member="BankAccountName" />
+			
+			<Column Name="[Notes]" Member="Notes" />
+			
+			<Column Name="[EmployeeDisburseEmpeeno]" Member="EmployeeDisburseEmpeeno" />
+			
+			<Column Name="[EmployeeDisburseFullName]" Member="EmployeeDisburseFullName" />
+			
+			<Column Name="[DisbursementType]" Member="DisbursementType" />
+			
+			<Column Name="[BankTransferNumber]" Member="BankTransferNumber" />
+			
+			<Column Name="[BankTransferDate]" Member="BankTransferDate" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.AllocateCustomersToCSR" Member="Blue.Cosacs.Shared.AllocateCustomersToCSR">
+        <Type Name="Blue.Cosacs.Shared.AllocateCustomersToCSR">
+			
+			<Column Name="[SalesPersonId]" Member="SalesPersonId" />
+			
+			<Column Name="[CustomerId]" Member="CustomerId" />
+			
+			<Column Name="[DateChanged]" Member="DateChanged" />
+			
+			<Column Name="[MobileNumber]" Member="MobileNumber" />
+			
+			<Column Name="[LandLinePhone]" Member="LandLinePhone" />
+			
+			<Column Name="[Email]" Member="Email" />
+			
+			<Column Name="[CustomerBranch]" Member="CustomerBranch" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.ViewSets" Member="Blue.Cosacs.Shared.ViewSets">
+        <Type Name="Blue.Cosacs.Shared.ViewSets">
+			
+			<Column Name="[setname]" Member="setname" />
+			
+			<Column Name="[empeeno]" Member="empeeno" />
+			
+			<Column Name="[tname]" Member="tname" />
+			
+			<Column Name="[dateamend]" Member="dateamend" />
+			
+			<Column Name="[columntype]" Member="columntype" />
+			
+			<Column Name="[setdescript]" Member="setdescript" />
+			
+			<Column Name="[Value]" Member="Value" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.StockItem" Member="Blue.Cosacs.Shared.StockItem">
+        <Type Name="Blue.Cosacs.Shared.StockItem">
+			
+			<Column Name="[ID]" Member="ID" />
+			
+			<Column Name="[origbr]" Member="origbr" />
+			
+			<Column Name="[itemno]" Member="itemno" />
+			
+			<Column Name="[stocklocn]" Member="stocklocn" />
+			
+			<Column Name="[suppliercode]" Member="suppliercode" />
+			
+			<Column Name="[itemdescr1]" Member="itemdescr1" />
+			
+			<Column Name="[itemdescr2]" Member="itemdescr2" />
+			
+			<Column Name="[unitpricehp]" Member="unitpricehp" />
+			
+			<Column Name="[unitpricecash]" Member="unitpricecash" />
+			
+			<Column Name="[taxrate]" Member="taxrate" />
+			
+			<Column Name="[stock]" Member="stock" />
+			
+			<Column Name="[stockactual]" Member="stockactual" />
+			
+			<Column Name="[stockonorder]" Member="stockonorder" />
+			
+			<Column Name="[stockdamage]" Member="stockdamage" />
+			
+			<Column Name="[stocklastplanneddate]" Member="stocklastplanneddate" />
+			
+			<Column Name="[stockfactavailable]" Member="stockfactavailable" />
+			
+			<Column Name="[category]" Member="category" />
+			
+			<Column Name="[supplier]" Member="supplier" />
+			
+			<Column Name="[prodstatus]" Member="prodstatus" />
+			
+			<Column Name="[warrantable]" Member="warrantable" />
+			
+			<Column Name="[itemtype]" Member="itemtype" />
+			
+			<Column Name="[unitpricedutyfree]" Member="unitpricedutyfree" />
+			
+			<Column Name="[refcode]" Member="refcode" />
+			
+			<Column Name="[warrantyrenewalflag]" Member="warrantyrenewalflag" />
+			
+			<Column Name="[leadtime]" Member="leadtime" />
+			
+			<Column Name="[assemblyrequired]" Member="assemblyrequired" />
+			
+			<Column Name="[deleted]" Member="deleted" />
+			
+			<Column Name="[CostPrice]" Member="CostPrice" />
+			
+			<Column Name="[suppliername]" Member="suppliername" />
+			
+			<Column Name="[DateActivated]" Member="DateActivated" />
+			
+			<Column Name="[IUPC]" Member="IUPC" />
+			
+			<Column Name="[ColourName]" Member="ColourName" />
+			
+			<Column Name="[ColourCode]" Member="ColourCode" />
+			
+			<Column Name="[VendorStyle]" Member="VendorStyle" />
+			
+			<Column Name="[VendorLongStyle]" Member="VendorLongStyle" />
+			
+			<Column Name="[ItemID]" Member="ItemID" />
+			
+			<Column Name="[SKU]" Member="SKU" />
+			
+			<Column Name="[VendorEAN]" Member="VendorEAN" />
+			
+			<Column Name="[RepossessedItem]" Member="RepossessedItem" />
+			
+			<Column Name="[VendorWarranty]" Member="VendorWarranty" />
+			
+			<Column Name="[SparePart]" Member="SparePart" />
+			
+			<Column Name="[Class]" Member="Class" />
+			
+			<Column Name="[SubClass]" Member="SubClass" />
+			
+			<Column Name="[Brand]" Member="Brand" />
+			
+			<Column Name="[WarrantyLength]" Member="WarrantyLength" />
+			
+			<Column Name="[WarrantyType]" Member="WarrantyType" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.CustomerSalesManagementView" Member="Blue.Cosacs.Shared.CustomerSalesManagementView">
+        <Type Name="Blue.Cosacs.Shared.CustomerSalesManagementView">
+			
+			<Column Name="[SalesPerson]" Member="SalesPerson" />
+			
+			<Column Name="[CustomerId]" Member="CustomerId" />
+			
+			<Column Name="[FirstName]" Member="FirstName" />
+			
+			<Column Name="[LastName]" Member="LastName" />
+			
+			<Column Name="[MobileNumber]" Member="MobileNumber" />
+			
+			<Column Name="[LandLinePhone]" Member="LandLinePhone" />
+			
+			<Column Name="[CustomerAccount]" Member="CustomerAccount" />
+			
+			<Column Name="[Email]" Member="Email" />
+			
+			<Column Name="[TotalAmount]" Member="TotalAmount" />
+			
+			<Column Name="[ReceiveSms]" Member="ReceiveSms" />
+			
+        </Type>
+    </Table>
+	
+    <Table Name="dbo.UsersPerBranch" Member="Blue.Cosacs.Shared.UsersPerBranch">
+        <Type Name="Blue.Cosacs.Shared.UsersPerBranch">
+			
+			<Column Name="[Id]" Member="Id" />
+			
+			<Column Name="[BranchNo]" Member="BranchNo" />
+			
+        </Type>
+    </Table>
+	
+</Database>

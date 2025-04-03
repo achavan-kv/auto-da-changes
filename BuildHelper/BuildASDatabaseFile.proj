@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTarget="BuildWarrantyASDatabaseFile" >
+    <UsingTask TaskName="SsasBuilder.SsasBuildASDatabaseFileTask" 
+        AssemblyFile="SsasBuilder.dll"/>
+    <Target Name="BuildWarrantyASDatabaseFile">		
+		<SsasBuildASDatabaseFileTask SsasProjectFile = "..\CosacsReporting\Warranty\CosacsReporting.dwproj"
+			SsasTargetFile = "..\artifacts\CosacsReporting.asdatabase"
+			SsasServerEdition = "Standard" />
+    </Target>
+	<Target Name="BuildMerchandisingASDatabaseFile">		
+		<SsasBuildASDatabaseFileTask SsasProjectFile = "..\CosacsReporting\Merchandising\Merchandising.dwproj"
+			SsasTargetFile = "..\artifacts\MerchandisingReporting.asdatabase"
+			SsasServerEdition = "Standard" />
+    </Target>	
+</Project>

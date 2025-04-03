@@ -1,0 +1,200 @@
+<div class="pos-sales container" data-ng-controller="SalesController" data-ng-cloak data-tax-type="E">
+
+    <section class="row" id="quotationSection" collapse="isCollapsed">
+
+        <div class="col-md-9 col-sm-10">
+            <div class="row text-center">
+                <div class="col-lg-1 col-md-1 ">
+                    <button type="button" tooltip-placement="bottom" tooltip="{{togglePopover}}"
+                            class="pos-navbar-toggle"
+                            data-ng-click="toggleMaximise()">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="col-lg-11 col-md-11">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 no-margin no-pad">
+                            <button data-ng-click="setView('productSearch')"
+                                    class="btn tab-select btn-default btn-lg btn-block glyphicons cargo bb-btn-active"
+                                    data-ng-class="{'btn-primary active': views.productSearch.visible}"> &nbsp;&nbsp;Products
+                            </button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 no-margin no-pad">
+                            <button data-ng-click="setView('customer')"
+                                    class="btn tab-select btn-default btn-lg btn-block glyphicons parents bb-btn-active"
+                                    data-ng-class="{'btn-primary active': views.customer.visible}"> &nbsp;&nbsp;Customer<span
+                                    ng-class="{'warning-icon':cart.isCustomerDataMissing}"
+                                    id="customer-missing-ico"></span></button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 no-margin no-pad basket-button">
+                            <button data-ng-click="setView('itemList')"
+                                    class="btn tab-select btn-default btn-lg btn-block glyphicons shopping_cart bb-btn-active"
+                                    data-ng-class="{'btn-primary active': views.itemList.visible}">
+                                &nbsp;&nbsp;Quotation<span
+                                    class="badge item-count"
+                                    data-ng-if="cart.items.length">{{cart.totalQuantity}}</span>
+                            </button>
+                            <div class="basket-info">{{views.itemList.message}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <div data-ng-controller="ProductController">
+                        <div class="pos-pane" id="products" data-ng-if="views.productSearch.visible" data-ng-include
+                             src="'Sales/views/productsSales.html'"></div>
+                    </div>
+                    <div data-ng-controller="BasketController">
+                        <div class="pos-pane large" id="quotation" data-ng-if="views.itemList.visible" data-ng-include
+                             src="'Sales/views/quotation.html'"></div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 pos-pane large" id="customer" data-ng-show="views.customer.visible">
+                        <bb-Customer customer="cart.Customer"
+                                     is-customer-details-locked="cart.isCustomerDetailsLocked"
+                                     basket-changes-allowed="cart.basketChangesAllowed"
+                                     is-customer-data-required="cart.isCustomerDataRequired"/>
+                    </div>
+                    <!--<div data-ng-controller="PaymentController">-->
+                    <!--<div class="pos-pane large" id="paymentView" data-ng-if="views.payment.visible" data-ng-include-->
+                    <!--src="'Sales/views/payment.html'"></div>-->
+                    <div class="col-lg-12 col-md-12 pos-pane large" id="paymentView"
+                         data-ng-show="views.payment.visible">
+                        <bb-payment cart="cart"
+                                    pay-methods="MasterData.payMethods"
+                                    currency-codes="MasterData.currencyCodes" card-types="MasterData.cardType"
+                                    payment="payment" user="user" payment-visible="views.payment.visible"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-2 sidebar-outer no-padding">
+            <aside class="sidebar sidebar-right">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Quotation</div>
+                    <div class="panel-body">
+                        <p>&nbsp;</p>
+
+                        <div class="row" id="BalancePanelRw">
+
+
+                            <div class="form-group">
+                                <label class="col-sm-4 form-control-static text-left highlight">Amount</label>
+
+                                <div class="col-sm-8">
+                                    <p class="form-control-static amount text-right highlight" id="dueAmount">
+                                        {{(cart.totalAmount
+                                        || 0) |
+                                        currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}</p>
+                                </div>
+                            </div>
+                            <div class="form-group dueDetails">
+                                <label class="col-sm-3 col-sm-offset-1 form-control-static text-left no-sidePadding">
+                                    <small><span class="glyphicons stop form-control-static"></span> Items</small>
+                                </label>
+
+                                <div class="col-sm-8 form-control-static amount text-right">
+                                    <small id="itemsTotal"> {{cart.itemsTotal | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </small>
+                                </div>
+                                <label class="col-sm-3 col-sm-offset-1 form-control-static text-left no-sidePadding">
+                                    <small><span class="glyphicons stop form-control-static"></span> Tax</small>
+                                </label>
+
+                                <div class="col-sm-8 form-control-static amount text-right">
+                                    <small id="taxTotal"> {{cart.totalTaxAmount | currency :
+                                        culture.CurrencySymbol : culture.DecimalPlaces}}
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-if="cart.saleComplete">
+                                <label class="col-sm-4 form-control-static text-left">
+                                    Invoice No.
+                                </label>
+
+                                <div class="col-sm-8">
+                                    <p class="form-control-static text-right" id="invNo">
+                                        {{cart.InvoiceNo | padNo:10}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel-body clearfix col-lg-12">
+                                <label class="checkbox-inline col-lg-6">
+                                    <input type="checkbox" ng-model="cart.isTaxFreeSale" ng-Change="changeSaleType('tax')"
+                                           ng-disabled="cart.payments.length > 0"
+                                           id="taxFree">Tax Free
+                                </label>
+                                <label class="checkbox-inline col-lg-5"
+                                       ng-if="MasterData.settings.isDutyFreeSaleAllowed">
+                                    <input type="checkbox" ng-model="cart.isDutyFreeSale"
+                                           ng-Change="changeSaleType('duty')" ng-disabled="cart.payments.length > 0"
+                                           id="dutyFree">Duty Free
+                                </label>
+                            </div>
+                            <div class="form-group panel panel-body clearfix col-lg-12">
+                                <label class="col-lg-4 radio-inline ">
+                                    <input type="radio" name="SalesType" value="C" id="cash" ng-model="cart.salesType">
+                                    Cash
+                                </label>
+                                <label class="col-lg-4 radio-inline ">
+                                    <input type="radio" name="SalesType" value="R" id="rf" ng-model="cart.salesType"> RF
+                                </label>
+                                <label class="col-lg-3 radio-inline ">
+                                    <input type="radio" name="SalesType" value="H" id="hp" ng-model="cart.salesType"> HP
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row" id="LoadReceiptRw">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons notes"
+                                        data-ng-click="refundOrExchange()">
+                                    &nbsp;&nbsp;Load Quotation
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="CancelSalesRw"
+                             data-ng-if="!cart.saleComplete && cart.basketChangesAllowed">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons remove_2"
+                                        data-ng-click="cancelSale()" id="CancelSaleBtn">&nbsp;&nbsp;Cancel Quotation
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="saveQuotation">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons floppy_disk">
+                                    &nbsp;&nbsp;Save Quotation
+                                </button>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <button class="btn btn-default btn-lg btn-block glyphicons ok_2" id="ProceedSaleButton"
+                                        ng-click="isCollapsed = !isCollapsed">&nbsp;&nbsp;Proceed to Sale
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+    </section>
+
+    <section class="row" collapse="!isCollapsed">
+        <button class="btn btn-default btn-lg btn-block glyphicons ok_2" id="backToQuotation"
+                ng-click="isCollapsed = !isCollapsed">&nbsp;&nbsp;Back to Quotations
+        </button>
+    </section>
+</div>

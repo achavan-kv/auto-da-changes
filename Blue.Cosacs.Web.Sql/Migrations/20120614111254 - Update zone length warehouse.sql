@@ -1,0 +1,2 @@
+ALTER TABLE Warehouse.Booking
+ALTER COLUMN DeliveryZone VARCHAR(8) NULL

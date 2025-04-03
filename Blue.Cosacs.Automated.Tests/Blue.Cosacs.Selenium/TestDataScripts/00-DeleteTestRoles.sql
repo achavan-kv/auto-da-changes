@@ -1,0 +1,26 @@
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF EXISTS (SELECT * FROM SYSOBJECTS 
+           WHERE NAME = 'DeleteTestRoles'
+           AND xtype = 'P')
+BEGIN 
+DROP PROCEDURE DeleteTestRoles
+END
+GO
+
+CREATE PROCEDURE DeleteTestRoles
+
+AS
+BEGIN
+
+	DELETE FROM Admin.[Role] WHERE Name LIKE '%SelPerm%'
+
+END
+
+GO
+
+EXEC DeleteTestRoles

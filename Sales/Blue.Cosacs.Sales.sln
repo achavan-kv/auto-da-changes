@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Sales", "Blue.Cosacs.Sales\Blue.Cosacs.Sales.csproj", "{9BF83A66-2C11-4B3C-92A8-703A473EE39F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C2AF2D35-C4E4-41B4-91C4-BBEA9A645665}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Sales.Api", "Blue.Cosacs.Sales.Api\Blue.Cosacs.Sales.Api.csproj", "{F11185D7-57C8-4511-82EA-64281A6E62FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Sales.Web", "Blue.Cosacs.Sales.Web\Blue.Cosacs.Sales.Web.csproj", "{BEF10A78-7A23-4340-9382-A49A0A340D51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BF83A66-2C11-4B3C-92A8-703A473EE39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF83A66-2C11-4B3C-92A8-703A473EE39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF83A66-2C11-4B3C-92A8-703A473EE39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF83A66-2C11-4B3C-92A8-703A473EE39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11185D7-57C8-4511-82EA-64281A6E62FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11185D7-57C8-4511-82EA-64281A6E62FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11185D7-57C8-4511-82EA-64281A6E62FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11185D7-57C8-4511-82EA-64281A6E62FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF10A78-7A23-4340-9382-A49A0A340D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF10A78-7A23-4340-9382-A49A0A340D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF10A78-7A23-4340-9382-A49A0A340D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF10A78-7A23-4340-9382-A49A0A340D51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;ges\Unity.2.1.505.2\lib\NET35;ges\Unity.Interception.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

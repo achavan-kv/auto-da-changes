@@ -1,0 +1,189 @@
+<link href="/module.css" rel="stylesheet"/>
+<div class="col-lg-12" >
+    <div id="printSection">
+
+            <div class="receipt-reprint">
+                <div class="text-center"><b>Courts ({{ branchName}}) Ltd</b></div>
+                <div class="text-center">{{ branchAddress1 }}</div>
+                <div class="text-center">{{ branchAddress2 }}</div>
+                <div class="text-center">{{ branchAddress3 }}</div>
+                <div align="center" id="barcodeImg">
+                    <img ng-src="/barcode/CODE128/IN%24{{id}}?w=150&h=30&label=False&align=CENTER&rotate=False"
+                         width="150" height="30" title="{{id}}">
+                </div>
+                <div>{{ receiptType }} Cash & Go Receipt</div>
+                <hr style="border-top: dashed 1px #000000;"/>
+            </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <td class="receipt-reprint">
+                            TAX INVOICE:
+                        </td>
+                        <td class="receipt-reprint">
+                            {{loggedInBranchNo}}/{{id}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receipt-reprint">
+                            Sales Person:
+                        </td>
+                        <td class="receipt-reprint">
+                            {{createdBy}}
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td class="receipt-reprint">
+                            Cashier:
+                        </td>
+                        <td class="receipt-reprint">
+                            {{currentUser}}
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr>
+                        <td class="receipt-reprint">
+                            Date Printed:
+                        </td>
+                        <td class="receipt-reprint">
+                            {{createdOn | date:'dd/MM/yyyy HH:MM a'}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </br>
+
+            <div ng-repeat="item in items">
+                <table class="payment-table" style="width: 100%">
+                    <tr>
+                        <td colspan="3" class="receipt-reprint">
+                            {{item.quantity}}
+                            ({{item.itemNo}})
+                            {{item.description}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receipt-reprint-col-2">
+                            Amt
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            VAT
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            Sub Total
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receipt-reprint-col-2">
+                            {{item.price || item.manualDiscount || 0 | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            {{item.taxAmount || 0 | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            {{item.price || item.manualDiscount + item.taxAmount || 0 | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                    </tr>
+                </table>
+                </br>
+            </div>
+            </br>
+
+            <div>
+                <table class="payment-table" style="width: 100%">
+                    <thead>
+                    <tr>
+                        <td class="receipt-reprint-col-2">
+                            Total Amt
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            VAT
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            Invoice Total
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="receipt-reprint-col-2">
+                            {{totalAmount - totalTaxAmount | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            {{totalTaxAmount | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            {{totalAmount | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            </br>
+
+            <div >
+                <table  class="payment-table" style="width: 100%">
+                    <tr>
+                        <td class="receipt-reprint-col-2"/>
+                        <td class="receipt-reprint-col-2">
+                        <td class="receipt-reprint-col-2">
+                            <hr style="border-top: dashed 1px #000000;"/>
+                        </td>
+                    </tr>
+                    <tr ng-repeat="payment in payments" >
+                        <td class="receipt-reprint-col-2" ng-if="(changeGiven && payment.amount>0) || (!changeGiven)"></td>
+                        <td class="receipt-reprint-col-2" ng-if="(changeGiven && payment.amount>0) || (!changeGiven)">
+                            {{payment.paymentMethodId}}
+                        </td>
+                        <td class="receipt-reprint-col-2" ng-if="(changeGiven && payment.amount>0) || (!changeGiven)">
+                            {{payment.amount | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="receipt-reprint-col-2"></td>
+                        <td class="receipt-reprint-col-2" ng-if="positiveAmountSum > (negativeAmountSum * -1)">
+                            Amount Tendered
+                        </td>
+                        <td class="receipt-reprint-col-2" ng-if="!changeGiven && negativeAmountSum < 0">
+                            Amount Returned
+                        </td>
+                        <td class="receipt-reprint-col-2" ng-if="positiveAmountSum > (negativeAmountSum * -1)">
+                            {{positiveAmountSum | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                        <td class="receipt-reprint-col-2" ng-if="!changeGiven && negativeAmountSum < 0">
+                            {{negativeAmountSum | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+
+                    </tr>
+                    <tr ng-if="changeGiven">
+                        <td class="receipt-reprint-col-2"/>
+                        <td class="receipt-reprint-col-2"/>
+                        <td class="receipt-reprint-col-2">
+                            <hr style="border-top: dashed 1px #000000;"/>
+                        </td>
+                    </tr>
+                    <tr ng-if="changeGiven">
+                        <td class="receipt-reprint-col-2"></td>
+                        <td class="receipt-reprint-col-2">
+                            Change Given
+                        </td>
+                        <td class="receipt-reprint-col-2">
+                            {{negativeAmountSum * -1 | customCurrency : culture.CurrencySymbol : culture.DecimalPlaces}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </br>
+
+            <hr style="border-top: dashed 1px #000000;"/>
+            <p>&nbsp;</p>
+
+            <div class="receipt-reprint">Signature</div>
+            <hr style="border-top: dashed 1px #000000;"/>
+            <p class="text-center receipt-reprint">Thank you for shopping at COURTS</p>
+
+    </div>
+</div>

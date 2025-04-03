@@ -1,0 +1,2 @@
+alter table merchandising.goodsreceiptproduct
+add QuantityCancelled int

@@ -1,0 +1,2 @@
+ALTER TABLE Warehouse.Booking
+ADD Express BIT NOT NULL DEFAULT 0

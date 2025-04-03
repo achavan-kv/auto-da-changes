@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <?include $(sys.CURRENTDIR)..\CosacsWebSiteContents.wxs ?>
+</Include>

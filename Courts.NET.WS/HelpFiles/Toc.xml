@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1">
+    <TocEntry Title="Merged old help" Link="/../../../../CoSACS Online Help/Output/nikkih/MyDotNetHelp/Manual.mchelp" AbsoluteLink="file:///Y:/Online Help/CoSACS Online Help/Output/nikkih/MyDotNetHelp/Manual.mchelp" MergeHint="0">
+    </TocEntry>
+    <TocEntry Title="Service Request Screen" Link="/Content/Service/Service Request Screen.htm" />
+    <TocEntry Title="Service Request Search" Link="/Content/Service/ServiceSearch.htm" />
+    <TocEntry Title="Service Request Audit" Link="/Content/Service/Service Request Audit.htm" />
+    <TocEntry Title="The Product Tab" Link="/Content/Service/SR_Product Tab.htm" />
+    <TocEntry Title="Soft Script Popup" Link="/Content/Service/SoftScripts.htm" />
+    <TocEntry Title="Beyond Economic Repair (BER)" Link="/Content/Service/BER.htm" />
+    <TocEntry Title="Service Request Allocation" Link="/Content/Service/Allocation.htm" />
+    <TocEntry Title="The Resolution Tab" Link="/Content/Service/Resolution.htm" />
+    <TocEntry Title="Charge To Analysis" Link="/Content/Service/Charge To.htm" />
+    <TocEntry Title="Payment screen for Service" Link="/Content/Service/Service Payment.htm" />
+    <TocEntry Title="Batch Printing" Link="/Content/Service/BatchPrint.htm" />
+    <TocEntry Title="The Customer Interaction Screen" Link="/Content/Service/CustomerInteraction.htm" />
+    <TocEntry Title="Outstanding Service Requests" Link="/Content/Service/OutstandingSR.htm" />
+    <TocEntry Title="Service Request Summary on Account Details" Link="/Content/Service/SRAccountdetails.htm" />
+    <TocEntry Title="Service Progress Report" Link="/Content/Service/Service Progress Report.htm" />
+    <TocEntry Title="Service Failure Report" Link="/Content/Service/ServiceFailure Report.htm" />
+    <TocEntry Title="Claims submission report" Link="/Content/Service/ClaimsSubmissions.htm" />
+</CatapultToc>

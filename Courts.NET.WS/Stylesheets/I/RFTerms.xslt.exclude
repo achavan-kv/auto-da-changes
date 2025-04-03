@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	
+	<xsl:template match="/">
+		<HTML>
+			<head>
+				<TITLE></TITLE>
+				<META content="Microsoft Visual Studio 7.0" name="GENERATOR"></META>
+				<META content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema"></META>
+				<style type="text/css" media="all"> @import url(styles.css); 
+				</style>
+			</head>
+			<BODY>	
+				<xsl:apply-templates select="RFTERMS" />
+			</BODY>
+		</HTML>		
+	</xsl:template>
+	
+	<xsl:template match="RFTERMS">
+		<div class="RFHead1" align="center"><u>READY FINANCE - SYARAT DAN KONDISI</u>
+			<br/>
+			<br/>
+		</div>
+		<div class="smallSS" style="LEFT: 0cm; POSITION: absolute">Perjanjian ini mengatur syarat-syarat dan kondisi Ready Finance yang kami 
+			sediakan dan mengatur pemakaiannya dari waktu ke waktu. Dalam Perjanjian ini 
+			kata-kata “anda” dan “milik anda” mengacu pada setiap orang yang menggunakan 
+			Kartu Ready Finance (selanjutnya disebut Kartu) yang kami keluarkan berdasarkan 
+			data yang kami miliki. Kata-kata “kami”, “kita” dan “milik kami” berarti adalah PT Courts Indonesia Tbk. (selanjutnya disebut Courts).
+			Pada saat anda menerima atau menggunakan Kartu, anda setuju pada syarat dan 
+			kondisi yang diatur dalam Perjanjian ini.
+		</div>
+		<div class="smallSS" style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; LEFT: 6.5cm; PADDING-BOTTOM: 5px; WIDTH: 4cm; PADDING-TOP: 6px; POSITION: absolute; TOP: 2.75cm; HEIGHT: 4.7cm">
+			<xsl:value-of select="ACCOUNTNO"/>
+			<br />
+			<br />
+			<xsl:value-of select="NAME"/>
+			<br />
+			<xsl:value-of select="ADDRESS1"/>
+			<br />
+			<xsl:value-of select="ADDRESS2"/>
+			<br />
+			<xsl:value-of select="ADDRESS3"/>
+			<br />
+			<xsl:value-of select="POSTCODE"/>
+			<br />
+			<br />
+			<br />
+			<xsl:value-of select="LIMIT"/>
+			<br />
+			<br />
+			<xsl:value-of select="VALID"/>
+		</div>
+		<div class="smallSS" style="BORDER-RIGHT: gray thin solid; PADDING-RIGHT: 5px; BORDER-TOP: gray thin solid; PADDING-LEFT: 5px; LEFT: 2.5cm; PADDING-BOTTOM: 5px; BORDER-LEFT: gray thin solid; WIDTH: 8.7cm; PADDING-TOP: 5px; BORDER-BOTTOM: gray thin solid; POSITION: absolute; TOP: 2.75cm; HEIGHT: 4.7cm">Account 
+			Number:
+			<br/>
+			<br/>
+			Name:
+			<br/>
+			Address:
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			Spend Limit:
+			<br/>
+			<br/>
+			Valid From: (DD/MM/YYYY)
+		</div>
+		<div class="smallSS" style="LEFT: 0cm; WIDTH: 1cm; POSITION: absolute; TOP: 7.75cm; TEXT-ALIGN: justify"><b>1</b>
+			<br/>
+			1.1
+			<br/>
+			1.2
+			<br/>
+			<br/>
+			<br/>
+			1.3
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<b>2</b>
+			<br/>
+			2.1
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			2.2
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<b>3</b>
+			<br/>
+			3.1
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<b>4</b>
+			<br/>
+			4.1
+			<br/>
+			<br/>
+			<br/>
+			4.2
+			<br/>
+			<br/>
+			4.3
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			4.4
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<b>5</b>
+			<br/>
+			5.1
+		</div>
+		<div class="smallSS" style="LEFT: 1cm; WIDTH: 8cm; POSITION: absolute; TOP: 7.75cm; TEXT-ALIGN: justify"><b>Kartu 
+				Ready Finance</b>
+			<br/>
+			Kartu tetap milik PT Courts Indonesia Tbk.
+			<br/>
+			Anda boleh menggunakan Kartu untuk membeli barang-barang yang tersedia di 
+			seluruh cabang/toko Courts, sesuai dengan batas jumlah pembelanjaan 
+			yang anda miliki.
+			<br/>
+			Kartu bukan merupakan kartu debet rekening, tidak dapat digunakan untuk mengambil 
+			dana tunai dan tidak dapat digunakan oleh orang/pihak yang bukan atas nama 
+			pemegang Kartu yang datanya telah tercatat pada sistem data pelanggan kami 
+			serta tidak dapat dipindahtangankan.   
+			<br/>
+			<br/>
+			<b>Struktur Dana</b>
+			<br/>
+			Anda akan memperoleh satu rekening utama Ready Finance(selanjutnya disebut Rekening) 
+			atas nama anda sesuai dengan data yang tercantum dalam permohonan, 
+			dengan batas jumlah pembelanjaan tertentu.
+			<br/>
+			Setiap pembelanjaan yang anda lakukan berdasarkan Rekening ini, akan 
+			dianggap sebagai “sub-perjanjian” dan masing-masing akan dilaksanakan 
+			berdasarkan suatu Perjanjian Jual Beli tersendiri serta masing-masing 
+			transaksi/pembelanjaan akan memperoleh nomor sub rekening tersendiri.			
+			<br/>
+			<br/>
+			<b>Perjanjian Jual Beli</b>
+			<br/>
+			Seluruh transaksi yang anda lakukan akan mengacu pada Perjanjian Jual Beli 
+			berdasarkan ketentuan sebagaimana diatur dalam Buku III Kitab 
+			Undang-undang Hukum Perdata Tentang Perikatan.
+			<br/>
+			<br/>
+			<b>Pembayaran</b>
+			<br/>
+			Anda diwajibkan untuk melakukan satu pembayaran pada atau sebelum tanggal 
+			pembayaran yang disepakati setiap bulannya pada Rekening anda.
+			<br/>
+			Tanggal pembayaran bulanan anda adalah satu (1) bulan setelah 
+			tanggal pengiriman barang pertama yang kami lakukan.
+			<br/>
+			Kecuali diminta secara khusus oleh anda, pembayaran bulanan akan 
+			diterapkan berdasarkan jumlah pro rata dari keseluruhan jumlah 
+			yang terhutang berdasarkan masing-masing Perjanjian Jual Beli 
+			dan jumlah batas pembelanjaan yang tersisa akan mengikuti 
+			jumlah pembayaran yang anda lakukan.
+			<br/>
+			Jika cek pembayaran anda dikembalikan sebelum ada pembayaran 
+			untuk sebab apapun, maka anda akan dikenakan/dibebankan biaya 
+			pengembalian cek tersebut pada rekening anda dan berlaku untuk 
+			setiap cek yang dikembalikan.
+			<br/>
+			<br/>
+			<b>Batas Jumlah Pembelanjaan</b>
+			<br/>
+			Batas jumlah pembelanjaan anda adalah sebagaimana yang 
+			kami informasikan secara tertulis kepada anda pada saat 
+			anda menerima Kartu. Jika anda mengirimkan data-data 
+			pribadi anda kepada kami secara tidak sesuai dengan 
+			keadaan yang sebenarnya, maka kami berhak untuk 
+			membatalkan batas jumlah pembelanjaan anda dan anda 
+			tidak berhak untuk melakukan transaksi di seluruh cabang/toko 
+			Courts dengan menggunakan fasilitas Ready Finance ini dan seluruh jumlah 
+		</div>
+		<div class="smallSS" style="LEFT: 9.5cm; WIDTH: 1cm; POSITION: absolute; TOP: 8.50cm; TEXT-ALIGN: justify">
+			<br/>
+			<br/>
+			5.2
+			<br/>
+			<br/>
+			5.3
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			5.4
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			5.5
+			<br/>
+			<br/>
+			<br/>
+			<b>6</b>
+			<br/>
+			6.1
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			6.2
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			6.3
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			6.4
+			<br/>
+			<br/>
+			<br/>
+			6.5
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<b>7</b>
+			<br/>
+			7.1
+			<br/>
+			<br/>
+			7.2
+			<br/>
+			<br/>
+			7.3
+		</div>
+		<div class="smallSS" style="LEFT: 10.5cm; WIDTH: 8cm; POSITION: absolute; TOP: 8.50cm; TEXT-ALIGN: justify">
+			yang terhutang akan menjadi jatuh tempo secara 
+			seketika dan wajib untuk anda bayar secara sekaligus.  
+			<br/>
+			Batas jumlah pembelanjaan anda berlaku untuk selama 
+			12 (dua belas) bulan dari tanggal yang tercatak di Kartu.
+			<br/>
+			Jika Batas jumlah pembelanjaan anda tidak digunakan selama dalam 
+			waktu 12 (dua belas) bulan tersebut di atas, maka batas jumlah pembelanjaan 
+			tersebut akan kami batalkan dan Rekening anda akan kami tutup.	
+			<br/>
+			Jika jumlah batas pembelanjaan anda masih tersedia namun masa 
+			berlaku Kartu anda telah berakhir, maka anda diwajibkan untuk 
+			memperpanjang kembali masa berlaku Kartu anda sebelum melakukan 
+			transaksi/pembelanjaan berikutnya. 
+			<br/>
+			Jumlah keseluruhan cicilan pembayaran ditambah bunga berjalan tidak boleh melebihi batas jumlah pembelanjaan anda.
+			<br/>
+			<br/>
+			<b>Keterlambatan pembayaran cicilan</b>
+			<br/>
+			Batas jumlah pembelanjaan anda akan ditangguhkan apabila pembayaran bulanan anda 
+			tidak dilakukan pada waktu jatuh temponya dan pada Rekening anda akan dicatat terjadi 
+			keterlambatan pembayaran lebih dari 1 bulan. Pada saat pembayaran keterlambatan anda 
+			lakukan, maka batas jumlah pembelanjaan anda akan dipulihkan.
+			<br/>
+			Apabila anda terlambat melakukan pembayaran selama 2 bulan, maka Rekening  anda 
+			akan diblokir untuk melakukan transaksi berikutnya dan batas jumlah pembelanjaan 
+			yang tersisa akan kami batalkan. Setiap sub kontrak akan diperlakukan sesuai dengan 
+			Perjanjian Jual Beli dan Rekening anda akan dialokasikan untuk ditinjaklanjuti dengan 
+			upaya penagihan.
+			<br/>
+			Apabila atas keterlambatan pembayaran Rekening anda kami tindaklanjuti dengan upaya 
+			penagihan, maka anda akan kami bebankan dengan biaya penagihan sebesar 20% 
+			(dua puluh persen) dari jumlah keseluruhan yang terhutang.
+			<br/>
+			Setiap keterlambatan pembayaran pada Rekening anda, anda akan dikenakan bunga atas 
+			keterlambatan pembayaran, yang besarnya akan tercetak pada Kartu Pembayaran anda.
+			<br/>
+			Apabila kami mengirimkan surat tagihan kepada anda, maka Rekening anda akan kami 
+			bebankan sebesar Rp.5.000 (lima ribu rupiah) untuk setiap surat tagihan yang kami kirimkan. 
+			<br/>
+			<br/>
+			<b>Hak Courts</b>
+			<br/>
+			Kami berhak untuk merevisi/membatalkan batas jumlah pembelanjaan anda setiap saat.  
+			<br/>
+			Batas jumlah pembelanjaan anda akan diberikan berdasakan pertimbangan kami.
+			<br/>
+			Kami akan melakukan pemeriksaan sejarah kredit anda, kepegawaian dan pendapatan 
+			serta mencocokkan referensi kredit anda.
+		</div>
+		<br class="pageBreak" />
+		<div style="POSITION: relative">
+			<div class="smallSS" style="LEFT: 0cm; WIDTH: 1cm; POSITION: absolute; TOP: 2cm; TEXT-ALIGN: justify"><b>8</b>
+				<br/>
+				8.1			
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<b>9</b>
+				<br/>
+				9.1			
+				<br/>
+				<br/>
+				9.2			
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<b>10</b>
+				<br/>
+				10.1
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				10.2
+			</div>
+			<div class="smallSS" style="LEFT: 1cm; WIDTH: 8cm; POSITION: absolute; TOP: 2cm; TEXT-ALIGN: justify">
+				<b>Bukti identitas</b>
+				<br/>
+				Dalam hal anda tidak dapat menunjukkan identitas diri yang berlaku pada saat 
+				menggunakan Kartu, hal ini akan mengakibatkan Kartu akan ditolak dan 
+				pembelanjaan akan dibatalkan.
+				<br/>
+				<br/>
+				<b>Kartu hilang/dicuri</b>
+				<br/>
+				Dalam hal Kartu hilang/dicuri, harap segera laporkan masalah ini ke toko Courts terdekat.
+				<br/>
+				Apabila Courts mengeluarkan/mengganti Kartu dengan yang baru, maka anda akan 
+				dikenakan biaya penggantian Kartu sebesar Rp._______ (_____________ rupiah).
+				<br/>
+				<br/>
+				<b>Biaya administrasi tahunan</b>
+				<br/>
+				Apabila permohonan Kartu anda disetujui, anda akan dikenakan biaya administrasi 
+				tahunan sebesar Rp.__________ (____________________ rupiah), yang akan 
+				ditagihkan secara otomatis melalui rekening anda dan wajib anda bayar dalam 
+				waktu paling lambat satu (1) bulan setelah anda menerima Kartu.
+				<br/>
+				Apabila anda membatalkan keanggotaan Ready Finance sebelum berakhir masa 
+				berlaku Kartu, maka biaya administrasi tahunan tersebut di atas akan tetap 
+				menjadi milik Courts dan tidak dapat dikembalikan dalam bentuk apapun juga 
+				serta anda akan melepaskan hak anda untuk meminta pengembalian biaya 
+				administrasi tahunan tersebut.
+			</div>
+			<div class="smallSS" style="LEFT: 1cm; WIDTH: 8cm; POSITION: absolute; TOP: 24cm; TEXT-ALIGN: justify">
+				Signature:
+				<br />
+				<br />
+				Date:
+			</div>
+		</div>	
+	</xsl:template>
+</xsl:stylesheet>
+
+  

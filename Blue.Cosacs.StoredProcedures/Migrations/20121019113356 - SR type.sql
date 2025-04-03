@@ -1,0 +1,2 @@
+ALTER TABLE Service.Request
+ALTER COLUMN Type CHAR(2)

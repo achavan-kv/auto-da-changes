@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CoSaCS - @ViewBag.Title</title>
+    @RenderSection("Head", false)
+    @Html.Css("printing.css")
+</head>
+<body>
+    <div class="container_12">
+        @RenderBody()
+    </div>
+   @*  <script data-main='@Url.Content("~/static/js/main")' src='@Url.Content("~/static/js/require-jquery.js")'></script>*@
+</body>
+</html>

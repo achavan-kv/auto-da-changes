@@ -1,0 +1,644 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Orders for Delivery / Collection Screen</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=2914>
+<meta name=layout-width content=626>
+
+
+<!--(Links)=========================================================-->
+
+<link rel=StyleSheet href=default.css>
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<h1 style="font-size: 14pt;"><a name="Orders for Delivery &amp; Collection Index">Index</a></h1>
+
+<p>&nbsp;</p>
+
+<p style="font-size: 10pt;"><a href="#Orders_for_Delivery___Collection_user_rights">Orders 
+ for Delivery / Collection user rights</a></p>
+
+<p style="font-size: 10pt;"><a href="#Selection_Criteria_and_their_definitions">Selection 
+ Criteria and their definitions</a></p>
+
+<p style="font-size: 10pt;"><a href="#Retrieved_data_from_the_search">Retrieved 
+ data from the search</a></p>
+
+<p style="font-size: 10pt;"><a href="#For_items_that_require_immediate_delivery">For 
+ items that require immediate delivery</a></p>
+
+<p style="font-size: 10pt;"><a href="#For_items_that_require_scheduling">For 
+ items that require scheduling</a></p>
+
+<p style="font-size: 10pt;"><a href="#Printing_items_requiring_scheduling_onto_a_picklist">Printing 
+ the items that require scheduling onto a picklist</a></p>
+
+<p style="font-size: 10pt;"><a href="#Picklists">Picklists</a></p>
+
+<p style="font-size: 10pt;"><a href="#Items_removed_from_a_schedule">Items 
+ removed from a schedule (from Delivery Scheduling screen)</a></p>
+
+<p style="font-size: 10pt;"><a href="#Items_removed_from_a_Delivery_Note">Items 
+ removed from a delivery note (from Delivery Notification screen)</a></p>
+
+<p style="font-size: 10pt;">&nbsp;</p>
+
+<h1>Orders for Delivery / Collection Screen</h1>
+
+<p style="text-align: justify;">After Delivery Authorisation all accounts 
+ which are in a status of <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->”DA, 
+ Awaiting Scheduling” should appear in this screen. This includes items 
+ that have been returned in the Goods Return screen. </p>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify;">This screen enables items to be released 
+ and printed onto a Picklist for scheduling and also print ‘Delivery Notes’ 
+ that were previously selected for Immediate Delivery from the New Sales 
+ Order screen. </p>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">&nbsp;</p>
+
+<p><span style="font-weight: bold;"><a name=Orders_for_Delivery___Collection_user_rights>Orders 
+ for Delivery / Collection user rights</a></span> </p>
+
+<p>&nbsp;</p>
+
+<p style="text-align: justify;">The following are the user rights which 
+ apply to this screen:</p>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="text-align: justify;"><span style="font-weight: bold; font-size: 10pt;">Orders 
+ for Delivery – View :</span><span style="font-size: 10pt;">should only 
+ allow search and view results functionality.</span> </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;"><span style="font-size: 10pt; font-weight: bold;">Orders 
+ for Delivery – Amend:</span><span style="font-size: 10pt;"> should allow 
+ full access to release orders, print picklists etc.</span> </p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: normal; font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;"><a name=Selection_Criteria_and_their_definitions>Selection 
+ Criteria and their definitions</a></p>
+
+<p>&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Branch/Warehouse –</span> this is the branch 
+ where the delivery of the goods will take place from. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Delivery Area –</span> you should be able to 
+ run a search by Delivery Area. On entering the screen this should default 
+ to ‘ALL’. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Product Category –</span> there are 3 basic 
+ categories (IT, Furniture and Electrical). The second drop down should 
+ allow you to further breakdown the chosen category. I.e. Electrical into 
+ vision, audio, major whites etc.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Account Number –</span> you have the option 
+ to enter an account number. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Order Dates –</span> select the date range 
+ from when the order was taken.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Delivery Process -</span> Choose if the list 
+ should load for immediate delivery or scheduled items. </p></li>
+	
+	<li class=kadov-p><p style="text-align: justify;"><span style="font-size: 10pt; font-weight: bold;">Include 
+ –</span><span style="font-size: 10pt;"> limits the load to either deliveries 
+ or collections. The default is ‘Delivery’ checked only.</span> </p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p style="font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p style="font-size: 8pt;">&nbsp;</p>
+
+<p style="font-weight: bold; margin-left: 0px;"><a name=Retrieved_data_from_the_search>Retrieved 
+ data from the search</a></p>
+
+<p style="font-weight: bold;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-weight: bold; font-size: 10pt;">Delivery 
+ Area – <span style="font-weight: normal;">the</span> <span style="font-weight: normal;">area 
+ where the goods are to be delivered.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold; font-size: 10pt;">Delivery 
+ Note Number – <span style="font-weight: normal;">should be allocated after 
+ Delivery Authorisation.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold; font-size: 10pt;">Undelivered 
+ Flag – <span style="font-weight: normal;">(from A – Z), and should be 
+ set for items which were previously removed from a delivery.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold; font-size: 10pt;">Privilege 
+ Club – <span style="font-weight: normal;">set to ‘Yes’ if the customer 
+ is a privilege club member.</span></p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; font-weight: normal;"><span 
+ style="font-weight: bold;">Date Ordered –</span> should be the date the 
+ order was taken.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; font-weight: normal;"><span 
+ style="font-weight: bold;">Item Description –</span> a description of 
+ the product.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; font-weight: normal;"><span 
+ style="font-weight: bold;">Last Updated By –</span> should record the 
+ name of the last person who changed the customer account or order.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; font-weight: normal;"><span 
+ style="font-weight: bold;">Del or Col –</span> indicator to show if this 
+ is a delivery or collection.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; font-weight: normal;"><span 
+ style="font-weight: bold;">Released –</span> All items that are in stock 
+ should automatically be ticked to release the item. Items that are un-ticked 
+ by default are where there is an out of stock situation, <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->which 
+ is stock status (2 or 3) and/or if the expected delivery date is a date 
+ in the future. Please note, that the stock can be manually released by 
+ ticking the checkbox.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; font-weight: normal;"><span 
+ style="font-weight: bold;">Stock Status –</span> there are 4 possible 
+ status’s that you should take note of:</p></li>
+</ul>
+
+<ol style="list-style: decimal;"
+	type=1>
+	
+	<li style="font-size: 10pt; /*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 10pt; margin-left: 80px;"><span 
+ style="font-weight: bold;">IS –</span> In Stock</p></li>
+	
+	<li style="font-size: 10pt; /*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 10pt; margin-left: 80px;"><span 
+ style="font-weight: bold;">OR –</span> On Order (set when the amount on 
+ order =&gt; the amount on the customer order).</p></li>
+	
+	<li style="font-size: 10pt; /*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 10pt; margin-left: 80px;"><span 
+ style="font-weight: bold;">NS –</span> Out of Stock</p></li>
+	
+	<li style="font-size: 10pt; /*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 10pt; margin-left: 80px;"><span 
+ style="font-weight: bold;">SO –</span> In stock, but on someone else’s 
+ schedule.</p></li>
+</ol>
+
+<p style="font-size: 10pt; margin-left: 80px;">&nbsp;</p>
+
+<p style="margin-left: 0px; font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p style="margin-left: 0px; font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			font-weight: bold;
+			margin-left: 0px;"><a name=For_items_that_require_immediate_delivery>For 
+ items that require Immediate Delivery</a></p>
+
+<p style="font-size: 12pt;
+			font-weight: bold;
+			margin-left: 0px;">&nbsp;</p>
+
+<ol style="list-style: decimal;"
+	type=1>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Search for an account 
+ using the search parameters or enter the account number.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Under ‘Delivery Process’, 
+ make sure that the ‘Pickup/Immediate’ delivery option is ticked.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Click on the ‘Load’ 
+ button. The results should be loaded and you should notice that the ‘Delivery 
+ Note’ number is already visible. The delivery note at this point should 
+ be printed before the items can be fully delivered.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">The ‘Print Delivery 
+ Note’ button should become enabled, and only becomes enabled for Immediate 
+ Deliveries. The ‘Print Picklist’ button should be disabled.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Make sure that the 
+ ‘Released’ column is ticked for the items and click on the ‘Print Delivery 
+ Note’ button.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">The order should 
+ disappear from the screen and the delivery note should be printed for 
+ the items. </p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Please note that 
+ a delivery note can only be printed once from this screen. After the note 
+ is printed this order should no longer appear in this screen.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">You should now be 
+ in a position to proceed with the immediate delivery of the order.</p></li>
+</ol>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="margin-left: 0px;
+			font-weight: normal;
+			font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p style="margin-left: 0px;
+			font-weight: normal;
+			font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;"><a name=For_items_that_require_scheduling>For 
+ items that require scheduling</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;">&nbsp;</p>
+
+<ol style="list-style: decimal;"
+	type=1>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Search for <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->an 
+ account using the search parameters or enter the account number.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Make sure the Scheduling 
+ option is ticked.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Click on the ‘Load’ 
+ button. You should notice that the ‘Print Delivery Note’ button is dimmed. 
+ This is because you will have to schedule the order onto a delivery load 
+ before printing the delivery note.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">From this screen 
+ the user has the option to print a picklist. </p></li>
+</ol>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="margin-left: 0px;
+			font-weight: normal;
+			font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;"><a name=Printing_items_requiring_scheduling_onto_a_picklist>Printing 
+ the items requiring scheduling onto a Picklist</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;">&nbsp;</p>
+
+<ol start=5
+	style="list-style: decimal;"
+	type=1>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">You should make sure 
+ that the ‘Released’ column is ticked for the items you require to be printed 
+ onto the Picklist.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Click on the ‘Print 
+ Picklist’ button.</p></li>
+	
+	<li style="font-size: 12pt;
+				font-weight: bold;
+				/*begin!kadov{{*/ font-size: 12pt;
+				font-weight: normal; /*}}end!kadov*/ "
+		class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">This should print 
+ all items that you have ‘released’ onto the picklist. (please see the 
+ section below on Picklists for more information).</p></li>
+</ol>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="margin-left: 0px;
+			font-weight: normal;
+			font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;"><a name=Picklists>Picklists</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: bold;"><span style="font-weight: normal;">Picklists 
+ are generated from the Orders for Delivery / Collection screen.</span> 
+ <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}--></p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Each picklist will 
+ have a unique reference number.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">The item in the line 
+ will need to be released before the pick list can be printed. Items are 
+ not released if they are out of stock or the item already appears on another 
+ pick list. This release option can be ticked to release the items.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Once a pick list 
+ is printed the account will have the following status attached to it: 
+ PLP – Pick list printed awaiting scheduling.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Items printed onto 
+ a picklist but not yet scheduled should still appear in the Orders for 
+ Delivery / Collection screen.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">The order will still 
+ appear in the Orders for Delivery / Collection screen but the column ‘Picked’ 
+ in the results will be set to ‘Yes’. <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}--></p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Items already on 
+ a pick list but NOT scheduled can be added to other pick lists, however 
+ if the item is added to a new pick list then the item will be removed 
+ from the original pick list.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">A new delivery note 
+ Number should be generated for an item, in the situation where it cannot 
+ be released while other items on the same delivery note are released onto 
+ a Picklist. The ‘Undelivered Flag’ should also be set to ‘A’.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Pick lists can be 
+ amended in the Amend / Reprint Pick list screen.</p></li>
+</ul>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="margin-left: 0px;
+			font-weight: normal;
+			font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;"><a name=Items_removed_from_a_schedule>Items 
+ removed from a schedule (from Delivery Scheduling screen)</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: bold;"><span style="font-weight: normal;">Items 
+ removed from a schedule should re-appear in this screen, ready to be re-scheduled.</span> 
+ </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: bold;"><span style="font-weight: normal;">The 
+ ‘Picked’ column should be set to ‘No’ and you should be able to print 
+ the items onto a new picklist.</span> </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: bold;"><span style="font-weight: normal;">Items 
+ removed from a schedule in the ‘Delivery Scheduling’ screen should have 
+ their Undelivered Flag set to ‘R’ in Orders for Delivery/Collection screen.</span> 
+ </p></li>
+</ul>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;">&nbsp;</p>
+
+<p style="margin-left: 0px;
+			font-size: 8pt;
+			font-weight: normal;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;"><a name=Items_removed_from_a_Delivery_Note>Items 
+ removed from a Delivery Note (from Delivery Notification) screen</a></p>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: bold;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Items removed from 
+ a delivery note, should re-appear in this screen, ready to be re-scheduled.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">The ‘Picked’ column 
+ should be set to ‘No’ and you should be able to print the items onto a 
+ new picklist.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">Items removed from 
+ a delivery note in the ‘Delivery Notification’ screen should have their 
+ Undelivered Flag set to ‘A’ in the Orders for Delivery/Collection screen.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								margin-left: 0px;
+								font-weight: normal;">All the above also 
+ apply when a Delivery Note is removed from a load.</p></li>
+</ul>
+
+<p style="font-size: 12pt;
+			margin-left: 0px;
+			font-weight: normal;">&nbsp;</p>
+
+<p style="margin-left: 0px;
+			font-weight: normal;
+			font-size: 8pt;"><a href="#Orders for Delivery &amp; Collection Index">Return 
+ to index</a></p>
+
+</body>
+
+</html>

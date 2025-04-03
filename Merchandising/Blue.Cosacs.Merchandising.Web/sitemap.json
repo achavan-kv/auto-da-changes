@@ -1,0 +1,16 @@
+[
+  {
+    "label": "Merchandising",
+    "nodes": [
+      {
+        "label": "Integration",
+        "nodes": [
+          {
+            "label": "Cint Errors",
+            "url": "#/Merchandising/cintErrors",
+            "permission": 2154
+          }]
+      }
+    ]
+  }
+]

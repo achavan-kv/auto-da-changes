@@ -1,0 +1,46 @@
+﻿<section class="buffer top" ng-show="GetAshleyEnable &&!isSpecial && canView">
+    <ng-form name="productRangeForm" class="form-horizontal cost-form" novalidate>
+        <a name="productRange"></a>
+        <div class="section">
+            Product Range
+        </div>
+
+        <table class="table table-bordered table-striped aligned col-md-6" >
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Minimum</th>
+                    <th>Maximum</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-btn" ng-hide="readonly">
+                        <span class="glyphicons glyph-btn floppy_disk" title="Save product range" ng-show="canView" ng-click="add({'id':productId,'model':productRangeObj},productRangeForm)">&nbsp;</span>
+                        <!--<span class="glyphicons glyph-btn undo" title="Clear product range" ng-click="">&nbsp;</span>-->
+                    </td>
+                    <td class="fascia col-">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6" ng-class="{'has-error': productRangeForm.txtMinStock.$invalid && canView}">
+                            <input type="text" name="txtMinStock" ng-pattern="/^[0-9]*$/" ng-model="minstock" class="form-control" min="0" required ng-required="true" maxlength="100" ng-maxlength="100" ng-readonly="!canEdit" />
+                        </div>
+                        <!--class="form-control" required ng-disabled="!canEdit" ng-change="ok(costPrice.lastLandedCost)" name="landedCost" ng-model="costPrice.lastLandedCost" min="0" ng-required="true" maxlength="100" ng-maxlength="100" ng-readonly="false"-->
+
+                        <div class="col-md-3"></div>
+                    </td>
+
+                    <td class="fascia">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6" ng-class="{'has-error': productRangeForm.txtMaxStock.$invalid && canView}">
+                            <input type="text" name="txtMaxStock" ng-model="maxstock" ng-pattern="/^[0-9]*$/"  class="form-control col-md-6" min="0" required ng-required="true" maxlength="100" ng-maxlength="100" ng-readonly="!canEdit" />
+                        </div>
+                        <div class="col-md-3"></div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </ng-form>
+</section>

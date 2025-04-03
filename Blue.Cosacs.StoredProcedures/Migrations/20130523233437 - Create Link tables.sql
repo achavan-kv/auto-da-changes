@@ -1,0 +1,61 @@
+CREATE TABLE Warranty.Link
+(
+	Id INT IDENTITY(1,1),
+	Name Varchar(100) NOT NULL
+)
+GO
+
+CREATE TABLE Warranty.LinkProduct
+(
+	Id INT IDENTITY (1,1),
+	LinkId INT NOT NULL,
+	StockBranch INT SPARSE,
+	ItemNumber VARCHAR(30) SPARSE,
+	Level_1 VARCHAR(100) SPARSE,
+	Level_2 VARCHAR(100) SPARSE,
+	Level_3 VARCHAR(100) SPARSE,
+	Level_4 VARCHAR(100) SPARSE,
+	Level_5 VARCHAR(100) SPARSE,
+	Level_6 VARCHAR(100) SPARSE,
+	Level_7 VARCHAR(100) SPARSE,
+	Level_8 VARCHAR(100) SPARSE,
+	Level_9 VARCHAR(100) SPARSE,
+	Level_10 VARCHAR(100) SPARSE
+)
+GO
+
+CREATE TABLE Warranty.LinkWarranty
+(
+	Id INT IDENTITY (1,1),
+	LinkId INT NOT NULL,
+	WarrantyId INT NOT NULL,
+	ProductMin MONEY NOT NULL,
+	ProductMax MONEY NOT NULL
+)
+GO
+
+ALTER TABLE Warranty.Link
+ADD CONSTRAINT PK_LinkWarranty PRIMARY KEY (Id)
+GO
+
+ALTER TABLE Warranty.LinkProduct
+ADD CONSTRAINT PK_LinkWarrantyProduct PRIMARY KEY (Id)
+GO
+
+ALTER TABLE Warranty.LinkWarranty
+ADD CONSTRAINT PK_WarrantyLinkWarranty PRIMARY KEY (Id)
+Go
+
+ALTER TABLE Warranty.LinkProduct
+ADD CONSTRAINT FK_LinkProductLink
+FOREIGN KEY (LinkId)
+REFERENCES Warranty.Link(Id)
+ON DELETE CASCADE
+GO
+
+ALTER TABLE Warranty.LinkWarranty
+ADD CONSTRAINT FK_LinkWarrantyLink
+FOREIGN KEY (LinkId)
+REFERENCES Warranty.Link(Id)
+ON DELETE CASCADE
+GO

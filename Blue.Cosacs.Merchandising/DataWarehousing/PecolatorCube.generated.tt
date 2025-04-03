@@ -1,0 +1,17 @@
+<#@ include file = "Include.ttinclude" #>
+<#
+	//Refer to the documentation file that comes with this package for information on this file.
+	//Settings =>
+    PercolatorGen.ConnectionString =			@"Provider=MSOLAP;Data Source=.;Initial Catalog=Merchandising;";
+	PercolatorGen.ConfigFileName =				"";
+	PercolatorGen.DBName =						"CosacsDW";
+    PercolatorGen.Namespace =					"Blue.Cosacs.Merchandising.DataWarehousing";
+
+	//Visibility Switches
+	PercolatorGen.OnlyVisible_Dimensions =		true;
+	PercolatorGen.OnlyVisible_Hierarchies =		true;
+	PercolatorGen.OnlyVisible_Attributes =		true;
+	PercolatorGen.OnlyVisible_Measures =		true;
+
+#>
+<#@ include file = "Generator.ttinclude" #> 

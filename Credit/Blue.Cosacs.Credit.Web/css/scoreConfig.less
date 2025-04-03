@@ -1,0 +1,76 @@
+@background : fade(#000, 5%);
+
+.credit.scoreCardConfig {
+  .section {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .changable {
+    border-bottom: 1px black dotted;
+    margin-right: 15px;
+  }
+
+  .exprBlock {
+    -webkit-user-select: none; /* Chrome/Safari */
+    display: table;
+    width: 97%;
+    margin-top: 10px;
+
+    > div {
+      display: table-cell;
+    }
+    .function {
+      vertical-align: middle;
+      padding-right: 10px;
+      border-right: 1px solid @disabled;
+
+      > span {
+        border-bottom: 1px black dotted;
+        font-weight: bold;
+        float: right;
+        width: 25px;
+        margin-left: 10px;
+      }
+
+    }
+    .expression {
+      padding-left: 10px;
+      width: 100%;
+      > div {
+        background-color: @background;
+        margin-top: 15px;
+        > span.glyphicons {
+          padding-top: 5px;
+        }
+      }
+      > div:first-of-type {
+        margin-top: 20px;
+      }
+
+      > div:last-of-type {
+        margin-bottom: 20px;
+        > span {
+          vertical-align: inherit;
+        }
+      }
+
+      expr > div {
+        background-color: @background;
+        margin-bottom: 5px;
+        height: 30px;
+
+        > span {
+          border-bottom: 1px black dotted;
+        }
+        //margin-right: 20px;
+        //padding-top: 20px;
+      }
+    }
+
+    .glyphicons.remove_2 {
+      opacity: 0.4;
+    }
+  }
+}
+

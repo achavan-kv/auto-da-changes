@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Customer" namespace="Blue.Cosacs.Customer" label="Customer">
+    <Connection server="." database="cosacs" />
+    <Queries>
+        <DataSet name="DataForReindexSolr"/>
+    </Queries>
+    <Tables>
+    </Tables>
+    <Views>
+        <View name="CustomerSearchView"/>
+    </Views>
+    <Settings>
+        <Setting id="CustomerSearchAvailableStart" name="Minimun value for available spend on customer search for creating ranges." type="int" category="Customers">
+            <Description>This will be the minimun to create the lower range of available spend</Description>
+            <Default>0</Default>
+        </Setting>
+        <Setting id="CustomerSearchAvailableGroupSize" name="Size of each available spend group on customers search" type="int" category="Customers">
+            <Description>This value will afect the size of each group that will be created. For example setting the parameter to 100, each group will contain values from 100 to 199</Description>
+            <Default>100</Default>
+        </Setting>
+    </Settings>
+</Model>

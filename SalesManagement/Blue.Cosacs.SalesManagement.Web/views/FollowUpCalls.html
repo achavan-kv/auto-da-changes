@@ -1,0 +1,186 @@
+<div class="container">
+    <h1>Configure Follow Up Calls</h1>
+
+    <div ng-controller="followUpCallController" ng-cloak>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="action"></th>
+                    <th>After Delivery</th>
+                    <th>Interval</th>
+                    <th>Contact Reason</th>
+                    <th>Contact Via</th>
+                    <th>If Call Flushed</th>
+                    <th>Icon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="followUpCall in results">
+                    <td class="action">
+                        <a class="glyphicons glyph-btn action save floppy_disk click"
+                            ng-class="!isValidFollow(followUpCall) ? 'disabled' : 'click'" title="Save"
+                            ng-click="updateFollow(followUpCall)"></a>
+                        <a class="glyphicons glyph-btn action-delete bin click" title="Delete"ng-click="deleteFollowUpCall(followUpCall.Id)"></a>
+                    </td>
+                    <td>
+                        <div class="field" ng-class="{'has-error': !followUpCall.TimePeriod}">
+                            <list ng-model="followUpCall.TimePeriod" scope="timePeriods" placeholder="Time Period"></list>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field" ng-class="{'has-error': !followUpCall.Quantity}">
+                            <input class="form-control" type="number" max="1024" min="1" ng-model="followUpCall.Quantity">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field" ng-class="{'has-error': !followUpCall.ReasonToCall}">
+                            <input class="form-control" type="text" maxlength="32" ng-model="followUpCall.ReasonToCall">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="radio" name="{{followUpCall.Id}}" value="{{contactMeans.Phone}}" ng-model="followUpCall.SelectedContactType"> Phone Call
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!followUpCall.ContactViaTemplate && followUpCall.SelectedContactType == contactMeans.Email)}">
+                            <div class="col-md-12">
+                                <input type="radio" name="{{followUpCall.Id}}" ng-click="followUpCall.IfFlushedContactType = contactMeans.None" value="{{contactMeans.Email}}" ng-model="followUpCall.SelectedContactType"> Email
+                            </div>
+                            <div class="col-md-12">
+                                <list ng-model="followUpCall.ContactViaTemplate" scope="Templates" placeholder="Email Template" ng-disabled="!(followUpCall.SelectedContactType == contactMeans.Email)"></list>
+                                <div><label for="contactSubject">Email Subject</label></div>
+                                <input type="text" id="contactSubject" class="form-control" ng-model="followUpCall.ContactEmailSubject" maxlength="128" placeholder="Email Subject" ng-disabled="!(followUpCall.SelectedContactType == contactMeans.Email)" />
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!followUpCall.ContactViaSms && followUpCall.SelectedContactType == contactMeans.Sms)}">
+                            <div class="col-md-12">
+                                <input type="radio" name="{{followUpCall.Id}}" ng-click="followUpCall.IfFlushedContactType = contactMeans.None" value="{{contactMeans.Sms}}" ng-model="followUpCall.SelectedContactType"> Sms
+                                <span for="smsText">({{followUpCall.ContactViaSms.length}})</span>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea id="smsText" class="form-control" ng-model="followUpCall.ContactViaSms" rows="5" ng-trim="true" maxlength="160" ng-disabled="followUpCall.SelectedContactType != contactMeans.Sms"></textarea>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="radio" name="{{followUpCall.Id}}SendAfter" value="{{contactMeans.None}}" ng-model="followUpCall.IfFlushedContactType"> None
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!followUpCall.IfFlushedTemplate && followUpCall.IfFlushedContactType == contactMeans.Email)}">
+                            <div class="col-md-12">
+                                <input type="radio" ng-disabled="followUpCall.SelectedContactType != contactMeans.Phone"  name="{{followUpCall.Id}}SendAfter" value="{{contactMeans.Email}}" ng-model="followUpCall.IfFlushedContactType"> Send Email
+                                <list ng-model="followUpCall.IfFlushedTemplate" scope="Templates" placeholder="Flushed Template" ng-disabled="!(followUpCall.IfFlushedContactType == contactMeans.Email)"></list>
+                                <div><label for="flushContactSubject">Email Subject</label></div>
+                                <input type="text" id="flushContactSubject" class="form-control" ng-model="followUpCall.FlushedEmailSubject" maxlength="128" placeholder="Email Subject" ng-disabled="!(followUpCall.IfFlushedContactType == contactMeans.Email)" />
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!followUpCall.IfFlushedSms && followUpCall.IfFlushedContactType == contactMeans.Sms)}">
+                            <div class="col-md-12">
+                                <input type="radio" ng-disabled="followUpCall.SelectedContactType != contactMeans.Phone" name="{{followUpCall.Id}}SendAfter" value="{{contactMeans.Sms}}" ng-model="followUpCall.IfFlushedContactType"> Send Sms
+                                <span for="smsText">({{followUpCall.IfFlushedSms.length}})</span>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea id="smsCallFlushed" class="form-control" ng-model="followUpCall.IfFlushedSms" rows="5" ng-trim="true" maxlength="160" ng-disabled="!(followUpCall.IfFlushedContactType == contactMeans.Sms)"></textarea>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field">
+                            <glyphicons icon="followUpCall.Icon"></glyphicons>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr ng-hide="addingFollow">
+                    <td class="action text-center">
+                        <span class="ui-widget glyphicons click action-new plus" href="#" title="New"
+                            ng-click="createNewFollowUpCall()"></span>
+                    </td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr ng-show="addingFollow">
+                    <td>
+                        <div class="form-control-static text-center">
+                            <span class="action click save glyph-btn glyphicons floppy_save text-danger" ng-click="insertFollowUpCall(newFollow)" ng-class="!isValidFollow(newFollow) ? 'disabled' : 'click'" title="Add"></span>
+                            <span class="action click cancel glyph-btn glyphicons undo" title="Cancel" ng-click="cancelnewFollow()"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field has-error" ng-class="{'has-error': !newFollow.TimePeriod}">
+                            <list ng-model="newFollow.TimePeriod" scope="timePeriods" placeholder="Time Period"></list>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field has-error" ng-class="{'has-error': !newFollow.Quantity}">
+                            <input class="form-control" type="number" max="1024" min="1" ng-model="newFollow.Quantity">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field has-error" ng-class="{'has-error': !newFollow.ReasonToCall}">
+                            <input class="form-control" type="text" maxlength="32" ng-model="newFollow.ReasonToCall">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="radio" name="ContactVia" value="{{contactMeans.Phone}}" ng-model="newFollow.SelectedContactType"> Phone Call
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!newFollow.ContactViaTemplate && newFollow.SelectedContactType == contactMeans.Email)}">
+                            <div class="col-md-12">
+                                <input type="radio" name="ContactVia" ng-click="newFollow.IfFlushedContactType = contactMeans.None" value="{{contactMeans.Email}}" ng-model="newFollow.SelectedContactType"> Email
+                            </div>
+                            <div class="col-md-12">
+                                <list ng-model="newFollow.ContactViaTemplate" scope="Templates" placeholder="Email Template" ng-disabled="!(newFollow.SelectedContactType == contactMeans.Email)"></list>
+                                <div><label for="newContactSubject">Email Subject</label></div>
+                                <input type="text" id="newContactSubject" class="form-control" ng-model="newFollow.ContactEmailSubject" maxlength="128" placeholder="Email Subject" ng-disabled="!(newFollow.SelectedContactType == contactMeans.Email)" />
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!newFollow.ContactViaSms && newFollow.SelectedContactType == contactMeans.Sms)}">
+                            <div class="col-md-12">
+                                <input type="radio" name="ContactVia" ng-click="newFollow.IfFlushedContactType = contactMeans.None" value="{{contactMeans.Sms}}" ng-model="newFollow.SelectedContactType">Send Sms
+                                <span for="smsText">({{160 - (newFollow.ContactViaSms.length || 0)}})</span>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea id="newSmsText" class="form-control" ng-model="newFollow.ContactViaSms" rows="5" ng-trim="true" maxlength="160" ng-disabled="newFollow.SelectedContactType != contactMeans.Sms"></textarea>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="radio" name="SendAfter" value="{{contactMeans.None}}" ng-model="newFollow.IfFlushedContactType"> None
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!newFollow.IfFlushedTemplate && newFollow.IfFlushedContactType == contactMeans.Email)}">
+                            <div class="col-md-12">
+                                <input type="radio" ng-disabled="newFollow.SelectedContactType != contactMeans.Phone"  name="SendAfter" value="{{contactMeans.Email}}" ng-model="newFollow.IfFlushedContactType"> Send Email
+                                <list ng-model="newFollow.IfFlushedTemplate" scope="Templates" placeholder="Flushed Template" ng-disabled="!(newFollow.IfFlushedContactType == contactMeans.Email)"></list>
+                                <div><label for="newflushedContactSubject">Email Subject</label></div>
+                                <input type="text" id="newflushedContactSubject" class="form-control" ng-model="newFollow.FlushedEmailSubject" maxlength="128" placeholder="Email Subject" ng-disabled="!(newFollow.IfFlushedContactType == contactMeans.Email)" />
+                            </div>
+                        </div>
+                        <div class="row" ng-class="{'has-error': (!newFollow.IfFlushedSms && newFollow.IfFlushedContactType == contactMeans.Sms)}">
+                            <div class="col-md-12">
+                                <input type="radio" ng-disabled="newFollow.SelectedContactType != contactMeans.Phone"  name="SendAfter" value="{{contactMeans.Sms}}" ng-model="newFollow.IfFlushedContactType"> Send Sms
+                                <span for="smsText">({{160 - (newFollow.IfFlushedSms.length || 0)}})</span>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea id="newSmsCallFlushed" class="form-control" ng-model="newFollow.IfFlushedSms" rows="5" ng-trim="true" maxlength="160" ng-disabled="!(newFollow.IfFlushedContactType == contactMeans.Sms)"></textarea>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field">
+                            <glyphicons icon="newFollow.Icon"></glyphicons>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

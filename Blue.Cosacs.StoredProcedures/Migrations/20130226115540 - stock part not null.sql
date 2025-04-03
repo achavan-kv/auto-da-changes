@@ -1,0 +1,2 @@
+ALTER TABLE service.RequestPart
+ALTER COLUMN StockBranch SMALLINT NOT NULL

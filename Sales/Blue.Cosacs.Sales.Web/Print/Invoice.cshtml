@@ -1,0 +1,312 @@
+﻿@using System
+@using System.Globalization
+@using Blue.Config
+@using Blue.Cosacs.Sales.Common
+@using Blue.Cosacs.Sales.Models
+@using StructureMap.Query
+@using Settings = Blue.Cosacs.Sales.Settings
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/module.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="col-lg-12">
+        <div id="printSection">
+            @foreach (OrderExtendedDto order in @Model)
+            {
+                <div class="col-lg-12 col-md-12">
+                    <div class="receipt-reprint">
+                        <div class="text-center"><b>@order.CountryName</b> </div>
+                        <div class="text-center">
+                            <b>@order.BranchName</b>
+                        </div>
+                        <div class="text-center">@order.BranchAddress1 </div>
+                        <div class="text-center">@order.BranchAddress2 </div>
+                        <div class="text-center">@order.BranchAddress3 </div>
+                        <div class="text-center">@order.CompanyTaxNumber </div>
+                        <div align="center" id="barcodeImg">
+                            <img src="@string.Format("/barcode/CODE128/IN%24{0}?w=150&h=30&label=False&align=CENTER&rotate=False", order.Id)" width="150" height="30" title="@order.Id">
+                        </div>
+                        @*CR 2018-13*@
+                        @*<div>@order.ReceiptType Cash & Go Receipt / @order.PrintCopy</div>*@
+                        <div>@order.ReceiptType Cash & Go Receipt / 
+                                @{ 
+                                    string printcopy = string.Empty;
+                                    if(string.IsNullOrEmpty(order.ReceiptType) == false)
+                                    {
+                                        if (order.ReceiptType.ToLower() == "reprint")
+                                        { printcopy = "COPY"; }
+                                        else
+                                        { printcopy = order.PrintCopy; }
+                                    }
+                                    else
+                                    {   printcopy =  order.PrintCopy; }
+                                }
+                                @printcopy</div>
+                                <hr class="receipt-divider" />
+                    </div>
+
+                    <div>
+                        <table>
+                            <tr>
+                                <td class="receipt-reprint">
+                                    TAX INVOICE:
+                                </td>
+                                <td class="receipt-reprint">
+                                    @*CR 2018-13*@
+                                    @*@string.Format("{0} / {1}", order.BranchNo, order.Id)*@
+                                    @{
+                                        string val = string.Empty;
+                                        if (order.AgreementInvoiceNumber != string.Empty && order.AgreementInvoiceNumber != null)
+                                        {
+                                            val = order.AgreementInvoiceNumber;
+                                            val = val.Insert(3, "-");
+                                        }
+                                        else
+                                        {
+                                            val = Convert.ToString(order.BranchNo) + "/" + Convert.ToString(order.Id);
+                                        }
+
+                                    }
+                                    @string.Format("{0}", val)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="receipt-reprint">
+                                    Sales Person:
+                                </td>
+                                <td class="receipt-reprint">
+                                    @order.SalesPerson
+                                </td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="receipt-reprint">
+                                    Cashier:
+                                </td>
+                                <td class="receipt-reprint">
+                                    @order.CurrentUser
+
+                                </td>
+                            </tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="receipt-reprint">
+                                    Date Printed:
+                                </td>
+                                <td class="receipt-reprint">
+                                    @string.Format("{0:dd/MM/yyyy HH:mm tt}", order.CreatedOn)
+                                </td>
+                            </tr>
+                            @if (!string.IsNullOrEmpty(order.ReceiptType))
+                            {
+                                <tr>
+                                    <td class="receipt-reprint">
+                                        Date Re-Printed:
+                                    </td>
+                                    <td class="receipt-reprint">
+                                        @string.Format("{0:dd/MM/yyyy HH:mm tt}", DateTime.Now)
+                                    </td>
+                                </tr>
+                            }
+                            @if (order.Customer != null)
+                            {
+                                <tr>
+                                    <td class="receipt-reprint">
+                                        Customer Name:
+                                    </td>
+                                    <td class="receipt-reprint">
+                                        @string.Format("{0} {1} {2}", order.Customer.Title, order.Customer.FirstName, order.Customer.LastName)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="receipt-reprint">Customer Address:</td>
+                                    <td class="receipt-reprint">
+                                        @order.Customer.AddressLine1
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="receipt-reprint"></td>
+                                    <td class="receipt-reprint">
+                                        @order.Customer.AddressLine2
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="receipt-reprint"></td>
+                                    <td class="receipt-reprint">
+                                        @string.Format("{0} {1}", order.Customer.TownOrCity, order.Customer.PostCode)
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <hr class="receipt-divider" />
+                    @foreach (ItemDto item in order.Items)
+                    {
+                        var itemDetails = new ItemPrintDetails(order, item);
+                        <div>
+                            <table class="payment-table" style="width: 100%">
+                                <tr>
+                                    <td colspan="3" class="receipt-reprint">
+                                        @item.Quantity
+                                        (@item.ItemNo)
+                                        @(string.IsNullOrEmpty(item.PosDescription) ? item.Description : item.PosDescription)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="receipt-reprint-col-2">
+                                        Amt
+                                    </td>
+                                    <td class="receipt-reprint-col-2">
+                                        @order.TaxName
+                                    </td>
+                                    <td class="receipt-col-right">
+                                        Sub Total
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="receipt-reprint-col-2">
+                                        @itemDetails.GetItemAmount()
+                                    </td>
+                                    <td class="receipt-reprint-col-2">
+                                        @itemDetails.GetItemAmount(false)
+                                    </td>
+                                    <td class="receipt-col-right">
+                                        @itemDetails.GetItemTotal()
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                        </div>
+                    }
+
+
+                    <br>
+
+                    <div>
+                        <table class="payment-table" style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <td class="receipt-reprint-col-2">
+                                        Total Amt
+                                    </td>
+                                    <td class="receipt-reprint-col-2">
+                                        @order.TaxName
+                                    </td>
+                                    <td class="receipt-col-right">
+                                        Invoice Total
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="receipt-reprint-col-2">
+                                        @ItemPrintDetails.GetCurrencyString(order.TotalAmount - order.TotalTaxAmount)
+                                    </td>
+                                    <td class="receipt-reprint-col-2">
+                                        @ItemPrintDetails.GetCurrencyString(order.TotalTaxAmount)
+                                    </td>
+                                    <td class="receipt-col-right">
+                                        @ItemPrintDetails.GetCurrencyString(order.TotalAmount)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+
+                    <div>
+                        <table class="payment-table" style="width: 100%">
+                            <tr>
+                                <td class="receipt-reprint-col-2" colspan="2">
+                                <td class="receipt-divider"></td>
+                            </tr>
+                            @foreach (PaymentDto payment in order.Payments)
+                            {
+                                <tr ng-repeat="payment in order.payments">
+                                    @if ((order.ChangeGiven && payment.Amount > 0) || (!order.ChangeGiven))
+                                    {
+                                        <td class="receipt-col-right" colspan="2">
+                                            @string.Format("{0} {1}", payment.PaymentMethod, payment.CurrencyCode)
+                                        </td>
+                                        <td class="receipt-col-right">
+                                            @ItemPrintDetails.GetCurrencyString(payment.Amount)
+                                        </td>
+                                    }
+
+                                </tr>
+                            }
+
+                            <tr>
+                                @if (order.PositiveAmountSum >= (order.NegativeAmountSum * -1))
+                                {
+                                    <td class="receipt-col-right" colspan="2">
+                                        Amount Tendered
+                                    </td>
+                                }
+                                else if (!order.ChangeGiven && order.NegativeAmountSum < 0)
+                                {
+                                    <td class="receipt-col-right" colspan="2">
+                                        Amount Returned
+                                    </td>
+                                }
+                                @if (order.PositiveAmountSum >= (order.NegativeAmountSum * -1))
+                                {
+                                    <td class="receipt-col-right">
+                                        @ItemPrintDetails.GetCurrencyString(order.PositiveAmountSum)
+                                    </td>
+                                }
+                                else if (!order.ChangeGiven && order.NegativeAmountSum < 0)
+                                {
+                                    <td class="receipt-col-right">
+                                        @ItemPrintDetails.GetCurrencyString(order.NegativeAmountSum)
+                                    </td>
+                                }
+
+                            </tr>
+                            @if (order.ChangeGiven)
+                            {
+                                <tr>
+                                    <td class="receipt-reprint-col-2" />
+                                    <td class="receipt-reprint-col-2" />
+                                    <td class="receipt-divider"></td>
+                                </tr>
+                                <tr>
+                                    <td class="receipt-reprint-col-2"></td>
+                                    <td class="receipt-reprint-col-2">
+                                        Change Given
+                                    </td>
+                                    <td class="receipt-col-right">
+                                        @ItemPrintDetails.GetCurrencyString(order.NegativeAmountSum * -1)
+                                    </td>
+                                </tr>
+
+                            }
+
+                        </table>
+                    </div>
+                    <br>
+
+                    <hr class="receipt-divider" />
+                    <p>&nbsp;</p>
+
+                    <div class="receipt-reprint">Signature</div>
+                    <hr class="receipt-divider" />
+                    <p class="text-center receipt-reprint">
+                        @*Thank you for shopping at COURTS<br />*@
+                        SEE WARRANTY DETAILS ATTACHED
+                    </p>
+                </div>
+
+                <div class="pageBreak"></div>
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div class="container credit" ng-controller="scoreController">
+    <h1><span ng-bind="title">Score</span></h1>
+    <div class="col-lg-2">
+        <div ng-include="'/credit/views/proposal/templates/nav.html'"></div>
+    </div>
+    <div class="col-lg-10"></div>
+    <button class="btn btn-primary pull-left" ng-click="go('back')">< Back</button>
+    <button id="next" class="btn btn-primary pull-right" ng-click="go('next')">Next ></button>
+</div>

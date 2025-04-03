@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="">
+    <head><title>Beyond Economic Repair (BER)</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <script src="../SkinSupport/MadCapUtilities.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapEffects.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapBody.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapHighlighter.js"> <![CDATA[ ]]></script>
+    </head>
+    <body>
+        <h1>Beyond Economic Repair (BER)</h1>
+        <p class="MyStyle">This popup is called from the Service Request Screen when a product is BER. The BER calculation is only applicable if the product is under warranty and the total price of previous claims has exceeded a percentage of the retail price. The percentage can be set up in country maintenance under "<span style="color: #228b22;font-weight: bold;">Service BER Limit</span>"</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The Fields on this screen will be read only and passed in by the calling screen as follows:</p>
+        <ul class="nikkilist">
+            <li value="1">Allowable repair total - Original Retail Price</li>
+            <li value="2">Previous Repair total - Sum of any previous repairs excluding food loss</li>
+            <li value="3">Repair Estimate - From the Product Tab on the Service Request screen. it can be blank.</li>
+            <li value="4">Balance available - This is calculated as 'Allowable repair total' - 'Previous Repair total'</li>
+        </ul>
+        <p class="MyStyle">If the Repair Estimate is blank the buttons on this screen will be:</p>
+        <ul class="nikkilist">
+            <li value="1">Issue Replacement - This will:</li>
+        </ul>
+        <blockquote>
+            <ol style="list-style-type: lower-alpha;">
+                <li style="font-family: Arial;" value="1">This button is only enabled for a Courts Account</li>
+                <li style="font-family: Arial;" value="2">Close the SR</li>
+                <li style="font-family: Arial;" value="3">Tick the "<span style="font-family: Arial;">Replacement</span>" box on the Resolution tab<span style="font-family: Arial;">. This shows the user that this item should be replaced via the Courts Identical Replacement or Exchange process.</span></li>
+                <li style="font-family: Arial;" value="4">The Service Request Status will be set to 'R'. The SR will only be closed when the resolution date is set and saved. </li>
+            </ol>
+        </blockquote>
+        <ul class="nikkilist">
+            <li value="1">Require Estimate - This will:</li>
+        </ul>
+        <blockquote>
+            <ol style="list-style-type: lower-alpha;">
+                <li style="font-family: Arial;" value="1">The Allocation tab will be enabled and the Service Request will need to be allocated. </li>
+                <li style="font-family: Arial;" value="2">Once Allocated, the technician will enter the repair estimate</li>
+                <li style="font-family: Arial;" value="3">The BER&#160;screen will popup again. The user will then be able to allocate the SR from the BER screen.</li>
+            </ol>
+        </blockquote>
+        <p class="MyStyle">If the Repair estimate had been entered the 'Require Estimate' button will be re labelled to 'Allocate'. The SR status will be set to 'A'.</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle"><a class="MCRelatedTopics" href="mcrelatedtopics:SR_Product Tab.htm+The Product Tab|SRAccountdetails.htm+Service Request Summary on Account Details|SoftScripts.htm+Soft Script Popup|ServiceSearch.htm+Service Request Search|ServiceFailure Report.htm+Service Failure Report|Service Request Screen.htm+Service Request Screen|Service Request Audit.htm+Service Request Audit|Service Progress Report.htm+Service Progress Report|Service Payment.htm+Payment screen for Service|Resolution.htm+The Resolution Tab|OutstandingSR.htm+Outstanding Service Requests|CustomerInteraction.htm+The Customer Interaction Screen|ClaimsSubmissions.htm+Claims submission report|Charge To.htm+Charge To Analysis|BatchPrint.htm+Batch Printing|Allocation.htm+Service Request Allocation"><img src="../SkinSupport/RelatedTopics.gif" style="border: none;margin-right: 5px;" />Related Topics</a>
+        </p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1 @@
+<%@ WebService Language="c#" Codebehind="~/WAccountManager.asmx.cs" Class="STL.WS.WAccountManager" %>

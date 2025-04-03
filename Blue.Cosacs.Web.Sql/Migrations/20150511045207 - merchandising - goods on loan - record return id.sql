@@ -1,0 +1,2 @@
+alter table Merchandising.GoodsOnLoan
+add ReturnStockTransferId int null

@@ -1,0 +1,4 @@
+ALTER TABLE Warehouse.Booking
+ADD Path VARCHAR(100) NULL
+
+

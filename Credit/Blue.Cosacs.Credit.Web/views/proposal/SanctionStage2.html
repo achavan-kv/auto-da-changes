@@ -1,0 +1,168 @@
+<div class="container credit" ng-controller="sanctionStage2Controller">
+    <h1><span ng-bind="title">Edit Sanction Stage 2</span></h1>
+
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="col-lg-2">
+        <div ng-include="'/credit/views/proposal/templates/nav.html'"></div>
+    </div>
+    <div class="col-lg-10">
+        <form class=" form-horizontal" role="form" name="sanctionStage2Form" autocomplete="off" novalidate>
+            <div ng-repeat="section in scheme.sections">
+                <ng-form name="{{setFormName(section.sectionName)}}">
+                    <div class="row">&nbsp;</div>
+                    <div ng-hide="proposal.CurrentResidentialStatus != 'Renting' && section.sectionName == 'Landlord Details'">
+                        <div class="section">{{section.sectionName}}
+                        </div>
+                        <div class="row">&nbsp;</div>
+                        <div ng-repeat="field in section.fields">
+                            <div class="col-lg-6 form-group">
+                                <label class="control-label col-lg-4"
+                                       for="{{field.id}}"
+                                       ng-show="field.visible">{{field.label}}</label>
+
+                                <div class="col-lg-8"
+                                     ng-if="(field.type == 'date' || field.type == 'text' || field.type == 'email') && field.visible"
+                                     ng-class="{'has-error': field.required && !proposal[applicantType][field.id]}">
+                                    <input type="{{field.type}}"
+                                           class="form-control"
+                                           ng-model="proposal[applicantType][field.id]"
+                                           name="{{field.id}}"
+                                           ng-required="field.required || isPreviousAddressMandatory()"
+                                           ng-pattern="field.validation"
+                                           id="{{field.id}}"
+                                           ng-change="payAmount(field.id)"
+                                           ng-show="field.visible"
+                                           ng-readonly="field.readonly || pageState != 'edit'"
+                                           ng-class="{'linked' : isUnchangedLinked(field.id, proposal[applicantType][field.id]) && filled}"
+                                           maxlength="field.Length">
+                                    <span class="help-block text-danger"
+                                          ng-show="sanctionStage2Form[field.id].$error.pattern">
+                                           The amount should be a positive number.
+                                    </span>
+                                </div>
+                                <div class="col-lg-8"
+                                     ng-if="field.type == 'list' && field.visible"
+                                     ng-class="{'has-error':  field.required && !proposal[applicantType][field.id]}">
+                                    <list scope="field.values"
+                                          placeholder="{{field.label}}"
+                                          ng-model="proposal[applicantType][field.id]"
+                                          ng-required="field.required"
+                                          ng-show="field.visible"
+                                          ng-disabled="pageState != 'edit'"></list>
+                                </div>
+                                <div class="col-lg-8" ng-if="field.type == 'textarea'  && field.visible"
+                                     ng-class="{'has-error': field.required && !proposal[applicantType][field.id]}">
+                                    <textarea class="form-control" scope="field.values"
+                                              ng-show="field.visible"
+                                              id="{{field.id}}"
+                                              placeholder="{{field.label}}"
+                                              ng-model="proposal[applicantType][field.id]"
+                                              ng-required="field.required"
+                                              ng-readonly="field.readonly"
+                                              ng-disabled="pageState != 'edit'"
+                                              rows="4"
+                                              maxlength="field.Length"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-form>
+            </div>
+        </form>
+        <ng-form class="form-horizontal" name="referencesForm">
+            <div ng-repeat="section in references.sections">
+                <div class="section">{{section.sectionName}}
+                </div>
+                <div ng-include="'/credit/views/proposal/templates/referencesResult.html'"></div>
+                <div class="row">&nbsp;</div>
+                <div class="panel panel-default col-lg-12" ng-hide="pageState == 'view'">
+                    <div class="row">&nbsp;</div>
+                    <div class="col-lg-12">
+                        <span ng-hide="isReferenceValid()" style="color:crimson"> ** At least one family and non-family reference is required !</span>
+                        <button class="btn btn-default form-group pull-right"
+                                ng-disabled="referencesForm.$invalid"
+                                ng-click="addNewReference()">Add
+                        </button>
+                    </div>
+                    <div class="row">&nbsp;</div>
+                    <div ng-repeat="field in section.fields | orderBy:'fieldOrder'">
+                        <div class="form-group col-lg-6"
+                             ng-class="{'has-error': referencesForm[field.id].$invalid}">
+                            <label class="control-label col-lg-4"
+                                   ng-show="field.visible">{{field.label}}</label>
+
+                            <div class="col-lg-8"
+                                 ng-if="(field.type == 'text' || field.type == 'email' || field.type== 'date')  && field.visible">
+                                <input type="{{field.type}}"
+                                       ng-show="field.visible"
+                                       class="form-control"
+                                       ng-model="newReference[field.id]"
+                                       name="{{field.id}}"
+                                       ng-required=field.required
+                                       id="{{field.id}}"
+                                       maxlength="{{field.length}}"
+                                       ng-pattern="field.validation"
+                                       ng-readonly="field.readonly || pageState != 'edit'">
+                                    <span class="help-block text-danger"
+                                          ng-show="referencesForm[field.id].$error.pattern">
+                                           {{field.label}} should be a positive number.
+                                    </span>
+                            </div>
+                            <div class="col-lg-8" ng-if="field.type == 'list'  && field.visible"
+                                 ng-class="{'has-error': referencesForm[field.id].$invalid}">
+                                <list id="{{field.id}}"
+                                      scope="field.values"
+                                      placeholder="{{field.label}}"
+                                      ng-model="newReference[field.id]"
+                                      name="{{field.id}}"
+                                      ng-readonly="field.readonly"
+                                      ng-required=field.required
+                                      ng-disabled="pageState != 'edit'"
+                                      ng-show="field.visible"></list>
+                            </div>
+                            <div class="col-lg-8" ng-if="field.type == 'textarea'  && field.visible"
+                                 ng-class="{'has-error': referencesForm[field.id].$invalid}">
+                                    <textarea class="form-control" id="{{field.id}}"
+                                              scope="field.values"
+                                              ng-show="field.visible"
+                                              placeholder="{{field.label}}"
+                                              ng-model="newReference[field.id]"
+                                              ng-required="field.required"
+                                              ng-readonly="field.readonly"
+                                              ng-disabled="pageState != 'edit'"
+                                              name="{{field.id}}"
+                                              rows="4"
+                                              maxlength="field.Length"></textarea>
+                            </div>
+                            <div class="col-lg-8" ng-if="field.type == 'checkbox'  && field.visible"
+                                 ng-class="{'has-error': referencesForm[field.id].$invalid}">
+                                <input id="{{field.id}}"
+                                       type="checkbox"
+                                       ng-show="field.visible"
+                                       value="field.values"
+                                       ng-model="newReference[field.id]"
+                                       ng-readonly="pageState != 'edit'"
+                                       ng-init="newReference[field.id]=false">
+                            </div>
+                            <div class="col-lg-8" ng-if="field.type == 'label'"
+                                 ng-class="{'has-error': referencesForm[field.id].$invalid}">
+                                <label
+                                        scope="field.values"
+                                        ng-model="newReference[field.id]"
+                                        ng-readonly="field.readonly || pageState != 'edit'">
+                                </label>
+                                {{newReference[field.id]}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-form>
+        <button class="btn btn-primary pull-left" ng-click="go('back')">< Previous</button>
+        <button class="btn btn-primary pull-right" ng-click="go('next')" ng-disabled="!nextEnabled()">Next ></button>
+
+    </div>
+
+</div>

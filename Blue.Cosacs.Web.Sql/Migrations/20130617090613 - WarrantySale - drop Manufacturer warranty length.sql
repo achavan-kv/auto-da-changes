@@ -1,0 +1,2 @@
+alter table Warranty.WarrantySale
+drop column ManufacturerWarrantyLength

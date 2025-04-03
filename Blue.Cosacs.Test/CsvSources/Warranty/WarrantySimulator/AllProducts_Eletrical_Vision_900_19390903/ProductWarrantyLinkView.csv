@@ -1,0 +1,5 @@
+Id,LinkId,StoreType,StockBranch,ItemNumber,RefCode,Level1,Level2,Level3,WarrantyDescription,WarrantyId,WarrantyTypeCode,WarrantyLenght,WarrantyNumber,WarrantyTaxRange,LinkName,ProductMin,ProductMax,EffectiveDate
+1,136,,900,,,PCE,1,,"TV'S 15""-21""",3,E,24,191033,17.5,LinkTest1,500,750,03/09/1939 00:00
+3,146,,,,,PCE,2,,Free AUDIO & KEYBOARDS,110,F,12,192253M,0,LinkTest3,500,750,03/09/1939 00:00
+4,148,,900,,,PCE,1,103,LCD & PLASMA,21,E,24,191143,17.5,LinkTest2,500,750,08/05/1945 00:00
+2,136,,900,,,PCE,1,,PROJECTION SCREEN TV'S,7,E,24,191063,17.5,LinkTest1,850,1100,03/09/1939 00:00

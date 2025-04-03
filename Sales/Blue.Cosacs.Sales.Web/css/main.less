@@ -1,0 +1,139 @@
+@import "custom/salesPrint.less";
+@import "custom/submodule.less";
+@import "custom/notification.less";
+@import "custom/fullScreen.less";
+@import "custom/customerSearch.less";
+
+.sidebar-outer {
+  position: relative;
+  .sidebar {
+    position: relative;
+    top: 0;
+    margin-right: 0px;
+    margin-left: 7px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+  }
+}
+
+.badge::selection {
+  color: #000000 !important;
+}
+
+
+.facetsearch-container {
+  .facet-data-container {
+    overflow-y: auto !important;
+  }
+
+  .facet-data-container{
+    height: 565px !important;
+  }
+  .Level_1, .Division, .merchandisingLevel_1 {
+    background-color: @brand-success;
+    &:hover {
+      background-color: darken(@brand-success, 10%);
+    }
+  }
+
+  .Level_2, .Department, .merchandisingLevel_2 {
+    background-color: @brand-warning;
+    &:hover {
+      background-color: darken(@brand-warning, 10%);
+    }
+  }
+
+  .Level_3, .Class, .merchandisingLevel_3 {
+    background-color: @brand-info;
+    &:hover {
+      background-color: darken(@brand-info, 10%);
+    }
+  }
+
+}
+
+.Level_1 {
+  background-color: @brand-success;
+  &:hover {
+    background-color: darken(@brand-success, 10%);
+  }
+}
+
+.Level_2 {
+  background-color: @brand-warning;
+  &:hover {
+    background-color: darken(@brand-warning, 10%);
+  }
+}
+
+.Level_3 {
+  background-color: @brand-info;
+  &:hover {
+    background-color: darken(@brand-info, 10%);
+  }
+}
+
+
+.blue-text {
+  color: #0000FF;
+}
+
+.list-container2 {
+  display: block;
+  width: 100%;
+  padding: 0px;
+  height: 48px;
+  font-size: 1.2em;
+}
+
+#cartDetails {
+  max-height: 560px;
+  overflow-y: auto !important;
+}
+
+.basket-btn {
+  .no-padding;
+  margin-left: 1px;
+  width: 50px;
+  height:48px;
+}
+
+.no-padding{
+  padding: 0;
+}
+
+.no-sidePadding{
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.onlyRightSidePadding{
+  padding: 0 15px 0 0 !important;
+}
+
+.onlyLeftSidePadding{
+  padding-right: 0 !important;
+  padding-left: 15px !important;
+}
+
+.sidePadding{
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.blue-text {
+  color: #0000FF;
+}
+
+.green-text {
+  color: green;
+}
+
+.red-text {
+  color: red;
+}
+

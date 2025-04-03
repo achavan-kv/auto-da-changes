@@ -1,0 +1,66 @@
+body.full-screen {
+  .grid-item {
+    border: 1px solid @neutral-color;
+    height: 0;
+    padding-bottom: 12%;
+    font-size: 1.3em;
+    text-align: center;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      background: @lightgrey-hover;
+      color: black;
+    }
+
+    .grid-content {
+      height: 100%;
+      margin-top: 50px;
+    }
+
+    &.touch-field-value, &.touch-selected-field {
+      border-color: #ffffff;
+    }
+
+    .item-description {
+      height: 51px;
+      overflow: hidden;
+      font-size: 12px;
+    }
+
+    .amount {
+      position: absolute;
+      bottom: 0px;
+      font-size: 12px;
+    }
+
+    .promoAmount {
+      position: absolute;
+      bottom: 18px;
+      font-size: 12px;
+    }
+  }
+
+  //Can remove Level_*
+  .Level_1, .division, .merchandisingLevel_1 {
+    background-color: @brand-success;
+    &:hover {
+      background-color: darken(@brand-success, 10%);
+    }
+  }
+
+  .Level_2, .department, .merchandisingLevel_2 {
+    background-color: @brand-warning;
+    &:hover {
+      background-color: darken(@brand-warning, 10%);
+    }
+  }
+
+  .Level_3, .class, .merchandisingLevel_3 {
+    background-color: @brand-info;
+    &:hover {
+      background-color: darken(@brand-info, 10%);
+    }
+  }
+
+}

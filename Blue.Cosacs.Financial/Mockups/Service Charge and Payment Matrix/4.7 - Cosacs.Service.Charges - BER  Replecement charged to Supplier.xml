@@ -1,0 +1,25 @@
+﻿<ServiceCharges xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd">
+    <ServiceType>Stock Repair</ServiceType>
+    <ServiceCharge>
+        <ServiceRequestNo>90952</ServiceRequestNo>
+        <Branch>780</Branch>
+        <CustomerId>SIVAT</CustomerId>
+        <Account>SONY</Account>
+        <ItemNumber>7L0001</ItemNumber>
+        <Value>28</Value>
+        <Cost>28</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>Supplier</ChargeType>
+        <Label>Labour and Additional</Label>
+        <IsExternal>true</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account xsi:nil="true" />
+        <Value>22</Value>
+        <Cost>22</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>FYW</ChargeType>
+        <Label>Labour and Additional</Label>
+        <IsExternal>true</IsExternal>
+    </ServiceCharge>
+</ServiceCharges>

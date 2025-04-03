@@ -1,0 +1,635 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>CashierTotals</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=content-type content="text/html; charset=windows-1252">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=4022>
+<meta name=layout-width content=616>
+
+
+<!--(Links)=========================================================-->
+
+<link rel=StyleSheet href=default.css>
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body>
+
+<h1 style="font-size: 14pt;"><a name=Index>Index</a></h1>
+
+<p style="font-size: 10pt;"><a href="#Cashier_Totals_user_rights">Cashier 
+ Totals user rights</a></p>
+
+<p style="font-size: 10pt;"><a href="#Amount_transferred_to_safe">Performing 
+ Cashier Totals with an amount transferred to safe</a></p>
+
+<p style="font-size: 10pt;"><a href="#Cashier_Totals_match_System_Totals">Performing 
+ Cashier Totals where cashier totals match System Totals</a></p>
+
+<p style="font-size: 10pt;"><a href="#Cashier_Totals_different_to_System_Totals">Performing 
+ Cashier Totals where cashier totals do not match system totals</a></p>
+
+<p style="font-size: 10pt;"><a href="#Definitions_of_Cashier_Totals_fields">Definitions 
+ of fields on the Cashier Totals screen</a></p>
+
+<p style="font-size: 10pt;"><a href="#Saving_Cashier_Totals">Saving Cashier 
+ Totals</a></p>
+
+<p style="font-size: 10pt;"><a href="#Cashier_s_Daily_Reconciliation_printout">Cashier's 
+ Daily Reconciliation printout</a></p>
+
+<p style="font-size: 10pt;"><a href="#Cashier_Totals_History">History tab 
+ - Cashier Totals History</a></p>
+
+<p style="font-size: 10pt;"><a href="#Branch_tab">Branch tab</a> </p>
+
+<p style="font-size: 10pt;"><a href="#Cheques_tab">Cheques tab</a></p>
+
+<p style="font-size: 10pt;"><a href="#Summary_Report_tab">Summary Report 
+ tab</a></p>
+
+<p style="font-size: 10pt;"><a href="#Definitions_of_fields_on_Summary_Report_tab">Definitions 
+ of fields on the Summary Report tab</a></p>
+
+<p style="font-size: 10pt;">&nbsp;</p>
+
+<h1>Cashier Totals Screen</h1>
+
+<p style="text-align: justify;">In this screen cashier reconciliation is 
+ prepared and the cashiers account for all takings at the end of the day.</p>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;"><a name=Cashier_Totals_user_rights>Cashier 
+ Totals user rights</a></p>
+
+<p style="font-weight: bold;">&nbsp;</p>
+
+<p style="text-align: justify;">The following are user rights which are 
+ needed for the Cashier Totals screen:</p>
+
+<p style="text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Cashier Totals – Print Cashier Totals per branch:</span> 
+ In Cashier Totals there is tab called ‘Branch’. <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->With 
+ this user right the user can print cashier totals per branch and entering 
+ a date range.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Cashier Totals - Print Cashier Totals per employee:</span> 
+ This will allow the user to print totals by employee.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Cashier Totals – Save Unreconciled cashier 
+ totals:</span> This user right would be given to a supervisor to save 
+ and record reasons for any differences that may occur when a cashier totals.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Cashier Totals – Summary Tab:</span> This will 
+ allow the user to view the Summary tab in the cashier total screen. This 
+ is a summary of totals recorded per branch per payment type.</p></li>
+</ul>
+
+<p style="font-size: 10pt; text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify; font-size: 8pt;"><a href="#Index"
+													style="font-size: 8pt;">Return 
+ to Index</a></p>
+
+<p style="font-weight: normal; font-size: 10pt;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Amount_transferred_to_safe>Performing 
+ Cashier Totals with an amount transferred to safe</a></p>
+
+<p style="font-weight: normal; font-size: 12pt;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">There is a country <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->parameter 
+ which determines whether or not a cashier is permitted to cash up while 
+ they have money in the safe.</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">This Country Parameter 
+ can be found under ‘Country Maintenance’, ‘Cashier’ and is called: ‘Allow 
+ Outstanding Safe Deposits’. </p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">For some countries it 
+ is a requirement that this money must be returned to the cashier effectively 
+ reversing the deposit before the cashier can total. If this is the case 
+ and the country parameter has been set to FALSE the user should be presented 
+ with the message: </p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify;
+			font-weight: bold;
+			font-size: 10pt;">“Outstanding Deposits to the safe of (amount) 
+ must be reversed in the Cashier Deposits screen before Cashier Totals 
+ can be saved for this cashier”.</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">For countries that do 
+ not have this requirement, the money in the safe will be subtracted from 
+ the amount the cashier is expected to total (via the deposits column as 
+ normal).</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-weight: normal; font-size: 12pt;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Cashier_Totals_match_System_Totals>Performing 
+ Cashier Totals where cashier totals match system totals</a></p>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								font-weight: bold;
+								text-align: justify;"><span style="font-weight: normal;">Clicking 
+ on the ‘Load’ button should populate the Pay Methods where the cashier 
+ should enter their Cashier Totals for each pay method.</span> </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Once 
+ entered and the save button is clicked, the system will compare the cashier 
+ totals to the system expected totals. <span style="font-weight: bold;">Please 
+ note</span> that the totals you enter should be the income for each pay 
+ method subtracting any corrections, refunds and disbursements made using 
+ that pay method. This is the amount you have remaining in your till for 
+ that pay method.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">If 
+ there are no differences between the values entered by the cashier and 
+ those held within the system, no further action is required and a message 
+ stating<span style="font-weight: bold; font-size: 10pt;"> “Totals match 
+ entered amount”</span> should appear in the bottom left of the screen. 
+ </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">A 
+ print box should appear which on clicking to print should print the ‘Cashiers 
+ Daily Reconciliation’. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Another 
+ prompt should appear: <span style="font-weight: bold; font-size: 10pt;">“Outstanding 
+ income must be deposited before other functions can be used”</span>, which 
+ should force the cashier to go to the Cashier Deposits screen where the 
+ amounts can be deposited to either the bank or safe.</p></li>
+</ul>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 8pt; font-weight: normal;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-size: 8pt; font-weight: normal;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Cashier_Totals_different_to_System_Totals>Performing 
+ Cashier Totals where cashier totals do not match system totals</a></p>
+
+<p style="font-weight: normal; font-size: 12pt;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Once 
+ the cashier has entered their totals and clicked on save and the totals 
+ do not match the system expected totals, then the prompt:<span style="font-weight: bold; font-size: 10pt;"> 
+ “Your total does not match for the following pay methods (list of Pay 
+ methods)”</span> should appear. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">The 
+ cashier should be able to click on the ‘Cancel’ button if they wish to 
+ re-check their entered totals. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Clicking 
+ on the ‘OK’ button, a ‘Authorization Prompt’ box should appear enabling 
+ the supervisor to investigate the problem.</p></li>
+</ul>
+
+<p style="font-weight: normal; font-size: 12pt;">&nbsp;</p>
+
+<p style="font-weight: normal; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-weight: normal; font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			text-align: justify;
+			font-weight: bold;"><a name=Definitions_of_Cashier_Totals_fields>Definitions 
+ of fields on the Cashier Totals screen:</a></p>
+
+<p style="font-weight: normal; font-size: 12pt;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">Pay method – <span 
+ style="font-weight: normal;">List of Payment Methods.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">System Value - <span 
+ style="font-weight: normal;">For each pay method the System Value should 
+ be the amount taken as income (- SUBTRACTING any refunds or corrections) 
+ on that pay method.</span> </p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">User Value – <span 
+ style="font-weight: normal;">The User Value should reflect the total of 
+ what the cashier entered in the Cashier Totals screen for each pay method.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">Deposit Value - <span 
+ style="font-weight: normal;">The Deposit Value should be the amount Allocated 
+ as Float – any Cashier Disbursements that were taken using that pay method.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">Difference – <span 
+ style="font-weight: normal;">This should be the difference between the 
+ actual system value (which takes into consideration the Deposit Value) 
+ and the User Value for the pay method.</span> </p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">Reason –<span style="font-weight: normal;"> 
+ it is mandatory that a reason is entered into this field before Cashier 
+ Totals can be saved for a cashier.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">System Total field 
+ - <span style="font-weight: normal;">should ONLY be the total income that 
+ you took for each of the pay methods reduced by the refunds or corrections 
+ you performed on that pay method.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">Deposit Total field 
+ -<span style="font-weight: normal;"> should be the total amount Allocated 
+ as Float – any Cashier Disbursements that you took.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">User Total field 
+ - <span style="font-weight: normal;">should reflect the total of what 
+ you entered in the Cashier Totals screen for each pay method.</span></p></li>
+	
+	<li class=kadov-p><p style="font-weight: bold;
+								font-size: 10pt;
+								text-align: justify;">Total Difference 
+ field – <span style="font-weight: normal;">This should be the total difference 
+ between the actual system total (which takes into consideration the Deposit 
+ Total) and the User Value. Here this amount will normally either be posted 
+ as an Overage or Shortage amount depending on the totals entered by the 
+ user.</span></p></li>
+</ul>
+
+<p style="font-weight: bold;
+			font-size: 10pt;
+			text-align: justify;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">Please take note of the 
+ following on the Cashier Totals screen:</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">For 
+ any foreign currency pay method, the ‘System Value’ will appear in the 
+ actual foreign amount and NOT the local equivalent. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">In 
+ this case the ‘System Total’ will include the foreign currency value, 
+ and not the local equivalent. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">You 
+ should not be able to save any Cashier Totals if no values have been entered. 
+ If you attempt to save Cashier Totals without entering any values you 
+ should receive the prompt: <span style="font-weight: bold; font-size: 10pt;">“There 
+ are no Cashier Totals to save”.</span></p></li>
+</ul>
+
+<p style="font-weight: normal; font-size: 12pt;">&nbsp;</p>
+
+<p style="font-weight: normal; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-weight: normal; font-size: 12pt;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Saving_Cashier_Totals>Saving 
+ Cashier Totals</a> </p>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								font-weight: bold;
+								text-align: justify;"><span style="font-weight: normal;">The 
+ entries will not be saved unless a reason is entered.</span> </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								font-weight: bold;
+								text-align: justify;"><span style="font-weight: normal;">The 
+ supervisor should click on the save button, any differences should then 
+ be posted as an overage or shortage. An information box should appear 
+ to say that an Overage or shortage will be posted (displaying the correct 
+ value).</span> </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Overages 
+ will be posted to an 'overs' account (special account to be set up per 
+ country) - transaction type OVS - they can still be investigated and transferred 
+ out if necessary.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;"><span 
+ style="font-size: 12pt; font-weight: normal;">Shortages will be posted 
+ to an individual cashiers account and should be investigated. </span></p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">You 
+ should receive a printer prompt, which should then print the Cashier’s 
+ Daily Reconciliation.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">The 
+ following prompt should then appear: <span style="font-weight: bold; font-size: 10pt;">“Outstanding 
+ income must be deposited before other functions can be used”</span>. On 
+ clicking on the OK button, you should be directly taken into the Cashier 
+ Deposits screen where you should be forced to process the Cashiers Deposits 
+ before you are able to use any other functionality.</p></li>
+</ul>
+
+<p style="font-size: 12pt; font-weight: normal;">&nbsp;</p>
+
+<p style="font-weight: normal; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-size: 12pt; font-weight: normal;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Cashier_s_Daily_Reconciliation_printout>Cashier’s 
+ Daily Reconciliation printout</a></p>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			font-weight: bold;
+			text-align: justify;"><span style="font-weight: normal;">The 
+ Cashier’s Daily Reconciliation printout should display the values as displayed 
+ on screen for each pay method for ‘System’, ‘User’, Deposit’, ‘Difference’, 
+ including the ‘Reasons’ which you entered for each pay method.</span> 
+ </p>
+
+<p style="font-size: 12pt;
+			font-weight: bold;
+			text-align: justify;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">Below are the definitions 
+ of other fields towards the bottom of the print out: </p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Total Payments -</span> should reflect the 
+ Total Income taken for each pay method including any corrections &amp; 
+ refunds processed.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Net Receipts -</span> should be the total of 
+ all income taken EXCLUDING any corrections and refunds</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Corrections &amp; Refunds fields -</span> should 
+ display the total of all refunds and corrections processed by the cashier.</p></li>
+</ul>
+
+<p style="font-weight: normal; font-size: 10pt;">&nbsp;</p>
+
+<p style="font-weight: normal; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-weight: normal; font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Cashier_Totals_History>History 
+ tab – Cashier Totals History</a></p>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">This screen allows the 
+ cashier to see the history of their Cashier Totals.</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;"><span 
+ style="font-size: 12pt; font-weight: normal;">The Cashier drop down should 
+ default to the cashier that is logged into the system.</span></p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Clicking 
+ on the 'Load' button should populate the ‘Cashier Totals History’ grid 
+ and display a history of the Cashiers Totals. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">By 
+ double clicking on a line in the grid the user is able to view additional 
+ information for that particular Cashier Totals, for e.g. they may wish 
+ to check the differences and the reasons for the differences in the values 
+ entered previously for that total. </p></li>
+</ul>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-size: 12pt; font-weight: normal;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Branch_tab>Branch 
+ tab</a> </p>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			font-weight: bold;
+			text-align: justify;"><span style="font-weight: normal;">This 
+ screen shows all individual payments/refunds transactions for the branch, 
+ listed by employee.</span> <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}--></p>
+
+<p style="font-size: 12pt;
+			font-weight: bold;
+			text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">The 
+ ‘from’ and ‘to’ dates are changeable by the user.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">When 
+ clicking on the ‘Load’ button, the transactions are loaded for the selected 
+ branch in between the ‘from’ and ‘to’ date specified.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Columns 
+ can be sorted by clicking on the column headings.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt;
+								font-weight: bold;
+								text-align: justify;"><span style="font-weight: normal;">Clicking 
+ on the excel button should export the results correctly to excel.</span> 
+ </p></li>
+</ul>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 8pt; font-weight: normal;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-size: 8pt; font-weight: normal;">&nbsp;</p>
+
+<p style="font-weight: bold; font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Cheques_tab>Cheques 
+ tab</a></p>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">This screen shows all 
+ the cheques taken by the cashier during their session.</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="font-weight: normal; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="font-weight: normal; font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: normal;">&nbsp;</p>
+
+<p style="font-size: 12pt; font-weight: bold;"><a name=Summary_Report_tab>Summary 
+ Report tab</a></p>
+
+<p style="font-size: 12pt; font-weight: bold;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">This screen shows <!--kadov_tag{{<spaces>}}-->&nbsp;<!--kadov_tag{{</spaces>}}-->the 
+ summed up values of the ‘Cashier Daily Totals’ at Branch or Company Wide 
+ including the sum of securitised values.</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="font-size: 12pt; text-align: justify;">Under the Summary Report 
+ tab you should be able to:</p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;"><span 
+ style="font-size: 12pt; font-weight: normal;">Select a specific branch 
+ from the ‘Choose Branch’ drop down or</span></p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Select 
+ ‘All Branches’ from the drop down to view the company wide totals.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">A 
+ ‘from’ and ‘to’ date should be selected to return the Cashier Daily Totals 
+ between these dates.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Clicking 
+ on the ‘Load’ button should retrieve the results and display them by pay 
+ method.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 12pt; text-align: justify;">Clicking 
+ on the ‘Print’ button should print the Cashier Daily Totals Summary Report.</p></li>
+</ul>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+<p style="text-align: justify; font-size: 8pt;">&nbsp;</p>
+
+<p style="font-size: 12pt;
+			text-align: justify;
+			font-weight: bold;"><a name=Definitions_of_fields_on_Summary_Report_tab>Definitions 
+ of fields on the Summary Report tab:</a></p>
+
+<p style="font-size: 12pt; text-align: justify;">&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Pay Method –</span> List of pay methods</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">System Value column –</span> should display 
+ the summed total of all payments taken for each pay method, minus any 
+ refunds or corrections processed on that pay method.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">User Value column –</span> should display the 
+ summed totals for each of the pay methods which the cashiers entered when 
+ entering their Cashier Totals. </p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">Deposit Value column –</span> should display 
+ the summed total of any ‘Allocated float – disbursements’ performed using 
+ that pay method.</p></li>
+	
+	<li class=kadov-p><p style="font-size: 10pt; text-align: justify;"><span 
+ style="font-weight: bold;">A.S column –</span> should display the total 
+ payment amounts taken against securitised accounts only for each of the 
+ pay methods (minus any refunds or corrections).</p></li>
+</ul>
+
+<p style="font-size: 10pt; text-align: justify;">&nbsp;</p>
+
+<p style="text-align: justify; font-size: 8pt;"><a href="#Index">Return 
+ to index</a></p>
+
+</body>
+
+</html>

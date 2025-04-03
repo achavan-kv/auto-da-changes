@@ -1,0 +1,534 @@
+               EPSON OPOS ADK Version2.20E
+               Release Note
+
+                                  SEIKO EPSON CORPORATION
+                                  Epson Software Development Laboratory, Inc.
+                                                                 Mar.28, 2002
+1. Overview
+   We are proud to announce the release of the OPOS ADK Version 2.20E.
+   Using this development kit makes it easy to build applications based on the
+   OPOS Application Programmer's Guide, Release 1.6.
+   However, only LineDisplay in EPSON OPOS ADK corresponds to the OPOS Japanese
+   version specifications edition 1.6. Other devices are not affected.
+   This kit is designed for use with Microsoft Visual Basic Version 6.0,
+   Visual C++ 6.0, or another 32-bit development environment.
+
+2. Explanation of OPOS ADK Version 2.20E Contents
+   The following diskettes are shipped in the development kit:
+
+[Program installation disks]
+   * OPOS ADK Ver 2.20E Disk-1 (Installation Disk 1)
+   * OPOS ADK Ver 2.20E Disk-2 (Installation Disk 2)
+   * OPOS ADK Ver 2.20E Disk-3 (Installation Disk 3)
+   * OPOS ADK Ver 2.20E Disk-4 (Installation Disk 4)
+   * OPOS ADK Ver 2.20E Disk-5 (Installation Disk 5)
+   * OPOS ADK Ver 2.20E Disk-6 (Installation Disk 6)
+    The disks above are used to install the EPSON OPOS ADK program.
+   
+   The files for installing are compressed. 
+   Be sure to run the EPSON OPOS ADK Installer program before using 
+   the files.
+   
+[Sample programs]
+   *EPSON OPOS ADK Ver2.20 Sample Program
+   Both Microsoft Visual Basic and Microsoft Visual C++ are supported
+   for the Sample Program.
+   The Sample Program is selectable in the Installer. When needed,
+   specify in the Installer. For detailed information about the 
+   contents of the files, please refer to the Index.htm(launch the
+   Sample Programs from the OPOS folder under start-up menu),
+    or the SampleReadme.txt file stored after
+   installing the Sample Program. 
+      
+[Manuals (Documentation files)]
+   *EPSON OPOS ADK Ver2.20 Manual
+   Normally, the manuals are selectable in the installer. When needed, specify
+   in the installer.
+   For detailed information about the manuals, please refer to the Index.htm
+  (launch the Manual from the OPOS folder under start-up menu), or the
+   ManualReadme.txt file stored after installing the manuals.
+   
+   
+3. Installation
+   To install the EPSON OPOS ADK program, insert the diskette labeled 
+   "EPSON OPOS ADK Ver 2.20E Disk-1" in the host machine's diskette 
+   drive and run SETUP.EXE.
+   You can use the "Add/Remove Programs" icon in the Control Panel to install.
+   After initiating the SETUP.EXE program, follow the instructions. 
+   For further details on installing this program, see the User's Guide.
+   
+   
+4. Supported Devices, Reference Versions of Firmware
+   This release note contains limited information on the devices below,
+   and it is recommended that the developer read all warnings in the
+   Application Programmer's Guide before beginning. The Application 
+   Programmer's Guide contains a great deal of information, many more
+   items to consider than listed here. 
+   A device may be listed here as having no known problems; however,
+   the Application Programmer's Guide may provide relevant information
+   to note on that device.
+   The reference versions of firmware is described regarding Line Displays, MICRs
+   and POS Printers.
+   It is recommended to use the reference versions of firmware.
+
+   If the printer name includes "M", which means that the printer is either
+   Simplified Chinese of Traditional Chinese.
+
+* Line Displays                                       Reference versions of firmware
+	EPSON DM-D101/102                                         Ver 2.11
+        EPSON DM-D105/106                                         Ver 3.11
+        EPSON DM-D110                                             Ver 1.01
+	EPSON DM-D202/203                                         Ver 2.11
+        EPSON DM-D205/206                                         Ver 3.11
+        EPSON DM-D210                                             Ver 1.01
+	EPSON DM-D102U (USB)                                      Ver 2.11
+        EPSON DM-D106U (USB)                                      Ver 3.11
+        EPSON DM-D203U (USB)                                      Ver 2.11
+        EPSON DM-D206U (USB)                                      Ver 3.11
+        EPSON DM-D110U (USB)                                      Ver 1.01
+        EPSON DM-D210U (USB)                                      Ver 1.01
+	EPSON DM-D500                                             Ver 1.10
+	EPSON DM-D500U(USB)                                       Ver 1.10
+	EPSON DM-D102-015 ( For IM-300/IM-310(EPSON IR) )         Ver 2.11
+        EPSON DM-D106-115 ( For IM-300/IM-310(EPSON IR) )         Ver 3.11
+	EPSON DM-D106-315 ( For IM-300/IM-310(EPSON IR) )         Ver 3.11
+
+* MICR                                                Reference versions of firmware
+	EPSON TM-H5000II with MICR                                Ver 5.01
+	EPSON TM-H5000IIP with MICR                               Ver 5.01
+	EPSON TM-H5000IIU with MICR (USB)                         Ver 5.01
+	EPSON TM-H5000IIE with MICR (Ethernet)                    Ver 5.01
+	EPSON TM-H6000 with MICR                                  Ver 1.37
+	EPSON TM-H6000P with MICR                                 Ver 1.37
+	EPSON TM-H6000U with MICR (USB)                           Ver 1.37
+	EPSON TM-H6000E with MICR (Ethernet)                      Ver 1.37
+	EPSON TM-U675 with MICR                                   Ver 1.31
+	EPSON TM-U675P with MICR                                  Ver 1.31
+	EPSON TM-U675U with MICR (USB)                            Ver 1.31
+	EPSON TM-U675E with MICR (Ethernet)                       Ver 1.31
+	EPSON TM-U950 with MICR                                   Ver 1.08
+	EPSON TM-H6000II with MICR                                Ver 3.01
+                 (with Scanner Model                              Ver 5.01)
+	EPSON TM-H6000IIP with MICR                               Ver 3.01
+                 (with Scanner Model                              Ver 5.01)
+	EPSON TM-H6000IIU with MICR (USB)                         Ver 3.01
+                 (with Scanner Model                              Ver 5.01)
+	EPSON TM-H6000IIE with MICR (Ethernet)                    Ver 3.01
+ 
+* POS Printers                                        Reference versions of firmware
+	EPSON RP-U420                                             Ver 2.10
+	EPSON RP-U420P                                            Ver 2.10
+	EPSON TM-295                                              Ver 1.08
+	EPSON TM-295P                                             Ver 1.08
+	EPSON TM-300A                                             Ver 2.02
+	EPSON TM-300B                                             Ver 2.02
+	EPSON TM-300C                                             Ver 2.02
+	EPSON TM-300D                                             Ver 2.02
+	EPSON TM-H3000R ( For IM-300/IM-310(EPSON IR) )           Ver 1.03
+	EPSON TM-H5000II                                          Ver 5.05
+	EPSON TM-H5000IIP                                         Ver 5.05
+	EPSON TM-H5000IIU (USB)                                   Ver 5.05
+	EPSON TM-H5000IIE (Ethernet)                              Ver 5.05
+	EPSON TM-H5000IIM                                         Ver 3.42
+	EPSON TM-H5000IIPM                                        Ver 3.42
+	EPSON TM-H5000IIMU (USB)                                  Ver 3.42
+	EPSON TM-H5000IIME (Ethernet)                             Ver 3.42
+	EPSON TM-H6000                                            Ver 1.37
+	EPSON TM-H6000P                                           Ver 1.37
+	EPSON TM-H6000U (USB)                                     Ver 1.37
+	EPSON TM-H6000E (Ethernet)                                Ver 1.37
+	EPSON TM-H6000M                                           Ver 1.37
+	EPSON TM-H6000PM                                          Ver 1.37
+	EPSON TM-H6000MU (USB)                                    Ver 1.37
+	EPSON TM-H6000ME (Ethernet)                               Ver 1.37
+	EPSON TM-J8000                                            Ver 1.06
+	EPSON TM-J8000P                                           Ver 1.06
+	EPSON TM-J8000U (USB)                                     Ver 1.06
+	EPSON TM-J8000E (Ethernet)                                Ver 1.06
+	EPSON TM-L60II                                            Ver 1.02
+	EPSON TM-L60IIP                                           Ver 1.04
+	EPSON TM-T88II                                            Ver 3.42
+	EPSON TM-T88IIP                                           Ver 3.42
+	EPSON TM-T88IIU (USB)                                     Ver 3.42
+	EPSON TM-T88IIE (Ethernet)                                Ver 3.42
+	EPSON TM-T88IIM                                           Ver 3.42
+	EPSON TM-T88IIPM                                          Ver 3.42
+	EPSON TM-T88IIMU (USB)                                    Ver 3.42
+	EPSON TM-T88IIME (Ethernet)                               Ver 3.42
+	EPSON TM-T88IIR ( For IM-300/IM-310(EPSON IR) )           Ver 3.44
+	EPSON TM-T88IIRM ( For IM-300/IM-310(EPSON IR) )          Ver 3.44
+	EPSON TM-T90                                              Ver 1.05
+	EPSON TM-T90P                                             Ver 1.05
+	EPSON TM-T90U (USB)                                       Ver 1.05
+	EPSON TM-T90E (Ethernet)                                  Ver 1.05
+	EPSON TM-U200B                                            Ver 1.01
+	EPSON TM-U200BP                                           Ver 1.01
+	EPSON TM-U200BE (Ethernet)                                Ver 1.01
+	EPSON TM-U200D                                            Ver 1.02
+	EPSON TM-U200DP                                           Ver 1.02
+	EPSON TM-U200DE (Ethernet)                                Ver 1.02
+	EPSON TM-U210A                                            Ver 1.24
+	EPSON TM-U210AP                                           Ver 1.24
+	EPSON TM-U210AU (USB)                                     Ver 1.24
+	EPSON TM-U210AE (Ethernet)                                Ver 1.24
+	EPSON TM-U210AM                                           Ver 1.24
+	EPSON TM-U210APM                                          Ver 1.24
+	EPSON TM-U210AMU (USB)                                    Ver 1.24
+	EPSON TM-U210AME (Ethernet)                               Ver 1.24
+	EPSON TM-U210AR ( For IM-300/IM-310(EPSON IR) )           Ver 1.24
+	EPSON TM-U210ARM ( For IM-300/IM-310(EPSON IR) )          Ver 1.24
+	EPSON TM-U210B                                            Ver 1.24
+	EPSON TM-U210BP                                           Ver 1.24
+	EPSON TM-U210BE (Ethernet)                                Ver 1.24
+	EPSON TM-U210D                                            Ver 1.24
+	EPSON TM-U210DP                                           Ver 1.24
+	EPSON TM-U210DE (Ethernet)                                Ver 1.24
+	EPSON TM-U230                                             Ver 1.00
+	EPSON TM-U230P                                            Ver 1.00
+	EPSON TM-U230U (USB)                                      Ver 1.00
+	EPSON TM-U230E (Ethernet)                                 Ver 1.00
+	EPSON TM-U325                                             Ver 1.03
+	EPSON TM-U325P                                            Ver 1.03
+	EPSON TM-U325U (USB)                                      Ver 1.03
+	EPSON TM-U325E (Ethernet)                                 Ver 1.03
+	EPSON TM-U375                                             Ver 3.04
+	EPSON TM-U375P                                            Ver 3.04
+	EPSON TM-U590                                             Ver 5.05
+	EPSON TM-U590P                                            Ver 5.05
+	EPSON TM-U590U (USB)                                      Ver 5.05
+	EPSON TM-U590E (Ethernet)                                 Ver 5.05
+	EPSON TM-U590M                                            Ver 3.42
+	EPSON TM-U590PM                                           Ver 3.42
+	EPSON TM-U590MU (USB)                                     Ver 3.42
+	EPSON TM-U590ME (Ethernet)                                Ver 3.42
+	EPSON TM-U675                                             Ver 1.31
+	EPSON TM-U675P                                            Ver 1.31
+	EPSON TM-U675U (USB)                                      Ver 1.31
+	EPSON TM-U675E (Ethernet)                                 Ver 1.31
+	EPSON TM-U675M                                            Ver 1.31
+	EPSON TM-U675PM                                           Ver 1.31
+	EPSON TM-U675MU (USB)                                     Ver 1.31
+	EPSON TM-U675ME (Ethernet)                                Ver 1.31
+	EPSON TM-U950                                             Ver 1.08
+	EPSON TM-U950P                                            Ver 1.08
+	EPSON TM-U230M                                            Ver 1.02
+	EPSON TM-U230PM                                           Ver 1.02
+	EPSON TM-U230MU (USB)                                     Ver 1.02
+	EPSON TM-U230ME (Ethernet)                                Ver 1.02
+	EPSON TM-J2000/J2100                                      Ver 2.02
+	EPSON TM-J2000P/J2100P                                    Ver 2.02
+	EPSON TM-J2000U/J2100U (USB)                              Ver 2.02
+	EPSON TM-J2000E/J2100E (Ethernet)                         Ver 2.02
+	EPSON TM-L90                                              Ver 1.03
+	EPSON TM-L90P                                             Ver 1.03
+	EPSON TM-L90U (USB)                                       Ver 1.03
+	EPSON TM-L90E (Ethernet)                                  Ver 1.03
+	EPSON TM-U210DM                                           Ver 1.24
+	EPSON TM-U210DPM                                          Ver 1.24
+	EPSON TM-U210DMU (USB)                                    Ver 1.24
+	EPSON TM-U210DME (Ethernet)                               Ver 1.24
+	EPSON TM-H6000II                                          Ver 3.01
+                 (with Scanner Model                              Ver 5.01)
+	EPSON TM-H6000IIP                                         Ver 3.01
+                 (with Scanner Model                              Ver 5.01)
+	EPSON TM-H6000IIU (USB)                                   Ver 3.01
+                 (with Scanner Model                              Ver 5.01)
+	EPSON TM-H6000IIE (Ethernet)                              Ver 3.01
+                 (with Scanner Model                              Ver 5.01)
+	EPSON TM-H6000IIM                                         Ver 3.90
+ 	EPSON TM-H6000IIPM                                        Ver 3.90
+	EPSON TM-H6000IIMU (USB)                                  Ver 3.90
+	EPSON TM-H6000IIME (Ethernet)                             Ver 3.90
+   	EPSON TM-T88III                                           Ver 7.00
+	EPSON TM-T88IIIP                                          Ver 7.00
+	EPSON TM-T88IIIU (USB)                                    Ver 7.00
+	EPSON TM-T88IIIE (Ethernet)                               Ver 7.00
+	EPSON TM-T88IIIM                                          Ver 7.01
+	EPSON TM-T88IIIPM                                         Ver 7.01
+	EPSON TM-T88IIIMU (USB)                                   Ver 7.01
+	EPSON TM-T88IIIME (Ethernet)                              Ver 7.01
+	EPSON TM-L90M                                             Ver 1.02
+	EPSON TM-L90PM                                            Ver 1.02
+	EPSON TM-L90MU (USB)                                      Ver 1.02
+	EPSON TM-L90ME (Ethernet)                                 Ver 1.02
+	EPSON TM-T90M                                             Ver 1.02
+	EPSON TM-T90PM                                            Ver 1.02
+	EPSON TM-T90MU (USB)                                      Ver 1.02
+	EPSON TM-T90ME (Ethernet)                                 Ver 1.02
+	EPSON TM-J2000M/J2100M                                    Ver 2.10
+	EPSON TM-J2000PM/J2100PM                                  Ver 2.10
+	EPSON TM-J2000MU/J2100MU (USB)                            Ver 2.10
+	EPSON TM-J2000ME/J2100ME (Ethernet)                       Ver 2.10
+		
+* Cash Drawer
+	Standard Cash Drawer for TM series (Serial,Parallel,USB,Ethernet)
+	Multi_A Cash Drawer ( 2 Drawer )(Serial,Parallel,USB,Ethernet)
+	Multi_B Cash Drawer ( 2 Drawer )(Serial,Parallel,USB,Ethernet)
+
+* Hard Totals
+	EPSON IM-505 NVRAM
+	EPSON IM-515 NVRAM
+	EPSON IM-300 NVRAM ( For IM-300(EPSON IR) )
+	EPSON IM-310 NVRAM ( For IM-310(EPSON IR) )
+	EPSON IM-310 CompactFlash ( For IM-310(EPSON IR) )
+	EPSON IM-600 CompactFlash ( For IM-600(EPSON IR) )
+
+* MSR
+	DM-MR111-012 ( For IM-300/IM-310(EPSON IR) )
+	DM-MR111-013 ( For IM-300/IM-310(EPSON IR) )
+	DM-MR123     ( For IM-300/IM-310(EPSON IR) )
+	DM-MS123     ( For IM-600(EPSON IR) )
+
+* Keylock
+	IM-300 ( For IM-300(EPSON IR) )
+	IM-310 ( For IM-310(EPSON IR) )
+
+* CheckScanner                                        Reference versions of firmware
+	EPSON TM-H6000II                                          Ver 5.01
+	EPSON TM-H6000IIP                                         Ver 5.01
+	EPSON TM-H6000IIU (USB)                                   Ver 5.01
+	
+5. Support for devices in future releases
+   The following list describes items restricted in this release and how to deal
+   with problems. Also, please be sure to refer to the Application Development
+   Guide notes. This list mainly takes up items not specified in the Application
+   Development Guide. However, the fact that an item is not included here does
+   not mean there are no restrictions on that item.
+
+[USB interface devices]
+ * Supported OS
+   The USB interface devices are supported by Windows 98 Second Edition/
+   Windows2000 / WindowsXP USB interface devices cannot be installed on 
+   Windows 98 Second Edition, WindowsXP or Windows2000. (See note)
+
+ * port setting
+   See the user's manual for details.
+
+ * Line Display
+   When connecting a Line display to the UIB-BOARD (UB-U01/02) the
+   following connection sequence is necessary.
+   1. Connect the UIB-BOARD to the TM-Printer Master device.
+   2. Connect the Line display to the DM-D port on the UIB-BOARD.
+   3. Turn on the Line display power.
+   4. Turn on the Printer power.
+   If this sequence is not followed the Line display will not be properly 
+   detected.
+
+ * Note
+    Install the USB driver from the hard disk.
+    (Driver is automatically copied in the folder in which OPOS has 
+    installed.(Default:\ProgramFiles\OPOS\EPSON2))
+    See the user's manual for details.
+
+[Notes on using the 9-pin serial interface board (called the UB-S09 hereafter)]
+ * The UB-S09 has a DM-D connector and is installed in an EPSON TM printer.
+   The UB-S09 enables a connection with a DM display even if the TM printer
+   is not equipped with a DM-D connector via a Y-connection.
+   With the TM printer and a DM-D display connected, the UB-S09 can communicate 
+   with the serial interface of the host computer at a maximum speed of 
+   115.2 K bps (bps: bits per second).
+
+   1. Set the jumper on the UB-S09 or the DIP switch on the TM printer to 
+      the appropriate positions if necessary when the DM-D display is
+      connected to the DM-D connector of the UB-S09 or to the TM printer.
+      A DM-D display cannot be connected to both the 
+      UB-S09 and a TM printer simultaneously.  Connect the DM-D display to 
+      either one of the DM-D connectors.  
+      Refer to the user's manual of the UB-S09 or the TM printer 
+      for the correct jumper or DIP switch settings.
+   2. The serial communication condition of the UB-S09 depends on the DIP 
+      switch of the TM printer itself.  Refer to the user's manual of the
+      TM printer to be used for the correct DIP switch settings.
+   3. When a DM-D display is connected to the UB-S09, the power is supplied
+      to the DM-D display from the TM printer regardless of whether the power 
+      switch of the TM printer is on or off (except for the TM-J8000).  
+      Note that the DM-D display always receives its power from the TM printer.
+   4. When the UB-S09 is connected to the RP-U420, the DM-D display cannot be
+      used through the DM-D connector of the UB-S09 since the power is not 
+      supplied from the RP-U420 to the DM-D display. 
+      However, the RP-U420 works normally except for this.
+
+[The Network Interface Device (hereafter, UB-E01)]
+   The UB-E01 can be installed in the TM printer which is compatible with the 
+   interface board system. If the UB-E01 is installed, the Line display (DM-D) 
+   connector with which the TM printer is equipped can not be used.
+   The UB-E01 enables communications by 10BASE-T and is compatible with the 
+   TCP/IP protocol. If it is to be used (each setting), ask the network 
+   administrator who is in charge.
+   During Open, or Claim, the TM printer's power Off / On operation is 
+   supported, but after it is turned On, it cannot be guaranteed that it will 
+   reconnect, so exercise caution. During Open or Claim, that PC has a 
+   monopoly on its connection with the TM printer. (Another PC cannot connect 
+   with it.) However, if the TM printer's power is turned OFF once, then 
+   turned On again, any PC existing on the network can connect with that 
+   TM printer. At that time, the OPOS of a PC which is in the middle of a 
+   Claim will attempt to reconnect automatically, but if another PC's OPOS 
+   also attempts to make a Claim, it is not clear which will be able to make 
+   the connection. The PC which is the earliest to request connection can 
+   establish the connection. Accordingly, a TM printer which has had its power 
+   turned Off and On after Open or Claim, may not necessarily be available to 
+   reconnect to, so exercise caution.When the TM printer's power is turned On, 
+   and when it is reset, it takes approximately 20 seconds until the network 
+   function is operated, so exercise caution.
+ 
+[Installation]
+  * If upgrading ( or downgrade ) the EPSON OPOS ADK, 
+    and have already performed in EPSON OPOS ADK uninstallation,
+    please reboot system first.
+  * If devices are specified in a custom install, and a .REG file
+    containing unspecified device information is used to initialize the
+    registry, the SetupPOS utility may show a warning about the port
+    setting. Choose OK and reset the port, or press Cancel to ignore the
+    warning.
+  * When using the REG file, make sure the environment of the computer used to 
+    make the REG file and the environment of the computer reflecting the REG 
+    file are the same.
+  * If the installation fails for some reason and you cancel in the middle
+    of it, be sure to do it again. If this happens, there is a possibility
+    that files and environment can't be cleaned even if you execute
+    uninstall.
+  * When ServicePack4 is installed, the following message is indicated. 
+    This is because CheckScanner is not included in the base version.
+    Proceed with the installation as is when you want to use CheckScanner.
+
+     The following devices and files cannot be installed after the 
+     installation of service pack 4.
+       CheckScanner : SO
+     It is recommended to have them installed before installing service pack4
+     in case they are needed in the future. Proceed with installation ?
+	
+[SetupPOS]
+  * The hydra connection depends on the capability of the each device connection 
+    when a device using COM, LPT, USB, or Ethernet interface is adding to a port 
+    on which other device is already set.
+    If the device cannot use selected port, a message is displayed. 
+    Then, select other available port. 
+    For example, when a LineDisplay2 (POSPrinter2) is adding to COM1 
+    on which a POSPrinter1 and a LineDisplay1 are already hydra-connected, 
+    an error massage may be displayed. 
+    In the case, set a port as follows.
+    When adding a LineDisplay2 (POSPrinter2), an error message is displayed.
+    The message is displayed on communication setting dialog. 
+    In the dialog, set a port(For example, set to COM2). If an illegal 
+    hydra connection is set, an error will be displayed in the contradictory 
+    warning of a setup registry dialog. In the case, select OK button. 
+    Then the contradictory is automatically corrected.
+  * When hydra connection is set using the host name under the Network Device, 
+    please make sure to name the same host name (including capital/small 
+    characters differences) between a master device and the slave device.
+    In case the same host name (including capital/small characters differences) 
+    is not named for a master device and the slave device, the operation is not
+    guaranteed.
+  * Do the registration again after installing Service Pack 4 when registering 
+    TM-H6000II printer and MICR.
+    If not, the CheckScanner of TM-H6000II cannot be registered normally.
+
+[Cash Drawer]
+  * The CashDrawer supported by EPSON OPOS is controlled through the
+    POSPrinter. Therefore the OpenDrawer method can be influenced by
+    POSPrinter action. For example, if the OpenDrawer method is 
+    executed while data is printing on POSPrinter, the OpenDrawer method
+    return a timeout error. But after  a little later, the StatusUpdateEvent
+    may fire, resulting in an Open CashDrawer. To avoid this case, 
+    it is recommended that the OpenDrawer method be executed before printing
+    data  on POSPrinter.
+  * The drawer sets the DrawerOpened property, and fires the
+    StatusUpdateEvent when DeviceEnabled property becomes true. However,
+    when the POSPrinter that connected with the CashDrawer is in an error
+    state, the CashDrawer cannot detect state changes until a CashDrawer
+    method is called. Please confirm printer's state before setting
+    DeviceOpened property to true.
+
+[Hard Totals]
+    Hard Totals using EPSON series NVRAM needs a driver to access the NVRAM: 
+    EPSON NVRAM Driver. In an environment where the EPSON NVRAM Driver is not
+    installed, Hard Totals cannot be installed. To install Hard Totals onto a
+    machine on which you are going to use the EPSON NVRAM Driver, install the
+    driver first. For how to purchase the EPSON NVRAM Driver, check with the 
+    company where you bought the IM hardware.
+
+[CheckScanner]
+    CheckScanner's specification is specific to EPSON.
+    Therefore there is no CCO. 
+    EPSON CO CheckScanner will be installed from ServicePack4 even when CCO 
+    is installed in the base version.
+
+[EPSON IM series(Windows2000 and WindowsXP Support)]
+  * EPSON IM-310/600
+    Windows2000 and WindowsXP is supported.
+
+  * EPSON IM-505/515/300
+    Operation under Windows2000 or WindowsXP is not supported.
+    There are no plans to support this configuration.
+
+[POSPrinter]
+  In the TM-L60II, with using the TransactionPrint method,
+  Service Object retains the output data of MarkFeed method.
+  If MarkFeed method's parameter is PTR_MF_TO_TAKEUP, errors will be occurred
+  when the TransactionPrint method's buffering mode is released.
+  Due to the specfication, printer will become offline after executing MarkFeed
+  method until the Feed button is pushed.
+	  
+6. Other Considerations
+
+  (1) When you create multiple forms and set them up to access a single ADK
+      object in a Visual Basic project, the following problems occur when
+      properties are accessed or methods are called:
+	  * The method or property accessed first does not return until all
+	     processing has been completed. (The project hangs.)
+	  * The Close() method causes a Visual Basic error when called.
+      Please make sure that all methods and properties accessed by one from
+      are completely finished before any other form accesses a method or
+      property.
+ 
+  (2) Coexisting with Version 1.xx(After Version1.60)
+     *The devices of Version1.xx(after Version1.60) and the devices of Version 2.xx 
+      can operate simultaneously.(Refer to the User's guide.) 
+      However, when executing installations of the both versions, 
+      be sure to first install the Version 1.xx.  
+      When executing the uninstaller, first uninstall Version 2.xx, 
+      or use the uninstaller of Version 2.xx to uninstall Version 1.xx. 
+      If the uninstaller of Version 1.xx is used without considering the order, 
+      the operation is not guaranteed.  
+      In such cases, be sure to perform a reinstallation.
+
+     *When coexisting Version 1.xx and the Version 2.xx, the following devices
+      on the same port or the same keyboard interface board cannot coexist 
+      and be shared between versions.
+        Hydra Setting devices: POSPriter, CashDrawer, Display
+        Keyboard Interface devices: MSR,Keylock 
+      When those settings are detected while installing, 
+      Version1.xx settings are deleted forcibly.
+      When setting by the SetupPOS utility, the warning will not be displayed.
+      However the operation is not guaranteed.
+
+     *The following cases can not be inherited to properly from ver1.xx. 
+       When Printer's paper width is changed.
+       Keylock setting.
+ 
+  (3) The DoEvents Process in Visual Basic
+      If you want to get an Event in the midst of a procedure, use DoEvents.
+      For example,for a cash drawer, which you programmed to execute
+      WaitforDrawerClose immediately after executing the OpenDrawer method,
+      an Event never occurs until control returns to the application.
+      Putting a DoEvents instruction between the OpenDrawer method and 
+      WaitforDrawerClose method executes StatusUpdateEvent and enables you to
+      get an Event.
+
+  (4) This version supports LPT1 through LPT3. However LPT3 has not been fully
+      tested.
+
+  (5) The OPOS APG/CPG documents are available at:   (As of December,2000)
+	http://www.microsoft.com/industry/retail/developers/initiatives/opos/home.stm
+
+  (6) When using devices support for EtherNet on the Windows95
+      When using devices support for EtherNet on the Windows95, needed to install
+      the WinSock2.0 on to the machine.
+      The WinSock2.0 is available from the following URL.(As of December,2000)
+  
+  http://www.microsoft.com/windows95/downloads/contents/wuadmintools/s_wunetworkingtools/w95sockets2/default.asp
+
+  (7) Status transmission from the printer at power on
+      Some printers are set to transmit three bytes of printer status to the host PC when the power
+      is turned on again once OPOS is used. These data are used for telling the printer's power on
+      to OPOS.

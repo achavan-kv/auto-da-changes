@@ -1,0 +1,161 @@
+﻿<div class="container">
+    <h1>CSR Dashboard</h1>
+    <div ng-cloak ng-controller="csrDashboardController">
+        <label ng-show="isRefreshing && !IsLoading" class="message">*The data may be outdated. Please wait 5 mins to
+            refresh the Dashboard.</label>
+        <div class="search row">&nbsp;</div>
+        <label ng-show="IsLoading">
+            <h3>The Dashboard is loading. Please wait 5 mins</h3>
+        </label>
+        <!--Call Summary-->
+        <section ng-show="!IsLoading">
+            <div class="section">Call Summary</div>
+            <div class="search row">&nbsp;</div>
+            <square value="csrSummary.Late" name="Late Calls" description="No of calls that are late"></square>
+            <square value="csrSummary.ScheduledTotal" name="Calls Scheduled" description="No of calls scheduled in total"></square>
+            <square value="csrSummary.ScheduledToday" name="Calls Scheduled Today" description="No of calls scheduled today"></square>
+            <square value="csrSummary.FlushedLastWeek" name="Flushed Calls" description="No of calls flushed in the last week"></square>
+            <square value="csrSummary.LoggedLastWeek" name="Logged Calls" description="No of calls logged in the last week"></square>
+        </section>
+        <div class="search row">&nbsp;</div>
+        <!--Sales Summary-->
+        <section ng-show="!IsLoading && salesSummary.length > 0">
+            <div class="section">Sales Summary</div>
+            <div class="search row">&nbsp;</div>
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Today</th>
+                    <th>This week</th>
+                    <th>This month</th>
+                    <th>YTD</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="value in salesSummary">
+                    <th>{{value.Area}}</th>
+                    <td class="text-right">{{ value.Today | humanizeNumber }}</td>
+                    <td class="text-right">{{ value.Week | humanizeNumber }}</td>
+                    <td class="text-right">{{ value.Month | humanizeNumber }}</td>
+                    <td class="text-right">{{ value.Year | humanizeNumber }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="search row">&nbsp;</div>
+        <!--KPI's-->
+        <section ng-show="!IsLoading && (newCustomerAcquisitionAndCancellations.length > 0 || hitRateKpi.length > 0 || rewritesKPI.length > 0 || creditMixKip.lenght > 0)">
+            <div class="section">KPI</div>
+            <div class="col-lg-12" ng-show="newCustomerAcquisitionAndCancellations.length > 0">
+                <label>First Week : {{salesKPIFirstWeek}}</label>
+                <linechart xproperty="Week" source="newCustomerAcquisitionAndCancellations" title="Customer: Acquisitions & Cancellations" height="300" />
+            </div>
+            <div class="search row">&nbsp;</div>
+            <div class="col-lg-12" ng-show="hitRateKpi.length > 0">
+                <div class="col-lg-12">
+                    <label>First Week : {{salesKPIFirstWeek}}</label>
+                    <linechart xproperty="Week" source="hitRateKpi" title="Warranty & Installations Hit Rate"  height="300" ylabel="Hit Rate %"/>
+                </div>
+            </div>
+            <div class="search row">&nbsp;</div>
+            <div class="search row" ng-show="rewritesKPI.length > 0 || creditMixKip.lenght > 0">
+                <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <label>First Week : {{salesKPIFirstWeek}}</label>
+                        <linechart xproperty="Week" source="rewritesKPI" width="600" title="Rewrites" height="300" ylabel="Amount of Rewrites"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <label>First Week : {{salesKPIFirstWeek}}</label>
+                        <linechart xproperty="Week" source="creditMixKip" width="600" title="Credit Mix" height="300"
+                                   ylabel="Credit Mix %"/>
+                    </div>
+                </div>
+            </div>
+            <div class="search row">&nbsp;</div>
+        </section>
+        <div class="search row">&nbsp;</div>
+        <!--undeliveredAccounts-->
+        <section ng-show="!IsLoading && undeliveredAccounts.length > 0">
+            <div class="section">Undelivered cash/credit accounts</div>
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Log Call</th>
+                    <th>Customer Name
+                    </th>
+                    <th>Phone</th>
+                    <th>Account No
+                    </th>
+
+                    <th>Item No
+                    </th>
+                    <th>Item Description
+                    </th>
+                    <th>Status Description</th>
+                    <th>Requested Delivery Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="value in undeliveredAccounts" ng-class="getDateRowClass(value.DeliveryDate)">
+                    <td><span title="Log Unscheduled Call" class="glyphicons earphone pointer"
+                              ng-click="scheduleCall({Id: value.CustomerAccount, CustomerFirstName: value.CustomerFirstName, CustomerLastName: value.CustomerLastName, CustomerId : value.CustomerId, Subject: 'Acct No'})"></span>
+                    </td>
+                    <td>{{value.CustomerFirstName}} {{value.CustomerLastName}}</td>
+                    <td>{{value.Phone}}</td>
+                    <td>{{value.CustomerAccount}}</td>
+                    <td>{{value.ItemNo}}</td>
+                    <td>{{value.ItemDescription}}</td>
+                    <td>{{value.StatusDescription}}</td>
+                    <td>{{value.DeliveryDateFormat}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="search row">&nbsp;</div>
+        <!--slowSrs-->
+        <section ng-show="!IsLoading && slowSrs.length > 0">
+            <div class="section">Slow SR's</div>
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th class="text-center" colspan="3">Customer</th>
+                    <th class="text-center" colspan="4">Service Request</th>
+                </tr>
+                <tr>
+                    <th>Log Call</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Number</th>
+                    <th>State</th>
+                    <th>Item</th>
+                    <th>Logged Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in slowSrs">
+                    <td><span title="Log Unscheduled Call" class="glyphicons earphone pointer"
+                              ng-click="scheduleCall({Id: item.RequestId, CustomerFirstName: item.CustomerFirstName, CustomerLastName: item.CustomerLastName, CustomerId : item.CustomerId, Subject: 'Slow Sr'})"></span>
+                    </td>
+                    <td>{{item.CustomerId}}</td>
+                    <td>{{item.CustomerFirstName}}&nbsp;{{item.CustomerLastName}}</td>
+                    <td>
+                        <div ng-repeat="value in item.Contact">
+                            {{value.Type}} - {{value.Value}}
+                        </div>
+                    </td>
+                    <td><a class="refLink" href="Cosacs/Service/Requests/{{item.RequestId}}">#{{item.RequestId}}</a>
+                    </td>
+                    <td>{{item.State}}</td>
+                    <td>{{item.Item}}</td>
+                    <td>{{item.CreatedOn | date:"dd MMMM yyyy"}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>

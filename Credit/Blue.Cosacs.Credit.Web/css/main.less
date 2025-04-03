@@ -1,0 +1,225 @@
+@import "scoreConfig";
+
+@search: #d9edf7;
+@selected: #ff6600;
+@disabled: #A0A0A0;
+@selecting: #E2E2E2;
+@linked: #fcf8e3;
+@normal: #428bca;
+
+.credit {
+  .displayThumbnails {
+    display: inline-block;
+    margin-right: 10px;
+    span {
+      padding-left: 45px;
+      padding-top: 3px;
+    }
+  }
+
+  .has-error textarea {
+    border-color: #a94442
+  }
+
+  .customerSearch {
+    padding: 0px;
+    .results {
+      margin-right: 10px;
+      .row {
+        margin-left: 0px;
+        padding: 10px;
+        background-color: @search;
+        margin-bottom: 1px;
+        address {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  .references {
+    .linked {
+      background-color: @linked;
+    }
+  }
+
+  form {
+    .search {
+      background-color: @search;
+    }
+    .linked {
+      background-color: @linked;
+      div {
+        div {
+          background-color: @linked;
+        }
+      }
+    }
+  }
+
+  // Such bad CSS. If you hate this rewrite it now. :)
+
+  .nav {
+    -webkit-user-select: none; /* Chrome/Safari */
+
+    // All li
+    li {
+      list-style-type: none;
+      margin-top: 8px;
+    }
+    // All spans
+    span {
+      color: @normal;
+    }
+    span.ok_2 {
+      color: green
+    }
+    li {
+      ul {
+        padding-left: 15px;
+        li:hover {
+          background-color: @selecting;
+        }
+      }
+    }
+
+    > li.disabled li:hover {
+      background-color: white;
+    }
+    > li.disabled li span {
+      color: grey;
+    }
+    > li.disabled {
+      cursor: default;
+    }
+    > li.disabled ul {
+      cursor: default;
+    }
+
+    > li > span // Headings
+    {
+      font-weight: bold;
+      font-size: 105%;
+      text-decoration: underline;
+
+    }
+    > li.disabled > span {
+      color: grey
+    }
+    // Headings
+
+    > li > ul > li > span {
+      font-weight: bold;
+    }
+    // Applicant names
+
+    > li > ul > li.navSelected {
+      span {
+        color: @selected;
+      }
+      .ok_2 {
+        color: green
+      }
+    }
+
+    .headingSelect {
+      &:hover {
+        background-color: @selecting;
+      }
+      font-weight: bold;
+      font-size: 105%;
+      color: @normal;
+    }
+
+    .headingSelect.disabled {
+      &:hover {
+        background-color: white;
+      }
+      font-weight: bold;
+      font-size: 105%;
+      color: @normal;
+    }
+
+  }
+
+  .wrap {
+    word-wrap: break-word;
+  }
+  .fileUpload {
+    position: relative;
+    overflow: hidden;
+
+      input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+  }
+
+  .tagsContainer {
+    .plus {
+      padding-top: 7px;
+    }
+
+    label.label {
+      font-size: 13px;
+      line-height: 3;
+    }
+  }
+
+  .cursorPointer {
+    cursor: pointer;
+  }
+
+  .basicDetailsContainer {
+    .form-group {
+      margin-bottom: 5px;
+
+      .control-label {
+        padding-top: 0;
+      }
+
+      .form-control-static {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .contactDetailsContainer {
+    .contacts {
+      margin-bottom: 5px;
+
+      .contactRow {
+        .contactFormType, .contactFormContact, .contactFormButton {
+          border-bottom: 1px solid #eee;
+        }
+      }
+
+      .contactRow:last-child {
+        .contactFormType, .contactFormContact, .contactFormButton {
+          margin-bottom: 7px;
+        }
+      }
+    }
+
+    .contactFormType, .contactFormContact {
+      padding-left: 0;
+    }
+
+    .contactFormContact {
+      padding-right: 0;
+    }
+  }
+
+  .addressContainer {
+    .label {
+      float: none;
+    }
+  }
+}
+

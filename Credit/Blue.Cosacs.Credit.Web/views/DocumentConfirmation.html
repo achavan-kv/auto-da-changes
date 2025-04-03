@@ -1,0 +1,183 @@
+<div class="container credit" ng-controller="documentConfirmationController">
+    <h1><span ng-bind="title">Document Confirmation - {{summary.FirstName}} {{summary.LastName}}</span></h1>
+
+    <div class="col-lg-7 form-horizontal">
+        <form role="form" name="documentConfirmationForm">
+            <div class="row">
+                &nbsp;
+            </div>
+            <div ng-repeat="field in scheme.fields">
+                <div class="form-group">
+                    <label class="control-label col-lg-3">{{field.fieldDescription}}</label>
+
+                    <div class="col-lg-9" ng-if="field.fieldType == 'listDescription'">
+                        <div class="col-lg-6" ng-class="{'has-error': field.required && !dc[type(field.fieldID)]}">
+                            <list scope="field.values"
+                                  name="{{field.fieldID}}"
+                                  placeholder="{{typePlaceholder(field.fieldDescription)}}"
+                                  ng-required="field.required"
+                                  ng-model="dc[type(field.fieldID)]"></list>
+                        </div>
+                        <div class="col-lg-6" ng-class="{'has-error': field.required && !dc[field.fieldID]}">
+                            <input type="{{field.fieldType}}"
+                                   class="form-control"
+                                   name="{{field.fieldID}}"
+                                   ng-required="field.required"
+                                   id="{{field.fieldID}}"
+                                   placeholder="{{field.fieldDescription}}"
+                                   ng-model="dc[field.fieldID]">
+                        </div>
+                        <div ng-if="field.fieldID == 'CompulsoryId'" class="col-lg-12"
+                             ng-class="{'has-error': field.required && !dc[notes(field.fieldID)]}">
+                            <div class="row">
+                                &nbsp;
+                            </div>
+                                            <textarea class="form-control"
+                                                      id="{{field.fieldID}}"
+                                                      name="{{field.fieldID}}"
+                                                      ng-model="dc[notes(field.fieldID)]"
+                                                      rows="3"
+                                                      maxlength="500"
+                                                      placeholder="Notes">
+                  </textarea>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-9" ng-if="field.fieldType == 'listNotes'">
+                        <div class="col-lg-6" ng-class="{'has-error': field.required && !dc[field.fieldID]}">
+                            <list scope="field.values"
+                                  name="{{field.fieldID}}"
+                                  placeholder="{{field.fieldDescription}}"
+                                  ng-required="field.required"
+                                  ng-model="dc[field.fieldID]"></list>
+                        </div>
+                        <div class="col-lg-6" ng-class="{'has-error': field.required && !dc[notes(field.fieldID)]}">
+                  <textarea class="form-control"
+                            ng-required="field.required"
+                            id="{{field.fieldID}}"
+                            name="{{field.fieldID}}"
+                            ng-model="dc[notes(field.fieldID)]"
+                            rows="3"
+                            maxlength="500"
+                            placeholder="Notes">
+                  </textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-9" ng-if="field.fieldType == 'textarea'"
+                         ng-class="{'has-error': field.required && !dc[field.fieldID]}">
+               <textarea class="form-control" ng-required="field.required"
+                         id="{{field.fieldID}}"
+                         ng-model="dc[field.fieldID]"
+                         name="{{field.fieldID}}"
+                         rows="3"
+                         maxlength="500"
+                         placeholder="Notes">
+               </textarea>
+                    </div>
+                    <div class="col-lg-3" ng-if="field.fieldType == 'label'"
+                         ng-class="{'has-error': field.required}">
+                        <span>{{field.fieldDescription}}</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="section">Upload Documents</div>
+        <div class="col-lg-12">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                <tr>
+                    <th class="col-lg-1">
+                        Description
+                    </th>
+                    <th class="col-lg-10">
+                        Files <span class="pull-right">(max size 4MB)</span>
+                    </th>
+                    <th class="col-lg-1">
+
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="field in scheme.fields | filter: {upload : true}">
+                    <td>{{field.fieldDescription}}</td>
+                    <td>
+                        <div ng-repeat="file in field.files" class="displayThumbnails">
+                            <a href="/File/api/Media/{{file.Guid}}" target="_blank">
+                                <img ng-src="/File/api/media/{{file.Guid}}/thumb/100/100" title="{{file.FileName}}">
+                            </a>
+                            <div><span title="Delete" class="glyphicons bin col-lg-6" ng-click="deleteFile(file)"></span></div>
+                        </div>
+                    </td>
+                    <td>
+                        <upload upload-Files-Parent="field" upload-Label="field.fieldID" upload-Save="saveFile"></upload>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-primary pull-right" ng-click="save()">Save</button>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="section">Summary</div>
+        <form class="form-horizontal" role="form" name="summaryForm">
+            <span><strong>Proof of Income : </strong>{{summary.MonthlyIncome}}</span>
+
+            <div class="row">
+                &nbsp;
+            </div>
+            <div ng-repeat="address in summary.Addresses">
+                <address>
+                    <strong>{{address.AddressType}} Address</strong>
+                    <br>
+                    {{address.Line1}}, {{address.Line2}}<br>
+                    {{address.City}} {{address.PostCode}}<br>
+                    <span class="glyphicons truck" title="Delivery Area"></span> {{address.DeliveryArea}}
+                </address>
+            </div>
+            <span ng-show="summary.References.length > 0"><strong>References</strong></span>
+
+            <div ng-repeat="reference in summary.References">
+                <div>
+               <span><strong>{{reference.FirstName}} {{reference.LastName}}</strong>
+               <span ng-show="reference.IsFamily">(Family)</span> - {{reference.Relationship}}
+               </span>
+                </div>
+                <div ng-show="reference.Email">
+               <span class="glyphicons envelope" title="Email"
+                     title="Email"></span>&nbsp;
+                    {{reference.Email}}
+                </div>
+                <div ng-show="reference.YearsKnown">
+                    <span><strong>Years known </strong>{{reference.YearsKnown}}</span>
+                </div>
+                <div ng-show="reference.HomeAddress">
+                    <span><strong>Home </strong></span>
+                    {{reference.HomeAddress}}
+                </div>
+                <div ng-show="reference.HomeDirections">
+                    <span><strong>Directions</strong></span>
+                    {{reference.HomeDirections}}
+                </div>
+                <div ng-show="reference.WorkAddress">
+                    <span><strong>Work</strong></span>
+                    {{reference.WorkAddress}}
+                </div>
+                <div class="row">
+                    &nbsp;
+                </div>
+            </div>
+            <span ng-show="summary.LandlordDetails.length > 0"><strong>Landlord Details</strong></span>
+
+            <div ng-show="summary.LandlordDetails.length > 0">{{summary.LandlordDetails.LandlordName}} -
+                {{summary.LandlordDetails.LandlordPhone}}
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+         <span ng-show="summary.ApplicationType == 'Sole With Spouse'"><a
+                 href="#/Credit/proposals/{{proposalId}}/sanctionStage2/applicant2/view">Spouse Details</a></span>
+        </form>
+    </div>
+</div>

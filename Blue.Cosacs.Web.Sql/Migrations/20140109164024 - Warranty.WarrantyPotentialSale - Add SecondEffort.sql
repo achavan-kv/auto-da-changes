@@ -1,0 +1,2 @@
+alter table Warranty.WarrantyPotentialSale
+add SecondEffort bit

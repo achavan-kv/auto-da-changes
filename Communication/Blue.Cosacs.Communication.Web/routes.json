@@ -1,0 +1,10 @@
+﻿[
+    {
+        "url" : "EmailTemplate",
+        "template" : "views/EmailTemplate.html"
+    },
+    {
+        "url" : "ExportSms",
+        "template" : "views/ExportSms.html"
+    }
+]

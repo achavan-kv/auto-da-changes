@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "itemNumber": "GF502",
+      "price": 76.59,
+      "taxExclusivePrice": 76.59,
+      "isZeroPrice": false,
+      "quantity": 1,
+      "description": "PRECISION HZ-1098 WOODEN CABINET",
+      "itemId": 34477,
+      "taxAmount": 13.4,
+      "taxRate": 17.5,
+      "availableInstallations": [],
+      "canAddInstallation": false
+    },
+    {
+      "itemNumber": "GF504",
+      "price": 110.63,
+      "taxExclusivePrice": 110.63,
+      "isZeroPrice": false,
+      "quantity": 1,
+      "description": "PRECISION KITCHEN CART (FREE GIFT)",
+      "itemId": 34490,
+      "taxAmount": 19.36,
+      "taxRate": 17.5,
+      "availableInstallations": [],
+      "canAddInstallation": false
+    }
+  ],
+  "total": 219.98000000000002,
+  "paymentsTotal": 219.98,
+  "credit": 0,
+  "changeTotal": 0,
+  "balance": 0,
+  "customer": {
+    "contacts": [
+      {
+        "type": "Email",
+        "value": ""
+      },
+      {
+        "type": "HomePhone",
+        "value": ""
+      },
+      {
+        "type": "MobilePhone",
+        "value": ""
+      }
+    ]
+  },
+  "payments": [
+    {
+      "method": "Cash",
+      "amount": 219.98
+    }
+  ],
+  "warrantyBeingPurchased": false,
+  "saleComplete": false,
+  "basketChangesAllowed": false,
+  "taxType": "E",
+  "searchItem": null
+}

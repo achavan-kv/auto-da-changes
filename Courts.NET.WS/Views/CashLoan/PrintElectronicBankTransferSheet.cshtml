@@ -1,0 +1,68 @@
+﻿@model Blue.Cosacs.Shared.CashLoanDisbursementDetailsView
+@using Blue.Cosacs.Shared.Extensions;
+
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "Electronic Bank Transfer";
+}
+
+  @{var now = DateTime.Now;} 
+
+    <div style="position:relative; left:250px; top:10px; font-size:2.5em"><strong>Electronic Bank Transfer</strong></div>
+
+    <div style="position:relative; top:30px;">
+        <style type="text/css">
+            .pageBreak {
+                page-break-after: always;
+                clear: both;
+            }
+            .detail {
+                font-size:1.5em;
+                padding-left:15px;
+                width:500px;
+            }
+            .header {
+                font-size:1.85em;
+            }
+            .section {
+                font-size:2em;
+            }
+        </style>
+
+        <table>
+            <tr><td class="section"><strong>Customer Details</strong></td><td> &nbsp; </td></tr>
+            <tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+            <tr><td class="header">Account Number:</td><td class="detail">@Model.AccountNumber</td></tr>
+            <tr><td class="header">Name:</td><td class="detail">@Model.CustomerName</td></tr>
+            <tr><td class="header">Address:</td><td class="detail">@Model.CustomerAddress1</td></tr>
+            <tr><td class="header"></td><td class="detail">@Model.CustomerAddress2</td></tr>
+            <tr><td class="header"></td><td class="detail">@Model.CustomerAddress3</td></tr>
+            <tr><td class="header"></td><td class="detail">@Model.CustomerPostCode</td></tr>
+            <tr><td class="header">Telephone Number:</td><td class="detail">@Model.CustomerTelephoneNumber</td></tr>
+            <tr><td class="header">Email:</td><td class="detail">@Model.CustomerEmail</td></tr>
+            <tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+            <tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+            <tr><td class="section"><strong>Bank Details</strong></td><td> &nbsp; </td></tr>
+            <tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+            <tr><td class="header">Loan Amount:</td><td class="detail">@Model.LoanAmount</td></tr>
+            <tr><td class="header">Bank Name:</td><td class="detail">@Model.BankName</td></tr>
+            <tr><td class="header">Bank Branch:</td><td class="detail">@Model.BankBranch</td></tr>
+            <tr><td class="header">Bank Account Type:</td><td class="detail">@Model.BankAccountType</td></tr>
+            <tr><td class="header">Bank Account Number:</td><td class="detail">@Model.BankAccountNumber</td></tr>
+            <tr><td class="header">Bank Reference Number:</td><td class="detail">@Model.BankReferenceNo</td></tr>
+            <tr><td class="header">Name on Account:</td><td class="detail">@Model.BankAccountName</td></tr>
+            <tr><td class="header">Notes:</td><td class="detail">@Model.Notes</td></tr>
+        </table>
+
+
+        <div style="position:relative; top:300px; font-size:1.85em">                           
+            <div>___________________________<span style="margin-left: 20%;">___________________________</div>
+            <div>Authorised By <span style="margin-left: 40%;"> Signature</div>
+            <br />  
+            <div>Printed On: @now</div>
+            <div>Printed By: @Model.EmployeeDisburseEmpeeno - @Model.EmployeeDisburseFullName</div>
+        </div>
+    
+
+</div>
+

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xml:lang="en" class="" MadCap:tocPath="Deliveries|Cancelling Accounts" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>Cancelling Accounts</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <script src="../SkinSupport/MadCapUtilities.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapEffects.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapBody.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapHighlighter.js"> <![CDATA[ ]]></script>
+    </head>
+    <body>
+        <h1 class="Heading1"><span class="span_7"><a name="17"></a>17 </span>Cancelling Accounts</h1>
+        <p class="p_1">This screen is where the user can cancel accounts</p>
+        <p class="p_1">The system uses the following logic for cancelling accounts</p>
+        <h3 class="Heading3"><span class="span_13"><a name="17.1.1"></a>17.1.1 </span>Accounts without payment and delivery</h3>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_1112894661_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' );" />&#160;</a>
+            <div class="MCDropDownBody" id="MCDropDownBody_1112894661_0" style="display: none;">
+                <ol>
+                    <li class="li_1" value="1">Input the account # </li>
+                    <li class="li_1" value="2">Select reason code </li>
+                    <li class="li_1" value="3">Click ‘Cancel Account’ Button </li>
+                    <li class="li_1" value="4">The system will do the following in the background:</li>
+                    <li class="li_10" value="5">Adjust stock&#160;&#160;amount in CoSACS&#160;(Increase the&#160; Available by the quantity ordered amount)</li>
+                    <li class="li_10" value="6">Remove all&#160;lines&#160;&#160;(stock and non stock)</li>
+                    <li class="li_10" value="7">Zero out the following fields in Account Details screen, Last Instalment, Total Instalment, Service Charge, To Follow.</li>
+                    <li class="li_10" value="8">Change status code to S </li>
+                    <li class="li_10" value="9">Application status = cancelled</li>
+                    <li class="li_10" value="10"><span class="span_5">Update ‘Last </span><span class="span_5">changed</span><span class="span_5"> by’ with the users information</span>&#160;</li>
+                </ol>
+            </div>
+        </div>
+        <h3 class="Heading3"><span class="span_13"><a name="17.1.2"></a>17.1.2 </span>Accounts with payment and no delivery</h3>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_1112894661_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' );" />&#160;</a>
+            <div class="MCDropDownBody" id="MCDropDownBody_1112894661_1" style="display: none;">
+                <ol start="1" class="ol_1">
+                    <li class="li_1" value="1">Input the account # </li>
+                    <li class="li_1" value="2">Select reason code </li>
+                    <li class="li_1" value="3">Click ‘Cancel Account’ Button </li>
+                    <li class="li_1" value="4">System process:</li>
+                    <ul class="ul_1">
+                        <li class="li_10" value="1">Transfer all payment postings individually to the Branch Sundry Credit screen&#160;</li>
+                        <li class="li_10" value="2">remove all&#160;lines&#160;</li>
+                        <li class="li_10" value="3">Adjust stock&#160;&#160;amount in CoSACS&#160;(Increase the&#160; Available by the quantity ordered amount&#160;)&#160;</li>
+                        <li class="li_10" value="4">Zero out the following fields in Account Details screen, Last Instalment, Total Instalment, Service Charge, To Follow.</li>
+                        <li class="li_10" value="5">Change status code to S</li>
+                        <li class="li_10" value="6">Application status = cancelled</li>
+                        <li class="li_9" value="7"><span class="span_5">Update ‘Last </span><span class="span_5">changed</span><span class="span_5"> by’ with the users information</span>
+                        </li>
+                    </ul>
+                </ol>
+            </div>
+        </div>
+        <h3 class="Heading3"><span class="span_13"><a name="17.1.3"></a>17.1.3 </span>Accounts without payment but have delivery (after collection for all stock items have been notified)&#160;</h3>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_1112894661_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' );" />&#160;</a>
+            <div class="MCDropDownBody" id="MCDropDownBody_1112894661_2" style="display: none;">
+                <ol>
+                    <li class="li_1" value="1">Input the account # </li>
+                    <li class="li_1" value="2">Select reason code </li>
+                    <li class="li_1" value="3">Click ‘Cancel Account’ Button </li>
+                    <li class="li_1" value="4">System process:</li>
+                    <li class="li_10" value="5">remove all line items&#160;</li>
+                    <li class="li_10" value="6">adjust stock&#160;&#160;amount in CoSACS&#160;(Increase the&#160; Available by the quantity ordered amount&#160;)&#160;</li>
+                    <li class="li_10" value="7">zero out the following fields in Account Details screen, Last Instalment, Total Instalment, Service Charge, To Follow</li>
+                    <li class="li_10" value="8">Change status code to S</li>
+                    <li class="li_10" value="9">Application status = Account cancelled</li>
+                    <li class="li_10" value="10"><span class="span_5">Update ‘Last </span><span class="span_5">changed</span><span class="span_5"> by’ with users information</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <p>
+        </p>
+        <h3 class="Heading3"><span class="span_13"><a name="17.1.4"></a>17.1.4 </span>Accounts with payments and delivery (after collection of all stock items has been notified)</h3>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_1112894661_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' );" />&#160;</a>
+            <div class="MCDropDownBody" id="MCDropDownBody_1112894661_3" style="display: none;">
+                <p class="p_1">The user will have to&#160;refund/transfer to sundry any payment and process the collection of the goods. Providing the outstanding balance on the account is zero the user can then cancel the account. The process to be as follows:</p>
+                <ol>
+                    <li class="li_1" value="1">Input the account # </li>
+                    <li class="li_1" value="2">Select reason code</li>
+                    <li class="li_1" value="3">Click ‘Cancel Account’ Button</li>
+                    <li class="li_1" value="4">System process:</li>
+                    <li class="li_10" value="5">remove all line items&#160;</li>
+                    <li class="li_10" value="6">adjust stock&#160;&#160;amount in CoSACS&#160;(Increase the&#160; Available by the quantity ordered amount&#160;)&#160;</li>
+                    <li class="li_10" value="7">zero out the following fields in Account Details screen, Last Instalment, Total Instalment, Service Charge, To Follow</li>
+                    <li class="li_10" value="8">Change status code to S</li>
+                    <li class="li_10" value="9">Application status = Account cancelled</li>
+                    <li class="li_10" value="10"><span class="span_5">Update ‘Last </span><span class="span_5">changed</span><span class="span_5"> by' with users information</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <hr width="100%" size="4" align="center" />
+        <h2 class="Heading2"><span class="span_8"><a name="17.2"></a>17.2 </span>Reversing a Cancelled Account</h2>
+        <p><span class="span_5">An option to be added to the current screen&#160;'Reverse Cancelled Account' with reason code drop down box. The system&#160;will </span><span class="span_5">change</span><span class="span_5"> the Status Code to 1, the Application Status to "Reopened Account" and if a credit account add the SD (with the relevant amount) to the line item. The system should also log the user who reversed the cancelled account&#160;with the information visible in the employee tab.&#160;The user can then add line item etc to the account.</span>
+        </p>
+        <hr width="100%" size="4" align="center" />
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

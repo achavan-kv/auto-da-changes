@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Code\cosacs\src\SalesManagement\Blue.Cosacs.SalesManagement.Test\bin\Release\Blue.Cosacs.SalesManagement.Test.dll" total="34" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-03-12" time="10:21:27">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Code\cosacs\src\SalesManagement\Blue.Cosacs.SalesManagement.Test" machine-name="HERON" user="loredanaD" user-domain="BLUE" />
+  <culture-info current-culture="en-GB" current-uiculture="en-GB" />
+  <test-suite type="Assembly" name="C:\Code\cosacs\src\SalesManagement\Blue.Cosacs.SalesManagement.Test\bin\Release\Blue.Cosacs.SalesManagement.Test.dll" executed="True" result="Success" success="True" time="9.880" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Blue" executed="True" result="Success" success="True" time="9.862" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Cosacs" executed="True" result="Success" success="True" time="9.861" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="SalesManagement" executed="True" result="Success" success="True" time="9.861" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Test" executed="True" result="Success" success="True" time="9.861" asserts="0">
+                    <results>
+                      <test-suite type="Namespace" name="Controllers" executed="True" result="Success" success="True" time="8.112" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="AllocateCustomersToCSR" executed="True" result="Success" success="True" time="8.109" asserts="0">
+                            <results>
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Controllers.AllocateCustomersToCSR.Get" executed="True" result="Success" success="True" time="7.911" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Controllers.AllocateCustomersToCSR.GetAllocatedCustomersToInsert" executed="True" result="Success" success="True" time="0.053" asserts="1" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="Hub" executed="True" result="Success" success="True" time="0.847" asserts="0">
+                        <results>
+                          <test-suite type="Namespace" name="Subscribers" executed="True" result="Success" success="True" time="0.847" asserts="0">
+                            <results>
+                              <test-suite type="TestFixture" name="InactiveCustomersSubscriber" executed="True" result="Success" success="True" time="0.771" asserts="0">
+                                <results>
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.GetCustomersSalesPerson_ReturnCustomers" executed="True" result="Success" success="True" time="0.117" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.GetCustomersSalesPerson_ReturnNoCustomers" executed="True" result="Success" success="True" time="0.014" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.GetCustomersToInsert_ReturnCustomers" executed="True" result="Success" success="True" time="0.009" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.GetCustomersToInsert_ReturnNoCustomers" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.GetCustomerWithNoCallsSince_ReturnCustomersLastPurchase" executed="True" result="Success" success="True" time="0.535" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.GetCustomerWithNoCallsSince_ReturnNoData" executed="True" result="Success" success="True" time="0.039" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.InsertCustomerCsr" executed="True" result="Success" success="True" time="0.026" asserts="0" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.JoinCustomerWincosacsAndCalls_ReturnCustomers" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.InactiveCustomersSubscriber.JoinCustomerWincosacsAndCalls_ReturnNoCustomers" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                                </results>
+                              </test-suite>
+                              <test-suite type="TestFixture" name="ScheduleFollowUpCalls" executed="True" result="Success" success="True" time="0.070" asserts="0">
+                                <results>
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.ScheduleFollowUpCalls.GetCallDate_ReturnCallDate" executed="True" result="Success" success="True" time="0.009" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.ScheduleFollowUpCalls.GetCallDate_ReturnNoDate" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.ScheduleFollowUpCalls.GetCallDate_ReturnNotImplementedException" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.ScheduleFollowUpCalls.InsertFollowUpCalls_DoNothing_WhenDoNotCallAgainIsTrue" executed="True" result="Success" success="True" time="0.020" asserts="0" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.ScheduleFollowUpCalls.InsertFollowUpCalls_InsertNewCSR" executed="True" result="Success" success="True" time="0.013" asserts="0" />
+                                  <test-case name="Blue.Cosacs.SalesManagement.Test.Hub.Subscribers.ScheduleFollowUpCalls.InsertFollowUpCalls_UpdateCSR_WhenDoNotCallAgainIsFalse" executed="True" result="Success" success="True" time="0.010" asserts="0" />
+                                </results>
+                              </test-suite>
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="Namespace" name="Repositories" executed="True" result="Success" success="True" time="0.889" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="SalesManagementRepository" executed="True" result="Success" success="True" time="0.888" asserts="0">
+                            <results>
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetBranchManagerUnallocatedCalls_NoSearchFilterChecked_ReturnNoCalls" executed="True" result="Success" success="True" time="0.139" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetBranchManagerUnallocatedCalls_NoSearchFilterChecked_ReturnNoUnallocatedCalls" executed="True" result="Success" success="True" time="0.027" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCall_ReturnCall" executed="True" result="Success" success="True" time="0.034" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCall_ReturnNoCall" executed="True" result="Success" success="True" time="0.017" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCallTypes_ReturnCallTypes" executed="True" result="Success" success="True" time="0.061" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCustomersSalesPerson_ReturnAllCustomers" executed="True" result="Success" success="True" time="0.019" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCustomersSalesPerson_ReturnExistingCustomers" executed="True" result="Success" success="True" time="0.011" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCustomersSalesPerson_ReturnNoCustomers" executed="True" result="Success" success="True" time="0.011" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCustomersWithAutoScheduledCalls_ReturnCustomersWithAutoScheduledCalls" executed="True" result="Success" success="True" time="0.036" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCustomersWithAutoScheduledCalls_ReturnNoCustomers" executed="True" result="Success" success="True" time="0.017" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetCustomerWithCallsFromSource_ReturnInactiveCustomers" executed="True" result="Success" success="True" time="0.035" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetScheduledCalls_SearchByAllFilters_ReturnData" executed="True" result="Success" success="True" time="0.039" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetScheduledCalls_SearchByCallType_Callback_ReturnCallbackData" executed="True" result="Success" success="True" time="0.017" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetScheduledCalls_SearchByCustomerName_ReturnData" executed="True" result="Success" success="True" time="0.017" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetScheduledCalls_SearchByReasonForCalling_ReturnData" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetScheduledCalls_SearchByScheduledDateFrom_ReturnData" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                              <test-case name="Blue.Cosacs.SalesManagement.Test.Repositories.SalesManagementRepository.GetScheduledCalls_SearchByScheduledDateTo_ReturnData" executed="True" result="Success" success="True" time="0.018" asserts="1" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Commission">
+    <head><title>Setting up commissions</title>
+        <link href="../Resources/Stylesheets/onlinehelp.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapUtilities.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapBody.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapHighlighter.js">/*<![CDATA[*/ /*]]>*/</script>
+    </head>
+    <body>
+        <h1>Setting up commissions</h1>
+        <p class="MyStyle">This screen will have two tab sections one for standard commissions and one for SPIFFS. The default tab selected will be the Standard Commission Area</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle" style="font-family: Arial;">Its important to understand the following definitions:</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Product Category – Identified by the product category on stockitem table.
+</li>
+            <li style="font-family: Arial;" value="2">Product level – Identified by the first 3 digits of a product code.
+</li>
+            <li style="font-family: Arial;" value="3">Sku – This is the full product code.
+</li>
+        </ul>
+        <h2 class="CH2">The Commissions Tab</h2>
+        <p class="MyStyle">The standard commission area will be loaded with the Commission rates for the product category levels initially. There will be a drop-down which will have Product Category, Product Level, Product, and Termstypes. This will allow you to add commissions at each of these levels. </p>
+        <p class="MyStyle">Note: Product Level overrides Product Category AND Product overrides Product Level. For example:</p>
+        <table style="width: 100%;">
+            <tbody>
+                <tr>
+                    <td style="font-family: Arial;font-size: 10pt;font-weight: bold;">Category / Level or Product code)</td>
+                    <td style="font-family: Arial;font-size: 10pt;font-weight: bold;">Commission</td>
+                </tr>
+                <tr>
+                    <td class="td_3">4 (Category)</td>
+                    <td class="td_3">10%</td>
+                </tr>
+                <tr>
+                    <td class="td_3">407 (Level)</td>
+                    <td class="td_3">6%</td>
+                </tr>
+                <tr>
+                    <td class="td_4">407306 (SKU)</td>
+                    <td class="td_3">8%</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The commission earned on this item will be 8%</p>
+        <p class="MyStyle">&#160;</p>
+        <h3 class="ch3">Loading Commissions</h3>
+        <p class="MyStyle">To see all the commissions that are or will be active on a certain date, choose the date and press reload. </p>
+        <h3 class="ch3">Setting up commissions</h3>
+        <p class="MyStyle">At the bottom of the screen you will see the following fields:</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;font-size: 10pt;font-weight: normal;" value="1">Product Category / Level / Code (depending on which option is chosen from the drop down). </li>
+            <li style="font-family: Arial;font-size: 10pt;font-weight: normal;" value="2">Commission % </li>
+            <li style="font-family: Arial;font-size: 10pt;font-weight: normal;" value="3">Value (Only visible if terms type is chosen). The user must either put a % or a value in. Not both.</li>
+            <li style="font-family: Arial;font-size: 10pt;font-weight: normal;" value="4">Date From (This is editable but may not be a date in the past)</li>
+            <li style="font-family: Arial;font-size: 10pt;font-weight: normal;" value="5">Date to (This defaults to 2050 and is not editable. An end date for a commission will only be set when the commission is deleted OR a new commission rate is set up for that item)</li>
+            <li style="font-family: Arial;font-size: 10pt;font-weight: normal;" value="6">There is a '+' button to add the new commission rate to the table.</li>
+            <li style="font-family: Arial;font-size: 10pt;font-weight: normal;" value="7">There is a '-' button to delete and existing row in the commissions table.</li>
+        </ul>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

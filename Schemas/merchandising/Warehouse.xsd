@@ -1,0 +1,42 @@
+﻿<xs:schema targetNamespace="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd"
+    xmlns:mstns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="BookingCancel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Id" minOccurs="1" maxOccurs="1" type="xs:int" />
+                <xs:element name="User" minOccurs="1" maxOccurs="1" type="xs:int" />
+                <xs:element name="DateTime" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
+                <xs:element name="Comment"  minOccurs="1" maxOccurs="1" >
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value ="200"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="WarehouseCancel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Id" minOccurs="1" maxOccurs="1" type="xs:int" />
+                <xs:element name="OrigBookingId" minOccurs="1" maxOccurs="1" type="xs:int" />
+                <xs:element name="User" minOccurs="1" maxOccurs="1" type="xs:int" />
+                <xs:element name="Quantity" minOccurs="1" maxOccurs="1" type="xs:int" />
+                <xs:element name="DateTime" minOccurs="1" maxOccurs="1" type="xs:dateTime" />
+                <xs:element name="Comment"  minOccurs="1" maxOccurs="1" >
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value ="200"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

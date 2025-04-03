@@ -1,0 +1,36 @@
+{
+    "Id": 11,
+    "LegacyId": "020960",
+    "Branch": "855",
+    "FirstName": "CHARLENE",
+    "LastName": "TROTMAN",
+    "Title": "MS",
+    "Alias": "BONNIE",
+    "DateOfBirth": "1960-09-02",
+    "Gender": "Female",
+    "AddressType": "Work",
+    "Address1": "11 Gold Street",
+    "Address2": "Kingston Road",
+    "Address3": "Jamaica",
+    "PostCode": "9875-011",
+    "Agreements": [
+        {
+            "AgreementNumber": 112,
+            "OutstandingBalance": 300,
+            "AgreementTotal": 500,
+            "Arrears": 20
+        },
+        {
+            "AgreementNumber": 112,
+            "OutstandingBalance": 300,
+            "AgreementTotal": 500,
+            "Arrears": 0
+        },
+        {
+            "AgreementNumber": 112,
+            "OutstandingBalance": 300,
+            "AgreementTotal": 500,
+            "Arrears": 30
+        }
+    ]
+}

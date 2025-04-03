@@ -1,0 +1,3211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{497F7FED-628B-4EA7-BF9E-D9452DB3AA1E}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>Resources\CosacsIcon.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Courts.NET.PL</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>STL.PL</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccAuxPath>
+    </SccAuxPath>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <IsCompassProject>True</IsCompassProject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>1</UpdateInterval>
+    <UpdateIntervalUnits>Hours</UpdateIntervalUnits>
+    <UpdatePeriodically>true</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://weta/Cosacs.Client/</InstallUrl>
+    <SupportUrl>http://wiki.bluebridgeltd.com/CoSACS/index.php%3ftitle=CoSACS</SupportUrl>
+    <ProductName>CoSaCS</ProductName>
+    <PublisherName>Blue Bridge Solutions, Ltd</PublisherName>
+    <MinimumRequiredVersion>5.4.0.12219</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>10.7.4.12</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>EXCEL2002</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1E0BCFFCD328B1309F7D87410F6BA23D5BF26EA1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Keys\MyPfx.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SHDocVw, Version=1.1.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Gvs.Controls.Numeric, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Gvs.Controls.Numeric.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlEditor">
+      <HintPath>..\..\lib\HtmlEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="HyperCoder.FileSystemControls">
+      <HintPath>..\..\lib\HyperCoder.FileSystemControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\..\lib\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\..\lib\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Office">
+      <HintPath>..\..\lib\Interop.Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.VBIDE">
+      <HintPath>..\..\lib\Interop.VBIDE.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.WIA">
+      <HintPath>..\..\lib\Interop.WIA.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.WIALib">
+      <HintPath>..\..\lib\Interop.WIALib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Word">
+      <HintPath>..\..\lib\Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MagicLibrary">
+      <HintPath>..\..\lib\MagicLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\lib\Microsoft.mshtml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.PointOfService">
+      <HintPath>..\..\lib\Microsoft.PointOfService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.PointOfService.ControlBase, Version=1.12.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Epos\Microsoft.PointOfService.ControlBase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net20\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OPOSPOSPrinter_1_6_001_C2N">
+      <HintPath>..\..\lib\OPOSPOSPrinter_1_6_001_C2N.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SHDocVw">
+      <HintPath>..\..\lib\SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\lib\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Name>System.EnterpriseServices</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <Name>System.Runtime.Remoting</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Name>System.Runtime.Serialization.Formatters.Soap</Name>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\ApplicationUpdater\REDIST\AppUpdater\AppUpdater.csproj">
+      <Project>{0B88ED59-656E-4982-B402-A3448A81D84B}</Project>
+      <Name>AppUpdater</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blue.Cosacs.Domain\Blue.Cosacs.Shared.csproj">
+      <Project>{9DE3832F-D9B2-4FED-8F2F-FE4109DBA642}</Project>
+      <Name>Blue.Cosacs.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Courts.NET.Common\Courts.NET.Common.csproj">
+      <Name>Courts.NET.Common</Name>
+      <Project>{7D986B94-4B29-46BA-A814-55111484BAC7}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+      <Private>True</Private>
+    </ProjectReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Courts.NET.WS\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AccountDetails.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AccountNumberCtrl.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AccountsSearch.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AccountStatus.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AccountStatus.Designer.cs">
+      <DependentUpon>AccountStatus.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AccountTextBox.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AccountTextColumn.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AddCustAcctCodes.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AddressTab.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AddTo.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AffinityContractNo.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Alphabet.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AmandPrintPickList.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ApplicantExpenseCriteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AssemblyOptions.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AssemblyOptions.Designer.cs">
+      <DependentUpon>AssemblyOptions.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AuditChanges.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AuditChanges.Designer.cs">
+      <DependentUpon>AuditChanges.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AuthoriseCheck.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AuthoriseCheck.Designer.cs">
+      <DependentUpon>AuthoriseCheck.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AuthorisePrompt.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AutoUpdate\ServerCheck.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BailActions.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BailReview5_2.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BankMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BankMaintenance.Designer.cs">
+      <DependentUpon>BankMaintenance.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BasicCustomerDetails.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BasicCustomerDetails_Loyalty.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BehaviouralResults.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Branch.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Cache.cs" />
+    <Compile Include="CalculateBailiffCommission.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CancelAccount.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CancelCollectionNotes.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashierByBranch.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashierDeposits.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashierDisbursments.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashierTotals.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashierTotalsBreakdownS.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanApplication.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanApplication.Designer.cs">
+      <DependentUpon>CashLoanApplication.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanDisbursement.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanDisbursement.Designer.cs">
+      <DependentUpon>CashLoanDisbursement.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanRecordBankTransfer.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanRecordBankTransfer.Designer.cs">
+      <DependentUpon>CashLoanRecordBankTransfer.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanReferral.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashLoan\CashLoanReferral.Designer.cs">
+      <DependentUpon>CashLoanReferral.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashTillHistory.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashTillOpen.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ChangeItemLocation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ChequeAuthorisationPopUp.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ChequeAuthorisationPopUp.Designer.cs">
+      <DependentUpon>ChequeAuthorisationPopUp.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="BasicCustomerDetails_AddressHistory.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashandGoPaymentRefunds.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CashandGoPaymentRefunds.Designer.cs">
+      <DependentUpon>CashandGoPaymentRefunds.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CompilerServices.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AddSpiff.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="AddSpiff.Designer.cs">
+      <DependentUpon>AddSpiff.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomControl\AutoSuggestCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\CueBannerHelper.cs" />
+    <Compile Include="CustomControl\WatermarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeliveryAreaPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DeliveryAreaPopup.Designer.cs">
+      <DependentUpon>DeliveryAreaPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DependentExpenseCriteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuplicateCustomers.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DuplicateCustomers.Designer.cs">
+      <DependentUpon>DuplicateCustomers.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Glaucous.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MmiMatrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MmiMatrix.Designer.cs">
+      <DependentUpon>MmiMatrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAccount_CashAndGoReturn.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="GenericEventHandler.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\CollectionsClasses\DragHelper.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\LetterMerge.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\LetterMerge.Designer.cs">
+      <DependentUpon>LetterMerge.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\SpecialArrangements.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\SpecialArrangements.Designer.cs">
+      <DependentUpon>SpecialArrangements.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\CollectionsClasses\Operands.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\CollectionsClasses\StrategyConfigPopulation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\CollectionsClasses\Validation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\ConditionsControl.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\ConditionsControl.Designer.cs">
+      <DependentUpon>ConditionsControl.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\CollectionsClasses\WorkListData.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\SMSSetup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\SMSSetup.Designer.cs">
+      <DependentUpon>SMSSetup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\SpecialArrangementsConsolidated.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\SpecialArrangementsConsolidated.Designer.cs">
+      <DependentUpon>SpecialArrangementsConsolidated.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\ViewSMSPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\ViewSMSPopup.Designer.cs">
+      <DependentUpon>ViewSMSPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\WorkLists.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\WorkLists.Designer.cs">
+      <DependentUpon>WorkLists.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\ZoneAutomatedAllocation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\ZoneAutomatedAllocation.Designer.cs">
+      <DependentUpon>ZoneAutomatedAllocation.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommissionEnquiry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommissionMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommissionsReport.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommissionsReport.Designer.cs">
+      <DependentUpon>CommissionsReport.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommissionsSetUp.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommissionsSetUp.Designer.cs">
+      <DependentUpon>CommissionsSetUp.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommonForm_Printing.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomerPhotograph.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomerPhotograph.Designer.cs">
+      <DependentUpon>CustomerPhotograph.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DataGridViewExtended.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DeleteVouchers.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DeleteVouchers.Designer.cs">
+      <DependentUpon>DeleteVouchers.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="EmployeeInformation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="EmployeeInformation.Designer.cs">
+      <DependentUpon>EmployeeInformation.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="EposParameters.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ErrorProviderExtended.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FactoringReports.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FactoringReports.Designer.cs">
+      <DependentUpon>FactoringReports.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FollowUp.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\FollowUp5_2.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ICAuthorisation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="InsuranceWarrantyPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="InsuranceWarrantyPopup.Designer.cs">
+      <DependentUpon>InsuranceWarrantyPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="LoyaltyRedeemVoucher.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="LoyaltyRedeemVoucher.Designer.cs">
+      <DependentUpon>LoyaltyRedeemVoucher.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ManualReferral.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ManualReferral.Designer.cs">
+      <DependentUpon>ManualReferral.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MobilePhoneEntryPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MobilePhoneEntryPopup.designer.cs">
+      <DependentUpon>MobilePhoneEntryPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NewAccount_Loyalty.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NewAccount_Warranty.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NonStock.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NonStock.Designer.cs">
+      <DependentUpon>NonStock.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NullableDateTimePicker.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NullableDateTimePicker.Designer.cs">
+      <DependentUpon>NullableDateTimePicker.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="OneForOneReplacement.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Payments_Loyalty.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Printing\Statements.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Printing\StatementsForm.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Printing\StatementsForm.Designer.cs">
+      <DependentUpon>StatementsForm.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ProductAssociations.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ProductAssociations.Designer.cs">
+      <DependentUpon>ProductAssociations.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Provisions.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Provisions.Designer.cs">
+      <DependentUpon>Provisions.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReferralSummary.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Refund.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReprintInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprintInvoice.Designer.cs">
+      <DependentUpon>ReprintInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesCommissionBranchEnquiry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SalesCommissionBranchEnquiry.Designer.cs">
+      <DependentUpon>SalesCommissionBranchEnquiry.cs</DependentUpon>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SalesCommissionEnquiry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SalesCommissionEnquiry.Designer.cs">
+      <DependentUpon>SalesCommissionEnquiry.cs</DependentUpon>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ScheduleOverride.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ScoringBandMatrix.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ScoringBandMatrix.Designer.cs">
+      <DependentUpon>ScoringBandMatrix.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ServerTime.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CodeMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CodeStockEnquiry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ColouredTextColumn.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\BailiffCommissionMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SalesCommissionMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SalesCommissionMaintenance.Designer.cs">
+      <DependentUpon>SalesCommissionMaintenance.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommonForm.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CommonUserControl.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ConfigInstaller.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ConfigMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ConfirmPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ConfirmPopup.Designer.cs">
+      <DependentUpon>ConfirmPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CountryMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CreditCardNo.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustAcctOverride.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustIdTextBox.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomerID.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomerMailing.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomerMailingLoadQuery.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomerMailingLoadQuery.Designer.cs">
+      <DependentUpon>CustomerMailingLoadQuery.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="CustomerSearch.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DataGridCellTips.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DataGridEditColumn.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DataGridIconColumn.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DataGridMultipleEditColumn.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DatePicker.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DDMandate.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DDPaymentExtra.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DDRejection.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DeliveryAuthorisation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DeliveryInterface.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DocumentConfirmation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="DocumentPrinting.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="EODControl.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="EODPreviousRuns.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="EODPreviousRuns.Designer.cs">
+      <DependentUpon>EODPreviousRuns.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="EODUserInterface.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ExchangeCalculator.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ExchangeRates.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ExpectedReturnDate.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FactAuto.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FactAuto.Designer.cs">
+      <DependentUpon>FactAuto.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FinancialInterface.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FinTransQuery.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="FreeInstalmentList.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="GeneralFinancialTransactions.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="GetAgreementNo.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="GiftVoucher.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="GoodsReturn.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="HighliteBox.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ImageManagement.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Incomplete.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="InstantReplacement.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="InstantReplacement.Designer.cs">
+      <DependentUpon>InstantReplacement.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="InterfaceBreakdown.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="InterfaceDetails.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="JournalDate.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="JournalEnquiry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="LineItemsTab.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="LinkCustAcct.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ListInfoPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Localisation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="LocationStockEnquiry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MandatoryFields.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ManualAccountEntry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ManualAccountNo.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ManualRFAccountEntry.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ManualWriteOff.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MenuMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MonitorBookings.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="MonitorDeliveries.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NegativeIncome.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NewAccount.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NullableDatePicker.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="NumberGeneration.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="OutstandingPayment.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PaymentFileDefn.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PaymentList.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PhoneNumberBox.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PrinterProperties.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PrinterStatus.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Printing.cs">
+      <SubType>Code</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PrizeVoucher.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PrizeVoucher.Designer.cs">
+      <DependentUpon>PrizeVoucher.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReasonPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RebateCalculation.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RebateReport.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReceiptPrinter.cs">
+      <SubType>Code</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RedeliveryafterRepossesson.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReferenceList.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReferenceTab.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Referral.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Referral_Test.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RefundAndCorrection.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RelatedProducts.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RelatedProductWarranties.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RemoveSchedLoadComment.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReprintActionSheet.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReprintBailiffCommission.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ReturnCheque.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="RFCreditRefused.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SanctionStage1.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SanctionStage2.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SanctionStatus.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ScoringMatrix.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ScoringRule.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ScoringRules.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="ScreenCapture.cs">
+      <SubType>Code</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SearchCashAndGo.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SelectionPane.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SERVICE\BERReplacements.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SERVICE\BERReplacements.Designer.cs">
+      <DependentUpon>BERReplacements.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SERVICE\SR_CustomerInteraction.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SERVICE\SR_CustomerInteraction.Designer.cs">
+      <DependentUpon>SR_CustomerInteraction.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SetSelection.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SoapErrorDisplay.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SPADetails.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SpendLimitReferral.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SpiffSelection.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SpiffSelection.Designer.cs">
+      <DependentUpon>SpiffSelection.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Spouse.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StaffMaintenance.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StatusCode.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="STLMessageBox.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StockAvailability.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StockAvailabilityRegion.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StockForDiscount.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StockItemTranslations.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\PaymentList_Storecard.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardBatchPrint.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardBatchPrint.designer.cs">
+      <DependentUpon>StoreCardBatchPrint.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardMagStripeReader.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardPaymentCalc.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardPaymentCalc.Designer.cs">
+      <DependentUpon>StoreCardPaymentCalc.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardCommon.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\EventHandler.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardPaymentDetails.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardPaymentDetails.Designer.cs">
+      <DependentUpon>StoreCardPaymentDetails.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardActivation.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardActivation.Designer.cs">
+      <DependentUpon>StoreCardActivation.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardTransactions.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardTransactions.Designer.cs">
+      <DependentUpon>StoreCardTransactions.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCard_View.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCard_View.Designer.cs">
+      <DependentUpon>StoreCard_View.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\NewAccount_Storecard.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\Payment_Storecard.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\RateSetup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\RateSetup.Designer.cs">
+      <DependentUpon>RateSetup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardAccount.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardAccount.Designer.cs">
+      <DependentUpon>StoreCardAccount.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardPrinting.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardTextBox.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardTextBox.Designer.cs">
+      <DependentUpon>StoreCardTextBox.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardCancellation.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="StoreCard\StoreCardCancellation.Designer.cs">
+      <DependentUpon>StoreCardCancellation.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SummaryControlBranchFigures.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SummaryReportControlMain.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SummaryUpdateBrokerInterface.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SummaryUpdateBrokerInterface.Designer.cs">
+      <DependentUpon>SummaryUpdateBrokerInterface.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="SummaryUpdateControlTotals.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\StrategyConfiguration.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Collections\StrategyConfiguration.Designer.cs">
+      <DependentUpon>StrategyConfiguration.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Tallyman\TallymanExtract.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Tallyman\TallymanExtract.Designer.cs">
+      <DependentUpon>TallymanExtract.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelActionPaymentCalc.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelActionPaymentCalc.designer.cs">
+      <DependentUpon>TelActionPaymentCalc.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_FRD.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_FRD.Designer.cs">
+      <DependentUpon>TelAction_FRD.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_INS.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_INS.Designer.cs">
+      <DependentUpon>TelAction_INS.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_LEG.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_LEG.Designer.cs">
+      <DependentUpon>TelAction_LEG.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_TRC.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelAction_TRC.Designer.cs">
+      <DependentUpon>TelAction_TRC.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TelephoneAction5_2.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TemporaryReceiptsDetails.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TermsType.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TermsTypeMatrixPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TermsTypeMatrixPopup.Designer.cs">
+      <DependentUpon>TermsTypeMatrixPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TermsTypeOverview.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TermsTypeOverview.Designer.cs">
+      <DependentUpon>TermsTypeOverview.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Transactions.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Transactions.Designer.cs">
+      <DependentUpon>Transactions.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TransactionsTab.cs">
+      <SubType>UserControl</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TransferTransaction.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TranslationDummy.cs">
+      <SubType>Code</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TransTypeMaint.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="TreeViewExtended.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="UnpaidAccounts.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="UpdateDateDue.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Updater.cs">
+      <SubType>Component</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Utils\Delegates.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Utils\DataExtensions.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Utils\ControlExtensions.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Utils\ReportUtils.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Utils\Tuple.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="VariableInstalments.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Warehouse\FailedDeliveriesCollections.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Warehouse\FailedDeliveriesCollections.Designer.cs">
+      <DependentUpon>FailedDeliveriesCollections.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Warehouse\FailedDeliveriesCollectionsNotes.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Warehouse\FailedDeliveriesCollectionsNotes.Designer.cs">
+      <DependentUpon>FailedDeliveriesCollectionsNotes.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Warehouse\OnlineProductSearch.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Warehouse\OnlineProductSearch.Designer.cs">
+      <DependentUpon>OnlineProductSearch.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Warranties.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WarrantyRenewals.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WarrantyReporting.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WarrantyReporting.Designer.cs">
+      <DependentUpon>WarrantyReporting.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WarrantyReturnCodes.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WarrantyReturnCodes.Designer.cs">
+      <DependentUpon>WarrantyReturnCodes.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WarrantySESPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WarrantySESPopup.Designer.cs">
+      <DependentUpon>WarrantySESPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WCache\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS10\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS11\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS12\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS3\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS4\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS5\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS6\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS7\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS8\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WS9\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WSInstallation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WSPrinting\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WSStock\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Web References\WSStoreCard\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Error.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\Cache.cs" />
+    <Compile Include="WebRefAuth\CheckCache.cs" />
+    <Compile Include="WebRefAuth\SoapExtentions.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WClientLogging.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WebTypeConverter.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WInstallation.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WStock.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WStoreCard.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WAccountManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WCollectionsManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WCreditManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WCustomerManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WEODManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WLogin.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WPaymentManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WPrinting.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WServiceManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WSetData.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WStaticDataManager.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WebRefAuth\WSystemConfig.cs">
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WorkPhoneEntryPopup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WorkPhoneEntryPopup.Designer.cs">
+      <DependentUpon>WorkPhoneEntryPopup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WriteOffReview.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WTRSetup.cs">
+      <SubType>Form</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="WTRSetup.Designer.cs">
+      <DependentUpon>WTRSetup.cs</DependentUpon>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="XMLPrint.cs">
+      <SubType>Code</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Web References\WCache\Cache.disco" />
+    <None Include="config.rb" />
+    <None Include="Keys\MyKey.cer" />
+    <None Include="Keys\MyKey.pvk" />
+    <None Include="Keys\MyPfx.pfx" />
+    <None Include="Web References\WCache\Cache.wsdl" />
+    <None Include="Web References\WCache\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSStock\WStock.disco" />
+    <None Include="Web References\WSStock\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSInstallation\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSInstallation\WInstallation.disco" />
+    <None Include="Web References\WS1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS1\wlogin.disco" />
+    <None Include="Web References\WS1\wlogin.wsdl" />
+    <None Include="Web References\WSInstallation\WInstallation.wsdl" />
+    <None Include="Web References\WSStock\WStock.wsdl" />
+    <None Include="Web References\WSStoreCard\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSStoreCard\WStoreCard.disco" />
+    <None Include="Web References\WS10\WSetData.disco" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS10\CategoryItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS10\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS10\WSetData.wsdl" />
+    <None Include="Web References\WS11\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS11\WServiceManager.wsdl" />
+    <None Include="Web References\WS12\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS12\WCollectionsManager.wsdl" />
+    <None Include="Web References\WS2\AccountDetailsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\ARInvoice.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\BranchDefaultPrintLocation.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\Customer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\DataContainer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\OutboundDataContainer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\Receipt.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS2\SPAAccountDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS2\WAccountManager.wsdl" />
+    <None Include="Web References\WS3\Loyalty.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS3\LoyaltyValidAddresses.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS3\LoyaltyVoucher.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS3\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS3\WCustomerManager.wsdl" />
+    <None Include="Web References\WS4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS4\WClientLogging.wsdl" />
+    <None Include="Web References\WS5\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS5\WStaticDataManager.wsdl" />
+    <None Include="Web References\WS6\MonitorResponse1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS6\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS6\WSystemConfig.wsdl" />
+    <None Include="Web References\WS7\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS7\WCreditManager.wsdl" />
+    <None Include="Web References\WS8\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS8\WPaymentManager.wsdl" />
+    <None Include="Web References\WS9\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS9\WEODManager.disco" />
+    <None Include="Web References\WS9\WEODManager.wsdl" />
+    <Content Include="App.ico" />
+    <Content Include="images\dollar.ico" />
+    <None Include="images\ExpDelivery.jpg" />
+    <Content Include="images\HANDSHAK_24.ico" />
+    <Content Include="images\locked.ico" />
+    <Content Include="images\Printer.ico" />
+    <Content Include="images\PrinterGreen.ico" />
+    <Content Include="images\PrinterRed.ico" />
+    <Content Include="images\RS24a.ico" />
+    <Content Include="images\RT24b.ico" />
+    <Content Include="images\Sched_16.ico" />
+    <Content Include="images\Ss.ico" />
+    <Content Include="images\Tu24.ico" />
+    <Content Include="images\unlocked.ico" />
+    <Content Include="Resources\ajax_squares.gif" />
+    <Content Include="Resources\Blue Disk 9.bmp" />
+    <None Include="Resources\Cosacs.png" />
+    <None Include="Resources\CosacsIcon.ico" />
+    <Content Include="Resources\Calc.jpg" />
+    <None Include="Resources\Calc.png" />
+    <Content Include="Resources\downarrow.gif" />
+    <None Include="Resources\GoldStar.bmp" />
+    <None Include="Resources\Icon_Dollar_Sign_Blue_sm.png" />
+    <Content Include="Resources\File-SaveAll.png" />
+    <Content Include="Resources\small-down5.gif" />
+    <Content Include="Resources\small-up5.gif" />
+    <Content Include="Resources\uparrow.gif" />
+    <None Include="Web References\WSPrinting\PrintingAction.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSStoreCard\WStoreCard.wsdl" />
+    <None Include="Web References\WSPrinting\PrintingDN.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSPrinting\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSPrinting\WPrinting.disco" />
+    <None Include="Resources\Minus.GIF" />
+    <None Include="Resources\plus.GIF" />
+    <None Include="Web References\WS11\WServiceManager.disco" />
+    <None Include="Resources\TTBands1.ico" />
+    <None Include="Resources\NOTE07.ICO" />
+    <None Include="Web References\WSPrinting\WPrinting.wsdl" />
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/Cache.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WCache\</RelPath>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/Cache.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_Cache_Cache</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WAccountManager.asmx%3fwsdl">
+      <RelPath>Web References\WS2\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WClientLogging.asmx%3fwsdl">
+      <RelPath>Web References\WS4\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WCollectionsManager.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS12\</RelPath>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/WCollectionsManager.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_WS12_WCollectionsManager</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WCreditManager.asmx%3fwsdl">
+      <RelPath>Web References\WS7\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WCustomerManager.asmx%3fwsdl">
+      <RelPath>Web References\WS3\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WEODManager.asmx">
+      <RelPath>Web References\WS9\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WInstallation.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSInstallation\</RelPath>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/WInstallation.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_WSInstallation_WInstallation</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/courts.net.ws/wlogin.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS1\</RelPath>
+      <UpdateFromURL>http://localhost/courts.net.ws/wlogin.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_W13_WLogin</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WStock.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSStock\</RelPath>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/WStock.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_WSStockManager_WStockManager</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WStoreCard.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSStoreCard\</RelPath>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/WStoreCard.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_WSStoreCard_WStoreCard</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WPaymentManager.asmx%3fwsdl">
+      <RelPath>Web References\WS8\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WPrinting.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSPrinting\</RelPath>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/WPrinting.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_WSPrinting_WPrinting</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WServiceManager.asmx">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\WS11\</RelPath>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/WServiceManager.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Courts_NET_PL_WS11_WServiceManager</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WSetData.asmx">
+      <RelPath>Web References\WS10\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>http://localhost/Courts.NET.WS/WSetData.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WStaticDataManager.asmx%3fwsdl">
+      <RelPath>Web References\WS5\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/Courts.NET.WS/WSystemConfig.asmx%3fwsdl">
+      <RelPath>Web References\WS6\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountDetails.resx">
+      <DependentUpon>AccountDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountNumberCtrl.resx">
+      <DependentUpon>AccountNumberCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsSearch.resx">
+      <DependentUpon>AccountsSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AccountStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountTextBox.resx">
+      <DependentUpon>AccountTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountTextColumn.resx">
+      <DependentUpon>AccountTextColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCustAcctCodes.resx">
+      <DependentUpon>AddCustAcctCodes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddressTab.resx">
+      <DependentUpon>AddressTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTo.resx">
+      <DependentUpon>AddTo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AffinityContractNo.resx">
+      <DependentUpon>AffinityContractNo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alphabet.resx">
+      <DependentUpon>Alphabet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmandPrintPickList.resx">
+      <DependentUpon>AmandPrintPickList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicantExpenseCriteria.resx">
+      <DependentUpon>ApplicantExpenseCriteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssemblyOptions.resx">
+      <DependentUpon>AssemblyOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuditChanges.resx">
+      <DependentUpon>AuditChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthoriseCheck.resx">
+      <DependentUpon>AuthoriseCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthorisePrompt.resx">
+      <DependentUpon>AuthorisePrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BailActions.resx">
+      <DependentUpon>BailActions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BailReview5_2.resx">
+      <DependentUpon>BailReview5_2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BankMaintenance.resx">
+      <DependentUpon>BankMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasicCustomerDetails.resx">
+      <DependentUpon>BasicCustomerDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BehaviouralResults.resx">
+      <DependentUpon>BehaviouralResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Branch.resx">
+      <DependentUpon>Branch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalculateBailiffCommission.resx">
+      <DependentUpon>CalculateBailiffCommission.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelAccount.resx">
+      <DependentUpon>CancelAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelCollectionNotes.resx">
+      <DependentUpon>CancelCollectionNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierByBranch.resx">
+      <DependentUpon>CashierByBranch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierDeposits.resx">
+      <DependentUpon>CashierDeposits.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierDisbursments.resx">
+      <DependentUpon>CashierDisbursments.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierTotals.resx">
+      <DependentUpon>CashierTotals.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierTotalsBreakdownS.resx">
+      <DependentUpon>CashierTotalsBreakdownS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashLoan\CashLoanApplication.resx">
+      <DependentUpon>CashLoanApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashLoan\CashLoanDisbursement.resx">
+      <DependentUpon>CashLoanDisbursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashLoan\CashLoanRecordBankTransfer.resx">
+      <DependentUpon>CashLoanRecordBankTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashLoan\CashLoanReferral.resx">
+      <DependentUpon>CashLoanReferral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashTillHistory.resx">
+      <DependentUpon>CashTillHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashTillOpen.resx">
+      <DependentUpon>CashTillOpen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeItemLocation.resx">
+      <DependentUpon>ChangeItemLocation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChequeAuthorisationPopUp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChequeAuthorisationPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\LetterMerge.resx">
+      <DependentUpon>LetterMerge.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\SpecialArrangements.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SpecialArrangements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\ConditionsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConditionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\SMSSetup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SMSSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\SpecialArrangementsConsolidated.resx">
+      <DependentUpon>SpecialArrangementsConsolidated.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\ViewSMSPopup.resx">
+      <DependentUpon>ViewSMSPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\WorkLists.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WorkLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\ZoneAutomatedAllocation.resx">
+      <DependentUpon>ZoneAutomatedAllocation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommissionEnquiry.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CommissionEnquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommissionMaintenance.resx">
+      <DependentUpon>CommissionMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommissionsReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CommissionsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommissionsSetUp.resx">
+      <DependentUpon>CommissionsSetUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSpiff.resx">
+      <DependentUpon>AddSpiff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerPhotograph.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomerPhotograph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteVouchers.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeleteVouchers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryAreaPopup.resx">
+      <DependentUpon>DeliveryAreaPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DependentExpenseCriteria.resx">
+      <DependentUpon>DependentExpenseCriteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuplicateCustomers.resx">
+      <DependentUpon>DuplicateCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeInformation.resx">
+      <DependentUpon>EmployeeInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoringReports.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FactoringReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FollowUp.resx">
+      <DependentUpon>FollowUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\FollowUp5_2.resx">
+      <DependentUpon>FollowUp5_2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashandGoPaymentRefunds.resx">
+      <DependentUpon>CashandGoPaymentRefunds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ICAuthorisation.resx">
+      <DependentUpon>ICAuthorisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsuranceWarrantyPopup.resx">
+      <DependentUpon>InsuranceWarrantyPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoyaltyRedeemVoucher.resx">
+      <DependentUpon>LoyaltyRedeemVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainForm.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.th-TH.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualReferral.resx">
+      <DependentUpon>ManualReferral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MmiMatrix.resx">
+      <DependentUpon>MmiMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MobilePhoneEntryPopup.resx">
+      <DependentUpon>MobilePhoneEntryPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NonStock.resx">
+      <DependentUpon>NonStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OneForOneReplacement.resx">
+      <DependentUpon>OneForOneReplacement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printing\StatementsForm.resx">
+      <DependentUpon>StatementsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductAssociations.resx">
+      <DependentUpon>ProductAssociations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provisions.resx">
+      <DependentUpon>Provisions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferralSummary.resx">
+      <DependentUpon>ReferralSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Refund.resx">
+      <DependentUpon>Refund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprintInvoice.resx">
+      <DependentUpon>ReprintInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleAction.resx">
+      <DependentUpon>SaleAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesCommissionBranchEnquiry.resx">
+      <DependentUpon>SalesCommissionBranchEnquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesCommissionEnquiry.resx">
+      <DependentUpon>SalesCommissionEnquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleOverride.resx">
+      <DependentUpon>ScheduleOverride.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoringBandMatrix.resx">
+      <DependentUpon>ScoringBandMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMaintenance.resx">
+      <DependentUpon>CodeMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeStockEnquiry.resx">
+      <DependentUpon>CodeStockEnquiry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColouredTextColumn.resx">
+      <DependentUpon>ColouredTextColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\BailiffCommissionMaintenance.resx">
+      <DependentUpon>BailiffCommissionMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesCommissionMaintenance.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SalesCommissionMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm.resx">
+      <DependentUpon>CommonForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonUserControl.resx">
+      <DependentUpon>CommonUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigInstaller.resx">
+      <DependentUpon>ConfigInstaller.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigMaintenance.resx">
+      <DependentUpon>ConfigMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmPopup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfirmPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountryMaintenance.resx">
+      <DependentUpon>CountryMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditCardNo.resx">
+      <DependentUpon>CreditCardNo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustAcctOverride.resx">
+      <DependentUpon>CustAcctOverride.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustIdTextBox.resx">
+      <DependentUpon>CustIdTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerID.resx">
+      <DependentUpon>CustomerID.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMailing.resx">
+      <DependentUpon>CustomerMailing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMailingLoadQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomerMailingLoadQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSearch.resx">
+      <DependentUpon>CustomerSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridCellTips.resx">
+      <DependentUpon>DataGridCellTips.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridEditColumn.resx">
+      <DependentUpon>DataGridEditColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridIconColumn.resx">
+      <DependentUpon>DataGridIconColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatePicker.resx">
+      <DependentUpon>DatePicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDMandate.resx">
+      <DependentUpon>DDMandate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDPaymentExtra.resx">
+      <DependentUpon>DDPaymentExtra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDRejection.resx">
+      <DependentUpon>DDRejection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryAuthorisation.resx">
+      <DependentUpon>DeliveryAuthorisation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryInterface.resx">
+      <DependentUpon>DeliveryInterface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentConfirmation.resx">
+      <DependentUpon>DocumentConfirmation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentPrinting.resx">
+      <DependentUpon>DocumentPrinting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EODControl.resx">
+      <DependentUpon>EODControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EODPreviousRuns.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EODPreviousRuns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EODUserInterface.resx">
+      <DependentUpon>EODUserInterface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExchangeCalculator.resx">
+      <DependentUpon>ExchangeCalculator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExchangeRates.resx">
+      <DependentUpon>ExchangeRates.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpectedReturnDate.resx">
+      <DependentUpon>ExpectedReturnDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactAuto.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FactAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancialInterface.resx">
+      <DependentUpon>FinancialInterface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinTransQuery.resx">
+      <DependentUpon>FinTransQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeInstalmentList.resx">
+      <DependentUpon>FreeInstalmentList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralFinancialTransactions.resx">
+      <DependentUpon>GeneralFinancialTransactions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetAgreementNo.resx">
+      <DependentUpon>GetAgreementNo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiftVoucher.resx">
+      <DependentUpon>GiftVoucher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodsReturn.resx">
+      <DependentUpon>GoodsReturn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HighliteBox.resx">
+      <DependentUpon>HighliteBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageManagement.resx">
+      <DependentUpon>ImageManagement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incomplete.resx">
+      <DependentUpon>Incomplete.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstantReplacement.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InstantReplacement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceBreakdown.resx">
+      <DependentUpon>InterfaceBreakdown.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceDetails.resx">
+      <DependentUpon>InterfaceDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JournalDate.resx">
+      <DependentUpon>JournalDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JournalEnquiry.resx">
+      <DependentUpon>JournalEnquiry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LineItemsTab.resx">
+      <DependentUpon>LineItemsTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkCustAcct.resx">
+      <DependentUpon>LinkCustAcct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListInfoPopup.resx">
+      <DependentUpon>ListInfoPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localisation.resx">
+      <DependentUpon>Localisation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocationStockEnquiry.resx">
+      <DependentUpon>LocationStockEnquiry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MandatoryFields.resx">
+      <DependentUpon>MandatoryFields.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualAccountEntry.resx">
+      <DependentUpon>ManualAccountEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualAccountNo.resx">
+      <DependentUpon>ManualAccountNo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualRFAccountEntry.resx">
+      <DependentUpon>ManualRFAccountEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualWriteOff.resx">
+      <DependentUpon>ManualWriteOff.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuMaintenance.resx">
+      <DependentUpon>MenuMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorBookings.resx">
+      <DependentUpon>MonitorBookings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorDeliveries.resx">
+      <DependentUpon>MonitorDeliveries.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NegativeIncome.resx">
+      <DependentUpon>NegativeIncome.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAccount.resx">
+      <DependentUpon>NewAccount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NullableDatePicker.resx">
+      <DependentUpon>NullableDatePicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberGeneration.resx">
+      <DependentUpon>NumberGeneration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutstandingPayment.resx">
+      <DependentUpon>OutstandingPayment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentFileDefn.resx">
+      <DependentUpon>PaymentFileDefn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentList.resx">
+      <DependentUpon>PaymentList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneNumberBox.resx">
+      <DependentUpon>PhoneNumberBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrinterProperties.resx">
+      <DependentUpon>PrinterProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrinterStatus.resx">
+      <DependentUpon>PrinterStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrizeVoucher.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PrizeVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReasonPopup.resx">
+      <DependentUpon>ReasonPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RebateCalculation.resx">
+      <DependentUpon>RebateCalculation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RebateReport.resx">
+      <DependentUpon>RebateReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedeliveryafterRepossesson.resx">
+      <DependentUpon>RedeliveryafterRepossesson.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferenceList.resx">
+      <DependentUpon>ReferenceList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferenceTab.resx">
+      <DependentUpon>ReferenceTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral.resx">
+      <DependentUpon>Referral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral_Test.resx">
+      <DependentUpon>Referral_Test.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefundAndCorrection.resx">
+      <DependentUpon>RefundAndCorrection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatedProducts.resx">
+      <DependentUpon>RelatedProducts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatedProductWarranties.resx">
+      <DependentUpon>RelatedProductWarranties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveSchedLoadComment.resx">
+      <DependentUpon>RemoveSchedLoadComment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprintActionSheet.resx">
+      <DependentUpon>ReprintActionSheet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprintBailiffCommission.resx">
+      <DependentUpon>ReprintBailiffCommission.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnCheque.resx">
+      <DependentUpon>ReturnCheque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFCreditRefused.resx">
+      <DependentUpon>RFCreditRefused.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanctionStage1.resx">
+      <DependentUpon>SanctionStage1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanctionStage2.resx">
+      <DependentUpon>SanctionStage2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanctionStatus.resx">
+      <DependentUpon>SanctionStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoringMatrix.resx">
+      <DependentUpon>ScoringMatrix.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoringRule.resx">
+      <DependentUpon>ScoringRule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoringRules.resx">
+      <DependentUpon>ScoringRules.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCashAndGo.resx">
+      <DependentUpon>SearchCashAndGo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionPane.resx">
+      <DependentUpon>SelectionPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SERVICE\BERReplacements.resx">
+      <DependentUpon>BERReplacements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SERVICE\SR_CustomerInteraction.resx">
+      <DependentUpon>SR_CustomerInteraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetSelection.resx">
+      <DependentUpon>SetSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoapErrorDisplay.resx">
+      <DependentUpon>SoapErrorDisplay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPADetails.resx">
+      <DependentUpon>SPADetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpendLimitReferral.resx">
+      <DependentUpon>SpendLimitReferral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpiffSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SpiffSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffMaintenance.resx">
+      <DependentUpon>StaffMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusCode.resx">
+      <DependentUpon>StatusCode.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STLMessageBox.resx">
+      <DependentUpon>STLMessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockAvailability.resx">
+      <DependentUpon>StockAvailability.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockAvailabilityRegion.resx">
+      <DependentUpon>StockAvailabilityRegion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockForDiscount.resx">
+      <DependentUpon>StockForDiscount.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockItemTranslations.resx">
+      <DependentUpon>StockItemTranslations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\RateSetup.resx">
+      <DependentUpon>RateSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardAccount.resx">
+      <DependentUpon>StoreCardAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardActivation.resx">
+      <DependentUpon>StoreCardActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardBatchPrint.resx">
+      <DependentUpon>StoreCardBatchPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardCancellation.resx">
+      <DependentUpon>StoreCardCancellation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardPaymentCalc.resx">
+      <DependentUpon>StoreCardPaymentCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardPaymentDetails.resx">
+      <DependentUpon>StoreCardPaymentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardTextBox.resx">
+      <DependentUpon>StoreCardTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCardTransactions.resx">
+      <DependentUpon>StoreCardTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreCard\StoreCard_View.resx">
+      <DependentUpon>StoreCard_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryControlBranchFigures.resx">
+      <DependentUpon>SummaryControlBranchFigures.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryReportControlMain.resx">
+      <DependentUpon>SummaryReportControlMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryUpdateBrokerInterface.resx">
+      <DependentUpon>SummaryUpdateBrokerInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryUpdateControlTotals.resx">
+      <DependentUpon>SummaryUpdateControlTotals.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collections\StrategyConfiguration.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StrategyConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tallyman\TallymanExtract.resx">
+      <DependentUpon>TallymanExtract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelActionPaymentCalc.resx">
+      <DependentUpon>TelActionPaymentCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelAction_FRD.resx">
+      <DependentUpon>TelAction_FRD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelAction_INS.resx">
+      <DependentUpon>TelAction_INS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelAction_LEG.resx">
+      <DependentUpon>TelAction_LEG.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelAction_TRC.resx">
+      <DependentUpon>TelAction_TRC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelephoneAction5_2.resx">
+      <DependentUpon>TelephoneAction5_2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemporaryReceiptsDetails.resx">
+      <DependentUpon>TemporaryReceiptsDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermsType.resx">
+      <DependentUpon>TermsType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermsTypeMatrixPopup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TermsTypeMatrixPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermsTypeOverview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TermsTypeOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionsTab.resx">
+      <DependentUpon>TransactionsTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransferTransaction.resx">
+      <DependentUpon>TransferTransaction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransTypeMaint.resx">
+      <DependentUpon>TransTypeMaint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeViewExtended.resx">
+      <DependentUpon>TreeViewExtended.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnpaidAccounts.resx">
+      <DependentUpon>UnpaidAccounts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDateDue.resx">
+      <DependentUpon>UpdateDateDue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updater.resx">
+      <DependentUpon>Updater.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VariableInstalments.resx">
+      <DependentUpon>VariableInstalments.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\FailedDeliveriesCollections.resx">
+      <DependentUpon>FailedDeliveriesCollections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\FailedDeliveriesCollectionsNotes.resx">
+      <DependentUpon>FailedDeliveriesCollectionsNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\OnlineProductSearch.resx">
+      <DependentUpon>OnlineProductSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranties.resx">
+      <DependentUpon>Warranties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarrantyRenewals.resx">
+      <DependentUpon>WarrantyRenewals.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarrantyReporting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WarrantyReporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarrantyReturnCodes.resx">
+      <DependentUpon>WarrantyReturnCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarrantySESPopup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WarrantySESPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkPhoneEntryPopup.resx">
+      <DependentUpon>WorkPhoneEntryPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WriteOffReview.resx">
+      <DependentUpon>WriteOffReview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WTRSetup.resx">
+      <DependentUpon>WTRSetup.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="App.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\Calc.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Installation\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\StyleCop.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

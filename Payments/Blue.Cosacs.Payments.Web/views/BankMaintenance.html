@@ -1,0 +1,81 @@
+<div class="container bankMaintenance" ng-controller="bankMaintenanceController">
+    <h1><span ng-bind="mainTitle">Bank Maintenance</span></h1>
+
+    <br/>
+
+    <div class="col-lg-9">
+        <table class="data table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Bank Name</th>
+                    <th>Bank Code</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="bank in Banks">
+                    <td ng-hide="bank.edit"><a class="glyphicons glyph-btn action-edit pencil" title="Edit" ng-click="editBank(bank)"></a></td>
+                    <td ng-hide = "bank.edit" class="bankname">{{bank.BankName}}</td>
+                    <td ng-hide = "bank.edit" class="bankcode">{{bank.BankCode}}</td>
+                    <td ng-hide= "bank.edit" class="bankactive">{{bank.Active == '1' ? "Active" : "Inactive"}}</td>
+
+                    <td ng-show="bank.edit">
+                        <a class="glyphicons glyph-btn floppy_disk click" ng-show="true"
+                           title="Save" ng-click="saveBankEdit(bank)"></a>
+                        <a class="glyphicons glyph-btn undo" title="Cancel" ng-click="cancelBankEdit(bank)"></a>
+                    </td>
+                    <td ng-show = "bank.edit" class="BankName">
+                        <div class="field">
+                            <input required ng-model="bank.BankName" type="text" class="form-control"/>
+                    </div>
+                </td>
+                    <td ng-show = "bank.edit" class="BankName">
+                        <div class="field">
+                            <input required ng-model="bank.BankCode" type="text" class="form-control"/>
+                        </div>
+                    </td>
+                    <td ng-show = "bank.edit" class="BankActive">
+                        <div class="field">
+                            <input type="checkbox" ng-model="bank.Active" value="active"> Active
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+            <tr ng-hide="creatingNewBank">
+                <td>
+                    <a class="glyphicons glyph-btn plus" title="New" ng-click="showNewRow($event)"></a>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr ng-show="creatingNewBank">
+                <td>
+                    <a class="glyphicons glyph-btn floppy_disk click" ng-show="true"
+                       title="Save" ng-click="createNewBank()"></a>
+                    <a class="glyphicons glyph-btn undo" title="Cancel" ng-click="cancelNewBank()"></a>
+                </td>
+                <td class="BankName">
+                    <div class="field">
+                        <input required ng-model="newBank.bankName" type="text" class="form-control"/>
+                    </div>
+                </td>
+                <td class="BankName">
+                    <div class="field">
+                        <input required ng-model="newBank.bankCode" type="text" class="form-control"/>
+                    </div>
+                </td>
+                <td class="BankActive">
+                    <div class="field">
+                        <input type="checkbox" ng-model="newBank.active" value="active"> Active
+                    </div>
+                </td>
+
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>

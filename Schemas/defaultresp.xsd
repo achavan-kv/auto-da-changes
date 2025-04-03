@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Payment Default Response Version 0.3 Draft  -->
+	<!-- Disclaimer: subject to change by Baycorp Advantage at any time  -->
+	<!-- Confidential - May Not be Disclosed to Outside Parties Without the Express Permission of Baycorp Advantage -->
+	<!-- Revision History                                                -->
+	<!-- Date       Version  By            Description                                     -->
+	<!-- 27/8/2003  0.2      Rachel Welsh  Keep version in line for package                -->
+	<!-- 27/8/2003  0.3      Rachel Welsh  Keep version in line for package                -->
+	<xs:element name="RESPONSE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SERVICE">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="10" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="STATUS" type="xs:string" />
+				<xs:choice>
+					<xs:group ref="ERROR" />
+					<xs:group ref="MESSAGE" />
+					<xs:group ref="PARSE" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- If Error  -->
+	<xs:group name="ERROR">
+		<xs:sequence>
+			<xs:element name='ERRORS'>
+				<xs:complexType>
+					<xs:sequence>
+						<!-- Error  -->
+						<xs:element name="ERROR" maxOccurs="unbounded" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!-- If Parser Error  -->
+	<xs:group name="PARSE">
+		<xs:sequence>
+			<!-- Error -->
+			<xs:element name="PARSER_ERROR" type="xs:string" />
+		</xs:sequence>
+	</xs:group>
+	<!-- If OK  -->
+	<xs:group name="MESSAGE">
+		<xs:sequence>
+			<xs:element name='MESSAGES'>
+				<xs:complexType>
+					<xs:sequence>
+						<!-- Message  -->
+						<xs:element name="MESSAGE" type="xs:string" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+</xs:schema>

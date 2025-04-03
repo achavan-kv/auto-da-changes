@@ -1,0 +1,255 @@
+<div class="container credit" ng-controller="termsTypeSimulatorController">
+    <h1><span ng-bind="title">Terms Type Simulator</span></h1>
+
+    <div class="row">
+        &nbsp;
+    </div>
+    <form class="form-horizontal col-lg-12" role="form" novalidate name="termsTypeSetup">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="control-label col-lg-6">Customer Type</label>
+
+                <div class="col-lg-6">
+                    <list scope="customerTypes" ng-model="search.customerType" placeholder="Customer Type"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="termLength" class="control-label col-lg-6">Term Length</label>
+
+                <div class="col-lg-6">
+                    <input type="text" id="termLength" class="form-control" ng-model="search.termLength">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="date" class="control-label col-lg-6">Date</label>
+
+                <div class="col-lg-6">
+                    <input type="date" id="date" class="form-control" ng-model="search.date">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="points" class="control-label col-lg-6">Points</label>
+
+                <div class="col-lg-6">
+                    <input type="number" id="points" class="form-control" ng-model="search.points">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="isStaff" class="control-label col-lg-6">Staff</label>
+
+                <div class="col-lg-6">
+                    <input type="checkbox" id="staff" ng-model="search.isStaff">
+                </div>
+            </div>
+            <div class="section">Customer Tag</div>
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <div class="col-lg-10">
+                        <list scope="customerTags" ng-model="customerTag"
+                              placeholder="Customer Tag"/>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-default"
+                                ng-click="add(search.customerTags,customerTag, 'customerTag')"
+                                ng-disabled="!customerTag" id="addCustomerTag">
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <table class="table table-striped table-bordered table-hover">
+                        <tbody>
+                        <tr ng-repeat="customerTag in search.customerTags">
+                            <td class="col-lg-2"><span class="glyphicons bin" title="Delete"
+                                                       ng-click="remove($index, search.customerTags)" id="removeCustomerTag"></span>
+                            </td>
+                            <td>{{customerTag}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">Fascias</div>
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <div class="col-lg-10">
+                        <list scope="fascias" ng-model="fascia"
+                              placeholder="Fascia"/>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-default"
+                                ng-click="add(search.fascias,fascia, 'fascia')"
+                                ng-disabled="!fascia" id="addFascia">
+                            Add
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <table class="table table-striped table-bordered table-hover">
+                        <tbody>
+                        <tr ng-repeat="fascia in search.fascias">
+                            <td class="col-lg-2"><span class="glyphicons bin" title="Delete"
+                                                       ng-click="remove($index, search.fascias)" id="removeFascia"></span>
+                            </td>
+                            <td>{{fascia}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">Product SKUs</div>
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <div class="col-lg-10">
+                        <input id="productSkus" class="form-control" type="text" name="productSkus"
+                               ng-model="productSku"/>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-default"
+                                ng-click="addProductSKUs(productSku)"
+                                ng-disabled="!productSku" id="addProductSKU">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-11" ng-show="search.productSkus.length > 0">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <th>
+                        </th>
+                        <th>SKU</th>
+                        <th>Description</th>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="sku in search.productSkus">
+                            <td class="col-lg-2"><span class="glyphicons bin" title="Delete"
+                                                       ng-click="remove($index, search.productSkus)"></span>
+                            </td>
+                            <td>{{sku.skuId}}</td>
+                            <td>{{sku.description}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="section">Agreement Types</div>
+            <div class="form-group">
+                <label for="isRfAgreement" class="col-lg-6 control-label">RF Agreement</label>
+
+                <div class="col-lg-6">
+                    <input type="checkbox" name="isRfAgreement" id="isRfAgreement" ng-model="search.isRfAgreement">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-6 control-label"> HP Agreement</label>
+
+                <div class="col-lg-6">
+                    <input type="checkbox" id="isHpAgreement" ng-model="search.isHpAgreement">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-6 control-label"> Store Card Agreement</label>
+
+                <div class="col-lg-6">
+                    <input type="checkbox" id="isStoreCardAgreement" ng-model="search.isStoreCardAgreement">
+                </div>
+            </div>
+            <div class="section">Cash Loan Customer</div>
+            <div class="form-group">
+                <label class="col-lg-6 control-label"> New Customer</label>
+
+                <div class="col-lg-6">
+                    <input type="checkbox" id="isCashLoanNewCustomer" ng-model="search.isCashLoanNewCustomer">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-6 control-label"> Recent Customer</label>
+
+                <div class="col-lg-6">
+                    <input type="checkbox" id="cashLoanRecentCustomer" ng-model="search.cashLoanRecentCustomer">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-6 control-label"> Existing Customer</label>
+
+                <div class="col-lg-6">
+                    <input type="checkbox" id="isCashLoanExistingCustomer"
+                           ng-model="search.isCashLoanExistingCustomer">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-6 control-label"> Staff Customer</label>
+
+                <div class="col-lg-6 ">
+                    <input type="checkbox" id="cashLoanStaffCustomer" ng-model="search.cashLoanStaffCustomer">
+                </div>
+            </div>
+            <div class="section">Product Hierarchy Tag</div>
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <div class="col-lg-10">
+                        <list scope="productHierarchyLevels" ng-model="productHierarchyLevel"
+                              placeholder="Level"></list>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="col-lg-10">
+                        <list scope="productHierarchyTagNames" ng-model="productHierarchyTag"
+                              placeholder="Tag"/>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-default"
+                                ng-click="addProductHierarchy(productHierarchyTag, productHierarchyLevel)"
+                                ng-disabled="!productHierarchyTag" id="addProductHierarchyTag">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-11" ng-show="search.productHierarchyTags.length > 0">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <th>
+                        </th>
+                        <th>Level</th>
+                        <th>Tag</th>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="productHierarchy in search.productHierarchyTags">
+                            <td class="col-lg-2"><span class="glyphicons bin" title="Delete"
+                                                       ng-click="remove($index, search.productHierarchyTags)" id="removeProductHierarchyTag"></span>
+                            </td>
+                            <td>{{productHierarchy.level}}</td>
+                            <td>{{productHierarchy.tag}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="btn btn-primary"
+            ng-click="get()">
+        Simulate
+    </button>
+    <button class="btn btn-default"
+            ng-click="clearSearch()" id="clearSearch">
+        Clear
+    </button>
+    <div class="row">
+        &nbsp;
+    </div>
+    <span ng-show="displayResults.length == 0">No Results</span>
+    <span ng-show="displayResults.length == 50">Results limited to 50 records.</span>
+
+    <div class="row">
+        &nbsp;
+    </div>
+    <div ng-include="'/Credit/views/templates/TermsTypeSearchTemplate.html'"></div>
+</div>

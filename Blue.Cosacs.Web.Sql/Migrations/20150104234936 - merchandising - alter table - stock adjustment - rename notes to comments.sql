@@ -1,0 +1,1 @@
+sp_rename 'Merchandising.[StockAdjustment].[Notes]' , 'Comments', 'COLUMN'

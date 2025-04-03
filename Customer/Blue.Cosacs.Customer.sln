@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Customer.Web", "Blue.Cosacs.Customer.Web\Blue.Cosacs.Customer.Web.csproj", "{B253119A-D3FE-4CBC-BA97-B58DB8D2DBDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Customer.Api", "Blue.Cosacs.Customer.Api\Blue.Cosacs.Customer.Api.csproj", "{22A8B57C-5011-4E14-BC2D-9C44A5355700}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9F59831C-6822-40E7-90CB-AC2CFF7F5717}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Customer", "Blue.Cosacs.Customer\Blue.Cosacs.Customer.csproj", "{5CD30790-4B36-4195-941C-3BB80C0EF969}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B253119A-D3FE-4CBC-BA97-B58DB8D2DBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B253119A-D3FE-4CBC-BA97-B58DB8D2DBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B253119A-D3FE-4CBC-BA97-B58DB8D2DBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B253119A-D3FE-4CBC-BA97-B58DB8D2DBDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A8B57C-5011-4E14-BC2D-9C44A5355700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A8B57C-5011-4E14-BC2D-9C44A5355700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A8B57C-5011-4E14-BC2D-9C44A5355700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A8B57C-5011-4E14-BC2D-9C44A5355700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CD30790-4B36-4195-941C-3BB80C0EF969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD30790-4B36-4195-941C-3BB80C0EF969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD30790-4B36-4195-941C-3BB80C0EF969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD30790-4B36-4195-941C-3BB80C0EF969}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;Unity.2.1.505.0\lib\NET35;Unity.Interception.2.1.505.0\lib\NET35;EnterpriseLibrary.Common.5.0.505.0\lib\NET35;EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

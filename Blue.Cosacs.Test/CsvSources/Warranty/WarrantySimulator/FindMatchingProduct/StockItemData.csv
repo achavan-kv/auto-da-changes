@@ -1,0 +1,5 @@
+Id,DepartmentCode,Department,origbr,StoreType,itemno,suppliercode,itemdescr1,itemdescr2,unitpricehp,unitpricecash,taxRate,category,CategoryName,supplier,prodstatus,warrantable,itemtype,unitpricedutyfree,refcode,warrantyrenewalflag,assemblyrequired,CostPrice,suppliername,DateActivated,IUPC,ColourName,ColourCode,VendorStyle,VendorLongStyle,ItemID,SKU,VendorEAN,RepossessedItem,VendorWarranty,SparePart,Class,ClassName,SubClass,Brand,ItemPOSDescr,UnitPromoPrice
+49644,8,PCE,745,C,  11111,BISHRAM SHIWRASAD,"RCA 21"" LCD COL TV       ", ,79999,79999,16,15,Second Hand,XXX0, ,0,S,79999,0,N,N,71999,XXX0,,910249,,,,,49644,910249,,0,,0,91,Second Hand,910,,,0
+49644,8,PCE,745,N,12345    ,BISHRAM1 SHIWRASAD1,"RCA 21"" LCD COL TV       ", ,79999,79999,16,15,Second Hand,XXX0, ,0,S,79999,0,N,N,71999,XXX0,,910249,,,,,49644,910249,,0,,0,91,Second Hand,910,,,0
+49644,8,PCE,745,N,    23456    ,BISHRAM1 SHIWRASAD1,"RCA 21"" LCD COL TV       ", ,79999,79999,16,15,Second Hand,XXX0, ,0,S,79999,0,N,N,71999,XXX0,,910249,,,,,49644,910249,,0,,0,91,Second Hand,910,,,0
+

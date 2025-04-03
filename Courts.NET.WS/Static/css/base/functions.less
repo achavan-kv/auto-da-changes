@@ -1,0 +1,19 @@
+.box-shadow(@offset-x: 0, @offset-y: 0, @blur-radius: 0, @spread-radius: 0, @color: transparent)  {
+	box-shadow:         @offset-x @offset-y @blur-radius @spread-radius @color;
+	-moz-box-shadow:    @offset-x @offset-y @blur-radius @spread-radius @color;
+	-webkit-box-shadow: @offset-x @offset-y @blur-radius @spread-radius @color;
+	-o-box-shadow:      @offset-x @offset-y @blur-radius @spread-radius @color;
+}
+
+.gradient-vertical(@color) 
+{
+	background-color: @color;
+	background-repeat: no-repeat;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(@color));
+	background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, @color);
+	background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, @color);
+	background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, @color);
+	background-image: -o-linear-gradient(#ffffff, #ffffff 25%, @color);
+	background-image: linear-gradient(#ffffff, #ffffff 25%, @color);
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='@color', GradientType=0);*/
+}

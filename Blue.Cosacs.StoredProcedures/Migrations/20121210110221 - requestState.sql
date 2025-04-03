@@ -1,0 +1,2 @@
+ALTER TABLE Service.Request
+ALTER COLUMN RequestState VARCHAR(20) NOT NULL

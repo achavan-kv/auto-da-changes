@@ -1,0 +1,31 @@
+﻿<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+<#+
+public class ClientPrototype : Template
+{
+	public ServicesNamespace Ns;
+	public ServicesNamespaceService Service;
+
+    public override string TransformText()
+    {
+#>
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Blue.Cosacs.Shared.Services.<#= Ns.name #>
+{
+	partial class <#= Service.name #>Request  
+	{ 
+		// put your properties/fields here
+	}
+	
+	partial class <#= Service.name #>Response 
+	{ 
+		// put your properties/fields here
+	}
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

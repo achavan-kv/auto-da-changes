@@ -1,0 +1,251 @@
+<project name="Blue.Cosacs.Web" default="default" xmlns="http://nant.sf.net/release/0.92/nant.xsd">
+    <property name="nant.settings.currentframework" value="net-4.0" />
+    <loadtasks assembly="..\bin\\blue-nant\Blue.NAnt.dll"/>
+    <loadtasks assembly="..\bin\\nantcontrib-0.85\bin\NAnt.Contrib.Tasks.dll"/>
+	<loadtasks assembly="BuildHelper\SsasBuilder.dll"/>
+
+    <property name="connstring" value="${environment::get-variable('connstring')}"/>
+    <property name="grid-connstring" value="${environment::get-variable('grid-connstring')}" />
+    <property name="grid-connstring-sa" value="${environment::get-variable('grid-connstring-sa')}" />
+    <property name="grid-agent-count" value="1" />
+    <property name="grid-cosacs-url" value="http://192.168.30.8/cosacs/" />
+
+    <property name="timestamp" value="${datetime::get-year(datetime::now())}${datetime::get-month(datetime::now())}${datetime::get-day(datetime::now())}${datetime::get-hour(datetime::now())}${datetime::get-minute(datetime::now())}${datetime::get-second(datetime::now())}"/>
+
+    <target name="grid" depends="build-web minify">
+        <echo message="Updating web.config..." />
+        <xmlpoke file="minify\web\web.config"
+                 xpath="/configuration/appSettings/add[@key = 'PjaxEnabled']/@value"
+                 value="true" />
+        <xmlpoke file="minify\web\web.config"
+                 xpath="/configuration/connectionStrings/add[@name = 'Default']/@connectionString"
+                 value="${grid-connstring}" />
+        <xmlpoke file="minify\web\web.config"
+                 xpath="/configuration/elmah/errorLog/@subjectPrefix"
+                 value="GRID0-Current" />
+        <xmlpoke file="minify\web\web.config"
+                 xpath="/configuration/log4net/appender[@name='AwsSnsAppender']/subjectPrefix/@value"
+                 value="GRID0-Current" />
+        <xmlpoke file="minify\web\web.config"
+                 xpath="/configuration/system.web/customErrors/@mode"
+                 value="On" />
+
+        <property name="tmp_connstring" value="${connstring}" />
+        <property name="connstring" value="${grid-connstring-sa}" />
+        <call target="upgrade-win" />
+        <call target="upgrade-web" />
+		<call target="BuildASDatabaseFile" />
+        <!-- run test data scripts -->
+        <echo message="Running test data scripts..." />
+        <sql-dir-run connstring="${connstring}" dir="Blue.Cosacs.Automated.Tests\Blue.Cosacs.Selenium\TestDataScripts\" regex=".*\.sql" />
+        <property name="connstring" value="${tmp_connstring}" />
+
+        <msbuild project="Blue.Cosacs.Automated.Tests\Blue.Cosacs.Automated.Tests.sln">
+            <property name="Configuration" value="Debug"/>
+            <property name="Platform" value="Any CPU" />
+        </msbuild>
+
+        <echo message="Starting Selenium distributed tests..." />
+        <property name="selenium.dir" value="Blue.Cosacs.Automated.Tests\Blue.Cosacs.Selenium\bin\Debug\" />
+
+        <property name="selenium.browser" value="chrome" />
+        <call target="selenium" />
+
+        <property name="selenium.browser" value="firefox" />
+        <call target="selenium" />
+
+		<call target="compress-web" />
+    </target>
+
+    <target name="selenium">
+        <mkdir dir="${selenium.dir}\${selenium.browser}\" failonerror="false"/>
+
+        <delete includeemptydirs="true" failonerror="false">
+            <fileset basedir="${selenium.dir}">
+                <include name="${selenium.browser}/**/*.*" />
+                <include name="Results.xml" />
+                <include name="Screenshots/*.*" />
+            </fileset>
+        </delete>
+
+        <exec program="Blue.Cosacs.Selenium.exe"
+                  basedir="${selenium.dir}"
+                  workingdir="${selenium.dir}"
+                  commandline="${selenium.browser} 10 ${grid-agent-count} ${grid-cosacs-url} http://grid0:4444/wd/hub LINUX" />
+
+        <move file="${selenium.dir}\Results.xml" tofile="${selenium.dir}\${selenium.browser}\Results.xml" />
+        <move todir="${selenium.dir}\${selenium.browser}\Screenshots\">
+            <fileset basedir="${selenium.dir}\Screenshots\">
+                <include name="*.jpg" />
+            </fileset>
+        </move>
+
+    </target>
+
+    <target name="build-web">
+        <msbuild project="Web.sln">
+            <property name="Configuration" value="Release"/>
+            <property name="Platform" value="Any CPU" />
+        </msbuild>
+    </target>
+
+    <target name="upgrade-win">
+		<copy todir="modulesSql" includeemptydirs="false" overwrite="true">
+            <fileset basedir="Blue.Cosacs.StoredProcedures"/>
+		</copy>
+    </target>
+
+    <target name="upgrade-web">
+		<copy todir="modulesSql" includeemptydirs="false" overwrite="true">
+            <fileset basedir="Blue.Cosacs.Web.Sql"/>
+		</copy>
+    </target>
+
+    <target name="install-dependencies">
+        <exec program="..\bin\node.exe" commandline="..\..\bin\bower\bin\bower install --config.interactive=false -s" workingdir=".\Blue.Cosacs.Web\" />
+    </target>
+
+    <target name="app.build.generated.js">
+        <exec program="sh.exe" commandline="data-modules.sh" /><!-- output="data-modules.partial.txt" -->
+        <!--loadfile file="data-modules.partial.txt" property="data-modules" />
+        <loadfile file="Blue.Cosacs.Web/app.build.js" property="app.build.js">
+            <filterchain>
+                <replacetokens>
+                    <token key="//_DATA_MODULES_" value="${data-modules}" />
+                </replacetokens>
+            </filterchain>
+        </loadfile>
+        <echo file="app.build.generated.js">${app.build.js}</echo-->
+    </target>
+
+    <target name="minify" depends="install-dependencies">
+        <attrib normal="true" failonerror="false">
+            <fileset>
+                <include name="minify/**/*.*" />
+            </fileset>
+        </attrib>
+        <delete>
+            <fileset basedir="minify\">
+                <include name="**/*.*" />
+            </fileset>
+        </delete>
+        <delete dir="minify"/>
+        <mkdir dir="minify"/>
+
+        <call target="compile-less"/>
+
+        <exec program="..\bin\node.exe" commandline=" ..\bin\r.js -o Blue.Cosacs.Web\app.build.js" />
+        <copy file="minify\js\lib\almond.js" tofile="minify\js\-all-.js" />
+
+        <call target="artifacts-web-minify" />
+
+        <echo message="Timestamp is: ${timestamp}"/>
+        <!-- copy minified css to artifacts folder -->
+        <mkdir dir="minify\web\static\${timestamp}\"/>
+        <mkdir dir="minify\web\static\${timestamp}\css\"/>
+        <mkdir dir="minify\web\static\${timestamp}\js\"/>
+        <mkdir dir="minify\web\static\${timestamp}\images\"/>
+        <copy todir="minify\web\static\${timestamp}\css\">
+            <fileset basedir="minify\css\">
+                <include name="*.css"/>
+            </fileset>
+        </copy>
+        <move todir="minify\web\static\${timestamp}\css\">
+            <fileset basedir="minify\web\static\css\">
+                <include name="**/*.*"/>
+            </fileset>
+        </move>
+        <copy todir="minify\web\static\${timestamp}\images\">
+            <fileset basedir="minify\web\static\images\">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+        <delete dir="minify\web\static\css\" />
+        <copy file="minify\js\-all-.js" tofile="minify\web\static\${timestamp}\js\-all-.js"/>
+
+        <attrib readonly="false" file="minify\web\web.config" />
+        <xmlpoke file="minify\web\web.config"
+            xpath="/configuration/appSettings/add[@key='BuildTimestamp']/@value"
+            value="${timestamp}" />
+
+        <move file="minify\web\static\Web-cache.config" tofile="minify\web\static\${timestamp}\Web.config" />
+    </target>
+
+    <target name="compile-less">
+        <mkdir dir="minify\css\"/>
+
+        <exec program="..\bin\node.exe"
+             verbose="true" basedir="."
+             commandline="..\bin\less\bin\lessc --yui-compress Blue.Cosacs.Web\static\css\main.less minify\css\main.css" />
+
+        <exec program="..\bin\node.exe"
+             verbose="true" basedir="."
+             commandline="..\bin\less\bin\lessc --yui-compress Blue.Cosacs.Web\static\css\print.less minify\css\print.css" />
+    </target>
+
+    <target name="artifacts-web-minify">
+        <copy todir="minify\web\" includeemptydirs="false">
+            <fileset basedir="Blue.Cosacs.Web">
+                <exclude name="obj/"/>
+				<exclude name="node_modules/"/>
+                <exclude name="bin/*.xml"/>
+                <exclude name="Properties/"/>
+                <exclude name="Helpers/"/>
+                <exclude name="Models/"/>
+                <exclude name="Common/"/>
+                <exclude name="static/test/"/>
+                <exclude name="static/dev/"/>
+                <exclude name="static/js/unused/"/>
+                <exclude name="static/js/Booking/"/>
+                <exclude name="**/*.js"/>
+                <exclude name="**/*.pdb"/>
+                <exclude name="**/*.csproj*"/>
+                <exclude name="**/*.cs"/>
+                <exclude name="**/*.coffee"/>
+                <exclude name="**/packages.config"/>
+                <exclude name="*.log" />
+                <exclude name=".idea/**/*.*" />
+                <exclude name="App_Readme/*.*" />
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+    </target>
+	
+	<target name="BuildASDatabaseFile">
+		<echo message="Building Analysis Service's Database Definition File" />
+		<msbuild project="BuildHelper\BuildASDatabaseFile.proj" target="BuildWarrantyASDatabaseFile">
+			<property name="Configuration" value="Release"/>
+			<property name="Configuration" value="Release"/>
+		</msbuild>
+		<echo message="Building Merchandising Analysis Service's Database Definition File" />
+		<msbuild project="BuildHelper\BuildASDatabaseFile.proj" target="BuildMerchandisingASDatabaseFile">
+			<property name="Configuration" value="Release"/>
+			<property name="Configuration" value="Release"/>
+		</msbuild>	
+    </target>
+	
+	<target name="compress-web">
+		<delete failonerror="false" file="web.zip" />
+
+		<copy todir="minify\sql" includeemptydirs="false">
+			<fileset basedir="Blue.Cosacs.Web.Sql">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+		
+		<copy file="..\bin\Solr\solr\cosacs\conf\schema.xml" todir="minify\Solr\solr\cosacs\conf\schema.xml" />
+		
+		<copy todir="minify\Hub" includeemptydirs="false">
+            <fileset basedir="Blue.Hub.Service.Host\bin\Release\">
+                <exclude name="**/*.pdb"/>
+                <exclude name="**/*.log"/>
+                <exclude name="**/*.vshost.*"/>
+                <exclude name="**/*.xml"/>
+                <exclude name="**/Blue.Hub.Service.Host.*"/>
+                <include name="**/*" />
+            </fileset>
+        </copy>
+		
+		<exec program="7z.exe" basedir ="..\bin\7-Zip\" commandline="a -r web.zip minify\web\ minify\sql\ minify\solr\ minify\hub\ -mx=9" />
+	</target>
+</project>

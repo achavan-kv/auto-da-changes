@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Report" namespace="Blue.Cosacs.Report" label="Report">
+    <Connection server="." database="cosacs" />
+    <Queries>
+      <DataSet name="WeeklySummary"/>
+      <DataSet name="MonthlyClaimsSummaryBySupplier"/>
+      <DataSet name="MonthlyClaimsCategoriesBySupplier"/>
+      <DataSet name="ServiceClaims"/>
+      <DataSet name="OutstandingSRsPerProductCategory"/>
+    </Queries>
+    <Tables>
+    </Tables>
+    <Views>
+    </Views>
+    <Settings>
+        <Setting id="ExactDaysFromDeliveryOnCustomersWithNoEWIR"
+                 name="Exact number of days from product delivery on customers with no EW/IR (to search)"
+                 type="int" category="Second Effort Solicitation">
+            <Description>Number of days to search customers who did not buy an EW/IR warranty and received their product(s) exactly X days ago.</Description>
+            <Default>14</Default>
+        </Setting>
+        <Setting id="DaysToFywExpirationOnCustomersWithNoEW"
+                 name="Number of days until FYW expires on customers with no EW"
+                 type="int" category="Second Effort Solicitation">
+            <Description>Number of days to search customers with no EW whose FYW will expire within the next X days</Description>
+            <Default>14</Default>
+        </Setting>
+        <Setting id="DaysSinceFywRepairOnCustomersWithNoEW"
+                 name="Number of days since FYW repair on customers with no EW (to search)"
+                 type="int" category="Second Effort Solicitation">
+            <Description>Number of days to search customers with no EW who have had a FYW repair within the last X days</Description>
+            <Default>14</Default>
+        </Setting>
+    </Settings>
+</Model>

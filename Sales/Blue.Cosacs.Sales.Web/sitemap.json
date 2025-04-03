@@ -1,0 +1,28 @@
+[
+  {
+    "label": "Sales",
+    "permission": 8800,
+    "nodes": [
+      {
+        "label": "Point of Sale",
+        "url": "#/Sales/pos",
+        "permission": 8801
+      },
+      {
+        "label": "Search Orders",
+        "url": "#/Sales/Orders",
+        "permission": 8802
+      },
+      {
+        "label": "Contracts Setup",
+        "url": "#/Sales/ContractsSetup",
+        "permission": 8806
+      },
+      {
+        "label": "Discount Limit Setup",
+        "url": "#/Sales/DiscountLimitSetup",
+        "permission": 8805
+      }
+    ]
+  }
+]

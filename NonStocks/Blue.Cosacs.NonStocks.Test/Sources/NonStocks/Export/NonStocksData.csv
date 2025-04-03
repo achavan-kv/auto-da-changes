@@ -1,0 +1,4 @@
+﻿Id,Type,SKU,VendorUPC,ShortDescription,LongDescription,Active,TaxRate,Length,IsStaffDiscount,DiscountRecurringPeriod,Deleted
+1,"inst","IC","IC","INSTALLATION CHARGES",,1,12.5,,,,
+3,"inst","LCDINST","LCDINST","LCD WALL MOUNT","LCD WALL MOUNT",0,12.5,,,,
+5,"inst","HMTHINST","HMTHINST","HOME THEATRE INSTALLATION","INSTALLATION",1,12.5,,,,

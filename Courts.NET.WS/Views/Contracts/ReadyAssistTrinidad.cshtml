@@ -1,0 +1,115 @@
+﻿@model Blue.Cosacs.Shared.LinkedContractsView
+@using Blue.Cosacs.Shared.Extensions;
+
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "Ready Assist Contract";
+}
+
+<style type="text/css">
+       .pageBreak {
+        page-break-after: always;
+        clear: both;
+}
+
+</style>
+
+<div style="width:100%; font-size:1.85em">
+    <strong>UNICOMER(Trinidad) Ltd &nbsp; &nbsp; &nbsp; ACCOUNT NUMBER &nbsp; &nbsp; @Model.acctno</strong>
+</div>
+
+<div>
+
+ <div style="position:relative; left:430px; top:10px">
+    <div style="font-size:1.5em">Name: <span style="margin-left: 30px;"> @Model.CustomerName</span></div>
+
+    <div style="font-size:1.5em">Address:&nbsp; &nbsp; @Model.AddressLine1
+        <div style="position:relative; left: 90px;">
+            <div>@Model.AddressLine2</div>
+            <div>@Model.AddressLine3</div>
+            <div>@Model.PostCode</div>
+        </div>
+    </div>
+ </div>
+
+
+ <div style="position:relative; left:200px; top:30px; font-size:1.85em"><strong>READY ASSIST SERVICE AGREEMENT</strong></div>
+
+
+ <div style="position:relative; top:60px; font-size:1.25em"> 
+    
+    <p style="width:80%;font-size:1.25em">
+        This agreement is made this the<strong> @Model.AgreementDay @Model.AgreementMonth @Model.AgreementYear</strong> between (<strong>@Model.CustomerName</strong>) of (<strong>@Model.AddressLine1, @Model.AddressLine2, @Model.AddressLine3, @Model.PostCode</strong>) in the island of Trinidad and Tobago; account no <strong>@Model.acctno</strong> (of the first part, hereinafter referred as the “Affiliate”) and <strong>American Assist Trinidad And Tobago Limited</strong> (of the second part, hereinafter referred as the “Service Provider”), a company duly registered under the under the Companies Act 1995 having its registered place of business at ESG Business Suites, Fitt Court Limited, 9-11 Fitt Street, Woodbrook, and <strong>Unicomer (Trinidad) Ltd.</strong> (of the third part hereinafter referred as the “Agent”) a company duly registered under the Companies Act 1995 having its registered place of business at the Corner Don Miguel Road & Churchill Roosevelt Highway, El Socorro, in the island of Trinidad.
+
+    </p>
+ </div>
+
+
+ <div style="width:100%; position:relative; top:70px">
+ 
+    <div style="font-size:1.85em"><strong>WHEREAS THE PARTIES HEREBY AGREE AS FOLLOWS: </strong></div>
+
+    
+    <div style="width:100%">
+
+             <p style="width:90%;font-size:1.85em"><strong>1. </strong>The Agent will offer for sale on behalf of the Service Provider, either by way of direct payment or payment on terms as determined by the Agent, an assistance package known as “Ready Assist” hereinafter referred to as “The Package.”</p>
+
+             <p style="width:90%;font-size:1.85em"><strong>2. </strong>The Service Provider will provide  The Package to the Customer with the following coverage:</p>
+
+             <p style="position:relative; width:80%;font-size:1.85em; left:15px"><strong>(a) ROADSIDE ASSITANCE </strong> which shall include towing services, tyre services, battery services, emergency gas delivery and vehicle lock-out service. </p>
+
+             <p style="position:relative; width:80%;font-size:1.85em; left:15px"><strong>(b) MEDICAL ASSISTANCE </strong> which shall include emergency ambulance transportation at home or on the road (Service Provider does not transport patients already warded from one medical center to another), phone call consultation, transmission of urgent messages related to a medical emergency, medical concierge from doctors on duty inclusive of nearby hospitals and medical centers, doctor’s house calls and prescriptions delivery.</p>
+            
+             <p style="position:relative; width:80%;font-size:1.85em; left:15px"><strong>(c) OPTICAL ASSISTANCE</strong> which shall include discounts on eyewear, free eye exams, free minor repairs and cleaning of eyewear, priority scheduling for eye exams in emergencies and free stock trial contact lenses. </p>
+            
+             <p style="position:relative; width:80%;font-size:1.85em; left:15px"><strong>(d) HOME ASSISTANCE  </strong> which shall include locksmith services, plumbing services, electrical services, and glass repair services. </p>
+
+             <p style="width:90%;font-size:1.85em"><strong>3. </strong>In consideration for the services provided by the Service Provider, the Customer agrees to pay to the Agent, (<strong>@Model.moneyString</strong>) <strong>@Model.moneyValue</strong> either in full or in equal monthly instalments for a period of <strong>@Model.ContractLength</strong> months on the 1st day of each month or at a time agreed upon by both the Customer and the Agent or in accordance with the terms and conditions of the Hire Purchase contract dated <strong> @Model.AgreementDay @Model.AgreementMonth @Model.AgreementYear</strong> </p>
+
+             <p style="width:90%;font-size:1.85em"><strong>4. </strong>The Customer agrees to purchase this Package at the customer’s own free will, without fraud, coercion or undue influence from anybody whomsoever. </p>
+
+             <div class="pageBreak">&nbsp; &nbsp;</div>
+
+             <p style="width:90%;font-size:1.85em"><strong>5. </strong>The Customer acknowledges receipt of a flyer from the Agent, which details its coverage, and a full booklet (Welcome Kit) outlining the general terms and conditions, and exclusions and has read these documents before signing this Agreement. </p>
+
+             <p style="width:90%;font-size:1.85em"><strong>6. </strong> The Service Provider or The Customer can terminate this Agreement by giving two (2) weeks written notice to the other party. Such notice may be delivered via The Agent. Upon notice of termination by the customer, all monies owed to the Service Provider for the month such notice is given by the Customer, shall be paid to the Agent.</p>
+
+             <p style="width:90%;font-size:1.85em"><strong>7. </strong> In cases where a direct payment was made for the Package by the Customer, the Agent shall refund the customer for the un-expired term of the Package, from the month following notice of termination. Such refund is only payable upon written confirmation being received from The Service Provider of termination of the Package. </p>
+
+            <p style="width:90%;font-size:1.85em"><strong>8. </strong>Any delay or failure in the performance by the Service Provider hereunder shall be excused if and to the extent caused by the occurrence of a Force Majeure. For purposes of this Agreement, Force Majeure shall mean a cause or event that is not reasonably foreseeable or otherwise caused by or under the control of the Service Provider, including acts of God, fires, floods, explosions, riots, wars, hurricane, sabotage, terrorism, vandalism, accident, restraint of government, governmental acts, injunctions, labor strikes, and other like events that are beyond the reasonable anticipation and control of the Service Provider, despite the Service Provider's reasonable efforts to prevent, avoid, delay, or mitigate the effect of such acts, events or occurrences, and which events or the effects thereof are not attributable to the Service Provider’s failure to perform its obligations</p>
+
+            <p style="width:90%;font-size:1.85em"><strong>9. </strong>In the event that the Service Provider is unable to fulfill its obligations for any reason the Agreement will be terminated by the Service Provider and the payments by the Customer be refunded by the Agent upon notice by the Service Provider to the Agent of its inability to perform its obligations under the Agreement. In the event that the Service Provider is unable to fulfill any part of its obligations under this Agreement the payment will be prorated and refunded to the Customer and this Agreement terminated within the Notice period listed above.</p>
+
+            <p style="width:90%;font-size:1.85em"><strong>10. </strong>The Service Provider shall indemnify and hold harmless the Agent against any and all liabilities and/or claims including legal fees which may arise via the Customer, and/or The Customer’s agent, and/or the Customer’s  assigns for a period up to twelve years after termination of this Agreement by either the Customer or the Service Provider</p>
+
+            <p style="width:90%;font-size:1.85em"><strong>11. </strong>This Agreement is governed by the laws of Trinidad and Tobago and supersedes any prior agreement and cannot be varied without the consent of all of the parties in writing. </p>
+    </div>
+           
+
+ </div>
+
+    <div style="position:relative; top:100px; font-size:1.85em">
+
+        Signed by the within-named parties on the day hereinabove written:
+
+    </div>
+
+     <div style="position:relative; top:170px; font-size:1.85em">                           
+        <div>_____________________________ <span style="margin-left: 20%;">_________________________</div>
+        <div>CUSTOMER SIGNATURE <span style="margin-left: 32%;"> PRINT CUSTOMER NAME</div>
+     </div>
+
+
+
+       <div style="position:relative; top:240px; font-size:1.85em">
+        <div>_____________________________ <span style="margin-left: 20%;">_________________________</div>
+        <div>SALESPERSON SIGNATURE <span style="margin-left: 30%;"> PRINT SALESPERSON NAME</div>
+        <div style="font-size:0.5em">for Unicomer Trinidad Limited </div>
+        <div style="font-size:0.5em">Agent for and on behalf of American Assist Trinidad and Tobago Limited</div>
+     </div>
+
+</div>
+
+
+
+

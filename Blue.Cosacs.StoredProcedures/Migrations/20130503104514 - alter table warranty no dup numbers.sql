@@ -1,0 +1,5 @@
+ALTER TABLE [Warranty].Warranty 
+ADD  CONSTRAINT [UQ_Number] UNIQUE NONCLUSTERED 
+(
+	Number ASC
+)

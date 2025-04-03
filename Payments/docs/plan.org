@@ -1,0 +1,166 @@
+
+* Payments planning (first 240 hours)
+** 25908 Payments - Agreement/Account Search			   :32points:
+*** http://support.bluebridgeltd.com/issues/25908
+*** we should spend 16 hours on this
+*** read only service to load the data (Miguel)
+*** for agreements and accounts is always a readonly service (Miguel)
+*** Mock credit data
+**** write sample json's agree with credit
+
+
+** 25906 Payments - Order Search or issue x25773x 		   :32points:
+*** http://support.bluebridgeltd.com/issues/25773
+*** http://support.bluebridgeltd.com/issues/25906
+*** we should spend 16 hours on 
+*** create angular service readonly - look at existing Pos sales 
+*** We should need mock data for this one (talk with POS/Sales) (Miguel)
+
+
+** 25769 Payments - Order search on Barcode 			    :8points:
+*** http://support.bluebridgeltd.com/issues/25769
+*** TALK WITH CHANI at the same time for this issue and the next issue #25791
+*** we should spend 4 hours on this
+*** javascript api exists for this (only works insice the shell)
+*** get information about how the barcode scanner works from POS/Sales
+**** ask Chani where the code that makes it work is...
+**** ask for one or two example barcodes to scan from team POS or Suresh
+*** make the scanner scan something (a number) to the order text field
+*** mock data for the numbers that are being scanned
+
+
+** 25907 Payments - Customer Search 				   :32points:
+*** http://support.bluebridgeltd.com/issues/25907
+*** we should spend only 16 hours on this issue at first
+*** (talk with credit) they will have the customer search (define the json example)
+*** use ng-repeat, create search template & show search results
+
+
+** 26003 Payments - Load Customer in Payments Screen 		   :16points:
+*** http://support.bluebridgeltd.com/issues/26003
+*** For each file talk with credit to reuse their customer search functionality
+*** The customer details should be loaded in the payments screen.
+**** Like: Customer name, address, etc.
+*** Create json to be loaded on the file system and load it into javascript (only when needed)
+
+
+** 25791 Payments - Load Customer details by swiping the Store Card :8points:
+*** http://support.bluebridgeltd.com/issues/25791
+*** we should spend 4 hours on this issue but might be impossible
+*** get information about how the card swiper works from POS/Sales
+**** ask Chani where the code that makes it work is...
+**** get the swipe cards form team POS or Sure
+*** make the swiper dump the data into the order text field
+*** mock data for the card numbers being swiped
+*** load the customer data on the customer screen
+
+
+** 25793 Payments - Get settlement value from Credit 		    :4points:
+*** http://support.bluebridgeltd.com/issues/25793
+*** define endpoint for credit to code
+*** tell them we'll send an agreement and a date for them to calc the settlement
+*** create the angular service that gets the data from the credit endpoint
+*** mock the data and display it on the payments screen
+***
+
+
+** 25789 Payments - Get Rebate value from Credit Rebate Calculations service  :4points:
+*** http://support.bluebridgeltd.com/issues/25789
+*** define endpoint se we can tell credit what we need them to code
+*** tell them we'll send an agreement and a date for them to calc the rebate
+*** create the angular service that gets the data from the credit endpoint
+*** mock the data and display it on the payments screen
+
+
+** 25906 Payments - Order Search (skip this - repeated) 	   :32points:
+*** http://support.bluebridgeltd.com/issues/25906
+
+
+** 25774 Payments - Load Order in Payments Screen 		   :16points:
+*** http://support.bluebridgeltd.com/issues/25774
+*** Search an order #25773, click to load it on the Payments screen.
+*** Figure out what data is already on our side (saved by subscribers) and,
+*** the data that has to be queried from other modules
+*** Mock the credit data, and load everything on the screen
+*** Take into account that payments should not fail if a module is unavailable
+*** Create services to load the rest of the order data from sales
+*** Keep in mind that an order might have credit data to be loaded also create services for this 
+
+
+** 25909 Payments - Pay Cash Order 				   :32points:
+*** http://support.bluebridgeltd.com/issues/25909
+*** Load customer order on the payments screen
+*** Make the Pay button work
+*** Send email with what id (range) you'll be using for the payment messages schemas
+*** Create a new schema for payments (hub)
+*** Save the payment transaction on the database
+*** Make the publishing payment messages work
+
+
+** 26004 Payments - Load Agreement in Payments Screen 		    :8points:
+*** http://support.bluebridgeltd.com/issues/26004
+*** From the search screen select an account
+*** Make sure to develop everything necessary to load the agreement bit
+*** Think about what agreement data might need, subscribers, services endpoints or mocks
+*** Don't forget that only payable agreements should be selected for payment
+
+
+** 25770 Payments - Pay Credit On Specific Agreement 		   :16points:
+*** http://support.bluebridgeltd.com/issues/25770
+*** Load agreement on the payments screen
+*** Make the Pay button work
+*** Create a new payment schema for potential payments
+**** It will be used on payment methods that might be refused, like: cheque and bank transfers
+*** Send to the hub a payment for the specific agreement
+
+** 25772 Payments - Split payments between credit agreements 	   :32points:
+*** http://support.bluebridgeltd.com/issues/25772
+
+
+** 25778 Payments - Capture Card Details 			    :8points:
+*** http://support.bluebridgeltd.com/issues/25778
+
+
+** 25779 Payments - Capture Cheque Details 			    :8points:
+*** http://support.bluebridgeltd.com/issues/25779
+
+
+** 25776 Payments - Add Full Balance Payment option 		   :16points:
+*** http://support.bluebridgeltd.com/issues/25776
+
+
+** 25968 Payments - Publish Payment Message 			   :32points:
+*** http://support.bluebridgeltd.com/issues/25968
+
+
+** 25969 Payments - Publish Payment Message for Cheque 		   :16points:
+*** http://support.bluebridgeltd.com/issues/25969
+
+
+** 25794 Payments - Print Payment Receipt 			   :32points:
+*** http://support.bluebridgeltd.com/issues/25794
+
+
+** 25784 Payments - Account Mini-Statement Print 		   :16points:
+*** http://support.bluebridgeltd.com/issues/25784
+
+
+** 25782 Payments - Create Exchange Rate Calculator 		   :16points:
+*** http://support.bluebridgeltd.com/issues/25782
+
+
+** 25783 Payments - Rebate Simulator 				    :8points:
+*** http://support.bluebridgeltd.com/issues/25783
+
+
+** 26007 Payments - Pending Payments Screen - Authorisation for accepting cheque payments  :16points:
+*** http://support.bluebridgeltd.com/issues/26007
+
+
+** 25973 Payments - Prevent Cashier accessing system if deposits pending  :8points:
+*** http://support.bluebridgeltd.com/issues/25973
+
+
+
+
+

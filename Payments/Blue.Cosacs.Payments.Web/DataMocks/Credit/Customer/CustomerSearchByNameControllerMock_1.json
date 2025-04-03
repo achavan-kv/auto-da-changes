@@ -1,0 +1,62 @@
+[
+    {
+        "Id": 1,
+        "LegacyId": "-HR021073",
+        "Branch": "850",
+        "FirstName": "HILMA",
+        "LastName": "ROUSE",
+        "Title": "MS",
+        "Alias": "CINDA",
+        "DateOfBirth": "1973-10-02",
+        "Gender": "Female",
+        "AddressType": "Home",
+        "Address1": "20 Gold Street",
+        "Address2": "Kingston",
+        "Address3": "Jamaica",
+        "PostCode": "9875",
+        "Agreements": [
+            {
+                "AgreementNumber": 1,
+                "OutstandingBalance": 200,
+                "AgreementTotal": 250,
+                "Arrears": 25
+            },
+            {
+                "AgreementNumber": 2,
+                "OutstandingBalance": 100,
+                "AgreementTotal": 250,
+                "Arrears": 0
+            }
+        ]
+    },
+    {
+        "Id": 2,
+        "LegacyId": "-HR021073",
+        "Branch": "850",
+        "FirstName": "HILMA",
+        "LastName": "ROUSE",
+        "Title": "MS",
+        "Alias": "CINDA",
+        "DateOfBirth": "1973-10-02",
+        "Gender": "Female",
+        "AddressType": "Work",
+        "Address1": "20 Gold Street",
+        "Address2": "Kingston",
+        "Address3": "Jamaica",
+        "PostCode": "9875",
+        "Agreements": [
+            {
+                "AgreementNumber": 1,
+                "OutstandingBalance": 200,
+                "AgreementTotal": 250,
+                "Arrears": 0
+            },
+            {
+                "AgreementNumber": 2,
+                "OutstandingBalance": 100,
+                "AgreementTotal": 250,
+                "Arrears": 0
+            }
+        ]
+    }
+]

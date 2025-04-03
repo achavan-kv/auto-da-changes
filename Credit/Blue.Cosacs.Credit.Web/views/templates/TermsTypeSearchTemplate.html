@@ -1,0 +1,164 @@
+<div ng-repeat="result in displayResults">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-8">
+                    <strong>{{result.TermsType}}</strong>
+                </div>
+                <div class="col-lg-1">
+                    <span ng-if="result.IsActive == 'Yes'" class="label label-tag label-success">Active</span>
+                    <span ng-if="result.IsActive == 'No'" class="label label-tag label-danger">Inactive</span>
+                </div>
+                <div class="col-lg-1">
+                    <span ng-if="result.IsDisabled == 'No'" class="label label-tag label-success">Enabled</span>
+                    <span ng-if="result.IsDisabled == 'Yes'" class="label label-tag label-danger">Disabled</span>
+                </div>
+                <div class="col-lg-1" ng-hide="isTermsTypeSimulator">
+                    <div>
+                        <a ng-href="#/Credit/termsType/{{result.TermsTypeId}}/copy">
+                            <span class="glyphicons duplicate" title="Copy"> Copy</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-1" ng-hide="isTermsTypeSimulator">
+                    <div>
+                        <a ng-href="#/Credit/termsType/{{result.TermsTypeId}}/edit">
+                            <span class="glyphicons pencil" title="Edit"> Edit</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body centre-section">
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div><strong>Admin Fee % : </strong>
+                            {{result.AdminFeePercentage}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Interest Free (months) : </strong>
+                            {{result.InterestFree}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div><strong>Min Term Length : </strong>
+                            {{result.MinTermLength}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Deposit Required % : </strong>
+                            {{result.DepositRequiredPercentage}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Cpi % : </strong>
+                            {{result.CpiPercentage}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div ng-show="result.AdminFee"><strong>Admin Fee : </strong>
+                            {{result.AdminFee}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div><strong>Max Term Length : </strong>
+                            {{result.MaxTermLength}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Interest Rate % : </strong>
+                            {{result.InterestRatePercentage}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Customer Type : </strong>
+                            {{result.CustomerType}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div><strong>Default Term Length : </strong>
+                            {{result.DefaultTermLength}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Is RF Agreement : </strong>
+                            <span ng-if="result.IsRfAgreement">Yes</span>
+                            <span ng-if="!result.IsRfAgreement">No</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Is HP Agreement : </strong>
+                            <span ng-if="result.IsHpAgreement">Yes</span>
+                            <span ng-if="!result.IsHpAgreement">No</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div><strong>Is Staff : </strong>
+                            <span ng-if="result.IsStaff">Yes</span>
+                            <span ng-if="!result.IsStaff">No</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Customer Tags : </strong>
+                            <span ng-repeat="tag in result.CustomerTags">
+                            {{tag}},
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Product Skus : </strong>
+                            <span ng-repeat="sku in result.ProductSkus">
+                            {{sku}},
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div><strong>Product Hierarchy Tags : </strong>
+                            <span ng-repeat="productHierarchyTag in result.ProductHierarchyTags">
+                            {{productHierarchyTag}},
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div><strong>Fascias: </strong>
+                             <span ng-repeat="fascia in result.Fascias">
+                            {{fascia}},
+                                 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <div>
+                        <span><b>Created</b></span><span title="{{result.CreatedOn  | date:'EEEE dd-MMMM-yyyy HH:mm'}}">  {{fromNow(result.CreatedOn)}}</span>
+                    </div>
+                    <div>
+                        <div class="date" title="{{result.CreatedOn }}">
+                            {{local(result.CreatedOn) | date:'EEEE dd-MMMM-yyyy HH:mm'}}
+                        </div>
+                        <div>by <a ng-href="Cosacs/Admin/Users/Profile/{{result.CreatedBy}}">{{result.CreatedBy}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,2 @@
+ALTER TABLE dbo.lineitem
+ALTER COLUMN itemno VARCHAR(18) NULL

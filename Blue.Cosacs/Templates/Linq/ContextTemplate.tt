@@ -1,0 +1,22 @@
+﻿<#+
+public class LinqContextTemplate : Template
+{
+    public string Name;
+	
+    public override string TransformText()
+    {
+		PushIndent("\t");
+#>
+partial class Context
+{
+    public System.Data.Linq.Table<Shared.<#= Name #>> <#= Name #>
+    {
+        get { return this.GetTable<Shared.<#= Name #>>(); }
+    }
+}
+<#+
+		PopIndent();
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

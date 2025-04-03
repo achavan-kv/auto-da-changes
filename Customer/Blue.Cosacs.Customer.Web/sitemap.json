@@ -1,0 +1,12 @@
+[
+    {
+        "label": "Configuration",
+        "nodes": [
+            {
+                "label": "Customer Re-Indexing",
+                "url": "#/Customer/Indexing",
+                "permission": 2600
+            }
+        ]
+    }
+]

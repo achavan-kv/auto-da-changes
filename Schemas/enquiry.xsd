@@ -1,0 +1,433 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Enquiry Request Version 0.31 26/8/2003 Draft  -->
+<!-- Disclaimer: subject to change by Baycorp Advantage at any time  -->
+<!-- Confidential - May Not be Disclosed to Outside Parties Without the Express Permission of Baycorp Advantage -->
+<!-- Revision History                                                -->
+
+<!-- Date       Version  By            Description                               -->
+<!-- 26/8/2003  0.2       Rachel Welsh  IICIDCOD max length 20                   -->
+<!--                                   Field name comments match web screens     -->
+<!-- 27/8/2003  0.3      Rachel Welsh  As Web XML. User from logon not document. -->
+<!--                                   Remove Client, User.                      -->
+<!--                                   ACTION is 5 long                          --> 
+<!-- 9/9/2003  0.31      Rachel Welsh  CLIENT_REFERENCE max length 20 not 5      --> 
+<!--                                   AMOUNT is 11/2 not 6                      --> 
+<!--                                   IIAPOSCOD 10 not 6                        --> 
+  
+<xs:simpleType name="date">
+<xs:restriction base="xs:token">
+<xs:pattern value="[0-3]?[0-9]/[0-1]?[0-9]/[1-2][0-9][0-9][0-9]"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:element name="REQUEST">
+<xs:complexType>
+   
+     <xs:sequence>
+              
+      <xs:element name="SERVICE">
+      <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="10"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+      <xs:element name="ACTION">
+      <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="5"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+
+     	<xs:element name='MESSAGE'>
+	<xs:complexType>
+	<xs:sequence>
+
+   	
+    <xs:element name="DATA">
+    <xs:complexType>
+    <xs:sequence>
+     
+     <!-- Enquiry Type  -->
+     <xs:element name="IPIENQTYP">
+     <xs:simpleType>
+     <xs:restriction base="xs:string">
+    <xs:maxLength value="5"/>
+      </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+     
+     <!-- Product Type  -->       
+     <xs:element name="ACCOUNT_TYPE">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="5"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Client Reference  -->
+     <xs:element name="CLIENT_REFERENCE">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="20"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	 
+	 <!-- Amount  -->
+     <xs:element name="CONSUMER_AMOUNT">
+     <xs:simpleType>
+    	<xs:restriction base="xs:decimal">
+	<xs:totalDigits value="11"/>
+	<xs:fractionDigits value="2"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Guarantor  -->
+     <xs:element name="GUARANTOR">
+     <xs:simpleType>
+     <xs:restriction base="xs:string">
+    <xs:maxLength value="5"/>
+      </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    
+    <!-- No of Consumers  -->
+     <xs:element name="NUM_ENQUIRIES">
+     <xs:simpleType>
+    	<xs:restriction base="xs:positiveInteger">
+     	 <xs:minInclusive value="1"/>
+    <xs:maxInclusive value="6"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+      
+     <xs:element name="CONSUMER" maxOccurs="6">
+     <xs:complexType>
+     <xs:sequence>
+     
+     <!-- Consumer ID Type -->
+     <xs:element name="IICIDTYP">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="5"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+     
+     <!-- Consumer ID Code -->
+     <xs:element name="IICIDCOD">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="20"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Consumer Family Name  -->
+     <xs:element name="IICNAM1"> 
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Consumer Given Name  -->
+     <xs:element name="IICNAM2" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Consumer Dialect Name  -->
+     <xs:element name="IICNAM3" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Consumer Maiden Name  -->
+	     <xs:element name="IICNAM4" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+     
+     <!-- Alias Family Name  -->
+     <xs:element name="IICANAM1" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Alias Given Name  -->
+     <xs:element name="IICANAM2" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Alias Dialect Name  -->
+     <xs:element name="IICANAM3" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Alias Maiden Name  -->
+     <xs:element name="IICANAM4" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Spouse Name  -->
+     <xs:element name="IICSPSNAM" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Date of Birth  -->
+     <xs:element name="IICDOB" type="date"/>
+     	
+	<!-- Gender Code  -->
+     <xs:element name="IICGENCOD">
+     <xs:simpleType>
+     <xs:restriction base="xs:string">
+    <xs:maxLength value="5"/>
+      </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    
+    <!-- Nationality Code  -->
+     <xs:element name="IICNATCOD" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="2"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Marital Status  -->
+	     <xs:element name="IICMARSTS" minOccurs="0">
+          <xs:simpleType>
+     <xs:restriction base="xs:string">
+    <xs:maxLength value="5"/>
+          </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+    
+    <!-- Ethnic Group  -->
+     <xs:element name="IICETHGRP" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="5"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+     
+     <!-- Ocupation  -->
+     <xs:element name="IIEOCCDES" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="80"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Employer  -->
+	     <xs:element name="IIEEMP" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="50"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Contact Type  -->
+     <xs:element name="IINNUMTYP" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="5"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Country Code  -->
+	     <xs:element name="IINISD" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="12"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Area Code  -->
+     <xs:element name="IINPFX" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="7"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Phone Number  -->
+     <xs:element name="IINNUM" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="25"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+     
+     <!-- Upto 3 Addresses  -->
+     <xs:element name = "ADDRESS" maxOccurs="3"> 
+     <xs:complexType>
+     <xs:sequence>
+     
+     <!-- Street Number  -->
+          <xs:element name="IIASTRNUMF" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="6"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Street Name -->
+	     <xs:element name="IIASTR">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="40"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Street Type -->
+     <xs:element name="IIASTRTYP" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="5"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Unit Number  -->
+     <xs:element name="IIAAPTNUM" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="8"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Building  -->
+	     <xs:element name="IIABLD" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="25"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Storey  -->
+          <xs:element name="IIAFLR" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="10"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Address Type  -->
+     <xs:element name="IIAADRTYP">
+     <xs:simpleType>
+     <xs:restriction base="xs:string">
+    <xs:maxLength value="5"/>
+      </xs:restriction>
+      </xs:simpleType>
+    </xs:element>
+	
+	<!-- Box/Bag/Window  -->
+     <xs:element name="IIAADRLN1" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="30"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- State/City  -->
+     <xs:element name="IIAADRLN2" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="50"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Country  -->
+     <xs:element name="IIACOUCOD">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="2"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+	
+	<!-- Postal Code  -->
+     <xs:element name="IIAPOSCOD" minOccurs="0">
+     <xs:simpleType>
+    	<xs:restriction base="xs:string">
+     	 <xs:maxLength value="10"/>
+    	</xs:restriction>
+ 	 </xs:simpleType>
+	</xs:element>
+     
+     </xs:sequence>
+    </xs:complexType>
+   </xs:element> 
+
+   </xs:sequence>
+   </xs:complexType>
+   </xs:element>
+
+   </xs:sequence>
+   </xs:complexType> 
+   </xs:element> 
+
+      </xs:sequence>
+  </xs:complexType>
+  </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+  </xs:element>
+</xs:schema>
+ 
+
+
+

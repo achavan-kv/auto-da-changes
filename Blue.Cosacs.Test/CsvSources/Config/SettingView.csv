@@ -1,0 +1,509 @@
+ParameterId,ParameterCategory,Name,Value,Type,Precision,OptionCategory,OptionListName,Description,CodeName
+1,19,.NET Automated Warranty Contract Print,True,checkbox,0," "," ",Tick here if the system is printing Automated Contracts.,printwarrantycontract
+2,17,.NET Refund/Corrections password,True,checkbox,0," "," ",If this box is ticked then a supervisor password will be necessary to do corrections and passwords,securerefunds
+3,02,Add To Term (months),24,numeric,0," "," ","The extended term of the Add To ",addtoterm
+4,18,Admin fee item,,text,0," "," ",If the admin fee is shown separately on the agreement then we need an item number entered here.,adminitemno
+5,15,Agreement Print Date Time Stamp,True,checkbox,0," "," ",Print the time on the agreement,agrtimeprint
+6,15,Agreement print Guarantor,False,checkbox,0," "," ",If you check this field it will print the Guarantor name on the HP Agreement when printed,agrgprint
+7,18,Agreement Tax Type,E,dropdown,0,TTC,TaxTypes,Agreement Total includes tax or not. I or E (Inclusive or exclusive),agrmttaxtype
+8,13,Allow selection of line items with zero stock,True,checkbox,0," "," ",Ticking this box will allow the user to select items that aren't in stock from the New Sales Order,allowzerostock
+9,12,Auto Reduce Accounts in SC5,True,checkbox,0," "," ",If account was on sc5 but arrears cleared then allow status to change. Otherwise all SC5's will stay as such regardless of a settlement,autodownsc5
+10,19,Automatic Contract Number Entry,True,checkbox,0," "," ",Uncheck this box if the user has to enter the Warranty Number Manually otherwise the system will generate a contract number,mandwarrantyno
+11,14,Bailiff Commission Equals Fee,True,checkbox,0," "," ",Determines whether the bailiff commission is equal to the fee,bcommissionequalsfee
+12,03,A: Bankrupt Accounts (Singapore),False,checkbox,0," "," ",Automatic: Include bankrupt accounts (Singapore only),bankrupt
+13,05,Barcodes for new account/ cash and go,True,checkbox,0," "," ","Tick this field if using barcodes on ",hasbarcodes
+14,11,Block Ready Finance instalments,2,numeric,0," "," ",A number is required in this field. The number represents how many months in Arrears a Ready Finance Account can be before the account is blocked and the customer can  no longer purchase on the RF Account. When the account moves out of arrears the account is unblocked,blockcreditmonths
+15,04,Cancellation Notes,False,checkbox,0," ",,Check this box if you wish to enter additional notes when processing a cancellation.,cancellationnotes
+16,04,Cancellation Rejection Code,R,text,0," "," ",If an account is automatically cancelled after rejection then this is the cancellation code that will get sent to fact,cancellationcode
+17,07,Capture Landlord Details,true,checkbox,0,,,This checkbox controls whether landlord details are required for credit applicants living in rented accommodation,capturelandlorddetails
+18,05,Cash Accounts default to COD,False,checkbox,0," "," ",Y/N field. Y = In New Sales Order Screen the COD field is enabled and ticked. N = COD is disabled,coddefault
+19,14,Cheque Clearance Days,0,numeric,0," ",,Number of days before a payment by cheque is assumed to be cleared (used for delivery authorisation),cheqdays
+20,05,COD Percentage,0,numeric,2," "," ",% before account automatically delivery authorized,codpercentage
+21,07,Copy References to Current,True,checkbox,0," "," ","If this box is ticked then in Sanction Stage 2 - References, the user will have the ability to Copy details from References previously captured from previous accounts for that customer  to the new reference",copyreferences
+22,01,Country Code,"B ",text,0,,,This is the country code,countrycode
+23,01,Country Name,Barbados,dropdown,0,CTY,Countries,This is the country name,countryname
+24,19,Credit Warranties Days before reminder letter,30,numeric,0," "," ",The system will send out a reminder letter to the customer to pay for his warranty on credit this many days after the purchase,creditwarrantyreminder
+25,19,Credit Warranties Number of days grace,7,numeric,0," "," ",If the customer hasn't paid for his warranty on credit in the allotted days he will this many days grace until the warranty is terminated by the system,creditwarrantygrace
+26,19,Credit Warranties return Item Number,,text,0," "," ",When the system automatically returns a warranty because the customer has failed to pay then this is the return item number which will be sent to FACT2000,cwitemno
+27,06,Days before Bureau recontacted,0,numeric,0," "," ",This is the period in which the bureau will not need to be contacted if the customer comes into the store before the period is over,creditscaninterval
+28,12,Days before letter is due,7,numeric,0," "," ",After letter sent out this is amount of days before the customer can respond,letterdays
+29,14,Decimal Places for .Net,C2,text,0," "," ","Indicates the number of decimal places to be used in .NET. If Prefixed by a  ""C"" then the currency symbol for the country will also show.  If prefixed by an ""F"" then the currency symbol for the country will not be displayed.  If prefixed by an ""N"" then the currency symbol for the country will not be displayed and, thousand separators are inserted between each group of three digits. Example: In Jamaica C2 would result in J$5000.45, F2 would result in 5000.45, N2 would result in 5,000.45.",decimalplaces
+30,08,Default Delivery Days,0,numeric,0," "," ","Determines the default required delivery date on the new account screen for new accounts ",defaultdeldays
+31,08,Default Delivery Note Branch,0,numeric,0," "," ",This is generally the branch number of the warehouse for the region,defdelnotebranch
+32,14,Default Voucher Expiry,12,numeric,0," "," ",The number of months after which a voucher will expire by default,defaultvoucherexpiry
+33,08,Delivery percent for date first,75,numeric,0," "," ",An Item will be considered delivered when this % of the goods has been delivered,globdelpcent
+34,18,Duty Free,True,checkbox,0," "," ",Determines whether the country can perform duty free sales or not,dutyfree
+35,18,Fees calculated on Payment Amount,True,checkbox,0," "," ",Used for calculating Bailliff fee when taking payment-the fee is either calculated on the total amount taken or on the payment amount which will actually credit the account,arrearsonpay
+36,18,Fixed Admn Fee,0.00,numeric,2," "," ",Admin charge for letter for accounts in arrears,adminfee
+37,14,Gift Voucher Account,,text,0," "," ",Account against which gift voucher sales are sold and redeemed,giftvoucheraccount
+38,01,Head Office Branch No,900,numeric,0,,,This is the branch number for head office.,hobranchno
+39,14,Hide Cents,False,checkbox,0," "," ","Ticking this box would mean that the system will not use cents. This is for countries such as Mauritius whose currency doesn't use cents i.e. Rupee   This option needs to be chosen from the start, or existing accounts may not settle correctly as the balance will not be reduced to 0 if the agreement total is not a whole number",nocents
+40,15,Individual Icons for Multiple Jobs,True,checkbox,0," "," ",This mechanism controls the printing of multiple documents. The user has to click on the correct icon before the print dialog box appears,printtoolbar
+41,13,Insurance charge Item Number,,text,0," "," ",In terms type maintenance the user can choose if Insurance is included in Service Charge or not. If not then insurance will show as a separate line on the agreement. We need to have an item number for the insurance to add separately. This is where the Item Number is entered,insitemno
+42,18,Insurance premium tax (IPT),0,numeric,2," "," ",Tax rate on affinity items,affinityipt
+43,15,Laser Print Tax,False,checkbox,0," "," ",Print the tax Invoice using the laser printer,laserprinttax
+44,12,Last Successful Run Date,Feb 23 2014 12:55PM,datetime,0," "," ",Last Successful Run Date,100
+45,12,Last Successful Run week No,47,numeric,0," "," ",Last Successful Run week No,lastchargesweekno
+46,12,Last Year Week No,53,numeric,0," "," ",How many weeks in previous year (usually 52),lastyrlastweekno
+47,12,Letters Gap,4,numeric,0," "," ",Weeks before customer gets another letter,lettersgap
+48,20,Loyalty Card,False,checkbox,0," "," ",Determines whether the country has a loyalty card scheme or not,loyaltycard
+49,07,Mandatory Residential Status,False,checkbox,0," "," ",This field will make residential status a mandatory field if ticked,mandatoryresstatus
+50,07,Maximum age for credit,92,numeric,0," "," ",This is the maximum age for opening an HP account. If an age greater than this is entered then the system will not allow the user to continue with the credit sanctioning,maxhpage
+51,12,Max Status for Settlement Letter,3,text,0," "," ",If an account has been in arrears and now settled we will not send them a settlement letter because we don't want to encourage another purchase. This person is assumed to be a high risk,highstatus
+52,07,Maximum RF Credit Income Ratio,15,numeric,0," "," ",Ratio of income to credit will determine the max spending limit,maxrfincomeratio
+53,07,Minimum age for credit,18,numeric,0," "," ",This is the minimum age for opening an HP account. If an age less than this is entered then the system will not allow the user to continue with the credit sanctioning,minhpage
+54,07,Min number of references,0,numeric,0," "," ",This number will dictate the minimum amount of References necessary,minreferences
+55,02,Minimum Add To amount,100.00,numeric,2," "," ",Don't send letter if small amount,addtomin
+56,18,Monthly interest rate for cash A/Cs,1.5,numeric,2," "," ",Interest charge against cash account in arrears,cashintrate
+57,03,A: Months Account in Status 6,30,numeric,0," "," ",Automatic: Number of months an account has been in SC6 (Default 3 months) before it will be generated for Write Off in the Write Off Review screen.,mthsstatus
+58,03,A: Months fully repossessed with no movement,2,numeric,0," "," ",Automatic: Number of months fully repossessed with no movement (2 default),mthsreposs
+59,03,A: Months in arrears with no movement,12,numeric,0," "," ",Automatic: Number of months account in arrears with no movement (12 default),mthsarrears
+60,15,No Copies of Agreement,2,numeric,0," "," ",No Copies of Agreement,noagrcopies
+61,15,No Copies of tax Invoice,1,numeric,0," "," ",No Copies of tax Invoice,notaxcopies
+62,13,Non Interest Items begin with,,text,0," "," ",In some countries there are items that don't bear interest. The products all begin with the same code. That code needs to be entered here,noninterestitem
+63,09,Number of Receipts per book,50,numeric,0," "," ",Sets of manual receipts,rcptsperbook
+64,08,Number of Transport Slots,12,numeric,0," "," ","This is number of transport slots in a day. I.E. am, pm or 9-12, 12-3 etc",deliveryslots
+65,19,Number of Warranty Contract copies,1,numeric,0," "," ",Number of copies of the warranty,warrantycustcopy
+66,22,Open Cash Drawer for credit/debit payments,False,checkbox,0," "," ",Determines whether a connected cash drawer will open for payments made by credit/debit card. This is required because some cash drawers have a slot for receipts on the front.,opencashtillforcredit
+67,14,Payment method enabled,False,checkbox,0," "," ",Displays Payment Method on Account screen - Singapore,paymentmethod
+68,14,Payments to nearest unit of currency,False,checkbox,0," ",,When CoSACS gets a payment for an RF account the system will split the payments to the nearest dollar amount,paywholeunits
+69,02,Percent Paid Add To letter 1,30,numeric,2," "," ",% paid before first add to letter sent to customer,percentaddto1
+70,02,Percent Paid to Add to letter 2,50,numeric,2," "," ",% paid before second add to letter sent to customer,percentaddto2
+71,02,Percent Paid to Add to letter 3,80,numeric,2," "," ",% paid before third add to letter sent to customer,percentaddto3
+72,15,Percent to Pay before repo,0,numeric,2," "," ",Percent of the account that needs to be paid before Courts UK PLC can repossess the goods,percenttopay
+73,07,Prev address and employment required,1,numeric,0," "," ",This field dictates the minimum amount of years to capture address & employment details for,sanctionminyears
+74,15,Print 90 days message,1,text,0," "," ",This is the message printed on the  Agreement for 90 day accounts,print90
+75,15,"Print Credit Note ",False,checkbox,0," "," ",Thailand Require a credit note to be printed for the customer for any returns,printcreditnote
+76,15,Print RF Summary,True,checkbox,0," "," ",Print RF Summary. This will only print for new accounts,norfsummary
+77,15,Print RF Terms and conditions (S1),False,checkbox,0," "," ",Print RF T&C's (S1),norfdetails
+78,15,Print Schedule of Payments,False,checkbox,0," "," ","If true, the Schedule of Payments will be printed when the Agreement is printed in the New Sales Order screen.",printscheduleofpayments
+79,07,Prompt for manual refer after rejection,True,checkbox,0," "," ","Whenever an account is manually rejected the system will Prompt the user to manually refer the account or not. This was developed for countries who wanted to refer all rejections, or when an account is rejected but the sales person thinks that this account should be accepted",manualrefer
+80,15,Service Percent Print format,A,dropdown,0,SPF,ServicePercentFormats,This determines how Service Charge is printed on the agreement:A = AnnualM = MPRL = MonthlyN = Not at all,serviceprint
+82,15,Service Print Decimal Places,C2,text,0," "," ","Display number decimal places on print. Format should be in the form Nn.  For example 'N2' will display 2 decimal places, 'N0' will display no decimal places",serviceprintdp
+83,12,Small Balance Amount,20.00,numeric,2," "," ",Smallest balance to send a letter for,smallbalance
+84,18,Stock Tax Type,E,dropdown,0,TTC,TaxTypes,Stock includes tax or not.(I or E),taxtype
+85,25,System Drive and Directory,d:\users\default,text,0,,,This is the directory where all interface files generated from EOD are stored,systemdrive
+86,01,System Open,"True      ",checkbox,0," "," ",Determines whether the system is open for use or not,systemopen
+87,15,Tax Invoice Format,2,dropdown,0,TIF,TaxInvoiceFormats,Determines whether the tax invoice is printed on a receipt printer (2) or laser printer(1) or not at all  (0),taxinvtype
+88,18,Tax Name,VAT,text,0," "," ",Indicates type of tax i.e. VAT or GST,taxname
+89,18,Tax rate,17.5,numeric,2," "," ",Current Tax Rate - Please contact support if you wish to update. Any change here should be made after end of day and will be applicable for accounts open from the next day,taxrate
+90,06,Transact Enabled,0,numeric,0," "," ",Used to determine whether to use transact or baycorp or neither,transactenabled
+91,05,Using .NET for Cash and Go,True,checkbox,0," "," ",If this box is ticked then the cash and go screen is being used in .NET as opposed to Open Road Cash and go Screen. (Soon to be redundant),netcashandgo
+92,07,Variable Stamp Duty,True,checkbox,0," "," ",If checked then a variable amount of stamp duty can be charged to an account depending on the agreement total. See the sundry charges maintenance option,varstamp
+93,19,Warranty Contract Style sheet,WarrantyContractprinted.xslt,text,0," "," ",Type in the name of which style sheet to use for warranties. It will either be using Preprinted format or Plain paper format,warrantystylesheet
+94,12,Week 1 start date for charges,Apr  1 2013 12:00AM,datetime,0," "," ",Date field. This will dictate what the first week of the year must be,datechargesstart
+96,22,Allow Outstanding Safe Deposits,True,checkbox,0,,,This parameter controls whether it is permissible for a cashier to perform cashier totals before reversing any deposits they have made to the safe during their current session.,allowsafedeposits
+97,22,Credit Cards Consolidated,False,checkbox,0,,,This parameter determines whether credit card payments will be consolidated and sent to FACT as a single amount,creditcardsconsolidated
+98,22,Credit Cards Electronic,False,checkbox,0,,,This parameter determines whether a country processes credit card payments electronically or manually,creditcardselectronic
+99,22,Debit Cards Consolidated,False,checkbox,0,,,This parameter determines whether debit card payments will be consolidated and sent to FACT as a single amount,debitcardsconsolidated
+100,22,Debit Cards Electronic,False,checkbox,0,,,This parameter determines whether a country processes debit card payments electronically or manually,debitcardselectronic
+101,15,Agreement print type,,text,0,,,Print agreement to A4 or slip printer,agrprinttype
+102,19,Credit Warranties days before payment due,30,numeric,0,,,Minimum days before payment becomes due on credit warranties,creditwarrantydays
+103,11,Minimum days before first instalment,28,numeric,0,,,Minimum days after delivery before the first instalment becomes due,minperiod
+104,14,Rebate percent,100,numeric,2,,,Percentage rate for calculating rebate upon early settlement,rebpcent
+105,19,Warranty after delivery days,365,numeric,0,,,Maximum number of days after delivery that a warranty may be added,warrantydays
+106,10,Days at clearing bank,5,numeric,0,,,Days required for the clearing bank to receive and process a payment file,ddleadtime
+107,10,Fee for rejected payment,10.00,numeric,2,,,Fee charged when the clearing bank rejects a payment request due to an account with a problem such as insufficient funds,ddfee
+108,10,Fee override on account basis,False,checkbox,0,,,Allows individual accounts to be marked so that they are not charged fees,ddfeeoverride
+109,10,Courts bank branch,000000,text,0,,,Branch number of the Courts bank account used by the clearing bank,ddbankbranch
+110,10,Courts bank account type,1,text,0,,,Account type of the Courts bank account used by the clearing bank,ddbankaccttype
+111,10,Courts bank account name,,text,0,,,Name of the Courts bank account used by the clearing bank,ddbankacctname
+112,10,Courts bank account number,000000000,text,0,,,Account number of the Courts bank account used by the clearing bank,ddbankacctno
+113,10,Installation generation number,0,numeric,0,,,Identification number recognised by the clearing bank,ddgenno
+114,10,Service type,FIVE DAY,text,0,,,Type of service with the clearing bank,ddservicetype
+115,10,Installation ID code from,6187,text,0,,,Id code recognised by the clearing bank,ddidcodefrom
+116,10,Installation ID code to,0021,text,0,,,Id code recognised by the clearing bank,ddidcodeto
+117,10,Maximum rejections,1,numeric,0,,,Maximum number of rejections allowed before a giro mandate is cancelled,ddmaxrejections
+118,10,Submit test data,False,checkbox,0,,,Test run,ddtest
+119,06,Logging,False,checkbox,0,,,Determines whether logging is enabled.,loggingenabled
+120,25,Unicode Characters,False,checkbox,0,,,Foreign Language characters-do not interface customer details to FACT 2000,isunicode
+121,08,Fixed Date of first Instalment,0,numeric,0,,,"Determines whether Date of first instalment is fixed 0 for not fixed, 1 for fixed and 2 for fixed due day but date of first instalment will always be a set number of days after delivery",fixeddatefirst
+122,08,Restrict Repossessions by Account Status,True,checkbox,0,,,"This parameter restricts repossessions to accounts in status code 3,4,5 or 6 only",restrictrepossessions
+123,14,Allow cheque payments for Cash and Go,True,checkbox,0,,,This parameter allows cheque payments to be entered for Cash and Go sales,cashandgocheques
+125,19,Number of Warranty Contract Credit copies,1,numeric,0," ",,Number of credit copies of the warranty contract,warrantycreditcopy
+126,19,Number of Warranty Contract HO copies,0,numeric,0," ",,Number of head office copies of the warranty contract,warrantyhocopy
+127,13,Number of months Audit data will be stored,60,numeric,0," "," ",This is the number of months that line item audit data will be stored on the database for,auditdataperiod
+128,15,Number of Agreement Customer Copies,0,numeric,0," "," ",This is the number of copies of the agreement that will be marked as customer copies,customeragreementcopies
+129,15,Number of Agreement Branch Copies,1,numeric,0," "," ",This is the number of copies of the agreement that will be marked as branch copies,branchagreementcopies
+130,08,Allow DA for unpaid accounts,True,checkbox,0," "," ",This parameter controls whether the users will be allowed to DA accounts which are unpaid,allowdaunpaid
+131,20,Customer ID format,NNN,text,0," "," ",This parameter contains the regular expression used to validate the format of customer IDs entered by the user. If it is blank no validation will be performed. It is not recommended that you attempt to edit this field.,custidmask
+133,14,Auto Holiday If in Arrears,False,checkbox,0," "," ",This parameter controls whether a payment holiday will automatically be taken if available to prevent a customer from falling into arrears,autopaymentholiday
+134,14,Payment Card Prompt,True,checkbox,0," "," ",This parameter controls whether or not users will be prompted to print unprinted payment card transactions on the payment screen.,paymentcardprompt
+135,15,Print RF total credit on payment card,True,checkbox,0," "," ",This parameter controls whether or not to print the RF credit limit on the customer's payment card,printrfcreditlimit
+136,21,No of Months no movement HP,120,numeric,0,,,Number of months of no movement on settled HP or RF account before archive,101
+137,21,No of Months no movement Cash,120,numeric,0,,,Number of months of no movement on settled Cash accounts before archive,102
+138,21,No of Months to retain Cash and Go,120,numeric,0,,,Number of months to retain Cash and Go/Paid and Taken transactions before archive,103
+139,21,No of Months to retain Sundry transactions,120,numeric,0,,,Number of months to retain Sundry  transactions before archive,104
+140,21,ArchiveDatabaseName,cosacs_archive,text,0,,,Archive Database Name,105
+141,21,Archive Number of Hp,10000,numeric,0,,,Maximum Number of HP Accounts to archive for each archive run,106
+142,21,Archive Number of Cash,10000,numeric,0,,,Maximum Number of Cash Accounts to archive for each archive run,107
+144,18,Country has affinity,True,checkbox,0,,,Country sells affinity products- categories 11 and 51 to 59 will be regarded as Affinity,108
+146,25,Tallyman days in arrears,0,numeric,0,,,The number of days an account must be in arrears before it will be exported to Tallyman,tminarrears
+147,25,Link to Tallyman,False,checkbox,0,,,Enables the EOD Tallyman interface,tmlink
+148,25,Tallyman arrears percentage,0,numeric,0,,,The percentage by which an account must be in arrears before it is sent to Tallyman,tmarrearspc
+149,25,Tallyman Server Database,,text,0,,,Tallyman server and database in the form servername.databasename,tallymanserverdb
+150,15,Curreny Symbol for print,$,text,0,,,The currency symbol that will be printed on Agreement and Invoice documents.,currencysymbolforprint
+151,07,Set Spend Limit For Low Incomes,False,checkbox,0,,,"If checked then RF applications will be assigned the lowest spend limit available if applications score higher than the cut off score, but no spend limit has been assigned.",setminrflimit
+152,07,EOD Potential Spend Run,False,checkbox,0,,,Determines whether EOD procedure to calculate potential spend limit should be run.,dopotentialspend
+153,12,Potential spend letter period,0,numeric,0,,,The period in which a letter will not need to be sent out to a customer informing them of their potential spend limit.,creditlettermonths
+154,12,Minimum spend amount,0,numeric,0,,,The minimum potential spend amount a customer should have before a letter is sent out to them.,minspendamount
+155,07,Number of accounts per EOD run,10000,numeric,0,,,"The number of accounts that should be processed for each EOD run to calculate the potential spend and the maximum number of accounts to rescore ",numaccts
+156,19,Allow Automatic Return Codes For Warranties,True,checkbox,0,,,This parameter allows return codes to be automatically generated for warranties being collected.,autoreturncodes
+157,22,Deposit Unique Reference,True,checkbox,0,,,Reference/Reason field for Cashier Deposits must be unique when this is ticked.,deposituniqueref
+158,17,Discount Percentage Allowed,2,numeric,0,,,This parameter controls the percentage of an items price that may be discounted without authorisation.,discountpcent
+160,17,Delivery Note Cancellation Authorisation,True,checkbox,0,,,Determines whether user name and password is required when removing scheduled items from an order.,delnotecancel
+161,17,No Of Days Before Password Change,31,numeric,0,,,This paramater specifies no of days before user is prompted to change their password.,passwordchangedays
+162,25,FACT Interface by payment methods,True,checkbox,0,,,Determines whether Deposits split by payment methods when interfaced to FACT 2000,FactInterfaceByPMethods
+163,19,Customer Details for Cash & Go Warranty,False,checkbox,0,,,Allows entry of customer details on a Cash & Go account with a warranty,warrantycustomerdetails
+164,19,Allow Instant Replacement On Credit,False,checkbox,0,,,Determines whether warranties can be purchased on credit for instant replacement items.,replacementcredit
+168,13,Allow Affinity And Normal Product Sales,True,checkbox,0,,,Determines whether stock and affinity items can appear on the same agreement..,affinitystocksales
+169,13,Enable Related Products Prompt For Credit Sales,True,checkbox,0,,,Enable prompt displaying associated products for credit accounts.,associatedproductscredit
+170,13,Enable Related Products Prompt For Cash Sales,True,checkbox,0,,,Enable prompt displaying associated products for cash accounts.,associatedproductscash
+171,23,Warranty Expiry settlement prompt in Days,60,numeric,0,,,Number of days prior to a warranty expiring that the pop-up for an early settlement to appear.,warrantyexpirypromptdays
+172,23,Warranty Expiry letter generation in months,1,numeric,0,,,Number of months prior to a warranty expiring that a letter will be sent to the customer.,warrantyexpiryletter
+173,23,Maximum prompt days after warranty expired,30,numeric,0,,,"Maximum number of days to prompt for renewal, after the original warranty has expired.",warrantyexpirymaxprompt
+174,24,Instant Replacement Period 1 (days),31,numeric,0,,,The number of DAYS that the manufacture warranty covers an item for Instant Replacement,irperiod1
+175,24,Instant Replacement Period 2 (months),3,numeric,0,,,The number of MONTHS in addition to the manufacture warranty where the warranty remains in place and Courts will pay the cost of replacement,irperiod2
+176,24,Instant Replacement Period 3 (months),6,numeric,0,,,The number of MONTHS in addition to period TWO where the warranty terminates and Courts bear the cost of replacement. After the end of this period AIG will pay the cost of replacement.,irperiod3
+177,09,Display Credit Limit Score,True,checkbox,0,,,Determines whether to display the credit score filter in the Allocate Accounts screen.,displayscore
+178,23,Warranty Expiry prompt in Days,60,numeric,0,,,Number of days prior to a warranty expiring that the pop-up for an account will appear.,activepromptdays
+179,09,Bailiff Sheet - Print Interest And Admin Charges,True,checkbox,0,,,Determines whether charges applied to the account will be printed on the Debt Collectors Action sheet.,printcharges
+180,09,Bailiff Sheet - Print Ready Finance Indicator,True,checkbox,0,,,Determines whether the Debt Collectors Action sheet will indicate if this is an RF customer.,printrfindicator
+181,09,Number Of Months Since Accounts Allocated,6,numeric,0,,,"Sets the number of months since accounts were allocated, this is used when loading data in the Re-Print Action Sheet screen.",monthsallocated
+182,13,Password for out of stock products required,False,checkbox,0,,,If checked prevent selling of out of stock products by unauthorised users.,outofstockauth
+183,13,Check available stock in region,False,checkbox,0,,,Check available stock in region when entering a stock location where the current stock is zero.,checkregion
+184,13,Central Warehouse Time,0,numeric,0,,,Period to allow central warehouse to receive and distribute items down to local warehouses.,warehousetime
+185,13,Quantity before stock locking implemented,40,numeric,0,,,"If the available stock for an item is less than this parameter, the item will be locked to pevent another customer choosing that item for that location.",stocklockingqty
+188,13,Maximum Affinity Agreement Term,12,numeric,0,,,The maximum Agreement Term allowed in months when selling an Affinity item.,affinitymaxterm
+189,09,Commission on Total Payment,False,checkbox,0,,,When ticked the commission is based on the total payment (otherwise the total payment less the fee being collected),totalpaymentcommission
+190,09,Current Status Code,True,checkbox,0,,,When ticked the collection rates are based on the current status of the account (otherwise the status of the account at the time of allocation),curstatuscommission
+195,02,Add To Interest Rate,0,numeric,2,,,Percentage rate used in EOD Add To calculation.,addtorate
+196,19,Warranty Validity Months,12,numeric,0,,,The number of months that a warranty will remain valid on a replacement or exchanged poduct.  This means that the new item added to the account will be linked to the original warranty.,warrantyvalidity
+197,19,Warranty Cancellation Days,30,numeric,0,,,This is the period of time in days from delivery that a warranty can be cancelled in isolation to a product.,warrantycanceldays
+198,25,FTP using ISA server,True,checkbox,0," "," ",FTP processes will be via the ISA server using Local procedures,HasISAserver
+199,26,Tier1/2 Functionality,False,checkbox,0,,,To Enable/Disable Loyalty Club Tier1/2 functionality,TierPCEnabled
+200,26,Club Average Status,1.5,numeric,2,,,The maximum average account status allowed for each account for the customer to qualify for Loyalty Club,ClubAverageStatus
+201,26,Warning Average Status,1.3,numeric,2,,,The maximum average account status allowed before a warning letter is sent,WarningAverageStatus
+202,26,Warning Lead Days,30,numeric,0,,,The number of days to suppress warning letters following qualification,WarningLeadDays
+203,26,Minimum Club Length,1,numeric,0,,,"The minimum number of instalments for a settled account to qualify for Loyalty Club. This is for accounts that would have reached the normal minimum number of instalments, but were settled early by the customer.",MinClubLen
+204,26,Tier1 Credit Length,6,numeric,0,,,The minimum number of instalments for an RF/HP account to qualify for Tier1,Tier1CreditLen
+205,26,Tier1 Cash Length,6,numeric,0,,,The number of months previous to the current date used to calculate the required cash spend as defined by 'Tier1 Cash Spend',Tier1CashLen
+206,26,Tier1 Cash Spend,10000000,numeric,0,,,The minimum cash spend required during the 'Tier1 Cash Length' period to qualify for Tier1,Tier1CashSpend
+207,26,Tier1 Cash Maintain Length,6,numeric,0,,,"After qualifying for Tier1, the number of months previous to the current date used to calculate the required cash spend as defined by 'Tier1 Cash Maintain Spend'",Tier1CashMaintainLen
+208,26,Tier1 Cash Maintain Spend,10000000,numeric,0,,,The minimum cash spend required during the 'Tier1 Cash Maintain Length' period to remain at Tier1,Tier1CashMaintainSpend
+209,26,Tier2 Credit Length,24,numeric,0,,,The minimum number of instalments for an RF/HP account to qualify for Tier2,Tier2CreditLen
+210,26,Tier2 Cash Length,24,numeric,0,,,The number of months previous to the current date used to calculate the required cash spend as defined by 'Tier2 Cash Spend',Tier2CashLen
+211,26,Tier2 Cash Spend,20000000,numeric,0,,,The minimum cash spend required during the 'Tier2 Cash Length' period to qualify for Tier2,Tier2CashSpend
+212,26,Tier2 Cash Maintain Length,24,numeric,0,,,"After qualifying for Tier2, the number of months previous to the current date used to calculate the required cash spend as defined by 'Tier2 Cash Maintain Spend'",Tier2CashMaintainLen
+213,26,Tier2 Cash Maintain Spend,10000000,numeric,0,,,The minimum cash spend required during the 'Tier2 Cash Maintain Length' period to remain at Tier2,Tier2CashMaintainSpend
+214,26,Tier2 Discount %,0,numeric,2,,,The discount percentage to be added to agreements for Tier2 customers,Tier2Discount
+215,26,Tier2 Discount Item Number,,text,0,,,The item number to be used for the 'Tier2 Discount %'. This is added automatically to an order and cannot be added/removed by a user.,Tier2DiscountItemNumber
+216,26,Number of Consecutive Instalments,12,numeric,0,,,The minimum number of consecutive instalments that must be paid before an early payment bonus can be offered.,ConsecutiveInstalments
+217,26,Credit Expiry Months,48,numeric,0,,,The number of months previous to today that the date of agreement of an RF/HP account must fall within to be considered for Loyalty Club,CreditExpiryMonths
+218,07,Terms Type Bands,True,checkbox,0,,,To Enable/Disable Terms Type Bands,TermsTypeBandEnabled
+219,07,Terms Type Band Default,,text,0,,,The default Terms Type Band to use before a band has been set for the customer and the account,TermsTypeBandDefault
+220,08,Display Assembly,True,checkbox,0,,,"To determine whether the assembly field is displayed on New Account/Revise Agreement, the results in the Orders for Delivery screen and the results in the Transport Picklist screen.",displayassembly
+223,08,Enable Delivery Note Branch,True,checkbox,0,,,"If enabled the delivery note branch should be displayed in the New Sales Order, Orders for Delivery, Amend Picklist and Transport Picklist screens.",displaydelnotebranch
+224,25,Export Financial Data to FACT,True,checkbox,0," "," ",Will determine whether the FACT Financial (bmsffint.dat) file is imported to FACT2000,dofinancialinterface
+225,25,FACT2000 drive and Directory,\\mldcsbbsql01\f2000fls,text,0," "," ",Directory where FACT 2000 files are copied,FACT2000driveandDirectory
+226,12,Minimum number of days in Arrears before Letter,7,numeric,0,,,Minimum number of days an account moves into arrears before receiving first letter,MinLetDays
+227,12,Letters and Charges Daily Run,False,checkbox,0," "," ","If true will mean that status code changes, letters and charges can be generated more than once a week (and the run number will exceed the number of weeks in a year). If this is set to true and letters and charges run it is very difficult to go back",lettersdailyorweekly
+228,12,Use Current Date & Time for Letters and Charges,True,checkbox,0," "," ","If true will mean that status code changes, letters and charges will be generated based on previous Sundays run (matches OpenROAD) otherwise use current date and time",letterscurrentdateandtime
+229,10,Giro Mandates,False,checkbox,0," "," ",Determines whether giro mandates are enabled,ddenabled
+230,25,FACT2000ProgramDirectory,\\mldcsbbsql01\f2000prg,text,0," "," ","FACT2000 Program directory has to be set to the Universal naming convention path with double hashes e.g. \\\\MyServer\\MyShare\\Mydirectory ",FACT2000ProgramDirectory
+231,14,Rebate Calculation Rule,-2,numeric,0,,,"This is the rebate calculation rule that will be used when a customer receives their rebate. This does not affect the Rebate calculation frame totals or the Rebate Forecast Report totals. The rules are as follows: 78-0, 78-1, 78-2, 78-3, etc. Eg: To set rule 78-2 set the value to -2. To set the rule to 78-0 set the value to 0. To set the rule to 78+1 set the value to 1.",RebateCalculationRule
+232,27,Minimum Credit Score,152,numeric,0,,,This is the minimum score that must be achieved for the customer to qualify for Instant Credit,IC_MinCredScore
+233,27,Most recent settled Credit account months,15,numeric,0,,,"If a customer has no current accounts, this is the maximum number of months since the most recent Credit account has been settled for the customer to qualify for Instant Credit.",IC_SettledCredMonths
+235,27,"Existing Account length ",9,numeric,0,,,"On an existing account, the minimum time period since delivery for the customer to qualify for Instant Credit.",IC_ExistAccountLength
+236,27,Maximum Agreement total,100000,numeric,0,,,The maximum agreement total allowed on the new account for the customer to qualify for Instant Credit,IC_MaxAgrmtTotal
+237,27,Changes in Employment require manual approval,True,checkbox,0,,,If checked will mean that any changes to employment details will prevent instant credit approval,IC_EmployChgManApprove
+238,27,Changes in Residence require manual approval,False,checkbox,0,,,If checked will mean that any changes to address details will prevent instant credit approval,IC_ResidenceChgManApprove
+239,27,Maximum arrears level,0.5,numeric,1,,,Maximum number of instalments in arrears. Any account more than this in arrears will prevent instant credit approval,IC_MaxArrearsLevel
+240,27,Highest status of any account,3,numeric,0,,,The maximum status of any current account or settled account settled within the last 2 years. A status higher than this will prevent instant credit approval,IC_HighSettStat2Yr
+242,0,SL Rebate Calculation Rule change date,2008-03-31 00:00:00,datetime,0,,,This is the Straight Line Rebate calculation rule change date. This does not affect the Rebate calculation frame totals or the Rebate Forecast Report totals. Rebates on accounts opened on or after this date will be applied using a straight line calculation. CPI Insurance will also be rebated,SLRebateCalculationRuleDate
+263,29,SPIFF Reselection,PS,text,0,,,"To highlight in NSO screen that there is a similar product to the one entered in NSO with a higher SPIFF. If the parameter is set to PA then the popup screen will always display items with SPIFFS even if the current item does not have one.
+If the parameter is set to PS then the pop-up will only appear if the current item does have a SPIFF on it.",SPIFFreselection
+264,29,Months to retain Commission,12,numeric,0,,,Number of months to retain commission records.,retainCommMonths
+265,29,Maximum commission % rate,50,numeric,0,,,The maximum Sales Commission percentage rate allowed.,maxcommrate
+266,29,Maximum SPIFF Commission Amount,999999,numeric,0,,,The maximum SPIFF Commission Amount allowed.,maxspiffvalue
+267,29,Lose Rebate Commission,false,checkbox,0,,,Determine if the CSR will lose commission on Early settlement rebates.,loserebatecomm
+268,29,Lose Collection/Cancellation Commission,false,checkbox,0,,,Determine if the CSR will lose commission on Collections and Cancellations.,loseCancelcomm
+269,29,Lose Repossession/Cancel Commission months,12,numeric,0,,,"The number of months after delivery in which a Repossession or Cancelation occurs before any commission earned is not lost, i.e any commission earned on a product repossessed or canceled after this period is retained.",loseRepocomm
+270,29,Commission per Account Type,false,checkbox,0,,,Allows different commission rates to be applied to Cash and Credit sales.,ComPerAccType
+271,14,Returned Cheque Period,0,numeric,0,,,This is how far back in months the system will look for return cheques against all accounts in this customer's name or if the customer is linked to any accounts. Settled or active.  If 0 then returned cheques will not be searched for and the functionality disabled.,returnedchequeperiod
+272,14,Number of allowed return cheques,-1,numeric,0,,,This will be any number. The system uses this parameter to check if supervisor authorisation is required for the cheque payment. Authorisation will be required if the number of returned cheques for all the customers accounts is above this number (assuming >= 0),numberallowedreturncheques
+273,20,Amount Spent Per Prize Voucher Issued,0,numeric,0," "," ","This is the cash amount that needs to be spent for a prize voucher to be issued.  Example, for every $20 spent one voucher is issued",valuepervoucher
+274,20,Prize Vouchers Active,False,checkbox,0," "," ",If set to true prize vouchers will be issued to customers.  If this is set to false then prize vouchers cannot be issued.,prizevouchersactive
+275,19,Allow Instant Replacement On Cash And RF Accounts,True,checkbox,0,,,When ticked this will allow instant replacement warranties to be sold against Cash and Ready Finance accounts.,IRCashRF
+276,19,Number of Second Effort Solicitation Prompts,0,numeric,0,,,The number of times a customer is prompted to purchase an extented warranty on an item,WarrantySESPrompts
+277,19,Target Warranty Hit Rate %,0,numeric,0,,,Target hit rate percentage used for warranty Reports,TWHR
+278,20,Enable the Printing of Customer Photo/Signature,False,checkbox,0,,,If set to true this will allow the customer photograph and signature to be printed on the Bailiff Action sheet,EnablePhotoPrinting
+279,20,Store Customer Signature,False,checkbox,0,,,If set to true this will allow the customer signature to be scanned and stored.,StoreCustomerSignature
+280,20,Photograph Directory,,text,0,,,The server directory where photographs are stored. This will need to be written in the form http://<SERVERNAME>/<VIRTUALDIRECTORY>/. The virtual directory will need to be given both read and write permissions. The windows folder will need to be shared and have ASPNET as a user with both read and write permissions.,PhotoDirectory
+281,20,Signature Directory,,text,0,,,The server directory where signatures are stored. This will need to be written in the form http://<SERVERNAME>/<VIRTUALDIRECTORY>/. The virtual directory will need to be given both read and write permissions. The windows folder will need to be shared and have ASPNET as a user with both read and write permissions.,SignatureDirectory
+282,07,Number Of Months For New Sub Agreement RF rescore,1,numeric,0,,,This is the amount of months before an RF sub-agreement will be opened in Saction Stage 1 and prompted for rescore.  Otherwise the account will just proceed to document confirmation (assuming the spend limit has not been exceeded for the new order).,rescoremonths
+283,07,Rescore New RF Sub Agreements If Status >,0,text,0,,,If the curent status of a sub-agreement is greater than this value then the account will be rescored.  If set to 0 then all sub-agreements will be rescored if number of months parameter applies.,rescorestatus
+284,07,Number Of Months For Automated End Of Day Rescore,1,numeric,0,,,This is the number of months before RF accounts are automatically rescored as part of the End Of Day process.,eodrescoremonths
+285,25,Broker MQ Enabled,True,checkbox,0,,,Determines whether the Broker MQ Link is enabled,MQEnabled
+303,19,Admin Fee Percent- Electrical,10,text,0,,,Admin Fee Percentage for Electrical items for Warranty Reporting,AdminFeePercentElectrical
+304,19,Admin Fee Percent- Furniture,23.333,text,0,,,Admin Fee Percentage for Furniture items for Warranty Reporting,AdminFeePercentFurniture
+316,28,Service Repossession Restriction,True,checkbox,0,,,When ticked repossessions are prevented on accounts with open service requests.,ServiceRepossession
+320,28,Service Cash & Go,True,checkbox,0,,,When ticked a radio button for Cash & Go customers who do not have an invoice will appear on the Service Request screen.,ServiceCash&Go
+322,15,Include Ins in Service Charge on Agreement Print,False,checkbox,0,,,Include Insurance in Service Charge on Agreement Print - an insurance item needs to be setup and insurance should not be included in the service charge is this is to work,IncInsinServAgrPrint
+323,25,Export Orders and Deliveries to Oracle,N,text,0,,,"Allows orders and deliveries to be exported to Oracle. Options are N for none, P for parallel run, F for full and L for logging",OracleLineExport
+324,08,Identital Replacements Print at Stock location,True,checkbox,0,,,If checked will mean that identical replacements delivery notes will be printed from the Stock location where they are being returned/collected from. Otherwise the branch will be the branch which instigated the collection. Please note country parameter Enable Delivery Note Branch must be set to false.,IdentRepEqualsDNStockBranch
+325,28,Default Batch Print/Reprint Copies,4,numeric,0,,,Allow  the user to enter the number of copies required for the Batch Print and Reprint functionalities,SRBatchPrintCopies
+327,28,Supplier Allocation,False,checkbox,0,,,"When set to True, will bypass the allocation folder and the booking of a technician only if the charge to is to Suppler. On the Service Soft Script Screen will change the Allocate button to a Save button",SRSupAllocation
+330,01,Period End Type 5-4-4,False,checkbox,0,,,"This is the Period End date type. False = Calendar Month end dates, True = 5-4-4 week periods",PeriodEndType
+332,25,BCP program path,C:\Program Files\Microsoft SQL Server\90\Tools\Binn,text,0,,,"Absolute path of BCP program. Needed for file input/output (Scorex, Standing Order)",BCPpath
+334,29,SPIFFs per Branch,False,checkbox,0,,,"If true, will allow SPIFFS to be set up for specific Branches. If false, SPIFFs will apply to all Branches",SPIFFperBranch
+338,29,Sales Commissions Nett of Tax,true,checkbox,0,,,"If true, Sales Commission will be calculated nett (exclusive) of tax. If false, Sales Commission will be calculated inclusive of tax",SalesCommNetTax
+339,25,Broker file Export Location,d:\cosdata\,text,0,,,Location where the Broker export file will be placed,OracleBExportLocn
+341,25,Broker Financial URL,,text,0,,,This is the URL where the broker financial web service resides,financialurl
+342,09,Maximum Reminder days in advance,7,numeric,0,,,Maximum number of days in advance that a call reminder can be set for,MaxReminderDaysInAdv
+343,14,Maximum lower instalments for SPA,6,numeric,0,,,Maximum number of monthly instalments that can be made at a lower instalment amount,SpaMaxLowerInstals
+344,08,Delete Delivery Note,False,checkbox,0,,,If this is set to True the delete delivery note button will appear in the delivery notification screen.,DeleteDNFromLoad
+346,09,Number of days since action performed,1,numeric,0,,,If the number of days since an action was performed is not greater than that set in the parameter do not display the account in the Telephone Action screen for a non-supervisor.,NoOfDaysSinceAction
+347,01,Courts Dealership Brand Name,Courts (Barbados) Ltd.,text,0,,,"This is the full Courts Dealership Brand Name as you wish it to appear on any screen or documentation. e.g Courts (countryname) Ltd. ",CourtsDealerName
+348,01,Non Courts Dealership Brand Name,Lucky Dollar (Barbados) Ltd.,text,0,,,"This is the full Non Courts Dealership Brand Name as you wish it to appear on any screen or documentation. e.g Lucky Dollar (countryname) Ltd. ",NonCourtsDealerName
+349,28,Batch Print Show Warranty Available,True,checkbox,0,,,When ticked 'Warranty Available' label will be visible on SR Printouts,SRPrintShowWrntyAvailable
+351,08,Manual DA for FOC Accounts,true,checkbox,0,,,"If true, accounts which have an FOC(Free Of Charge) item will not be automatically delivery authorised",ManualDAFOCAccts
+352,15,Print Kit discount on Tax Invoice,true,checkbox,0,,,"If this parameter is true, the discount attached to a Kit Product will be printed on the Tax Invoice.",TaxInvKitDisc
+353,30,Third Party Deliveries Warehouse,false,checkbox,0,,,"When true will enable and display Third Party Deliveries Warehouse group box in Branch Maintenance and ""3PL Delivery"" radio button and ""Print Delivery Note"" button in Orders for Delivery/Collections screen.",3PLWarehouse
+354,08,Scheduled Deliveries,true,checkbox,0,,,"When true will enable the scheduled delivery process. ",ScheduleDel
+355,12,Generate Charges,true,checkbox,0,,,If TRUE Interest and Admin charges will be generated.,GenCharges
+356,12,Generate Letters,true,checkbox,0,,,If TRUE Arrears letters will be generated.,GenLetters
+357,15,Receipt Minimum Height,0,numeric,1,,,"The minimum height of a receipt, in millimeters",ReceiptMinimumHeight
+358,15,Print Automatic Mini-Statement,true,checkbox,1,,,Do you want to automatically print a mini-statement for the customer after the customer makes a payment?,PrintAutomaticMiniStatement
+359,15,Statement Display Available Spend,true,checkbox,1,,,Do you want to display the available spend on statements?,StatementDisplayAvailableSpend
+360,15,Number Of Transactions For Auto Mini-Statement,5,numeric,1,,,The number of previous transactions per account that the automatic mini-statement should print,TransactsForAutoMiniStatement
+361,15,Print Available spend on Mini-Statement,true,checkbox,1,,,Do you want to print the customers available spend on a mini-statement?,PrintAvailSpendOnMiniStatement
+362,15,Business Registration Number,Bringing Value Home !!!,text,1,,,The company's business registration number.,BusinessRegNo
+363,15,Business Title,Courts Barbados Limited,text,1,,,The company's title e.g. Courts Ltd / Unicomer Ltd.,BusinessTitle
+364,15,Cash & Go Footer,Thank you for shopping at COURTS,text,1,,,Information to be printed at the bottom of the cash & go receipt e.g. Thank you for shopping at COURTS!,CashNGoFooter
+365,15,Tax Invoice Footer,Thank you for shopping at COURTS,text,1,,,Information to be printed at the bottom of the tax invoice receipt e.g. Thank you for shopping at COURTS! See courts.com for more information on our products,TaxInvoiceFooter
+366,15,Payment Footer,Thank you for your payment!!!,text,1,,,Information to be printed at the bottom of the payment receipt e.g. Thank you for shopping at COURTS!,PaymentFooter
+367,15,Statement Footer,Bringing Value Home,text,1,,,Information to be printed at the bottom of the statement receipt e.g. Sale starts soon,StatementFooter
+368,15,Receipt Date Format,ShortDateAndTime,text,1,,,"Dictates the format of any date that is printed on the cash & go receipt, payment receipt and tax invoice 
+- LongDate (1st July 2010)
+- LongTime (12:29:53)
+- ShortDate (06/05/2010)
+- ShortTime (12:29)
+- LongDateAndTime 
+  (1st July 2010 12:29:53)
+- ShortDateAndTime 
+  (06/05/2010 12:29)
+- LongDateAndShortTime 
+  (1st July 2010 12:29)
+- ShortDateAndLongTime
+  (06/05/2010 12:29:53)
+",ReceiptDateFormat
+369,15,Cash & Go Receipt Title,Cash & Go Receipt,text,1,,,The title text to identify a cash and go receipt.,CashNGoReceiptTitle
+370,15,Payment Receipt Title,Payment Receipt,text,1,,,The title text to identify a payment receipt.,PaymentReceiptTitle
+371,15,Tax Invoice Title,Tax Invoice,text,1,,,The title text to identify a tax invoice.,TaxInvoiceTitle
+372,15,Cash & Go Receipt Display Title,true,checkbox,1,,,Do you want to display the cash & go receipt title?,DisplayCashNGoReceiptTitle
+373,15,Payment Receipt Display Title,true,checkbox,1,,,Do you want to display the payment receipt title?,DisplayPaymentReceiptTitle
+374,15,Tax Invoice Display Receipt Title,true,checkbox,1,,,Do you want to display the tax invoice receipt title?,DisplayTaxInvoiceTitle
+375,15,Business Tax Number,VAT REGISTRATION NO: 20008695,text,1,,,The business tax number,TaxNumber
+376,15,Payment Receipt Display Tax Number,true,checkbox,1,,,Do you want to display the business tax number on the payment receipt?,PaymentReceiptDisplayVATNumber
+377,15,Cash and Go Display Tax Number,true,checkbox,1,,,Do you want to display the business tax number on the cash and go receipt?,CashNGoDisplayVATNumber
+378,15,Tax Invoice Display Tax Number,true,checkbox,1,,,Do you want to display the business tax number on the tax invoice?,TaxInvoiceDisplayVATNumber
+379,15,Statement Display Tax Number,true,checkbox,1,,,Do you want to display the business tax number on the statements?,StatementDisplayVATNumber
+380,15,Cash and Go Copies,1,numeric,1,,,"The number of cash and go receipts to print. If greater than one, the first receipt will be marked as 'original' and subsequent receipts will be marked as 'copy'.",CashNGoNoOfCopies
+381,15,Cash and Go Signature,true,checkbox,1,,,Do you want to display the signature area on cash and go receipts?,CashNGoDisplaySignature
+382,15,Cash and Go Signature Text,Signature,text,1,,,The text to be displayed for signatures.,CashNGoSignatureText
+383,15,Cash and Go Original Text,Original,text,1,,,The text to be displayed for an original copy.,CashNGoOrigianlText
+384,15,Cash and Go Copy Text,Copy,text,1,,,The text to appear on copies.,CashNGoCopyText
+385,15,Tax Invoice Display Footer,true,checkbox,1,,,Do you want to display a footer on the tax invoice?,TaxInvoiceDisplayFooter
+386,15,Cash and Go Display Footer,true,checkbox,1,,,Do you want to display a footer on the cash and go receipt?,CashNGoDisplayFooter
+387,15,Payment Receipt Display Footer,true,checkbox,1,,,Do you want to display a footer on the payment receipt?,PaymentReceiptDisplayFooter
+388,15,Business Registration Label,,text,1,,,The label to be printed next to the business registration number (e.g. BUSINESS REGISTRATION NUMBER: 12345),BusinessRegistrationLabel
+389,15,Tax Number Label,,text,1,,,The label to be printed next to the business tax number (e.g. BUSINESS TAX NUMBER: 12345),TaxNumberLabel
+390,15,Display Business Registration Label,True,checkbox,1,,,Do you want to display the business registration number label?,DisplayBusinessRegLabel
+391,15,Display Tax Number Label,false,checkbox,1,,,Do you want to display the tax number number label?,DisplayTaxNumberLabel
+392,15,Display Business Registration Number,true,checkbox,1,,,Do you want to display the Business Registration Number?,DisplayBusinessRegNo
+393,15,Statement Title,Statement,text,1,,,The title text to identify a statement.,StatementTitle
+394,15,Statement Print Type,1,numeric,1,,,"The output type of the account statement.
+         '0' user laser printer
+         '1' use receipt printer",StatementPrintType
+395,11,Instalment Rounding,0,numeric,0,,,Installment can be rounded up to the number of decimal places choosen with the final instalment being the lower balancing amount to the agreement total,instalmentrounding
+396,11,Round Service Charge,False,checkbox,0,,,If true will round service charge up to the nearest 0.05,roundServiceCharge
+397,26,Principal Factor Override %,-1,numeric,2,,,"Principal Factor Override % (If this is set, disable SPV Month Cost of Funds by setting value to -1)",principalfactoroverride
+398,30,Third Party Deliveries File Directory,D:\DHLExport\,text,0,,,Directory for export/import files for 3rd party delivery. This should be of the form <DRIVE LETTER>:\<FOLDER NAME>\,3PLFileDir
+399,31,Highest Status Code for Settled Accounts ever,3,numeric,0,,,Customers with this (highest) status code or above ever on SETTLED accounts will not qualify for loyalty vouchers,LoyaltyHSS
+400,31,Highest Status Code for Open Accounts ever,3,numeric,0,,,Customers with this (highest) status code or above ever on OPEN accounts will not qualify for loyalty vouchers,LoyaltyHSO
+401,31,Current Status Code for Open Accounts,3,numeric,0,,,Customers with this (current) status code or above on OPEN accounts will not qualify for loyalty vouchers,LoyaltyCS
+402,31,Number of months from delivery to issue vouchers,12,numeric,0,,,Loyalty vouchers will be issued this number of months after delivery has reached the threshold value,LoyaltyMonthsAfterDelivery
+403,31,Enable Loyalty Scheme,False,checkbox,0,,,This option will enable Home Club loyalty scheme. Other options on this page are ignored if false.,LoyaltyScheme
+404,31,Enable membership fee for staff,False,checkbox,0,,,This option will enable fees for staff Home Club members,LoyaltyMembershipFee
+405,31,Cash account free delivery threshold,3000,numeric,0,,,Sets the delivery threshold amount for cash accounts. A 0 value will disable home club popups for cash accounts.,LoyaltyCashThreshold
+406,31,Turn on Revise screen Home Club popup,True,checkbox,0,,,This option will enable Home Club join request for revised accounts,LoyaltyReviseScreen
+407,31,Home Club Period in months,12,numeric,0,,,Sets the number of months before Home Club membership expires,LoyaltyMembershipPeriod
+408,31,Voucher redemption period in days,90,numeric,0,,,"Sets the number of days to redeem the Home Club voucher ",LoyaltyVoucherPeriod
+409,31,Maximum number of join requests rejections,10,numeric,0,,,Sets the number times the customer is asked to join home club,LoyaltyMaxJoinRejects
+410,14,Block Cash & Go in Refund & Correction Screen,False,checkbox,0,,,This parameter will block users from processing Cash & Go (Paid & Taken) accounts in Refunds and Corrections screen,BlockCashGoInRefCorr
+411,08,Enable Notes in Goods Return Screen,False,checkbox,0,,,"If this parameter is ticked the Notes field in the Goods Return screen will be enabled, if un-ticked the Notes field will invisible",EnableGRTnotes
+412,29,Max Days for Caller Commissions,7,numeric,0,,,Actions will only be considered for commission after this number of days has passed,MaxDaysCallerComm
+415,07,Minimum RF Credit Limit for Referral,0,numeric,0,,,This is the minimum RF Credit Limit value for a customer who has exceeded their limit for the account to be referred. Accounts of Customers with Credit Limits below this value who exceed their limit when purchasing will not be referred and the purchase value must be reduced or the account cancelled.,MinCRLimitRef
+416,07,"Maximum % to exceed credit limit ",0,numeric,2,,,This is the maximum percentage by which a customer can exceed their RF Credit Limit before the account is referred. Accounts that exceed the credit limit by less than this percentage will be Approved.,MaxExceedCRLimit
+417,07,Behavioural history in months,6,numeric,0,,,This parameter sets how many months history the system needs to have before it can use the behavioural scorecard.,BehaviouralMonthsHistory
+418,07,Behavioural history period in months,6,numeric,0,,,This parameter sets the period of months used in retrieving the behavioural history.,BehaviouralMonthsPeriod
+419,07,Behavioural Scorecard,A,text,0,,,"This parameter sets the scoring process. A - Applicant ScoreCards, B - Behavioural Scoring (Branch Active, Select active branches in branch maintenance screen), P - Parallel (Behavioural and Applicant), S - Behavioural Scoring (Underwriters and Newsales)",BehaviouralScorecard
+420,07,Behavioural Accounts,0,numeric,0,,,"Sets the account to be used if behavioural scoring is activated. 0 - HP and RF, 1 - RF only, 2 - HP only",BehaviouralAccounts
+421,07,Bad Paying Customers,0,numeric,0,,,Bad Paying Customers will be defined as greater than this amount of months in arrears since account was opened.,BehaviouralBadPaying
+422,07,Behavioural Score Months,1,numeric,0,,,"This determines how frequently Behavioural Accounts are going to be rescored. If using the behavioural scorecard for the first time you may wish to set this to a low figure to rescore previously scored applicant accounts, before resetting this to a higher figure after all accounts have been rescored",eodBehaverescoremonths
+423,07,Behavioural Score Apply End of Day Immediately,True,checkbox,0,,,If set to true then the end of day Behavioural rescore will be applied immediately. If set to false then the accounts revised score would need to be approved in the Behavioural Rescore Review Screen and applied by the end of day BH Rescore Apply Scores Job,BehaveApplyEodImmediate
+424,27,Highest status of any account time frame,24,numeric,0,,,The maximum status of any current or settled account where settled within the Highest status of any account time frame. A status higher than this will prevent instant credit approval.,IC_HighStatusTimeFrame
+425,32,Changes in Employment require manual approval.,False,checkbox,0,,,If checked will mean that any changes to employment details will prevent instant credit approval or cash loan qualification,CL_EmployChgManApprove
+426,32,Existing Account length .,5,numeric,0,,,"On an existing account, the minimum time period since delivery for the customer to qualify for Instant Credit or Cash Loan.",CL_ExistAccountLength
+427,32,Highest status of any account.,9,numeric,0,,,The maximum status of any current account or settled account settled within the last 2 years. A status higher than this will prevent instant credit approval or cash loan qualification,CL_HighSettStat2Yr
+428,32,Highest status of any account time frame.,24,numeric,0,,,The maximum status of any current or settled account where settled within the Highest status of any account time frame. A status higher than this will prevent instant credit approval or cash loan qualification.,CL_HighStatusTimeFrame
+429,32,Loan Minimum Credit Score.,392,numeric,0,,,This is the minimum score that must be achieved for the customer to qualify for a Cash Loan,CL_LoanMinCredScore
+430,32,Loan RF % Available.,25,numeric,0,,,This is the minimum % of RF credit available to be able to qualify for a Cash Loan,CL_LoanRFpcAvail
+431,32,Maximum arrears level.,1,numeric,1,,,Maximum number of instalments in arrears. Any account more than this in arrears will prevent instant credit approval or cash loan qualification,CL_MaxArrearsLevel
+432,32,Maximum Loan Amount.,6000,numeric,0,,,Maximum Loan amount available - no loan is available with default 0. This is a set value across all accounts and will not be based on the % of the remaining available credit.,CL_MaxLoanAmount
+433,32,Changes in Residence require manual approval.,False,checkbox,0,,,If checked will mean that any changes to address details will prevent instant credit approval or cash loan qualification,CL_ResidenceChgManApprove
+434,32,Most recent settled Credit account months.,15,numeric,0,,,"If a customer has no current accounts, this is the maximum number of months since the most recent Credit account has been settled for the customer to qualify for Instant Credit or Cash Loan.",CL_SettledCredMonths
+435,13,Item Price from Stock Location,true,checkbox,0,,,"If true the items price will be taken from the stock location, if false the items price will be taken from the sales branch",pricefromlocn
+436,15,Tax Invoice Reprint Text,REPRINT,text,0,,,This text will appear on the tax invoice if the tax invoice is a reprint.,TaxReprintHeader
+437,01,Epos Licence Paste Below,,multitext,0,,,Epos Licence Paste Over writing this Text,EposLicense
+438,25,Include Financial Totals in Deliveries Export,True,checkbox,0,,,If set to true then summary financial totals will be included in the FACT 2000 export. Otherwise a separate job will appear to run to calculate these totals,FinTotinDelExport
+439,25,Enable Standing Order Collection FEE generation,False,checkbox,0,,,"When TRUE, Collection FEEs will be generated for payments processed through Standing Order End Of Day",genFeeStandingOrder
+440,20,Mandatory to enter Collection Zone for addresses,False,checkbox,0,,,"If true, a dropdown will appear as a mandatory field in the address tab on the Customer record screen. When users are entering addresses they will need to select which zone the address belongs to for later use when assigning Bailiffs to the account.",ZoneAddresses
+441,14,Active Action Pop-up - Additional Information,False,checkbox,0,,,"If true, a pop-up will appear when an account with ""Additional Information needed"" Active Action flags on it is loaded in the payments screen. The user will then have the opportunity too correct the active actions in the Customer Details screen before continuing with any payments.",PopUpAdditInfo
+442,14,Active Action Pop-up - Customer left address,False,checkbox,0,,,"If true, a pop-up will appear when an account with ""Customer left address"" Active Action flags on it is loaded in the payments screen. The user will inform the customer that they need to update their address details with the credit department before proceeding with the payment.",PopUpCustomerLeftAddr
+443,14,Pop-up - Other Accounts in Arrears,False,checkbox,0,,,"If true, a pop-up will appear when an account is loaded in the payments screen and the Customer has other accounts that are in arrears.",PopUpAcctsInArrears
+444,14,Active Action Pop-up - Telephone Out of Service,False,checkbox,0,,,"If true, a pop-up will appear when an account with ""Telehone out of service/Invalid Number"" Active Action flags on it is loaded in the payments screen. The user will then have the opportunity too correct the active actions in the Customer Details screen before continuing with any payments.",PopUpPhoneOutOfService
+445,09,Auto-assign Successful Bailiffs Previous Customers,False,checkbox,0," "," ","If true, all accounts relating to a single customer will be automatically assigned to one Bailiff to work, if that bailiff has been successful on any of the accounts in the past (x) months.",BailiffAssign
+446,09,No. of Weeks Prior to Calculate Bailiff AutoAssign,26,numeric,0," "," ",Determines the number of weeks that the bailiff auto assign routine will consider.,BailiffAutoWeeks
+447,03,M: Number Months since last delivery(repo),12,numeric,0,,,Manual: Number of months since delivery for repossessed accounts,mthsSinceDelRepos
+448,03,M: Number Months since last payment(non-repo),12,numeric,0,,,Manual: Number of months since last payment for non-repossessed accounts,mthsSinceLastPayNonRepo
+449,03,M: Number Months since last payment(repo),6,numeric,0,,,Manual: Number of months since last payment for repossessed accounts,mthsSinceLastPayRepo
+450,03,M: Number Months since last repossession,3,numeric,0,,,Manual: Number of months since last repossession,mthsSinceLastRepo
+451,03,M: Arrears Level(non-repo),12,numeric,0,,,Manual: Arrears Level for non-repossession accounts,nonRepoArrLevel
+452,03,M: Percentage provisions(repo),100,numeric,0,,,Manual: The percentage to which the repossession account should be provided for,repoPcentProv
+453,03,M: Percentage provisions(non-repo),100,numeric,0,,,Manual: The percentage to which the non-repossession accounts should be provided for,nonRepoPcentProv
+454,03,Enable Automatic rules,True,checkbox,0,,,Accounts will be generated for writeoff using the Automatic Rules,enableAutoRules
+455,03,Enable Manual rules,False,checkbox,0,,,Accounts will be generated for writeoff using the Manual Rules,enableManualRules
+456,15,Print Schedule of Payments for SPA,True,checkbox,0,,,"If true, the Schedule of Payments will be printed when the Arrangement Details are printed in the Special Arrangement screen.",printSPAscheduleofpayments
+457,15,Tax Invoice Items per Page,30,numeric,0,,,Sets the number of items to be printed on a tax invoice page.,TaxInvoiceItemsPerPage
+458,09,No. PTPs before bailiff reassigned.,5,numeric,0,,,The number of times account is assigned to same bailiff if active PTP is on the account.,PTPBailiffAssign
+461,33,Enable StoreCard,True,checkbox,0,,,This will enable all storecard functionality.,StoreCardEnabled
+462,33,Revolving Credit Split Percentage,15.00,numeric,2,,,Maximum percentage of Total Credit allocated to Storecard,StorecardPercent
+464,33,Store Card Issuer Identification Number,636705,numeric,0,,,The numeric prefix to be used on the the StoreCard. Must be a maximum 6 digits in length.,StoreCardPrefix
+465,33,Current StoreCard Number,27905,numeric,0,,,The current number of the next storecard (without prefix or check digit).,StoreCardNumber
+466,27,Referral History Months,0,numeric,0,,,"Number of months back to check if account has been referred. If account has been referred within 'x' months, it will not qualify for instant credit",IC_ReferralMonths
+467,27,Maximum score for Change in Address check,152,numeric,0,,,customers with this score or lower will be checked for address changes if this check is on,IC_AddressCheckScore
+468,27,Maximum score for Change in employment check,152,numeric,0,,,customers with this score or lower will be checked for employment changes if this check is on,IC_EmploymentCheckScore
+469,27,Revise Months,0,numeric,0,,,This is the number of months which an account can be revised without re-passing qualification,IC_ReviseMonths
+470,33,Maximum Item Value,10000,numeric,0,,,This is the maximum value that an item can have when purchasing the item using a Store Card,MaxItemValStoreCard
+471,33,Store Card Minimum Spend Limit,2000,numeric,0,,,This is the minimum amount of spend limit that a customer must have to be able to qualify for a storecard,MinStoreCardLimit
+472,25,Maintain Non Stock Items in Cosacs,False,checkbox,0,,,"If true, Non Stock items are maintained in CoSACS and are not imported via the Product File Import EOD process. If false, Non Stock items will be imported via the Product File Import EOD process.",MaintainNonStocks
+473,33,Activate Card by Default,False,checkbox,0,,,New Store Cards issued will be activated by default,StoreCardActivate
+474,33,Max Number of Joint Cards,2,numeric,0,,,Maximum number of Joint Cards for store card,StoreCardMaxNoJointCards
+476,22,Display FACT employee no,True,checkbox,0,,,If selected the FACT employee number will be displayed in staff maintenance,showFactEmpNo
+477,33,Store Card Default Months,48,numeric,0,,,Default Expiry Months for new Cards,StoreCardDefaultCardMonths
+478,15,Store Card Receipt Display Footer,true,checkbox,1,,,Do you want to display a footer on the Store Card receipt?,SCardReceiptDisplayFooter
+479,15,Store Card Receipt Display Title,true,checkbox,1,,,Do you want to display the Store Card receipt title?,SCardReceiptDisplayTitle
+480,15,Store Card Receipt Title,Store Card Receipt,text,1,,,The title text to identify a Store Card receipt.,SCardReceiptTitle
+481,15,Store Card Receipt Footer,,text,1,,,Information to be printed at the bottom of the Store Card receipt e.g. Thank you for shopping at COURTS!,SCardReceiptFooter
+482,15,Store Card Receipt Signature,true,checkbox,1,,,Do you want to display the signature area on Store Card receipts?,SCardReceiptDisplaySignature
+483,15,Store Card Receipt Signature Text,Signature,text,1,,,The text to be displayed for signatures.,SCardReceiptSignatureText
+484,15,Store Card Receipt Copies,2,numeric,0,,,This is the number of copies of the Store Card Receipt that will be printed,SCardReceiptCopies
+485,28,Previous Repair %,1000.00,numeric,2,,,"This is the cost of previous repairs. If the total of previous repairs for an item exceeds this % of the Cost Price, a pop-up message will appear when the allocate button is selected in the Soft Script screen. This value is also used for the Previous Repair Total Exceeded filter in the Service Management Review screen",PreviousRepair
+486,33,Store Card Interest Free Days,15,numeric,0,,,This is the Interest Free Period for Store Card Accounts. Statements will produced this number of days prior to the Payment Due Date,SCardInterestFreeDays
+487,28,Service BER Costprice %,20,numeric,0,,,This is the percentage of the costprice of the item which is BER that will be applied to the costprice when calculating the courts parts total,ServiceBERCostPricePCent
+488,27,Joint account holders must qualify,TRUE,checkbox,0,,,"If this option is on, accounts where the customer is a joint holder must also qualify, for the customer to qualify",IC_JointQualification
+489,27,Months since address change,12,numeric,0,,,"If the address change requires manual approval is on, customers whose address has changed in the last X months AND have score below Y will be disqualified",IC_addressmonths
+490,27,Months since employment change,12,numeric,0,,,"If the employment change requires manual approval is on, customers whose employment has changed in the last X months AND have score below Y will be disqualified",IC_employmonths
+491,27,Settled Account Length - Instant Credit,9,numeric,0,,,If a customer is qualifying under a recent settled account the account must have been open for at least this many months,IC_settledmonths
+493,27,HP Accounts can Qualify for Instant Credit,False,checkbox,0,,,Determines Whether HP Accounts can Qualify for Instant Credit,HPQualInstantCredit
+496,11,Min score for delivery without first instalment,0,numeric,0,,,"This is the minimum score needed for an account to qualify for delivery without first instalment. If this parameter is set to zero,delivery without first instalment is not enabled",InstalWaiverMinScore
+497,07,Refer Existing No home/Work Phone with Mobile,False,checkbox,0,,,When set to true existing customers without home and work phones but with a mobile will get referred on scoring. When set to False existing customers will not get referred if they have a mobile. Customers without any phone at all will always get referred,MobPhoneRefer
+498,07,Status code do not refer if subsequent,True,checkbox,0,,,Determines whether customers with bad status get referred if have opened subsequent good account,StatExistsRefer
+499,07,Months over which to check worst status,24,numeric,0,,,Determines over what period to check worst account status when scoring,WorstStatusPeriod
+500,07,Minimum Expense Referral for existing customers,False,checkbox,0,,,Determines whether to apply rule to subsequent customers if they do not have a certain level of expenses,MinExpenseRefer
+501,07,Max Spend limit before referral,18500.00,numeric,0,,,"This will be automatically updated from the current score card ",MaxSpendLimitRefer
+502,07,Refer New No home/Work Phone with Mobile,True,checkbox,0,,,When set to true new customers without home and work phones but with a mobile will get referred on scoring. When set to False new customers will not get referred if they have a mobile. Customers without any phone at all will always get referred,MobPhoneReferNew
+505,07,Display reasons on referral/rejection popup,True,checkbox,0,,,"If TRUE, reasons for referral/rejection will be displayed on the referral/rejection popup",ReasonsReferPopup
+506,17,Minimum password length,5,numeric,0,,,Minimum password length allowed,PasswordMinLength
+511,27,Most recent settled Cash account months,3,numeric,0,,,"If a customer has no current accounts, this is the maximum number of months since the most recent Cash account has been settled for the customer to qualify for Instant Credit",SettledCashMonths
+512,25,RI outbound QTY directory,D:\UserData\WMQFTE\V7\RICARIBE\OUT\RIBBDB\UPD_CO_QTY\,text,0,,,Output directory path for Committed Stock (QTY) outbound file,RIQTYpath
+513,25,RI outbound SAR directory,D:\UserData\WMQFTE\V7\RICARIBE\OUT\RIBBDB\SALES_RETN\,text,0,,,Output directory path for Sales & Returns (SAR) outbound file,RISARpath
+514,25,RI outbound DTF directory,D:\UserData\WMQFTE\V7\RICARIBE\OUT\RIBBDB\DEL_TRAN\,text,0,,,Output directory path for Delivery transfer (DTF) outbound file,RIDTFpath
+515,25,RI outbound RPO directory,D:\UserData\WMQFTE\V7\RICARIBE\OUT\RIBBDB\REPO_RECV\,text,0,,,Output directory path for Repossessions (RPO) outbound file,RIRPOpath
+516,25,RI inbound ABC directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIBBDB\ABC_ITEMS\,text,0,,,"Source directory path for Product information (new items, price changes, RTA) (ABC) inbound file",RIABCpath
+517,25,RI inbound KIT directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIBBDB\KIT\,text,0,,,Source directory path for KIT Product information (KIT) inbound file,RIKITpath
+518,25,RI inbound POD directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIBBDB\PO_ARR_DAT\,text,0,,,Source directory path for Purchase Order Details (POD) inbound file,RIPODYpath
+519,25,RI inbound OHQ directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIBBDB\ONHAND_QTY\,text,0,,,Source directory path for On hand quantity (OHQ) inbound file,RIOHQYpath
+520,25,RI outbound Repo SAR directory,D:\UserData\WMQFTE\V7\RICARIBE\OUT\RIrpDB\SALES_RETN\,text,0,,,Output directory path for Repossession Sales & Returns (SAR) outbound file,RISARpathRepo
+521,25,RI outbound Repo DTF directory,D:\UserData\WMQFTE\V7\RICARIBE\OUT\RIrpDB\DEL_TRAN\,text,0,,,Output directory path for Repossession Delivery transfer (DTF) outbound file,RIDTFpathRepo
+522,25,RI inbound Repo ABC directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIrpDB\ABC_ITEMS\,text,0,,,"Source directory path for Repossession Product information (new items, price changes, RTA) (ABC) inbound file",RIABCpathRepo
+523,25,RI inbound Repo OHQ directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIrpDB\ONHAND_QTY\,text,0,,,Source directory path for Repossession On hand quantity (OHQ) inbound file,RIOHQYpathRepo
+524,25,RI Company Number - Regular Stock,22,numeric,0,,,RI Company Number for regular stock items,RICompanyNo
+525,25,RI Company Number - Repossession Stock,82,numeric,0,,,RI Company Number for repossession stock items,RICompanyNoRepo
+526,33,Store Card Minimum RF Limit Available,500,numeric,0,,,This is the minimum amount that should be available on the existing RF Limit for a customer to be able to qualify for a storecard,StoreCardMinRFAvail
+527,33,Issue Store Card at Pre-Approval End Of Day,True,checkbox,0,,,"If true, Store Card accounts will be created for Customers when running the Store Card pre-approval End Of Day routine",StoreCardIssueCardPreAppr
+528,33,Default Store Card Statement Frequency,M,text,0,,,"Default StoreCard Statement Frequency for new cards - M- Monthly, B - Bi Monthly, Q - Quarterly, S - Six Monthly",StoreCardStatementFrequency
+530,33,Storecard offer expiry months,12,numeric,0,,,"Number of months after wish a store card preapproval will lapse ",SCardPreExpiryMonths
+531,25,RI outbound QTY MSGQ argument,"""-D commandPostDst=/QIBM/UserData/mqm/MENSAJERIA400/IFCCosacsRi.sh"" ""-D fromPath={PATH}\{FILE}"" ""-D toPath=/QIBM/UserData/WMQFTE/V7/RICARIBE/IN/RIBBDB/UPD_CO_QTY/"" main.sf.cmd.post",text,0,,,"MSGQ command argument for Committed Stock (QTY) export file with following placeholders{PATH} - Directory path for outboud file{FILE} - Name of the outbound file",RIQTYMSGQArgument
+532,25,RI outbound SAR MSGQ argument,"""-D commandPostDst=/QIBM/UserData/mqm/MENSAJERIA400/IFCCosacsRi.sh"" ""-D fromPath={PATH}\{FILE}"" ""-D toPath=/QIBM/UserData/WMQFTE/V7/RICARIBE/IN/RIBBDB/SALES_RETN/"" main.sf.cmd.post",text,0,,,"MSGQ command argument for Sales & Return (SAR) export file with following placeholders{PATH} - Directory path for outboud file{FILE} - Name of the outbound file",RISARMSGQArgument
+533,25,RI outbound Repo SAR MSGQ argument,"""-D commandPostDst=/QIBM/UserData/mqm/MENSAJERIA400/IFCCosacsRi.sh"" ""-D fromPath={PATH}\{FILE}"" ""-D toPath=/QIBM/UserData/WMQFTE/V7/RICARIBE/IN/RIBBDB/SALES_RETN/"" main.sf.cmd.post",text,0,,,"MSGQ command argument for Repo Sales & Return (SAR) export file with following placeholders{PATH} - Directory path for outboud file{FILE} - Name of the outbound file",RISARRepoMSGQArgument
+534,25,RI outbound DTF MSGQ argument,"""-D commandPostDst=/QIBM/UserData/mqm/MENSAJERIA400/IFCCosacsRi.sh"" ""-D fromPath={PATH}\{FILE}"" ""-D toPath=/QIBM/UserData/WMQFTE/V7/RICARIBE/IN/RIBBDB/DEL_TRAN/"" main.sf.cmd.post",text,0,,,"MSGQ command argument for Delivery Transfer (DTF) export file with following placeholders{PATH} - Directory path for outboud file{FILE} - Name of the outbound file",RIDTFMSGQArgument
+535,25,RI outbound Repo DTF MSGQ argument,"""-D commandPostDst=/QIBM/UserData/mqm/MENSAJERIA400/IFCCosacsRi.sh"" ""-D fromPath={PATH}\{FILE}"" ""-D toPath=/QIBM/UserData/WMQFTE/V7/RICARIBE/IN/RIBBDB/DEL_TRAN/"" main.sf.cmd.post",text,0,,,"MSGQ command argument for Repo Delivery Transfer (DTF) export file with following placeholders{PATH} - Directory path for outboud file{FILE} - Name of the outbound file",RIDTFRepoMSGQArgument
+536,25,RI outbound RPO MSGQ argument,"-t ""-D fromPath={PATH}\{FILE}"" ""-D toPath=/QIBM/UserData/WMQFTE/V7/RICARIBE/IN/RIBBDB/REPO_RECV/"" main.sf",text,0,,,"MSGQ command argument for Repossessions(RPO) export file with following placeholders{PATH} - Directory path for outboud file{FILE} - Name of the outbound file",RIRPOMSGQArgument
+537,25,RI FTE Batch Script Path,FTESender.bat,text,0,,,RI FTE Message Queue Batch Script Path,RIFTEBatchScriptPath
+538,33,StoreCard recheck qualifcation.,True,checkbox,0,,,This option will check the customer still qualifies for StoreCard when setting status to awaiting activation.,StoreCardCheckQual
+539,25,RI inbound CTX directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIrpDB\CATALOG\,text,0,,,Source directory path for Product Heirarchy information (CTX) inbound file,RICTXpath
+540,25,RI Outbound Repo QTY directory,D:\UserData\WMQFTE\V7\RICARIBE\OUT\RIBBDB\UPD_CO_QTY\,text,0,,,Output directory path for Repossession Committed Stock (QTY) outbound file,RIQTYpathRepo
+541,25,RI Outbound Repo QTY MSGQ argument,"""-D commandPostDst=/QIBM/UserData/mqm/MENSAJERIA400/IFCCosacsRi.sh"" ""-D fromPath={PATH}\{FILE}"" ""-D toPath=/QIBM/UserData/WMQFTE/V7/RICARIBE/IN/RIBBDB/UPD_CO_QTY/"" main.sf.cmd.post",text,0,,,"MSGQ command argument for Repo Committed Stock (QTY) export file with following placeholders{PATH} - Directory path for outboud file{FILE} - Name of the outbound file",RIQTYRepoMSGQArgument
+542,13,Display Assembly Options,False,checkbox,0,,,"If true, a popup displaying assembly options will appear upon entering an item in the New Sales Order screen if this item requires assembly",DisplayAssemblyOptions
+543,25,RI Interface Options,FACT,dropdown,0,RIO,RIInterfaceOptions,The following options determine how items/parts are interfaced. FACT - All items will interface to FACT2000. Parts - Parts will interface to FACT2000 and all other items to RI. RI - All items including parts will interface to RI.,RIInterfaceOptions
+544,13,Display Courts Code,false,checkbox,0,,,"If true, Courts item number will be displayed as well as the IUPC. If false only IUPC will be displayed.",RIDispCourtsCode
+545,13,Password for stock on order required,False,checkbox,0,,,If checked prevent selling of stock on order products by unauthorised users.,StockOnOrderAuth
+546,29,Repossessed products commission rate,false,checkbox,0,,,Allows different commission rates to be applied to Regular products and Repossessed products. If false Repossessed products will have the same commission rates as Regular products.,ComRepoItem
+547,01,"Replace ""Category"" label with ""Department""",false,checkbox,0,,,"If true, labels previously displayed as ""Category"" will now be displayed as ""Department"". If false the label will remain as ""Category"".",RIDispCatAsDept
+548,25,RI inbound Repo KIT directory,D:\UserData\WMQFTE\V7\RICARIBE\IN\RIBBDB\KIT\,text,0,,,Source directory path for Repossession KIT Product information (KIT) inbound file,RIKITpathRepo
+549,33,Minimum Payment percentage for StoreCard,5,numeric,0,,,The minimum percent of outstanding balance a customer must pay for each bill.,StoreCardPaymentPercent
+550,33,Minimum Payment amount for StoreCard,20,numeric,0,,,The minimum payment amount per bill.,StoreCardMinPayment
+551,32,Maximum %RF Spend Limit Allocated to Cash Loans,50,numeric,0,,,This is the percentage of the RF Spend Limit that can be allocated to cash Loans,CL_MaxPctRFavail
+552,32,Minimum Loan Amount,500,numeric,0,,,Minimum Loan amount available. This is a set value across all accounts and will not be based on the % of the remaining available credit.,CL_MinLoanAmount
+553,33,"Late Payment Fees ",0,numeric,2,,,Late Payment Fees ? applied if payment made after due date,SCLatePaymentFees
+554,33,Annual Card Fee,0,numeric,2,,,Annual Fee ? Applied on Activation and anniversary of Activation,SCAnnualFee
+555,33,Statement Fee,0,numeric,2,,,Statement Fee on Reprint of Statement,SCStatementFee
+556,33,Replacement Card Fee,0,numeric,2,,,Replacement Card Fee applied when card is lost/stolen and replacement issued,SCReplacementFee
+557,32,Credit Account types to qualify for Cash Loan,Both,dropdown,0,CLAT,CashLoanAccountTypes,"Credit Account types to qualify for Cash Loan. RF, HP or Both",CL_AccountType
+558,32,Months since Address changed,36,numeric,0,,,"If 'Changes in Residence require manual approval' parameter is true, Customers whose address has changed within the last X months AND has changed since they last had an account DA'd will not qualify",CL_AddressMonths
+559,32,Months since Employment changed,12,numeric,0,,,"If 'Changes in Employment require manual approval' parameter is true, Customers whose employment has changed within the last X months AND has changed since they last had an account DA'd will not qualify",CL_EmployMonths
+560,33,Store Card Fee Small Balance Amount,25.00,numeric,2,,,Balances below this will not incur Fees for non-payment,STMinBalanceforFee
+561,33,Manual Card Override Password,True,checkbox,0,,,Password required for Manual Card Entry in Payment and Cash and Go Screens,SCManualCardOverride
+562,33,Magnetic Stripe Reader Name,MagTek Msr,text,0,,,The name of the Magnetic Stripe Card Reader installed.,StoreCardMagStripeReaderName
+563,32,Referral History (Months),0,numeric,0,,,"Number of months back to check if account has been referred. If account has been referred within 'x' months, it will not qualify for Cash Loan",CL_ReferralMonths
+564,32,Referral Msg - Account in Arrears,True,checkbox,0,,,If true and the customer has arrears on an account at the time of applying for Cash Loan a message box is displayed,CL_ReferralArrears
+565,32,Referral Msg - Rescored,True,checkbox,0,,,"If true and the customer's application has been re-scored, do not refer if rescored value is higher than country parameter score for cash loan qualification. If the customer's rescore triggers a decrease in limit which then makes the loan amount greater than the % qualification or the spend is now less than the loan value a message box is displayed. ",CL_ReferralRescored
+566,32,Referral Msg - High Status,True,checkbox,0,,,If true and an account status code went over the maximum status code but has now returned to acceptable status code a message box is displayed,CL_ReferralStatus
+567,32,Referral Msg - Residence changed,false,checkbox,0,,,If true and the application has been updated and the customer's home address has been changed a message box is displayed,CL_ReferralResidence
+568,32,Referral Msg - Employment changed,false,checkbox,0,,,If true and the application has been updated and the customer's work address has been changed a message box is displayed,CL_ReferralEmployment
+569,32,Referral Msg - Percentage,false,checkbox,0,,,If true and the customer's available spend is greater than the maximum loan amount but the percentage is less than Loan RF% available amount a message box is displayed,CL_ReferralPercentage
+570,32,Months since most recent settled Cash Loan,2,numeric,0,,,Number of months a customer's most recent Cash Loan account would need to have been settled in order for a Cash Loan letter to be sent to a Customer that does not have a current Cash Loan and has re-qualified,CL_CashLoanLetterPrevSettMths
+571,32,Percentage paid of a Cash Loan,100,numeric,0,,,"The percentage of a current Cash Loan that is paid to enable letters to be sent. ",CL_PercentagePaid
+572,01,Culture,English (United States),dropdown,0,,,Sets culture settings for the CoSaCS server.,Culture
+577,22,MaximumShortage,0,numeric,0,,,Total Shortage Values below this will be written off,CashierMaxShortage
+578,22,MaximumOverage,0,numeric,0,,,Total Overage values below this will be written off,CashierMaxOverage
+579,22,MaximumTimeLimit,Day,dropdown,0,,,Time Limit before write off (1 day or 1 week),MaxTimeLimit
+580,22,Shortage/Overage Write off Account,,text,0,,,Write off account to post shortage or overage,WriteOffAccount
+581,27,Settled Account Length - CashLoans,6,numeric,0,,,If a customer is qualifying under a recent settled account the account must have been open for at least this many months,CL_settledmonths
+582,15,Tax Invoice Print After Payment,False,checkbox,1,,,"If true, the Tax Invoice will be printed when a payment is processed and Thermal print is enabled.",TaxInvPrintAfterPayment
+584,17,Min Non Alphanumeric characters,2,numeric,0,,,Minimum number of non alphanumeric characters. Example: &^%$?!._,MinRequiredNonalphanumericChar
+586,08,Repo Redelivery unit price,True,checkbox,0,,,"If true, the Repo unit price will be used otherwise zero price will be used when scheduling for delivery",RepoDelUnitPrice
+587,33,Store Card Number of Statements per Batch Print,50,numeric,0,,,Maximum number of statements per batch print,StoreCardBatchPrint
+588,33,Store Card Maximum Days Between End Of Day Runs,5,numeric,0,,,Store Card Statements End Of Day routine will run automatically if the number of days since the last run is at least the value set in this parameter,StoreCardMaxDaysEODRun
+589,28,Installation Stock Account,,text,0,,,The special account number for the installation parts inventory,InstallationStockAccount
+590,01,Online Distribution Centre,908,numeric,0,,,This is the Online Distribution Centre branch number.,OnlineDistCentre
+594,01,ISO Country Code,BB,text,0,,,This is the ISO Country Code,ISOCountryCode
+595,13,Ready Assist Extract Account Id,UNI,text,0,,,This is the Account Id to be shown in the Ready Assist Extract,RdyAstAcctId
+596,13,Ready Assist Extract Plan Id,CRA,text,0,,,This is the Plan Id to be shown in the Ready Assist Extract,RdyAstPlanId
+597,13,Display Express Delivery,False,checkbox,0,,,"If true, Express Delivery checkbox will be displayed in the New Sales Order Screen",DisplayExpressDelivery
+598,24,Min Free Months on Replacements (%),50,numeric,0,,,The minimum number of months (as a percentage of the original item?s free/manufacturer warranty length) that a replacement item on an IR replacement can receive,MinFreeMonthIR
+599,24,Delay New IRW (True / False),False,checkbox,0,,,"If True, when an IRW replacement item receives complimentary free/manufacturer warranty months, then the start date of any purchased IRW on the replacement item is delayed until the end of the free months",DelayNewIRW
+600,24,Minimum price for credit terms,0,numeric,0,,,The minimum price for which an account can be sold on credit terms,CreditMinPrice

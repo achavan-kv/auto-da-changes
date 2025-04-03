@@ -1,0 +1,1 @@
+sp_rename 'Service.Request.RequestState', 'State'

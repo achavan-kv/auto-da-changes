@@ -1,0 +1,11 @@
+﻿
+@model Blue.Cosacs.Web.Areas.Admin.Models.AddressMaster
+<tr data-id=@Model.Id class=view>
+    @if (Html.HasPermission(Blue.Service.ServicePermissionEnum.AddressMasterManage))
+    {
+        <td class="actions"></td>
+    }
+    <td>@Model.Region</td>
+    <td>@Model.Village</td>
+    <td>@Model.ZipCode</td>
+</tr>

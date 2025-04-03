@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:sourceDocument="T:\Customer\Courts Furnishers (UK) Ltd\CRT15 - Courts CoSACS CoSource\Online Help\Online Help Resources\Warranty.doc" xml:lang="en-gb" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" class="" MadCap:tocPath="Warranties">
+    <head><title>Warranty Reports</title>
+        <link href="../Resources/Stylesheets/Deliveries.css" rel="stylesheet" />
+        <script src="../SkinSupport/MadCapBody.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapUtilities.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapHighlighter.js"> <![CDATA[ ]]></script>
+    </head>
+    <body>
+        <p>
+            <p>&#160;</p>
+        </p>
+        <h1 class="Heading1"><a name="1"></a><span class="span_2">1 </span>Warranty Repossessions.</h1>
+        <p class="BodyText">&#160;</p>
+        <p class="BodyText">When the product linked to a warranty is repossessed the system need to make sure the following takes place:</p>
+        <p class="BodyText">&#160;</p>
+        <ul class="ul_1">
+            <li class="BodyText_2" value="1">The customer is refunded the unexpired portion of the warranty via a CRE or CRF adjustment</li>
+            <li class="BodyText_2" value="2">The warranty is not redelivered if the repossession is redelivered.</li>
+            <li class="BodyText_2" value="3">AIG is notified of the repossession via<a href="8 Warranty reports.htm#8"> warranty reports</a> in CoSACS</li>
+        </ul>
+        <hr width="100%" size="4" align="center" />
+        <h2 class="Heading2"><a name="1.1"></a><span class="span_19">1.1 </span>The Repossession process</h2>
+        <p class="BodyText">&#160;</p>
+        <ol start="1" class="ol_1">
+            <li class="BodyText_3" value="1">Customer returns product “x” months since delivery</li>
+            <li class="BodyText_3" value="2">When returning the product the user will get a message informing them that the Product is linked to a warranty. </li>
+            <li class="BodyText_3" value="3">The warranty will be automatically returned with the product. </li>
+            <li class="BodyText_3" value="4">The <a href="../Country Parameters/WarrantyCM.htm#1.1.10">warranty return item number</a>&#160; will be based on the return code tables in COSACS. The return codes are necessary to work out the rebate that can be claimed back from AIG for the unexpired portion of the warranty. The customer will also receive a credit to their account for the unexpired portion of the warranty. This will be in the form of transactions CRE or CRF.&#160;</li>
+            <li class="BodyText_3" value="5">The transaction codes are set up by default&#160;in the&#160;CoSACS&#160;upgrade in transaction type maintenance with the correct interface account numbers.</li>
+            <li class="BodyText_3" value="6">Process the repossession as normal.</li>
+            <li class="BodyText_3" value="7">In Account details you will see the details of the repossession and the transaction. </li>
+            <li class="BodyText_3" value="8">A warranty is always repossessed with a zero value. This is because the customer is still expected to pay for the warranty. However we cannot expect the customer to pay the unexpired of the warranty. The customer is credited for the unexpired portion of the warranty based on the Warranty Return Codes set up in CoSACS. Any changes to return codes and % associated with them needs to be requested through <a href="mailto:cosacssupportcalls@strategicthought.com?subject=Support Question from the Online Help" title="Click here to email CoSACS Support" alt="Click here to email CoSACS Support">CoSACS Support</a>.</li>
+        </ol>
+        <p class="BodyText">&#160;</p>
+        <p class="BodyText_2" style="text-decoration: none;color: #ff0000;"><u>Redelivery after repossession</u>
+        </p>
+        <p class="BodyText_2" style="text-decoration: none;color: #ff0000;">Please note that warranties are not redelivered if a repossession is redelivered. This is because the redelivered item is considered as second hand by the Insurers and the item cover is terminated. </p>
+        <hr width="100%" size="4" align="center" />
+        <p class="Heading1"> <![CDATA[ ]]></p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

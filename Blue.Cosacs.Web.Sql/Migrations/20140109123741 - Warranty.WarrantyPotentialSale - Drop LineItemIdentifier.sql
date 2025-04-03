@@ -1,0 +1,2 @@
+alter table Warranty.WarrantyPotentialSale
+drop column LineItemIdentifier

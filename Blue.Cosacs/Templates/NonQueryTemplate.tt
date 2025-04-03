@@ -1,0 +1,43 @@
+﻿<#@ assembly name="System.Core, Version=4.0.0.0, Culture=neutral" #>
+<#@ assembly name="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral" #>
+<#@ assembly name="Microsoft.SqlServer.ConnectionInfo" #>
+<#@ assembly name="Microsoft.SqlServer.Smo" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+<#+
+public class NonQueryTemplate : ProcedureTemplate
+{
+    public NonQuery Model;
+	
+    public override string TransformText()
+    {
+		this.Name = Model.name;
+		base.TransformText();
+		PushIndent("\t");
+		
+		var proc = Database.StoredProcedures[Model.name, "dbo"];
+#>
+partial class <#= proc.Name #>
+{
+	public int ExecuteNonQuery()
+	{
+		return ((cmd.Connection != null && cmd.Connection.State != ConnectionState.Closed) ? cmd.ExecuteNonQuery() : Context.Database().ExecuteNonQuery(cmd));
+	}
+
+	<#+ if (proc.Parameters.Count > 0) { #>
+	public object ExecuteNonQuery(<#= Args(proc) #>)
+	{
+		<#= ArgsAssignPreExecute(proc) #>
+		var __result = ExecuteNonQuery();
+		<#= ArgsAssignPosExecute(proc) #>
+		return __result;
+	}
+	<#+ } #>
+}
+
+<#+
+		PopIndent();
+        return this.GenerationEnvironment.ToString();
+    }
+}
+#>

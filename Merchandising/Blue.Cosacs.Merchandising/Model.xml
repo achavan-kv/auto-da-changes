@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Merchandising" namespace="Blue.Cosacs.Merchandising" label="Merchandising">
+  <Connection server="." database="cosacs10" />
+  <Queries>
+  </Queries>
+  <Tables>
+    <Table name="CintError" />
+    <Table name="CintsError" />
+    <Table name="SucrBase" />
+  </Tables>
+  <Views>
+    <View name="SummaryUpdateControlReportView" />
+  </Views>
+  <Settings>
+    <Setting id="BackOrders" name="Cancellation of Back Orders on Goods Received is Enabled" type="bit" category="Settings">
+      <Description>When selected, it is possible to cancel back orders for goods received</Description>
+      <Default>true</Default>
+    </Setting>
+    <Setting id="ActiveNewMigrationPeriod" name="Active New Migration Period" type="int" category="Settings">
+      <Description>The number of days that a product with status of 'Active New' can remain in before being automatically changed to 'Active Current'</Description>
+      <Default>30</Default>
+    </Setting>
+    <Setting id="DateFormat" name="Date Format" type="string" category="Settings">
+      <Description>Pattern used for displaying dates</Description>
+      <Default>d MMMM yyyy</Default>
+    </Setting>
+    <Setting id="DaysUntilAutoCancelPurchaseOrder" name="Days Until Auto Cancel Purchase Order" type="int" category="Settings">
+      <Description>The number of days that a purchase order will sit in the Expired status before it is automatically cancelled</Description>
+      <Default>30</Default>
+    </Setting>
+    <Setting id="DaysUntilAutoCloseStockCount" name="Days Until Auto Close Stock Count" type="int" category="Settings">
+      <Description>The number of days past the stock count start date before if is automatically closed</Description>
+      <Default>30</Default>
+    </Setting>
+    <Setting id="Fascia" name="Store Chains" type="list" category="Lists">
+      <Description>Available chains for locations</Description>
+      <Default>Courts</Default>
+    </Setting>
+    <Setting id="FinanceEmailAddress" name="Finance Email Address" type="string" category="Settings">
+      <Description>Email address to send notifications (eg. verify goods receipt costing) to</Description>
+    </Setting>
+    <Setting id="ZebraPrinterName" name="Zebra Printer Name" type="string" category="Settings">
+      <Description>The windows name of the Zebra Printer (case sensitive), it must be setup to accept RAW commands without spooling</Description>
+      <Default>Cosacs ZPL</Default>
+    </Setting>
+    <Setting id="LocalCurrency" name="Local Currency" type="string" category="Settings">
+      <Description>The local currency for use to display with costs</Description>
+      <Default>JMD</Default>
+    </Setting>
+    <Setting id="FileExportDirectory" name="File Export Directory" type="string" category="Settings">
+      <Description>The directory that the save file exports to.  The AppDomain must have permission to write to this directory</Description>
+      <Default>C:\</Default>
+    </Setting>
+    <Setting id="RP3FileExportDirectory" name="RP3 File Export Directory" type="string" category="Settings">
+      <Description>The directory that the RP3 exports save to.  The AppDomain must have permission to write to this directory</Description>
+      <Default>C:\</Default>
+    </Setting>
+    <Setting id="RP3ExportLastXDaysOfTransactions" name="RP3 Export Last X Days of Transactions" type="int" category="Settings">
+      <Description>The number of days in the past that transactions will be exported for RP3 transaction exports</Description>
+      <Default>7</Default>
+    </Setting>
+    <Setting id="RP3GoLiveDate" name="RP3 Go Live Date" type="date" category="Settings">
+      <Description>Initial RP3 Export Date set at Go Live(N/A for Purchase Orders)</Description>
+      <Default>2016-01-01</Default>
+    </Setting>
+    <Setting id="RP3SendFilesInterfaceDirectory" name="RP3 Send Files Interface Directory" type="string" category="Settings">
+      <Description>The directory containing the  of the ""SendFilesInterface.bat"" RP3 export batch file</Description>
+      <Default>C:\</Default>
+    </Setting>
+    <Setting id="PriceRounding" name="Price Rounding" type="list" category="Settings">
+      <Description>Calculated prices are rounded to the nearest value from this list</Description>
+      <Default>0</Default>
+    </Setting>
+    <Setting id="ProductTags" name="Product Tags" type="list" category="Lists">
+      <Description>Descriptive tags used to categorise products for search purposes</Description>
+      <Default>Never Out</Default>
+    </Setting>
+    <Setting id="ReferenceNumberType" name="Reference Number Type" type="list" category="Lists">
+      <Description>The options for the purchase order reference numbers</Description>
+      <Default>
+        Container Number
+        Delivery Note Number
+        Invoice Number
+        Customer Reference
+      </Default>
+    </Setting>
+    <Setting id="RepossessionCost" name="Repossession Cost Markup" type="decimal" category="Settings">
+      <Description>The markup on cost price that is used to calculate the cost price for all repossessed items</Description>
+      <Default>20</Default>
+    </Setting>
+    <Setting id="StockCountQuestions" name="Stock Count Questions" type="list" category="Lists">
+      <Description>Questions to be completed before starting a stock count</Description>
+      <Default>Have you processed all goods receipts?</Default>
+    </Setting>
+    <Setting id="GoodsOnLoanWarehouse" name="Goods on Loan Warehouse" type="codeList" category="Settings" codeList="MerchandisingLocations">
+      <Description>The location that is the Goods on Loan Warehouse</Description>
+      <Default>Goods on Loan</Default>
+    </Setting>
+    <Setting id="StoreType" name="Store Type" type="list" category="Lists">
+      <Description>Category of store used for linking products and stores</Description>
+      <Default>Regular</Default>
+    </Setting>
+    <Setting id="TaxInclusive" name="Prices are Inclusive of Tax" type="bit" category="Settings">
+      <Description>When selected, prices are considered inclusive of tax for sales purposes</Description>
+      <Default>false</Default>
+    </Setting>
+    <Setting id="VendorCurrencies" name="Currencies" type="list" category="Lists">
+      <Description>Vendor costs can be specified in the following currencies</Description>
+      <Default>
+        USD
+        JMD
+      </Default>
+    </Setting>
+    <Setting id="VendorTags" name="Vendor Tags" type="list" category="Lists">
+      <Description>Descriptive tags used to categorise vendors for search purposes</Description>
+      <Default>New Vendor</Default>
+    </Setting>
+    <Setting id="VerifyCosts" name="Goods Received Require Verification of Costs" type="bit" category="Settings">
+      <Description>When selected, goods receipts for imported goods will need to have costs verified</Description>
+      <Default>true</Default>
+    </Setting>
+  </Settings>
+</Model>

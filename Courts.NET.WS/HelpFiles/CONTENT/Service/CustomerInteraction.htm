@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Service">
+    <head><title>Customer Interaction</title>
+        <link href="../Resources/Stylesheets/onlinehelp.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapUtilities.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffects.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapBody.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapHighlighter.js">/*<![CDATA[*/ /*]]>*/</script>
+    </head>
+    <body>
+        <h1>Customer Interaction</h1>
+        <p class="MyStyle">This screen will search on a customer ID field or may be called from another screen passing the customer ID. When a customer is retrieved the customer search fields will become read only until either the ‘Save’ or ‘Clear’ button is pressed. The customer title, first name and last name will be populated in the one field called ‘Name’. This field will always be read only. All interactions with this customer will be listed in date order.</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The Interaction Log will include the columns:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Date
+</li>
+            <li style="font-family: Arial;" value="2">Description
+</li>
+            <li style="font-family: Arial;" value="3">Employee number
+</li>
+            <li style="font-family: Arial;" value="4">Account No ~ can be blank
+</li>
+            <li style="font-family: Arial;" value="5">Service Request No ~ can be blank
+</li>
+            <li style="font-family: Arial;" value="6">Comments
+</li>
+        </ul>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The user will not be able to edit existing entries.</p>
+        <p class="MyStyle">A new interaction will be added by entering a date and the interaction code.</p>
+        <p class="MyStyle"> The interaction description will be automatically populated from code maintenance. </p>
+        <p class="MyStyle">The date and code fields will be mandatory. If this customer relates to an account number or to an SR number then these can be selected from the drop down lists. </p>
+        <p class="MyStyle">Only the account numbers and the SR numbers that relate to this customer will be available in the drop down lists.</p>
+        <p class="MyStyle"> The plus button is pressed to add the entry to the log.
+Note that the details will not be saved to the database until the ‘Save’ button is pressed. </p>
+        <p class="MyStyle">All of the accounts for the customer will be listed at the bottom of the screen. </p>
+        <p class="MyStyle"> This list will be made up of the columns:
+</p>
+        <ul style="list-style-type: square;">
+            <li class="MyStyle" style="font-family: Arial;" value="1">Service request number ~ can be blank. There can be more than one SR held against the same account. If this is the case then the SR with the latest date logged will be shown in this list.
+</li>
+            <li style="font-family: Arial;" value="2">Account number
+</li>
+            <li style="font-family: Arial;" value="3">Date account opened
+•	Account type
+</li>
+            <li style="font-family: Arial;" value="4">Agreement total
+</li>
+            <li style="font-family: Arial;" value="5">Outstanding balance
+</li>
+            <li style="font-family: Arial;" value="6">Arrears amount
+</li>
+            <li style="font-family: Arial;" value="7">Main holder or joint
+</li>
+            <li style="font-family: Arial;" value="8">Account status
+</li>
+        </ul>
+        <p class="MyStyle">Where an account has an SR the user will be able to right click the account line and select an option called ‘Service Request’ to open the Service Request screen. The Service Request screen will be passed the SR number. That screen should load all related SR’s for the same customer accounts and scroll the product list to the SR number that was passed.
+</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle"><a class="MCRelatedTopics" href="javascript:void(0);" onclick="FMCLinkControl( event, this ); return false;" onkeydown="this.MCKeydown = true;" MadCap:topics="The Product Tab|SR_Product Tab.htm||Service Request Summary on Account Details|SRAccountdetails.htm||Soft Script Popup|SoftScripts.htm||Service Request Search|ServiceSearch.htm||Service Failure Report|ServiceFailure Report.htm||Service Request Screen|Service Request Screen.htm||Service Request Audit|Service Request Audit.htm||Service Progress Report|Service Progress Report.htm||Payment screen for Service|Service Payment.htm||The Resolution Tab|Resolution.htm||Outstanding Service Requests|OutstandingSR.htm||Claims submission report|ClaimsSubmissions.htm||Charge To Analysis|Charge To.htm||Beyond Economic Repair (BER)|BER.htm||Batch Printing|BatchPrint.htm||Service Request Allocation|Allocation.htm"><img src="../SkinSupport/RelatedTopics.gif" style="border: none;margin-right: 5px;" />Related Topics</a>
+        </p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h3>Log Unscheduled Call</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Customer Name </label>
+            </div>
+            <div class="col-lg-8">
+                <label>{{call.CustomerFirstName}} {{call.CustomerLastName}}</label>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4"></div>
+            <div class="col col-lg-4">
+                <input type="checkbox" scope="call.SpokeToCustomer" />
+                <label id="Label5">Spoke to customer</label>
+            </div>
+            <div class="col col-lg-4">
+                <input type="checkbox" ng-model="call.DoNotCallAgain" />
+                <label id="Label7">No unsolicited calls</label>
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label>Reason for calling</label>
+            </div>
+            <div class="col col-lg-8">
+                <input class="form-control" type="text" ng-model="call.ReasonToCallAgain" placeholder="Reason for calling" maxlength="32" />
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label id="Label4">Called At</label>
+            </div>
+            <div class="col col-lg-4">
+                <input name="CalledAt" type="date" ng-model="call.CalledAt" class="date form-control">
+            </div>
+            <div class="col-lg-4">
+                <input type="time" class="date form-control" ng-model="call.CalledAtHour" />
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col col-lg-4">
+                <label>Schedule Callback</label>
+            </div>
+            <div class="col col-lg-4">
+                <input type="date" ng-model="call.ScheduleCallback" class="date form-control" />
+            </div>
+            <div class="col col-lg-4" ng-class="{'has-error': !call.ScheduleCallbackHour}" ng-show="call.ScheduleCallback">
+                <input type="time" class="date form-control" ng-model="call.ScheduleCallbackHour" />
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+        <div class="row">
+            <div class="col-lg-12">
+                <textarea rows="4" placeholder="Enter comments here" aria-multiline="true" class="col col-lg-12" ng-model="call.Comments" maxlength="1024" />
+            </div>
+        </div>
+        <div class="search row">&nbsp;</div>
+    </div>
+    <div class="modal-footer">
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary" id="btnLog" ng-click="logCall($event)">Log Unscheduled Call</button>
+            <button class="btn btn-default" ng-click="cancel($event)">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+ALTER TABLE Service.Request
+ALTER COLUMN CreatedBy varchar(50) NOT NULL
+
+ALTER TABLE Service.Request
+ALTER COLUMN Type CHAR(2) NOT NULL

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="">
+    <head><title>The Product Tab</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <script src="../SkinSupport/MadCapUtilities.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapEffects.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapBody.js"> <![CDATA[ ]]></script>
+        <script src="../SkinSupport/MadCapHighlighter.js"> <![CDATA[ ]]></script>
+    </head>
+    <body>
+        <h1>The Product Tab</h1>
+        <p class="MyStyle">The Product tab at the bottom of the screen will be populated with any product from the Product List. A Product is selected in the list a red <span style="color: #ff0000;font-weight: bold;">RED</span> label next to the <u>purchase date</u> in the Product tab will indicate if product selected is not covered by warranty. The label will say <span style="color: #ff0000;font-weight: bold;">"NO&#160;WARRANTY". </span><span>If the item is under Warranty then no message will show. If in extended warranty then the extended warranty box will be ticked.</span></p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The Product tab will only be enabled when a product is selected.</p>
+        <p class="MyStyle">&#160;</p>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_3084065228_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' );" /><span style="font-family: Arial;">The following fields will be pre populated and never editable:</span></a>
+            <div class="MCDropDownBody" id="MCDropDownBody_3084065228_0" style="display: none;">
+                <ul style="list-style-type: square;">
+                    <li style="font-family: Arial;" value="1">Purchase Date</li>
+                    <li style="font-family: Arial;" value="2">Product Code</li>
+                    <li style="font-family: Arial;" value="3">Stock Location</li>
+                    <li style="font-family: Arial;" value="4">Description of Product</li>
+                    <li style="font-family: Arial;" value="5">Logged by</li>
+                    <li style="font-family: Arial;" value="6">Instant Replacement - This will be ticked if the item is under Instant Replacement.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_3084065228_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' );" /><span style="font-family: Arial;">Fields not pre populated and editable (within certain conditions) are:</span></a>
+            <div class="MCDropDownBody" id="MCDropDownBody_3084065228_1" style="display: none;">
+                <ul class="nikkilist">
+                    <li value="1">Model No</li>
+                    <li value="2">Serial Number</li>
+                    <li value="3">Date logged - This default to the day the request was raised but can be changed to an earlier date)</li>
+                    <li value="4">Product Received date</li>
+                    <li value="5">Service Location - Only visible when enabled by the country parameter '<span style="color: #228b22;font-weight: bold;">Service Location</span>'. The descriptions for Service Locations should be defined in codes maintenance (<span style="color: #228b22;font-weight: bold;">SRSERVLCN</span>).</li>
+                    <li value="6">Repair Estimate - Required if the 'Allocation tab' is enabled. It will only be enabled if an estimate was required on the 'BER Popup' screen</li>
+                    <li value="7">Product Collected date - This will be disabled until a Resolution date is set in the Resolution tab.</li>
+                    <li value="8">Extended Warranty - If the product is out of 1st year manufacturer warranty but still in the extended warranty period the system will tick this field. This field can be changed with authorisation and it can only be changed from 'Y' to 'N'. Not from No to Yes.</li>
+                    <li value="9">Damaged by deliver - When this is ticked, a deposit will not be required from the customer. Additionally the soft script popup will not appear when pressing the repair button.</li>
+                    <li value="10">Goods on Loan - To be ticked if good have been loaned to the customer as a temporary replacement during repair.</li>
+                    <li value="11">Deposit Required - Required if allocation is enabled. A deposit is only required when an item is out of Warranty and the country parameter '<span style="color: #228b22;font-weight: bold;">Service Deposit</span>' is enabled. The user will enter the amount of the deposit required here. Payment will be made via the payment screen. This is discussed in the Payment Screen topic. </li>
+                    <li value="12">Repair Button - This is enabled when the status of the Service Request is either new or allocated. If the damaged by deliver box has <b>NOT</b> been ticked, the Repair button will launch the 'Soft Script popup' screen. If the damaged by deliver is true then the cause for the repair is already known. </li>
+                </ul>
+            </div>
+        </div>
+        <p class="MyStyle"><a class="MCRelatedTopics" href="mcrelatedtopics:SRAccountdetails.htm+Service Request Summary on Account Details|SoftScripts.htm+Soft Script Popup|ServiceSearch.htm+Service Request Search|ServiceFailure Report.htm+Service Failure Report|Service Request Screen.htm+Service Request Screen|Service Request Audit.htm+Service Request Audit|Service Progress Report.htm+Service Progress Report|Service Payment.htm+Payment screen for Service|Resolution.htm+The Resolution Tab|OutstandingSR.htm+Outstanding Service Requests|CustomerInteraction.htm+The Customer Interaction Screen|ClaimsSubmissions.htm+Claims submission report|Charge To.htm+Charge To Analysis|BER.htm+Beyond Economic Repair (BER)|BatchPrint.htm+Batch Printing|Allocation.htm+Service Request Allocation"><img src="../SkinSupport/RelatedTopics.gif" style="border: none;margin-right: 5px;" />Related Topics</a>
+        </p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

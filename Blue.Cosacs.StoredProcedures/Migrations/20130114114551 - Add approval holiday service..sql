@@ -1,0 +1,2 @@
+ALTER TABLE Service.Holiday
+ADD Approved BIT DEFAULT 1 NOT NULL 

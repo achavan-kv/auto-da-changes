@@ -1,0 +1,94 @@
+<div class="panel panel-default references" ng-repeat="result in proposal.References">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-lg-6" title="View">
+                <span>
+                    <strong>{{result.FirstName}} {{result.LastName}}</strong> - {{result.Relationship}} <span
+                        ng-show="result.IsFamily">(Family)</span>
+                </span>
+            </div>
+            <div class="col-lg-5">
+
+            </div>
+            <div class="col-lg-1">
+                     <span class="glyphicons pencil"
+                           title="Edit"
+                           ng-show="false"></span>
+                &nbsp;
+                <span ng-show="pageState == 'edit'" class="glyphicons bin action-delete click"
+                      title="Delete"
+                      ng-click="deleteReference($index)"></span>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body centre-section" ng-class="{'linked' : result.Filled}">
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div ng-show="result.Email" class="=wrap">
+                            <span class="glyphicons envelope"
+                                  title="Email"></span>&nbsp;
+                        {{result.Email}}
+                    </div>
+                    <div ng-show="result.YearsKnown">
+                        <span><strong>Years known </strong>{{result.YearsKnown}}</span>
+                    </div>
+                    <div ng-show="result.HomeAddress">
+                        <span><strong>Home Address</strong></span> <br>
+                        {{result.HomeAddress}}
+                    </div>
+                    <div ng-show="result.HomeDirections">
+                        <span><strong>Directions</strong></span><br>
+                        {{result.HomeDirections}}
+                    </div>
+                    <div ng-show="result.WorkAddress">
+                        <span><strong>Work Address</strong></span> <br>
+                        {{result.WorkAddress}}
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div ng-show="result.HomePhone">
+                        <span class="glyphicons phone_alt"
+                              title="Home Phone"></span>
+                        {{result.HomePhone}}
+                    </div>
+                    <div ng-show="result.WorkPhone">
+                        <span class="glyphicons earphone"
+                              title="Work Phone"></span>
+                        {{result.WorkPhone}}
+                    </div>
+                    <div ng-show="result.MobilePhone">
+                        <span class="glyphicons iphone"
+                              title="Mobile Phone"></span>
+                        {{result.MobilePhone}}
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div ng-show="result.Comments">
+                        <span><strong>Comments</strong> </span><br>
+                        {{result.Comments}}
+                    </div>
+                    <div ng-show="result.ReferenceDescription">
+                        <span><strong>Description</strong></span>
+                        {{result.ReferenceDescription}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div>
+                <div>
+                    <span ng-show="result.DateChecked"><strong>Created</strong></span><span>  {{fromNow(result.DateChecked)}}</span>
+                </div>
+                <div>
+                    <div class="date" title="{{result.DateChecked }}">
+                        {{result.DateChecked | date:'EEEE dd-MMMM-yyyy HH:mm'}}
+                    </div>
+                    <div ng-show="result.CheckedBy">by <a
+                            ng-href="Cosacs/Admin/Users/Profile/{{result.CreatedBy}}">{{result.CheckedBy}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

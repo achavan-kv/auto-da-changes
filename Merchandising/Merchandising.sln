@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Merchandising", "Blue.Cosacs.Merchandising\Blue.Cosacs.Merchandising.csproj", "{8D317DC7-1B59-4177-9950-D03CCCECAE0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Merchandising.Api", "Blue.Cosacs.Merchandising.Api\Blue.Cosacs.Merchandising.Api.csproj", "{1F65AD63-5C79-43A3-BBC5-1122E8A0282E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue.Cosacs.Merchandising.Web", "Blue.Cosacs.Merchandising.Web\Blue.Cosacs.Merchandising.Web.csproj", "{36D9EFAF-FCE0-4EBC-AB28-723B46F5AEC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D317DC7-1B59-4177-9950-D03CCCECAE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D317DC7-1B59-4177-9950-D03CCCECAE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D317DC7-1B59-4177-9950-D03CCCECAE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D317DC7-1B59-4177-9950-D03CCCECAE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F65AD63-5C79-43A3-BBC5-1122E8A0282E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F65AD63-5C79-43A3-BBC5-1122E8A0282E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F65AD63-5C79-43A3-BBC5-1122E8A0282E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F65AD63-5C79-43A3-BBC5-1122E8A0282E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D9EFAF-FCE0-4EBC-AB28-723B46F5AEC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D9EFAF-FCE0-4EBC-AB28-723B46F5AEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D9EFAF-FCE0-4EBC-AB28-723B46F5AEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D9EFAF-FCE0-4EBC-AB28-723B46F5AEC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = y.2.1.505.0\lib\NET35;y.Interception.2.1.505.0\lib\NET35;rpriseLibrary.Common.5.0.505.0\lib\NET35;rpriseLibrary.Data.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

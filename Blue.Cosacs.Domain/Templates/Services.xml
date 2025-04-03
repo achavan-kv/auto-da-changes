@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Services xmlns="http://schemas.bluebridgeltd.com/cosacs/services/2011/05/">
+    <Namespace name="StoreCard">
+        <Service name="Create"/>
+        <Service name="PayDetailsSave"/>
+        <Service name="Activate"/>
+        <Service name="Search"/>
+        <Service name="Get"/>
+        <Service name="Cancel"/>
+        <Service name="GetValidateCard"/>
+        <Service name="GetValidatedCardForReciept"/>
+        <Service name="GetDeliveryDetails"/>
+        <Service name="SaveDateNotePrinted"/>
+        <Service name="CheckQualify"/>
+        <Service name="GetAccountStatus"/>
+        <Service name="GetInterest"/>
+        <Service name="FintransAdd"/>
+        <Service name="StoreCardUpdateMinimumPayment"/>
+        <Service name ="GetCashandGoReturn"/>
+        <Service name ="GetStatementRuns"/>
+    </Namespace>
+  <Namespace name="Branch">
+    <Service name="GetBranchList"/>
+    <Service name ="GetCashierTotals"/>
+    <Service name ="CashierTotalsSave"/>
+  </Namespace>
+  <Namespace name="Credit">
+      <Service name="CompleteReferralStage"/>
+      <Service name="CashLoanQualification"/>
+      <Service name="CashLoanCreateAccount"/>
+      <Service name="UpdateCashLoanBlocked"/>
+      <Service name="CheckLoanQualification"/>
+  </Namespace>
+    <Namespace name="EOD">
+        <Service name="WTRDatesGet"/>
+        <Service name="WTRDatesSave"/>
+    </Namespace>
+  <Namespace name="Financial">
+    <Service name="GetPayments"/>
+  </Namespace>
+  <Namespace name="CosacsConfig">
+    <Service name="CheckConn"/>
+    <Service name="CheckBranch"/>
+  </Namespace>
+  <Namespace name="Warehouse">
+    <Service name="GetLineItemBookingFailures"/>
+    <Service name="SaveLineItemFailureNotes"/>
+  </Namespace>
+    <Namespace name="Service">
+        <Service name="GetItemsIssuedForReplacement"/>    
+    </Namespace>
+    <Namespace name="Warranty">
+        <Service name="GetWarrantyRenewals"/>
+        <Service name="GetWarrantyReturn"/>
+        <Service name="GetAvailableWarranties"/>
+        <Service name="SaveWarrantyStockinfo"/>
+    </Namespace>
+    
+</Services>

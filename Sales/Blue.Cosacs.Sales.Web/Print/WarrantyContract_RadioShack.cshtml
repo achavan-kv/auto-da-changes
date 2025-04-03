@@ -1,0 +1,571 @@
+﻿@using Blue.Cosacs.Sales.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/sales/views/templates/print/styles.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        .pageBreak {
+            page-break-before: always;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="col-lg-12">
+        <div id="printSection">
+            @{
+                var contryName = string.Empty;
+                var idx = 0;
+                var lngth = @Model != null ? @Model.Length : 0;
+            }
+            @foreach (DocumentCopy<WarrantyContractDetailsResult> contractDetails in @Model)
+            {
+                <div style="position:relative">
+                    <div style="height:240mm;">
+                        <div style="Z-INDEX: 139; LEFT: 0.1cm; WIDTH: 3.832cm; POSITION: absolute; TOP: 0.503cm; HEIGHT: 0.11cm">
+                            <img style="WIDTH: 321.1px; HEIGHT: 144.6px" alt="" src="/Sales/Print/imgs/Radioshack.png"
+                                 width="426" />
+                        </div>
+                        <div class="RFHead2"
+                             style="Z-INDEX: 140; LEFT: 11.9cm; WIDTH: 6.886cm; PADDING-TOP: 1px; POSITION: absolute; TOP: 0.1cm; HEIGHT: 2.1cm"
+                             align="center">
+                            <img style="WIDTH: 6.886cm; HEIGHT: 2cm" alt="" src="/Sales/Print/imgs/SSLogoNoCourts.jpg" />
+                        </div>
+                        <div class="RFHead1"
+                             style="border: gray 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; Z-INDEX: 138; LEFT: 12cm; PADDING-BOTTOM: 5px; WIDTH: 6.886cm; PADDING-TOP: 5px; POSITION: absolute; TOP: 2.6cm; HEIGHT: 1.25cm">
+                            <table class="RFHead1" id="Table20" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td width="50%">
+                                        Service<br />
+                                        Contract No:
+                                    </td>
+                                    <td width="50%">
+                                        @contractDetails.Document.ContractNo
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    <div style="Z-INDEX: 137; LEFT: 0.61cm; WIDTH: 18cm; POSITION: absolute; TOP: 4.518cm; HEIGHT: 1.3cm"
+                         align="center">
+                        <img style="WIDTH: 656px; HEIGHT: 51px" height="51" alt="" src="/Sales/Print/imgs/ServiceContract.jpg"
+                             width="656"/>
+                    </div>
+                        <div style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; Z-INDEX: 136; LEFT: 0cm; BORDER-LEFT: gray 1px solid; WIDTH: 19cm; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; TOP: 6.3cm; HEIGHT: 7.4cm"></div>
+                        <div style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; Z-INDEX: 135; LEFT: 0cm; BORDER-LEFT: gray 1px solid; WIDTH: 19cm; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; TOP: 14.2cm; HEIGHT: 11.88cm"></div>
+                        <div style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; Z-INDEX: 130; LEFT: 12.6cm; BORDER-LEFT: gray 1px solid; WIDTH: 6cm; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; TOP: 6.5cm; HEIGHT: 1.15cm">
+                            <table class="RFHead2" id="Table1" height="40" cellspacing="1" cellpadding="6" width="100%">
+                                <tr>
+                                    <td align="middle" width="50%" bgcolor="silver">SALES No.</td>
+                                    <td width="50%">
+                                        @contractDetails.Document.EmployeeNo
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; Z-INDEX: 131; LEFT: 12.6cm; BORDER-LEFT: gray 1px solid; WIDTH: 6cm; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; TOP: 7.9cm; HEIGHT: 1.15cm">
+                            <table class="RFHead2" id="Table2" height="40" cellspacing="1" cellpadding="6" width="100%">
+                                <tr>
+                                    <td align="middle" width="50%" bgcolor="silver">BRANCH</td>
+                                    <td width="50%">
+                                        @contractDetails.Document.BranchName
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; Z-INDEX: 132; LEFT: 12.6cm; BORDER-LEFT: gray 1px solid; WIDTH: 6cm; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; TOP: 9.35cm; HEIGHT: 1.15cm">
+                            <table class="RFHead2" id="Table3" height="40" cellspacing="1" cellpadding="6" width="100%">
+                                <tr>
+                                    <td align="middle" width="50%" bgcolor="silver">STORE No.</td>
+                                    <td width="50%">
+                                        @contractDetails.Document.BranchNo
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; Z-INDEX: 133; LEFT: 12.6cm; BORDER-LEFT: gray 1px solid; WIDTH: 6cm; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; TOP: 10.8cm; HEIGHT: 1.15cm">
+                            <table class="RFHead2" id="Table4" height="40" cellspacing="1" cellpadding="6" width="100%">
+                                <tr>
+                                    <td align="middle" width="50%" bgcolor="silver">DATE</td>
+                                    <td width="50%">
+                                        @DateTime.Today.ToShortDateString()
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; Z-INDEX: 134; LEFT: 12.6cm; BORDER-LEFT: gray 1px solid; WIDTH: 6cm; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; TOP: 12.2cm; HEIGHT: 1.15cm">
+                            <table class="RFHead2" id="Table5" height="40" cellspacing="1" cellpadding="6" width="100%">
+                                <tr>
+                                    <td align="middle" width="50%" bgcolor="silver">SOLD BY</td>
+                                    <td width="50%">
+                                        @contractDetails.Document.EmployeeName
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="LEFT: 2.55cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(1)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="LEFT: 3.3cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(2)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 120; LEFT: 4.05cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(3)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 121; LEFT: 4.8cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(4)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 122; LEFT: 5.55cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(5)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 123; LEFT: 6.3cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(6)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 124; LEFT: 7.05cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(7)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 125; LEFT: 7.8cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(8)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 126; LEFT: 8.55cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(9)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 127; LEFT: 9.3cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(10)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 128; LEFT: 10.05cm;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(11)</b>
+                        </div>
+                        <div class="WarrantyHeader wc-accno-noncourts"
+                             style="Z-INDEX: 129;LEFT: 10.8cm;border-right: gray 1px solid;">
+                            <b>@contractDetails.Document.GetAccountNoPartial(12)</b>
+                        </div>
+                        <div style="Z-INDEX: 115; LEFT: 0.3cm; WIDTH: 11.5cm; POSITION: absolute; TOP: 6.4cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table6" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="20%">
+                                        <b>@contractDetails.Document.CustomerTitle</b>
+                                    </td>
+                                    <td valign="top" width="40%">
+                                        FIRST NAME<br />
+                                        <br />
+                                        <b>@contractDetails.Document.CustomerFirstName</b>
+                                    </td>
+                                    <td valign="top" width="40%">
+                                        LAST NAME<br />
+                                        <br />
+                                        <b>@contractDetails.Document.CustomerLastName</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="Z-INDEX: 116; LEFT: 0.3cm; WIDTH: 11.5cm; POSITION: absolute; TOP: 8.2cm; HEIGHT: 2.1cm">
+                            <table class="WarrantyHeader" id="Table7" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="20%">ADDRESS</td>
+                                    <td valign="top" width="80%">
+                                        <b>
+                                            @contractDetails.Document.CustomerAddressLine1<br />
+                                            @contractDetails.Document.CustomerAddressLine2<br />
+                                            @contractDetails.Document.CustomerAddressLine3<br />
+                                            @contractDetails.Document.CustomerPostCode
+                                        </b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="Z-INDEX: 117; LEFT: 0.3cm; WIDTH: 11.5cm; POSITION: absolute; TOP: 10.7cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table8" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="20%">
+                                        CONTACT<br />
+                                        NUMBERS
+                                    </td>
+                                    <td valign="top" width="40%">
+                                        WORK<br /><br />
+                                        <b>@contractDetails.Document.CustomerMobilePhone</b>
+                                    </td>
+                                    <td valign="top" width="40%">
+                                        HOME<br /><br />
+                                        <b>@contractDetails.Document.CustomerHomePhone</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="wc-address-div" style="TOP: 8cm;"></div>
+                        <div class="wc-address-div" style="TOP: 19.5cm;"></div>
+                        <div class="wc-address-div" style="TOP: 12cm;"></div>
+
+                        <div style="Z-INDEX: 114; LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 14.5cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table9" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="40%">
+                                        DATE OF PRODUCT PURCHASE<br /><br />
+                                        <b>@contractDetails.Document.AgreementDate</b>
+                                    </td>
+                                    <td valign="top" width="40%">
+                                        PRODUCT CODE<br /><br />
+                                        <b>@contractDetails.Document.ItemNo</b>
+                                    </td>
+                                    <td valign="top" width="20%" align="middle">OFFICE USE ONLY</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="Z-INDEX: 103; LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 15.9cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table10" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="40%">
+                                        PRODUCT DESCRIPTION<br /><br />
+                                        <b>
+                                            @contractDetails.Document.ItemDescription
+                                        </b>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="Z-INDEX: 104; LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 17.8cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table11" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="20%">PURCHASE PRICE</td>
+                                    <td valign="top" width="80%">
+                                        <b>@contractDetails.Document.ItemPrice</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="Z-INDEX: 105; LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 18.5cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table12" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="40%">
+                                        SERVICE CONTRACT CODE<br />
+                                        <b>@contractDetails.Document.WarrantyNo</b>
+                                    </td>
+                                    <td valign="top" width="60%">
+                                        SERVICE CONTRACT PRICE*<br />
+                                        <b>@contractDetails.Document.WarrantyPrice</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="Z-INDEX: 106; LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 19.5cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table13" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="40%">
+                                        SERVICE CONTRACT DESCRIPTION<br />
+                                        <b>
+                                            @contractDetails.Document.WarrantyDescription
+                                        </b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- TODO: CD<xsl:if test="TERMSTYPE='WC'">
+                                         <DIV class="smallPrint" style="Z-INDEX: 106; LEFT: 0.3cm; WIDTH: 10cm; POSITION: absolute; TOP: 20.9cm; HEIGHT: 0.317cm">
+                                             Warranty purchased on credit. Customer has @contractDetails.Document.WarrantyCredit days after purchase of stock item to pay for warranty otherwise warranty will expire.
+                                         </DIV>
+                                     </xsl:if> -->
+                        <div style="Z-INDEX: 107; LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 21.2cm; HEIGHT: 0.317cm">
+                            <table class="smallPrint" id="Table14" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="40%">
+                                        <small>*includes sales tax where applicable</small>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="Z-INDEX: 108; LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 21.8cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table15" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="50%">
+                                        PLANNED DATE OF DELIVERY<br />
+                                        <b>@contractDetails.Document.AgreementDate</b>
+                                    </td>
+                                    <td valign="top" width="50%">
+                                        EXPIRY OF SERVICE CONTRACT<br />
+                                        <b>@contractDetails.Document.WarrantyLength months following the manufacturer's warranty.</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="BORDER-TOP: gray 1px solid; Z-INDEX: 109; LEFT: 0.292cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 15.782cm; HEIGHT: 0.2cm"></div>
+                        <div style="BORDER-TOP: gray 1px solid; Z-INDEX: 110; LEFT: 0.292cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 17.633cm; HEIGHT: 0.2cm"></div>
+                        <div style="BORDER-TOP: gray 1px solid; Z-INDEX: 111; LEFT: 0.292cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 18.4cm; HEIGHT: 0.2cm"></div>
+                        <div style="BORDER-TOP: gray 1px solid; Z-INDEX: 112; LEFT: 0.292cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 19.432cm; HEIGHT: 0.2cm"></div>
+                        <div style="BORDER-TOP: gray 1px solid; Z-INDEX: 113; LEFT: 0.292cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 21.733cm; HEIGHT: 0.2cm"></div>
+                        <div style="BORDER-TOP: gray 1px solid; Z-INDEX: 113; LEFT: 0.292cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 22.733cm; HEIGHT: 0.2cm"></div>
+                        <div style="LEFT: 1.295cm; WIDTH: 16.5cm; POSITION: absolute; TOP: 22.809cm; HEIGHT: 1cm">
+                            <table class="WarrantyFooter" id="Table16" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" align="middle" width="40%">
+                                        IMPORTANT - PLEASE READ THE TERMS &amp; CONDITIONS
+                                        BEFORE
+                                        SIGNING
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="LEFT: 0.292cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 23.469cm; HEIGHT: 0.317cm">
+                            <table class="smaller" id="Table17" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="top" width="40%">
+                                        I hereby acknowledge having read and understood and
+                                        accept the terms and conditions.
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="LEFT: 0.3cm; WIDTH: 18.2cm; POSITION: absolute; TOP: 24.7cm; HEIGHT: 0.317cm">
+                            <table class="WarrantyHeader" id="Table18" cellspacing="1" cellpadding="1" width="100%" border="0">
+                                <tr>
+                                    <td valign="bottom" width="40%">CUSTOMER'S SIGNATURE</td>
+                                    <td valign="bottom" width="40%">SIGNED ON BEHALF OF RADIOSHACK</td>
+                                    <td valign="bottom" align="middle" width="20%">
+                                        DATE<br /><br />
+                                        <b>@DateTime.Today.ToShortDateString()</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="LEFT: 14.3cm; WIDTH: 4.681cm; POSITION: absolute; TOP: 14.194cm; HEIGHT: 7.564cm">
+                            <img style="WIDTH: 177px; HEIGHT: 286px" height="286" alt="" src="/Sales/Print/imgs/grey.jpg"
+                                 width="177" />
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="pageBreak">
+                </div>
+                {
+                    contryName = contractDetails.CountryName;
+                }
+
+                <div style="height:240mm;">
+                    <div style="POSITION: relative">
+                        <div class="smallSS"
+                             style="FONT-WEIGHT: bold; Z-INDEX: 100; WIDTH: 20cm; POSITION: absolute; HEIGHT: 1cm; TEXT-ALIGN: center">
+                            <h3 font-size="26px">SERVICE CONTRACT TERMS AND CONDITIONS</h3>
+                            <h2 font-size="42px">PLEASE CHECK ALL SECTIONS ARE COMPLETE</h2>
+                        </div>
+                        <div class="terms" style="LIST-STYLE-POSITION: outside; Z-INDEX: 101; LEFT: 37px; WIDTH: 7.766cm; LIST-STYLE-TYPE: disc; POSITION: absolute; TOP: 3cm; HEIGHT: 5.279cm; TEXT-ALIGN: justify">
+                            <u>PERIOD OF COVER</u><br />
+                            <br />
+                            This Service Contract (“contract”) extends the RadioShack (“we”, “our”)
+                            initial warranty for a further 2-years on electrical products and one year on
+                            select small domestic appliances. This means that inclusive of the
+                            RadioShack initial warranty period, your product is covered for a total of 3
+                            years or 2years starting on the date of delivery.
+                            Coverage is conditional on you paying the applicable fee.
+                            <br />
+                            <br />
+                            <br />
+                            <u>WHAT WE COVER</u><br />
+                            <br />
+                            We will repair to normal operating condition, or
+                            replace at our discretion a covered electrical product,
+                            after it has suffered a covered breakdown caused by a
+                            failure in materials, workmanship or performance
+                            during normal use. This contract covers the cost of
+                            Parts, Labour and call out charges (where applicable)
+                            on non­portable products
+                            <br />
+                            <br />
+                            Original supplied remote controls are covered as above
+                            on a carry-basis only.
+                            <br />
+                            Instant replacement for select small domestic
+                            appliances
+                            <br />
+                            <br />
+                            This contract may only be purchased within 90 days of delivery of a
+                            covered product and is only valid if:
+                            <br />
+                            <ul>
+                                <li>
+                                    The product is purchased new from us and has a RadioShack initial warranty
+                                </li>
+                                <li>
+                                    Cover is not valid on products such as freezers, dryers, washers, dishwashers and
+                                    vinyl lounge items intended for commercial, rental or profit generation purposes.
+                                </li>
+                            </ul>
+                            <u>WHAT WE EXCLUDE</u>
+                            <br />
+                            <br />
+                            <ul>
+                                <li>
+                                    Damage caused before or during delivery or cover
+                                    provided by any other insurance or manufacturer or repairers repair guarantee
+                                    or warranty.
+                                </li>
+                                <li>
+                                     Manufacturer’s recall or modifications or damage
+                                     not covered under RadioShack initial warranty.
+                                </li>
+                                <li>
+                                    Damage caused by abuse, misuse or neglect including
+                                    removal or alteration of serial numbers.
+                                </li>
+                                <li>
+                                    Accessories used in or with the product unless
+                                        covered under a separate contract.
+                                </li>
+                                <li>
+                                    Replacement of any consumable or component intended
+                                        by the manufacturer to be self-replaced, such as electrical plugs, vacuum belts
+                                        and bags, light bulbs, batteries, external fuses, filters, toner, print
+                                        cartridges, or software incorporated into a covered product.
+                                </li>
+                                <li>
+                                   Routine maintenance, cleaning and external
+                                        adjustments. Damage resulting from power outage/ surge,
+                                        inadequate voltage or current, reception or transmission problems.
+                                </li>
+                                <li>
+                                    The cost of repairing, restoring or reconfiguring
+                                        computer software.
+                                </li>
+                                <li>
+                                    Failure to follow the manufacturers or suppliers
+                                        instructions for care of the product.
+                                </li>
+                                <li>
+                                     Accidental, intentional or cosmetic damage
+                                        including chipping, denting, scratching or puncturing, or damage caused by the
+                                        incorrect use or application of any cleaning substance or material.
+                                </li>
+                                <li>
+                                    Damage caused by any external influence such as theft, computer virus,
+                                        acts of god, corrosion/moisture, heat/ fire, sand, animal or
+                                        insect infestation
+                                </li>
+                                <li>
+                                    The cost of repair if you use an unauthorized repairer or if no fault
+                                        is found with the product.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="terms" style="LEFT: 10cm; WIDTH: 9cm; POSITION: absolute; TOP: 3cm; HEIGHT: 18.737cm; TEXT-ALIGN: justify">
+                            
+                            <u>
+                                <br />
+                                IN THE EVENT OF A BREAKDOWN
+                            </u>
+                            <ul>
+                                <li>
+                                    Review the manufacturer’s instructions or care
+                                        guidelines to determine if the problem can be rectified by you.
+                                </li>
+                                <li>
+                                    Check that the contract is still in force. You must
+                                        report the breakdown within 5 days of the breakdown for the claim to be valid.
+                                </li>
+                                <li>
+                                    Contact your local RadioShack Store, or ring 800-4FIX / 800-4CCC for
+                                        assistance. You will be told how to proceed with the repair
+                                </li>
+                                <li>
+                                    We will provide in-home service on major appliances
+                                        and furniture except portable items. You will be told when you report the claim
+                                        which products qualify for in-home service. All other repairs will be on a
+                                        carry-in basis only.
+                                </li>
+                                <li>
+                                    We will need to see this document to proceed with
+                                        the repair.
+                                </li>
+                            </ul>
+                            <br />
+                            <br />
+                            <u>LIABILITY</u>
+                            <br />
+                            <br />
+                            We will repair or replace your product with an identical or similar model at
+                            our discretion, up to a maximum value not exceeding the original purchase
+                            price.
+                            <br />
+                            <br />
+                            If we replace it, the original product becomes our property and the contract
+                            terminates with no refund of fee. Any remaining instalments will still be due
+                            to us.
+                            <br />
+                            <br />
+                            We are not responsible for any consequential or incidental damages arising from
+                            the use or loss of use of the product. This does not affect your statutory
+                            rights.<br />
+                            <br />
+                            <br />
+                            This contract is not transferable.
+                            <br />
+                            <br />
+                            THIS CONTRACT IS NOT AN INSURANCE POLICY OR GUARANTEE. COVER IS LIMITED TO
+                            PRODUCTS WHICH FAIL DUE SOLELY TO MATERIALS, WORKMANSHIP OR PERFORMANCE.<br />
+                            <br />
+                            <br />
+                            <u>
+                                <br />
+                                CANCELLATION
+                            </u>
+                            <br />
+                            <br />
+                            You may cancel this contract for any reason within 15 days of the date of
+                            purchase shown overleaf, by giving us a notice of cancellation and this
+                            document. You will be eligible for a 100% refund of the fee you paid.
+                            <br />
+                            <br />
+                            We may cancel the contract at any time by giving you 14 days notice in writing
+                            to your last known address. You will be eligible for a pro-rata refund of the
+                            fee you paid.
+                            <br />
+                            <br />
+                            In the event of theft, fraud, sale or return of the product to us, we will
+                            cancel this contract with no refund. If any instalment payments are in default
+                            and unpaid for more than one month we may cancel the contract at our
+                            discretion.
+                            <br />
+                            <br />
+                            FOR CLAIMS AND INQUIRIES CALL YOUR LOCAL RadioShack STORE OR PHONE 800-4FIX / 800-4CCC
+                            <br />
+                            <br />
+                            RadioShack offers this contract. We reserve the right to amend the terms
+                            and conditions.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {
+                    idx += 1;
+                }
+
+                if (idx >= lngth)
+                {
+                    continue;
+                }
+
+                <div class="pageBreak">
+                </div>
+            }
+
+
+        </div>
+    </div>
+</body>
+</html>

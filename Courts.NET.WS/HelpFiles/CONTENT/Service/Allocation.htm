@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Service">
+    <head><title>Service Request Allocation</title>
+        <link href="../Resources/Stylesheets/onlinehelp.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapUtilities.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffects.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapBody.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapHighlighter.js">/*<![CDATA[*/ /*]]>*/</script>
+    </head>
+    <body>
+        <h1>Service Request Allocation</h1>
+        <p class="MyStyle" style="font-family: Arial;">The allocation tab is only open when:</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">The SR is open AND</li>
+            <li style="font-family: Arial;" value="2">The fields required for allocation have been completed on the product tab AND</li>
+            <li style="font-family: Arial;" value="3">The Service Request status is either 'D', 'N', or 'A' AND</li>
+            <li style="font-family: Arial;" value="4">the current date is before the repair date or the repair date is blank AND</li>
+            <li style="font-family: Arial;" value="5">the resolution date has not yet been set.</li>
+        </ul>
+        <p class="MyStyle">Once in the allocation screen proceed to allocate the repair to a technician.</p>
+        <p class="MyStyle">The user will have to set up zones, technicians and the technician diary before being able to allocate in this screen. This is done in the technician maintenance screen.</p>
+        <p class="MyStyle">&#160;</p>
+        <h2 class="CH2">Technician Maintenance</h2>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_1803476356_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" /><span style="font-family: Arial;">This screen will allow the entry and update of technicians. </span></a>
+            <div class="MCDropDownBody" id="MCDropDownBody_1803476356_0" style="display: none;">
+                <p class="MyStyle">&#160;</p>
+                <p class="MyStyle">When this screen is open the user will see the list of existing technicians. There is a 'New' button if the user wishes to create a new technician.</p>
+                <p class="MyStyle">To see technician details, double click a line in the list. You can now update the details for the selected technician.</p>
+                <p class="MyStyle">When the new button is pressed the detail fields will be enabled to allow the entry of a new technician.</p>
+                <p class="MyStyle" style="font-family: Arial;">The following fields are mandatory:</p>
+                <ul style="list-style-type: square;">
+                    <li style="font-family: Arial;" value="1">Title</li>
+                    <li style="font-family: Arial;" value="2">First Name</li>
+                    <li style="font-family: Arial;" value="3">Last name</li>
+                    <li style="font-family: Arial;" value="4">Telephone</li>
+                    <li style="font-family: Arial;" value="5">Zones - These must be set up in codes maintenance (SRZONES)</li>
+                    <li style="font-family: Arial;" value="6">Hours works - These are the daily hours the technician works and must be written in 24 hour format. </li>
+                    <li style="font-family: Arial;" value="7">Calls per day - this will determine the number of slots in the technicians diary. If this value is ever reduced the system will check whether there are any booked slots in the future outside the new range.</li>
+                </ul>
+                <p class="MyStyle">The "Apply to all " button will apply the details of the selected technician to all technicians</p>
+                <p class="MyStyle">There is also a vacation section to block out days when the technician will not be available for work.</p>
+                <p class="MyStyle">The box on the right shows all the SR's allocated to the technician and the status and labour cost of each. Right clicking this box give a short cut to the SR Screen. </p>
+                <p class="MyStyle">The "delete" button will only be enabled if there are no open SR's and no labour cost is owed to the technician.</p>
+                <p class="MyStyle">&#160;</p>
+                <p class="MyStyle">If parts are required then a parts expected date can be entered.</p>
+                <p class="MyStyle">&#160;</p>
+                <p class="MyStyle">The next step is to book a slot for the repair to be done. Press "Diary" to schedule a date and slot for this repair.</p>
+            </div>
+        </div>
+        <h2 class="CH2">Technician Diary</h2>
+        <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_1803476356_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" /><span style="font-family: Arial;">This where a repair date and slot are booked. </span></a>
+            <div class="MCDropDownBody" id="MCDropDownBody_1803476356_1" style="display: none;">
+                <p class="MyStyle">&#160;</p>
+                <p class="MyStyle">This screen is accessed from the Allocation Tab through pressing the diary screen or via the main service menu.</p>
+                <p class="MyStyle">Once a repair / estimate date has been entered by the diary any change to the technician selected must un-book the diary entry and clear the repair / estimate date. It will only be possible to change the parts expected date to a date later than the repair date by first using the diary to clear the repair date or to book a later repair date.
+When a repair / estimate date is entered the following fields will become mandatory:
+</p>
+                <ul style="list-style-type: square;">
+                    <li style="font-family: Arial;" value="1">Zone</li>
+                    <li style="font-family: Arial;" value="2">Technician
+</li>
+                </ul>
+                <div class="MCDropDown"><a href="javascript:void(0);" class="MCDropDownHotSpot" id="MCDropDownHotSpot_1803476356_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.gif" MadCap:altsrc="../SkinSupport/DropDownOpen.gif" class="MCDropDownIcon" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../SkinSupport/DropDownOpen.gif' ); }" /><span style="font-family: Arial;">More Details on the Technician Diary:</span></a>
+                    <div class="MCDropDownBody" id="MCDropDownBody_1803476356_2" style="display: none;">
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">A drop down field will list the technicians so that one may be selected.
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">When this screen is invoked from the main menu the Service Request Number field near the top right of the screen will be invisible and the technician field will default to blank.
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">When invoked from the allocation tab the Service Request Number will be visible and read only. </p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">The allocation tab will pass the Service Request Number and the technician (if entered) to this screen which will initialise these fields. The user may change the technician, in which case the new technician will be passed back to the allocation tab.
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">If a ‘Parts Expected’ date has been entered on the allocation tab the date fields on this screen will not allow a date before the ‘Parts Expected’ date. </p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">The date fields on this screen will default to the later of the current date or the ‘Parts Expected’ date.
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">The user may specify a date when availability is required in the ‘Filter on Availability’ field. When the adjacent search button is pressed the technician drop down will be re-populated only with technicians with at least one slot available on the entered date. </p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">The bottom section of the screen displays the calendar for one week from a start date entered in the ‘Availability from’ date field. This date field will default to the filter date above. The user may change the start date if they wish.
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">Two grid fields will be used to display the slots for the morning and afternoon. The number of slots per day will be determined by the setup in technician maintenance. </p>
+                        <p class="MyStyle"> If there is an odd number of slots per day, the odd slot will be shown in the morning.
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle"> Booked slots will be displayed in a different colour. Clicking on a slot will display the details made up of the SR number, the slot number and a repair / estimate radio field. </p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle"> A different fill colour will be used to distinguish repairs from estimates..
+Where multiple slots are booked to the same SR, clicking on any one slot will allow all of the slots for the same SR to be unbooked.
+The ‘Free’ button will only be enabled for a booked slot(s).
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">It will be possible to view historic dates. The slot details, the ‘Book’ button and the ‘Free’ button must be disabled for a historic date.
+</p>
+                        <p class="MyStyle">&#160;</p>
+                        <p class="MyStyle">Note that this screen will not be available for any technician marked as deleted by the technician maintenance screen. A technician can only be marked as deleted in that screen if there are no outstanding SRs allocated to the technician. 
+
+
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle"><a class="MCRelatedTopics" href="javascript:void(0);" onclick="FMCLinkControl( event, this ); return false;" onkeydown="this.MCKeydown = true;" MadCap:topics="The Product Tab|SR_Product Tab.htm||Service Request Summary on Account Details|SRAccountdetails.htm||Soft Script Popup|SoftScripts.htm||Service Request Search|ServiceSearch.htm||Service Failure Report|ServiceFailure Report.htm||Service Request Screen|Service Request Screen.htm||Service Request Audit|Service Request Audit.htm||Service Progress Report|Service Progress Report.htm||Payment screen for Service|Service Payment.htm||The Resolution Tab|Resolution.htm||Outstanding Service Requests|OutstandingSR.htm||Customer Interaction|CustomerInteraction.htm||Claims submission report|ClaimsSubmissions.htm||Charge To Analysis|Charge To.htm||Beyond Economic Repair (BER)|BER.htm||Batch Printing|BatchPrint.htm"><img src="../SkinSupport/RelatedTopics.gif" style="border: none;margin-right: 5px;" />Related Topics</a>
+        </p>
+        <p class="MyStyle">&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

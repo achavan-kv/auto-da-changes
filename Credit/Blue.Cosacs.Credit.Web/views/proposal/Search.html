@@ -1,0 +1,110 @@
+<div class="container credit" ng-controller="proposalSearchController" ng-cloak>
+    <h1 ng-bind="title">Proposal Search</h1>
+
+    <div class="row">&nbsp;</div>
+    <div class="form-horizontal">
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="firstName" class="control-label col-lg-4">First Name</label>
+
+                <div class="col-lg-8">
+                    <input id="firstName" type="text" class="form-control" ng-model="search.firstName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName" class="control-label col-lg-4">Last Name</label>
+
+                <div class="col-lg-8">
+                    <input id="lastName" type="text" class="form-control" ng-model="search.lastName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="control-label col-lg-4">Phone</label>
+
+                <div class="col-lg-8">
+                    <input id="phone" type="text" class="form-control" ng-model="search.phone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label col-lg-4">Email</label>
+
+                <div class="col-lg-8">
+                    <input id="email" type="text" class="form-control" ng-model="search.email">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label class="control-label col-lg-4">Sales Person</label>
+
+                <div class="col-lg-8">
+                    <list lookup="EMPEENO" ng-model="search.SalesPerson" placeholder="Select User"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-4">Stage</label>
+
+                <div class="col-lg-8">
+                    <list scope="stages" ng-model="search.currentStage" placeholder="Select Stage"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateFrom" class="control-label col-lg-4">Updated From</label>
+
+                <div class="col-lg-8">
+                    <input id=dateFrom class="form-control" type="date" ng-model="search.dateFrom"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateTo" class="control-label col-lg-4">Updated To</label>
+
+                <div class="col-lg-8">
+                    <input id="dateTo" class="form-control" type="date" ng-model="search.dateTo"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label class="control-label col-lg-4">Branch</label>
+
+                <div class="col-lg-8">
+                    <list lookup="BRANCH" ng-model="search.branch" placeholder="Select Branch"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-4">Fascia</label>
+
+                <div class="col-lg-8">
+                    <list lookup="fascia" ng-model="search.fascia" placeholder="Select Fascia"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-4">Source</label>
+
+                <div class="col-lg-8">
+                    <list scope="source" ng-model="search.source" placeholder="Select Source"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-4">Compulsory Id</label>
+
+                <div class="col-lg-8">
+                    <input id="compulsoryId" type="text" class="form-control" ng-model="search.compulsoryId">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <button type="button" class="btn btn-default" ng-click="clear()">Clear</button>
+    <button type="button" class="btn btn-primary" ng-click="getResults()">Search</button>
+    <div class="row">&nbsp;</div>
+    <div class="section">Results</div>
+    <div ng-repeat="result in results">
+        <div ng-include="'/credit/views/proposal/templates/searchResult.html'"></div>
+    </div>
+
+    <div class="col-lg-6">
+        <span class="pull-right" ng-show="results.length == 0">No Results</span>
+        <span class="pull-right" ng-show="results.length == 50">Results limited to 50 records.</span>
+    </div>
+</div>

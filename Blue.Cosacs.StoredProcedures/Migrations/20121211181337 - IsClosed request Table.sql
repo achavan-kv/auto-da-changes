@@ -1,0 +1,2 @@
+ALTER TABLE service.Request
+ADD IsClosed BIT NOT NULL DEFAULT 0

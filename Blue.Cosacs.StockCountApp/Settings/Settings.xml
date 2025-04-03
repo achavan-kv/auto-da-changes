@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>   
+    <appSettings>      
+      <add key="userAgent" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36"/>
+      <add key="databasePath" value="/Application/cosacs.sdf"/>
+      <add key="authPath" value="/api/loginuser"/>
+    </appSettings>
+</configuration>

@@ -1,0 +1,86 @@
+<div class="panel panel-default" ng-repeat="result in agreements">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-lg-4">
+                <p class="text-left"> Agreement Number: <strong>
+                    <a href="{{ '/#/Payments/Payments?CustomerId=' + result.CustomerId + '&SelectedAgreement=' + result.AgreementNumber }}">
+                        {{ result.AgreementType + ' ' + result.AgreementNumber }}</a>
+                </strong>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <p class="text-center"> Customer:
+                    <strong>
+                        {{ result.customerObj.Title + ' ' + result.customerObj.FirstName + ' ' +
+                        result.customerObj.LastName}}
+                    </strong>
+                </p>
+            </div>
+            <div class="col-lg-4 align-right">
+                <p class="text-right"> Created on:
+                    <strong>
+                        {{ moment(result.CreatedOn).format(dateFormatShort) }}
+                    </strong>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body centre-section">
+        <div class="row">
+            <div class="col-lg-3">
+                <p>
+                    <strong>Agreement Total: </strong> {{ result.AgreementTotal | currency }}
+                </p>
+
+                <p>
+                    <strong>Outstanding Balance: </strong> {{ result.OutstandingBalance | currency }}
+                </p>
+
+                <p>
+                    <strong>Service Charge: </strong> {{ result.ServiceCharge | currency }}
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <p>
+                    <strong>Terms Type: </strong> {{ result.TermsType }}
+                </p>
+
+                <p>
+                    <strong>Installment Amount: </strong> {{ result.InstallmentAmount | currency }}
+                </p>
+
+                <p>
+                    <strong>Final Installment Date: </strong> {{ result.FinalInstallmentDate }}
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <p>
+                    <strong>Term Length: </strong> {{ result.TermLength }}
+                </p>
+
+                <p>
+                    <strong>Installments Remaining: </strong> {{ result.InstallmentsLeft }}
+                </p>
+
+                <p>
+                    <strong>Next Payment Date: </strong>
+                    {{ moment(result.DateNextPaymentDue).format(dateFormatShort) }}
+                </p>
+            </div>
+            <div class="col-lg-3">
+                <p>
+                    <strong>Last Payment Date: </strong>
+                    {{ moment(result.LastPaymentDate).format(dateFormatShort) }}
+                </p>
+
+                <p ng-class="{ true : 'text-danger' }[ result.ArrearsAmount > 0 ]">
+                    <strong>Arrears Amount: </strong> {{ result.ArrearsAmount | currency }}
+                </p>
+
+                <p>
+                    <strong>Current Status: </strong> {{ result.CurrentStatus }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

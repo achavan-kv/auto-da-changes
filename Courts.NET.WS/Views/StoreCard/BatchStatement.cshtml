@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Blue.Cosacs.SCStatement>
+@using Blue.Cosacs.Shared.Extensions;           
+
+<style type="text/css">
+       .pageBreak {
+        page-break-after: always;
+        clear: both;
+}
+
+    </style>
+
+@{ 
+    Layout = "~/Views/Shared/_Print.cshtml";
+    ViewBag.Title = "StoreCard Statement";
+
+    var count = 0;
+}
+
+<!--Print multiple Store Card Statements that are in a Batch -->
+@foreach (var item in Model)
+{
+    count += 1;
+    
+    <div>@Html.Partial("Statement", item)</div>
+    
+    if (count < Model.Count())
+    {
+        <div class="pageBreak"></div>
+    }
+
+}

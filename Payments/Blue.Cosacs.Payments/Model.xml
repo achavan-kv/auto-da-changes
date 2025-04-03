@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Model xmlns="http://schemas.bluebridgeltd.com/cosacs/model/2010/12/" schema="Payments" namespace="Blue.Cosacs.Payments" label="Payments">
+    <Connection server="." database="cosacs" />
+    <Queries>
+    </Queries>
+    <Tables>
+        <Table name="Bank" />
+        <Table name="PaymentMethod" />
+        <Table name="ExchangeRate" />
+        <Table name="CurrencyCodes" />
+    </Tables>
+    <Views>
+      <View name="ActiveExchangeRates" />
+    </Views>
+    <Settings>
+        <Setting id="PaymentCardType" name="Payment Card Types" type="list" category="Payments">
+            <Description>Payment Card Types</Description>
+            <Default></Default>
+        </Setting>
+    </Settings>
+</Model>

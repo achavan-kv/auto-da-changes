@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BookingSubmit xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd">
+	<Id>1</Id>
+	<CustomerName>Steve</CustomerName>
+</BookingSubmit>

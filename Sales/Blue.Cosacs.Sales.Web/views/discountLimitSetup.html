@@ -1,0 +1,94 @@
+<div class="pos-sales" data-ng-controller="DiscountLimitSetupController">
+    <h1>Discount Limit Setup</h1>
+    <p>&nbsp;</p>
+
+    <div class="row form-horizontal">
+        <fieldset>
+            <div class="col-lg-12 col-md-12 form-group">
+                <div class="col-lg-2 col-md-2 text-right" >
+                    <label class="form-control-static control-label ">Store Type</label>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <list class="form-control-static container-class" ng-model="searchData.storeType" scope="storeType" placeholder="All Store Type" ></list>
+                </div>
+                <div class="col-lg-1 col-md-1 text-right">
+                    <label class="form-control-static control-label">Branch</label>
+                </div>
+                <div class="col-lg-3 col-md-3" >
+                    <!--<list class="form-control-static container-class" ng-model="searchData.branchNumber" scope="branchNameList" placeholder="All Store Locations"></list>-->
+                    <list class="form-control-static container-class" ng-model="searchData.branchNumber" lookup="BRANCH" placeholder="All Store Locations"></list>
+                </div>
+                <button id="buttonSearchExistingData" class="col-lg-2 col-md-2 search btn btn-default btn-primary" ng-click="searchExistingData()">
+                    Search
+                </button>
+            </div>
+        </fieldset>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="col-lg-9 col-md-9 col-md-offset-1">
+        <table class="data table table-striped table-bordered table-hover table-responsive col-lg-10 col-md-10">
+            <thead>
+                <tr>
+                <th class="col-lg-2 col-md-2"></th>
+                <th class="col-lg-3 col-md-3">Store Type</th>
+                <th class="col-lg-5 col-md-5">Branch</th>
+                <th class="col-lg-2 col-md-2">Limit Percentage</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-lg-2 col-md-2">
+                        <span class="glyphicons plus click glyph-btn" ng-if="!showNewRow" title="New" ng-click="addNew()"></span>
+                        <span class="glyphicons floppy_disk click glyph-btn" ng-if="showNewRow" title="Save" ng-click="insertData()"></span>
+                        <span class="glyphicons undo click glyph-btn" ng-if="showNewRow" title="Cancel" ng-click="cancelNewRecord()"></span>
+                    </td>
+                    <td class="col-lg-3 col-md-3">
+                        <!--<div  ng-class="{'has-error': !newData.storeType}">-->
+                            <list class="form-control-static"
+                                   ng-if="showNewRow"
+                                   scope="storeType" ng-model="newData.storeType"
+                                   placeholder="All Store Type"></list>
+                        <!--</div>-->
+                    </td>
+                    <td class="col-lg-5 col-md-5">
+                        <!--<div  ng-class="{'has-error': !selectedNewCurrency}">-->
+                                <list ng-model="newData.branchNumber" lookup="BRANCH" placeholder="All Store Locations" ng-if="showNewRow"></list>
+                        <!--</div>-->
+                    </td>
+                    <td class="col-lg-2 col-md-2">
+                        <div  ng-class="{'has-error': !isValidRate(newData.limitPercentage)}">
+                            <input class="form-control text-right" ng-if="showNewRow" ng-model="newData.limitPercentage" type="number"
+                                   ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" ng-max="100"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr ng-repeat="data in existingDiscountLimitList">
+                <td class="col-lg-2 col-md-2">
+                    <span class="glyphicons bin click glyph-btn" ng-if="!data.showEditFields" title="Delete" ng-click="deleteData(data)"></span>
+                    <span class="glyphicons floppy_disk click glyph-btn " ng-if="data.showEditFields" title="Save" ng-click="updateData(data)"></span>
+                    <span class="glyphicons pencil click glyph-btn" ng-if="!data.showEditFields" title="Edit" ng-click="editFormVisible(data)"></span>
+                    <span class="glyphicons undo click glyph-btn " ng-if="data.showEditFields" title="Cancel" ng-click="cancelEditForm(data)"></span>
+                </td>
+                <td class="col-lg-3 col-md-3">
+
+                    <div class="form-control-static" ng-if="data.storeType == 'C'">Courts</div>
+                    <div class="form-control-static" ng-if="data.storeType == 'N'">Non Courts</div>
+                    <div class="form-control-static" ng-if="!data.storeType">ALL</div>
+                </td>
+                <td class="col-lg-5 col-md-5">
+                    <div class="form-control-static" ng-if="data.branchNumber">{{data.branchNumber}} {{data.branchName}}</div>
+                    <div class="form-control-static" ng-if="!data.branchNumber">ALL</div>
+                </td>
+                <td class="col-lg-2 col-md-2">
+                    <div class="form-control-static text-right" ng-if="!data.showEditFields">{{data.limitPercentage| number : 2}}%</div>
+                    <div ng-class="{'has-error': !isValidRate(data.limitPercentageChanged)}">
+                        <input class="form-control text-right"  ng-if="data.showEditFields" type="number" ng-model="data.limitPercentageChanged"
+                               ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" ng-max="100"/>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>

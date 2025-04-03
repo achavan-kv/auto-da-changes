@@ -1,0 +1,66 @@
+﻿<ServiceCharges xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd">
+    <ServiceType>Internal Customer</ServiceType>
+    <ServiceCharge>
+        <Account>SONY</Account>
+        <Value>0</Value>
+        <Cost>0</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>Supplier</ChargeType>
+        <Label>Parts Cosacs</Label>
+    <IsExternal>false</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account>SONY</Account>
+        <Value>66</Value>
+        <Cost>60</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>Supplier</ChargeType>
+        <Label>Parts Other</Label>
+    <IsExternal>true</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account>SONY</Account>
+        <Value>17.5</Value>
+        <Cost>17.5</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>Supplier</ChargeType>
+        <Label>Labour and Additional</Label>
+    <IsExternal>true</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account xsi:nil="true" />
+        <Value>0</Value>
+        <Cost>0</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>EW</ChargeType>
+        <Label>Parts Cosacs</Label>
+    <IsExternal>false</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account xsi:nil="true" />
+        <Value>0</Value>
+        <Cost>0</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>EW</ChargeType>
+        <Label>Parts Other</Label>
+    <IsExternal>true</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account xsi:nil="true" />
+        <Value>75</Value>
+        <Cost>75</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>EW</ChargeType>
+        <Label>Labour and Additional</Label>
+    <IsExternal>true</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account xsi:nil="true" />
+        <Value>27.50</Value>
+        <Cost>27.50</Cost>
+        <Tax xsi:nil="true" />
+        <ChargeType>FYW</ChargeType>
+        <Label>Labour and Additional</Label>
+    <IsExternal>true</IsExternal>
+    </ServiceCharge>
+</ServiceCharges>

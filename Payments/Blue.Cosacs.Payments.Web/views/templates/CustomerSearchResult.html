@@ -1,0 +1,86 @@
+<div class="panel panel-default" ng-repeat="result in customers">
+    <div class="panel-heading clickable" ng-click="openPaymentsForCustomerAgreement(result)">
+        <div class="row">
+            <div class="col-lg-4">
+                <p class="text-left"> Customer:
+                    <strong>
+                        <a>{{ result.Title + ' ' + result.FirstName + ' ' + result.LastName }}</a>
+                    </strong>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <p class="text-center"> Customer Alias:
+                    <strong>
+                        {{ result.Alias}}
+                    </strong>
+                </p>
+            </div>
+            <div class="col-lg-4 align-right">
+                <p class="text-right"> Date Of Birth:
+                    <strong>
+                        {{ moment(result.DateOfBirth).format(dateFormatShort) }}
+                    </strong>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <p class="text-left">{{ result.AddressType + ' Address:' }}
+                    <strong>
+                        {{result.Address1}}, {{result.Address2}}, {{result.Address3}},
+                        {{result.PostCode}}
+                    </strong>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body centre-section">
+        <div class="row" ng-repeat="agreement in result.Agreements">
+            <div class="col-lg-3">
+                <strong>Agreement Number: </strong> {{ agreement.AgreementNumber }}
+            </div>
+            <div class="col-lg-3">
+                <strong>Outstanding Balance: </strong> {{ agreement.OutstandingBalance | currency }}
+            </div>
+            <div class="col-lg-3 ">
+                <p ng-class="{ true : 'text-danger' }[ agreement.Arrears > 0 ]">
+                    <strong>Arrears: </strong>
+                    {{ agreement.Arrears | currency }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="expander"
+         ng-class="{opened: result.showCustomerAgreements, closed: !result.showCustomerAgreements}">
+        <div class="row customerAgreementsTable" ng-repeat="agreement in result.customerAgreements">
+            <table>
+                <tr>
+                    <td>
+                        <strong>Agreement Number: </strong> {{ agreement.AgreementNumber}}
+                    </td>
+                    <td>
+                        <strong>Agreement Date: </strong> {{ agreement.CreatedOn}}
+                    </td>
+                    <td>
+                        <strong>Status: </strong> {{ agreement.CurrentStatus}}
+                    </td>
+                    <td>
+                        <strong>Date Due: </strong> {{ agreement.DateNextPaymentDue}}
+                    </td>
+                    <td>
+                        <strong>Agreement Total: </strong> {{ agreement.AgreementTotal | currency }}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br/>
+    </div>
+
+    <div class="trackingToggle text-center detailsExpander"
+         ng-click="loadCustomerAgreements(result)">
+        <span class="glyphicons more"></span>
+    </div>
+
+</div>

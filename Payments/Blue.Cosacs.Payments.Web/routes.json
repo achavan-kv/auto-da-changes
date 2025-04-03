@@ -1,0 +1,27 @@
+[
+  {
+    "url": "Payments",
+    "template": "views/Payments.html"
+  },
+  {
+    "url": "Search",
+    "template": "views/Search.html",
+    "reloadOnSearch": false
+  },
+  {
+    "url": "BankMaintenance",
+    "template": "views/BankMaintenance.html"
+  },
+  {
+    "url": "PaymentSetup",
+    "template": "views/PaymentSetup.html"
+  },
+  {
+    "url": "PaymentMethodsMap",
+    "template": "views/PaymentMethodsMap.html"
+  },
+  {
+    "url": "ExchangeRate",
+    "template": "views/exchangeRate.html"
+  }
+]

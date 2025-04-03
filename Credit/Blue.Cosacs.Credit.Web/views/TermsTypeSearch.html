@@ -1,0 +1,18 @@
+<div class="container credit" ng-controller="termsTypeSearchController">
+    <h1><span ng-bind="title"></span></h1>
+    <div class="FacetSearchContainer">
+        <div class="facetsearch-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <facetsearch data-results=""
+                                 data-results-template="/Credit/views/templates/TermsTypeSearchTemplate.html"
+                                 data-search-url="Credit/api/TermsTypeSearch"
+                                 data-history-url=""
+                                 data-field-labels='{"CustomerType" : "Customer Type", "CustomerBands": "Bands", "CashLoanCustomerType":"Cash Loan Customer", "IsDisabled" : "Disabled", "IsActive" : "Active" }'
+                                 data-half-fields='["IsDisabled","IsActive"]'>
+                    </facetsearch>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

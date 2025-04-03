@@ -1,0 +1,30 @@
+<div>
+    <div ng-repeat="customer in displayResults">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a ng-href="#/Credit/customers/{{customer.CustomerId}}">
+                    {{customer.Title}} {{customer.FirstName}} {{customer.LastName}} #{{customer.CustomerId}}
+                </a>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Alias:</label> {{ customer.Alias ? customer.Alias : "N/A" }}
+                        <br/>
+                        <label>Date of birth:</label> {{ formatDate(customer.DOB) }}
+                    </div>
+                    <div class="col-lg-4">
+                        <label>Home number:</label> {{ customer.HomePhoneNumber ? customer.HomePhoneNumber : "N/A" }}
+                        <br/>
+                        <label>Mobile number: </label> {{ customer.MobileNumber ? customer.MobileNumber : "N/A" }}
+                    </div>
+                    <div class="col-lg-4">
+                        <label> Email: </label> {{ customer.Email ? customer.Email : "N/A" }}
+                        <br/>
+                        <label> Town/City: </label> {{ customer.TownOrCity ? customer.TownOrCity : "N/A" }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

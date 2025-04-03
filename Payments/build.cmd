@@ -1,0 +1,1 @@
+..\..\bin\nant\bin\NAnt.exe -buildfile:default.build

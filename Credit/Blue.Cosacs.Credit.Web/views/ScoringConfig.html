@@ -1,0 +1,157 @@
+<div class="credit scoreCardConfig" ng-controller="scoreConfigController">
+    <h1><span ng-bind="title">Score Card Configuration</span></h1>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="cardType" class="control-label col-lg-6">Card Type</label>
+
+                    <div class="col-lg-6">
+                        <list class=""
+                              id="cardType"
+                              scope="cardTypes"
+                              ng-model="cardType"
+                              placeHolder="Select Card Type"
+                              ng-change="setCard(scoreCard[cardType])"></list>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12" ng-show="cardType">
+            <div class="section">Threshold</div>
+            <form class="form-inline" name="threshold">
+                <div class="form-group col-lg-5" ng-class="{'has-error': threshold.referBelow.$invalid }">
+                    <label for="referLimit" class="control-label col-lg-4">Refer Below</label>
+                    <input name="referBelow"
+                            type="text"
+                           class="form-control col-lg-5"
+                           id="referLimit"
+                           ng-model="scoreCard[cardType].refer"
+                           ng-required="true"/>
+                </div>
+
+                <div class="form-group col-lg-5" ng-class="{'has-error': threshold.declineBelow.$invalid }">
+                    <label for="declineLimit" class="control-label col-lg-5">Decline Below</label>
+                    <input name="declineBelow"
+                            type="text"
+                           class="form-control col-lg-5"
+                           id="declineLimit"
+                           ng-model="scoreCard[cardType].decline"
+                           ng-required="true"/>
+                </div>
+            </form>
+            <div class="row"></div>
+            <form class="form-horizontal" name="card">
+                <div class="section">Scoring Rules</div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <td class="col-lg-1"></td>
+                        <td class="col-lg-9">Evaluation</td>
+                        <td class="col-lg-2"> Score</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="scoringRule in scoreCard[cardType].scoringRules">
+                        <td>
+                        <span class="glyphicons bin"
+                              ng-click="deleteRule(scoreCard[cardType].scoringRules,$index)"></span>
+                        </td>
+                        <td>
+                            <exprandor rules="scoringRule.rules" data="setup"></exprandor>
+                        </td>
+                        <td>
+                            <div ng-class="{'has-error': card.scoringResult{{$index}}.$invalid }">
+                                <input class="form-control" type="text" name="scoringResult{{$index}}"
+                                       ng-model="scoringRule.result" ng-required="true"/>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><span class="glyphicons plus click"
+                                  ng-click="addRule(scoreCard[cardType].scoringRules)"></span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="section">Refer Rules</div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <td class="col-lg-1"></td>
+                        <td class="col-lg-9">Evaluation</td>
+                        <td class="col-lg-2">Result</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="referRule in scoreCard[cardType].referRules">
+                        <td><span class="glyphicons bin"
+                                  ng-click="deleteRule(scoreCard[cardType].referRules,$index)"></span>
+                        </td>
+                        <td>
+                            <exprandor rules="referRule.rules" data="setup"></exprandor>
+                        </td>
+                        <td>
+                            <div ng-class="{'has-error': card.referResult{{$index}}.$invalid }">
+                                <input class="form-control" type="text" name="referResult{{$index}}"
+                                       ng-model="referRule.result" ng-required="true"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="glyphicons plus click"
+                                  ng-click="addRule(scoreCard[cardType].referRules)"></span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="section">Decline Rules</div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <td class="col-lg-1"></td>
+                        <td class="col-lg-9">Evaluation</td>
+                        <td class="col-lg-2">Result</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="declineRule in scoreCard[cardType].declineRules">
+                        <td><span class="glyphicons bin"
+                                  ng-click="deleteRule(scoreCard[cardType].declineRules,$index)"></span>
+                        </td>
+                        <td>
+                            <exprandor rules="declineRule.rules" data="setup"></exprandor>
+                        </td>
+                        <td>
+                            <div ng-class="{'has-error': card.declineResult{{$index}}.$invalid }">
+                                <input class="form-control" type="text" name="declineResult{{$index}}"
+                                       ng-model="declineRule.result" ng-required="true"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="glyphicons plus click"
+                                  ng-click="addRule(scoreCard[cardType].declineRules)"></span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-11 col-lg-1">
+            <button ng-disabled="card.$invalid || threshold.$invalid" ng-show="cardType" class="btn btn-primary" ng-click="save(cardType)">Save</button>
+        </div>
+    </div>
+</div>

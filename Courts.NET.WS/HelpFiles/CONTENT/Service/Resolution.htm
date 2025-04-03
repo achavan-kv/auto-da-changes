@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="Service">
+    <head><title>The Resolution Tab</title>
+        <link href="../Resources/Stylesheets/CoSACS Help.css" rel="stylesheet" type="text/css" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" type="text/css" />
+        <script src="../SkinSupport/MadCapUtilities.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffects.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapBody.js">/*<![CDATA[*/ /*]]>*/</script>
+        <script src="../SkinSupport/MadCapHighlighter.js">/*<![CDATA[*/ /*]]>*/</script>
+    </head>
+    <body>
+        <h1>The <a name="kanchor1"></a>Resolution Tab</h1>
+        <p class="MyStyle">The resolution tab will only be enabled if:</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">The SR is open
+</li>
+            <li style="font-family: Arial;" value="2">And the mandatory allocation details have been completed with a repair date as described for the ‘Allocation’ tab.
+</li>
+            <li style="font-family: Arial;" value="3">And the current date is on or after the ‘Repair Date’.
+</li>
+            <li style="font-family: Arial;" value="4">	And the resolution date is blank.
+</li>
+        </ul>
+        <p class="MyStyle">If ‘NFF’ was entered on the ‘Soft Script popup’ as the service evaluation then the ‘Resolution’ field will default to ‘Save a Call’ (SAC). </p>
+        <p class="MyStyle">If ‘MIS’ or ‘EVC’ was entered on the ‘Soft Script popup’ as the service evaluation then the ‘Resolution’ field will default to this service evaluation. If the user changes the ‘Resolution’ field an authorisation prompt should appear. 
+If ‘WAR’ was entered as the service evaluation then the user will be able to select one of the following resolution codes:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">NFF - No fault found. Selecting this code must open an authorisation prompt</li>
+            <li style="font-family: Arial;" value="2">INS - Installation of a new product
+</li>
+            <li style="font-family: Arial;" value="3">MEC - Mechanical defect
+</li>
+            <li style="font-family: Arial;" value="4">	ELE - Electrical defect. Only available for an electrical product (identified by the stock item category)
+</li>
+            <li style="font-family: Arial;" value="5">	UPH - Upholstery fabric defect. Only available for a furniture product (identified by the stock item category)
+</li>
+            <li style="font-family: Arial;" value="6">COS - Cosmetic defects in manufacture
+</li>
+            <li style="font-family: Arial;" value="7">BER - Beyond economic repair
+</li>
+        </ul>
+        <p class="MyStyle">The ‘Resolution Date’ will default to 01 Jan 1900. The user will be able to set this to a value between the date logged and the current date.
+The ‘Primary Charge To’ description will be held on Code Maintenance. The available options are shown in the following list. </p>
+        <p class="MyStyle">The field should default to the first matching condition in this order:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Internal - If an Stock Repair Service Request
+</li>
+            <li style="font-family: Arial;" value="2">Deliverer - If the ‘Damaged by Deliverer’ tick box on the ‘Product’ tab is ticked
+</li>
+            <li style="font-family: Arial;" value="3">Customer - when the resolution code is ‘NFF’, ‘MIS’ or ‘EVC
+</li>
+            <li style="font-family: Arial;" value="4">Supplier - If the product is under first year warranty (FYW)
+</li>
+            <li style="font-family: Arial;" value="5">AIG - When out of FYW and within the extended warranty period
+</li>
+        </ul>
+        <p class="MyStyle">For all other cases the charge to will be the customer. If the user changes the ‘Primary Charge To’ an authorisation prompt should appear</p>
+        <p class="MyStyle">Where there is a cost  being charged to the customer, a debtor’s cash account will be set up for each customer. When charging to a deliverer, one deliverer special account will be used for all deliverers. </p>
+        <p class="MyStyle">Line items will be added for the parts and the labour (non-stock). An item number for parts must be set up in Country maintenance in order for this is work correctly.</p>
+        <p class="MyStyle">The total of the account will equal the total cost of the claim. Charge To accounts cannot be revised.]</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The ‘Supplier Name’ and ‘Product’ fields will only be enabled if the country parameter ‘SERVICE Matrix’ is enabled and the ‘Primary Charge To’ is set to one of:</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">Supplier
+</li>
+            <li style="font-family: Arial;" value="2">AIG
+	</li>
+            <li style="font-family: Arial;" value="3">Customer</li>
+        </ul>
+        <p class="MyStyle">The price index matrix will be used to store details of suppliers and parts. This is discussed in more detail in Price Index Matrix topic.</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">On the resolution tab the user is able to select the supplier and parts used for the repair. When a supplier is selected, the parts related to this supplier based on the Price Index matrix will appear as a drop down. It is also possible to type in a part that might not exist in the drop down. </p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">When the country parameter ‘SERVICE Labour Rate’ is enabled the labour cost will appear as a single field to be entered by the user. When disabled a group box will contain the fields ‘Hourly Rate’, ‘No of Hours’ and ‘Total’. The user will enter the hourly rate and the number of hours and the total will be calculated by the screen.</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The ‘Replacement’ tick box will only be visible for a Courts Account Service Request. An authorisation prompt will be required if the item is not under warranty (either FYW or extended). If this is ticked when the details are being saved, the SR will be closed and the account details updated to allow a replacement</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The call will be closed with today’s date and a resolution description of ‘BER’. The user may have entered a labour cost, in which case the ‘Primary Charge To’ field will depend on the type of warranty, either FYW or extended.</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">The ‘Collected Goods on Loan’ tick box will only be enabled if the ‘Goods on Loan’ box was ticked on the ‘Product’ tab. If this box is enabled then it must be validated as a mandatory field when a resolution date is entered.
+The ‘Food Loss’ group box will only be enabled when the extended warranty box is ticked or under FYW on the ‘Product’ tab. When ‘Food Loss’ is ticked the plus button next to this tick box will be enabled. This button will open the ‘Food Loss’ screen to allow food items to be added to a list. The ‘Food Loss’ tick box should remain ticked and be disabled when there are food items saved against the SR.
+</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">There will be an ‘Additional Cost’ field for any other costs. The field ‘Total Cost’ will be read only and will total the cost of the labour, parts and any additional costs.
+When the resolution date is entered then all of the fields in this list become mandatory:
+</p>
+        <ul style="list-style-type: square;">
+            <li style="font-family: Arial;" value="1">	Resolution description
+</li>
+            <li style="font-family: Arial;" value="2">	Primary Charge to
+</li>
+            <li style="font-family: Arial;" value="3">Collected Goods on Loan (if goods are on loan – see above)
+
+</li>
+        </ul>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">Note that the details will not be saved to the database until the ‘Save’ button is pressed. If the user attempts to exit the screen without saving changes a warning should be given that changes will be lost.
+When an SR is saved with a resolution date the SR will be closed and becomes read only</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle"><a class="MCRelatedTopics" href="javascript:void(0);" onclick="FMCLinkControl( event, this ); return false;" onkeydown="this.MCKeydown = true;" MadCap:topics="The Product Tab|SR_Product Tab.htm||Service Request Summary on Account Details|SRAccountdetails.htm||Soft Script Popup|SoftScripts.htm||Service Request Search|ServiceSearch.htm||Service Failure Report|ServiceFailure Report.htm||Service Request Screen|Service Request Screen.htm||Service Request Audit|Service Request Audit.htm||Service Progress Report|Service Progress Report.htm||Payment screen for Service|Service Payment.htm||Outstanding Service Requests|OutstandingSR.htm||Customer Interaction|CustomerInteraction.htm||Claims submission report|ClaimsSubmissions.htm||Charge To Analysis|Charge To.htm||Beyond Economic Repair (BER)|BER.htm||Batch Printing|BatchPrint.htm||Service Request Allocation|Allocation.htm"><img src="../SkinSupport/RelatedTopics.gif" style="border: none;margin-right: 5px;" />Related Topics</a>
+        </p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">&#160;</p>
+        <p class="MyStyle">
+        </p>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

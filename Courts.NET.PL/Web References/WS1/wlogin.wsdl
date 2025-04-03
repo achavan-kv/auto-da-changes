@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://schemas.bluebridgeltd.com/cosacs/exceptions/2010/09/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:import namespace="http://schemas.bluebridgeltd.com/cosacs/exceptions/2010/09/" />
+      <s:element name="IsValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientdate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsValidResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="empeeNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRolesResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoggedIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="machineName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoggedInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoggedInResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loggedIn" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="employeeNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeNameResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatePasswordChanged">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="employeeNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatePasswordChangedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDatePasswordChangedResult" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveStaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="changePassword" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchno" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fACTEmpeeNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dutyFree" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loggedIn" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="defaultRate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="upliftRate" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeechange" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveStaffResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesStaffByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesStaffByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSalesStaffByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeLogonHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empeeno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeLogonHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeLogonHistoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStaffAllocationByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="employeeType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStaffAllocationByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStaffAllocationByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loggedInUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SavePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SavePasswordResult" type="tns:SavePasswordResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SavePasswordResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsValid" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogOff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="machineName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogOffResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="TerminateEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empeeno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="empeechange" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TerminateEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TerminateEmployeeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CashTillOpenLoadEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tillid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CashTillOpenLoadEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CashTillOpenLoadEmployeeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCommissionDetailsByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCommissionDetailsByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadCommissionDetailsByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateBailiffCommission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateBailiffCommissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateBailiffCommissionResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckRolePermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empeeNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="permissionName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckRolePermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckRolePermissionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConfig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="country" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="branch" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckConfigResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Exception">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s2:e" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExceptionResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.bluebridgeltd.com/cosacs/exceptions/2010/09/">
+      <s:element name="e" nillable="true" type="s2:Error" />
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProcessName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Timestamp" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentityType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsValidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValid" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoggedInSoapIn">
+    <wsdl:part name="parameters" element="tns:LoggedIn" />
+  </wsdl:message>
+  <wsdl:message name="LoggedInSoapOut">
+    <wsdl:part name="parameters" element="tns:LoggedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoggedInAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeName" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNameAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDatePasswordChangedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatePasswordChanged" />
+  </wsdl:message>
+  <wsdl:message name="GetDatePasswordChangedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatePasswordChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatePasswordChangedAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveStaff" />
+  </wsdl:message>
+  <wsdl:message name="SaveStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveStaffAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesStaffByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalesStaffByType" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesStaffByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalesStaffByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesStaffByTypeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeLogonHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeLogonHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeLogonHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeLogonHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeLogonHistoryAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffAllocationByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStaffAllocationByType" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffAllocationByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStaffAllocationByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffAllocationByTypeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SavePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePassword" />
+  </wsdl:message>
+  <wsdl:message name="SavePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePasswordAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LogOffSoapIn">
+    <wsdl:part name="parameters" element="tns:LogOff" />
+  </wsdl:message>
+  <wsdl:message name="LogOffSoapOut">
+    <wsdl:part name="parameters" element="tns:LogOffResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogOffAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="TerminateEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:TerminateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="TerminateEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:TerminateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="TerminateEmployeeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CashTillOpenLoadEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:CashTillOpenLoadEmployee" />
+  </wsdl:message>
+  <wsdl:message name="CashTillOpenLoadEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:CashTillOpenLoadEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashTillOpenLoadEmployeeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadCommissionDetailsByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadCommissionDetailsByType" />
+  </wsdl:message>
+  <wsdl:message name="LoadCommissionDetailsByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadCommissionDetailsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadCommissionDetailsByTypeAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CalculateBailiffCommissionSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateBailiffCommission" />
+  </wsdl:message>
+  <wsdl:message name="CalculateBailiffCommissionSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateBailiffCommissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateBailiffCommissionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckRolePermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckRolePermission" />
+  </wsdl:message>
+  <wsdl:message name="CheckRolePermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckRolePermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckRolePermissionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckConfig" />
+  </wsdl:message>
+  <wsdl:message name="CheckConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConfigAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionSoapIn">
+    <wsdl:part name="parameters" element="tns:Exception" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionSoapOut">
+    <wsdl:part name="parameters" element="tns:ExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WLoginSoap">
+    <wsdl:operation name="IsValid">
+      <wsdl:input message="tns:IsValidSoapIn" />
+      <wsdl:output message="tns:IsValidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input message="tns:GetRolesSoapIn" />
+      <wsdl:output message="tns:GetRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoggedIn">
+      <wsdl:input message="tns:LoggedInSoapIn" />
+      <wsdl:output message="tns:LoggedInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">this method will return the users name as part of logging in</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeeNameSoapIn" />
+      <wsdl:output message="tns:GetEmployeeNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatePasswordChanged">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return the date that the password was changed.</wsdl:documentation>
+      <wsdl:input message="tns:GetDatePasswordChangedSoapIn" />
+      <wsdl:output message="tns:GetDatePasswordChangedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetails">
+      <wsdl:input message="tns:GetEmployeeDetailsSoapIn" />
+      <wsdl:output message="tns:GetEmployeeDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStaff">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">this method will update or insert basic employee details</wsdl:documentation>
+      <wsdl:input message="tns:SaveStaffSoapIn" />
+      <wsdl:output message="tns:SaveStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesStaffByType">
+      <wsdl:input message="tns:GetSalesStaffByTypeSoapIn" />
+      <wsdl:output message="tns:GetSalesStaffByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeLogonHistory">
+      <wsdl:input message="tns:GetEmployeeLogonHistorySoapIn" />
+      <wsdl:output message="tns:GetEmployeeLogonHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffAllocationByType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">this method will return the employees and number of allocations for credit staff allocation screen</wsdl:documentation>
+      <wsdl:input message="tns:GetStaffAllocationByTypeSoapIn" />
+      <wsdl:output message="tns:GetStaffAllocationByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will save a new password for the current user.</wsdl:documentation>
+      <wsdl:input message="tns:SavePasswordSoapIn" />
+      <wsdl:output message="tns:SavePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">this method will set the users loggedin parm to 0</wsdl:documentation>
+      <wsdl:input message="tns:LogOffSoapIn" />
+      <wsdl:output message="tns:LogOffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminateEmployee">
+      <wsdl:input message="tns:TerminateEmployeeSoapIn" />
+      <wsdl:output message="tns:TerminateEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CashTillOpenLoadEmployee">
+      <wsdl:input message="tns:CashTillOpenLoadEmployeeSoapIn" />
+      <wsdl:output message="tns:CashTillOpenLoadEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCommissionDetailsByType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">this method will return the employees and commission due for the Calculate Commission Screen.</wsdl:documentation>
+      <wsdl:input message="tns:LoadCommissionDetailsByTypeSoapIn" />
+      <wsdl:output message="tns:LoadCommissionDetailsByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBailiffCommission">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">this method will return the employees and commission due for the Calculate Commission Screen.</wsdl:documentation>
+      <wsdl:input message="tns:CalculateBailiffCommissionSoapIn" />
+      <wsdl:output message="tns:CalculateBailiffCommissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckRolePermission">
+      <wsdl:input message="tns:CheckRolePermissionSoapIn" />
+      <wsdl:output message="tns:CheckRolePermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConfig">
+      <wsdl:input message="tns:CheckConfigSoapIn" />
+      <wsdl:output message="tns:CheckConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Exception">
+      <wsdl:input message="tns:ExceptionSoapIn" />
+      <wsdl:output message="tns:ExceptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WLoginSoap" type="tns:WLoginSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsValid">
+      <soap:operation soapAction="http://strategicthought.com/webservices/IsValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsValidAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRolesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoggedIn">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoggedIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoggedInAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeName">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEmployeeName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeNameAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatePasswordChanged">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetDatePasswordChanged" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDatePasswordChangedAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetails">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEmployeeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStaff">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveStaffAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesStaffByType">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetSalesStaffByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSalesStaffByTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeLogonHistory">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetEmployeeLogonHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeLogonHistoryAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffAllocationByType">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetStaffAllocationByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStaffAllocationByTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePassword">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SavePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SavePasswordAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LogOff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LogOffAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateEmployee">
+      <soap:operation soapAction="http://strategicthought.com/webservices/TerminateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TerminateEmployeeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CashTillOpenLoadEmployee">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CashTillOpenLoadEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CashTillOpenLoadEmployeeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCommissionDetailsByType">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadCommissionDetailsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadCommissionDetailsByTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBailiffCommission">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CalculateBailiffCommission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalculateBailiffCommissionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRolePermission">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckRolePermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckRolePermissionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConfig">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckConfigAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exception">
+      <soap:operation soapAction="http://strategicthought.com/webservices/Exception" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExceptionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WLoginSoap12" type="tns:WLoginSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsValid">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/IsValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsValidAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRolesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoggedIn">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoggedIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoggedInAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeName">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEmployeeName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeNameAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatePasswordChanged">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetDatePasswordChanged" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDatePasswordChangedAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetails">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEmployeeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeDetailsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStaff">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveStaffAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesStaffByType">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetSalesStaffByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSalesStaffByTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeLogonHistory">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetEmployeeLogonHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeLogonHistoryAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffAllocationByType">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetStaffAllocationByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStaffAllocationByTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePassword">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SavePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SavePasswordAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOff">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LogOff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LogOffAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateEmployee">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/TerminateEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TerminateEmployeeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CashTillOpenLoadEmployee">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CashTillOpenLoadEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CashTillOpenLoadEmployeeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCommissionDetailsByType">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadCommissionDetailsByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadCommissionDetailsByTypeAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBailiffCommission">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CalculateBailiffCommission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalculateBailiffCommissionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRolePermission">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckRolePermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckRolePermissionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConfig">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckConfigAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exception">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/Exception" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExceptionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WLogin">
+    <wsdl:port name="WLoginSoap" binding="tns:WLoginSoap">
+      <soap:address location="http://localhost/courts.net.ws/wlogin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WLoginSoap12" binding="tns:WLoginSoap12">
+      <soap12:address location="http://localhost/courts.net.ws/wlogin.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

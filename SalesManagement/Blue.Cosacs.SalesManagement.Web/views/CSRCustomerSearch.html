@@ -1,0 +1,18 @@
+﻿<div class="container">
+    <h1>My Customers</h1>
+    <div class="FacetSearchContainer">
+        <div class="facetsearch-container" ng-controller="csrCustomerSearchController">
+            <div class="row">
+                <div class="col-lg-12">
+                    <facetsearch data-results=""
+                                 data-results-template="/SalesManagement/views/templates/CSRCustomerSearch.html"
+                                 data-search-url="Customer/Api/Reindex/SearchByCsr"
+                                 data-history-url=""
+                                 data-field-labels='{ "AvailableSpend": "Available to Spend", "HasPendingCalls" :"Has Pending Calls", "ReceiveEmails": "Receive Emails", "CustomerBranchName": "Customer Branch", "DateLastBoughtRange" : "Date Last Bought", "IsActiveCashCustomer" : "Active Cash Customer", "IsActiveCreditCustomer" : "Active Credit Customer", "HasBirthday" : "Has Birthday" }'
+                                 data-half-fields='["HasPendingCalls", "ReceiveEmails", "IsActiveCashCustomer", "IsActiveCreditCustomer"]'>
+                    </facetsearch>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

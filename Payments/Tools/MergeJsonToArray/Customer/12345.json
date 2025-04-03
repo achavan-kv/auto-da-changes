@@ -1,0 +1,36 @@
+{
+    "Id": 12345,
+    "LegacyId": "180783",
+    "Branch": "858",
+    "FirstName": "KEVIN",
+    "LastName": "DAVID",
+    "Title": "MR",
+    "Alias": "RAMBO",
+    "DateOfBirth": "1983-07-18",
+    "Gender": "Male",
+    "AddressType": "Work",
+    "Address1": "12345 Gold Street",
+    "Address2": "Kingston Thing",
+    "Address3": "Jamaica",
+    "PostCode": "9875-123",
+    "Agreements": [
+        {
+            "AgreementNumber": 112,
+            "OutstandingBalance": 300,
+            "AgreementTotal": 500,
+            "Arrears": 20
+        },
+        {
+            "AgreementNumber": 112,
+            "OutstandingBalance": 300,
+            "AgreementTotal": 500,
+            "Arrears": 0
+        },
+        {
+            "AgreementNumber": 112,
+            "OutstandingBalance": 300,
+            "AgreementTotal": 500,
+            "Arrears": 30
+        }
+    ]
+}

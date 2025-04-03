@@ -1,0 +1,2709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="_x0031_">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="_x0031_Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_x0031_Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="_x0032_">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="_x0032_Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_x0032_Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProposalStage2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtDateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProposalStage2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProposalStage2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferenceList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferenceListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReferenceListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProposal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="app1">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="app2">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="sanction" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProposalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveProposalResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProposalStage2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="app1">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="app2">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="complete" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProposalStage2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveProposalStage2Result" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadProposalFlags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadProposalFlagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadProposalFlagsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="holdProp" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="currentStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRFLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acctList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRFLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRFLimitResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="limit" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="available" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="wrongType" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExistCashLoan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExistCashLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExistCashLoanResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="limit" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DummySanction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeStamp" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DummySanctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DummySanctionResult" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoringRules">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="scoretype" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScoringRulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScoringRulesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveApplicantSpendMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveApplicantSpendMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveApplicantSpendMatrixResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicantSpendMatrix">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetApplicantSpendMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicantSpendMatrixResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDependentSpendMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDependentSpendMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveDependentSpendMatrixResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDependentSpendFactor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="noOfDep" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDependentSpendFactorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDependentSpendFactorResult" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicantSpendFactor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="income" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicantSpendFactorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetApplicantSpendFactorResult" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDependentSpendMatrix">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDependentSpendMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDependentSpendMatrixResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveScoringRules">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rules">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveScoringRulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveScoringRulesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScoreProposal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchNo" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="referDeclined" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScoreProposalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScoreProposalResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="referDeclined" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="newBand" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="points" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="RFLimit" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bureauFailure" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="referralReasons" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRFScoringMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="scoretype" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRFScoringMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRFScoringMatrixResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTermsTypeMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="scoretype" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTermsTypeMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTermsTypeMatrixResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRFScoringMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="scoretype" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matrix">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="newImport" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRFScoringMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveRFScoringMatrixResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTermsTypeMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="scoretype" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="matrix">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="newImport" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTermsTypeMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveTermsTypeMatrixResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyTermsTypeMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="scorecard" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyTermsTypeMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyTermsTypeMatrixResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ManualRefer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isManualRefer" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="cashLoan" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ManualReferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ManualReferResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferralData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferralDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReferralDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteReferralStage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="newNotes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="approved" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="rejected" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="reOpen" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="branch" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="creditLimit" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteReferralStageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompleteReferralStageResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReferralNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="newNote" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="creditLimit" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReferralNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveReferralNotesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProposalNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveProposalNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveProposalNotesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindSecondApplicant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindSecondApplicantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindSecondApplicantResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocConfirmationData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocConfirmationDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocConfirmationDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDocConfirmation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="complete" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDocConfirmationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveDocConfirmationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnclearedStage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="propResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnclearedStageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUnclearedStageResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="propResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnClearFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="changeStatus" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnClearFlagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnClearFlagResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestTransact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestTransactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TestTransactResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestSchemaValidation">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestSchemaValidationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestSchemaValidationResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferralSummaryData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReferralSummaryDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReferralSummaryDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="lineItems">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpendLimitReferral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="newNotes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="creditLimit" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpendLimitReferralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SpendLimitReferralResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveScoreHist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateprop" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="scorecard" nillable="true" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="points" nillable="true" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="creditlimit" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="scoringband" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="user" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasonchanged" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveScoreHistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveScoreHistResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBSCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBSCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadBSCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadScoreHistforCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadScoreHistforCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadScoreHistforCustomerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyBSRescore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="runno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyBSRescoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyBSRescoreResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveManualReferralNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateProp" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="creditLimit" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveManualReferralNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveManualReferralNotesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMmiMatrix">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMmiMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMmiMatrixResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMmiMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matrix">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMmiMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveMmiMatrixResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCustomerMmi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasonChanged" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCustomerMmiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveCustomerMmiResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMmiThresholdForSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acctNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="termType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMmiThresholdForSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMmiThresholdForSaleResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isMmiAllowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="mmiLimit" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="mmiThreshold" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditMmiThresholdUsedInstalment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acctNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mmi" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="mmiThreshold" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="installment" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="activityDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditMmiThresholdUsedInstalmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuditMmiThresholdUsedInstalmentResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="err" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="_x0031_SoapIn">
+    <wsdl:part name="parameters" element="tns:_x0031_" />
+  </wsdl:message>
+  <wsdl:message name="_x0031_SoapOut">
+    <wsdl:part name="parameters" element="tns:_x0031_Response" />
+  </wsdl:message>
+  <wsdl:message name="1Authentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="_x0032_SoapIn">
+    <wsdl:part name="parameters" element="tns:_x0032_" />
+  </wsdl:message>
+  <wsdl:message name="_x0032_SoapOut">
+    <wsdl:part name="parameters" element="tns:_x0032_Response" />
+  </wsdl:message>
+  <wsdl:message name="2Authentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetProposalStage2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetProposalStage2" />
+  </wsdl:message>
+  <wsdl:message name="GetProposalStage2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetProposalStage2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetProposalStage2Authentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetReferenceListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReferenceList" />
+  </wsdl:message>
+  <wsdl:message name="GetReferenceListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReferenceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReferenceListAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveProposal" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveProposalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalStage2SoapIn">
+    <wsdl:part name="parameters" element="tns:SaveProposalStage2" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalStage2SoapOut">
+    <wsdl:part name="parameters" element="tns:SaveProposalStage2Response" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalStage2Authentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadProposalFlagsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadProposalFlags" />
+  </wsdl:message>
+  <wsdl:message name="LoadProposalFlagsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadProposalFlagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadProposalFlagsAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetRFLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRFLimit" />
+  </wsdl:message>
+  <wsdl:message name="GetRFLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRFLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRFLimitAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetExistCashLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExistCashLoan" />
+  </wsdl:message>
+  <wsdl:message name="GetExistCashLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExistCashLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExistCashLoanAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="DummySanctionSoapIn">
+    <wsdl:part name="parameters" element="tns:DummySanction" />
+  </wsdl:message>
+  <wsdl:message name="DummySanctionSoapOut">
+    <wsdl:part name="parameters" element="tns:DummySanctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DummySanctionAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetScoringRulesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScoringRules" />
+  </wsdl:message>
+  <wsdl:message name="GetScoringRulesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScoringRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScoringRulesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveApplicantSpendMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveApplicantSpendMatrix" />
+  </wsdl:message>
+  <wsdl:message name="SaveApplicantSpendMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveApplicantSpendMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveApplicantSpendMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicantSpendMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicantSpendMatrix" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicantSpendMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicantSpendMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicantSpendMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveDependentSpendMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDependentSpendMatrix" />
+  </wsdl:message>
+  <wsdl:message name="SaveDependentSpendMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDependentSpendMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDependentSpendMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDependentSpendFactorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDependentSpendFactor" />
+  </wsdl:message>
+  <wsdl:message name="GetDependentSpendFactorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDependentSpendFactorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDependentSpendFactorAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicantSpendFactorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicantSpendFactor" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicantSpendFactorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicantSpendFactorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicantSpendFactorAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDependentSpendMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDependentSpendMatrix" />
+  </wsdl:message>
+  <wsdl:message name="GetDependentSpendMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDependentSpendMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDependentSpendMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoringRulesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveScoringRules" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoringRulesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveScoringRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoringRulesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ScoreProposalSoapIn">
+    <wsdl:part name="parameters" element="tns:ScoreProposal" />
+  </wsdl:message>
+  <wsdl:message name="ScoreProposalSoapOut">
+    <wsdl:part name="parameters" element="tns:ScoreProposalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScoreProposalAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetRFScoringMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRFScoringMatrix" />
+  </wsdl:message>
+  <wsdl:message name="GetRFScoringMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRFScoringMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRFScoringMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetTermsTypeMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTermsTypeMatrix" />
+  </wsdl:message>
+  <wsdl:message name="GetTermsTypeMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTermsTypeMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTermsTypeMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveRFScoringMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRFScoringMatrix" />
+  </wsdl:message>
+  <wsdl:message name="SaveRFScoringMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRFScoringMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRFScoringMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveTermsTypeMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTermsTypeMatrix" />
+  </wsdl:message>
+  <wsdl:message name="SaveTermsTypeMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTermsTypeMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTermsTypeMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTermsTypeMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:ApplyTermsTypeMatrix" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTermsTypeMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:ApplyTermsTypeMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTermsTypeMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ManualReferSoapIn">
+    <wsdl:part name="parameters" element="tns:ManualRefer" />
+  </wsdl:message>
+  <wsdl:message name="ManualReferSoapOut">
+    <wsdl:part name="parameters" element="tns:ManualReferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ManualReferAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReferralData" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReferralDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralDataAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="CompleteReferralStageSoapIn">
+    <wsdl:part name="parameters" element="tns:CompleteReferralStage" />
+  </wsdl:message>
+  <wsdl:message name="CompleteReferralStageSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteReferralStageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteReferralStageAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveReferralNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReferralNotes" />
+  </wsdl:message>
+  <wsdl:message name="SaveReferralNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReferralNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReferralNotesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveProposalNotes" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveProposalNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveProposalNotesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="FindSecondApplicantSoapIn">
+    <wsdl:part name="parameters" element="tns:FindSecondApplicant" />
+  </wsdl:message>
+  <wsdl:message name="FindSecondApplicantSoapOut">
+    <wsdl:part name="parameters" element="tns:FindSecondApplicantResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindSecondApplicantAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetDocConfirmationDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocConfirmationData" />
+  </wsdl:message>
+  <wsdl:message name="GetDocConfirmationDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocConfirmationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocConfirmationDataAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveDocConfirmationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDocConfirmation" />
+  </wsdl:message>
+  <wsdl:message name="SaveDocConfirmationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDocConfirmationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDocConfirmationAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetUnclearedStageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnclearedStage" />
+  </wsdl:message>
+  <wsdl:message name="GetUnclearedStageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnclearedStageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnclearedStageAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="UnClearFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:UnClearFlag" />
+  </wsdl:message>
+  <wsdl:message name="UnClearFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:UnClearFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnClearFlagAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="TestTransactSoapIn">
+    <wsdl:part name="parameters" element="tns:TestTransact" />
+  </wsdl:message>
+  <wsdl:message name="TestTransactSoapOut">
+    <wsdl:part name="parameters" element="tns:TestTransactResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestTransactAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="TestSchemaValidationSoapIn">
+    <wsdl:part name="parameters" element="tns:TestSchemaValidation" />
+  </wsdl:message>
+  <wsdl:message name="TestSchemaValidationSoapOut">
+    <wsdl:part name="parameters" element="tns:TestSchemaValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSchemaValidationAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralSummaryDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReferralSummaryData" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralSummaryDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReferralSummaryDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReferralSummaryDataAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SpendLimitReferralSoapIn">
+    <wsdl:part name="parameters" element="tns:SpendLimitReferral" />
+  </wsdl:message>
+  <wsdl:message name="SpendLimitReferralSoapOut">
+    <wsdl:part name="parameters" element="tns:SpendLimitReferralResponse" />
+  </wsdl:message>
+  <wsdl:message name="SpendLimitReferralAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoreHistSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveScoreHist" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoreHistSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveScoreHistResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveScoreHistAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadBSCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadBSCustomers" />
+  </wsdl:message>
+  <wsdl:message name="LoadBSCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadBSCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadBSCustomersAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="LoadScoreHistforCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadScoreHistforCustomer" />
+  </wsdl:message>
+  <wsdl:message name="LoadScoreHistforCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadScoreHistforCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadScoreHistforCustomerAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="ApplyBSRescoreSoapIn">
+    <wsdl:part name="parameters" element="tns:ApplyBSRescore" />
+  </wsdl:message>
+  <wsdl:message name="ApplyBSRescoreSoapOut">
+    <wsdl:part name="parameters" element="tns:ApplyBSRescoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplyBSRescoreAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveManualReferralNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveManualReferralNotes" />
+  </wsdl:message>
+  <wsdl:message name="SaveManualReferralNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveManualReferralNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveManualReferralNotesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetMmiMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMmiMatrix" />
+  </wsdl:message>
+  <wsdl:message name="GetMmiMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMmiMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMmiMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveMmiMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMmiMatrix" />
+  </wsdl:message>
+  <wsdl:message name="SaveMmiMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMmiMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMmiMatrixAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveCustomerMmiSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCustomerMmi" />
+  </wsdl:message>
+  <wsdl:message name="SaveCustomerMmiSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCustomerMmiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveCustomerMmiAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetMmiThresholdForSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMmiThresholdForSale" />
+  </wsdl:message>
+  <wsdl:message name="GetMmiThresholdForSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMmiThresholdForSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMmiThresholdForSaleAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="AuditMmiThresholdUsedInstalmentSoapIn">
+    <wsdl:part name="parameters" element="tns:AuditMmiThresholdUsedInstalment" />
+  </wsdl:message>
+  <wsdl:message name="AuditMmiThresholdUsedInstalmentSoapOut">
+    <wsdl:part name="parameters" element="tns:AuditMmiThresholdUsedInstalmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuditMmiThresholdUsedInstalmentAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WCreditManagerSoap">
+    <wsdl:operation name="GetProposal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return all propsal details for a particular account or customer - first overload</wsdl:documentation>
+      <wsdl:input name="_x0031_" message="tns:_x0031_SoapIn" />
+      <wsdl:output name="_x0031_" message="tns:_x0031_SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProposalStage1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return all propsal details for a particular account or customer - second overload</wsdl:documentation>
+      <wsdl:input name="_x0032_" message="tns:_x0032_SoapIn" />
+      <wsdl:output name="_x0032_" message="tns:_x0032_SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProposalStage2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return all Stage 2 proposal details for a particular account or customer</wsdl:documentation>
+      <wsdl:input message="tns:GetProposalStage2SoapIn" />
+      <wsdl:output message="tns:GetProposalStage2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferenceList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method retrieves the list of previous references for one Customer</wsdl:documentation>
+      <wsdl:input message="tns:GetReferenceListSoapIn" />
+      <wsdl:output message="tns:GetReferenceListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will save a credit proposal</wsdl:documentation>
+      <wsdl:input message="tns:SaveProposalSoapIn" />
+      <wsdl:output message="tns:SaveProposalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposalStage2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will save a Stage 2 credit proposal</wsdl:documentation>
+      <wsdl:input message="tns:SaveProposalStage2SoapIn" />
+      <wsdl:output message="tns:SaveProposalStage2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadProposalFlags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return all propsal details for a particular account or customer - first overload</wsdl:documentation>
+      <wsdl:input message="tns:LoadProposalFlagsSoapIn" />
+      <wsdl:output message="tns:LoadProposalFlagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRFLimit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return the credit limit and available credit for a ready finance customer and account</wsdl:documentation>
+      <wsdl:input message="tns:GetRFLimitSoapIn" />
+      <wsdl:output message="tns:GetRFLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistCashLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return the Exist cash loan for the account</wsdl:documentation>
+      <wsdl:input message="tns:GetExistCashLoanSoapIn" />
+      <wsdl:output message="tns:GetExistCashLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DummySanction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is a hack method to simulate sanctioning for testing purposes</wsdl:documentation>
+      <wsdl:input message="tns:DummySanctionSoapIn" />
+      <wsdl:output message="tns:DummySanctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringRules">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return an XML node listing all the scoring rules currently defined for the selected rule type</wsdl:documentation>
+      <wsdl:input message="tns:GetScoringRulesSoapIn" />
+      <wsdl:output message="tns:GetScoringRulesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveApplicantSpendMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will Save Values of ApplicantSpendMatrix</wsdl:documentation>
+      <wsdl:input message="tns:SaveApplicantSpendMatrixSoapIn" />
+      <wsdl:output message="tns:SaveApplicantSpendMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicantSpendMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return Values of ApplicantSpendMatrix</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicantSpendMatrixSoapIn" />
+      <wsdl:output message="tns:GetApplicantSpendMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDependentSpendMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will Save ValuesDependentSpendMatrix</wsdl:documentation>
+      <wsdl:input message="tns:SaveDependentSpendMatrixSoapIn" />
+      <wsdl:output message="tns:SaveDependentSpendMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentSpendFactor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return Value of matching DependentSpendCriteria</wsdl:documentation>
+      <wsdl:input message="tns:GetDependentSpendFactorSoapIn" />
+      <wsdl:output message="tns:GetDependentSpendFactorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicantSpendFactor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return Value of matching ApplicantSpendCriteria</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicantSpendFactorSoapIn" />
+      <wsdl:output message="tns:GetApplicantSpendFactorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentSpendMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return Values of DependentSpendMatrix</wsdl:documentation>
+      <wsdl:input message="tns:GetDependentSpendMatrixSoapIn" />
+      <wsdl:output message="tns:GetDependentSpendMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveScoringRules">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return an XML node listing all the scoring rules currently defined for the selected rule type</wsdl:documentation>
+      <wsdl:input message="tns:SaveScoringRulesSoapIn" />
+      <wsdl:output message="tns:SaveScoringRulesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScoreProposal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will evaluate the customer account data against the countries scoring rules</wsdl:documentation>
+      <wsdl:input message="tns:ScoreProposalSoapIn" />
+      <wsdl:output message="tns:ScoreProposalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRFScoringMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return an XML node listing all the scoring rules currently defined for the selected rule type</wsdl:documentation>
+      <wsdl:input message="tns:GetRFScoringMatrixSoapIn" />
+      <wsdl:output message="tns:GetRFScoringMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTermsTypeMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the terms type matrix by scoring band</wsdl:documentation>
+      <wsdl:input message="tns:GetTermsTypeMatrixSoapIn" />
+      <wsdl:output message="tns:GetTermsTypeMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRFScoringMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return an XML node listing all the scoring rules currently defined for the selected rule type</wsdl:documentation>
+      <wsdl:input message="tns:SaveRFScoringMatrixSoapIn" />
+      <wsdl:output message="tns:SaveRFScoringMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTermsTypeMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saves the terms type matrix of service charge by scoring band</wsdl:documentation>
+      <wsdl:input message="tns:SaveTermsTypeMatrixSoapIn" />
+      <wsdl:output message="tns:SaveTermsTypeMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTermsTypeMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saves the terms type matrix of service charge by scoring band</wsdl:documentation>
+      <wsdl:input message="tns:ApplyTermsTypeMatrixSoapIn" />
+      <wsdl:output message="tns:ApplyTermsTypeMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ManualRefer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return an XML node listing all the scoring rules currently defined for the selected rule type</wsdl:documentation>
+      <wsdl:input message="tns:ManualReferSoapIn" />
+      <wsdl:output message="tns:ManualReferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will record the referral decision in the proposal table and clear the referral proposal flag</wsdl:documentation>
+      <wsdl:input message="tns:GetReferralDataSoapIn" />
+      <wsdl:output message="tns:GetReferralDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteReferralStage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will record the referral decision in the proposal table and clear the referral proposal flag</wsdl:documentation>
+      <wsdl:input message="tns:CompleteReferralStageSoapIn" />
+      <wsdl:output message="tns:CompleteReferralStageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReferralNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This menu will record the referral notes in the proposal table</wsdl:documentation>
+      <wsdl:input message="tns:SaveReferralNotesSoapIn" />
+      <wsdl:output message="tns:SaveReferralNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposalNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method simply updates the Notes in the Proposal table</wsdl:documentation>
+      <wsdl:input message="tns:SaveProposalNotesSoapIn" />
+      <wsdl:output message="tns:SaveProposalNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSecondApplicant">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return all Stage 2 proposal details for a particular account or customer</wsdl:documentation>
+      <wsdl:input message="tns:FindSecondApplicantSoapIn" />
+      <wsdl:output message="tns:FindSecondApplicantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocConfirmationData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return any data currently stored for this proposal about document confirmation</wsdl:documentation>
+      <wsdl:input message="tns:GetDocConfirmationDataSoapIn" />
+      <wsdl:output message="tns:GetDocConfirmationDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocConfirmation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This menu will record the referral notes in the proposal table</wsdl:documentation>
+      <wsdl:input message="tns:SaveDocConfirmationSoapIn" />
+      <wsdl:output message="tns:SaveDocConfirmationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnclearedStage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return any data currently stored for this proposal about document confirmation</wsdl:documentation>
+      <wsdl:input message="tns:GetUnclearedStageSoapIn" />
+      <wsdl:output message="tns:GetUnclearedStageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnClearFlag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This menu will record the referral notes in the proposal table</wsdl:documentation>
+      <wsdl:input message="tns:UnClearFlagSoapIn" />
+      <wsdl:output message="tns:UnClearFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestTransact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transact test</wsdl:documentation>
+      <wsdl:input message="tns:TestTransactSoapIn" />
+      <wsdl:output message="tns:TestTransactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestSchemaValidation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">test schema validation</wsdl:documentation>
+      <wsdl:input message="tns:TestSchemaValidationSoapIn" />
+      <wsdl:output message="tns:TestSchemaValidationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralSummaryData">
+      <wsdl:input message="tns:GetReferralSummaryDataSoapIn" />
+      <wsdl:output message="tns:GetReferralSummaryDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SpendLimitReferral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return an XML node listing all the scoring rules currently defined for the selected rule type</wsdl:documentation>
+      <wsdl:input message="tns:SpendLimitReferralSoapIn" />
+      <wsdl:output message="tns:SpendLimitReferralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveScoreHist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will save details to the CustomerScoreHistTable</wsdl:documentation>
+      <wsdl:input message="tns:SaveScoreHistSoapIn" />
+      <wsdl:output message="tns:SaveScoreHistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBSCustomers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will Load customers for behavioural Scoring Rescore</wsdl:documentation>
+      <wsdl:input message="tns:LoadBSCustomersSoapIn" />
+      <wsdl:output message="tns:LoadBSCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadScoreHistforCustomer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load Score/Band History for customers sorted by most recent change</wsdl:documentation>
+      <wsdl:input message="tns:LoadScoreHistforCustomerSoapIn" />
+      <wsdl:output message="tns:LoadScoreHistforCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyBSRescore">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Applies Rescore for account </wsdl:documentation>
+      <wsdl:input message="tns:ApplyBSRescoreSoapIn" />
+      <wsdl:output message="tns:ApplyBSRescoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveManualReferralNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will save referral notes when doing a manual referral</wsdl:documentation>
+      <wsdl:input message="tns:SaveManualReferralNotesSoapIn" />
+      <wsdl:output message="tns:SaveManualReferralNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMmiMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns the MMI matrix</wsdl:documentation>
+      <wsdl:input message="tns:GetMmiMatrixSoapIn" />
+      <wsdl:output message="tns:GetMmiMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMmiMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method saves the MMI matrix</wsdl:documentation>
+      <wsdl:input message="tns:SaveMmiMatrixSoapIn" />
+      <wsdl:output message="tns:SaveMmiMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerMmi">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method saves the customer MMI value by calculating percentage of Deposible income based on customer score configuration inside MMI matrix</wsdl:documentation>
+      <wsdl:input message="tns:SaveCustomerMmiSoapIn" />
+      <wsdl:output message="tns:SaveCustomerMmiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMmiThresholdForSale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is used to get sum of MMI value and respective threshold percentage of MMI based on selected Term Type.</wsdl:documentation>
+      <wsdl:input message="tns:GetMmiThresholdForSaleSoapIn" />
+      <wsdl:output message="tns:GetMmiThresholdForSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditMmiThresholdUsedInstalment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is used to add a audit trail for monitoring instances where MMI threshold is used allowing instalment amount.</wsdl:documentation>
+      <wsdl:input message="tns:AuditMmiThresholdUsedInstalmentSoapIn" />
+      <wsdl:output message="tns:AuditMmiThresholdUsedInstalmentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WCreditManagerSoap" type="tns:WCreditManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProposal">
+      <soap:operation soapAction="http://strategicthought.com/webservices/1" style="document" />
+      <wsdl:input name="_x0031_">
+        <soap:body use="literal" />
+        <soap:header message="tns:1Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="_x0031_">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProposalStage1">
+      <soap:operation soapAction="http://strategicthought.com/webservices/2" style="document" />
+      <wsdl:input name="_x0032_">
+        <soap:body use="literal" />
+        <soap:header message="tns:2Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="_x0032_">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProposalStage2">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetProposalStage2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetProposalStage2Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferenceList">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetReferenceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetReferenceListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposal">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveProposal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveProposalAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposalStage2">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveProposalStage2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveProposalStage2Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadProposalFlags">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadProposalFlags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadProposalFlagsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRFLimit">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetRFLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRFLimitAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistCashLoan">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetExistCashLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetExistCashLoanAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DummySanction">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DummySanction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DummySanctionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringRules">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetScoringRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetScoringRulesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveApplicantSpendMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveApplicantSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveApplicantSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicantSpendMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetApplicantSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetApplicantSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDependentSpendMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveDependentSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveDependentSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentSpendFactor">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetDependentSpendFactor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDependentSpendFactorAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicantSpendFactor">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetApplicantSpendFactor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetApplicantSpendFactorAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentSpendMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetDependentSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDependentSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveScoringRules">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveScoringRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveScoringRulesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScoreProposal">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ScoreProposal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ScoreProposalAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRFScoringMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetRFScoringMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRFScoringMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTermsTypeMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetTermsTypeMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTermsTypeMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRFScoringMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveRFScoringMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveRFScoringMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTermsTypeMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveTermsTypeMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveTermsTypeMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTermsTypeMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ApplyTermsTypeMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ApplyTermsTypeMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManualRefer">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ManualRefer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ManualReferAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralData">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetReferralData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetReferralDataAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteReferralStage">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CompleteReferralStage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CompleteReferralStageAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReferralNotes">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveReferralNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveReferralNotesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposalNotes">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveProposalNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveProposalNotesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindSecondApplicant">
+      <soap:operation soapAction="http://strategicthought.com/webservices/FindSecondApplicant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FindSecondApplicantAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocConfirmationData">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetDocConfirmationData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDocConfirmationDataAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocConfirmation">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveDocConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveDocConfirmationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnclearedStage">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetUnclearedStage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUnclearedStageAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnClearFlag">
+      <soap:operation soapAction="http://strategicthought.com/webservices/UnClearFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UnClearFlagAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestTransact">
+      <soap:operation soapAction="http://strategicthought.com/webservices/TestTransact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TestTransactAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSchemaValidation">
+      <soap:operation soapAction="http://strategicthought.com/webservices/TestSchemaValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TestSchemaValidationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralSummaryData">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetReferralSummaryData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetReferralSummaryDataAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpendLimitReferral">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SpendLimitReferral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SpendLimitReferralAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveScoreHist">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveScoreHist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveScoreHistAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBSCustomers">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadBSCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadBSCustomersAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadScoreHistforCustomer">
+      <soap:operation soapAction="http://strategicthought.com/webservices/LoadScoreHistforCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadScoreHistforCustomerAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyBSRescore">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ApplyBSRescore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ApplyBSRescoreAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveManualReferralNotes">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveManualReferralNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveManualReferralNotesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMmiMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetMmiMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMmiMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMmiMatrix">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveMmiMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveMmiMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerMmi">
+      <soap:operation soapAction="http://strategicthought.com/webservices/SaveCustomerMmi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveCustomerMmiAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMmiThresholdForSale">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetMmiThresholdForSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMmiThresholdForSaleAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditMmiThresholdUsedInstalment">
+      <soap:operation soapAction="http://strategicthought.com/webservices/AuditMmiThresholdUsedInstalment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AuditMmiThresholdUsedInstalmentAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WCreditManagerSoap12" type="tns:WCreditManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProposal">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/1" style="document" />
+      <wsdl:input name="_x0031_">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:1Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="_x0031_">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProposalStage1">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/2" style="document" />
+      <wsdl:input name="_x0032_">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:2Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="_x0032_">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProposalStage2">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetProposalStage2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetProposalStage2Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferenceList">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetReferenceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetReferenceListAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposal">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveProposal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveProposalAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposalStage2">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveProposalStage2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveProposalStage2Authentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadProposalFlags">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadProposalFlags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadProposalFlagsAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRFLimit">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetRFLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRFLimitAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistCashLoan">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetExistCashLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetExistCashLoanAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DummySanction">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DummySanction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DummySanctionAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoringRules">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetScoringRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetScoringRulesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveApplicantSpendMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveApplicantSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveApplicantSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicantSpendMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetApplicantSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetApplicantSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDependentSpendMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveDependentSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveDependentSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentSpendFactor">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetDependentSpendFactor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDependentSpendFactorAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicantSpendFactor">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetApplicantSpendFactor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetApplicantSpendFactorAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDependentSpendMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetDependentSpendMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDependentSpendMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveScoringRules">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveScoringRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveScoringRulesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScoreProposal">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ScoreProposal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ScoreProposalAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRFScoringMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetRFScoringMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRFScoringMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTermsTypeMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetTermsTypeMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTermsTypeMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRFScoringMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveRFScoringMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveRFScoringMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTermsTypeMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveTermsTypeMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveTermsTypeMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyTermsTypeMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ApplyTermsTypeMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ApplyTermsTypeMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManualRefer">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ManualRefer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ManualReferAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralData">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetReferralData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetReferralDataAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteReferralStage">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CompleteReferralStage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CompleteReferralStageAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReferralNotes">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveReferralNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveReferralNotesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProposalNotes">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveProposalNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveProposalNotesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindSecondApplicant">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/FindSecondApplicant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FindSecondApplicantAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocConfirmationData">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetDocConfirmationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDocConfirmationDataAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocConfirmation">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveDocConfirmation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveDocConfirmationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnclearedStage">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetUnclearedStage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUnclearedStageAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnClearFlag">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/UnClearFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UnClearFlagAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestTransact">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/TestTransact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TestTransactAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSchemaValidation">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/TestSchemaValidation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TestSchemaValidationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralSummaryData">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetReferralSummaryData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetReferralSummaryDataAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpendLimitReferral">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SpendLimitReferral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SpendLimitReferralAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveScoreHist">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveScoreHist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveScoreHistAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBSCustomers">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadBSCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadBSCustomersAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadScoreHistforCustomer">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/LoadScoreHistforCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadScoreHistforCustomerAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyBSRescore">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ApplyBSRescore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ApplyBSRescoreAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveManualReferralNotes">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveManualReferralNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveManualReferralNotesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMmiMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetMmiMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMmiMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMmiMatrix">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveMmiMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveMmiMatrixAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerMmi">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/SaveCustomerMmi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveCustomerMmiAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMmiThresholdForSale">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetMmiThresholdForSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMmiThresholdForSaleAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditMmiThresholdUsedInstalment">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/AuditMmiThresholdUsedInstalment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AuditMmiThresholdUsedInstalmentAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCreditManager">
+    <wsdl:port name="WCreditManagerSoap" binding="tns:WCreditManagerSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WCreditManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WCreditManagerSoap12" binding="tns:WCreditManagerSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WCreditManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+﻿<ServiceCharges xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.bluebridgeltd.com/cosacs/2012/schema.xsd">
+	<ServiceType>Stock Repair</ServiceType>
+    <ServiceCharge>
+        <Account xsi:nil="true" />
+        <Value>11</Value>
+        <Cost>10</Cost>
+        <Tax>3.75</Tax>
+        <ChargeType>Internal</ChargeType>
+        <Label>Parts Cosacs</Label>
+		<IsExternal>false</IsExternal>
+    </ServiceCharge>
+    <ServiceCharge>
+        <Account xsi:nil="true" />
+        <Value>120</Value>
+        <Cost>120</Cost>
+        <Tax>0</Tax>
+        <ChargeType>Internal</ChargeType>
+        <Label>Labour and Additional</Label>
+		<IsExternal>true</IsExternal>
+    </ServiceCharge>
+</ServiceCharges>

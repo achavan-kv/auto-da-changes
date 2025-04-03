@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Historical report request Version 0.3 Draft  -->
+	<!-- Disclaimer: subject to change by Baycorp Advantage at any time  -->
+	<!-- Confidential - May Not be Disclosed to Outside Parties Without the Express Permission of Baycorp Advantage -->
+	<!-- Revision History                                                -->
+	<!-- Date       Version  By            Description                               -->
+	<!-- 26/8/2003  0.2      Rachel Welsh  Update version number for packaging       -->
+	<!-- 27/8/2003  0.3      Rachel Welsh  As Web XML. User from logon not document. -->
+	<!--                                   Remove Client, User.                      -->
+	<!--                                   ACTION is 5 long                          -->
+	<xs:element name="REQUEST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SERVICE">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="10" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ACTION">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="5" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name='MESSAGE'>
+					<xs:complexType>
+						<xs:sequence>
+							<!-- Enquiry Number  -->
+							<xs:element name="INPUT_ID">
+								<xs:simpleType>
+									<xs:restriction base="xs:positiveInteger">
+										<xs:totalDigits value="11" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

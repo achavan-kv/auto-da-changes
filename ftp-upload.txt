@@ -1,0 +1,8 @@
+open ftp.bluebridgeltd.com
+bluesu
+pubpubpub?
+cd  builds
+binary
+put "..\..\$cosacs-artifacts.7z"
+disconnect
+bye

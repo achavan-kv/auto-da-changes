@@ -1,0 +1,118 @@
+﻿        
+        body 
+        {
+              font-family:Tahoma;
+              font-size: 10pt;
+                
+            }
+        #main
+        {
+            /*margin: 10mm;*/
+          /*  width: 170mm;*/
+        }
+        #left
+        {
+            float: left;
+            width: 75%;
+          
+        }
+        #right
+        {
+            float: right;
+            width: 23%;
+               font-size: 8pt;
+        }
+        .heading
+        {
+            margin-top: 20mm;
+            margin-bottom: 20mm;
+        }
+          .headingleft
+        {
+            margin-top: 1mm;
+            margin-bottom: 1mm;
+            font-size:larger;
+            font-weight:bolder
+        }
+        ul
+        {
+            list-style-type: none;
+            margin-bottom: 10;
+            padding: 0;
+            position: relative;
+        }
+        li
+        {
+            position: relative;
+        }
+        .bold
+        {
+            font-weight: bold;
+        }
+        .rightalign
+        {
+            position: absolute;
+            right: 0;
+        }
+        #HistoryHeader
+        {
+             border-bottom: 1px solid grey;
+            padding: 10px 0px;
+            background-color:Silver;
+            
+        }
+        .alt
+        {
+            background-color:Silver;
+        }
+        .headerRow td
+        {
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+            padding: 10px 0px;
+            text-align: center;
+            
+        }
+         #Fintable
+        {
+            
+        }
+         #Fintable table
+        {
+          width:100%;  
+          padding: 0px;
+          margin: 0px;
+          
+        }    
+        #endsummary
+        {
+         font-weight:bolder;
+         margin-top:20px;
+            }
+        div #header
+        { text-align: center;
+        }
+        
+        .space
+        {
+            border-bottom:8mm;
+            }
+       .fill { width:100%;
+       }
+       .fill td { 
+        padding-right:  10px; 
+        padding-bottom: 5px;
+        
+          }  
+        
+        .sign {
+                }  
+                
+         .sign td 
+         {   font-family:Lucida Console;
+              
+         }      
+         .centre
+         { 
+             a
+         }          

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/">
+      <s:element name="AccountUpdateOutstandingBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountUpdateOutstandingBalanceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Authentication" type="tns:Authentication" />
+      <s:complexType name="Authentication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cookie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="SaveStoreCardRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Rates" type="tns:ArrayOfStoreCardRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStoreCardRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StoreCardRate" nillable="true" type="tns:StoreCardRate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StoreCardRate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="RateDetails" type="tns:ArrayOfStoreCardRateDetails" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modified" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RateFixed" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDefaultRate" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStoreCardRateDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StoreCardRateDetails" nillable="true" type="tns:StoreCardRateDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StoreCardRateDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppScoreFrom" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppScoreTo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PurchaseInterestRate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BehaveScoreFrom" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="BehaveScoreTo" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditLimitPercent" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveStoreCardRatesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStoreCardRates">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStoreCardRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStoreCardRatesResult" type="tns:ArrayOfStoreCardRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RateInUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RateInUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RateInUseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAwaitingActivation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAwaitingActivationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetAwaitingActivationResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateStoreCard">
+        <s:complexType />
+      </s:element>
+      <s:element name="GenerateStoreCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenerateStoreCardResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AccountUpdateOutstandingBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountUpdateOutstandingBalance" />
+  </wsdl:message>
+  <wsdl:message name="AccountUpdateOutstandingBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountUpdateOutstandingBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountUpdateOutstandingBalanceAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SaveStoreCardRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveStoreCardRates" />
+  </wsdl:message>
+  <wsdl:message name="SaveStoreCardRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveStoreCardRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveStoreCardRatesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreCardRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStoreCardRates" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreCardRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStoreCardRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreCardRatesAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="RateInUseSoapIn">
+    <wsdl:part name="parameters" element="tns:RateInUse" />
+  </wsdl:message>
+  <wsdl:message name="RateInUseSoapOut">
+    <wsdl:part name="parameters" element="tns:RateInUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="RateInUseAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="SetAwaitingActivationSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAwaitingActivation" />
+  </wsdl:message>
+  <wsdl:message name="SetAwaitingActivationSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAwaitingActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAwaitingActivationAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="GenerateStoreCardSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateStoreCard" />
+  </wsdl:message>
+  <wsdl:message name="GenerateStoreCardSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateStoreCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateStoreCardAuthentication">
+    <wsdl:part name="Authentication" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:portType name="WStoreCardSoap">
+    <wsdl:operation name="AccountUpdateOutstandingBalance">
+      <wsdl:input message="tns:AccountUpdateOutstandingBalanceSoapIn" />
+      <wsdl:output message="tns:AccountUpdateOutstandingBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStoreCardRates">
+      <wsdl:input message="tns:SaveStoreCardRatesSoapIn" />
+      <wsdl:output message="tns:SaveStoreCardRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreCardRates">
+      <wsdl:input message="tns:GetStoreCardRatesSoapIn" />
+      <wsdl:output message="tns:GetStoreCardRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RateInUse">
+      <wsdl:input message="tns:RateInUseSoapIn" />
+      <wsdl:output message="tns:RateInUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAwaitingActivation">
+      <wsdl:input message="tns:SetAwaitingActivationSoapIn" />
+      <wsdl:output message="tns:SetAwaitingActivationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateStoreCard">
+      <wsdl:input message="tns:GenerateStoreCardSoapIn" />
+      <wsdl:output message="tns:GenerateStoreCardSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WStoreCardSoap" type="tns:WStoreCardSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AccountUpdateOutstandingBalance">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/AccountUpdateOutstandingBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AccountUpdateOutstandingBalanceAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStoreCardRates">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/SaveStoreCardRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SaveStoreCardRatesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreCardRates">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/GetStoreCardRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStoreCardRatesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateInUse">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/RateInUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RateInUseAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAwaitingActivation">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/SetAwaitingActivation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetAwaitingActivationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateStoreCard">
+      <soap:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/GenerateStoreCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GenerateStoreCardAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WStoreCardSoap12" type="tns:WStoreCardSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AccountUpdateOutstandingBalance">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/AccountUpdateOutstandingBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AccountUpdateOutstandingBalanceAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStoreCardRates">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/SaveStoreCardRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SaveStoreCardRatesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreCardRates">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/GetStoreCardRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStoreCardRatesAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateInUse">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/RateInUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RateInUseAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAwaitingActivation">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/SetAwaitingActivation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetAwaitingActivationAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateStoreCard">
+      <soap12:operation soapAction="http://schemas.bluebridgeltd.com/cosacs/storecard/2010/11/GenerateStoreCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GenerateStoreCardAuthentication" part="Authentication" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WStoreCard">
+    <wsdl:port name="WStoreCardSoap" binding="tns:WStoreCardSoap">
+      <soap:address location="http://localhost/Courts.NET.WS/WStoreCard.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WStoreCardSoap12" binding="tns:WStoreCardSoap12">
+      <soap12:address location="http://localhost/Courts.NET.WS/WStoreCard.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

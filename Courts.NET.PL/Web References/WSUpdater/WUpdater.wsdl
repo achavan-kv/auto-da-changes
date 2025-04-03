@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://strategicthought.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://strategicthought.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://strategicthought.com/webservices/">
+      <s:element name="CheckNewVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="versionclient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckNewVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNewVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileListForUpdate">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFileListForUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileListForUpdateResult" type="tns:ArrayOfUpdateFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUpdateFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UpdateFile" nillable="true" type="tns:UpdateFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UpdateFile">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="dir" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fullpath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="size" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFilesForDownload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="additionalpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilesForDownloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilesForDownloadResult" type="tns:ArrayOfUpdateFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerPath">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportUpgrade">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="machinename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="domain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldversion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newversion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportUpgradeResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckNewVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckNewVersion" />
+  </wsdl:message>
+  <wsdl:message name="CheckNewVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckNewVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListForUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileListForUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetFileListForUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileListForUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesForDownloadSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFilesForDownload" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesForDownloadSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilesForDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerPath" />
+  </wsdl:message>
+  <wsdl:message name="GetServerPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDBSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDB" />
+  </wsdl:message>
+  <wsdl:message name="CheckDBSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportUpgradeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportUpgrade" />
+  </wsdl:message>
+  <wsdl:message name="ReportUpgradeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportUpgradeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WUpdaterSoap">
+    <wsdl:operation name="CheckNewVersion">
+      <wsdl:input message="tns:CheckNewVersionSoapIn" />
+      <wsdl:output message="tns:CheckNewVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListForUpdate">
+      <wsdl:input message="tns:GetFileListForUpdateSoapIn" />
+      <wsdl:output message="tns:GetFileListForUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesForDownload">
+      <wsdl:input message="tns:GetFilesForDownloadSoapIn" />
+      <wsdl:output message="tns:GetFilesForDownloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPath">
+      <wsdl:input message="tns:GetServerPathSoapIn" />
+      <wsdl:output message="tns:GetServerPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileSoapIn" />
+      <wsdl:output message="tns:DownloadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDB">
+      <wsdl:input message="tns:CheckDBSoapIn" />
+      <wsdl:output message="tns:CheckDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportUpgrade">
+      <wsdl:input message="tns:ReportUpgradeSoapIn" />
+      <wsdl:output message="tns:ReportUpgradeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WUpdaterSoap" type="tns:WUpdaterSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckNewVersion">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckNewVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListForUpdate">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetFileListForUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesForDownload">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetFilesForDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPath">
+      <soap:operation soapAction="http://strategicthought.com/webservices/GetServerPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://strategicthought.com/webservices/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDB">
+      <soap:operation soapAction="http://strategicthought.com/webservices/CheckDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportUpgrade">
+      <soap:operation soapAction="http://strategicthought.com/webservices/ReportUpgrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WUpdaterSoap12" type="tns:WUpdaterSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckNewVersion">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckNewVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileListForUpdate">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetFileListForUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesForDownload">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetFilesForDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPath">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/GetServerPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDB">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/CheckDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportUpgrade">
+      <soap12:operation soapAction="http://strategicthought.com/webservices/ReportUpgrade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WUpdater">
+    <wsdl:port name="WUpdaterSoap" binding="tns:WUpdaterSoap">
+      <soap:address location="http://localhost/courts.net.ws/WUpdater.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WUpdaterSoap12" binding="tns:WUpdaterSoap12">
+      <soap12:address location="http://localhost/courts.net.ws/WUpdater.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

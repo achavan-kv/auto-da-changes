@@ -1,0 +1,168 @@
+<div class="panel panel-default small-margin-bottom">
+    <div class="panel-heading">
+        <div class="row active">
+            <div class="col-lg-3">
+                <input class="col-lg-1" type="checkbox"
+                       id="agreementSelected" name="agreementSelected" ng-model="result.agreementSelected">
+                <span class="text-left col col-lg-11">
+                    <strong>
+                        {{ result.AgreementType + ' ' + result.AgreementNumber }}
+                    </strong>
+                </span>
+            </div>
+            <div class="col-lg-3">
+                <span class="text-left">
+                    <strong>
+                        {{ (result.NextPaymentValue | currency) }}
+                    </strong>
+                    due on
+                    <strong>
+                        {{ result.DateNextPaymentDue }}
+                    </strong>
+                </span>
+            </div>
+            <div class="col-lg-2">
+                <span class="text-danger col col-lg-6 text-left" ng-show="result.Bailiff">Collector/Bailiff</span>
+            </div>
+            <div class="col-lg-4">
+                <span class="col-lg-4"></span>
+                <input class="col-lg-6 text-right" type="number" placeholder="Agreement Amount"
+                       id="agreementPaymentAmount" name="agreementPaymentAmount"
+                       ng-model="result.agreementPaymentAmount" ng-change="updateAgreementCalculatedValues()">
+                <span class="col-lg-2 pull-right glyphicons" ng-click="agreementPanelBodyToggle(result)"
+                      ng-class="result.agreementVisible ? 'circle_arrow_top' : 'circle_arrow_down'"></span>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body centre-section" ng-show="result.agreementVisible">
+        <div class="row">
+            <div class="col-lg-3">
+                <strong>Agreement Total</strong>
+
+                <div>{{ result.AgreementTotal | currency }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Installment Amount</strong>
+
+                <div>{{ result.InstallmentAmount | currency }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Current Status</strong>
+
+                <div>{{ result.CurrentStatus }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Rebate Amount</strong>
+
+                <div>{{ result.RebateAmount | currency }}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <strong>Service Charge</strong>
+
+                <div>{{ result.ServiceCharge | currency}}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Final Installment Amount</strong>
+
+                <div>{{ result.FinalInstallmentAmount | currency }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Months In Arrears</strong>
+
+                <div>{{ result.MonthsInArrears }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Settlement Amount</strong>
+
+                <div>{{ result.OutstandingBalance - result.RebateAmount | currency }}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <strong>Deposit Amount</strong>
+
+                <div>{{ result.DepositAmount | currency}}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Installments Remaining</strong>
+
+                <div>{{ result.InstallmentsLeft }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Arrears Amount</strong>
+
+                <div ng-class="{ true : 'text-danger' }[ result.ArrearsAmount > 0 ]">
+                    <strong>
+                        <b>{{ result.ArrearsAmount | currency }}</b>
+                    </strong>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Bailiff Fee</strong>
+
+                <div>{{ result.BailiffFee | currency}}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <strong>Outstanding Balance</strong>
+
+                <div>{{ result.OutstandingBalance | currency }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Next Payment Date</strong>
+
+                <div> {{ result.DateNextPaymentDue }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Late Payment Interest</strong>
+
+                <div> {{ result.LatePaymentInterest | currency }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Create On</strong>
+
+                <div>{{ result.CreatedOn }}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <strong>To Follow Amount</strong>
+
+                <div>{{ result.ToFollowAmount | currency }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Last Payment Date</strong>
+
+                <div>{{ result.LastPaymentDate }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Admin Fee</strong>
+
+                <div> {{ result.AdminFee | currency }}</div>
+            </div>
+            <div class="col-lg-3">
+                <strong>Delivery Date</strong>
+
+                <div>{{ result.DeliveredOn }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                &nbsp;
+            </div>
+        </div>
+
+        <div ng-show="transactions">
+            <div class="section">Transactions</div>
+            <div ng-include="'/payments/views/templates/PaymentTransactions.html'"></div>
+        </div>
+
+    </div>
+</div>
