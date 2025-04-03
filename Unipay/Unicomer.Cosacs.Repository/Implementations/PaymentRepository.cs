@@ -51,8 +51,8 @@ namespace Unicomer.Cosacs.Repository.Implementations
                             PurchaseAmount = 0.00M,
                             PurchaseAmountTax = 0.00M,
                             TotalDiscount = 0.00M,
-                            DepositAmount=0.00M,
-                            Fee = new System.Collections.Generic.List<Fee>(),                                 
+                            DepositAmount = 0.00M,
+                            Fee = new System.Collections.Generic.List<Fee>(),
                         },
                         ProductDetail = new System.Collections.Generic.List<ProductDetail>()
                     }
@@ -273,7 +273,7 @@ namespace Unicomer.Cosacs.Repository.Implementations
                             CodeFee = "",
                             DetailFeeTax = new DetailFeeTax
                             {
-                                CodeFee ="",
+                                CodeFee = "",
                             }
                         }
                     };
@@ -361,6 +361,7 @@ namespace Unicomer.Cosacs.Repository.Implementations
         {
             var apiRequestModel = apiRequest.GetRequest();
             bool isError = false;
+            bool isAutoDA = false;
             string message = "";
             string cosacsAcctNo = "";
             try
@@ -434,7 +435,7 @@ namespace Unicomer.Cosacs.Repository.Implementations
                             {
                                 isError = (bool)xparams[16].Value;
                             }
-                            
+
                             if (!isError)
                             {
                                 trans.Commit();
@@ -454,21 +455,51 @@ namespace Unicomer.Cosacs.Repository.Implementations
                     {
                         using (SqlTransaction trans = conn.BeginTransaction(IsolationLevel.ReadUncommitted))
                         {
-                                
+                            try
+                            {
+                                SqlParameter[] xparams = {
+                                        new SqlParameter("@acctno", cosacsAcctNo),
+                                        new SqlParameter("@IsAutoDA", SqlDbType.Bit)
+                                        {
+                                            Direction = ParameterDirection.Output
+                                        }
+                                };
+
+                                SqlCommand command = conn.CreateCommand();
+                                command.Transaction = trans;
+                                command.CommandText = "dbo.CheckAccountForAutoDA";
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.AddRange(xparams);
+                                command.ExecuteNonQuery();
+
+                                if (xparams[1].Value != null && xparams[1].Value != DBNull.Value)
+                                {
+                                    isAutoDA = (bool)xparams[1].Value;
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                throw;
+                            }
+                        }
+
+                        if (isAutoDA)
+                        {
+                            using (SqlTransaction trans = conn.BeginTransaction(IsolationLevel.ReadUncommitted))
+                            {
                                 try
                                 {
-                                        BAgreement agreement = new BAgreement();
-                                        agreement.User = Credential.UserId;
-                                        agreement.ClearProposal(conn, trans, cosacsAcctNo, "AUTO");
-                                        trans.Commit();
+                                    BAgreement agreement = new BAgreement();
+                                    agreement.User = Credential.UserId;
+                                    agreement.ClearProposal(conn, trans, cosacsAcctNo, "AUTO");
+                                    trans.Commit();
                                 }
                                 catch (SqlException ex)
                                 {
                                     throw;
                                 }
-                                
+                            }
                         }
-                        
                     }
                 }
 
